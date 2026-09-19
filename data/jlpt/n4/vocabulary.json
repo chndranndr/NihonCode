@@ -1,0 +1,3596 @@
+[
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 01",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-1/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "日本では、はる·なつ·あき·ふゆの四つの _______ があります。",
+        "options": [
+          "てんき",
+          "きぶん",
+          "きおん",
+          "きせつ"
+        ],
+        "answer_index": 4,
+        "answer_text": "きせつ",
+        "answered_sentence": "日本では、はる·なつ·あき·ふゆの四つのきせつがあります。",
+        "explanation": "\"きせつ\" means \"season.\" In this sentence, it names the four seasons: spring, summer, autumn, and winter."
+      },
+      {
+        "number": 2,
+        "prompt": "きのうならったことをもう _______ しまいました。",
+        "options": [
+          "わすれて",
+          "すてて",
+          "なくして",
+          "とって"
+        ],
+        "answer_index": 1,
+        "answer_text": "わすれて",
+        "answered_sentence": "きのうならったことをもうわすれてしまいました。",
+        "explanation": "\"わすれて\" comes from \"to forget.\" The sentence says the speaker has already forgotten what they learned yesterday."
+      },
+      {
+        "number": 3,
+        "prompt": "シャツのうりばは、このうえの３がいです。あの _______ でいってください。",
+        "options": [
+          "ドア",
+          "タクシー",
+          "サンダル",
+          "エスカレーター"
+        ],
+        "answer_index": 4,
+        "answer_text": "エスカレーター",
+        "answered_sentence": "シャツのうりばは、このうえの３がいです。あのエスカレーターでいってください。",
+        "explanation": "\"エスカレーター\" means \"escalator.\" In \"あのエスカレーターでいってください\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 4,
+        "prompt": "あまり勉強しなかったので、テストのてんが _______ です。",
+        "options": [
+          "しんぱい",
+          "きけん",
+          "あんぜん",
+          "あんしん"
+        ],
+        "answer_index": 1,
+        "answer_text": "しんぱい",
+        "answered_sentence": "あまり勉強しなかったので、テストのてんがしんぱいです。",
+        "explanation": "\"しんぱい\" means \"worry\" or \"anxiety.\" The sentence says the speaker is worried about the test score because they did not study much."
+      },
+      {
+        "number": 5,
+        "prompt": "おもしろいえいがだと聞いたので、_______ みたいです。",
+        "options": [
+          "たぶん",
+          "そんなに",
+          "ぜひ",
+          "きゅうに"
+        ],
+        "answer_index": 3,
+        "answer_text": "ぜひ",
+        "answered_sentence": "おもしろいえいがだと聞いたので、ぜひみたいです。",
+        "explanation": "\"ぜひ\" adds strong desire, like \"definitely\" or \"by all means.\" The speaker is saying they really want to see that movie."
+      },
+      {
+        "number": 6,
+        "prompt": "たかださんは _______ をしながらだいがくにかよっています。",
+        "options": [
+          "オートバイ",
+          "デパート",
+          "アルバイト",
+          "カレンダー"
+        ],
+        "answer_index": 3,
+        "answer_text": "アルバイト",
+        "answered_sentence": "たかださんはアルバイトをしながらだいがくにかよっています。",
+        "explanation": "\"アルバイト\" means \"part-time job.\" In \"たかださんはアルバイトをしながらだいがくにかよっています\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 7,
+        "prompt": "はなこさんは白いスカートと _______ をはいています。",
+        "options": [
+          "セーター",
+          "ハンカチ",
+          "サンダル",
+          "オーバー"
+        ],
+        "answer_index": 3,
+        "answer_text": "サンダル",
+        "answered_sentence": "はなこさんは白いスカートとサンダルをはいています。",
+        "explanation": "\"サンダル\" means \"sandal.\" In \"はなこさんは白いスカートとサンダルをはいています\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 8,
+        "prompt": "父はとうきょうへ行くと、いつも _______ をかってきてくれます。",
+        "options": [
+          "おまつり",
+          "おれい",
+          "おみやげ",
+          "おいわい"
+        ],
+        "answer_index": 3,
+        "answer_text": "おみやげ",
+        "answered_sentence": "父はとうきょうへ行くと、いつもおみやげをかってきてくれます。",
+        "explanation": "\"おみやげ\" means \"souvenir\" or \"gift from a trip.\" The sentence says the father always buys one when he goes to Tokyo."
+      },
+      {
+        "number": 9,
+        "prompt": "あのあたらしい _______ はデパートです。",
+        "options": [
+          "アパート",
+          "ホテル",
+          "プール",
+          "ビル"
+        ],
+        "answer_index": 4,
+        "answer_text": "ビル",
+        "answered_sentence": "あのあたらしいビルはデパートです。",
+        "explanation": "\"ビル\" means \"(abbr.) building.\" In \"あのあたらしいビルはデパートです\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 10,
+        "prompt": "じゅぎょうがおわってから、まいにち、ピンポンの _______ をします。",
+        "options": [
+          "しゅみ",
+          "うんどう",
+          "れんしゅう",
+          "しゅうかん"
+        ],
+        "answer_index": 3,
+        "answer_text": "れんしゅう",
+        "answered_sentence": "じゅぎょうがおわってから、まいにち、ピンポンのれんしゅうをします。",
+        "explanation": "\"れんしゅう\" means \"practice.\" Here it is the thing the speaker does every day after class."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 02",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-2/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "雨がやっと _______ 。",
+        "options": [
+          "とまりました",
+          "やみました",
+          "しまりました",
+          "あきました"
+        ],
+        "answer_index": 2,
+        "answer_text": "やみました",
+        "answered_sentence": "雨がやっとやみました。",
+        "explanation": "\"やみました\" means \"stopped.\" Here it says the rain finally stopped."
+      },
+      {
+        "number": 2,
+        "prompt": "つぎのえきでおりて、バスに _______ ください。",
+        "options": [
+          "かわって",
+          "のりかえて",
+          "ひっこして",
+          "とりかえて"
+        ],
+        "answer_index": 2,
+        "answer_text": "のりかえて",
+        "answered_sentence": "つぎのえきでおりて、バスにのりかえてください。",
+        "explanation": "\"のりかえて\" means \"transfer/change to another vehicle.\" The sentence tells the listener to get off at the next station and change to a bus."
+      },
+      {
+        "number": 3,
+        "prompt": "えきからここまでバスでいちじかんで _______ 。",
+        "options": [
+          "できます",
+          "かかります",
+          "とおれます",
+          "こられます"
+        ],
+        "answer_index": 4,
+        "answer_text": "こられます",
+        "answered_sentence": "えきからここまでバスでいちじかんでこられます。",
+        "explanation": "\"こられます\" is the potential form of \"come,\" meaning \"can come.\" The sentence says you can get here from the station by bus in one hour."
+      },
+      {
+        "number": 4,
+        "prompt": "うちには _______ こどもがいて、いつもにぎやかです。",
+        "options": [
+          "ひくい",
+          "わかい",
+          "ほそい",
+          "ちいさい"
+        ],
+        "answer_index": 4,
+        "answer_text": "ちいさい",
+        "answered_sentence": "うちにはちいさいこどもがいて、いつもにぎやかです。",
+        "explanation": "\"ちいさい\" means \"small.\" Here it describes the child as small, that is, still young."
+      },
+      {
+        "number": 5,
+        "prompt": "たなかさんのしゅみは _______ をすることです。",
+        "options": [
+          "バレーボール",
+          "カメラ",
+          "タクシー",
+          "ニュース"
+        ],
+        "answer_index": 1,
+        "answer_text": "バレーボール",
+        "answered_sentence": "たなかさんのしゅみはバレーボールをすることです。",
+        "explanation": "\"バレーボール\" names the sport. The sentence is saying that this is the speaker's favorite sport or hobby."
+      },
+      {
+        "number": 6,
+        "prompt": "どこかであかんぼうのなく _______ がします。",
+        "options": [
+          "みみ",
+          "こえ",
+          "おと",
+          "くち"
+        ],
+        "answer_index": 2,
+        "answer_text": "こえ",
+        "answered_sentence": "どこかであかんぼうのなくこえがします。",
+        "explanation": "\"こえ\" means \"voice\" or \"sound of a voice.\" The sentence says a baby's crying voice can be heard somewhere."
+      },
+      {
+        "number": 7,
+        "prompt": "わたしはじてんしゃを _______ もっています。",
+        "options": [
+          "にだい",
+          "にさい",
+          "にほん",
+          "にまい"
+        ],
+        "answer_index": 1,
+        "answer_text": "にだい",
+        "answered_sentence": "わたしはじてんしゃをにだいもっています。",
+        "explanation": "\"にだい\" is the counter for machines and vehicles. Here \"じてんしゃをにだい\" means the speaker has two bicycles."
+      },
+      {
+        "number": 8,
+        "prompt": "今年、大学に入学することができて、とても _______ です。",
+        "options": [
+          "おいしかった",
+          "たのしかった",
+          "うれしかった",
+          "ただしかった"
+        ],
+        "answer_index": 3,
+        "answer_text": "うれしかった",
+        "answered_sentence": "今年、大学に入学することができて、とてもうれしかったです。",
+        "explanation": "\"うれしかった\" means \"was happy / was glad.\" The speaker is saying they were very happy to get into university."
+      },
+      {
+        "number": 9,
+        "prompt": "みちをおしえてもらったので、 _______ をいいました。",
+        "options": [
+          "おれい",
+          "おかげ",
+          "おいわい",
+          "おだいじに"
+        ],
+        "answer_index": 1,
+        "answer_text": "おれい",
+        "answered_sentence": "みちをおしえてもらったので、おれいをいいました。",
+        "explanation": "\"おれい\" means \"thanks\" or \"gratitude.\" Here the speaker thanked someone for showing them the way."
+      },
+      {
+        "number": 10,
+        "prompt": "わたしのうちへも _______ あそびにきてください。",
+        "options": [
+          "いちど",
+          "いっこ",
+          "いちばん",
+          "いっけん"
+        ],
+        "answer_index": 1,
+        "answer_text": "いちど",
+        "answered_sentence": "わたしのうちへもいちどあそびにきてください。",
+        "explanation": "\"いちど\" means \"once\" or \"one more time.\" Here the speaker is inviting the listener to come visit again."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 03",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-3/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "いとうさんはしごとがおおくて _______ のようです。",
+        "options": [
+          "あそびすぎ",
+          "はたらきすぎ",
+          "やすみすぎ",
+          "つとめすぎ"
+        ],
+        "answer_index": 2,
+        "answer_text": "はたらきすぎ",
+        "answered_sentence": "いとうさんはしごとがおおくてはたらきすぎのようです。",
+        "explanation": "\"はたらきすぎ\" means \"overworking\" or \"working too much.\" The sentence says Ito seems to be working too hard."
+      },
+      {
+        "number": 2,
+        "prompt": "うちのちかくにほんやが _______ あります。",
+        "options": [
+          "二けん",
+          "二さつ",
+          "二ほん",
+          "二かい"
+        ],
+        "answer_index": 1,
+        "answer_text": "二けん",
+        "answered_sentence": "うちのちかくにほんやが二けんあります。",
+        "explanation": "\"二けん\" is the counter for buildings or shops. The sentence says there are two bookstores near the speaker's home."
+      },
+      {
+        "number": 3,
+        "prompt": "わたしは日本に来てから _______ このいえにすんでいます。",
+        "options": [
+          "もっと",
+          "きっと",
+          "ずっと",
+          "やっと"
+        ],
+        "answer_index": 3,
+        "answer_text": "ずっと",
+        "answered_sentence": "わたしは日本に来てからずっとこのいえにすんでいます。",
+        "explanation": "\"ずっと\" means \"all along\" or \"continuously.\" The sentence says the speaker has lived in that house the whole time since coming to Japan."
+      },
+      {
+        "number": 4,
+        "prompt": "このみずうみの _______ はどのくらいですか。",
+        "options": [
+          "ふかさ",
+          "あつさ",
+          "さむさ",
+          "おもさ"
+        ],
+        "answer_index": 1,
+        "answer_text": "ふかさ",
+        "answered_sentence": "このみずうみのふかさはどのくらいですか。",
+        "explanation": "\"ふかさ\" means \"depth.\" The sentence is asking how deep the lake is."
+      },
+      {
+        "number": 5,
+        "prompt": "あねは _______ になって、びょういんではたらいています。",
+        "options": [
+          "かんごふ",
+          "せんせい",
+          "けいかん",
+          "サラリーマン"
+        ],
+        "answer_index": 1,
+        "answer_text": "かんごふ",
+        "answered_sentence": "あねはかんごふになって、びょういんではたらいています。",
+        "explanation": "\"かんごふ\" means \"nurse.\" The sentence says the speaker's older sister became a nurse and works at a hospital."
+      },
+      {
+        "number": 6,
+        "prompt": "おなかがすいていたので、れいぞうこの中の食べ物を _______ 食べてしましました。",
+        "options": [
+          "すっかり",
+          "びっくり",
+          "ぐっすり",
+          "はっきり"
+        ],
+        "answer_index": 1,
+        "answer_text": "すっかり",
+        "answered_sentence": "おなかがすいていたので、れいぞうこの中の食べ物をすっかり食べてしましました。",
+        "explanation": "\"すっかり\" means \"all, completely.\" In \"れいぞうこの中の食べ物をすっかり食べてしましました\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 7,
+        "prompt": "きのうみたえいがはとても _______ です。",
+        "options": [
+          "うれしかった",
+          "にがかった",
+          "よわかった",
+          "こわかった"
+        ],
+        "answer_index": 4,
+        "answer_text": "こわかった",
+        "answered_sentence": "きのうみたえいがはとてもこわかったです。",
+        "explanation": "\"こわかった\" means \"was scary.\" The speaker is saying yesterday's movie was very frightening."
+      },
+      {
+        "number": 8,
+        "prompt": "もうおそいから、_______ かえりましょう。",
+        "options": [
+          "そろそろ",
+          "だんだん",
+          "ときどき",
+          "とうとう"
+        ],
+        "answer_index": 1,
+        "answer_text": "そろそろ",
+        "answered_sentence": "もうおそいから、そろそろかえりましょう。",
+        "explanation": "\"そろそろ\" means \"soon\" or \"it's about time.\" It fits when the sentence is talking about a time that is getting close."
+      },
+      {
+        "number": 9,
+        "prompt": "わたしの先生はたいへん _______ です。",
+        "options": [
+          "すずしい",
+          "みじかい",
+          "ただしい",
+          "きびしい"
+        ],
+        "answer_index": 4,
+        "answer_text": "きびしい",
+        "answered_sentence": "わたしの先生はたいへんきびしいです。",
+        "explanation": "\"きびしい\" means \"hard; rigorous; strict.\" In \"わたしの先生はたいへんきびしいです\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 10,
+        "prompt": "やさしいしつもんにこたえられなくて、とても _______ 。",
+        "options": [
+          "はずかしかったです",
+          "すばらしかったです",
+          "すごかったです",
+          "めずらしかったです"
+        ],
+        "answer_index": 1,
+        "answer_text": "はずかしかったです",
+        "answered_sentence": "やさしいしつもんにこたえられなくて、とてもはずかしかったです。",
+        "explanation": "\"はずかしかった\" means \"was embarrassed.\" The speaker could not answer an easy question, so they felt embarrassed."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 04",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-4/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "きょうしつのかべにきれいなえが _______ あります。",
+        "options": [
+          "のせて",
+          "かけて",
+          "おいて",
+          "つけて"
+        ],
+        "answer_index": 2,
+        "answer_text": "かけて",
+        "answered_sentence": "きょうしつのかべにきれいなえがかけてあります。",
+        "explanation": "\"かけてあります\" means something has been hung up. Here it says a pretty picture is hanging on the classroom wall."
+      },
+      {
+        "number": 2,
+        "prompt": "この川のみずはのんでも _______ か。",
+        "options": [
+          "すみません",
+          "だいじょうぶです",
+          "まにあいます",
+          "できません"
+        ],
+        "answer_index": 2,
+        "answer_text": "だいじょうぶです",
+        "answered_sentence": "この川のみずはのんでもだいじょうぶですか。",
+        "explanation": "\"だいじょうぶです\" means \"is okay / is safe.\" The sentence is asking whether the river water is safe to drink."
+      },
+      {
+        "number": 3,
+        "prompt": "あしたべんきょうするかんじを　_______ しておいてください。",
+        "options": [
+          "けいけん",
+          "よしゅう",
+          "はんたい",
+          "ふくしゅう"
+        ],
+        "answer_index": 2,
+        "answer_text": "よしゅう",
+        "answered_sentence": "あしたべんきょうするかんじをよしゅうしておいてください。",
+        "explanation": "\"よしゅう\" means \"preparation of lessons (for class).\" In \"あしたべんきょうするかんじをよしゅうしておいてください\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 4,
+        "prompt": "あのかわは _______ だから、あそこでおよいではいけません。",
+        "options": [
+          "あんぜん",
+          "きけん",
+          "さかん",
+          "じゅうぶん"
+        ],
+        "answer_index": 2,
+        "answer_text": "きけん",
+        "answered_sentence": "あのかわはきけんだから、あそこでおよいではいけません。",
+        "explanation": "\"きけん\" means \"danger, risk, hazard.\" In \"あのかわはきけんだから\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 5,
+        "prompt": "たばこを　_______ ほうがいいとともだちにいわれました。",
+        "options": [
+          "おわった",
+          "しめた",
+          "とまった",
+          "やめた"
+        ],
+        "answer_index": 4,
+        "answer_text": "やめた",
+        "answered_sentence": "たばこをやめたほうがいいとともだちにいわれました。",
+        "explanation": "\"やめた\" means \"quit\" or \"stopped.\" The friend is saying it would be better to quit smoking."
+      },
+      {
+        "number": 6,
+        "prompt": "わたしの国はやきゅうが _______ です。",
+        "options": [
+          "ねっしん",
+          "さかん",
+          "じゅうぶん",
+          "じょうぶ"
+        ],
+        "answer_index": 2,
+        "answer_text": "さかん",
+        "answered_sentence": "わたしの国はやきゅうがさかんです。",
+        "explanation": "\"さかん\" means \"prosperous, active, thriving.\" In \"わたしの国はやきゅうがさかんです\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 7,
+        "prompt": "やまだ「おにいさんのびょうきはよくなりましたか。」",
+        "options": [
+          "たなか「はい、_______ 。」",
+          "おげんきで",
+          "おかげさまで",
+          "ごめんなさい"
+        ],
+        "answer_index": 2,
+        "answer_text": "おげんきで",
+        "answered_sentence": "やまだ「おにいさんのびょうきはよくなりましたか。」たなか「はい、おかげさまで。」",
+        "explanation": "\"おげんきで\" means \"take care / stay well.\" It is used when parting from someone, not as the reply to an introduction or a health question."
+      },
+      {
+        "number": 8,
+        "prompt": "だれでもテストを _______ のはすきではありません。",
+        "options": [
+          "とる",
+          "もつ",
+          "うける",
+          "ひろう"
+        ],
+        "answer_index": 3,
+        "answer_text": "うける",
+        "answered_sentence": "だれでもテストをうけるのはすきではありません。",
+        "explanation": "\"うける\" means \"to take (an examination, interview, etc.); to receive.\" In \"だれでもテストをうけるのはすきではありません\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 9,
+        "prompt": "_______ でじどうしゃにガソリンをいれました。",
+        "options": [
+          "ガソリンコート",
+          "ガソリンテーブル",
+          "ガソリンスタンド",
+          "ガソリンプール"
+        ],
+        "answer_index": 3,
+        "answer_text": "ガソリンスタンド",
+        "answered_sentence": "ガソリンスタンドでじどうしゃにガソリンをいれました。",
+        "explanation": "\"ガソリンスタンド\" means \"gas station, service station.\" In \"ガソリンスタンドでじどうしゃにガソリンをいれました\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 10,
+        "prompt": "きのうからからだのぐあいが _______ 。",
+        "options": [
+          "いやです",
+          "いたいです",
+          "きらいです",
+          "わるいです"
+        ],
+        "answer_index": 4,
+        "answer_text": "わるいです",
+        "answered_sentence": "きのうからからだのぐあいがわるいです。",
+        "explanation": "\"わるい\" means \"bad.\" Here it describes the speaker's physical condition as bad, meaning they do not feel well."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 05",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-5/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "わたしはでんきやでテレビを _______ もらいました。",
+        "options": [
+          "ならんで",
+          "なおって",
+          "なおして",
+          "ならって"
+        ],
+        "answer_index": 3,
+        "answer_text": "なおして",
+        "answered_sentence": "わたしはでんきやでテレビをなおしてもらいました。",
+        "explanation": "\"なおして\" means \"repairing / fixing.\" The sentence says the speaker had the TV repaired at the electronics shop."
+      },
+      {
+        "number": 2,
+        "prompt": "これはさとうせんせいがわたしに _______ ほんです。",
+        "options": [
+          "くださった",
+          "さしあげた",
+          "いただいた",
+          "なさった"
+        ],
+        "answer_index": 1,
+        "answer_text": "くださった",
+        "answered_sentence": "これはさとうせんせいがわたしにくださったほんです。",
+        "explanation": "\"くださった\" is the respectful form of \"give.\" The sentence says the teacher gave that book to the speaker."
+      },
+      {
+        "number": 3,
+        "prompt": "たなかさんがにゅういんしたので、_______ に行きました。",
+        "options": [
+          "おみまい",
+          "おいわい",
+          "おまつり",
+          "あいさつ"
+        ],
+        "answer_index": 1,
+        "answer_text": "おみまい",
+        "answered_sentence": "たなかさんがにゅういんしたので、おみまいに行きました。",
+        "explanation": "\"おみまい\" means \"calling on someone who is ill, visit.\" In \"おみまいに行きました\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 4,
+        "prompt": "うちのテレビはふるいので、 _______ こしょうします。",
+        "options": [
+          "ぜんぜん",
+          "たいへん",
+          "よく",
+          "なかなか"
+        ],
+        "answer_index": 3,
+        "answer_text": "よく",
+        "answered_sentence": "うちのテレビはふるいので、よくこしょうします。",
+        "explanation": "\"よく\" here means \"often.\" The sentence says the old TV breaks down a lot."
+      },
+      {
+        "number": 5,
+        "prompt": "ゆうべはこわい _______ をみて、よくねむれませんでした。",
+        "options": [
+          "うそ",
+          "かがみ",
+          "はなし",
+          "ゆめ"
+        ],
+        "answer_index": 4,
+        "answer_text": "ゆめ",
+        "answered_sentence": "ゆうべはこわいゆめをみて、よくねむれませんでした。",
+        "explanation": "\"ゆめ\" means \"a dream.\" In \"ゆうべはこわいゆめをみて\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 6,
+        "prompt": "あつかったら、どうぞうわぎを _______ ください。",
+        "options": [
+          "はずして",
+          "むいて",
+          "すてて",
+          "ぬいで"
+        ],
+        "answer_index": 4,
+        "answer_text": "ぬいで",
+        "answered_sentence": "あつかったら、どうぞうわぎをぬいでください。",
+        "explanation": "\"ぬいで\" means \"take off.\" The sentence tells the listener to take off their jacket if they are hot."
+      },
+      {
+        "number": 7,
+        "prompt": "わたしはくだものがすきです。 _______ りんごがだいすきです。",
+        "options": [
+          "とくに",
+          "はっきり",
+          "すっかり",
+          "ほとんど"
+        ],
+        "answer_index": 1,
+        "answer_text": "とくに",
+        "answered_sentence": "わたしはくだものがすきです。とくにりんごがだいすきです。",
+        "explanation": "\"とくに\" means \"particularly.\" In \"とくにりんごがだいすきです\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 8,
+        "prompt": "おとうとさんのびょうきがなおるように _______ います。",
+        "options": [
+          "あやまって",
+          "こまって",
+          "みつかって",
+          "いのって"
+        ],
+        "answer_index": 4,
+        "answer_text": "いのって",
+        "answered_sentence": "おとうとさんのびょうきがなおるようにいのっています。",
+        "explanation": "\"いのって\" means \"praying.\" The speaker is praying for the younger brother's illness to get better."
+      },
+      {
+        "number": 9,
+        "prompt": "_______ があったら、また日本へ行きたいです。",
+        "options": [
+          "りゆう",
+          "ばあい",
+          "きかい",
+          "げんいん"
+        ],
+        "answer_index": 3,
+        "answer_text": "きかい",
+        "answered_sentence": "きかいがあったら、また日本へ行きたいです。",
+        "explanation": "\"きかい\" means \"chance, opportunity.\" In \"きかいがあったら\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 10,
+        "prompt": "あたらしいいえにだんだん _______ きました。",
+        "options": [
+          "はじまって",
+          "おぼえて",
+          "なれて",
+          "すんで"
+        ],
+        "answer_index": 3,
+        "answer_text": "なれて",
+        "answered_sentence": "あたらしいいえにだんだんなれてきました。",
+        "explanation": "\"なれて\" comes from \"to get used to.\" The sentence says the speaker is gradually getting used to the new house."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 06",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-6/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "がくせいたちはきょうしつでやまだせんせいににほんごを _______ います。",
+        "options": [
+          "ならって",
+          "つくって",
+          "おぼえて",
+          "べんきょうして"
+        ],
+        "answer_index": 1,
+        "answer_text": "ならって",
+        "answered_sentence": "がくせいたちはきょうしつでやまだせんせいににほんごをならっています。",
+        "explanation": "\"ならって\" means \"learning from someone.\" The sentence says the students are learning Japanese from Yamada-sensei in class."
+      },
+      {
+        "number": 2,
+        "prompt": "この学校の _______ では学生はきょうしつのそうじをしなければなりません。",
+        "options": [
+          "りゆう",
+          "きそく",
+          "ほうりつ",
+          "しゅうかん"
+        ],
+        "answer_index": 2,
+        "answer_text": "きそく",
+        "answered_sentence": "この学校のきそくでは学生はきょうしつのそうじをしなければなりません。",
+        "explanation": "\"きそく\" means \"rule, regulation.\" In \"この学校のきそくでは学生はきょうしつのそうじをしなければなりません\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 3,
+        "prompt": "どのてぶくろがいちばんねだんが _______ 。",
+        "options": [
+          "ひくいですか",
+          "すくないですか",
+          "ちいさいですか",
+          "やすいですか"
+        ],
+        "answer_index": 4,
+        "answer_text": "やすいですか",
+        "answered_sentence": "どのてぶくろがいちばんねだんがやすいですか。",
+        "explanation": "\"やすい\" means \"cheap.\" The sentence is asking which gloves have the lowest price."
+      },
+      {
+        "number": 4,
+        "prompt": "まちださんはせんせいに「おはようございます。」と _______ しました。",
+        "options": [
+          "しょうかい",
+          "あいさつ",
+          "はいけん",
+          "れんらく"
+        ],
+        "answer_index": 2,
+        "answer_text": "あいさつ",
+        "answered_sentence": "まちださんはせんせいに「おはようございます。」とあいさつしました。",
+        "explanation": "\"あいさつ\" means \"greet(ing).\" In \"とあいさつしました\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 5,
+        "prompt": "_______ べんきょうしたので、このあいだのテストは１００てんでした。",
+        "options": [
+          "まじめに",
+          "そんなに",
+          "だいじに",
+          "たいせつに"
+        ],
+        "answer_index": 1,
+        "answer_text": "まじめに",
+        "answered_sentence": "まじめにべんきょうしたので、このあいだのテストは１００てんでした。",
+        "explanation": "\"まじめに\" means \"seriously\" or \"diligently.\" The speaker got 100 points because they studied seriously."
+      },
+      {
+        "number": 6,
+        "prompt": "みちでお金を _______ ので、こうばんにとどけました。",
+        "options": [
+          "すてた",
+          "とった",
+          "ひろった",
+          "つかまえた"
+        ],
+        "answer_index": 3,
+        "answer_text": "ひろった",
+        "answered_sentence": "みちでお金をひろったので、こうばんにとどけました。",
+        "explanation": "\"ひろった\" means \"picked up\" or \"found.\" The speaker found money on the road and took it to the police box."
+      },
+      {
+        "number": 7,
+        "prompt": "そのかいぎに _______ するためには１０じのひこうきにのらなければなりません。",
+        "options": [
+          "しゅっせき",
+          "しっぱい",
+          "じゅんび",
+          "しょうかい"
+        ],
+        "answer_index": 1,
+        "answer_text": "しゅっせき",
+        "answered_sentence": "そのかいぎにしゅっせきするためには１０じのひこうきにのらなければなりません。",
+        "explanation": "\"しゅっせき\" means \"attendance\" or \"being present.\" The sentence says the speaker has to attend that meeting."
+      },
+      {
+        "number": 8,
+        "prompt": "たなか「さいきん母のぐあいがよくないんですよ。」さとう「それは _______ 。」",
+        "options": [
+          "ざんねんですね",
+          "おめでとうございます",
+          "しんぱいですね",
+          "だいじょうぶですね"
+        ],
+        "answer_index": 3,
+        "answer_text": "しんぱいですね",
+        "answered_sentence": "たなか「さいきん母のぐあいがよくないんですよ。」さとう「それはしんぱいですね。」",
+        "explanation": "\"しんぱいですね\" is the natural expression for that dialogue situation. It matches what a speaker would normally say there."
+      },
+      {
+        "number": 9,
+        "prompt": "じかんがかかりましたが、_______ おわりました。",
+        "options": [
+          "そろそろ",
+          "やっと",
+          "ちっとも",
+          "なかなか"
+        ],
+        "answer_index": 2,
+        "answer_text": "やっと",
+        "answered_sentence": "じかんがかかりましたが、やっとおわりました。",
+        "explanation": "\"やっと\" means \"finally.\" It fits because the sentence says the rain stopped at last."
+      },
+      {
+        "number": 10,
+        "prompt": "レストランは５かいにあります。_______ で行ったほうがいいですよ。",
+        "options": [
+          "オートバイ",
+          "エレベーター",
+          "スーツケース",
+          "タクシー"
+        ],
+        "answer_index": 2,
+        "answer_text": "エレベーター",
+        "answered_sentence": "レストランは５かいにあります。エレベーターで行ったほうがいいですよ。",
+        "explanation": "\"エレベーター\" means \"elevator.\" Since the restaurant is on the fifth floor, the sentence recommends going by elevator."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 07",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-7/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "このくつはあのくつより _______ です。",
+        "options": [
+          "はきわるい",
+          "はきやすい",
+          "はきやさしい",
+          "はきほしい"
+        ],
+        "answer_index": 2,
+        "answer_text": "はきやすい",
+        "answered_sentence": "このくつはあのくつよりはきやすいです。",
+        "explanation": "\"はきやすい\" means \"easy to wear.\" The sentence compares the shoes and says this pair is easier to wear."
+      },
+      {
+        "number": 2,
+        "prompt": "あねは母にかおがよく _______ います。",
+        "options": [
+          "あって",
+          "にて",
+          "うつして",
+          "つたえて"
+        ],
+        "answer_index": 2,
+        "answer_text": "にて",
+        "answered_sentence": "あねは母にかおがよくにています。",
+        "explanation": "\"にている\" means \"resemble.\" The sentence says the older sister's face looks a lot like the mother's."
+      },
+      {
+        "number": 3,
+        "prompt": "たなかさんはいつも _______ ことばを　つかいます。",
+        "options": [
+          "ふべんな",
+          "ざんねんな",
+          "ていねいな",
+          "ねっしんな"
+        ],
+        "answer_index": 3,
+        "answer_text": "ていねいな",
+        "answered_sentence": "たなかさんはいつもていねいなことばをつかいます。",
+        "explanation": "\"ていねいな\" means \"polite.\" The sentence says Tanaka always uses polite language."
+      },
+      {
+        "number": 4,
+        "prompt": "わたしはやまださんににもつをもって _______ 。",
+        "options": [
+          "あげました",
+          "もらいました",
+          "くれました",
+          "やりました"
+        ],
+        "answer_index": 2,
+        "answer_text": "もらいました",
+        "answered_sentence": "わたしはやまださんににもつをもってもらいました。",
+        "explanation": "\"もらいました\" means \"received a favor.\" The sentence says the speaker had Yamada carry the luggage for them."
+      },
+      {
+        "number": 5,
+        "prompt": "いそがないで、_______ やってください。",
+        "options": [
+          "はっきり",
+          "うっかり",
+          "ゆっくり",
+          "すっかり"
+        ],
+        "answer_index": 3,
+        "answer_text": "ゆっくり",
+        "answered_sentence": "いそがないで、ゆっくりやってください。",
+        "explanation": "\"ゆっくり\" means \"slowly.\" The listener is being told not to hurry and to do it slowly."
+      },
+      {
+        "number": 6,
+        "prompt": "レストランにぼうしを _______ しまいました。",
+        "options": [
+          "おちて",
+          "かぶって",
+          "とって",
+          "わすれて"
+        ],
+        "answer_index": 4,
+        "answer_text": "わすれて",
+        "answered_sentence": "レストランにぼうしをわすれてしまいました。",
+        "explanation": "\"わすれて\" comes from \"to forget.\" The sentence says the speaker has already forgotten what they learned yesterday."
+      },
+      {
+        "number": 7,
+        "prompt": "てんぷらとすしとすきやきの _______ でどれがいちばんたべたいですか。",
+        "options": [
+          "ほど",
+          "あいだ",
+          "うち",
+          "くらい"
+        ],
+        "answer_index": 3,
+        "answer_text": "うち",
+        "answered_sentence": "てんぷらとすしとすきやきのうちでどれがいちばんたべたいですか。",
+        "explanation": "\"うち\" means \"within, inside.\" In \"てんぷらとすしとすきやきのうちでどれがいちばんたべたいですか\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 8,
+        "prompt": "やまだ「ごはんもうすこしいかがですか。」たなか「いいえ、もう _______ 。」",
+        "options": [
+          "じょうぶです",
+          "ざんねんです",
+          "けっこうです",
+          "しつれいです"
+        ],
+        "answer_index": 3,
+        "answer_text": "けっこうです",
+        "answered_sentence": "やまだ「ごはんもうすこしいかがですか。」たなか「いいえ、もうけっこうです。」",
+        "explanation": "\"けっこうです\" can mean \"that is fine\" or \"no thank you,\" depending on the situation. It is used as a polite response, not as a content word in a description."
+      },
+      {
+        "number": 9,
+        "prompt": "やまださんは「ただいま。」といって、うちにもどりました。やまださんのおくさんは「 _______ 。」といってやまださんをむかえました。",
+        "options": [
+          "いらっしゃい",
+          "しつれいします",
+          "ごめんください",
+          "おかえりなさい"
+        ],
+        "answer_index": 4,
+        "answer_text": "おかえりなさい",
+        "answered_sentence": "やまださんは「ただいま。」といって、うちにもどりました。やまださんのおくさんは「 おかえりなさい。」といってやまださんをむかえました。",
+        "explanation": "\"おかえりなさい\" is the natural expression for that dialogue situation. It matches what a speaker would normally say there."
+      },
+      {
+        "number": 10,
+        "prompt": "おゆが _______ から、おちゃをいれましょう。",
+        "options": [
+          "あいた",
+          "わいた",
+          "できた",
+          "やけた"
+        ],
+        "answer_index": 2,
+        "answer_text": "わいた",
+        "answered_sentence": "おゆがわいたから、おちゃをいれましょう。",
+        "explanation": "\"わいた\" means \"boiled.\" The hot water has boiled, so now they can make tea."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 09",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-09/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "おどろく",
+        "options": [
+          "うけつけに大きないぬがいたので、おどろいてしまいました。",
+          "日本のけいざいがおどろいてもののねだんが高くなります。",
+          "空がおどろいて雨がふりました。",
+          "わたしにはおどろいているしゅみがあります。"
+        ],
+        "answer_index": 1,
+        "answer_text": "うけつけに大きないぬがいたので、おどろいてしまいました。",
+        "answered_sentence": "おどろく: うけつけに大きないぬがいたので、おどろいてしまいました。",
+        "explanation": "\"おどろく\" means \"to be surprised, to be astonished.\" Here it is used in the sentence \"うけつけに大きないぬがいたので、おどろいてしまいました。\""
+      },
+      {
+        "number": 2,
+        "prompt": "いただく",
+        "options": [
+          "子どもからネクタイをいただきました。",
+          "父からはとけいをいただきませんでした。",
+          "先生にじしょをいただきました。",
+          "あついうちにスープをいただいてください。"
+        ],
+        "answer_index": 3,
+        "answer_text": "先生にじしょをいただきました。",
+        "answered_sentence": "いただく: 先生にじしょをいただきました。",
+        "explanation": "\"いただく\" means \"-- extra-modest expression for たべる and のむ; humble expression for もらう --.\" Here it is used in the sentence \"先生にじしょをいただきました。\""
+      },
+      {
+        "number": 3,
+        "prompt": "げんき",
+        "options": [
+          "わたしはあしがげんきです。",
+          "この車はとてもげんきにはしります。",
+          "このくすりをのめばげんきになります。",
+          "わたしのかいしゃはとてもげんきです。"
+        ],
+        "answer_index": 3,
+        "answer_text": "このくすりをのめばげんきになります。",
+        "answered_sentence": "げんき: このくすりをのめばげんきになります。",
+        "explanation": "\"げんき\" is the target word in this item. It is used in the sentence \"このくすりをのめばげんきになります。\""
+      },
+      {
+        "number": 4,
+        "prompt": "かまいません",
+        "options": [
+          "A「おいしいこうちゃ、ごちそうさまでした。」B「かまいませんよ。」",
+          "A「ここにすわってもいいですか。」B「かまいませんよ。」",
+          "A「ではまたあした。」B「かまいませんよ。」",
+          "A「よくいらっしゃいました。」B「かまいませんよ。」"
+        ],
+        "answer_index": 2,
+        "answer_text": "A「ここにすわってもいいですか。」B「かまいませんよ。」",
+        "answered_sentence": "かまいません: A「ここにすわってもいいですか。」B「かまいませんよ。」",
+        "explanation": "\"A「ここにすわってもいいですか。」B「かまいませんよ。」\" is the natural expression for that dialogue situation. It matches what a speaker would normally say there."
+      },
+      {
+        "number": 5,
+        "prompt": "だめ",
+        "options": [
+          "あしたはだめです。よていがあります。",
+          "わたしのだめがやっとなおりました。",
+          "きのうは時間をだめにつかってしまった。",
+          "テレビを買おうとしたら、あと２０００円だめだった。"
+        ],
+        "answer_index": 1,
+        "answer_text": "あしたはだめです。よていがあります。",
+        "answered_sentence": "だめ: あしたはだめです。よていがあります。",
+        "explanation": "\"だめ\" means \"useless, no good, hopeless.\" Here it is used in the sentence \"あしたはだめです。よていがあります。\""
+      },
+      {
+        "number": 6,
+        "prompt": "いたす",
+        "options": [
+          "わたしはらいねん日本へいたします。",
+          "ひこうきのよやくはわたしがいたします。",
+          "先生はなつやすみにりょこうをいたしますか。",
+          "もう少しれんしゅうをいたしてください。"
+        ],
+        "answer_index": 2,
+        "answer_text": "ひこうきのよやくはわたしがいたします。",
+        "answered_sentence": "いたす: ひこうきのよやくはわたしがいたします。",
+        "explanation": "\"いたす\" means \"-- extra-modest expression for する --.\" Here it is used in the sentence \"ひこうきのよやくはわたしがいたします。\""
+      },
+      {
+        "number": 7,
+        "prompt": "しめる",
+        "options": [
+          "きょうかしょをしめてください。",
+          "めをしめてください。",
+          "ラジオをしめてください。",
+          "ドアをしめてください。"
+        ],
+        "answer_index": 4,
+        "answer_text": "ドアをしめてください。",
+        "answered_sentence": "しめる: ドアをしめてください。",
+        "explanation": "\"しめる\" is the target word in this item. It is used in the sentence \"ドアをしめてください。\""
+      },
+      {
+        "number": 8,
+        "prompt": "こしょう",
+        "options": [
+          "わたしの車はこしょうしています。",
+          "田中さんはせきが出てこしょうしています。",
+          "きょうあの店はこしょうしています。",
+          "このふとんはこしょうしています。"
+        ],
+        "answer_index": 1,
+        "answer_text": "わたしの車はこしょうしています。",
+        "answered_sentence": "こしょう: わたしの車はこしょうしています。",
+        "explanation": "\"こしょう\" is the target word in this item. It is used in the sentence \"わたしの車はこしょうしています。\""
+      },
+      {
+        "number": 9,
+        "prompt": "ねっしん",
+        "options": [
+          "雨がねっしんにふっていました。",
+          "つかれていたので、ねっしんにねました。",
+          "びょうきがねっしんによくなりました。",
+          "学生はねっしんにかいわのれんしゅうをしました。"
+        ],
+        "answer_index": 4,
+        "answer_text": "学生はねっしんにかいわのれんしゅうをしました。",
+        "answered_sentence": "ねっしん: 学生はねっしんにかいわのれんしゅうをしました。",
+        "explanation": "\"ねっしん\" means \"enthusiasm.\" Here it is used in the sentence \"学生はねっしんにかいわのれんしゅうをしました。\""
+      },
+      {
+        "number": 10,
+        "prompt": "プレゼント",
+        "options": [
+          "あねがけっこんしたので、しんせつをプレゼントした。",
+          "おっとのたんじょうびにとけいをプレゼントした。",
+          "そつぎょうしきの日に先生にあいさつをプレゼントした。",
+          "入院している友達にあんせんをプレゼントした。"
+        ],
+        "answer_index": 2,
+        "answer_text": "おっとのたんじょうびにとけいをプレゼントした。",
+        "answered_sentence": "プレゼント: おっとのたんじょうびにとけいをプレゼントした。",
+        "explanation": "\"プレゼント\" means \"present, gift.\" Here it is used in the sentence \"おっとのたんじょうびにとけいをプレゼントした。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 10",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-10/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "バスがゆっくり _______ を上がってきた。",
+        "options": [
+          "かべ",
+          "いし",
+          "えだ",
+          "さか"
+        ],
+        "answer_index": 4,
+        "answer_text": "さか",
+        "answered_sentence": "バスがゆっくりさかを上がってきた。",
+        "explanation": "\"さか\" means \"slope, hill.\" In \"バスがゆっくりさかを上がってきた\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 2,
+        "prompt": "このとしょかんは7時まで _______ することができます。",
+        "options": [
+          "したく",
+          "りよう",
+          "しょうち",
+          "せいかつ"
+        ],
+        "answer_index": 2,
+        "answer_text": "りよう",
+        "answered_sentence": "このとしょかんは7時までりようすることができます。",
+        "explanation": "\"りよう\" means \"use, utilization.\" In \"このとしょかんは7時までりようすることができます\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 3,
+        "prompt": "つよいかぜで大きな木のえだが _______ しまった。",
+        "options": [
+          "おれて",
+          "こわれて",
+          "たおれて",
+          "やぶれて"
+        ],
+        "answer_index": 1,
+        "answer_text": "おれて",
+        "answered_sentence": "つよいかぜで大きな木のえだがおれてしまった。",
+        "explanation": "\"おれて\" is the target word in this item. It is used in the sentence \"つよいかぜで大きな木のえだがおれてしまった。\""
+      },
+      {
+        "number": 4,
+        "prompt": "ゆうべおそくまでしょうせつを読んでいたから、けさは _______ 。",
+        "options": [
+          "ねむい",
+          "すごい",
+          "さびしい",
+          "うるさい"
+        ],
+        "answer_index": 1,
+        "answer_text": "ねむい",
+        "answered_sentence": "ゆうべおそくまでしょうせつを読んでいたから、けさはねむい。",
+        "explanation": "\"ねむい\" means \"sleepy, drowsy.\" In \"けさはねむい\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 5,
+        "prompt": "あしたテストがあります。_______ 、こんやはテレビを見ないで勉強します。",
+        "options": [
+          "けれども",
+          "しかし",
+          "それから",
+          "だから"
+        ],
+        "answer_index": 4,
+        "answer_text": "だから",
+        "answered_sentence": "あしたテストがあります。だから、こんやはテレビを見ないで勉強します。",
+        "explanation": "\"だから\" means \"so; therefore.\" In \"だから\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 6,
+        "prompt": "５時にあう _______ したのに友だちは 来ませんでした。",
+        "options": [
+          "よしゅう",
+          "よやく",
+          "よほう",
+          "やくそく"
+        ],
+        "answer_index": 4,
+        "answer_text": "やくそく",
+        "answered_sentence": "５時にあうやくそくしたのに友だちは来ませんでした。",
+        "explanation": "\"やくそく\" means \"arrangement, appointment, promise.\" In \"５時にあうやくそくしたのに友だちは来ませんでした\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 7,
+        "prompt": "わるいことをしたら、「ごめんなさい。」と _______ いけませんよ。",
+        "options": [
+          "はなさなければ",
+          "おもわなければ",
+          "あやまらなければ",
+          "うかがわなければ"
+        ],
+        "answer_index": 3,
+        "answer_text": "あやまらなければ",
+        "answered_sentence": "わるいことをしたら、「ごめんなさい。」とあやまらなければいけませんよ。",
+        "explanation": "\"あやまらなければ\" is the natural expression for that dialogue situation. It matches what a speaker would normally say there."
+      },
+      {
+        "number": 8,
+        "prompt": "だれがいちばん先にできるが、みんなで _______ しませんか。",
+        "options": [
+          "きゅうこう",
+          "しょうたい",
+          "しゅうかん",
+          "きょうそう"
+        ],
+        "answer_index": 4,
+        "answer_text": "きょうそう",
+        "answered_sentence": "だれがいちばん先にできるが、みんなで きょうそうしませんか。",
+        "explanation": "\"きょうそう\" means \"competition, contest.\" In \"みんなできょうそうしませんか\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 9,
+        "prompt": "じこであたまを _______ ので、びょういんにはこばれた。",
+        "options": [
+          "つつんだ",
+          "うった",
+          "おこした",
+          "やめた"
+        ],
+        "answer_index": 2,
+        "answer_text": "うった",
+        "answered_sentence": "じこであたまをうったので、びょういんにはこばれた。",
+        "explanation": "\"うった\" is the target word in this item. It is used in the sentence \"じこであたまをうったので、びょういんにはこばれた。\""
+      },
+      {
+        "number": 10,
+        "prompt": "パーディーの _______ はこのビルの５かいです。",
+        "options": [
+          "かいがん",
+          "こうどう",
+          "かいじょう",
+          "こうじょう"
+        ],
+        "answer_index": 3,
+        "answer_text": "かいじょう",
+        "answered_sentence": "パーディーのかいじょうはこのビルの５かいです。",
+        "explanation": "\"かいじょう\" means \"venue, meeting place.\" In \"パーディーのかいじょうはこのビルの５かいです\", that is the word that fits the situation being described."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 11",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-11/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "大きいこえで はなして いたら、「_______ 。」とちゅういされてしまいました。",
+        "options": [
+          "うるさい",
+          "あぶない",
+          "がんばって",
+          "しっかり"
+        ],
+        "answer_index": 1,
+        "answer_text": "うるさい",
+        "answered_sentence": "大きいこえではなしていたら、「うるさい 。」とちゅういされてしまいました。",
+        "explanation": "\"うるさい\" is the natural expression for that dialogue situation. It matches what a speaker would normally say there."
+      },
+      {
+        "number": 2,
+        "prompt": "かんたんなしごとなので、一日で _______ です。",
+        "options": [
+          "いっぱい",
+          "すっかり",
+          "てきとう",
+          "じゅうぶん"
+        ],
+        "answer_index": 4,
+        "answer_text": "じゅうぶん",
+        "answered_sentence": "かんたんなしごとなので、一日でじゅうぶんです。",
+        "explanation": "\"じゅうぶん\" means \"enough.\" In \"一日でじゅうぶんです\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 3,
+        "prompt": "ゆうびんきょくに _______ かえります。",
+        "options": [
+          "やんで",
+          "よんで",
+          "よって",
+          "やって"
+        ],
+        "answer_index": 3,
+        "answer_text": "よって",
+        "answered_sentence": "ゆうびんきょくによってかえります。",
+        "explanation": "\"よって\" is the target word in this item. It is used in the sentence \"ゆうびんきょくによってかえります。\""
+      },
+      {
+        "number": 4,
+        "prompt": "かれはきょうは来ないと言っていましたが、_______ 来ませんでしたね。",
+        "options": [
+          "すっかり",
+          "やっばり",
+          "はっきり",
+          "ぶっくり"
+        ],
+        "answer_index": 2,
+        "answer_text": "やっばり",
+        "answered_sentence": "かれはきょうは来ないと言っていましたが、やっばり来ませんでしたね。",
+        "explanation": "\"やっばり\" is the target word in this item. It is used in the sentence \"かれはきょうは来ないと言っていましたが、やっばり来ませんでしたね。\""
+      },
+      {
+        "number": 5,
+        "prompt": "_______ 、へんだなあ。コンビューターがうごかない。",
+        "options": [
+          "あの",
+          "おや",
+          "そう",
+          "はい"
+        ],
+        "answer_index": 2,
+        "answer_text": "おや",
+        "answered_sentence": "おや、へんだなあ。コンビューターがうごかない。",
+        "explanation": "\"おや\" means \"a parent.\" In \"おや\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 6,
+        "prompt": "しごとをきめるとき、父と母に _______ 。",
+        "options": [
+          "いけんしました",
+          "おこないました",
+          "くらべました",
+          "そうだんしました"
+        ],
+        "answer_index": 4,
+        "answer_text": "そうだんしました",
+        "answered_sentence": "しごとをきめるとき、父と母にそうだんしました。",
+        "explanation": "\"そうだんしました\" is the target word in this item. It is used in the sentence \"しごとをきめるとき、父と母にそうだんしました。\""
+      },
+      {
+        "number": 7,
+        "prompt": "先生、きのうのしゅくだいです。いま、_______ いいですか。",
+        "options": [
+          "あげても",
+          "くれても",
+          "だしても",
+          "とっても"
+        ],
+        "answer_index": 3,
+        "answer_text": "だしても",
+        "answered_sentence": "先生、きのうのしゅくだいです。いま、だしてもいいですか。",
+        "explanation": "\"だしても\" is the target word in this item. It is used in the sentence \"先生、きのうのしゅくだいです。いま、だしてもいいですか。\""
+      },
+      {
+        "number": 8,
+        "prompt": "友だちが来るので、テーブルに 花を _______ 。",
+        "options": [
+          "かたづけました",
+          "おくりました",
+          "かけました",
+          "かざりました"
+        ],
+        "answer_index": 4,
+        "answer_text": "かざりました",
+        "answered_sentence": "友だちが来るので、テーブルに花をかざりました。",
+        "explanation": "\"かざりました\" is the target word in this item. It is used in the sentence \"友だちが来るので、テーブルに花をかざりました。\""
+      },
+      {
+        "number": 9,
+        "prompt": "たのしかった休みがあしたで _______ おわります。",
+        "options": [
+          "だんだん",
+          "とうとう",
+          "どんどん",
+          "いろいろ"
+        ],
+        "answer_index": 2,
+        "answer_text": "とうとう",
+        "answered_sentence": "たのしかった休みがあしたでとうとうおわります。",
+        "explanation": "\"とうとう\" means \"finally, at last.\" In \"たのしかった休みがあしたでとうとうおわります\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 10,
+        "prompt": "このむらではおもにこめを _______ しています。",
+        "options": [
+          "せいさん",
+          "けんぶつ",
+          "たいいん",
+          "はつおん"
+        ],
+        "answer_index": 1,
+        "answer_text": "せいさん",
+        "answered_sentence": "このむらではおもにこめをせいさんしています。",
+        "explanation": "\"せいさん\" is the target word in this item. It is used in the sentence \"このむらではおもにこめをせいさんしています。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 13",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-13/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "へんじ",
+        "options": [
+          "テレビのへんじがきこえません。",
+          "へんじをだれにかりますか。",
+          "へんじをすぐにおこなってしまいました。",
+          "名前をよびましたがへんじがありませんでした。"
+        ],
+        "answer_index": 4,
+        "answer_text": "名前をよびましたがへんじがありませんでした。",
+        "answered_sentence": "へんじ => 名前をよびましたがへんじがありませんでした。",
+        "explanation": "\"名前をよびましたがへんじがありませんでした。\" is the target word in this item. It is used in the sentence \"へんじ => 名前をよびましたがへんじがありませんでした。\""
+      },
+      {
+        "number": 2,
+        "prompt": "そだてる",
+        "options": [
+          "たいせつにそだてていた花がさきました。",
+          "このりょうりはおいしくなるまで、よくそだてました。",
+          "なんどもなおしてさくぶんをそだてました。",
+          "じが小さくて見えないので、もうすこしそだててください。"
+        ],
+        "answer_index": 1,
+        "answer_text": "たいせつにそだてていた花がさきました。",
+        "answered_sentence": "そだてる => たいせつにそだてていた花がさきました。",
+        "explanation": "\"たいせつにそだてていた花がさきました。\" is the target word in this item. It is used in the sentence \"そだてる => たいせつにそだてていた花がさきました。\""
+      },
+      {
+        "number": 3,
+        "prompt": "すてる",
+        "options": [
+          "おきゃくさんが来るので、へやをきれいにすててください。",
+          "ここにいらないものをすててください。",
+          "じゅぎょうでつかう本をかばんにすててください。",
+          "ひどいことを言うのはすててください。"
+        ],
+        "answer_index": 2,
+        "answer_text": "ここにいらないものをすててください。",
+        "answered_sentence": "すてる => ここにいらないものをすててください。",
+        "explanation": "\"ここにいらないものをすててください。\" is the target word in this item. It is used in the sentence \"すてる => ここにいらないものをすててください。\""
+      },
+      {
+        "number": 4,
+        "prompt": "さむい",
+        "options": [
+          "さむいタオルでかおをふきました。",
+          "なつはさむいビールがおいしいですね。",
+          "あの人はさむいです。やさしくありません。",
+          "きょうはとくにさむいですね。"
+        ],
+        "answer_index": 4,
+        "answer_text": "きょうはとくにさむいですね。",
+        "answered_sentence": "さむい => きょうはとくにさむいですね。",
+        "explanation": "\"きょうはとくにさむいですね。\" is the target word in this item. It is used in the sentence \"さむい => きょうはとくにさむいですね。\""
+      },
+      {
+        "number": 5,
+        "prompt": "さびしい",
+        "options": [
+          "ねぼうしてしまってさびしかったです。",
+          "きょうはさびしいからセーターをきます。",
+          "ひとりですんでいるので、ときどきさびしくなります。",
+          "このへやはそうじをしていないので、さびしいです。"
+        ],
+        "answer_index": 3,
+        "answer_text": "ひとりですんでいるので、ときどきさびしくなります。",
+        "answered_sentence": "さびしい => ひとりですんでいるので、ときどきさびしくなります。",
+        "explanation": "\"ひとりですんでいるので、ときどきさびしくなります。\" is the target word in this item. It is used in the sentence \"さびしい => ひとりですんでいるので、ときどきさびしくなります。\""
+      },
+      {
+        "number": 6,
+        "prompt": "かたづける",
+        "options": [
+          "毎日かおをかたづけなさい。",
+          "毎日へやをかたづけなさい。",
+          "毎日カーテンをかたづけなさい。",
+          "毎日きょうみをかたづけなさい。"
+        ],
+        "answer_index": 2,
+        "answer_text": "毎日へやをかたづけなさい。",
+        "answered_sentence": "かたづける => 毎日へやをかたづけなさい。",
+        "explanation": "\"毎日へやをかたづけなさい。\" is the target word in this item. It is used in the sentence \"かたづける => 毎日へやをかたづけなさい。\""
+      },
+      {
+        "number": 7,
+        "prompt": "すると",
+        "options": [
+          "きのうは天気がよくなかったです。すると、わたしはテニスをしませんでした。",
+          "なんかいも聞きました。すると、わかりませんでした。",
+          "ボタンをおしました。すると、ドアがあきました。",
+          "あしたしけんをします。すると、よくべんきょうしてください。"
+        ],
+        "answer_index": 3,
+        "answer_text": "ボタンをおしました。すると、ドアがあきました。",
+        "answered_sentence": "すると => ボタンをおしました。すると、ドアがあきました。",
+        "explanation": "\"ボタンをおしました。すると、ドアがあきました。\" is the target word in this item. It is used in the sentence \"すると => ボタンをおしました。すると、ドアがあきました。\""
+      },
+      {
+        "number": 8,
+        "prompt": "たいてい",
+        "options": [
+          "日よう日はたいていスポ－ツをしています。",
+          "きょうはたいてい天気がよかったです。",
+          "このごろさとうさんにはたいていあっていません。",
+          "日本語がたいてい上手になりましたね。"
+        ],
+        "answer_index": 1,
+        "answer_text": "日よう日はたいていスポ－ツをしています。",
+        "answered_sentence": "たいてい => 日よう日はたいていスポ－ツをしています。",
+        "explanation": "\"日よう日はたいていスポ－ツをしています。\" is the target word in this item. It is used in the sentence \"たいてい => 日よう日はたいていスポ－ツをしています。\""
+      },
+      {
+        "number": 9,
+        "prompt": "したく",
+        "options": [
+          "このホテルにはよやくのしたくがあります。",
+          "かんじのしゅくだいはぜんぶしたくしました。",
+          "しょくじのしたくはもうできました。",
+          "けいざいをよくするためのしたくをかんがえましょう。"
+        ],
+        "answer_index": 3,
+        "answer_text": "しょくじのしたくはもうできました。",
+        "answered_sentence": "したく => しょくじのしたくはもうできました。",
+        "explanation": "\"しょくじのしたくはもうできました。\" is the target word in this item. It is used in the sentence \"したく => しょくじのしたくはもうできました。\""
+      },
+      {
+        "number": 10,
+        "prompt": "わかす",
+        "options": [
+          "あついシャワーをわかしています。",
+          "このにくはよくわかしてからたべてください。",
+          "おゆをわかしてコーヒーをのみましょう。",
+          "へやがひえてきたので、ストーブをわかしてください。"
+        ],
+        "answer_index": 3,
+        "answer_text": "おゆをわかしてコーヒーをのみましょう。",
+        "answered_sentence": "わかす => おゆをわかしてコーヒーをのみましょう。",
+        "explanation": "\"おゆをわかしてコーヒーをのみましょう。\" is the target word in this item. It is used in the sentence \"わかす => おゆをわかしてコーヒーをのみましょう。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 14",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-14/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "一ヶ月50000円 _______ のへやをかりたいです。",
+        "options": [
+          "いか",
+          "いがい",
+          "いせん",
+          "いっばい"
+        ],
+        "answer_index": 1,
+        "answer_text": "いか",
+        "answered_sentence": "一ヶ月50000円いかのへやをかりたいです。",
+        "explanation": "\"いか\" means \"less than, below.\" In \"一ヶ月50000円いかのへやをかりたいです\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 2,
+        "prompt": "このみちはせまい。_______ 、車がおおくてあぶない。",
+        "options": [
+          "だから",
+          "すると",
+          "それに",
+          "じゃあ"
+        ],
+        "answer_index": 3,
+        "answer_text": "それに",
+        "answered_sentence": "このみちはせまい。それに、車がおおくてあぶない。",
+        "explanation": "\"それに\" means \"moreover; besides.\" In \"それに\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 3,
+        "prompt": "_______ たくさん食べても、すぐにおなかがすいてしまいます。",
+        "options": [
+          "いくら",
+          "いかが",
+          "どうして",
+          "どんな"
+        ],
+        "answer_index": 1,
+        "answer_text": "いくら",
+        "answered_sentence": "いくらたくさん食べても、すぐにおなかがすいてしまいます。",
+        "explanation": "\"いくら\" is the target word in this item. It is used in the sentence \"いくらたくさん食べても、すぐにおなかがすいてしまいます。\""
+      },
+      {
+        "number": 4,
+        "prompt": "この川はとても _______ からきけんです。",
+        "options": [
+          "あさい",
+          "ふかい",
+          "ひくい",
+          "たかい"
+        ],
+        "answer_index": 2,
+        "answer_text": "ふかい",
+        "answered_sentence": "この川はとてもふかいからきけんです。",
+        "explanation": "\"ふかい\" means \"deep, profound.\" In \"この川はとてもふかいからきけんです\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 5,
+        "prompt": "母にしなれてほんとうに _______ です。",
+        "options": [
+          "うるさかった",
+          "かなしかった",
+          "きびしかった",
+          "つまらなかった"
+        ],
+        "answer_index": 2,
+        "answer_text": "かなしかった",
+        "answered_sentence": "母にしなれてほんとうにかなしかったです。",
+        "explanation": "\"かなしかった\" is the target word in this item. It is used in the sentence \"母にしなれてほんとうにかなしかったです。\""
+      },
+      {
+        "number": 6,
+        "prompt": "むすめはそとであそぶより、ひとりで _______ をするのがすきです。",
+        "options": [
+          "プ－ル",
+          "ゲ－ム",
+          "ス－ツ",
+          "ル－ル"
+        ],
+        "answer_index": 2,
+        "answer_text": "ゲ－ム",
+        "answered_sentence": "むすめはそとであそぶより、ひとりでゲ－ムをするのがすきです。",
+        "explanation": "\"ゲ－ム\" is the target word in this item. It is used in the sentence \"むすめはそとであそぶより、ひとりでゲ－ムをするのがすきです。\""
+      },
+      {
+        "number": 7,
+        "prompt": "あにとせの高さを _______ 。",
+        "options": [
+          "まけました",
+          "わかれました",
+          "くらべました",
+          "つかまえました"
+        ],
+        "answer_index": 3,
+        "answer_text": "くらべました",
+        "answered_sentence": "あにとせの高さをくらべました。",
+        "explanation": "\"くらべました\" is the target word in this item. It is used in the sentence \"あにとせの高さをくらべました。\""
+      },
+      {
+        "number": 8,
+        "prompt": "友だちににっきを見られてとても _______ 。",
+        "options": [
+          "にがかった",
+          "ねむかった",
+          "はずかしかった",
+          "よろしかった"
+        ],
+        "answer_index": 3,
+        "answer_text": "はずかしかった",
+        "answered_sentence": "友だちににっきを見られてとてもはずかしかった。",
+        "explanation": "\"はずかしかった\" means \"was embarrassed.\" The speaker could not answer an easy question, so they felt embarrassed."
+      },
+      {
+        "number": 9,
+        "prompt": "わたしはやまもとさんにりょこうの _______ をもらいました。",
+        "options": [
+          "おみやげ",
+          "おみまい",
+          "おまつり",
+          "おいわい"
+        ],
+        "answer_index": 1,
+        "answer_text": "おみやげ",
+        "answered_sentence": "わたしはやまもとさんにりょこうのおみやげをもらいました。",
+        "explanation": "\"おみやげ\" means \"souvenir\" or \"gift from a trip.\" The sentence says the father always buys one when he goes to Tokyo."
+      },
+      {
+        "number": 10,
+        "prompt": "このとおりは、よるくらくて _______ 。",
+        "options": [
+          "いたい",
+          "こわい",
+          "よわい",
+          "かなしい"
+        ],
+        "answer_index": 2,
+        "answer_text": "こわい",
+        "answered_sentence": "このとおりは、よるくらくてこわい。",
+        "explanation": "\"こわい\" means \"scary, frightening.\" In \"よるくらくてこわい\", that is the word that fits the situation being described."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 15",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-15/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "こんやおもしろいテレビの _______ はありますか。",
+        "options": [
+          "よやく",
+          "ばんぐみ",
+          "タイプ",
+          "スクリーン"
+        ],
+        "answer_index": 2,
+        "answer_text": "ばんぐみ",
+        "answered_sentence": "こんやおもしろいテレビのばんぐみはありますか。",
+        "explanation": "\"ばんぐみ\" means \"broadcast program.\" In \"こんやおもしろいテレビのばんぐみはありますか\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 2,
+        "prompt": "おなかがすきましたね。_______ しょくじに行きませんか。",
+        "options": [
+          "だんだん",
+          "そろそろ",
+          "なかなか",
+          "どうどう"
+        ],
+        "answer_index": 2,
+        "answer_text": "そろそろ",
+        "answered_sentence": "おなかがすきましたね。そろそろしょくじに行きませんか。",
+        "explanation": "\"そろそろ\" means \"soon\" or \"it's about time.\" It fits when the sentence is talking about a time that is getting close."
+      },
+      {
+        "number": 3,
+        "prompt": "よく聞こえないので、_______ 大きいこえで話してください。",
+        "options": [
+          "なるべく",
+          "なかなか",
+          "ずいぶん",
+          "そんなに"
+        ],
+        "answer_index": 1,
+        "answer_text": "なるべく",
+        "answered_sentence": "よく聞こえないので、なるべく大きいこえで話してください。",
+        "explanation": "\"なるべく\" means \"as much as possible.\" It is used when the speaker wants to do something to the greatest extent they can."
+      },
+      {
+        "number": 4,
+        "prompt": "山に木を _______ 。",
+        "options": [
+          "つけました",
+          "とめました",
+          "さげました",
+          "うえました"
+        ],
+        "answer_index": 4,
+        "answer_text": "うえました",
+        "answered_sentence": "山に木をうえました。",
+        "explanation": "\"うえました\" is the target word in this item. It is used in the sentence \"山に木をうえました。\""
+      },
+      {
+        "number": 5,
+        "prompt": "わたしは _______ パンがすきです。",
+        "options": [
+          "おそい",
+          "ふかい",
+          "やさしい",
+          "やわらかい"
+        ],
+        "answer_index": 4,
+        "answer_text": "やわらかい",
+        "answered_sentence": "わたしはやわらかいパンがすきです。",
+        "explanation": "\"やわらかい\" means \"soft (in reference to texture), tender.\" In \"わたしはやわらかいパンがすきです\", that is the word that fits the situation being described."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 16",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-16/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "かいだんがぬれています。_______ ので、ちゅういしてください。",
+        "options": [
+          "おちやすい",
+          "うごきやすい",
+          "すべりやすい",
+          "たおれやすい"
+        ],
+        "answer_index": 3,
+        "answer_text": "すべりやすい",
+        "answered_sentence": "かいだんがぬれています。すべりやすいので、ちゅういしてください。",
+        "explanation": "\"すべりやすい\" is the target word in this item. It is used in the sentence \"かいだんがぬれています。すべりやすいので、ちゅういしてください。\""
+      },
+      {
+        "number": 2,
+        "prompt": "やさいは _______ きってください。",
+        "options": [
+          "こまかく",
+          "ぬるく",
+          "せまく",
+          "きびしく"
+        ],
+        "answer_index": 1,
+        "answer_text": "こまかく",
+        "answered_sentence": "やさいはこまかくきってください。",
+        "explanation": "\"こまかく\" is the target word in this item. It is used in the sentence \"やさいはこまかくきってください。\""
+      },
+      {
+        "number": 3,
+        "prompt": "日本のぶんかについて _______ を書きました。",
+        "options": [
+          "ワ－プロ",
+          "チェック",
+          "パソコン",
+          "レポ－ト"
+        ],
+        "answer_index": 4,
+        "answer_text": "レポ－ト",
+        "answered_sentence": "日本のぶんかについてレポ－トを書きました。",
+        "explanation": "\"レポ－ト\" is the target word in this item. It is used in the sentence \"日本のぶんかについてレポ－トを書きました。\""
+      },
+      {
+        "number": 4,
+        "prompt": "ほんやの _______ で3000円はらった。",
+        "options": [
+          "スクリーン",
+          "ワープロ",
+          "レポート",
+          "レジ"
+        ],
+        "answer_index": 4,
+        "answer_text": "レジ",
+        "answered_sentence": "ほんやのレジで3000円はらった。",
+        "explanation": "\"レジ\" means \"register.\" In \"ほんやのレジで3000円はらった\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 5,
+        "prompt": "_______ ですが、あしたのパーティーには出られません。",
+        "options": [
+          "むり",
+          "いや",
+          "ざんねん",
+          "ずいぶん"
+        ],
+        "answer_index": 3,
+        "answer_text": "ざんねん",
+        "answered_sentence": "ざんねんですが、あしたのパーティーには出られません。",
+        "explanation": "\"ざんねん\" means \"regret; regrettable.\" In \"ざんねんですが\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 6,
+        "prompt": "おおい",
+        "options": [
+          "日本にはおおい外国人がすんでいます。",
+          "ここは車がおおくてあぶないです。",
+          "きょうはおおくつかれました。",
+          "わたしにはおおいのこどもがいてたいへんです。"
+        ],
+        "answer_index": 2,
+        "answer_text": "ここは車がおおくてあぶないです。",
+        "answered_sentence": "おおい => ここは車がおおくてあぶないです。",
+        "explanation": "\"ここは車がおおくてあぶないです。\" is the target word in this item. It is used in the sentence \"おおい => ここは車がおおくてあぶないです。\""
+      },
+      {
+        "number": 7,
+        "prompt": "いけん",
+        "options": [
+          "つかいかたがよくわかるように、いけんをしてください。",
+          "あの人から「ありがとう。」といけんを言われました。",
+          "このことばのいけんをしらべました。",
+          "みんなの前でわたしのいけんを言いました。"
+        ],
+        "answer_index": 4,
+        "answer_text": "みんなの前でわたしのいけんを言いました。",
+        "answered_sentence": "いけん => みんなの前でわたしのいけんを言いました。",
+        "explanation": "\"みんなの前でわたしのいけんを言いました。\" is the target word in this item. It is used in the sentence \"いけん => みんなの前でわたしのいけんを言いました。\""
+      },
+      {
+        "number": 8,
+        "prompt": "よやく",
+        "options": [
+          "月へ行くことはわたしのよやくのゆめです。",
+          "みんなでごはんを食べるので、レストランをよやくしました。",
+          "毎日1時間べんきょうすると母によやくしました。",
+          "月よう日はかいものに行くよやくです。"
+        ],
+        "answer_index": 2,
+        "answer_text": "みんなでごはんを食べるので、レストランをよやくしました。",
+        "answered_sentence": "よやく => みんなでごはんを食べるので、レストランをよやくしました。",
+        "explanation": "\"みんなでごはんを食べるので、レストランをよやくしました。\" is the target word in this item. It is used in the sentence \"よやく => みんなでごはんを食べるので、レストランをよやくしました。\""
+      },
+      {
+        "number": 9,
+        "prompt": "むかえる",
+        "options": [
+          "ひるがよるをむかえました。",
+          "えきからタクシーを むかえました。",
+          "友だちをむかえにくうこうへいきました。",
+          "パソコンをむかえてメールを書いています。"
+        ],
+        "answer_index": 3,
+        "answer_text": "友だちをむかえにくうこうへいきました。",
+        "answered_sentence": "むかえる => 友だちをむかえにくうこうへいきました。",
+        "explanation": "\"友だちをむかえにくうこうへいきました。\" is the target word in this item. It is used in the sentence \"むかえる => 友だちをむかえにくうこうへいきました。\""
+      },
+      {
+        "number": 10,
+        "prompt": "そうだん",
+        "options": [
+          "べんきょうのしかたを先生にそうだんしました。",
+          "かんじがわからないので、じしょにそうだんしました。",
+          "つぎの電車が何時かえきいんにそうだんしました。",
+          "すきなえいがについて友だちにそうだんしました。"
+        ],
+        "answer_index": 1,
+        "answer_text": "べんきょうのしかたを先生にそうだんしました。",
+        "answered_sentence": "そうだん => べんきょうのしかたを先生にそうだんしました。",
+        "explanation": "\"べんきょうのしかたを先生にそうだんしました。\" is the target word in this item. It is used in the sentence \"そうだん => べんきょうのしかたを先生にそうだんしました。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 17",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-17/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "へやの _______ をつけて、あたたかくします。",
+        "options": [
+          "だんぼう",
+          "でんとう",
+          "どうぐ",
+          "れいぼう"
+        ],
+        "answer_index": 1,
+        "answer_text": "だんぼう",
+        "answered_sentence": "へやのだんぼうをつけて、あたたかくします。",
+        "explanation": "\"だんぼう\" means \"heating.\" In \"へやのだんぼうをつけて\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 2,
+        "prompt": "先生「みなさん、きょうは _______ 話があります。」",
+        "options": [
+          "ひつような",
+          "しんせつな",
+          "だいじな",
+          "ねっしんな"
+        ],
+        "answer_index": 3,
+        "answer_text": "だいじな",
+        "answered_sentence": "先生「みなさん、きょうはだいじな話があります。」",
+        "explanation": "\"だいじな\" is the natural expression for that dialogue situation. It matches what a speaker would normally say there."
+      },
+      {
+        "number": 3,
+        "prompt": "このにくはかたいので、よく _______ 食べてください。",
+        "options": [
+          "かんで",
+          "こんで",
+          "のんで",
+          "やんで"
+        ],
+        "answer_index": 1,
+        "answer_text": "かんで",
+        "answered_sentence": "このにくはかたいので、よくかんで食べてください。",
+        "explanation": "\"かんで\" is the target word in this item. It is used in the sentence \"このにくはかたいので、よくかんで食べてください。\""
+      },
+      {
+        "number": 4,
+        "prompt": "とうきょうの _______ にちいさないえをかいました。",
+        "options": [
+          "こうがい",
+          "こうこう",
+          "こうどう",
+          "こくさい"
+        ],
+        "answer_index": 1,
+        "answer_text": "こうがい",
+        "answered_sentence": "とうきょうのこうがいにちいさないえをかいました。",
+        "explanation": "\"こうがい\" means \"suburb, outskirts.\" In \"とうきょうのこうがいにちいさないえをかいました\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 5,
+        "prompt": "やすむ人はでんわでわたしに _______ してください。",
+        "options": [
+          "あんない",
+          "れんらく",
+          "しょうかい",
+          "よしゅう"
+        ],
+        "answer_index": 2,
+        "answer_text": "れんらく",
+        "answered_sentence": "やすむ人はでんわでわたしにれんらくしてください。",
+        "explanation": "\"れんらく\" means \"communication, contact, connection.\" In \"やすむ人はでんわでわたしにれんらくしてください\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 6,
+        "prompt": "たなか「あしたのパーティーですが、ちょっと行けなくなってしましました。」",
+        "options": [
+          "さとう「そうですか、それは _______ ですね。」",
+          "さかん",
+          "ふべん",
+          "ざんねん"
+        ],
+        "answer_index": 3,
+        "answer_text": "ふべん",
+        "answered_sentence": "たなか「あしたのパーティーですが、ちょっと行けなくなってしましました。」さとう「そうですか、それはざんねんですね。」",
+        "explanation": "\"ふべん\" means \"inconvenience.\" In \"たなか「あしたのパーティーですが、ちょっと行けなくなってしましました。」さとう「そうですか、それ\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 7,
+        "prompt": "毎日 _______ ふくしゅうしてください。",
+        "options": [
+          "けっして",
+          "かならず",
+          "ぜんぜん",
+          "たいてい"
+        ],
+        "answer_index": 2,
+        "answer_text": "かならず",
+        "answered_sentence": "毎日かならずふくしゅうしてください。",
+        "explanation": "\"かならず\" means \"surely, certainly.\" In \"毎日かならずふくしゅうしてください\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 8,
+        "prompt": "このくすりはとても _______ のみにくいです。",
+        "options": [
+          "うまくて",
+          "こわくて",
+          "にがくて",
+          "よわくて"
+        ],
+        "answer_index": 3,
+        "answer_text": "にがくて",
+        "answered_sentence": "このくすりはとてもにがくてのみにくいです。",
+        "explanation": "\"にがくて\" is the target word in this item. It is used in the sentence \"このくすりはとてもにがくてのみにくいです。\""
+      },
+      {
+        "number": 9,
+        "prompt": "かいぎの時間は、はがき _______ 電話でおしらせします。",
+        "options": [
+          "けれど",
+          "すると",
+          "それで",
+          "または"
+        ],
+        "answer_index": 4,
+        "answer_text": "または",
+        "answered_sentence": "かいぎの時間は、はがきまたは電話でおしらせします。",
+        "explanation": "\"または\" means \"or, otherwise.\" In \"はがきまたは電話でおしらせします\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 10,
+        "prompt": "こちらにいらっしゃる _______ があったら、ぜひおよりください。",
+        "options": [
+          "きかい",
+          "きそく",
+          "きぶん",
+          "きんじょ"
+        ],
+        "answer_index": 1,
+        "answer_text": "きかい",
+        "answered_sentence": "こちらにいらっしゃるきかいがあったら、ぜひおよりください。",
+        "explanation": "\"きかい\" means \"chance, opportunity.\" In \"こちらにいらっしゃるきかいがあったら\", that is the word that fits the situation being described."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 19",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-19/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "せんたく",
+        "options": [
+          "しょくじのあとに、はをせんたくします。",
+          "日よう日に シャツとズボンをせんたくします。",
+          "毎日へやをせんたくします。",
+          "こんばんはかみをせんたくします。"
+        ],
+        "answer_index": 2,
+        "answer_text": "日よう日に シャツとズボンをせんたくします。",
+        "answered_sentence": "せんたく => 日よう日にシャツとズボンをせんたくします。",
+        "explanation": "\"日よう日に シャツとズボンをせんたくします。\" is the target word in this item. It is used in the sentence \"せんたく => 日よう日にシャツとズボンをせんたくします。\""
+      },
+      {
+        "number": 2,
+        "prompt": "どんどん",
+        "options": [
+          "えいがを見てどんどんわらいました。",
+          "休みの日はどんどんねています。",
+          "あかちゃんはどんどん大きくなります。",
+          "オートバイがどんどんはやいです。"
+        ],
+        "answer_index": 3,
+        "answer_text": "あかちゃんはどんどん大きくなります。",
+        "answered_sentence": "どんどん => あかちゃんはどんどん大きくなります。",
+        "explanation": "\"あかちゃんはどんどん大きくなります。\" is the target word in this item. It is used in the sentence \"どんどん => あかちゃんはどんどん大きくなります。\""
+      },
+      {
+        "number": 3,
+        "prompt": "とうとう",
+        "options": [
+          "しょくじのあとでとうとうおちゃをおねがいします。",
+          "新聞のじはとうとうこまかいです。",
+          "とうとうしけんの日が来ました。",
+          "わからなかったら、とうとうじしょを見てください。"
+        ],
+        "answer_index": 3,
+        "answer_text": "とうとうしけんの日が来ました。",
+        "answered_sentence": "とうとう => とうとうしけんの日が来ました。",
+        "explanation": "\"とうとうしけんの日が来ました。\" is the target word in this item. It is used in the sentence \"とうとう => とうとうしけんの日が来ました。\""
+      },
+      {
+        "number": 4,
+        "prompt": "きびしい",
+        "options": [
+          "このパンはきびしくて食べられません。",
+          "わたしはきびしいペンをつかっています。",
+          "このおちゃはきびしくておいしいです。",
+          "社長はきびしい人です。"
+        ],
+        "answer_index": 4,
+        "answer_text": "社長はきびしい人です。",
+        "answered_sentence": "きびしい => 社長はきびしい人です。",
+        "explanation": "\"社長はきびしい人です。\" is the target word in this item. It is used in the sentence \"きびしい => 社長はきびしい人です。\""
+      },
+      {
+        "number": 5,
+        "prompt": "おれい",
+        "options": [
+          "先生がにゅういんなさったので、おれいをもっていきました。",
+          "プレゼントをもらったので、おれいを言いました。",
+          "友だちが来たのでばんごはんにおれいをつくりました。",
+          "すずきさんにそつぎょうのおれいをあげました。"
+        ],
+        "answer_index": 2,
+        "answer_text": "プレゼントをもらったので、おれいを言いました。",
+        "answered_sentence": "おれい => プレゼントをもらったので、おれいを言いました。",
+        "explanation": "\"プレゼントをもらったので、おれいを言いました。\" is the target word in this item. It is used in the sentence \"おれい => プレゼントをもらったので、おれいを言いました。\""
+      },
+      {
+        "number": 6,
+        "prompt": "よろこぶ",
+        "options": [
+          "先生におあいできるので、わたしはとてもよろこびます。",
+          "プレゼントをもらって、いもうとはとてもよろこんでいます。",
+          "このハイキングはほんとうによろこんでいますね。",
+          "友だちのいえでよろこぶ時間をすごしました。"
+        ],
+        "answer_index": 2,
+        "answer_text": "プレゼントをもらって、いもうとはとてもよろこんでいます。",
+        "answered_sentence": "よろこぶ => プレゼントをもらって、いもうとはとてもよろこんでいます。",
+        "explanation": "\"プレゼントをもらって、いもうとはとてもよろこんでいます。\" is the target word in this item. It is used in the sentence \"よろこぶ => プレゼントをもらって、いもうとはとてもよろこんでいます。\""
+      },
+      {
+        "number": 7,
+        "prompt": "しっかり",
+        "options": [
+          "このテレビはしっかりふるい。",
+          "あの子は小さいけれどもしっかりしている。",
+          "テストのためにしっかりにじゅんびした。",
+          "あのひとは時間にしっかりとしている。"
+        ],
+        "answer_index": 2,
+        "answer_text": "あの子は小さいけれどもしっかりしている。",
+        "answered_sentence": "しっかり => あの子は小さいけれどもしっかりしている。",
+        "explanation": "\"あの子は小さいけれどもしっかりしている。\" is the target word in this item. It is used in the sentence \"しっかり => あの子は小さいけれどもしっかりしている。\""
+      },
+      {
+        "number": 8,
+        "prompt": "あやまる",
+        "options": [
+          "こまったときにはすぐにあやまってください。",
+          "友だちにおくりものをもらったので、あやまりました。",
+          "てつだってもらったときにはかならずあやまってください。",
+          "しらない人の足をふんでしまったので、あやまりました。"
+        ],
+        "answer_index": 4,
+        "answer_text": "しらない人の足をふんでしまったので、あやまりました。",
+        "answered_sentence": "あやまる => しらない人の足をふんでしまったので、あやまりました。",
+        "explanation": "\"しらない人の足をふんでしまったので、あやまりました。\" is the target word in this item. It is used in the sentence \"あやまる => しらない人の足をふんでしまったので、あやまりました。\""
+      },
+      {
+        "number": 9,
+        "prompt": "げんいん",
+        "options": [
+          "12さいいじょうの子どもがこのクラスのげんいんになれます。",
+          "あたらしいかいしゃでしごとのげんいんをおしえてもらいました。",
+          "けいさつはじこのげんいんをしらべています。",
+          "この木をげんいんにしていすをつくりましょう。"
+        ],
+        "answer_index": 3,
+        "answer_text": "けいさつはじこのげんいんをしらべています。",
+        "answered_sentence": "げんいん => けいさつはじこのげんいんをしらべています。",
+        "explanation": "\"けいさつはじこのげんいんをしらべています。\" is the target word in this item. It is used in the sentence \"げんいん => けいさつはじこのげんいんをしらべています。\""
+      },
+      {
+        "number": 10,
+        "prompt": "きびしい",
+        "options": [
+          "たなか先生はきびしいふくをきています。",
+          "たなか先生はきびしい字を書きます。",
+          "たなか先生はきびしいかおをしています。",
+          "たなか先生はきびしいいぬをもっています。"
+        ],
+        "answer_index": 3,
+        "answer_text": "たなか先生はきびしいかおをしています。",
+        "answered_sentence": "きびしい => たなか先生はきびしいかおをしています。",
+        "explanation": "\"たなか先生はきびしいかおをしています。\" is the target word in this item. It is used in the sentence \"きびしい => たなか先生はきびしいかおをしています。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 20",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-20/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "7時にレストランを _______ してあります。",
+        "options": [
+          "ごちそう",
+          "よしゅう",
+          "やくそく",
+          "よやく"
+        ],
+        "answer_index": 4,
+        "answer_text": "よやく",
+        "answered_sentence": "7時にレストランをよやくしてあります。",
+        "explanation": "\"よやく\" means \"reservation.\" In \"7時にレストランをよやくしてあります\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 2,
+        "prompt": "車のかぎはきのう _______ ここにありました。",
+        "options": [
+          "きゅうに",
+          "じゆうに",
+          "たしかに",
+          "じょうぶに"
+        ],
+        "answer_index": 3,
+        "answer_text": "たしかに",
+        "answered_sentence": "車のかぎはきのうたしかにここにありました。",
+        "explanation": "\"たしかに\" is the target word in this item. It is used in the sentence \"車のかぎはきのうたしかにここにありました。\""
+      },
+      {
+        "number": 3,
+        "prompt": "わたしは日本のぶんがくに _______ があります。",
+        "options": [
+          "けいざい",
+          "きょうみ",
+          "ねっしん",
+          "せいじ"
+        ],
+        "answer_index": 2,
+        "answer_text": "きょうみ",
+        "answered_sentence": "わたしは日本のぶんがくにきょうみがあります。",
+        "explanation": "\"きょうみ\" means \"interest (in something).\" In \"わたしは日本のぶんがくにきょうみがあります\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 4,
+        "prompt": "すみませんが、たなかさんのでんわばんごうを _______ ください。",
+        "options": [
+          "かけて",
+          "おしえて",
+          "こたえて",
+          "せつめいして"
+        ],
+        "answer_index": 2,
+        "answer_text": "おしえて",
+        "answered_sentence": "すみませんが、たなかさんのでんわばんごうをおしえてください。",
+        "explanation": "\"おしえて\" means \"teach / tell.\" The sentence asks someone to explain how to memorize kanji."
+      },
+      {
+        "number": 5,
+        "prompt": "「ケンさんはほんとうに日本語がじょうずですね。」「いえ、_______でもありません。」",
+        "options": [
+          "ほんとう",
+          "それほど",
+          "ほとんど",
+          "なるほど"
+        ],
+        "answer_index": 2,
+        "answer_text": "それほど",
+        "answered_sentence": "「ケンさんはほんとうに日本語がじょうずですね。」「いえ、それほどでもありません。」",
+        "explanation": "\"それほど\" means \"to that degree; extent.\" In \"それほどでもありません\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 6,
+        "prompt": "わたしがとうきょうにいったとき、山川さんが _______ してくれた。",
+        "options": [
+          "あんない",
+          "うんどう",
+          "けんぶつ",
+          "よてい"
+        ],
+        "answer_index": 1,
+        "answer_text": "あんない",
+        "answered_sentence": "わたしがとうきょうにいったとき、山川さんがあんないしてくれた。",
+        "explanation": "\"あんない\" is the target word in this item. It is used in the sentence \"わたしがとうきょうにいったとき、山川さんがあんないしてくれた。\""
+      },
+      {
+        "number": 7,
+        "prompt": "きむらくんと _______ して、けがをしてしまった。",
+        "options": [
+          "けんか",
+          "けいけん",
+          "しょうち",
+          "しょうかい"
+        ],
+        "answer_index": 1,
+        "answer_text": "けんか",
+        "answered_sentence": "きむらくんとけんかして、けがをしてしまった。",
+        "explanation": "\"けんか\" is the target word in this item. It is used in the sentence \"きむらくんとけんかして、けがをしてしまった。\""
+      },
+      {
+        "number": 8,
+        "prompt": "わたしの国はアジアの国々との _______ がさかんです。",
+        "options": [
+          "かがく",
+          "けいけん",
+          "ぼうえき",
+          "よしゅう"
+        ],
+        "answer_index": 3,
+        "answer_text": "ぼうえき",
+        "answered_sentence": "わたしの国はアジアの国々とのぼうえきがさかんです。",
+        "explanation": "\"ぼうえき\" means \"trade.\" In \"わたしの国はアジアの国々とのぼうえきがさかんです\", that is the word that fits the situation being described."
+      },
+      {
+        "number": 9,
+        "prompt": "むずかしいもんだいでしたが、_______ こたえがわかりました。",
+        "options": [
+          "もうすぐ",
+          "なかなか",
+          "ちっとも",
+          "やっと"
+        ],
+        "answer_index": 4,
+        "answer_text": "やっと",
+        "answered_sentence": "むずかしいもんだいでしたが、やっとこたえがわかりました。",
+        "explanation": "\"やっと\" means \"finally.\" It fits because the sentence says the rain stopped at last."
+      },
+      {
+        "number": 10,
+        "prompt": "車が _______ 、うごかなくなってしましました。",
+        "options": [
+          "こしょうして",
+          "うんてんして",
+          "うんどうして",
+          "しっぱいして"
+        ],
+        "answer_index": 1,
+        "answer_text": "こしょうして",
+        "answered_sentence": "車がこしょうして、うごかなくなってしましました。",
+        "explanation": "\"こしょうして\" is the target word in this item. It is used in the sentence \"車がこしょうして、うごかなくなってしましました。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 21",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-21/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "わからないことばは じじょで _______ ください。",
+        "options": [
+          "よんで",
+          "きめて",
+          "しらべて",
+          "くらべて"
+        ],
+        "answer_index": 3,
+        "answer_text": "しらべて",
+        "answered_sentence": "わからないことばは じじょでしらべてください。",
+        "explanation": "\"しらべて\" means \"to investigate, to check\", \"わからないことばは じじょでしらべてください。\""
+      },
+      {
+        "number": 2,
+        "prompt": "このテストは７０てん _______ とるとそつぎょうできます。",
+        "options": [
+          "いか",
+          "いがい",
+          "いじょう",
+          "いない"
+        ],
+        "answer_index": 3,
+        "answer_text": "いじょう",
+        "answered_sentence": "このテストは７０てんいじょうとるとそつぎょうできます。",
+        "explanation": "\"いじょう\" means \"more than; this is all\", \"このテストは７０てんいじょうとるとそつぎょうできます。\""
+      },
+      {
+        "number": 3,
+        "prompt": "らいねんのカレンダーをへやの _______ にかけました。",
+        "options": [
+          "かべ",
+          "もん",
+          "たたみ",
+          "おくじょう"
+        ],
+        "answer_index": 1,
+        "answer_text": "かべ",
+        "answered_sentence": "らいねんのカレンダーをへやのかべにかけました。",
+        "explanation": "\"かべ\" means \"wall\", \"らいねんのカレンダーをへやのかべにかけました。\""
+      },
+      {
+        "number": 4,
+        "prompt": "大きなにもつをはこんで _______ がいたくなった。",
+        "options": [
+          "うで",
+          "のど",
+          "ひげ",
+          "みみ"
+        ],
+        "answer_index": 1,
+        "answer_text": "うで",
+        "answered_sentence": "大きなにもつをはこんでうでがいたくなった。",
+        "explanation": "\"うで\" means \"arm (in reference to body)\", \"大きなにもつをはこんでうでがいたくなった。\""
+      },
+      {
+        "number": 5,
+        "prompt": "べんきょうしている人の _______ になりますから、しずかにしてください。",
+        "options": [
+          "けんか",
+          "じゃま",
+          "だめ",
+          "いや"
+        ],
+        "answer_index": 2,
+        "answer_text": "じゃま",
+        "answered_sentence": "べんきょうしている人のじゃまになりますから、しずかにしてください。",
+        "explanation": "\"じゃま\" means \"hindrance, intrusion\", \"べんきょうしている人のじゃまになりますから、しずかにしてください。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 22",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-22/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "日本ではほんとんど一日中テレビの _______ がある。",
+        "options": [
+          "きせつ",
+          "ほうりつ",
+          "ほうそう",
+          "きそく"
+        ],
+        "answer_index": 3,
+        "answer_text": "ほうそう",
+        "answered_sentence": "日本ではほんとんど一日中テレビのほうそうがある。",
+        "explanation": "\"ほうそう\" means \"broadcast\", \"日本ではほんとんど一日中テレビのほうそうがある。\""
+      },
+      {
+        "number": 2,
+        "prompt": "かぜで _______ がいたい。",
+        "options": [
+          "のど",
+          "こえ",
+          "ひげ",
+          "かみ"
+        ],
+        "answer_index": 1,
+        "answer_text": "のど",
+        "answered_sentence": "かぜでのどがいたい。",
+        "explanation": "\"のど\" means \"throat\", \"かぜでのどがいたい。\""
+      },
+      {
+        "number": 3,
+        "prompt": "たいふうでまどガラスが _______ 、あぶないです。",
+        "options": [
+          "われて",
+          "よごれて",
+          "ふんで",
+          "おれて"
+        ],
+        "answer_index": 1,
+        "answer_text": "われて",
+        "answered_sentence": "たいふうでまどガラスがわれて、あぶないです。",
+        "explanation": "\"われて\" means \"to break, to crack\", \"たいふうでまどガラスがわれて、あぶないです。\""
+      },
+      {
+        "number": 4,
+        "prompt": "へやに入ると、 _______ にいすがおいてありました。",
+        "options": [
+          "うら",
+          "あと",
+          "あいだ",
+          "すみ"
+        ],
+        "answer_index": 4,
+        "answer_text": "すみ",
+        "answered_sentence": "へやに入ると、すみにいすがおいてありました。",
+        "explanation": "\"すみ\" means \"corner\", \"へやに入ると、すみにいすがおいてありました。\""
+      },
+      {
+        "number": 5,
+        "prompt": "_______ なりますから、いりぐちににもつをおかないでください。",
+        "options": [
+          "あんぜんに",
+          "じゃまに",
+          "じゅうに",
+          "むりに"
+        ],
+        "answer_index": 2,
+        "answer_text": "じゃまに",
+        "answered_sentence": "じゃまになりますから、いりぐちににもつをおかないでください。",
+        "explanation": "\"じゃまに\" means \"in the way\", \"じゃまになりますから、いりぐちににもつをおかないでください。\""
+      },
+      {
+        "number": 6,
+        "prompt": "いくら",
+        "options": [
+          "いくらちゅういしてもしずかになりません。",
+          "いくらちゅういしたらしずかになりましたか。",
+          "ちゅういしてもいくらしずかになりません。",
+          "ちゅういしたらいくらしずかになりました。"
+        ],
+        "answer_index": 1,
+        "answer_text": "いくらちゅういしてもしずかになりません。",
+        "answered_sentence": "いくら",
+        "explanation": "\"いくらちゅういしてもしずかになりません。\" fits here, \"いくら\""
+      },
+      {
+        "number": 7,
+        "prompt": "ちゅうし",
+        "options": [
+          "あした雨だったらしあいはちゅうしします。",
+          "あの人は会社をちゅうしして大学にいくらしい。",
+          "けんこうによくないのでたばこをすうのはちゅうしします。",
+          "バスがちゅうしして学校におくれた。"
+        ],
+        "answer_index": 1,
+        "answer_text": "あした雨だったらしあいはちゅうしします。",
+        "answered_sentence": "ちゅうし",
+        "explanation": "\"あした雨だったらしあいはちゅうしします。\" fits here, \"ちゅうし\""
+      },
+      {
+        "number": 8,
+        "prompt": "きかい",
+        "options": [
+          "ざんねんですが、その日はべつのきかいがあります。",
+          "わたしは日本のれきしにきかいがあります。",
+          "両親は外国へいったきかいがありません。",
+          "近くに来るきかいがあったら、ぜひあそびに来てください。"
+        ],
+        "answer_index": 4,
+        "answer_text": "近くに来るきかいがあったら、ぜひあそびに来てください。",
+        "answered_sentence": "きかい",
+        "explanation": "\"近くに来るきかいがあったら、ぜひあそびに来てください。\" fits here, \"きかい\""
+      },
+      {
+        "number": 9,
+        "prompt": "あんぜん",
+        "options": [
+          "このまちはよるもあんぜんです。",
+          "にちようびはいつもいえであんぜんにしています。",
+          "このきかいはあんぜんてきにつかってください。",
+          "わたしはげんきですから、あんぜんしてください。"
+        ],
+        "answer_index": 1,
+        "answer_text": "このまちはよるもあんぜんです。",
+        "answered_sentence": "あんぜん",
+        "explanation": "\"このまちはよるもあんぜんです。\" fits here, \"あんぜん\""
+      },
+      {
+        "number": 10,
+        "prompt": "さしあげる",
+        "options": [
+          "つまにピアノをさしあげました。",
+          "先生にケーキをさしあげました。",
+          "とりにむしをさしあげました。",
+          "花に水をさしあげました。"
+        ],
+        "answer_index": 2,
+        "answer_text": "先生にケーキをさしあげました。",
+        "answered_sentence": "さしあげる",
+        "explanation": "\"先生にケーキをさしあげました。\" fits here, \"さしあげる\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 23",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-23/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "えいがの _______ を２まいかいました。",
+        "options": [
+          "イベント",
+          "サービス",
+          "ステレオ",
+          "チケット"
+        ],
+        "answer_index": 4,
+        "answer_text": "チケット",
+        "answered_sentence": "えいがのチケットを２まいかいました。",
+        "explanation": "\"チケット\" fits here, \"えいがのチケットを２まいかいました。\""
+      },
+      {
+        "number": 2,
+        "prompt": "わたしたちのけっこんは父に _______ 。",
+        "options": [
+          "はんたいされました",
+          "しょうたいされました",
+          "しょうかいされました",
+          "きょういくされました"
+        ],
+        "answer_index": 1,
+        "answer_text": "はんたいされました",
+        "answered_sentence": "わたしたちのけっこんは父にはんたいされました。",
+        "explanation": "\"はんたいされました\" fits here, \"わたしたちのけっこんは父にはんたいされました。\""
+      },
+      {
+        "number": 3,
+        "prompt": "あしたのパーティーは、どんなのみものを _______ しましょうか。",
+        "options": [
+          "しんぱい",
+          "しょうたい",
+          "しゅっせき",
+          "じゅんび"
+        ],
+        "answer_index": 4,
+        "answer_text": "じゅんび",
+        "answered_sentence": "あしたのパーティーは、どんなのみものをじゅんびしましょうか。",
+        "explanation": "\"じゅんび\" fits here, \"あしたのパーティーは、どんなのみものをじゅんびしましょうか。\""
+      },
+      {
+        "number": 4,
+        "prompt": "だいじなうでどけいがこわれてしまいました。_______ 、とてもお金がかかりました。",
+        "options": [
+          "かえしたら",
+          "すてたら",
+          "なおしたら",
+          "見つけたら"
+        ],
+        "answer_index": 3,
+        "answer_text": "なおしたら",
+        "answered_sentence": "だいじなうでどけいがこわれてしまいました。なおしたら、とてもお金がかかりました。",
+        "explanation": "\"なおしたら\" fits here, \"だいじなうでどけいがこわれてしまいました。なおしたら、とてもお金がかかりました。\""
+      },
+      {
+        "number": 5,
+        "prompt": "きのうは母のたんじょうびだったので、_______ にくつをあげました。",
+        "options": [
+          "あいさつ",
+          "おいわい",
+          "おまつり",
+          "おみまい"
+        ],
+        "answer_index": 2,
+        "answer_text": "おいわい",
+        "answered_sentence": "きのうは母のたんじょうびだったので、おいわいにくつをあげました。",
+        "explanation": "\"おいわい\" means \"congratulation, celebration\", \"きのうは母のたんじょうびだったので、おいわいにくつをあげました。\""
+      },
+      {
+        "number": 6,
+        "prompt": "このガラスのにんぎょうはこわれやすいので、 _______ ください。",
+        "options": [
+          "うつらないで",
+          "さわらないで",
+          "のこらないで",
+          "まわらないで"
+        ],
+        "answer_index": 2,
+        "answer_text": "さわらないで",
+        "answered_sentence": "このガラスのにんぎょうはこわれやすいので、さわらないでください。",
+        "explanation": "\"さわらないで\" fits here, \"このガラスのにんぎょうはこわれやすいので、さわらないでください。\""
+      },
+      {
+        "number": 7,
+        "prompt": "子どもが _______ をこわしてしまった。",
+        "options": [
+          "ぐあい",
+          "やくそく",
+          "おもちゃ",
+          "ぶどう"
+        ],
+        "answer_index": 3,
+        "answer_text": "おもちゃ",
+        "answered_sentence": "子どもがおもちゃをこわしてしまった。",
+        "explanation": "\"おもちゃ\" means \"a toy\", \"子どもがおもちゃをこわしてしまった。\""
+      },
+      {
+        "number": 8,
+        "prompt": "きょうのおまつりはたいふうのため _______ します。",
+        "options": [
+          "ちゅうし",
+          "しょうかい",
+          "ちゅうしゃ",
+          "しょうち"
+        ],
+        "answer_index": 1,
+        "answer_text": "ちゅうし",
+        "answered_sentence": "きょうのおまつりはたいふうのためちゅうしします。",
+        "explanation": "\"ちゅうし\" means \"cancellation\", \"きょうのおまつりはたいふうのためちゅうしします。\""
+      },
+      {
+        "number": 9,
+        "prompt": "でんきだいは毎月ぎんこうで _______ ください。",
+        "options": [
+          "出して",
+          "とどけて",
+          "はらって",
+          "出かけて"
+        ],
+        "answer_index": 3,
+        "answer_text": "はらって",
+        "answered_sentence": "でんきだいは毎月ぎんこうではらってください。",
+        "explanation": "\"はらって\" means \"to pay\", \"でんきだいは毎月ぎんこうではらってください。\""
+      },
+      {
+        "number": 10,
+        "prompt": "うちを出るとき、「 _______ 。」といいます。",
+        "options": [
+          "おはようございます",
+          "いってまいります",
+          "おかえりなさい",
+          "ただいま"
+        ],
+        "answer_index": 2,
+        "answer_text": "いってまいります",
+        "answered_sentence": "うちを出るとき、「いってまいります。」といいます。",
+        "explanation": "\"いってまいります\" fits here, \"うちを出るとき、「いってまいります。」といいます。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 24",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-24/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "たなかさんは、毎日 _______ にけんきゅうをしている。",
+        "options": [
+          "あんしん",
+          "ざんねん",
+          "しんぱい",
+          "ねっしん"
+        ],
+        "answer_index": 4,
+        "answer_text": "ねっしん",
+        "answered_sentence": "たなかさんは、毎日ねっしんにけんきゅうをしている。",
+        "explanation": "\"ねっしん\" means \"enthusiasm\", \"たなかさんは、毎日ねっしんにけんきゅうをしている。\""
+      },
+      {
+        "number": 2,
+        "prompt": "わたしの車は日本 _______ です。",
+        "options": [
+          "いん",
+          "がわ",
+          "せい",
+          "だい"
+        ],
+        "answer_index": 3,
+        "answer_text": "せい",
+        "answered_sentence": "わたしの車は日本せいです。",
+        "explanation": "\"せい\" means \"because of\", \"わたしの車は日本せいです。\""
+      },
+      {
+        "number": 3,
+        "prompt": "５ _______ おきに木をうえました。",
+        "options": [
+          "ページ",
+          "カーテン",
+          "テーブル",
+          "メートル"
+        ],
+        "answer_index": 4,
+        "answer_text": "メートル",
+        "answered_sentence": "５メートルおきに木をうえました。",
+        "explanation": "\"メートル\" fits here, \"５メートルおきに木をうえました。\""
+      },
+      {
+        "number": 4,
+        "prompt": "これからはコンピューターの _______ をもつ人がひつようになるだろう。",
+        "options": [
+          "ぎじゅつ",
+          "せつめい",
+          "ぼうえき",
+          "ゆしゅつ"
+        ],
+        "answer_index": 1,
+        "answer_text": "ぎじゅつ",
+        "answered_sentence": "これからはコンピューターのぎじゅつをもつ人がひつようになるだろう。",
+        "explanation": "\"ぎじゅつ\" means \"technique, technology, skill\", \"これからはコンピューターのぎじゅつをもつ人がひつようになるだろう。\""
+      },
+      {
+        "number": 5,
+        "prompt": "「いま、ファックスをおくってもいいですか。」「ええ、_______ 。」",
+        "options": [
+          "おだいじに",
+          "こちらこそ",
+          "かまいません",
+          "しつれいします"
+        ],
+        "answer_index": 3,
+        "answer_text": "かまいません",
+        "answered_sentence": "「いま、ファックスをおくってもいいですか。」「ええ、かまいません。」",
+        "explanation": "\"かまいません\" fits here, \"「いま、ファックスをおくってもいいですか。」「ええ、かまいません。」\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 25",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-25/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "さむくなったのでそろそろ _______ がほしいですね。",
+        "options": [
+          "ゆしゅつ",
+          "れいぼう",
+          "ゆにゅう",
+          "だんぼう"
+        ],
+        "answer_index": 4,
+        "answer_text": "だんぼう",
+        "answered_sentence": "さむくなったのでそろそろだんぼうがほしいですね。",
+        "explanation": "\"だんぼう\" means \"heating\", \"さむくなったのでそろそろだんぼうがほしいですね。\""
+      },
+      {
+        "number": 2,
+        "prompt": "あしたはしけんですから、_______ はやく来てください。",
+        "options": [
+          "なるほど",
+          "なるべく",
+          "それほど",
+          "そんなに"
+        ],
+        "answer_index": 2,
+        "answer_text": "なるべく",
+        "answered_sentence": "あしたはしけんですから、なるべくはやく来てください。",
+        "explanation": "\"なるべく\" means \"if possible, as much as possible\", \"あしたはしけんですから、なるべくはやく来てください。\""
+      },
+      {
+        "number": 3,
+        "prompt": "このまちには、ほんやは _______ しかありません。",
+        "options": [
+          "いちだい",
+          "いちど",
+          "いっけん",
+          "いっこ"
+        ],
+        "answer_index": 3,
+        "answer_text": "いっけん",
+        "answered_sentence": "このまちには、ほんやはいっけんしかありません。",
+        "explanation": "\"いっけん\" means \"one building, one house\", \"このまちには、ほんやはいっけんしかありません。\""
+      },
+      {
+        "number": 4,
+        "prompt": "わたしは毎朝 さんぽするのが _______ です。",
+        "options": [
+          "しゅうかん",
+          "れんしゅう",
+          "せいかつ",
+          "きょうみ"
+        ],
+        "answer_index": 1,
+        "answer_text": "しゅうかん",
+        "answered_sentence": "わたしは毎朝 さんぽするのがしゅうかんです。",
+        "explanation": "\"しゅうかん\" means \"custom (in reference to culture)\", \"わたしは毎朝 さんぽするのがしゅうかんです。\""
+      },
+      {
+        "number": 5,
+        "prompt": "あたらしい _______ を２だいかいました。",
+        "options": [
+          "オーバー",
+          "ガソリン",
+          "ステーキ",
+          "パソコン"
+        ],
+        "answer_index": 4,
+        "answer_text": "パソコン",
+        "answered_sentence": "あたらしいパソコンを２だいかいました。",
+        "explanation": "\"パソコン\" means \"(personal) computer\", \"あたらしいパソコンを２だいかいました。\""
+      },
+      {
+        "number": 6,
+        "prompt": "てきとう",
+        "options": [
+          "このきせつはとてもてきとうでよくねむれます。",
+          "せんそうは人びとのせいかつにてきとうではありません。",
+          "わかい人にてきとうするホテルをしょうかいしてください。",
+          "日本についてしらべるのにてきとうな本はありませんか。"
+        ],
+        "answer_index": 4,
+        "answer_text": "日本についてしらべるのにてきとうな本はありませんか。",
+        "answered_sentence": "てきとう",
+        "explanation": "\"日本についてしらべるのにてきとうな本はありませんか。\" fits here, \"てきとう\""
+      },
+      {
+        "number": 7,
+        "prompt": "おかげさまで",
+        "options": [
+          "Ａ「ごめんなさい。」Ｂ「いいえ、おかげさまで。」",
+          "Ａ「おげんきですか。」Ｂ「ええ、おかげさまで。」",
+          "Ａ「それは いけませんね。」Ｂ「ええ、おかげさまで。」",
+          "Ａ「ありがとうございました。」Ｂ「いいえ、おかげさまで。」"
+        ],
+        "answer_index": 2,
+        "answer_text": "Ａ「おげんきですか。」Ｂ「ええ、おかげさまで。」",
+        "answered_sentence": "おかげさまで",
+        "explanation": "\"Ａ「おげんきですか。」Ｂ「ええ、おかげさまで。」\" fits here, \"おかげさまで\""
+      },
+      {
+        "number": 8,
+        "prompt": "しかる",
+        "options": [
+          "「もうだいじょうぶですか。」としかられました。",
+          "「よくがんばりましたね。」としかられました。",
+          "「もっとまじめにやりなさい。」としかられました。",
+          "「いっしょにしらべましょう。」としかられました。"
+        ],
+        "answer_index": 3,
+        "answer_text": "「もっとまじめにやりなさい。」としかられました。",
+        "answered_sentence": "しかる",
+        "explanation": "\"「もっとまじめにやりなさい。」としかられました。\" fits here, \"しかる\""
+      },
+      {
+        "number": 9,
+        "prompt": "じゅんび",
+        "options": [
+          "パーティーのじゅんびができました。",
+          "車のこしょりのじゅんびがまだできません。",
+          "空気がかわいているので、火事のじゅんびをします。",
+          "きょうならったかんじのじゅんびをもういちどいえでします。"
+        ],
+        "answer_index": 1,
+        "answer_text": "パーティーのじゅんびができました。",
+        "answered_sentence": "じゅんび",
+        "explanation": "\"パーティーのじゅんびができました。\" fits here, \"じゅんび\""
+      },
+      {
+        "number": 10,
+        "prompt": "うまい",
+        "options": [
+          "わたしのおとうとはすうがくがうまくありません。",
+          "きょうははれて、けしきがうまいです。",
+          "わたしのパソコンはいつもうまいです。",
+          "わたしはピアノがうまくありません。"
+        ],
+        "answer_index": 4,
+        "answer_text": "わたしはピアノがうまくありません。",
+        "answered_sentence": "うまい",
+        "explanation": "\"わたしはピアノがうまくありません。\" fits here, \"うまい\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 26",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-26/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "わたしは _______ をしながら、大学でべんきょうしています。",
+        "options": [
+          "アルバイト",
+          "サービス",
+          "チェック",
+          "テキスト"
+        ],
+        "answer_index": 1,
+        "answer_text": "アルバイト",
+        "answered_sentence": "わたしはアルバイトをしながら、大学でべんきょうしています。",
+        "explanation": "\"アルバイト\" means \"part-time job\", \"わたしはアルバイトをしながら、大学でべんきょうしています。\""
+      },
+      {
+        "number": 2,
+        "prompt": "さいふはつくえの _______ の中にあります。",
+        "options": [
+          "おしいれ",
+          "ひきだし",
+          "カーテン",
+          "ベル"
+        ],
+        "answer_index": 2,
+        "answer_text": "ひきだし",
+        "answered_sentence": "さいふはつくえのひきだしの中にあります。",
+        "explanation": "\"ひきだし\" means \"drawer\", \"さいふはつくえのひきだしの中にあります。\""
+      },
+      {
+        "number": 3,
+        "prompt": "じしんでいえが _______ います。",
+        "options": [
+          "ゆれて",
+          "きえて",
+          "にげて",
+          "まわって"
+        ],
+        "answer_index": 1,
+        "answer_text": "ゆれて",
+        "answered_sentence": "じしんでいえがゆれています。",
+        "explanation": "\"ゆれて\" means \"to shake\", \"じしんでいえがゆれています。\""
+      },
+      {
+        "number": 4,
+        "prompt": "ことばはぶんかとふかい _______ があると言われています。",
+        "options": [
+          "はいかん",
+          "けいけん",
+          "かんけい",
+          "そんけい"
+        ],
+        "answer_index": 3,
+        "answer_text": "かんけい",
+        "answered_sentence": "ことばはぶんかとふかいかんけいがあると言われています。",
+        "explanation": "\"かんけい\" means \"relation(ship), connection\", \"ことばはぶんかとふかいかんけいがあると言われています。\""
+      },
+      {
+        "number": 5,
+        "prompt": "今年しけんに _______ しても、また来年がんばります。",
+        "options": [
+          "しつれい",
+          "しっぱい",
+          "しゅっせき",
+          "しょうたい"
+        ],
+        "answer_index": 2,
+        "answer_text": "しっぱい",
+        "answered_sentence": "今年しけんにしっぱいしても、また来年がんばります。",
+        "explanation": "\"しっぱい\" means \"failure, mistake\", \"今年しけんにしっぱいしても、また来年がんばります。\""
+      },
+      {
+        "number": 6,
+        "prompt": "ずっと日本にすむつもりです。 _______ 今、日本語をべんきょうしています。",
+        "options": [
+          "では",
+          "けれど",
+          "それで",
+          "たとえば"
+        ],
+        "answer_index": 3,
+        "answer_text": "それで",
+        "answered_sentence": "ずっと日本にすむつもりです。それで今、日本語をべんきょうしています。",
+        "explanation": "\"それで\" means \"and (conj.), thereupon, because of that\", \"ずっと日本にすむつもりです。それで今、日本語をべんきょうしています。\""
+      },
+      {
+        "number": 7,
+        "prompt": "きのうはじこで でんしゃが _______ たいへんでした。",
+        "options": [
+          "おくれて",
+          "おわって",
+          "いそいで",
+          "まにあって"
+        ],
+        "answer_index": 1,
+        "answer_text": "おくれて",
+        "answered_sentence": "きのうはじこで でんしゃがおくれてたいへんでした。",
+        "explanation": "\"おくれて\" means \"to be late\", \"きのうはじこで でんしゃがおくれてたいへんでした。\""
+      },
+      {
+        "number": 8,
+        "prompt": "このビルの _______ からうみが見えます。",
+        "options": [
+          "かいがん",
+          "おくじょう",
+          "じゅうしょ",
+          "くうこう"
+        ],
+        "answer_index": 2,
+        "answer_text": "おくじょう",
+        "answered_sentence": "このビルのおくじょうからうみが見えます。",
+        "explanation": "\"おくじょう\" means \"rooftop\", \"このビルのおくじょうからうみが見えます。\""
+      },
+      {
+        "number": 9,
+        "prompt": "外国語の本を日本語に _______ する。",
+        "options": [
+          "あんない",
+          "えんりょ",
+          "はんたい",
+          "ほんやく"
+        ],
+        "answer_index": 4,
+        "answer_text": "ほんやく",
+        "answered_sentence": "外国語の本を日本語にほんやくする。",
+        "explanation": "\"ほんやく\" means \"translation\", \"外国語の本を日本語にほんやくする。\""
+      },
+      {
+        "number": 10,
+        "prompt": "新しいじしょをつかってみたけれど、あまり _______ 。",
+        "options": [
+          "かたづけなかった",
+          "とりかえなかった",
+          "きをつけなかった",
+          "やくにたたなかった"
+        ],
+        "answer_index": 4,
+        "answer_text": "やくにたたなかった",
+        "answered_sentence": "新しいじしょをつかってみたけれど、あまりやくにたたなかった。",
+        "explanation": "\"やくにたたなかった\" means \"was not useful\", \"新しいじしょをつかってみたけれど、あまりやくにたたなかった。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 28",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-28/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "おとうとはわたしより _______ がつよいです。",
+        "options": [
+          "あたま",
+          "げんき",
+          "せなか",
+          "ちから"
+        ],
+        "answer_index": 4,
+        "answer_text": "ちから",
+        "answered_sentence": "おとうとはわたしよりちからがつよいです。",
+        "explanation": "\"ちから\" means \"strength, power\", \"おとうとはわたしよりちからがつよいです。\""
+      },
+      {
+        "number": 2,
+        "prompt": "このにくは _______ のでうまくきれない。",
+        "options": [
+          "めずらしい",
+          "うつくしい",
+          "かたい",
+          "あまい"
+        ],
+        "answer_index": 3,
+        "answer_text": "かたい",
+        "answered_sentence": "このにくはかたいのでうまくきれない。",
+        "explanation": "\"かたい\" means \"solid, hard, firm\", \"このにくはかたいのでうまくきれない。\""
+      },
+      {
+        "number": 3,
+        "prompt": "２に３を _______ と５になる。",
+        "options": [
+          "たす",
+          "ひく",
+          "けす",
+          "やく"
+        ],
+        "answer_index": 1,
+        "answer_text": "たす",
+        "answered_sentence": "２に３をたすと５になる。",
+        "explanation": "\"たす\" means \"to add (numbers)\", \"２に３をたすと５になる。\""
+      },
+      {
+        "number": 4,
+        "prompt": "_______ でんわがありましたよ。",
+        "options": [
+          "さっき",
+          "ちっとも",
+          "もうすぐ",
+          "ほとんど"
+        ],
+        "answer_index": 1,
+        "answer_text": "さっき",
+        "answered_sentence": "さっきでんわがありましたよ。",
+        "explanation": "\"さっき\" means \"a little while ago\", \"さっきでんわがありましたよ。\""
+      },
+      {
+        "number": 5,
+        "prompt": "ぎんこうを _______ するときには、このカードをもっていきます。",
+        "options": [
+          "うけつけ",
+          "ちゅうい",
+          "はいけい",
+          "りよう"
+        ],
+        "answer_index": 4,
+        "answer_text": "りよう",
+        "answered_sentence": "ぎんこうをりようするときには、このカードをもっていきます。",
+        "explanation": "\"りよう\" means \"use, utilization\", \"ぎんこうをりようするときには、このカードをもっていきます。\""
+      },
+      {
+        "number": 6,
+        "prompt": "こんしゅうのつぎは _______ です。",
+        "options": [
+          "さらいしゅう",
+          "さいらいしゅう",
+          "らいしゅう",
+          "せんしゅう"
+        ],
+        "answer_index": 3,
+        "answer_text": "らいしゅう",
+        "answered_sentence": "こんしゅうのつぎはらいしゅうです。",
+        "explanation": "\"らいしゅう\" means \"next week\", \"こんしゅうのつぎはらいしゅうです。\""
+      },
+      {
+        "number": 7,
+        "prompt": "このへんは _______ ですみやすいですよ。",
+        "options": [
+          "あんぜん",
+          "ふくざつ",
+          "しんぱい",
+          "ひつよう"
+        ],
+        "answer_index": 1,
+        "answer_text": "あんぜん",
+        "answered_sentence": "このへんはあんぜんですみやすいですよ。",
+        "explanation": "\"あんぜん\" means \"safety, security\", \"このへんはあんぜんですみやすいですよ。\""
+      },
+      {
+        "number": 8,
+        "prompt": "わたしは _______ で一日3時間はたらいています。",
+        "options": [
+          "ステレオ",
+          "テキスト",
+          "アクセサリー",
+          "パートタイム"
+        ],
+        "answer_index": 4,
+        "answer_text": "パートタイム",
+        "answered_sentence": "わたしはパートタイムで一日3時間はたらいています。",
+        "explanation": "\"パートタイム\" means \"part-time\", \"わたしはパートタイムで一日3時間はたらいています。\""
+      },
+      {
+        "number": 9,
+        "prompt": "わたしのしゅみはりょうりです。たいていはおいしくできますが、たまに _______ します。",
+        "options": [
+          "けいかく",
+          "しっぱい",
+          "せいこう",
+          "せいさん"
+        ],
+        "answer_index": 2,
+        "answer_text": "しっぱい",
+        "answered_sentence": "わたしのしゅみはりょうりです。たいていはおいしくできますが、たまにしっぱいします。",
+        "explanation": "\"しっぱい\" means \"failure, mistake\", \"わたしのしゅみはりょうりです。たいていはおいしくできますが、たまにしっぱいします。\""
+      },
+      {
+        "number": 10,
+        "prompt": "_______ けれど、しごとがあるからねられません。",
+        "options": [
+          "すごい",
+          "ひどい",
+          "ねむい",
+          "こわい"
+        ],
+        "answer_index": 3,
+        "answer_text": "ねむい",
+        "answered_sentence": "ねむいけれど、しごとがあるからねられません。",
+        "explanation": "\"ねむい\" means \"sleepy, drowsy\", \"ねむいけれど、しごとがあるからねられません。\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 29",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-29/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "はずかしい",
+        "options": [
+          "かんたんなもんだいをまちがえて、はずかしいです。",
+          "かぞくに会えなくて、はずかしいです。",
+          "ピアノがひけるようになって、はずかしいです。",
+          "見たいばんぐみがなくて、はずかしいです。"
+        ],
+        "answer_index": 1,
+        "answer_text": "かんたんなもんだいをまちがえて、はずかしいです。",
+        "answered_sentence": "はずかしい",
+        "explanation": "\"かんたんなもんだいをまちがえて、はずかしいです。\" fits here, \"はずかしい\""
+      },
+      {
+        "number": 2,
+        "prompt": "かしこまりました",
+        "options": [
+          "Ａ「こうちゃを二つ、おねがいします。」Ｂ「はい、かしこまりました。」",
+          "Ａ「あいつので、まどをあけてもいいですか。」Ｂ「はい、かしこまりました。」",
+          "Ａ「先生、もういちどいってください。」Ｂ「はい、かしこまりました。」",
+          "Ａ「こたえがわかりましたか。」Ｂ「はい、かしこまりました。」"
+        ],
+        "answer_index": 1,
+        "answer_text": "Ａ「こうちゃを二つ、おねがいします。」Ｂ「はい、かしこまりました。」",
+        "answered_sentence": "かしこまりました",
+        "explanation": "\"Ａ「こうちゃを二つ、おねがいします。」Ｂ「はい、かしこまりました。」\" fits here, \"かしこまりました\""
+      },
+      {
+        "number": 3,
+        "prompt": "ねつ",
+        "options": [
+          "ねつがあるので、学校をやすみました。",
+          "このへやのねつはどのぐらいですか。",
+          "このおちゃはねつが高すぎて飲めません。",
+          "駅のちかくは人がたくさんいて、ねつがいっぱいです。"
+        ],
+        "answer_index": 1,
+        "answer_text": "ねつがあるので、学校をやすみました。",
+        "answered_sentence": "ねつ",
+        "explanation": "\"ねつがあるので、学校をやすみました。\" fits here, \"ねつ\""
+      },
+      {
+        "number": 4,
+        "prompt": "ゆっくり",
+        "options": [
+          "もっとゆっくりにはなしてください。",
+          "もっとゆっくりとはなしてください。",
+          "もっとゆっくりをはなしてください。",
+          "もっとゆっくりではなしてください。"
+        ],
+        "answer_index": 2,
+        "answer_text": "もっとゆっくりとはなしてください。",
+        "answered_sentence": "ゆっくり",
+        "explanation": "\"もっとゆっくりとはなしてください。\" fits here, \"ゆっくり\""
+      },
+      {
+        "number": 5,
+        "prompt": "まじめ",
+        "options": [
+          "きょうはまじめな天気で空がきれいです。",
+          "さとうを入れないで、まじめなコーヒーを飲みました。",
+          "子どもたちは先生の話をまじめに聞いています。",
+          "駅はこの道をまじめにいったところにあります。"
+        ],
+        "answer_index": 3,
+        "answer_text": "子どもたちは先生の話をまじめに聞いています。",
+        "answered_sentence": "まじめ",
+        "explanation": "\"子どもたちは先生の話をまじめに聞いています。\" fits here, \"まじめ\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N4 – Vocabulary Exercise 30",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n4-vocabulary-exercise-30/",
+    "level": "N4",
+    "type": "vocabulary",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "にわにきれいな花を _______ 。",
+        "options": [
+          "うえましょう",
+          "かえましょう",
+          "きりましょう",
+          "とりましょう"
+        ],
+        "answer_index": 1,
+        "answer_text": "うえましょう",
+        "answered_sentence": "にわにきれいな花をうえましょう。",
+        "explanation": "\"うえましょう\" means \"let's plant\", \"にわにきれいな花をうえましょう。\""
+      },
+      {
+        "number": 2,
+        "prompt": "このじしょは、かんじを しらべる ときに とても _______ 。",
+        "options": [
+          "おしえます",
+          "さがします",
+          "てつだいます",
+          "やくにたちます"
+        ],
+        "answer_index": 4,
+        "answer_text": "やくにたちます",
+        "answered_sentence": "このじしょは、かんじを しらべる ときに とてもやくにたちます。",
+        "explanation": "\"やくにたちます\" means \"is useful\", \"このじしょは、かんじを しらべる ときに とてもやくにたちます。\""
+      },
+      {
+        "number": 3,
+        "prompt": "ここにおいたはずなのですが、かぎが _______ 。",
+        "options": [
+          "おちません",
+          "おとしません",
+          "みつけません",
+          "みつかりません"
+        ],
+        "answer_index": 4,
+        "answer_text": "みつかりません",
+        "answered_sentence": "ここにおいたはずなのですが、かぎがみつかりません。",
+        "explanation": "\"みつかりません\" means \"cannot be found\", \"ここにおいたはずなのですが、かぎがみつかりません。\""
+      },
+      {
+        "number": 4,
+        "prompt": "けっこんしきにだれを _______ しましょうか。",
+        "options": [
+          "しょうらい",
+          "しょうち",
+          "しょうたい",
+          "しょうかい"
+        ],
+        "answer_index": 3,
+        "answer_text": "しょうたい",
+        "answered_sentence": "けっこんしきにだれをしょうたいしましょうか。",
+        "explanation": "\"しょうたい\" means \"invitation\", \"けっこんしきにだれをしょうたいしましょうか。\""
+      },
+      {
+        "number": 5,
+        "prompt": "じぶんのかおを _______ で見ました。",
+        "options": [
+          "ふとん",
+          "たたみ",
+          "かがみ",
+          "すいどう"
+        ],
+        "answer_index": 3,
+        "answer_text": "かがみ",
+        "answered_sentence": "じぶんのかおをかがみで見ました。",
+        "explanation": "\"かがみ\" means \"mirror\", \"じぶんのかおをかがみで見ました。\""
+      },
+      {
+        "number": 6,
+        "prompt": "どうぶつえんでは、_______ どうぶつをみることができます。",
+        "options": [
+          "つまらない",
+          "はずかしい",
+          "めずらしい",
+          "やわらかい"
+        ],
+        "answer_index": 3,
+        "answer_text": "めずらしい",
+        "answered_sentence": "どうぶつえんでは、めずらしいどうぶつをみることができます。",
+        "explanation": "\"めずらしい\" means \"unusual, rare\", \"どうぶつえんでは、めずらしいどうぶつをみることができます。\""
+      },
+      {
+        "number": 7,
+        "prompt": "これは彼らの問題よ。わたしたちが何を言おうと _______ ないわ。",
+        "options": [
+          "かんけい",
+          "かんしん",
+          "かんじ",
+          "かんそう"
+        ],
+        "answer_index": 1,
+        "answer_text": "かんけい",
+        "answered_sentence": "これは彼らの問題よ。わたしたちが何を言おうとかんけいないわ。",
+        "explanation": "\"かんけい\" means \"relation(ship), connection\", \"これは彼らの問題よ。わたしたちが何を言おうとかんけいないわ。\""
+      },
+      {
+        "number": 8,
+        "prompt": "きみの心を動かすような _______ はいつ現れるのかね。",
+        "options": [
+          "ひとびと",
+          "じょせい",
+          "じんせい",
+          "にんげん"
+        ],
+        "answer_index": 2,
+        "answer_text": "じょせい",
+        "answered_sentence": "きみの心を動かすようなじょせいはいつ現れるのかね。",
+        "explanation": "\"じょせい\" means \"woman\", \"きみの心を動かすようなじょせいはいつ現れるのかね。\""
+      },
+      {
+        "number": 9,
+        "prompt": "どうせわかることだから、隠さないで本当の姿を _______ から見せてしまえばいい。",
+        "options": [
+          "さいきん",
+          "さいこう",
+          "さいしょ",
+          "さいしゅう"
+        ],
+        "answer_index": 3,
+        "answer_text": "さいしょ",
+        "answered_sentence": "どうせわかることだから、隠さないで本当の姿をさいしょから見せてしまえばいい。",
+        "explanation": "\"さいしょ\" means \"beginning, first\", \"どうせわかることだから、隠さないで本当の姿をさいしょから見せてしまえばいい。\""
+      },
+      {
+        "number": 10,
+        "prompt": "ショーンは顔色を _______ 。",
+        "options": [
+          "きえた",
+          "あえた",
+          "みえた",
+          "かえた"
+        ],
+        "answer_index": 4,
+        "answer_text": "かえた",
+        "answered_sentence": "ショーンは顔色をかえた。",
+        "explanation": "\"かえた\" means \"changed, replaced, bought\", \"ショーンは顔色をかえた。\""
+      }
+    ]
+  }
+]

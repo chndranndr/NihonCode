@@ -1,0 +1,22 @@
+# owner-authored root docs: never reformatted (binding specs)
+PRD.md
+PRODUCT.md
+DEVELOPMENT_PROMPT.md
+implementation_plan.md
+
+# user-owned source content: never reformatted, never hand-edited
+data/
+
+# generated output
+dist/
+test-results/
+playwright-report/
+coverage/
+package-lock.json
+
+# other tools' owned files
+.impeccable/
+.pi/
+.omp/
+.pstack/
+mockup.png

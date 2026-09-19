@@ -1,0 +1,7 @@
+# Keep the repository LF everywhere; prettier --check and CI assume LF.
+* text=auto eol=lf
+
+# Binary assets stay binary.
+*.png binary
+*.mp3 binary
+*.exe binary

@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# build output (regenerate: npm run build)
+dist/
+
+# test + eval output (regenerate: npm test / npm run eval)
+test-results/
+playwright-report/
+coverage/
+
+# local env files
+*.local
+.env
+.env.*
+
+# editor/OS noise
+.DS_Store
+Thumbs.db
+
+# local agent tooling (not product content; never committed)
+.omp/
+.pi/
+.pstack/
+
+# detector scratch dirs
+.detectprobe/
+.detectprobe2/

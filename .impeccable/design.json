@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-19T16:00:00.000Z",
+  "title": "Design System: Kita (キタ) — NihonCode",
+  "extensions": {
+    "colorMeta": {
+      "accent-primary": {
+        "role": "primary",
+        "displayName": "Signal Amber",
+        "canonical": "#f0a500",
+        "tonalRamp": ["#f0a500"]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "canonical": "#0a0a0c",
+        "tonalRamp": ["#0a0a0c", "#101014", "#2a2a30"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#e8e6df",
+        "tonalRamp": ["#e8e6df", "#8a887f"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Brand mark and summary scores only." },
+      "label": { "displayName": "Micro-label", "purpose": "Panel titles, status strip, buttons; tracked uppercase." }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state-feedback",
+        "value": "150-250ms border/color transitions",
+        "purpose": "The only motion in the system; the ticker types once on load."
+      }
+    ],
+    "breakpoints": [
+      { "name": "rail-collapse", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The focal action; largest filled element on its screen.",
+      "html": "<button class=\"primary\">START REVIEW (12 DUE)</button>",
+      "css": ".primary { background: var(--accent); color: var(--ground); border: 1px solid var(--accent); padding: 0.5rem 1rem; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; border-radius: 0; }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Hairline container with accent corner ticks.",
+      "html": "<section class=\"panel\"><h2 class=\"micro-label\">SRS</h2></section>",
+      "css": ".panel { border: 1px solid var(--hairline); background: var(--panel); padding: 1rem; position: relative; border-radius: 0; } .panel::before, .panel::after { content: ''; position: absolute; width: 6px; height: 6px; border-color: var(--accent); border-style: solid; } .panel::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; } .panel::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }"
+    },
+    {
+      "name": "Speaker",
+      "kind": "button",
+      "refersTo": "speaker",
+      "description": "TTS trigger with a visible unavailable state.",
+      "html": "<button class=\"speaker speaker-unavailable\" disabled>N/A</button>",
+      "css": ".speaker { width: 32px; height: 32px; border: 1px solid var(--hairline); border-radius: 0; } .speaker-unavailable { color: var(--ink-dim); cursor: not-allowed; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Instrument Panel",
+    "overview": "Kita renders study as telemetry: a command deck of live readouts around one focal action. Dark-first, hairline grammar, monospace voice, semantic accents. Every number is the learner's own state or an honest zero.",
+    "keyCharacteristics": [
+      "hairline panels with accent corner ticks",
+      "monospace single-voice hierarchy via size, tracking, case",
+      "one accent per semantic role",
+      "ASCII ornament as iconography",
+      "locked and empty states teach"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "User accent touches primary action and selection only.", "section": "colors" },
+      { "name": "The Hairline Rule", "body": "Every structural edge is 1px hairline; depth is tonal.", "section": "colors" },
+      { "name": "The Flat-By-Default Rule", "body": "No box-shadow; state feedback is border and color only.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every readout live local state or an honest zero.",
+      "Do teach with locked and empty panels.",
+      "Do pair visual progress with text.",
+      "Do theme browser surfaces from the palette."
+    ],
+    "donts": [
+      "Don't round past 4px or add glass, gradients, shadows.",
+      "Don't let the user accent leak into semantic roles.",
+      "Don't ship dead tiles, spinners in content, or kickers.",
+      "Don't introduce a second type family or icon font."
+    ]
+  }
+}

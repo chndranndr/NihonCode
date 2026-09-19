@@ -1,0 +1,4309 @@
+[
+  {
+    "title": "JLPT N3 – Grammar Exercise 01",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-1/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "二度とあの部屋に入らないと約束しろ _______ 言われたけど、僕は約束しなかった。",
+        "options": [
+          "を",
+          "って",
+          "のを",
+          "だ"
+        ],
+        "answer_index": 2,
+        "answer_text": "って",
+        "answered_sentence": "二度とあの部屋に入らないと約束しろって言われたけど、僕は約束しなかった。",
+        "explanation": "\"って\" is a casual quoting form. Here it links the command to \"言われた\", so the meaning is \"I was told to promise....\""
+      },
+      {
+        "number": 2,
+        "prompt": "私は何百回もこの手紙を読み返した。そして読み返す　_______ たまらなく哀しい気持になった。",
+        "options": [
+          "うちに",
+          "はじめに",
+          "たびに",
+          "だけに"
+        ],
+        "answer_index": 3,
+        "answer_text": "たびに",
+        "answered_sentence": "私は何百回もこの手紙を読み返した。そして読み返すたびにたまらなく哀しい気持になった。",
+        "explanation": "\"たびに\" means \"every time.\" Each time the speaker rereads the letter, the same sad feeling comes back."
+      },
+      {
+        "number": 3,
+        "prompt": "本を読んでいたら、　_______ 五時間も経ってしまった。",
+        "options": [
+          "そろそろ",
+          "だんだん",
+          "ようやく",
+          "いつの間にか"
+        ],
+        "answer_index": 4,
+        "answer_text": "いつの間にか",
+        "answered_sentence": "本を読んでいたら、いつの間にか五時間も経ってしまった。",
+        "explanation": "\"いつの間にか\" means \"before I knew it.\" It fits because five hours passed without the speaker noticing."
+      },
+      {
+        "number": 4,
+        "prompt": "ふたりはそれから３０年あまり、死がふたりを分かつまで幸せな結婚生活を送る　_______ 。",
+        "options": [
+          "ことだ",
+          "ことになった",
+          "ことにした",
+          "ようになった"
+        ],
+        "answer_index": 2,
+        "answer_text": "ことになった",
+        "answered_sentence": "ふたりはそれから３０年あまり、死がふたりを分かつまで幸せな結婚生活を送ることになった。",
+        "explanation": "\"ことになった\" means \"it came to be decided that....\" This is about the result or course of events, not a personal choice."
+      },
+      {
+        "number": 5,
+        "prompt": "彼女が蛇口をあけ、僕の傷ついた前腕を氷　_______ 冷たい水の下へ導いた。",
+        "options": [
+          "のように",
+          "みたいに",
+          "のときに",
+          "そうに"
+        ],
+        "answer_index": 1,
+        "answer_text": "のように",
+        "answered_sentence": "彼女が蛇口をあけ、僕の傷ついた前腕を氷のように冷たい水の下へ導いた。",
+        "explanation": "\"のように\" means \"like/as if.\" It compares the water to ice to show how cold it was."
+      },
+      {
+        "number": 6,
+        "prompt": "まさかあのふたり　_______ なにかあったと言いたいんじゃないだろうな！",
+        "options": [
+          "の間と",
+          "の間の",
+          "の間に",
+          "の間で"
+        ],
+        "answer_index": 3,
+        "answer_text": "の間に",
+        "answered_sentence": "まさかあのふたりの間になにかあったと言いたいんじゃないだろうな！",
+        "explanation": "\"の間に\" means something happened \"between\" the two people. The sentence is talking about their relationship."
+      },
+      {
+        "number": 7,
+        "prompt": "鍵はお客様のお部屋のテーブルの上に　_______ 。",
+        "options": [
+          "ございます",
+          "いらっしゃいます",
+          "いる",
+          "おります"
+        ],
+        "answer_index": 1,
+        "answer_text": "ございます",
+        "answered_sentence": "鍵はお客様のお部屋のテーブルの上にございます。",
+        "explanation": "\"ございます\" is the polite form used for the existence of things. It matches the formal tone used with a customer."
+      },
+      {
+        "number": 8,
+        "prompt": "あなた　_______ ちょっと内密で話したいことがあるのですが…",
+        "options": [
+          "だけ",
+          "だけで",
+          "だけを",
+          "だけに"
+        ],
+        "answer_index": 4,
+        "answer_text": "だけに",
+        "answered_sentence": "あなただけにちょっと内密で話したいことがあるのですが…",
+        "explanation": "\"だけに\" emphasizes \"to you in particular.\" The speaker wants to say something confidential only to that person."
+      },
+      {
+        "number": 9,
+        "prompt": "勉強して、ある程度日本が話せる　_______ 日本語の授業がおもしろくなった。",
+        "options": [
+          "ことができるまで",
+          "ことができてから",
+          "ようになるまで",
+          "ようになってから"
+        ],
+        "answer_index": 4,
+        "answer_text": "ようになってから",
+        "answered_sentence": "勉強して、ある程度日本が話せるようになってから日本語の授業がおもしろくなった。",
+        "explanation": "\"ようになってから\" means \"after becoming able to....\" The classes became interesting only after the speaker could speak some Japanese."
+      },
+      {
+        "number": 10,
+        "prompt": "A社の商品が腰の痛みにどのくらい効果が　_______ 詳しく知りたい。",
+        "options": [
+          "あるのかによって",
+          "あるのかについて",
+          "あるのかどうかによって",
+          "あるのかどうかについて"
+        ],
+        "answer_index": 2,
+        "answer_text": "あるのかについて",
+        "answered_sentence": "A社の商品が腰の痛みにどのくらい効果があるのかについて詳しく知りたい。",
+        "explanation": "\"あるのかについて\" means \"about whether/how much there is....\" Here the speaker wants detailed information about the product's effect."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 02",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-2/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "あなたのお父さんもきっと彼を助けた _______ 。",
+        "options": [
+          "による",
+          "にすぎない",
+          "に違いない",
+          "には限らない"
+        ],
+        "answer_index": 3,
+        "answer_text": "に違いない",
+        "answered_sentence": "あなたのお父さんもきっと彼を助けたに違いない。",
+        "explanation": "\"に違いない\" means \"must surely....\" It shows strong confidence in the conclusion."
+      },
+      {
+        "number": 2,
+        "prompt": "表紙 _______ 、この演目はシェイクスピアの「真夏の夜の夢」で、上演されたのは三十四年ほど前だ。",
+        "options": [
+          "にしては",
+          "によると",
+          "にかけて",
+          "に関する"
+        ],
+        "answer_index": 2,
+        "answer_text": "によると",
+        "answered_sentence": "表紙によると、この演目はシェイクスピアの「真夏の夜の夢」で、上演されたのは三十四年ほど前だ。",
+        "explanation": "\"によると\" means \"according to....\" It introduces the source of the information."
+      },
+      {
+        "number": 3,
+        "prompt": "きみは十八歳になる。これは大事なことだ。法律的に成人になる _______ から。",
+        "options": [
+          "という",
+          "ものだ",
+          "ことだ",
+          "わけだ"
+        ],
+        "answer_index": 4,
+        "answer_text": "わけだ",
+        "answered_sentence": "きみは十八歳になる。これは大事なことだ。法律的に成人になるわけだから。",
+        "explanation": "\"わけだ\" means \"that is why / no wonder.\" It gives a conclusion based on what came before."
+      },
+      {
+        "number": 4,
+        "prompt": "多くの賞金を得るために、彼は自分の妻 _______ 多くの同志を売りました。",
+        "options": [
+          "にむけて",
+          "をはじめ",
+          "につれて",
+          "とともに"
+        ],
+        "answer_index": 2,
+        "answer_text": "をはじめ",
+        "answered_sentence": "多くの賞金を得るために、彼は自分の妻をはじめ多くの同志を売りました。",
+        "explanation": "\"をはじめ\" means \"starting with\" or \"including\". In \"彼は自分の妻をはじめ多くの同志を売りました\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 5,
+        "prompt": "これに _______ 会社のイメージは著しく傷ついた。",
+        "options": [
+          "によって",
+          "になって",
+          "にとって",
+          "について"
+        ],
+        "answer_index": 1,
+        "answer_text": "によって",
+        "answered_sentence": "これにによって会社のイメージは著しく傷ついた。",
+        "explanation": "\"によって\" means \"by\" or \"because of\", depending on context. In \"これにによって会社のイメージは著しく傷ついた\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "鈴木はその場で目をつぶり、気を _______ のか、ゆっくりと大きく息をついた。",
+        "options": [
+          "静めようとした",
+          "静めようとしている",
+          "静めるようにしている",
+          "静めるようにした"
+        ],
+        "answer_index": 2,
+        "answer_text": "静めようとしている",
+        "answered_sentence": "鈴木はその場で目をつぶり、気を静めようとしているのか、ゆっくりと大きく息をついた。",
+        "explanation": "\"静めようとしている\" shows that someone is trying to do something. In \"気を静めようとしているのか\", he seems to be trying to calm himself down."
+      },
+      {
+        "number": 7,
+        "prompt": "サユリ _______ 名前の学生は北島サユリひとりしかいなかった。",
+        "options": [
+          "という",
+          "といって",
+          "というと",
+          "というのは"
+        ],
+        "answer_index": 1,
+        "answer_text": "という",
+        "answered_sentence": "サユリという名前の学生は北島サユリひとりしかいなかった。",
+        "explanation": "\"という\" means used to name or identify something. In \"サユリという名前の学生は北島サユリひとりしかいなかった\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 8,
+        "prompt": "彼女は自分の子供はこっそり家を抜け出すということは知らなかった _______ 。",
+        "options": [
+          "つもりだ",
+          "ように",
+          "らしい",
+          "ものだ"
+        ],
+        "answer_index": 3,
+        "answer_text": "らしい",
+        "answered_sentence": "彼女は自分の子供はこっそり家を抜け出すということは知らなかったらしい。",
+        "explanation": "\"らしい\" means \"apparently / it seems.\" It is used for reported information or a typical quality."
+      },
+      {
+        "number": 9,
+        "prompt": "みんな、ビジネスマン _______ 話をしていた。私が聞いたこともない頭文字が並んだ略語とか、そんなものが聞こえたよ。",
+        "options": [
+          "ような",
+          "っぱなし",
+          "らしい",
+          "っぽい"
+        ],
+        "answer_index": 4,
+        "answer_text": "っぽい",
+        "answered_sentence": "みんな、ビジネスマンっぽい話をしていた。私が聞いたこともない頭文字が並んだ略語とか、そんなものが聞こえたよ。",
+        "explanation": "\"っぽい\" means \"-ish / seems like.\" It gives the nuance that something has that kind of quality."
+      },
+      {
+        "number": 10,
+        "prompt": "ハードウエアと同じようにソフトウエアも、専門家だけでなく一般 _______ にも販売すべきだと僕は考えた。",
+        "options": [
+          "向き",
+          "向け",
+          "に向き",
+          "に向け"
+        ],
+        "answer_index": 2,
+        "answer_text": "向け",
+        "answered_sentence": "ハードウエアと同じようにソフトウエアも、専門家だけでなく一般向けにも販売すべきだと僕は考えた。",
+        "explanation": "\"向け\" means \"intended for\". In \"専門家だけでなく一般向けにも販売すべきだと僕は考えた\", that is exactly what the speaker wants to say."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 03",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-3/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "いま、あれやこれや面倒なことを考えるのはよそう。明日 _______ わ。",
+        "options": [
+          "考えればいい",
+          "考えればよかった",
+          "考えるといい",
+          "考えられる"
+        ],
+        "answer_index": 1,
+        "answer_text": "考えればいい",
+        "answered_sentence": "いま、あれやこれや面倒なことを考えるのはよそう。明日考えればいいわ。",
+        "explanation": "\"考えればいい\" is a pattern for advice or \"what should be done.\" In \"明日考えればいいわ\", it means that doing it that way would be the right answer."
+      },
+      {
+        "number": 2,
+        "prompt": "昨日はどこまで話した _______ ？",
+        "options": [
+          "かしら",
+          "かい",
+          "かな",
+          "っけ"
+        ],
+        "answer_index": 4,
+        "answer_text": "っけ",
+        "answered_sentence": "昨日はどこまで話したっけ？",
+        "explanation": "\"っけ\" means a casual way to recall something. In \"昨日はどこまで話したっけ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 3,
+        "prompt": "健康体の男なら前線に出る _______ だろうと私も思いました。",
+        "options": [
+          "べき",
+          "がち",
+          "もの",
+          "わけ"
+        ],
+        "answer_index": 1,
+        "answer_text": "べき",
+        "answered_sentence": "健康体の男なら前線に出るべきだろうと私も思いました。",
+        "explanation": "\"べき\" means \"should\". In \"健康体の男なら前線に出るべきだろうと私も思いました\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 4,
+        "prompt": "子供たちが学校から帰って _______ 、お菓子を隠してしまいましょう。",
+        "options": [
+          "きたうちに",
+          "くるうちに",
+          "こないうちに",
+          "きていないうちに"
+        ],
+        "answer_index": 3,
+        "answer_text": "こないうちに",
+        "answered_sentence": "子供たちが学校から帰ってこないうちに、お菓子を隠してしまいましょう。",
+        "explanation": "\"こないうちに\" means \"before ... comes / returns\". In \"子供たちが学校から帰ってこないうちに\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 5,
+        "prompt": "旧市街へ向かおう。答えがある _______ おそらくそこだ。",
+        "options": [
+          "といっても",
+          "としたら",
+          "として",
+          "とたん"
+        ],
+        "answer_index": 2,
+        "answer_text": "としたら",
+        "answered_sentence": "旧市街へ向かおう。答えがあるとしたらおそらくそこだ。",
+        "explanation": "\"としたら\" means \"if that is the case\". In \"答えがあるとしたらおそらくそこだ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "わたしの耳に、噴水 _______ 水音が聞こえてきた。",
+        "options": [
+          "のような",
+          "のように",
+          "らしい",
+          "みたい"
+        ],
+        "answer_index": 1,
+        "answer_text": "のような",
+        "answered_sentence": "わたしの耳に、噴水のような水音が聞こえてきた。",
+        "explanation": "\"のような\" means \"like\" or \"such as\". In \"噴水のような水音が聞こえてきた\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 7,
+        "prompt": "それを _______ 、アミが信じられないと言いたげな顔でタクミのほうを向き、呆然と見つめた。",
+        "options": [
+          "聞いたら",
+          "聞いてはじめて",
+          "聞いたとたん",
+          "聞いたとき"
+        ],
+        "answer_index": 3,
+        "answer_text": "聞いたとたん",
+        "answered_sentence": "それを聞いたとたん、アミが信じられないと言いたげな顔でタクミのほうを向き、呆然と見つめた。",
+        "explanation": "\"聞いたとたん\" means \"the moment ... heard it\". In \"それを聞いたとたん\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 8,
+        "prompt": "入る許可がないよ。誰かに見つかったら、それ _______ 大変よ。",
+        "options": [
+          "こそ",
+          "なのに",
+          "たび",
+          "かぎり"
+        ],
+        "answer_index": 1,
+        "answer_text": "こそ",
+        "answered_sentence": "入る許可がないよ。誰かに見つかったら、それこそ大変よ。",
+        "explanation": "\"こそ\" adds emphasis, similar to \"precisely / exactly.\""
+      },
+      {
+        "number": 9,
+        "prompt": "明日嵐のコンサートに行く。パパの _______ いい席が手に入った。",
+        "options": [
+          "ともに",
+          "ため",
+          "せいで",
+          "おかげで"
+        ],
+        "answer_index": 4,
+        "answer_text": "おかげで",
+        "answered_sentence": "明日嵐のコンサートに行く。パパのおかげでいい席が手に入った。",
+        "explanation": "\"おかげで\" means \"thanks to....\" It is used when the cause leads to a positive result."
+      },
+      {
+        "number": 10,
+        "prompt": "彼は目を大きく見開いた _______ 、寝返りを打った。",
+        "options": [
+          "まま",
+          "がち",
+          "すでに",
+          "だらけ"
+        ],
+        "answer_index": 1,
+        "answer_text": "まま",
+        "answered_sentence": "彼は目を大きく見開いたまま、寝返りを打った。",
+        "explanation": "\"まま\" means \"as it is / without changing.\" One action happens while the state stays the same."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 04",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-4/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "用心しろよ。誰かに見られたら、おれ _______ きみも縛り首になるぞ。",
+        "options": [
+          "どころか",
+          "どころでなく",
+          "ばかりに",
+          "ばかりか"
+        ],
+        "answer_index": 4,
+        "answer_text": "ばかりか",
+        "answered_sentence": "用心しろよ。誰かに見られたら、おればかりかきみも縛り首になるぞ。",
+        "explanation": "\"ばかりか\" means \"not only ..., but also....\" It adds something stronger than expected."
+      },
+      {
+        "number": 2,
+        "prompt": "おれは _______ 、あいつに会えて嬉しいと思った。",
+        "options": [
+          "生まれ初めたら",
+          "生まれて初めて",
+          "生まれて初めたら",
+          "生まれ初めて"
+        ],
+        "answer_index": 2,
+        "answer_text": "生まれて初めて",
+        "answered_sentence": "おれは生まれて初めて、あいつに会えて嬉しいと思った。",
+        "explanation": "\"生まれて初めて\" means \"for the first time in one's life\". In \"おれは生まれて初めて\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 3,
+        "prompt": "どんなにすばらしいごちそうだったか、とても口では言えない _______ ですよ。",
+        "options": [
+          "くらい",
+          "ほど",
+          "ぎみ",
+          "がち"
+        ],
+        "answer_index": 1,
+        "answer_text": "くらい",
+        "answered_sentence": "どんなにすばらしいごちそうだったか、とても口では言えないくらいですよ。",
+        "explanation": "\"くらい\" marks degree or extent, meaning something like \"to the extent that / about.\""
+      },
+      {
+        "number": 4,
+        "prompt": "わたしは地球外生命 _______ 本を書いています。",
+        "options": [
+          "にとって",
+          "に対して",
+          "によって",
+          "に関する"
+        ],
+        "answer_index": 4,
+        "answer_text": "に関する",
+        "answered_sentence": "わたしは地球外生命に関する本を書いています。",
+        "explanation": "\"に関する\" means \"about / concerning....\" It introduces the topic being discussed."
+      },
+      {
+        "number": 5,
+        "prompt": "それは奇妙な屋敷だった。 _______ 、とても屋敷には見えない。",
+        "options": [
+          "それでも",
+          "やはり",
+          "むしろ",
+          "かわりに"
+        ],
+        "answer_index": 3,
+        "answer_text": "むしろ",
+        "answered_sentence": "それは奇妙な屋敷だった。むしろ、とても屋敷には見えない。",
+        "explanation": "\"むしろ\" means \"rather\". In \"むしろ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "A社の製品は、機能的にはたいした _______ が、B製品ほど複雑で高価でもなかった。",
+        "options": [
+          "ものはない",
+          "ことはない",
+          "ものだ",
+          "ことだ"
+        ],
+        "answer_index": 2,
+        "answer_text": "ことはない",
+        "answered_sentence": "A社の製品は、機能的にはたいしたことはないが、B製品ほど複雑で高価でもなかった。",
+        "explanation": "\"ことはない\" means \"there is no need to....\" It is used to reassure or advise."
+      },
+      {
+        "number": 7,
+        "prompt": "われわれが母なる自然 _______ 犯した罪は桁違いに増えている。",
+        "options": [
+          "に対して",
+          "に反して",
+          "に比べて",
+          "にかわって"
+        ],
+        "answer_index": 1,
+        "answer_text": "に対して",
+        "answered_sentence": "われわれが母なる自然に対して犯した罪は桁違いに増えている。",
+        "explanation": "\"に対して\" means \"toward / in contrast to....\" It sets up the target or comparison point."
+      },
+      {
+        "number": 8,
+        "prompt": "絵を描き、絵 _______ 暮らすことで、私は神聖なるときめきの形と色、音を体験するのです。",
+        "options": [
+          "最中に",
+          "うちに",
+          "の中に",
+          "と共に"
+        ],
+        "answer_index": 4,
+        "answer_text": "と共に",
+        "answered_sentence": "絵を描き、絵と共に暮らすことで、私は神聖なるときめきの形と色、音を体験するのです。",
+        "explanation": "\"と共に\" means \"together with\". In \"絵と共に暮らすことで\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 9,
+        "prompt": "どうやら下での論争は終わった _______ ね。",
+        "options": [
+          "らしい",
+          "よう",
+          "みたい",
+          "そう"
+        ],
+        "answer_index": 3,
+        "answer_text": "みたい",
+        "answered_sentence": "どうやら下での論争は終わったみたいね。",
+        "explanation": "\"みたい\" means \"looks like / seems like.\" It is a casual way to make an inference."
+      },
+      {
+        "number": 10,
+        "prompt": "「ちょっと待ってください」の _______ 「少々お待ちください」を使うとさらに丁寧な言い回しになります。",
+        "options": [
+          "かわりに",
+          "かわって",
+          "かかわって",
+          "わりに"
+        ],
+        "answer_index": 1,
+        "answer_text": "かわりに",
+        "answered_sentence": "「ちょっと待ってください」のかわりに「少々お待ちください」を使うとさらに丁寧な言い回しになります。",
+        "explanation": "\"かわりに\" means \"instead of / in exchange for,\" depending on the context."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 05",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-5/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "この町は無人島かと思う _______ 静かで、世の中との接点をもたず独立している。",
+        "options": [
+          "ごろ",
+          "はず",
+          "ほど",
+          "など"
+        ],
+        "answer_index": 3,
+        "answer_text": "ほど",
+        "answered_sentence": "この町は無人島かと思うほど静かで、世の中との接点をもたず独立している。",
+        "explanation": "\"ほど\" marks degree or extent, meaning something like \"to the extent that / about.\""
+      },
+      {
+        "number": 2,
+        "prompt": "弱い者には、毅然と _______ やさしい態度で接するのですよ。",
+        "options": [
+          "しながらも",
+          "してから",
+          "しつづけて",
+          "してはじめて"
+        ],
+        "answer_index": 1,
+        "answer_text": "しながらも",
+        "answered_sentence": "弱い者には、毅然としながらもやさしい態度で接するのですよ。",
+        "explanation": "\"しながらも\" means \"although ... while still ...\". In \"毅然としながらもやさしい態度で接するのですよ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 3,
+        "prompt": "医者は血 _______ のタオルを取り、私の手首をぎゅっとしばって血を止め傷口を消毒した。",
+        "options": [
+          "ぎみ",
+          "どころ",
+          "だらけ",
+          "ばかり"
+        ],
+        "answer_index": 3,
+        "answer_text": "だらけ",
+        "answered_sentence": "医者は血だらけのタオルを取り、私の手首をぎゅっとしばって血を止め傷口を消毒した。",
+        "explanation": "\"だらけ\" means \"full of....\" It usually gives a negative or messy impression."
+      },
+      {
+        "number": 4,
+        "prompt": "僕は彼女と二人 _______ で歩くのも初めてだし、こんなに長く話をするのも初めてだった。",
+        "options": [
+          "だけ",
+          "きり",
+          "かけ",
+          "かた"
+        ],
+        "answer_index": 2,
+        "answer_text": "きり",
+        "answered_sentence": "僕は彼女と二人きりで歩くのも初めてだし、こんなに長く話をするのも初めてだった。",
+        "explanation": "\"きり\" limits the situation to just that one time or action, like \"only / since then.\""
+      },
+      {
+        "number": 5,
+        "prompt": "彼女はひと口も _______ ダイニングルームを後にし、裏のポーチへ出ていった。",
+        "options": [
+          "食べなくて",
+          "食べないで",
+          "食べないように",
+          "食べずに"
+        ],
+        "answer_index": 4,
+        "answer_text": "食べずに",
+        "answered_sentence": "彼女はひと口も食べずにダイニングルームを後にし、裏のポーチへ出ていった。",
+        "explanation": "\"食べずに\" means \"without doing....\" It gives the negative action before the main event."
+      },
+      {
+        "number": 6,
+        "prompt": "知って _______ 、われわれにはわれわれの手立てがある。",
+        "options": [
+          "とおり",
+          "のとおり",
+          "とおりに",
+          "のとおりに"
+        ],
+        "answer_index": 2,
+        "answer_text": "のとおり",
+        "answered_sentence": "知ってのとおり 、われわれにはわれわれの手立てがある。",
+        "explanation": "\"のとおり\" means \"as ... knows / as ... is\". In \"知ってのとおり\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 7,
+        "prompt": "「ママが新しいおもちゃを買ってあげるよ」と彼女は息子を元気づける _______ 言った。",
+        "options": [
+          "つもり",
+          "つもりに",
+          "つもりだ",
+          "つもりで"
+        ],
+        "answer_index": 4,
+        "answer_text": "つもりで",
+        "answered_sentence": "「ママが新しいおもちゃを買ってあげるよ」と彼女は息子を元気づけるつもりで言った。",
+        "explanation": "\"つもりで\" means \"with the intention of\". In \"と彼女は息子を元気づけるつもりで言った\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 8,
+        "prompt": "彼女は双子の息子たちの区別がつく _______ 。",
+        "options": [
+          "ようだ",
+          "ことになった",
+          "らしくなった",
+          "ようになった"
+        ],
+        "answer_index": 4,
+        "answer_text": "ようになった",
+        "answered_sentence": "彼女は双子の息子たちの区別がつくようになった。",
+        "explanation": "\"ようになった\" means \"came to be able to / came to do\". In \"彼女は双子の息子たちの区別がつくようになった\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 9,
+        "prompt": "彼はよろこび _______ おそろしい叫びをもらした。",
+        "options": [
+          "のため",
+          "のおかげで",
+          "のあまり",
+          "のせいで"
+        ],
+        "answer_index": 3,
+        "answer_text": "のあまり",
+        "answered_sentence": "彼はよろこびのあまりおそろしい叫びをもらした。",
+        "explanation": "\"のあまり\" means \"so much ... that\". In \"彼はよろこびのあまりおそろしい叫びをもらした\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 10,
+        "prompt": "「これを食べてもいいですか」女の子がためらい _______ 聞いた。",
+        "options": [
+          "がちに",
+          "ふり",
+          "ように",
+          "ぜに"
+        ],
+        "answer_index": 1,
+        "answer_text": "がちに",
+        "answered_sentence": "「これを食べてもいいですか」女の子がためらいがちに聞いた。",
+        "explanation": "\"がちに\" means \"tending to\" or \"somewhat prone to\". In \"女の子がためらいがちに聞いた\", that is exactly what the speaker wants to say."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 06",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-6/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "彼はよく飲んでいて、酔うと彼女を殴る _______ 。",
+        "options": [
+          "ことだった",
+          "ことがあった",
+          "ことにした",
+          "ことになっていた"
+        ],
+        "answer_index": 2,
+        "answer_text": "ことがあった",
+        "answered_sentence": "彼はよく飲んでいて、酔うと彼女を殴ることがあった。",
+        "explanation": "\"ことがあった\" means \"there were times when...\". In \"酔うと彼女を殴ることがあった\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 2,
+        "prompt": "これは意見 _______ むしろ質問であり、その証拠に、彼は私の目を見つめながら答えを待っていた。",
+        "options": [
+          "というより",
+          "というのは",
+          "というと",
+          "ということで"
+        ],
+        "answer_index": 1,
+        "answer_text": "というより",
+        "answered_sentence": "これは意見というよりむしろ質問であり、その証拠に、彼は私の目を見つめながら答えを待っていた。",
+        "explanation": "\"というより\" means \"rather than saying...\". In \"これは意見というよりむしろ質問であり\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 3,
+        "prompt": "あなた _______ マフラーを編みたいのに私には毛糸がない。",
+        "options": [
+          "のために",
+          "のたびに",
+          "のせいで",
+          "のおかげで"
+        ],
+        "answer_index": 1,
+        "answer_text": "のために",
+        "answered_sentence": "あなたのためにマフラーを編みたいのに私には毛糸がない。",
+        "explanation": "\"のために\" means \"for the sake of\". In \"あなたのためにマフラーを編みたいのに私には毛糸がない\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 4,
+        "prompt": "一体なぜなのか、最高の専門家で _______ 説明のしようがないのだ。",
+        "options": [
+          "ずつ",
+          "はず",
+          "でも",
+          "さえ"
+        ],
+        "answer_index": 4,
+        "answer_text": "さえ",
+        "answered_sentence": "一体なぜなのか、最高の専門家でさえ説明のしようがないのだ。",
+        "explanation": "\"さえ\" means \"even\". In \"最高の専門家でさえ説明のしようがないのだ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 5,
+        "prompt": "その質問にはどう _______ かわかりません。",
+        "options": [
+          "答えてもいい",
+          "答えたらいい",
+          "答えるならいい",
+          "答えようとする"
+        ],
+        "answer_index": 2,
+        "answer_text": "答えたらいい",
+        "answered_sentence": "その質問にはどう答えたらいいかわかりません。",
+        "explanation": "\"答えたらいい\" is a pattern for advice or \"what should be done.\" In \"その質問にはどう答えたらいいかわかりません\", it means that doing it that way would be the right answer."
+      },
+      {
+        "number": 6,
+        "prompt": "彼は低い声で　_______　　_______　…★… _______　話しかけた。",
+        "options": [
+          "がちに",
+          "向かって",
+          "変な男に",
+          "遠慮"
+        ],
+        "answer_index": 3,
+        "answer_text": "変な男に",
+        "answered_sentence": "彼は低い声で遠慮がちに変な男に向かって話しかけた。",
+        "explanation": "\"に\" marks the target of the action here. In \"彼は低い声で遠慮がちに変な男に向かって話しかけた\", he is speaking toward that man."
+      },
+      {
+        "number": 7,
+        "prompt": "私は恥ずかしがり屋だから、　_______　　_______　…★… _______　できないよ。",
+        "options": [
+          "なんて",
+          "会社のトップ",
+          "になる",
+          "あなたのように"
+        ],
+        "answer_index": 3,
+        "answer_text": "になる",
+        "answered_sentence": "私は恥ずかしがり屋だから、あなたのように会社のトップになるなんてできないよ。",
+        "explanation": "\"になる\" means \"become.\" In \"あなたのように会社のトップになるなんてできないよ\", it describes a change of state or position, not a simple action."
+      },
+      {
+        "number": 8,
+        "prompt": "日本語は　_______　　_______　…★… _______　が出ます。",
+        "options": [
+          "難しい",
+          "ほど",
+          "難しければ",
+          "やる気"
+        ],
+        "answer_index": 2,
+        "answer_text": "ほど",
+        "answered_sentence": "日本語は難しければ難しいほどやる気が出ます。",
+        "explanation": "\"ほど\" marks degree or extent, meaning something like \"to the extent that / about.\""
+      },
+      {
+        "number": 9,
+        "prompt": "天然資源は減っているのに、需要は急増している。　_______　　_______　…★… _______　。",
+        "options": [
+          "になる",
+          "困難",
+          "一方だ",
+          "清浄な水の入手は"
+        ],
+        "answer_index": 1,
+        "answer_text": "になる",
+        "answered_sentence": "天然資源は減っているのに、需要は急増している。清浄な水の入手は困難になる一方だ。",
+        "explanation": "\"になる\" means \"become.\" In \"清浄な水の入手は困難になる一方だ\", it describes a change of state or position, not a simple action."
+      },
+      {
+        "number": 10,
+        "prompt": "_______　　_______　…★… _______　、近くの視界がずっとぼやけている。",
+        "options": [
+          "ほどに",
+          "耐えがたい",
+          "頭痛は",
+          "なっていて"
+        ],
+        "answer_index": 1,
+        "answer_text": "ほどに",
+        "answered_sentence": "頭痛は耐えがたいほどになっていて、近くの視界がずっとぼやけている。",
+        "explanation": "\"ほどに\" means \"to the extent that\". In \"頭痛は耐えがたいほどになっていて\", that is exactly what the speaker wants to say."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 07",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-7/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "気づかない _______ ご近所の方々に不快な思いをさせる行動をとりました。",
+        "options": [
+          "うえで",
+          "さいちゅうに",
+          "なかで",
+          "うちに"
+        ],
+        "answer_index": 4,
+        "answer_text": "うちに",
+        "answered_sentence": "気づかないうちにご近所の方々に不快な思いをさせる行動をとりました。",
+        "explanation": "\"うちに\" means something happens \"while\" a state continues or \"before\" it changes."
+      },
+      {
+        "number": 2,
+        "prompt": "ヘリコプターはごうおん _______ 地面に衝突した。",
+        "options": [
+          "となると",
+          "と共に",
+          "と言うのに",
+          "ところで"
+        ],
+        "answer_index": 2,
+        "answer_text": "と共に",
+        "answered_sentence": "ヘリコプターはごうおんと共に地面に衝突した。",
+        "explanation": "\"と共に\" means \"together with\". In \"ヘリコプターはごうおんと共に地面に衝突した\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 3,
+        "prompt": "彼女が、テーブルの下で弟の足をけろうとしたが、 _______ 僕をけってしまった。",
+        "options": [
+          "どうしても",
+          "たびに",
+          "代わりに",
+          "せめて"
+        ],
+        "answer_index": 3,
+        "answer_text": "代わりに",
+        "answered_sentence": "彼女が、テーブルの下で弟の足をけろうとしたが、代わりに僕をけってしまった。",
+        "explanation": "\"代わりに\" means \"instead of / in exchange for,\" depending on the context."
+      },
+      {
+        "number": 4,
+        "prompt": "でも、あの人のことは？ああ、どれほどあの人を探した _______ 。眠れぬ長い夜毎に、なん度あの人の名を呼んだ _______ 。",
+        "options": [
+          "こと/こと",
+          "ことか/ことか",
+          "ことに/ことに",
+          "ことだ/ことだ"
+        ],
+        "answer_index": 2,
+        "answer_text": "ことか/ことか",
+        "answered_sentence": "でも、あの人のことは？ああ、どれほどあの人を探したことか。眠れぬ長い夜ごとに、なん度あの人の名を呼んだことか。",
+        "explanation": "\"ことか/ことか\" means an exclamatory pattern showing strong feeling. In \"でも、あの人のことは？ああ、どれほどあの人を探したことか。眠れぬ長い夜ごとに、なん度あの\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 5,
+        "prompt": "やりたくない _______ だろう。頭がおかしくなるくらいやりたいよ。",
+        "options": [
+          "わけがない",
+          "わけではない",
+          "わけにはいかない",
+          "わけ"
+        ],
+        "answer_index": 1,
+        "answer_text": "わけがない",
+        "answered_sentence": "やりたくないわけがないだろう。頭がおかしくなるくらいやりたいよ。",
+        "explanation": "\"わけがない\" means \"there is no way...\". In \"やりたくないわけがないだろう\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "僕 _______ は、偉大な彫刻の持つ真の力をはじめて教えてくれたのが「ダヴィッド像」だった。",
+        "options": [
+          "において",
+          "にかけて",
+          "にとって",
+          "について"
+        ],
+        "answer_index": 3,
+        "answer_text": "にとって",
+        "answered_sentence": "僕にとっては、偉大な彫刻の持つ真の力をはじめて教えてくれたのが「ダヴィッド像」だった。",
+        "explanation": "\"にとって\" means \"for / to....\" It shows whose point of view matters."
+      },
+      {
+        "number": 7,
+        "prompt": "学生の数が減った _______ 、食堂の灯はいつもの半分しかついていなかった。",
+        "options": [
+          "せいで",
+          "しだい",
+          "うえで",
+          "ついでに"
+        ],
+        "answer_index": 1,
+        "answer_text": "せいで",
+        "answered_sentence": "学生の数が減ったせいで、食堂の灯はいつもの半分しかついていなかった。",
+        "explanation": "\"せいで\" means \"because of....\" It usually carries a negative or blaming nuance."
+      },
+      {
+        "number": 8,
+        "prompt": "彼はいつものように、気に入らない情報は知らない _______ 。",
+        "options": [
+          "ふりをした",
+          "ようとした",
+          "ことにした",
+          "ふりになった"
+        ],
+        "answer_index": 1,
+        "answer_text": "ふりをした",
+        "answered_sentence": "彼はいつものように、気に入らない情報は知らないふりをした。",
+        "explanation": "\"ふりをした\" means \"pretended to...\". In \"気に入らない情報は知らないふりをした\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 9,
+        "prompt": "お金持ちになれば幸せ _______ とは限らない。",
+        "options": [
+          "になる",
+          "になれる",
+          "になろう",
+          "になっている"
+        ],
+        "answer_index": 2,
+        "answer_text": "になれる",
+        "answered_sentence": "お金持ちになれば幸せになれるとは限らない。",
+        "explanation": "\"になれる\" means \"can become\". In \"お金持ちになれば幸せになれるとは限らない\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 10,
+        "prompt": "近頃のイタリアでは、たとえつまらない仕事 _______ 、職を見つけるのは容易ではない。",
+        "options": [
+          "も",
+          "であっても",
+          "ではなくても",
+          "でも"
+        ],
+        "answer_index": 4,
+        "answer_text": "でも",
+        "answered_sentence": "近頃のイタリアでは、たとえつまらない仕事でも、職を見つけるのは容易ではない。",
+        "explanation": "\"でも\" means \"even if / even\". In \"たとえつまらない仕事でも\", that is exactly what the speaker wants to say."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 08",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-8/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "高木は車の後ろから首を伸ばし、渋滞の原因を _______ 。",
+        "options": [
+          "見きわめようになった",
+          "見きわめようにした",
+          "見きわめようとした",
+          "見きわめるようにした"
+        ],
+        "answer_index": 3,
+        "answer_text": "見きわめようとした",
+        "answered_sentence": "高木は車の後ろから首を伸ばし、渋滞の原因を見きわめようとした。",
+        "explanation": "\"見きわめようとした\" is the pattern that gives the sentence a comparison, appearance, purpose, or changed state. In \"渋滞の原因を見きわめようとした\", that is the meaning the sentence is building."
+      },
+      {
+        "number": 2,
+        "prompt": "鍵をかけておけ。誰も出入りさせない _______ 。わかったな。",
+        "options": [
+          "べき",
+          "ように",
+          "はず",
+          "ことに"
+        ],
+        "answer_index": 2,
+        "answer_text": "ように",
+        "answered_sentence": "鍵をかけておけ。誰も出入りさせないように。わかったな。",
+        "explanation": "\"ように\" often means \"so that....\" It connects an action with the result or goal the speaker wants."
+      },
+      {
+        "number": 3,
+        "prompt": "彼が何かを漏らしたとしても、そうする _______ やったんじゃないと思う。",
+        "options": [
+          "つもりで",
+          "いがい",
+          "わけで",
+          "ため"
+        ],
+        "answer_index": 1,
+        "answer_text": "つもりで",
+        "answered_sentence": "彼が何かを漏らしたとしても、そうするつもりでやったんじゃないと思う。",
+        "explanation": "\"つもりで\" means \"with the intention of\". In \"そうするつもりでやったんじゃないと思う\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 4,
+        "prompt": "まずはその大きな道路から離れる _______ 。",
+        "options": [
+          "よう",
+          "もの",
+          "ものだ",
+          "ことだ"
+        ],
+        "answer_index": 4,
+        "answer_text": "ことだ",
+        "answered_sentence": "まずはその大きな道路から離れることだ。",
+        "explanation": "\"ことだ\" means a pattern for advice, meaning 'the thing to do is...'. In \"まずはその大きな道路から離れることだ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 5,
+        "prompt": "生命を脅かされる状況 _______ 銃の使用が許されることになってる。",
+        "options": [
+          "としては",
+          "においては",
+          "にとっては",
+          "にかんしては"
+        ],
+        "answer_index": 2,
+        "answer_text": "においては",
+        "answered_sentence": "生命を脅かされる状況においては銃の使用が許されることになってる。",
+        "explanation": "\"においては\" means \"in\" or \"in the case of\". In \"生命を脅かされる状況においては銃の使用が許されることになってる\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "図像学の研究者 _______ 、人間の意識に一瞬で恐怖を与えうるイメージがほんのわずかしかないのを私は知っている。",
+        "options": [
+          "には",
+          "として",
+          "にとって",
+          "による"
+        ],
+        "answer_index": 2,
+        "answer_text": "として",
+        "answered_sentence": "図像学の研究者として、人間の意識に一瞬で恐怖を与えうるイメージがほんのわずかしかないのを私は知っている。",
+        "explanation": "\"として\" means \"as\" in the role or position of. In \"図像学の研究者として\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 7,
+        "prompt": "食堂には先生の姿はなかった。授業中でない _______ 、たぶん職員室だろう。",
+        "options": [
+          "ながら",
+          "ところで",
+          "といっても",
+          "としたら"
+        ],
+        "answer_index": 4,
+        "answer_text": "としたら",
+        "answered_sentence": "食堂には先生の姿はなかった。授業中でないとしたら、たぶん職員室だろう。",
+        "explanation": "\"としたら\" means \"if that is the case\". In \"授業中でないとしたら\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 8,
+        "prompt": "昨日赤ちゃんが眠っている _______ わたしたちが家を掃除した。",
+        "options": [
+          "あいだは",
+          "あいだに",
+          "あいだで",
+          "あいだと"
+        ],
+        "answer_index": 2,
+        "answer_text": "あいだに",
+        "answered_sentence": "昨日赤ちゃんが眠っているあいだにわたしたちが家を掃除した。",
+        "explanation": "\"あいだに\" means \"while\" or \"during the time when\". In \"昨日赤ちゃんが眠っているあいだにわたしたちが家を掃除した\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 9,
+        "prompt": "私が手にしたその物体は、大きさ _______ 驚くほど重く感じられた。",
+        "options": [
+          "のわりに",
+          "のように",
+          "のせいで",
+          "のくせに"
+        ],
+        "answer_index": 1,
+        "answer_text": "のわりに",
+        "answered_sentence": "私が手にしたその物体は、大きさのわりに驚くほど重く感じられた。",
+        "explanation": "\"のわりに\" means \"for / considering...\". In \"大きさのわりに驚くほど重く感じられた\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 10,
+        "prompt": "この戦争 _______ 、ともあれすべては落ち着くところに落ち着くだろう。",
+        "options": [
+          "さえ終われば",
+          "さえ終わったら",
+          "だけ終われば",
+          "だけ終わったら"
+        ],
+        "answer_index": 1,
+        "answer_text": "さえ終われば",
+        "answered_sentence": "この戦争さえ終われば、ともあれすべては落ち着くところに落ち着くだろう。",
+        "explanation": "\"さえ終われば\" is a limiting or emphatic pattern. In \"この戦争さえ終われば\", it narrows the meaning or adds emphasis to that part of the sentence."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 09",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-09/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "僕は大学が嫌だった　_______　。ただ、学費を払って面白くもない講義を受けるのが嫌だったのだ。",
+        "options": [
+          "わけではない",
+          "わけだ",
+          "わけがない",
+          "わけにはいかない"
+        ],
+        "answer_index": 1,
+        "answer_text": "わけではない",
+        "answered_sentence": "僕は大学が嫌だったわけではない。ただ、学費を払って面白くもない講義を受けるのが嫌だったのだ。",
+        "explanation": "\"わけではない\" softens a statement by saying \"it does not mean that....\""
+      },
+      {
+        "number": 2,
+        "prompt": "私はあなたの特質がうらやましいよ。あなたは現実に直面することをいとわず、私のようにそこから　_______　。",
+        "options": [
+          "逃げないようになっている",
+          "逃げようとしている",
+          "逃げようとしない",
+          "逃げずにはいられない"
+        ],
+        "answer_index": 3,
+        "answer_text": "逃げようとしない",
+        "answered_sentence": "私はあなたの特質がうらやましいよ。あなたは現実に直面することをいとわず、私のようにそこから逃げようとしない。",
+        "explanation": "\"逃げようとしない\" is the pattern that gives the sentence a comparison, appearance, purpose, or changed state. In \"私のようにそこから逃げようとしない\", that is the meaning the sentence is building."
+      },
+      {
+        "number": 3,
+        "prompt": "資源をめぐる争いで、両国の関係はますます悪化する_______　。",
+        "options": [
+          "ばかりだ",
+          "ところだ",
+          "すぎる",
+          "ぎみだ"
+        ],
+        "answer_index": 1,
+        "answer_text": "ばかりだ",
+        "answered_sentence": "資源をめぐる争いで、両国の関係はますます悪化するばかりだ。",
+        "explanation": "\"ばかりだ\" means \"just keeps...\". In \"両国の関係はますます悪化するばかりだ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 4,
+        "prompt": "１６日夜から１７日未明　_______　関東地域の広い範囲で雪が降った。",
+        "options": [
+          "において",
+          "にかわり",
+          "によって",
+          "にかけて"
+        ],
+        "answer_index": 4,
+        "answer_text": "にかけて",
+        "answered_sentence": "１６日夜から１７日未明にかけて関東地域の広い範囲で雪が降った。",
+        "explanation": "\"にかけて\" means \"over the period from ... to ...\". In \"１６日夜から１７日未明にかけて関東地域の広い範囲で雪が降った\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 5,
+        "prompt": "あのときは、違う対応が　_______　なと思う。あのころは自分が父親になるというのが想像できなくて、きちんと向き合うことができなかったんだ。",
+        "options": [
+          "できるならよかった",
+          "できればよかった",
+          "できるとよかった",
+          "できたらよかった"
+        ],
+        "answer_index": 2,
+        "answer_text": "できればよかった",
+        "answered_sentence": "あのときは、違う対応ができればよかったなと思う。あのころは自分が父親になるというのが想像できなくて、きちんと向き合うことができなかったんだ。",
+        "explanation": "\"できればよかった\" means \"it would have been better if...\". In \"違う対応ができればよかったなと思う\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "実家がパン屋だったので、わたしは休みの日も親に店の掃除などを　_______　ことが多く、友達とほとんど遊べなかった。",
+        "options": [
+          "手伝える",
+          "手伝われる",
+          "手伝わせる",
+          "手伝わされる"
+        ],
+        "answer_index": 4,
+        "answer_text": "手伝わされる",
+        "answered_sentence": "実家がパン屋だったので、わたしは休みの日も親に店の掃除などを手伝わされることが多く、友達とほとんど遊べなかった。",
+        "explanation": "\"手伝わされる\" means a causative-passive form meaning 'be made to help'. In \"わたしは休みの日も親に店の掃除などを手伝わされることが多く\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 7,
+        "prompt": "さあ、早く。フェンスを飛び越えられない　_______　老け込んではいないでしょう？",
+        "options": [
+          "ごろ",
+          "がち",
+          "ほど",
+          "くらい"
+        ],
+        "answer_index": 3,
+        "answer_text": "ほど",
+        "answered_sentence": "さあ、早く。フェンスを飛び越えられないほど老け込んではいないでしょう？",
+        "explanation": "\"ほど\" marks degree or extent, meaning something like \"to the extent that / about.\""
+      },
+      {
+        "number": 8,
+        "prompt": "ありがたい　_______　東京の町は広く、どれだけ歩いても歩き尽くすということはなかった。",
+        "options": [
+          "ことに",
+          "ものに",
+          "ついでに",
+          "ように"
+        ],
+        "answer_index": 1,
+        "answer_text": "ことに",
+        "answered_sentence": "ありがたいことに東京の町は広く、どれだけ歩いても歩き尽くすということはなかった。",
+        "explanation": "\"ことに\" means a set phrase used with feelings like surprise or gratitude. In \"ありがたいことに東京の町は広く\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 9,
+        "prompt": "彼が大学　_______　高校さえも卒業していない。",
+        "options": [
+          "ばかりか",
+          "どころか",
+          "ばかりに",
+          "どころではなく"
+        ],
+        "answer_index": 2,
+        "answer_text": "どころか",
+        "answered_sentence": "彼が大学どころか高校さえも卒業していない。",
+        "explanation": "\"どころか\" means \"far from....\" It rejects the first expectation and replaces it with a stronger contrast."
+      },
+      {
+        "number": 10,
+        "prompt": "父親にこんな口のきき方を　_______　よ。不敬というものだ。",
+        "options": [
+          "したべきではない",
+          "しべきではない",
+          "するべきではない",
+          "すべきではない"
+        ],
+        "answer_index": 4,
+        "answer_text": "すべきではない",
+        "answered_sentence": "父親にこんな口のきき方をすべきではないよ。不敬というものだ。",
+        "explanation": "\"すべきではない\" means \"should not\". In \"父親にこんな口のきき方をすべきではないよ\", that is exactly what the speaker wants to say."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 10",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-10/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "どんな犠牲を払おうと、彼との約束を破る　_______　。",
+        "options": [
+          "わけだ",
+          "わけにはいかない",
+          "ないわけではない",
+          "わけではない"
+        ],
+        "answer_index": 2,
+        "answer_text": "わけにはいかない",
+        "answered_sentence": "どんな犠牲を払おうと、彼との約束を破るわけにはいかない。",
+        "explanation": "\"わけにはいかない\" means \"cannot possibly do....\" It shows that circumstances or responsibility make the action impossible."
+      },
+      {
+        "number": 2,
+        "prompt": "山田さんは鉄道が大好きで、列車の写真を撮る　_______　、どこへでも行く。",
+        "options": [
+          "ためなら",
+          "ためで",
+          "からなら",
+          "からで"
+        ],
+        "answer_index": 1,
+        "answer_text": "ためなら",
+        "answered_sentence": "山田さんは鉄道が大好きで、列車の写真を撮るためなら、どこへでも行く。",
+        "explanation": "\"ためなら\" means \"if it is for the sake of...\". In \"列車の写真を撮るためなら\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 3,
+        "prompt": "ふたりの関係はいつも大嵐のようでした。ふたりの性格が性格ですから、　_______　ほど多くのけんかをしたのです。",
+        "options": [
+          "数え切る",
+          "数え切った",
+          "数え切れない",
+          "数え切れる"
+        ],
+        "answer_index": 3,
+        "answer_text": "数え切れない",
+        "answered_sentence": "ふたりの関係はいつも大嵐のようでした。ふたりの性格が性格ですから、数え切れないほど多くのけんかをしたのです。",
+        "explanation": "\"数え切れない\" means \"countless\". In \"数え切れないほど多くのけんかをしたのです\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 4,
+        "prompt": "彼女と結婚する気はなかったし、結婚しても幸せになれず、すぐに分かれた　_______　。",
+        "options": [
+          "もの",
+          "べきだ",
+          "だろう",
+          "はずだ"
+        ],
+        "answer_index": 4,
+        "answer_text": "はずだ",
+        "answered_sentence": "彼女と結婚する気はなかったし、結婚しても幸せになれず、すぐに分かれたはずだ。",
+        "explanation": "\"はずだ\" means \"should / is expected to....\" It shows the speaker's strong expectation."
+      },
+      {
+        "number": 5,
+        "prompt": "犯人たち　_______　、一人じゃないのですね？",
+        "options": [
+          "といって",
+          "とは",
+          "というと",
+          "というのは"
+        ],
+        "answer_index": 4,
+        "answer_text": "というのは",
+        "answered_sentence": "犯人たちというのは、一人じゃないのですね？",
+        "explanation": "\"というのは\" means used to define a topic or explain what something is. In \"犯人たちというのは\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "最近仕事が忙しく、食事の時間が不規則になり　_______　だ。",
+        "options": [
+          "がち",
+          "がたい",
+          "がる",
+          "やすい"
+        ],
+        "answer_index": 1,
+        "answer_text": "がち",
+        "answered_sentence": "最近仕事が忙しく、食事の時間が不規則になりがちだ。",
+        "explanation": "\"がち\" means \"tend to\". In \"食事の時間が不規則になりがちだ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 7,
+        "prompt": "君、そんな妙な目つきで僕を見ないでほしい　_______　ね。",
+        "options": [
+          "こと",
+          "ことだ",
+          "もの",
+          "ものだ"
+        ],
+        "answer_index": 4,
+        "answer_text": "ものだ",
+        "answered_sentence": "君、そんな妙な目つきで僕を見ないでほしいものだね。",
+        "explanation": "\"ものだ\" is used for strong feeling, memory, or general truth depending on context."
+      },
+      {
+        "number": 8,
+        "prompt": "人には長所_______　あれば、短所_______　ある。",
+        "options": [
+          "も/も",
+          "と/と",
+          "や/や",
+          "とか/とか"
+        ],
+        "answer_index": 1,
+        "answer_text": "も/も",
+        "answered_sentence": "人には長所もあれば、短所もある。",
+        "explanation": "\"も ... も\" presents both sides together. In this sentence, people have both strengths and weaknesses."
+      },
+      {
+        "number": 9,
+        "prompt": "私が部屋に入ったとき彼は水を飲んでいた。その顔の蒼さが、水を　_______　ことを示していた。",
+        "options": [
+          "飲まずにはいけなかった",
+          "飲まずにはいられなかった",
+          "飲まずにはならなかった",
+          "飲まずにはだめだった"
+        ],
+        "answer_index": 2,
+        "answer_text": "飲まずにはいられなかった",
+        "answered_sentence": "私が部屋に入ったとき彼は水を飲んでいた。その顔の蒼さが、水を飲まずにはいられなかったことを示していた。",
+        "explanation": "\"飲まずにはいられなかった\" means \"cannot help doing.\" In \"水を飲まずにはいられなかったことを示していた\", the feeling or condition is so strong that the action happens almost automatically."
+      },
+      {
+        "number": 10,
+        "prompt": "中村はホテルの部屋に閉じこもり、プロトタイプをいじって　_______　いた。",
+        "options": [
+          "だけ",
+          "だらけ",
+          "ばかり",
+          "まみれ"
+        ],
+        "answer_index": 3,
+        "answer_text": "ばかり",
+        "answered_sentence": "中村はホテルの部屋に閉じこもり、プロトタイプをいじってばかりいた。",
+        "explanation": "\"ばかり\" emphasizes limitation, like \"only\" or \"nothing but,\" depending on the sentence."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 11",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-11/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "子供のころに祖母が作ってくれたワンピースを、_______　_______　…★… _______　いる。",
+        "options": [
+          "着られなくなった",
+          "大切に持って",
+          "今でも",
+          "体が大きくなって"
+        ],
+        "answer_index": 3,
+        "answer_text": "今でも",
+        "answered_sentence": "子供のころに祖母が作ってくれたワンピースを、体が大きくなって着られなくなった今でも大切に持っている。",
+        "explanation": "\"今でも\" means \"even now\". In \"体が大きくなって着られなくなった今でも大切に持っている\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 2,
+        "prompt": "庭の芝生中に、　_______　_______　…★… _______　兵士や、痛手を負って動けなくなった兵士が、倒れ伏していた。",
+        "options": [
+          "歩くことも",
+          "できない",
+          "それ以上",
+          "疲れきって"
+        ],
+        "answer_index": 1,
+        "answer_text": "歩くことも",
+        "answered_sentence": "庭の芝生中に、疲れきってそれ以上歩くこともできない兵士や、痛手を負って動けなくなった兵士が、倒れ伏していた。",
+        "explanation": "In \"疲れきってそれ以上歩くこともできない兵士や\", the pattern means someone cannot do that action. \"歩くことも\" is the action or state that becomes impossible there."
+      },
+      {
+        "number": 3,
+        "prompt": "友達がけがで入院したと聞き、あわてて　_______　_______　…★… _______　元気で安心した。",
+        "options": [
+          "病院に行って",
+          "思って",
+          "みると",
+          "いたよりも"
+        ],
+        "answer_index": 2,
+        "answer_text": "思って",
+        "answered_sentence": "友達がけがで入院したと聞き、あわてて病院に行ってみると思っていたよりも元気で安心した。",
+        "explanation": "\"思って\" is part of the pattern \"思っていたより,\" meaning \"than I expected.\" The friend turned out to be healthier than the speaker had imagined."
+      },
+      {
+        "number": 4,
+        "prompt": "食糧と衣類　_______　_______　…★… _______　価格はつりあがった。",
+        "options": [
+          "不足",
+          "するほど",
+          "すれば",
+          "が"
+        ],
+        "answer_index": 3,
+        "answer_text": "すれば",
+        "answered_sentence": "食糧と衣類が不足すればするほど価格はつりあがった。",
+        "explanation": "\"すればするほど\" means \"the more ..., the more ....\" Here, the more supplies ran short, the more the prices rose."
+      },
+      {
+        "number": 5,
+        "prompt": "あいつは知りすぎるくらい知っていやがる。　_______　_______　…★… _______　。",
+        "options": [
+          "ことはない",
+          "何もかも",
+          "知らない",
+          "らしい"
+        ],
+        "answer_index": 1,
+        "answer_text": "ことはない",
+        "answered_sentence": "あいつは知りすぎるくらい知っていやがる。何もかも知らないことはないらしい。",
+        "explanation": "\"ことはない\" means \"there is no need to....\" It is used to reassure or advise."
+      },
+      {
+        "number": 6,
+        "prompt": "私はこの付近の大きい家を全部とうさして、　_______　_______　…★… _______　来歴を調べた。",
+        "options": [
+          "住んでいる",
+          "ついでに",
+          "家族の",
+          "そこに"
+        ],
+        "answer_index": 1,
+        "answer_text": "住んでいる",
+        "answered_sentence": "私はこの付近の大きい家を全部とうさして、ついでにそこに住んでいる家族の来歴を調べた。",
+        "explanation": "In \"ついでにそこに住んでいる家族の来歴を調べた\", \"住んでいる\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "樫の木も相当の老樹だが、それでもこの屋敷の　_______　_______　…★… _______　。",
+        "options": [
+          "まだ若い",
+          "くらべたら",
+          "といえる",
+          "年代に"
+        ],
+        "answer_index": 1,
+        "answer_text": "まだ若い",
+        "answered_sentence": "樫の木も相当の老樹だが、それでもこの屋敷の年代にくらべたらまだ若いといえる。",
+        "explanation": "In \"それでもこの屋敷の年代にくらべたらまだ若いといえる\", \"まだ若い\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 8,
+        "prompt": "_______　_______　…★… _______　窓の外の光はいかにも秋らしいやわらかな物静かな色に変化していった。",
+        "options": [
+          "つれて",
+          "深まる",
+          "に",
+          "午後が"
+        ],
+        "answer_index": 3,
+        "answer_text": "に",
+        "answered_sentence": "午後が深まるにつれて窓の外の光はいかにも秋らしいやわらかな物静かな色に変化していった。",
+        "explanation": "\"に\" marks the target, time, place, or receiver here. In \"午後が深まるにつれて窓の外の光はいかにも秋らしいやわらかな物静かな色に変化していった\", that relation is what the sentence needs."
+      },
+      {
+        "number": 9,
+        "prompt": "仕事から帰って、娘に笑顔で_______　_______　…★… _______　幸せだといつも思う。",
+        "options": [
+          "わたしは本当に",
+          "「おかえり。」と言われると",
+          "娘がいる",
+          "こんなかわいい"
+        ],
+        "answer_index": 3,
+        "answer_text": "娘がいる",
+        "answered_sentence": "仕事から帰って、娘に笑顔で「おかえり」と言われるとこんなかわいい娘がいるわたしは本当に幸せだといつも思う。",
+        "explanation": "In \"と言われるとこんなかわいい娘がいるわたしは本当に幸せだといつも思う\", \"娘がいる\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 10,
+        "prompt": "今の子供達　_______　_______　…★… _______　とアメリカの学者が主張している。",
+        "options": [
+          "時間の",
+          "にとって",
+          "無駄だ",
+          "暗記は"
+        ],
+        "answer_index": 1,
+        "answer_text": "時間の",
+        "answered_sentence": "今の子供達にとって暗記は時間の無駄だとアメリカの学者が主張している。",
+        "explanation": "\"時間の\" ends with \"の,\" so it modifies the noun after it. In \"今の子供達にとって暗記は時間の無駄だとアメリカの学者が主張している\", it connects the first noun to the one that follows."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 12",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-12/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "A 「私はどうすればいいんですか、具体的に？」",
+        "options": [
+          "B 「まず第一は相手を助けたいと思う　_______　。第二に正直になる　_______　。」",
+          "こそ/こそ",
+          "べき/べき",
+          "こと/こと"
+        ],
+        "answer_index": 3,
+        "answer_text": "べき/べき",
+        "answered_sentence": "A 「私はどうすればいいんですか、具体的に？」B 「まず第一は相手を助けたいと思うこと。第二に正直になること。」",
+        "explanation": "\"べき/べき\" expresses duty or what is proper. In \"A 「私はどうすればいいんですか、具体的に？」B 「まず第一は相手を助けたいと思うこと。\", it means this is what someone should do."
+      },
+      {
+        "number": 2,
+        "prompt": "この上はじっと辛抱して、どんなことになるか待つ　_______　のだよ。",
+        "options": [
+          "ことはない",
+          "わけがない",
+          "しかない",
+          "はずがない"
+        ],
+        "answer_index": 3,
+        "answer_text": "しかない",
+        "answered_sentence": "この上はじっと辛抱して、どんなことになるか待つしかないのだよ。",
+        "explanation": "\"しかない\" means \"there is nothing to do but...\". In \"どんなことになるか待つしかないのだよ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 3,
+        "prompt": "彼を逮捕　_______　、容疑者として留置するつもりです。",
+        "options": [
+          "次第",
+          "し次第",
+          "する次第",
+          "して次第"
+        ],
+        "answer_index": 2,
+        "answer_text": "し次第",
+        "answered_sentence": "彼を逮捕し次第、容疑者として留置するつもりです。",
+        "explanation": "\"し次第\" means \"as soon as...\". In \"彼を逮捕し次第\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 4,
+        "prompt": "合格できる_______　、一生懸命勉強しようと思っています。",
+        "options": [
+          "ように",
+          "すえに",
+          "うえに",
+          "そうに"
+        ],
+        "answer_index": 1,
+        "answer_text": "ように",
+        "answered_sentence": "合格できるように、一生懸命勉強しようと思っています。",
+        "explanation": "\"ように\" often means \"so that....\" It connects an action with the result or goal the speaker wants."
+      },
+      {
+        "number": 5,
+        "prompt": "私は　_______　の戸口へ二歩で飛んでいった。",
+        "options": [
+          "開けぽい",
+          "開けぱなし",
+          "開けっぽい",
+          "開けっぱなし"
+        ],
+        "answer_index": 4,
+        "answer_text": "開けっぱなし",
+        "answered_sentence": "私は開けっぱなしの戸口へ二歩で飛んでいった。",
+        "explanation": "\"開けっぱなし\" means \"left open\". In \"私は開けっぱなしの戸口へ二歩で飛んでいった\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "家を建てる　_______　、とてもおかしな場所を選んだように思えた。",
+        "options": [
+          "にしては",
+          "としては",
+          "にしても",
+          "にたいして"
+        ],
+        "answer_index": 1,
+        "answer_text": "にしては",
+        "answered_sentence": "家を建てるにしては、とてもおかしな場所を選んだように思えた。",
+        "explanation": "\"にしては\" means \"for...\". In \"家を建てるにしては\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 7,
+        "prompt": "怪物は小さい　_______　牛のように力が強かった。",
+        "options": [
+          "くせに",
+          "ために",
+          "ばかりに",
+          "ことに"
+        ],
+        "answer_index": 1,
+        "answer_text": "くせに",
+        "answered_sentence": "怪物は小さいくせに牛のように力が強かった。",
+        "explanation": "\"くせに\" means \"even though...\" with criticism. In \"怪物は小さいくせに牛のように力が強かった\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 8,
+        "prompt": "友人とけんかをしてしまった。仲直りしたいが、謝っても許してくれない。どうしたら_______　分からない。",
+        "options": [
+          "いいと",
+          "いいのか",
+          "よくて",
+          "よくても"
+        ],
+        "answer_index": 2,
+        "answer_text": "いいのか",
+        "answered_sentence": "友人とけんかをしてしまった。仲直りしたいが、謝っても許してくれない。どうしたらいいのか分からない。",
+        "explanation": "\"いいのか\" appears in the pattern \"どうしたらいいのか,\" meaning \"what I should do.\" The speaker is unsure what the right next step is."
+      },
+      {
+        "number": 9,
+        "prompt": "驚いた　_______　、町の様子が１０年前に比べ、すっかり変わってしまった。",
+        "options": [
+          "ことに",
+          "ことだ",
+          "ことで",
+          "ことな"
+        ],
+        "answer_index": 1,
+        "answer_text": "ことに",
+        "answered_sentence": "驚いたことに、町の様子が１０年前に比べ、すっかり変わってしまった。",
+        "explanation": "\"ことに\" means a set phrase used with feelings like surprise or gratitude. In \"驚いたことに\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 10,
+        "prompt": "ハードウエアとソフトウエアを統合した製品が売れなかった　_______　、僕らは考え方を根本的に見直さなければならなくなっていた。",
+        "options": [
+          "から",
+          "からには",
+          "ことから",
+          "からいうと"
+        ],
+        "answer_index": 3,
+        "answer_text": "ことから",
+        "answered_sentence": "ハードウエアとソフトウエアを統合した製品が売れなかったことから、僕らは考え方を根本的に見直さなければならなくなっていた。",
+        "explanation": "\"ことから\" means \"from the fact that...\". In \"ハードウエアとソフトウエアを統合した製品が売れなかったことから\", that is exactly what the speaker wants to say."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 13",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-13/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "３０歳　_______　多くの人にとって人生の節目である。",
+        "options": [
+          "という",
+          "というと",
+          "ということは",
+          "というのは"
+        ],
+        "answer_index": 4,
+        "answer_text": "というのは",
+        "answered_sentence": "３０歳というのは多くの人にとって人生の節目である。",
+        "explanation": "\"というのは\" means used to define a topic or explain what something is. In \"３０歳というのは多くの人にとって人生の節目である\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 2,
+        "prompt": "子供の頃、よく祖母に「男_______　男になりなさい」と言われた。",
+        "options": [
+          "ような",
+          "そうな",
+          "らしい",
+          "みたいな"
+        ],
+        "answer_index": 3,
+        "answer_text": "らしい",
+        "answered_sentence": "子供の頃、よく祖母に「男らしい男になりなさい」と言われた。",
+        "explanation": "\"らしい\" means \"apparently / it seems.\" It is used for reported information or a typical quality."
+      },
+      {
+        "number": 3,
+        "prompt": "木村さんに招待状を書いて、日曜のディナーにお招きし、直接お礼を申し上げられる　_______　ください。",
+        "options": [
+          "ようにして",
+          "ようになって",
+          "ようとして",
+          "ようとなって"
+        ],
+        "answer_index": 1,
+        "answer_text": "ようにして",
+        "answered_sentence": "木村さんに招待状を書いて、日曜のディナーにお招きし、直接お礼を申し上げられるようにしてください。",
+        "explanation": "\"ようにして\" is the pattern that gives the sentence a comparison, appearance, purpose, or changed state. In \"直接お礼を申し上げられるようにしてください\", that is the meaning the sentence is building."
+      },
+      {
+        "number": 4,
+        "prompt": "母親　「今、お菓子を買った子がタケルくん？」",
+        "options": [
+          "子供　「ちがうよ。あそこで泣いて、お菓子を　_______　子だよ。」",
+          "欲しい",
+          "欲しがっている",
+          "欲しそうな"
+        ],
+        "answer_index": 2,
+        "answer_text": "欲しい",
+        "answered_sentence": "母親 「今、お菓子を買った子がタケルくん？」子供 「ちがうよ。あそこで泣いて、お菓子を欲しがっている子だよ。」",
+        "explanation": "In \"母親 「今、お菓子を買った子がタケルくん？」子供 「ちがうよ。あそこで泣いて、お菓子を欲\", \"欲しい\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "これが嘘なら地獄に　_______　。彼は本当に墓場に行きかけています。そしてあなたの他には誰も彼を救うことはできないのです！",
+        "options": [
+          "落ちたらかまわない",
+          "落ちるとかまわない",
+          "落ちてもかまわない",
+          "落ちてかまわない"
+        ],
+        "answer_index": 3,
+        "answer_text": "落ちてもかまわない",
+        "answered_sentence": "これが嘘なら地獄に落ちてもかまわない。彼は本当に墓場に行きかけています。そしてあなたの他には誰も彼を救うことはできないのです！",
+        "explanation": "\"落ちてもかまわない\" is used for permission or concession. In \"これが嘘なら地獄に落ちてもかまわない\", it means the action is allowed or the result still holds even if it happens."
+      },
+      {
+        "number": 6,
+        "prompt": "最近発売されている液晶テレビは薄い_______　、高品質だ。",
+        "options": [
+          "うえに",
+          "うえで",
+          "うえは",
+          "うえでは"
+        ],
+        "answer_index": 1,
+        "answer_text": "うえに",
+        "answered_sentence": "最近発売されている液晶テレビは薄いうえに、高品質だ。",
+        "explanation": "\"うえに\" means \"on top of that / in addition\". In \"最近発売されている液晶テレビは薄いうえに\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 7,
+        "prompt": "別に隠すつもりはありませんが、いまこの忙しい捜査 _______　、ながながと込み入った説明をしてはいられませんからね。",
+        "options": [
+          "のうちに",
+          "の上に",
+          "の最中に",
+          "の間に"
+        ],
+        "answer_index": 3,
+        "answer_text": "の最中に",
+        "answered_sentence": "別に隠すつもりはありませんが、いまこの忙しい捜査の最中に、ながながと込み入った説明をしてはいられませんからね。",
+        "explanation": "\"の最中に\" means \"in the middle of\". In \"いまこの忙しい捜査の最中に\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 8,
+        "prompt": "この子は、もっとも簡単な質問にも答えられ _______　。",
+        "options": [
+          "そうにない",
+          "そうもない",
+          "ようにない",
+          "ようもない"
+        ],
+        "answer_index": 2,
+        "answer_text": "そうもない",
+        "answered_sentence": "この子は、もっとも簡単な質問にも答えられそうもない。",
+        "explanation": "\"そうもない\" expresses appearance or the speaker's impression. In \"もっとも簡単な質問にも答えられそうもない\", the judgment comes from how the situation seems."
+      },
+      {
+        "number": 9,
+        "prompt": "真珠を金庫へしまってくれたまえ。そして _______　偽造事件の書類を出してくれたまえ。",
+        "options": [
+          "ついでに",
+          "たびに",
+          "ところで",
+          "かわりに"
+        ],
+        "answer_index": 1,
+        "answer_text": "ついでに",
+        "answered_sentence": "真珠を金庫へしまってくれたまえ。そしてついでに偽造事件の書類を出してくれたまえ。",
+        "explanation": "\"ついでに\" means \"while you are at it / on the way\". In \"そしてついでに偽造事件の書類を出してくれたまえ\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 10,
+        "prompt": "田中は上司 _______　人間 _______　モデルになるような人物ではない。わかりやすくて皆がまねしたいと思うような人物でもない。",
+        "options": [
+          "にしても/にしても",
+          "としても/としても",
+          "としたら/としたら",
+          "といっても/といっても"
+        ],
+        "answer_index": 2,
+        "answer_text": "としても/としても",
+        "answered_sentence": "田中は上司としても人間としてもモデルになるような人物ではない。わかりやすくて皆がまねしたいと思うような人物でもない。",
+        "explanation": "\"としても/としても\" is used for permission or concession. In \"田中は上司としても人間としてもモデルになるような人物ではない。わかりやすくて皆がまねした\", it means the action is allowed or the result still holds even if it happens."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 14",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-14/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "われわれはここで待っていますよ。奥の部屋へいって _______　なさい。",
+        "options": [
+          "調べごらん",
+          "調べてごらん",
+          "調べてみて",
+          "調べてみたら"
+        ],
+        "answer_index": 2,
+        "answer_text": "調べてごらん",
+        "answered_sentence": "われわれはここで待っていますよ。奥の部屋へいって調べてごらんなさい。",
+        "explanation": "\"調べてごらん\" is a gentle way to tell someone to try doing something. In \"奥の部屋へいって調べてごらんなさい\", the speaker is encouraging the listener to go and check."
+      },
+      {
+        "number": 2,
+        "prompt": "弟　「お父さん、どこにいるか知らない？」",
+        "options": [
+          "兄　「さっき部屋にいたけど、忙しそうだったよ。」",
+          "弟　「そうか。じゃあ今は_______　。進学のこと、相談したかったんだけど。」",
+          "話しかけないほうがよさそうだな",
+          "話しかけなくてもよさそうだな"
+        ],
+        "answer_index": 1,
+        "answer_text": "兄　「さっき部屋にいたけど、忙しそうだったよ。」",
+        "answered_sentence": "弟 「お父さん、どこにいるか知らない？」兄 「さっき部屋にいたけど、忙しそうだったよ。」弟 「そうか。じゃあ今は話しかけないほうがよさそうだな。進学のこと、相談したかったんだけど。」",
+        "explanation": "\"兄 「さっき部屋にいたけど、忙しそうだったよ。」\" expresses appearance or the speaker's impression. In \"兄「さっき部屋にいたけど、忙しそうだったよ。」弟\", the judgment comes from how the situation seems."
+      },
+      {
+        "number": 3,
+        "prompt": "この花は、土が乾いたら水をやる必要があるが、_______　。水が多いと根が腐ってしまう。",
+        "options": [
+          "やらなくていいのがいい",
+          "やってやるのもよくない",
+          "やりすぎるのもよくない",
+          "やらないでおくのがいい"
+        ],
+        "answer_index": 3,
+        "answer_text": "やりすぎるのもよくない",
+        "answered_sentence": "この花は、土が乾いたら水をやる必要があるが、やりすぎるのもよくない。水が多いと根が腐ってしまう。",
+        "explanation": "In \"やりすぎるのもよくない\", \"やりすぎるのもよくない\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 4,
+        "prompt": "私、あの方に夢中になっているのよ。あの方は、私がこれまで会った人たちと全然ちがうんです _______　。",
+        "options": [
+          "こと",
+          "もの",
+          "こそ",
+          "わけ"
+        ],
+        "answer_index": 2,
+        "answer_text": "もの",
+        "answered_sentence": "私、あの方に夢中になっているのよ。あの方は、私がこれまで会った人たちと全然ちがうんですもの。",
+        "explanation": "\"もの\" means a nominalizer or explanatory softener, depending on context. In \"私がこれまで会った人たちと全然ちがうんですもの\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 5,
+        "prompt": "あの人は父親には似ていない _______　だけは確かに申し上げることができます。",
+        "options": [
+          "って",
+          "という",
+          "というの",
+          "ということ"
+        ],
+        "answer_index": 4,
+        "answer_text": "ということ",
+        "answered_sentence": "あの人は父親には似ていないということだけは確かに申し上げることができます。",
+        "explanation": "\"ということ\" introduces the topic and explains what it means. In \"あの人は父親には似ていないということだけは確かに申し上げることができます\", the sentence is defining or clarifying that idea."
+      },
+      {
+        "number": 6,
+        "prompt": "ふたりはすぐに駆けだし早く家へはいりたい _______　話すひまもないほどでした。",
+        "options": [
+          "あまり",
+          "くらい",
+          "ばかりに",
+          "ながらも"
+        ],
+        "answer_index": 3,
+        "answer_text": "ばかりに",
+        "answered_sentence": "ふたりはすぐに駆けだし早く家へはいりたいばかりに話すひまもないほどでした。",
+        "explanation": "\"ばかりに\" limits or emphasizes the situation. In \"ふたりはすぐに駆けだし早く家へはいりたいばかりに話すひまもないほどでした\", it narrows the meaning to \"just / only\" or \"have just...\" depending on the verb around it."
+      },
+      {
+        "number": 7,
+        "prompt": "あの子は頭がよくて積極的で、私が見たなかで一番意志が強いんだ。昔の自分を見ている _______　ね。",
+        "options": [
+          "ような気がする",
+          "ように気がする",
+          "ような気になる",
+          "ように気になる"
+        ],
+        "answer_index": 1,
+        "answer_text": "ような気がする",
+        "answered_sentence": "あの子は頭がよくて積極的で、私が見たなかで一番意志が強いんだ。昔の自分を見ているような気がするね。",
+        "explanation": "\"ような気がする\" is the pattern that gives the sentence a comparison, appearance, purpose, or changed state. In \"昔の自分を見ているような気がするね\", that is the meaning the sentence is building."
+      },
+      {
+        "number": 8,
+        "prompt": "もしあの人たちが沼に落ちた _______　、今では上っているよ。",
+        "options": [
+          "にすると",
+          "にしたら",
+          "にしては",
+          "にしても"
+        ],
+        "answer_index": 4,
+        "answer_text": "にしても",
+        "answered_sentence": "もしあの人たちが沼に落ちたにしても、今では上っているよ。",
+        "explanation": "\"にしても\" is used for permission or concession. In \"もしあの人たちが沼に落ちたにしても\", it means the action is allowed or the result still holds even if it happens."
+      },
+      {
+        "number": 9,
+        "prompt": "彼はちっとも眠いとは思わなかったどころか、目がさえて、少し興奮 _______　だった。",
+        "options": [
+          "ぎみ",
+          "きり",
+          "がち",
+          "がたい"
+        ],
+        "answer_index": 1,
+        "answer_text": "ぎみ",
+        "answered_sentence": "彼はちっとも眠いとは思わなかったどころか、目がさえて、少し興奮ぎみだった。",
+        "explanation": "In \"少し興奮ぎみだった\", \"ぎみ\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 10,
+        "prompt": "子供の頃、テストの成績が悪くてよく母に_______　。",
+        "options": [
+          "叱ることだ",
+          "叱せたものだ",
+          "叱られることだ",
+          "叱られたものだ"
+        ],
+        "answer_index": 4,
+        "answer_text": "叱られたものだ",
+        "answered_sentence": "子供の頃、テストの成績が悪くてよく母に叱られたものだ。",
+        "explanation": "In \"テストの成績が悪くてよく母に叱られたものだ\", \"叱られたものだ\" is the piece that makes the sentence say exactly what the speaker means."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 15",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-15/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "雨の_______　、せっかく植えた苗が水に流された。",
+        "options": [
+          "ように",
+          "うえに",
+          "せいで",
+          "おかげで"
+        ],
+        "answer_index": 3,
+        "answer_text": "せいで",
+        "answered_sentence": "雨のせいで、せっかく植えた苗が水に流された。",
+        "explanation": "\"せいで\" means \"because of....\" It usually carries a negative or blaming nuance."
+      },
+      {
+        "number": 2,
+        "prompt": "女１　「日曜日はいつも何をしていますか。」",
+        "options": [
+          "女２　「本を_______　しています。」",
+          "読んだり",
+          "読んだから",
+          "読んで"
+        ],
+        "answer_index": 1,
+        "answer_text": "女２　「本を_______　しています。」",
+        "answered_sentence": "女１「日曜日はいつも何をしていますか。」女２「本を読んだりしています。」",
+        "explanation": "In \"女１「日曜日はいつも何をしていますか。」女２「本を読んだりしています。」\", \"女２ 「本を_______ しています。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 3,
+        "prompt": "締め切りまであと一週間しかない。のんびりし_______　。",
+        "options": [
+          "てもかまわない",
+          "てはすまない",
+          "てはたまらない",
+          "てはいられない"
+        ],
+        "answer_index": 4,
+        "answer_text": "てはいられない",
+        "answered_sentence": "締め切りまであと一週間しかない。のんびりしてはいられない。",
+        "explanation": "In \"のんびりしてはいられない\", \"てはいられない\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 4,
+        "prompt": "今度の試合に勝てる_______　一生懸命頑張ります。",
+        "options": [
+          "ために",
+          "ように",
+          "ことに",
+          "みたいに"
+        ],
+        "answer_index": 2,
+        "answer_text": "ように",
+        "answered_sentence": "今度の試合に勝てるように一生懸命頑張ります。",
+        "explanation": "\"ように\" often means \"so that....\" It connects an action with the result or goal the speaker wants."
+      },
+      {
+        "number": 5,
+        "prompt": "男１　「山田は？」",
+        "options": [
+          "男２　「夕方、遊びに行った_______　、まだ帰ってないよ。」",
+          "きり",
+          "だけ",
+          "しか"
+        ],
+        "answer_index": 1,
+        "answer_text": "男２　「夕方、遊びに行った_______　、まだ帰ってないよ。」",
+        "answered_sentence": "男１「山田は？」男２「夕方、遊びに行ったきり、まだ帰ってないよ。」",
+        "explanation": "In \"男１「山田は？」男２「夕方、遊びに行ったきり、まだ帰ってないよ。」\", \"男２ 「夕方、遊びに行った_______ 、まだ帰ってないよ。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 6,
+        "prompt": "内田　「高田さんがしている指輪、すごく高そうだよね。」",
+        "options": [
+          "森山　「いや、高い指輪だったら、会社に_______　だよ。",
+          "してこないはず",
+          "しにこないはず",
+          "してこないつもり"
+        ],
+        "answer_index": 1,
+        "answer_text": "森山　「いや、高い指輪だったら、会社に_______　だよ。",
+        "answered_sentence": "内田「高田さんがしている指輪、すごく高そうだよね。」森山「いや、高い指輪だったら、会社にしてこないはずだよ。",
+        "explanation": "In \"内田「高田さんがしている指輪、すごく高そうだよね。」森山「いや、高い指輪だったら、会社に\", the ending shows appearance or likelihood. \"森山 「いや、高い指輪だったら、会社に_______ だよ。\" provides the form that makes that judgment natural."
+      },
+      {
+        "number": 7,
+        "prompt": "鈴木選手は、試合前は腹痛を起こす_______　緊張したそうだ。",
+        "options": [
+          "ごろ",
+          "つもり",
+          "ように",
+          "くらい"
+        ],
+        "answer_index": 4,
+        "answer_text": "くらい",
+        "answered_sentence": "鈴木選手は、試合前は腹痛を起こすくらい緊張したそうだ。",
+        "explanation": "\"くらい\" marks degree or extent, meaning something like \"to the extent that / about.\""
+      },
+      {
+        "number": 8,
+        "prompt": "地震の際には、エレベーターを使わない_______　。",
+        "options": [
+          "ようとする",
+          "ようにする",
+          "ようと思う",
+          "ようになる"
+        ],
+        "answer_index": 2,
+        "answer_text": "ようにする",
+        "answered_sentence": "地震の際には、エレベーターを使わないようにする。",
+        "explanation": "\"ようにする\" is the pattern that gives the sentence a comparison, appearance, purpose, or changed state. In \"エレベーターを使わないようにする\", that is the meaning the sentence is building."
+      },
+      {
+        "number": 9,
+        "prompt": "暑い日が続いているが、この暑さは、今週末_______　続くそうだ。",
+        "options": [
+          "ごろは",
+          "ぐらいまで",
+          "ごろよりも",
+          "ぐらいに"
+        ],
+        "answer_index": 2,
+        "answer_text": "ぐらいまで",
+        "answered_sentence": "暑い日が続いているが、この暑さは、今週末ぐらいまで続くそうだ。",
+        "explanation": "In \"今週末ぐらいまで続くそうだ\", the ending shows appearance or likelihood. \"ぐらいまで\" provides the form that makes that judgment natural."
+      },
+      {
+        "number": 10,
+        "prompt": "スーパーに、トマトのジャムという珍しいものがあった。ジャムは甘いから、トマトのすっぱさが苦手なわたしにも_______　と思って、買ってみた。",
+        "options": [
+          "食べるかもしれない",
+          "食べられるかもしれない",
+          "食べるようになった",
+          "食べられるようになった"
+        ],
+        "answer_index": 2,
+        "answer_text": "食べられるかもしれない",
+        "answered_sentence": "スーパーに、トマトのジャムという珍しいものがあった。ジャムは甘いから、トマトのすっぱさが苦手なわたしにも食べられるかもしれないと思って、買ってみた。",
+        "explanation": "\"食べられるかもしれない\" is the form that expresses possibility, passive, or spontaneous result here. In \"トマトのすっぱさが苦手なわたしにも食べられるかもしれないと思って\", the verb needs that meaning, not a plain action form."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 16",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-16/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "息子は_______　_______　…★… _______　で、全然勉強しようとしない。",
+        "options": [
+          "遊んで",
+          "友達と",
+          "悪い",
+          "ばかり"
+        ],
+        "answer_index": 1,
+        "answer_text": "遊んで",
+        "answered_sentence": "息子は悪い友達と遊んでばかりで、全然勉強しようとしない。",
+        "explanation": "In \"息子は悪い友達と遊んでばかりで\", \"ばかり\" adds the idea of \"only / just / keep doing,\" depending on the rest of the sentence. \"遊んで\" is the part that completes that pattern."
+      },
+      {
+        "number": 2,
+        "prompt": "今日の夕飯は_______　_______　…★… _______　ことになった。",
+        "options": [
+          "姉が作る",
+          "風を引いた",
+          "かわって",
+          "母に"
+        ],
+        "answer_index": 3,
+        "answer_text": "かわって",
+        "answered_sentence": "今日の夕飯は風を引いた母にかわって姉が作ることになった。",
+        "explanation": "In \"今日の夕飯は風を引いた母にかわって姉が作ることになった\", \"かわって\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 3,
+        "prompt": "兄は歌が_______　_______　…★… _______　放さない。",
+        "options": [
+          "くせに",
+          "持つと",
+          "下手な",
+          "マイクを"
+        ],
+        "answer_index": 4,
+        "answer_text": "マイクを",
+        "answered_sentence": "兄は歌が下手なくせにマイクを持つと放さない。",
+        "explanation": "In \"兄は歌が下手なくせにマイクを持つと放さない\", \"マイクを\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 4,
+        "prompt": "父はいつも、「何も_______　_______　…★… _______　ほうがいい。」と言っている。",
+        "options": [
+          "チャレンジして",
+          "失敗した",
+          "しないで",
+          "いるより"
+        ],
+        "answer_index": 1,
+        "answer_text": "チャレンジして",
+        "answered_sentence": "父はいつも、「何もしないでいるよりチャレンジして失敗したほうがいい。」と言っている。",
+        "explanation": "In \"何もしないでいるよりチャレンジして失敗したほうがいい\", the sentence is making a comparison. \"チャレンジして\" supplies the part being compared or the judgment that follows."
+      },
+      {
+        "number": 5,
+        "prompt": "それは _______ _______ …★… ",
+        "options": [
+          "_______",
+          "わね。",
+          "おく",
+          "ほめ言葉"
+        ],
+        "answer_index": 3,
+        "answer_text": "おく",
+        "answered_sentence": "それはほめ言葉として受け取っておくわね。",
+        "explanation": "In \"それはほめ言葉として受け取っておくわね\", \"おく\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 6,
+        "prompt": "A　「じゃあ、あしたはコンサート会場の入り口に５時に集まりませんか。」",
+        "options": [
+          "B　「コンサートは７時からですから、みんな_______　_______　…★… _______　と思いますよ。」",
+          "早く",
+          "開いていない",
+          "まだ"
+        ],
+        "answer_index": 3,
+        "answer_text": "開いていない",
+        "answered_sentence": "A「じゃあ、あしたはコンサート会場の入り口に５時に集まりませんか。」B「コンサートは７時からですから、みんな早く行ってもまだ開いていないと思いますよ。」",
+        "explanation": "In \"みんな早く行ってもまだ開いていないと思いますよ\", \"開いていない\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "男１　「来週、試合_______　_______　…★… _______　んですか。」",
+        "options": [
+          "男２　「すみません。」",
+          "何をやっていた",
+          "練習に来ないで",
+          "なのに"
+        ],
+        "answer_index": 2,
+        "answer_text": "何をやっていた",
+        "answered_sentence": "「来週、試合なのにちょっとも練習に来ないで何をやっていたんですか。」男２「すみません。」",
+        "explanation": "In \"試合なのにちょっとも練習に来ないで何をやっていたんですか\", \"何をやっていた\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 8,
+        "prompt": "私のこと、怒ってる？お願いだから",
+        "options": [
+          "、________ ________",
+          "…★… ",
+          "_______",
+          "。"
+        ],
+        "answer_index": 1,
+        "answer_text": "、________ ________",
+        "answered_sentence": "私のこと、怒ってる？お願いだから、私のことを怒らないで。",
+        "explanation": "In \"私のこと、怒ってる？お願いだから、私のことを怒らないで。\", \"、________ ________\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "昨日_______　_______　…★… _______　から、一緒に行きませんか。",
+        "options": [
+          "レストランが",
+          "ある",
+          "ばかりの",
+          "オープンした"
+        ],
+        "answer_index": 1,
+        "answer_text": "レストランが",
+        "answered_sentence": "昨日オープンしたばかりのレストランがあるから、一緒に行きませんか。",
+        "explanation": "In \"昨日オープンしたばかりのレストランがあるから\", \"ばかり\" adds the idea of \"only / just / keep doing,\" depending on the rest of the sentence. \"レストランが\" is the part that completes that pattern."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 17",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-17/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "女１　「あれ、財布がない。」",
+        "options": [
+          "女２　「え、本当ですか。」",
+          "女１　「あ、ありました、ありました。」",
+          "女２　「もう、びっくり_______　よ。でも、よかったですね。」",
+          "させないでください"
+        ],
+        "answer_index": 1,
+        "answer_text": "女２　「え、本当ですか。」",
+        "answered_sentence": "女１「あれ、財布がない。」女２「え、本当ですか。」女１「あ、ありました、ありました。」女２「もう、びっくりさせないでくださいよ。でも、よかったですね。」",
+        "explanation": "In \"女２「え、本当ですか。」女１\", \"女２ 「え、本当ですか。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 2,
+        "prompt": "来週の遠足ですが、集合時間は９時です。遅れる場合は、_______　学校に連絡してください。",
+        "options": [
+          "全く",
+          "必ず",
+          "非常に",
+          "決して"
+        ],
+        "answer_index": 2,
+        "answer_text": "必ず",
+        "answered_sentence": "来週の遠足ですが、集合時間は９時です。遅れる場合は、必ず学校に連絡してください。",
+        "explanation": "In \"必ず学校に連絡してください\", \"必ず\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 3,
+        "prompt": "理屈の _______ は同社は必ずうまくいくはずだった。。",
+        "options": [
+          "だけで",
+          "うえに",
+          "もとに",
+          "うえで"
+        ],
+        "answer_index": 4,
+        "answer_text": "うえで",
+        "answered_sentence": "理屈のうえでは同社は必ずうまくいくはずだった。",
+        "explanation": "In \"理屈のうえでは同社は必ずうまくいくはずだった\", \"うえで\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 4,
+        "prompt": "問題は、わたしたちがどちらの方角へ向かうべきか _______ だ。",
+        "options": [
+          "というもの",
+          "ということ",
+          "という",
+          "というわけ"
+        ],
+        "answer_index": 2,
+        "answer_text": "ということ",
+        "answered_sentence": "問題は、わたしたちがどちらの方角へ向かうべきかということだ。",
+        "explanation": "\"ということ\" introduces the topic and explains what it means. In \"わたしたちがどちらの方角へ向かうべきかということだ\", the sentence is defining or clarifying that idea."
+      },
+      {
+        "number": 5,
+        "prompt": "このお菓子は小麦粉と卵と砂糖_______　できています。バターや牛乳は使っていません。」",
+        "options": [
+          "ほどが",
+          "ほどで",
+          "だけが",
+          "だけで"
+        ],
+        "answer_index": 4,
+        "answer_text": "だけで",
+        "answered_sentence": "このお菓子は小麦粉と卵と砂糖だけでできています。バターや牛乳は使っていません。",
+        "explanation": "\"だけで\" is a limiting or emphatic pattern. In \"このお菓子は小麦粉と卵と砂糖だけでできています\", it narrows the meaning or adds emphasis to that part of the sentence."
+      },
+      {
+        "number": 6,
+        "prompt": "女　「社長、何をお飲みに_______　か。」",
+        "options": [
+          "男　「じゃ、コーヒーで。」",
+          "です",
+          "いたします",
+          "なります"
+        ],
+        "answer_index": 3,
+        "answer_text": "いたします",
+        "answered_sentence": "女「社長、何をお飲みになりますか」男「じゃ、コーヒーで」",
+        "explanation": "In \"女「社長、何をお飲みになりますか」男「じゃ、コーヒーで」\", \"いたします\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "うちには３歳の娘がいるので、間違って_______　、薬は子供の手の届かないところに置いています。",
+        "options": [
+          "飲み終わらないように",
+          "飲み終わらないようで",
+          "飲んでしまわないように",
+          "飲んでしまわないようで"
+        ],
+        "answer_index": 3,
+        "answer_text": "飲んでしまわないように",
+        "answered_sentence": "うちには３歳の娘がいるので、間違って飲んでしまわないように、薬は子供の手の届かないところに置いています。",
+        "explanation": "\"飲んでしまわないように\" is the pattern that gives the sentence a comparison, appearance, purpose, or changed state. In \"間違って飲んでしまわないように\", that is the meaning the sentence is building."
+      },
+      {
+        "number": 8,
+        "prompt": "参加ご希望の方はメール_______　４月１８日までにご連絡ください。",
+        "options": [
+          "でも",
+          "にて",
+          "には",
+          "にも"
+        ],
+        "answer_index": 2,
+        "answer_text": "にて",
+        "answered_sentence": "参加ご希望の方はメールにて４月１８日までにご連絡ください。",
+        "explanation": "In \"参加ご希望の方はメールにて４月１８日までにご連絡ください\", \"にて\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "まだ仕事が終わっていないので、帰る_______　。",
+        "options": [
+          "ほかはない",
+          "ほどのことではない",
+          "わけではない",
+          "わけにはいかない"
+        ],
+        "answer_index": 4,
+        "answer_text": "わけにはいかない",
+        "answered_sentence": "まだ仕事が終わっていないので、帰るわけにはいかない。",
+        "explanation": "\"わけにはいかない\" means \"cannot possibly do....\" It shows that circumstances or responsibility make the action impossible."
+      },
+      {
+        "number": 10,
+        "prompt": "学生　「先生、ご相談したいことがあるのですが、授業の後、先生の研究室に_______　よろしいでしょうか。」",
+        "options": [
+          "先生　「はい、いいですよ。」",
+          "来られても",
+          "いらっしゃっても",
+          "うかがっても"
+        ],
+        "answer_index": 3,
+        "answer_text": "いらっしゃっても",
+        "answered_sentence": "学生「先生、ご相談したいことがあるのですが、授業の後、先生の研究室にうかがってもよろしいでしょうか」先生「はい、いいですよ」",
+        "explanation": "\"いらっしゃっても\" is used for permission or concession. In \"学生「先生、ご相談したいことがあるのですが、授業の後、先生の研究室にうかがってもよろし\", it means the action is allowed or the result still holds even if it happens."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 18",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-18/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "この仕事は大変な_______　給料が安い。",
+        "options": [
+          "わりに",
+          "かわりに",
+          "くせに",
+          "せいで"
+        ],
+        "answer_index": 1,
+        "answer_text": "わりに",
+        "answered_sentence": "この仕事は大変なわりに給料が安い。",
+        "explanation": "\"わりに\" ends with \"に,\" which marks the target or destination here. In \"この仕事は大変なわりに給料が安い\", it shows who or what the action is directed toward."
+      },
+      {
+        "number": 2,
+        "prompt": "この数年、テレビで放送しているアニメの番組が多_______　ような気がする。",
+        "options": [
+          "できる",
+          "かぎる",
+          "すぎる",
+          "がちだ"
+        ],
+        "answer_index": 3,
+        "answer_text": "すぎる",
+        "answered_sentence": "この数年、テレビで放送しているアニメの番組が多すぎるような気がする。",
+        "explanation": "In \"テレビで放送しているアニメの番組が多すぎるような気がする\", \"すぎる\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 3,
+        "prompt": "女１　「あと３０分 _______ ありませんょ。」",
+        "options": [
+          "女２　「これも買いたい、あれも買いたい。時間が足りないわ。」",
+          "だけ",
+          "しか",
+          "もう"
+        ],
+        "answer_index": 2,
+        "answer_text": "だけ",
+        "answered_sentence": "女１「あと３０分しかありませんょ。」女２「これも買いたい、あれも買いたい。時間が足りそうにないわ。」",
+        "explanation": "\"だけ\" is a limiting or emphatic pattern. In \"女１「あと３０分しかありませんょ。」女２「これも買いたい、あれも買いたい。時間が足りそう\", it narrows the meaning or adds emphasis to that part of the sentence."
+      },
+      {
+        "number": 4,
+        "prompt": "初級クラスの学生には、分かり_______　例文で文法を説明する。",
+        "options": [
+          "ように",
+          "にくい",
+          "ために",
+          "やすい"
+        ],
+        "answer_index": 4,
+        "answer_text": "やすい",
+        "answered_sentence": "初級クラスの学生には、分かりやすい例文で文法を説明する。",
+        "explanation": "In \"分かりやすい例文で文法を説明する\", \"やすい\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "不景気_______　、就職難という問題が目立ってきた。",
+        "options": [
+          "に",
+          "では",
+          "には",
+          "で"
+        ],
+        "answer_index": 4,
+        "answer_text": "で",
+        "answered_sentence": "不景気で、就職難という問題が目立ってきた。",
+        "explanation": "\"で\" marks the place, means, or condition of the action here. In \"不景気で\", it gives that setting."
+      },
+      {
+        "number": 6,
+        "prompt": "１月２０日 _______ 指定口座にお振込みください。",
+        "options": [
+          "までは",
+          "までに",
+          "までも",
+          "までにも"
+        ],
+        "answer_index": 2,
+        "answer_text": "までに",
+        "answered_sentence": "１月２０日までに指定口座にお振込みください。",
+        "explanation": "\"までに\" is a time-related pattern. In \"１月２０日までに指定口座にお振込みください\", it tells when something happens or how the timing changes."
+      },
+      {
+        "number": 7,
+        "prompt": "ＵＰＳはダラスの冷蔵流通センターを中心 _______ その企業のシステムを再設計した。",
+        "options": [
+          "か",
+          "で",
+          "は",
+          "に"
+        ],
+        "answer_index": 4,
+        "answer_text": "に",
+        "answered_sentence": "ＵＰＳはダラスの冷蔵流通センターを中心にその企業のシステムを再設計した。",
+        "explanation": "\"に\" marks the target, time, place, or receiver here. In \"ＵＰＳはダラスの冷蔵流通センターを中心にその企業のシステムを再設計した\", that relation is what the sentence needs."
+      },
+      {
+        "number": 8,
+        "prompt": "先月からギターを始めたが、なかなかうまく弾けない。どんな練習を_______　上手になれるのだろうか。",
+        "options": [
+          "したら",
+          "したのに",
+          "するより",
+          "することは"
+        ],
+        "answer_index": 1,
+        "answer_text": "したら",
+        "answered_sentence": "先月からギターを始めたが、なかなかうまく弾けない。どんな練習をしたら上手になれるのだろうか。",
+        "explanation": "\"したら\" is a conditional form. In \"どんな練習をしたら上手になれるのだろうか\", it sets up the situation that the next part depends on."
+      },
+      {
+        "number": 9,
+        "prompt": "１９９７年から１９９９年 _______ 収益は着実に伸びていった。",
+        "options": [
+          "において",
+          "にかんして",
+          "にかけて",
+          "にかわって"
+        ],
+        "answer_index": 3,
+        "answer_text": "にかけて",
+        "answered_sentence": "１９９７年から１９９９年にかけて収益は着実に伸びていった。",
+        "explanation": "\"にかけて\" means \"over the period from ... to ...\". In \"１９９７年から１９９９年にかけて収益は着実に伸びていった\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 10,
+        "prompt": "これは否定し _______ 事実だ！",
+        "options": [
+          "がち",
+          "にくい",
+          "だらけ",
+          "がたい"
+        ],
+        "answer_index": 4,
+        "answer_text": "がたい",
+        "answered_sentence": "これは否定しがたい事実だ！",
+        "explanation": "\"がたい\" expresses desire, hope, or what someone wants. In \"これは否定しがたい事実だ\", the sentence is talking about that wish directly."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 19",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-19/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "ご契約に_______　、必ずこちらの注意事項をお読みください。",
+        "options": [
+          "対しては",
+          "比べては",
+          "従っては",
+          "際しては"
+        ],
+        "answer_index": 4,
+        "answer_text": "際しては",
+        "answered_sentence": "ご契約に際しては、必ずこちらの注意事項をお読みください。",
+        "explanation": "In \"ご契約に際しては\", \"際しては\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 2,
+        "prompt": "男１　「体の具合はどうですか。」",
+        "options": [
+          "男２　「昨日から急に咳が止まらなくなり、呼吸するで　_______　苦しくなりました。",
+          "こそ",
+          "さえ",
+          "だけ"
+        ],
+        "answer_index": 2,
+        "answer_text": "こそ",
+        "answered_sentence": "男１「体の具合はどうですか。」男２「昨日から急に咳が止まらなくなり、呼吸するでさえ苦しくなりました。",
+        "explanation": "\"こそ\" adds emphasis, similar to \"precisely / exactly.\""
+      },
+      {
+        "number": 3,
+        "prompt": "昨日の夜はとても疲れていたので、夕飯のあと、電気 _______ 消さないでソファで寝てしまった。",
+        "options": [
+          "も",
+          "と",
+          "が",
+          "で"
+        ],
+        "answer_index": 1,
+        "answer_text": "も",
+        "answered_sentence": "昨日の夜はとても疲れていたので、夕飯のあと、電気も消さないでソファで寝てしまった。",
+        "explanation": "\"も\" adds the meaning of \"also\" or \"even.\" In \"昨日の夜はとても疲れていたので\", it includes that item in the same statement."
+      },
+      {
+        "number": 4,
+        "prompt": "あの人は_______　短気だ。しかし、悪い人ではない。",
+        "options": [
+          "いまにも",
+          "少しも",
+          "すぐに",
+          "たしかに"
+        ],
+        "answer_index": 4,
+        "answer_text": "たしかに",
+        "answered_sentence": "あの人はたしかに短気だ。しかし、悪い人ではない。",
+        "explanation": "\"たしかに\" is a limiting or emphatic pattern. In \"あの人はたしかに短気だ\", it narrows the meaning or adds emphasis to that part of the sentence."
+      },
+      {
+        "number": 5,
+        "prompt": "留学する_______　、留学ビザの申請が必要だ。",
+        "options": [
+          "だけ",
+          "と",
+          "なら",
+          "とは"
+        ],
+        "answer_index": 3,
+        "answer_text": "なら",
+        "answered_sentence": "留学するなら、留学ビザの申請が必要だ。",
+        "explanation": "In \"留学するなら\", \"なら\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 6,
+        "prompt": "「１」に入る最も適当なものはどれか。",
+        "options": [
+          "寂しくなるです",
+          "寂しかったでしょう",
+          "寂しくないです",
+          "寂しくなかったです"
+        ],
+        "answer_index": 3,
+        "answer_text": "寂しくないです",
+        "answered_sentence": "「１」に入る最も適当なものはどれか。=> 寂しくないです",
+        "explanation": "In \"=>寂しくないです\", \"寂しくないです\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "「２」に入る最も適当なものはどれか。",
+        "options": [
+          "はじめに",
+          "ところで",
+          "あるいは",
+          "そのうち"
+        ],
+        "answer_index": 2,
+        "answer_text": "ところで",
+        "answered_sentence": "「２」に入る最も適当なものはどれか。=> ところで",
+        "explanation": "In \"=>ところで\", \"ところで\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 8,
+        "prompt": "「３」に入る最も適当なものはどれか。",
+        "options": [
+          "と聞いても",
+          "と聞くことに",
+          "と聞いたばかり",
+          "と聞いたところ"
+        ],
+        "answer_index": 4,
+        "answer_text": "と聞いたところ",
+        "answered_sentence": "「３」に入る最も適当なものはどれか。=> と聞いたところ",
+        "explanation": "In \"=>と聞いたところ\", \"と聞いたところ\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "「４」に入る最も適当なものはどれか。",
+        "options": [
+          "住むことになる",
+          "住むようにする",
+          "住むことがある",
+          "住んでみるはずの"
+        ],
+        "answer_index": 1,
+        "answer_text": "住むことになる",
+        "answered_sentence": "「４」に入る最も適当なものはどれか。=> 住むことになる",
+        "explanation": "\"住むことになる\" shows that something was decided or came to be that way. In \"=>住むことになる\", it is not just a private wish; it is the result that was settled."
+      },
+      {
+        "number": 10,
+        "prompt": "「５」に入る最も適当なものはどれか。",
+        "options": [
+          "つもり",
+          "ように",
+          "かどうか",
+          "ために"
+        ],
+        "answer_index": 3,
+        "answer_text": "かどうか",
+        "answered_sentence": "「５」に入る最も適当なものはどれか。=> かどうか",
+        "explanation": "\"かどうか\" means \"whether or not.\" It fits because the sentence is about uncertainty."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 20",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-20/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "今回の試験は合格した_______　、点数はあまりよくないと思う。",
+        "options": [
+          "にしては",
+          "にしても",
+          "にしても",
+          "によると"
+        ],
+        "answer_index": 2,
+        "answer_text": "にしても",
+        "answered_sentence": "今回の試験は合格したにしても、点数はあまりよくないと思う。",
+        "explanation": "\"にしても\" is used for permission or concession. In \"今回の試験は合格したにしても\", it means the action is allowed or the result still holds even if it happens."
+      },
+      {
+        "number": 2,
+        "prompt": "女１　「今、何してんの？」",
+        "options": [
+          "女２　「ちょうど宿題が終わった_______　なんだ。」",
+          "ところ",
+          "もの",
+          "こと"
+        ],
+        "answer_index": 1,
+        "answer_text": "女２　「ちょうど宿題が終わった_______　なんだ。」",
+        "answered_sentence": "女１「今、何してんの？」女２「ちょうど宿題が終わったところなんだ。」",
+        "explanation": "In \"女１「今、何してんの？」女２「ちょうど宿題が終わったところなんだ。」\", \"女２ 「ちょうど宿題が終わった_______ なんだ。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 3,
+        "prompt": "あの新任の先生、顔つき_______　、怖そうね。",
+        "options": [
+          "からこそ",
+          "としても",
+          "としたら",
+          "からして"
+        ],
+        "answer_index": 4,
+        "answer_text": "からして",
+        "answered_sentence": "あの新任の先生、顔つきからして、怖そうね。",
+        "explanation": "In \"顔つきからして\", \"からして\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 4,
+        "prompt": "弟は以前から_______　いたゲームソフトを買ってもらって喜んでいる。",
+        "options": [
+          "ほしがって",
+          "はんして",
+          "もとづいて",
+          "ほしくて"
+        ],
+        "answer_index": 1,
+        "answer_text": "ほしがって",
+        "answered_sentence": "弟は以前からほしがっていたゲームソフトを買ってもらって喜んでいる。",
+        "explanation": "In \"弟は以前からほしがっていたゲームソフトを買ってもらって喜んでいる\", \"ほしがって\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "女１　「あの人の名前、山田さんだよね。」",
+        "options": [
+          "女２　「違うよ。前田さんだよ。さっき教えた　_______　どうして忘れちゃうの？」",
+          "あとなのに",
+          "あとだから",
+          "ばかりなのに"
+        ],
+        "answer_index": 3,
+        "answer_text": "あとだから",
+        "answered_sentence": "女１「あの人の名前、山田さんだよね。」女２「違うよ。前田さんだよ。さっき教えたばかりなのにどうして忘れちゃうの？」",
+        "explanation": "In \"女１「あの人の名前、山田さんだよね。」女２「違うよ。前田さんだよ。さっき教えたばかりなの\", \"ばかり\" adds the idea of \"only / just / keep doing,\" depending on the rest of the sentence. \"あとだから\" is the part that completes that pattern."
+      },
+      {
+        "number": 6,
+        "prompt": "父もわたしも、今日はかさがなくても_______　_______　…★… _______　が、雨に降られてしまった。",
+        "options": [
+          "だろう",
+          "と思って",
+          "大丈夫",
+          "出かけた"
+        ],
+        "answer_index": 2,
+        "answer_text": "と思って",
+        "answered_sentence": "父もわたしも、今日はかさがなくても大丈夫だろうと思って出かけたが、雨に降られてしまった。",
+        "explanation": "In \"今日はかさがなくても大丈夫だろうと思って出かけたが\", \"と思って\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "コンタクトレンズや_______　_______　…★… _______　の結果をまとめた。",
+        "options": [
+          "眼鏡",
+          "アンケート調査",
+          "に関する",
+          "の使用"
+        ],
+        "answer_index": 3,
+        "answer_text": "に関する",
+        "answered_sentence": "コンタクトレンズや眼鏡の使用に関するアンケート調査の結果をまとめた。",
+        "explanation": "\"に関する\" means \"about / concerning....\" It introduces the topic being discussed."
+      },
+      {
+        "number": 8,
+        "prompt": "女１　「昨日の映画、どうだった？」",
+        "options": [
+          "女２　「これ_______　_______　…★… _______　見たことがないよ。」",
+          "映画は",
+          "ほど",
+          "今まで"
+        ],
+        "answer_index": 1,
+        "answer_text": "女２　「これ_______　_______　…★… _______　見たことがないよ。」",
+        "answered_sentence": "女１「昨日の映画、どうだった？」女２「これほど面白い映画は今まで見たことがないよ。」",
+        "explanation": "In \"女１「昨日の映画、どうだった？」女２「これほど面白い映画は今まで見たことがないよ。」\", \"女２ 「これ_______ _______ …★… _______ 見たことがないよ。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "_______　_______　…★… _______　では、今の会社の実像がよく見えてくる。",
+        "options": [
+          "をはじめとする",
+          "教育の",
+          "小学校",
+          "場"
+        ],
+        "answer_index": 2,
+        "answer_text": "教育の",
+        "answered_sentence": "小学校をはじめとする教育の場では、今の会社の実像がよく見えてくる。",
+        "explanation": "\"教育の\" ends with \"の,\" so it modifies the noun after it. In \"小学校をはじめとする教育の場では\", it connects the first noun to the one that follows."
+      },
+      {
+        "number": 10,
+        "prompt": "女１　「今度のさよならパーティーで、みんなで歌う歌は、これでいいですか。」",
+        "options": [
+          "女２　「すみません。この歌は好きなんですが、少しむずかしいです_______　_______　…★… _______　してほしいです。」",
+          "の",
+          "ほか",
+          "に"
+        ],
+        "answer_index": 1,
+        "answer_text": "女２　「すみません。この歌は好きなんですが、少しむずかしいです_______　_______　…★… _______　してほしいです。」",
+        "answered_sentence": "女１「今度のさよならパーティーで、みんなで歌う歌は、これでいいですか。」女２「すみません。この歌は好きなんですが、少しむずかしいですからほかのにしてほしいです。」",
+        "explanation": "\"女２ 「すみません。この歌は好きなんですが、少しむずかしいです_______ _______ …★… _______ してほしいです。」\" expresses desire, hope, or what someone wants. In \"女１「今度のさよならパーティーで、みんなで歌う歌は、これでいいですか。」女２「すみません\", the sentence is talking about that wish directly."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 21",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-21/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "みなさん、これから二週間の農家生活を_______　ください。",
+        "options": [
+          "お楽しみ",
+          "ご楽しみ",
+          "楽しみなさり",
+          "楽しまれ"
+        ],
+        "answer_index": 1,
+        "answer_text": "お楽しみ",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"お楽しみ\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 2,
+        "prompt": "成功できるか_______　は、本人の努力によるものだ。",
+        "options": [
+          "こうか",
+          "そうか",
+          "どんな",
+          "どうか"
+        ],
+        "answer_index": 4,
+        "answer_text": "どうか",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"どうか\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 3,
+        "prompt": "女１　「来月、大阪に出張するんだけど、いいホテル、知らない？」",
+        "options": [
+          "女２　「駅の近くで_______　、一つ、知ってるよ。」",
+          "よくないと",
+          "なくてもいいと",
+          "よくなければ"
+        ],
+        "answer_index": 4,
+        "answer_text": "よくなければ",
+        "answered_sentence": null,
+        "explanation": "\"よくなければ\" is a conditional form. In \"\", it sets up the situation that the next part depends on."
+      },
+      {
+        "number": 4,
+        "prompt": "雨が早く止む_______　ですね。",
+        "options": [
+          "たらいい",
+          "といい",
+          "ばいい",
+          "とよかった"
+        ],
+        "answer_index": 2,
+        "answer_text": "といい",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"といい\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "女１　「ちょっと_______　ますが、東京駅へはどう行ったらいいでしょうか。」",
+        "options": [
+          "女２　「この道をまっすく行って、交差点を右に曲がってください。」",
+          "うかがい",
+          "お目にかかり",
+          "頂戴し"
+        ],
+        "answer_index": 1,
+        "answer_text": "女２　「この道をまっすく行って、交差点を右に曲がってください。」",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"女２ 「この道をまっすく行って、交差点を右に曲がってください。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 6,
+        "prompt": "「１」に入る最も適当なものはどれか。",
+        "options": [
+          "入っている",
+          "入れてある",
+          "入っておく",
+          "入れておく"
+        ],
+        "answer_index": 4,
+        "answer_text": "入れておく",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"入れておく\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "「２」に入る最も適当なものはどれか。",
+        "options": [
+          "ため",
+          "わけ",
+          "つもり",
+          "こと"
+        ],
+        "answer_index": 1,
+        "answer_text": "ため",
+        "answered_sentence": null,
+        "explanation": "\"ため\" is used for purpose or cause, depending on the sentence."
+      },
+      {
+        "number": 8,
+        "prompt": "「３」に入る最も適当なものはどれか。",
+        "options": [
+          "もちろん",
+          "たとえば",
+          "それでは",
+          "そのほか"
+        ],
+        "answer_index": 3,
+        "answer_text": "それでは",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"それでは\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "「４」に入る最も適当なものはどれか。",
+        "options": [
+          "というのだ",
+          "ということになる",
+          "ということだ",
+          "ということはない"
+        ],
+        "answer_index": 4,
+        "answer_text": "ということはない",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"ということはない\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 10,
+        "prompt": "「５」に入る最も適当なものはどれか。",
+        "options": [
+          "場所を変えて",
+          "姿を変えて",
+          "値段を変えて",
+          "品質を変えて"
+        ],
+        "answer_index": 2,
+        "answer_text": "姿を変えて",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"姿を変えて\" is the piece that makes the sentence say exactly what the speaker means."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 22",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-22/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "女１　「山頂まであと２時間もありますけど、大丈夫ですか。」",
+        "options": [
+          "女２　「ええいくら歩い　_______　平気ですよ。",
+          "ては",
+          "ても",
+          "でも"
+        ],
+        "answer_index": 2,
+        "answer_text": "ては",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"ては\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 2,
+        "prompt": "マスコミの報道_______　、インドの自動車市場は急速に成長しているそうだ。",
+        "options": [
+          "によると",
+          "によって",
+          "により",
+          "になって"
+        ],
+        "answer_index": 1,
+        "answer_text": "によると",
+        "answered_sentence": null,
+        "explanation": "\"によると\" means \"according to....\" It introduces the source of the information."
+      },
+      {
+        "number": 3,
+        "prompt": "詳しく調べた_______　、事件の報告書を作成する。",
+        "options": [
+          "最中",
+          "上は",
+          "ほど",
+          "上で"
+        ],
+        "answer_index": 4,
+        "answer_text": "上で",
+        "answered_sentence": null,
+        "explanation": "\"上で\" means \"after doing ... / when it comes to ...\". In \"\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 4,
+        "prompt": "山口　「すみませんが、この書類を広田さんに渡して_______　。お願いします。",
+        "options": [
+          "北川　「いいですよ。」",
+          "おいてあげますよ",
+          "おこうと思えますか",
+          "おいてもらえませんか"
+        ],
+        "answer_index": 3,
+        "answer_text": "おこうと思えますか",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"おこうと思えますか\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "女１　「沖縄旅行はどうだった？」",
+        "options": [
+          "女２　「海が青くて、料理もおいしくて、最高だったよ。」",
+          "女１　「いいなあ。わたしも　_______　一度行ってみたいなあ。」",
+          "いつのまにか",
+          "いつ"
+        ],
+        "answer_index": 4,
+        "answer_text": "いつ",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"いつ\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 6,
+        "prompt": "昨日動物園に行ったら、先月_______　_______　…★… _______　見ることができました。",
+        "options": [
+          "生まれた",
+          "ライオンの",
+          "ばかりの",
+          "赤ちゃんを"
+        ],
+        "answer_index": 2,
+        "answer_text": "ライオンの",
+        "answered_sentence": null,
+        "explanation": "\"ライオンの\" ends with \"の,\" so it modifies the noun after it. In \"\", it connects the first noun to the one that follows."
+      },
+      {
+        "number": 7,
+        "prompt": "男１　「辞書を_______　_______　…★… _______　ことができますか。」",
+        "options": [
+          "男２　「ええ、大丈夫です。」",
+          "日本語の",
+          "読む",
+          "使わずに"
+        ],
+        "answer_index": 4,
+        "answer_text": "使わずに",
+        "answered_sentence": null,
+        "explanation": "\"使わずに\" means \"without doing....\" It gives the negative action before the main event."
+      },
+      {
+        "number": 8,
+        "prompt": "庭に植えたスイカは、これまでなかなか_______　_______　…★… _______　今年になっておいしいのができた。",
+        "options": [
+          "あきらめないで",
+          "ようやく",
+          "うまく育てなかったが",
+          "毎年チャレンジしていたら"
+        ],
+        "answer_index": 4,
+        "answer_text": "毎年チャレンジしていたら",
+        "answered_sentence": null,
+        "explanation": "\"毎年チャレンジしていたら\" is a conditional form. In \"\", it sets up the situation that the next part depends on."
+      },
+      {
+        "number": 9,
+        "prompt": "母の誕生日に_______　_______　…★… _______　贈った。",
+        "options": [
+          "編んで",
+          "心を",
+          "セーターを",
+          "込めて"
+        ],
+        "answer_index": 1,
+        "answer_text": "編んで",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"編んで\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 10,
+        "prompt": "最近、子供がピアノを習いたいと言い出した。わたしは、子供が_______　_______　…★… _______　と思っている。",
+        "options": [
+          "したい",
+          "やりたい",
+          "やらせて",
+          "と思うことは"
+        ],
+        "answer_index": 3,
+        "answer_text": "やらせて",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"やらせて\" is the piece that makes the sentence say exactly what the speaker means."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 23",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-23/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "これ_______　の傷で、大騒ぎすることはないよ。",
+        "options": [
+          "ほど",
+          "より",
+          "ぐらい",
+          "こそ"
+        ],
+        "answer_index": 3,
+        "answer_text": "ぐらい",
+        "answered_sentence": null,
+        "explanation": "\"ぐらい\" marks degree or extent, meaning something like \"to the extent that / about.\""
+      },
+      {
+        "number": 2,
+        "prompt": "ガソリンの値段が高くなった。毎日車を運転するわたし_______　これは大きな問題だ。",
+        "options": [
+          "では",
+          "からは",
+          "にとって",
+          "によって"
+        ],
+        "answer_index": 3,
+        "answer_text": "にとって",
+        "answered_sentence": null,
+        "explanation": "\"にとって\" means \"for / to....\" It shows whose point of view matters."
+      },
+      {
+        "number": 3,
+        "prompt": "男１　「昨日からずっと頭が痛いんですが、どこかいい病院を知りませんか。」",
+        "options": [
+          "男２　「そうですねえ。A病院に行って_______　。」",
+          "みさせてください",
+          "みてもいいでしょうか",
+          "みさせてほしいのですが"
+        ],
+        "answer_index": 4,
+        "answer_text": "みさせてほしいのですが",
+        "answered_sentence": null,
+        "explanation": "\"みさせてほしいのですが\" uses causative or causative-passive meaning. In \"\", the point is that someone makes another person do the action, or someone is made to do it."
+      },
+      {
+        "number": 4,
+        "prompt": "妹　「お兄ちゃん、もう６時過ぎたよ。暗く_______　帰ろうよ。」",
+        "options": [
+          "兄　「そうだね。」",
+          "なるときで",
+          "ならないうちに",
+          "なるまえ"
+        ],
+        "answer_index": 2,
+        "answer_text": "なるときで",
+        "answered_sentence": null,
+        "explanation": "\"なるときで\" is part of a time expression meaning \"when.\" In \"\", it tells when the second action or thought happened."
+      },
+      {
+        "number": 5,
+        "prompt": "国籍や性別_______　差別は許せない。",
+        "options": [
+          "までの",
+          "による",
+          "のような",
+          "とする"
+        ],
+        "answer_index": 2,
+        "answer_text": "による",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"による\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 6,
+        "prompt": "あの美術館は曜日_______　_______　…★… _______　窓口で確認したほうがいいよ。",
+        "options": [
+          "閉まる時間",
+          "違うから",
+          "によって",
+          "が"
+        ],
+        "answer_index": 4,
+        "answer_text": "が",
+        "answered_sentence": null,
+        "explanation": "\"が\" marks the subject or the thing being identified. In \"\", it picks out exactly who or what fits that role."
+      },
+      {
+        "number": 7,
+        "prompt": "男１　「昨日宝くじを買ったんです。」",
+        "options": [
+          "男２　「もし_______　_______　…★… _______　、何に使いますか。」",
+          "一千万円の",
+          "当たった",
+          "賞金が"
+        ],
+        "answer_index": 2,
+        "answer_text": "一千万円の",
+        "answered_sentence": null,
+        "explanation": "\"一千万円の\" ends with \"の,\" so it modifies the noun after it. In \"\", it connects the first noun to the one that follows."
+      },
+      {
+        "number": 8,
+        "prompt": "学生　「田中先生はいらっしゃいますか。」",
+        "options": [
+          "秘書　「今、ほかの学生と話して_______　_______　…★… _______　ください。」",
+          "すこし",
+          "から",
+          "待って"
+        ],
+        "answer_index": 1,
+        "answer_text": "秘書　「今、ほかの学生と話して_______　_______　…★… _______　ください。」",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"秘書 「今、ほかの学生と話して_______ _______ …★… _______ ください。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "自分で野菜を作ってみて、おいしい野菜を育てる_______　_______　…★… _______　わかりました。",
+        "options": [
+          "ことが",
+          "大変な",
+          "ことか",
+          "どんなに"
+        ],
+        "answer_index": 2,
+        "answer_text": "大変な",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"大変な\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 10,
+        "prompt": "川名寺は桜が_______　_______　…★… _______　秋の景色もすばらしいです。",
+        "options": [
+          "桜だけでなく",
+          "ことで",
+          "有名ですが",
+          "きれいな"
+        ],
+        "answer_index": 4,
+        "answer_text": "きれいな",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"きれいな\" is the piece that makes the sentence say exactly what the speaker means."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 24",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-24/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "最近のトイレって立ち上がると、自動で水が流れる　_______　。",
+        "options": [
+          "にきまっている",
+          "ことにしている",
+          "ものになっている",
+          "ようになっている"
+        ],
+        "answer_index": 4,
+        "answer_text": "ようになっている",
+        "answered_sentence": null,
+        "explanation": "\"ようになっている\" shows a change into a new ability, habit, or state. In \"\", the sentence is saying that this became possible or became the new situation."
+      },
+      {
+        "number": 2,
+        "prompt": "田中さんは家に来る　_______　プレゼントを持ってきます。",
+        "options": [
+          "うちに",
+          "たびに",
+          "ごとに",
+          "とおりに"
+        ],
+        "answer_index": 2,
+        "answer_text": "たびに",
+        "answered_sentence": null,
+        "explanation": "\"たびに\" means \"every time.\" Each time the speaker rereads the letter, the same sad feeling comes back."
+      },
+      {
+        "number": 3,
+        "prompt": "朝は曇っていたが、　_______　晴れてきて、午後には快晴になった。",
+        "options": [
+          "次第に",
+          "かわりに",
+          "なかなか",
+          "ために"
+        ],
+        "answer_index": 1,
+        "answer_text": "次第に",
+        "answered_sentence": null,
+        "explanation": "\"次第に\" is a time-related pattern. In \"\", it tells when something happens or how the timing changes."
+      },
+      {
+        "number": 4,
+        "prompt": "この映画は大人には面白くても、子供には　_______　分からないのだ。",
+        "options": [
+          "いまにも",
+          "さっぱり",
+          "ぜひ",
+          "なるべく"
+        ],
+        "answer_index": 2,
+        "answer_text": "さっぱり",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"さっぱり\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "年を取るに　_______　目も耳も悪くなってきました。",
+        "options": [
+          "ついて",
+          "対して",
+          "とって",
+          "つれて"
+        ],
+        "answer_index": 4,
+        "answer_text": "つれて",
+        "answered_sentence": null,
+        "explanation": "\"つれて\" is a time-related pattern. In \"\", it tells when something happens or how the timing changes."
+      },
+      {
+        "number": 6,
+        "prompt": "社員「ヨシダ電機の木村さんからお電話です」",
+        "options": [
+          "部長「またかよ。いないということに　_______　くれ」",
+          "しておいて",
+          "なっておいて",
+          "してもらって"
+        ],
+        "answer_index": 1,
+        "answer_text": "部長「またかよ。いないということに　_______　くれ」",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"部長「またかよ。いないということに _______ くれ」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "この番組に　_______　ご意見、ご感想をお寄せください。",
+        "options": [
+          "ついた",
+          "つく",
+          "つきの",
+          "ついての"
+        ],
+        "answer_index": 4,
+        "answer_text": "ついての",
+        "answered_sentence": null,
+        "explanation": "\"ついての\" ends with \"の,\" so it modifies the noun after it. In \"\", it connects the first noun to the one that follows."
+      },
+      {
+        "number": 8,
+        "prompt": "仕事が忙しいので今は話し　_______　ください。",
+        "options": [
+          "終わらないで",
+          "すぎないで",
+          "かけないで",
+          "止まないで"
+        ],
+        "answer_index": 3,
+        "answer_text": "かけないで",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"かけないで\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "先輩　「大学生活で困ったことがあったら、授業のこと　_______　相談してくださいね。」",
+        "options": [
+          "なら",
+          "くらい",
+          "でも何でも",
+          "さえ"
+        ],
+        "answer_index": 3,
+        "answer_text": "でも何でも",
+        "answered_sentence": null,
+        "explanation": "\"でも何でも\" is a limiting or emphatic pattern. In \"\", it narrows the meaning or adds emphasis to that part of the sentence."
+      },
+      {
+        "number": 10,
+        "prompt": "インターネットで注文したセーターは、実際に着てみるまでサイズが　_______　が、ちょうどよかった。",
+        "options": [
+          "合わなかった",
+          "合うかどうか知らなかった",
+          "合わないかもしれない",
+          "合うか不安だった"
+        ],
+        "answer_index": 4,
+        "answer_text": "合うか不安だった",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"合うか不安だった\" is the piece that makes the sentence say exactly what the speaker means."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 25",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-25/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "田中「何してるの？」",
+        "options": [
+          "中野「友達が来る　_______　を待っているのよ。」",
+          "の",
+          "こと",
+          "ところ"
+        ],
+        "answer_index": 1,
+        "answer_text": "中野「友達が来る　_______　を待っているのよ。」",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"中野「友達が来る _______ を待っているのよ。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 2,
+        "prompt": "彼は全科目　_______　優秀な成績を獲得した。",
+        "options": [
+          "に関して",
+          "について",
+          "に対して",
+          "にわたって"
+        ],
+        "answer_index": 4,
+        "answer_text": "にわたって",
+        "answered_sentence": null,
+        "explanation": "\"にわたって\" means \"over / throughout\". In \"\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 3,
+        "prompt": "この学校は成績に　_______　クラスを決めます。",
+        "options": [
+          "もとに",
+          "もとづいて",
+          "ともに",
+          "こたえて"
+        ],
+        "answer_index": 2,
+        "answer_text": "もとづいて",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"もとづいて\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 4,
+        "prompt": "この画家の描く絵はまるで写真の　_______　。",
+        "options": [
+          "ようだ",
+          "らしい",
+          "みたいだ",
+          "そうだ"
+        ],
+        "answer_index": 1,
+        "answer_text": "ようだ",
+        "answered_sentence": null,
+        "explanation": "\"ようだ\" shows appearance, resemblance, or hearsay. In \"\", the speaker is judging from evidence instead of stating a hard fact."
+      },
+      {
+        "number": 5,
+        "prompt": "そばは、ラーメンやスパゲッティ　_______　カロリーが低い。",
+        "options": [
+          "通して",
+          "によって",
+          "にくらべて",
+          "として"
+        ],
+        "answer_index": 3,
+        "answer_text": "にくらべて",
+        "answered_sentence": null,
+        "explanation": "\"にくらべて\" means \"compared with\". In \"\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 6,
+        "prompt": "ただいま、この番組　_______　　_______　…★… _______　ご要望を募集しております。",
+        "options": [
+          "皆様の",
+          "に対する",
+          "ご意見や",
+          "視聴者の"
+        ],
+        "answer_index": 3,
+        "answer_text": "ご意見や",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"ご意見や\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "すみませんが、あした配達してもらいたいんですけど…」",
+        "options": [
+          "「申し訳ありませんが、翌日配達の受付は　_______　　_______　…★… _______　おりまして…」",
+          "4時",
+          "と",
+          "まで"
+        ],
+        "answer_index": 2,
+        "answer_text": "4時",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"4時\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 8,
+        "prompt": "営業成績に　_______　　_______　…★… _______　決めましょう。",
+        "options": [
+          "どうか",
+          "基づいて",
+          "上げるか",
+          "給料を"
+        ],
+        "answer_index": 3,
+        "answer_text": "上げるか",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"上げるか\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "必ず　_______　　_______　…★… _______　すっかり忘れていた。",
+        "options": [
+          "ことを",
+          "会議の資料の",
+          "今日中に",
+          "作らなくてはいけない"
+        ],
+        "answer_index": 2,
+        "answer_text": "会議の資料の",
+        "answered_sentence": null,
+        "explanation": "\"会議の資料の\" ends with \"の,\" so it modifies the noun after it. In \"\", it connects the first noun to the one that follows."
+      },
+      {
+        "number": 10,
+        "prompt": "学者　_______　　_______　…★… _______　違います。",
+        "options": [
+          "に対する",
+          "温暖化",
+          "意見が",
+          "によって"
+        ],
+        "answer_index": 1,
+        "answer_text": "に対する",
+        "answered_sentence": null,
+        "explanation": "\"に対する\" means \"toward / regarding\". In \"\", that is exactly what the speaker wants to say."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 26",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-26/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "買った_____なのに、ボタンが取れそうだ。どうしたらいいか。",
+        "options": [
+          "ばかり",
+          "こと",
+          "ところ",
+          "場合"
+        ],
+        "answer_index": 1,
+        "answer_text": "ばかり",
+        "answered_sentence": null,
+        "explanation": "\"ばかり\" emphasizes limitation, like \"only\" or \"nothing but,\" depending on the sentence."
+      },
+      {
+        "number": 2,
+        "prompt": "「皆さんは、インターネットに40年以上の歴史があることを　____　か？」",
+        "options": [
+          "知ります",
+          "ご存じです",
+          "存じしています",
+          "知っていないのです"
+        ],
+        "answer_index": 2,
+        "answer_text": "ご存じです",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"ご存じです\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 3,
+        "prompt": "せっかく試合に勝てそうだったのに負けてしまって残念で　_______　。",
+        "options": [
+          "とどまる",
+          "すぎる",
+          "たまる",
+          "たまらない"
+        ],
+        "answer_index": 4,
+        "answer_text": "たまらない",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"たまらない\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 4,
+        "prompt": "夕方ケーキ屋に行ったら、ほとんど売り切れていて、チョコレートケーキとチーズケーキが一個　____　が残っていなかった。",
+        "options": [
+          "ずつだけ",
+          "ずつばかり",
+          "ずつの",
+          "ずつしか"
+        ],
+        "answer_index": 4,
+        "answer_text": "ずつしか",
+        "answered_sentence": null,
+        "explanation": "\"ずつしか\" is a limiting or emphatic pattern. In \"\", it narrows the meaning or adds emphasis to that part of the sentence."
+      },
+      {
+        "number": 5,
+        "prompt": "今日（　　）ちょうど締め切りまで70日になりました。",
+        "options": [
+          "を",
+          "で",
+          "に",
+          "が"
+        ],
+        "answer_index": 2,
+        "answer_text": "で",
+        "answered_sentence": null,
+        "explanation": "\"で\" marks the place, means, or condition of the action here. In \"\", it gives that setting."
+      },
+      {
+        "number": 6,
+        "prompt": "「___１___」に入る最も適当なものはどれか。",
+        "options": [
+          "ながらいます",
+          "ないはずがありません",
+          "つつあります",
+          "ないであります"
+        ],
+        "answer_index": 3,
+        "answer_text": "つつあります",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"つつあります\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "「___２___」に入る最も適当なものはどれか。",
+        "options": [
+          "わけ",
+          "こと",
+          "もの",
+          "はず"
+        ],
+        "answer_index": 2,
+        "answer_text": "こと",
+        "answered_sentence": null,
+        "explanation": "\"こと\" means a nominalizer. In \"\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 8,
+        "prompt": "「___３___」に入る最も適当なものはどれか。",
+        "options": [
+          "通る",
+          "通った",
+          "通って",
+          "通して"
+        ],
+        "answer_index": 4,
+        "answer_text": "通して",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"通して\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "「___４___」に入る最も適当なものはどれか。",
+        "options": [
+          "ため",
+          "おかげ",
+          "せい",
+          "から"
+        ],
+        "answer_index": 1,
+        "answer_text": "ため",
+        "answered_sentence": null,
+        "explanation": "\"ため\" is used for purpose or cause, depending on the sentence."
+      },
+      {
+        "number": 10,
+        "prompt": "「___５___」に入る最も適当なものはどれか。",
+        "options": [
+          "上で",
+          "下で",
+          "上は",
+          "下は"
+        ],
+        "answer_index": 1,
+        "answer_text": "上で",
+        "answered_sentence": null,
+        "explanation": "\"上で\" means \"after doing ... / when it comes to ...\". In \"\", that is exactly what the speaker wants to say."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 27",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-27/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "あれ？事務所にだれもいない？今日は　_______　。",
+        "options": [
+          "平日じゃなかったっけ",
+          "平日のはずだったのに",
+          "平日のはずだったっけ",
+          "平日じゃないはずなのに"
+        ],
+        "answer_index": 2,
+        "answer_text": "平日のはずだったのに",
+        "answered_sentence": null,
+        "explanation": "\"平日のはずだったのに\" shows expectation or logical certainty. In \"\", the speaker judges that this should be the case."
+      },
+      {
+        "number": 2,
+        "prompt": "幼稚園の入園を申し込む　_______　、どんな資料が必要になりますか。",
+        "options": [
+          "には",
+          "というのは",
+          "では",
+          "というのに"
+        ],
+        "answer_index": 1,
+        "answer_text": "には",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"には\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 3,
+        "prompt": "相手が悪いのだからこちらからあやまる　_______　。",
+        "options": [
+          "ことだ",
+          "ことになっている",
+          "ことがある",
+          "ことはない"
+        ],
+        "answer_index": 4,
+        "answer_text": "ことはない",
+        "answered_sentence": null,
+        "explanation": "\"ことはない\" means \"there is no need to....\" It is used to reassure or advise."
+      },
+      {
+        "number": 4,
+        "prompt": "彼氏と大げんかして、お前とはもう別れたい　_______　言われた。",
+        "options": [
+          "とまで",
+          "にまで",
+          "までと",
+          "までに"
+        ],
+        "answer_index": 1,
+        "answer_text": "とまで",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"とまで\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "森さんが飼っている魚は、とてもきれいな色　_______　している。",
+        "options": [
+          "に",
+          "を",
+          "で",
+          "が"
+        ],
+        "answer_index": 2,
+        "answer_text": "を",
+        "answered_sentence": null,
+        "explanation": "\"を\" marks the direct object here. In \"\", it shows what the action is acting on."
+      },
+      {
+        "number": 6,
+        "prompt": "親　_______　子供ほど大切なものはありません。",
+        "options": [
+          "に対して",
+          "にとって",
+          "について",
+          "によって"
+        ],
+        "answer_index": 2,
+        "answer_text": "にとって",
+        "answered_sentence": null,
+        "explanation": "\"にとって\" means \"for / to....\" It shows whose point of view matters."
+      },
+      {
+        "number": 7,
+        "prompt": "「午後から２階の会議室を　_______　いいでしょうか」",
+        "options": [
+          "使ってくださっても",
+          "お使いしても",
+          "使っていただいても",
+          "使わせていただいても"
+        ],
+        "answer_index": 4,
+        "answer_text": "使わせていただいても",
+        "answered_sentence": null,
+        "explanation": "\"使わせていただいても\" is used for permission or concession. In \"\", it means the action is allowed or the result still holds even if it happens."
+      },
+      {
+        "number": 8,
+        "prompt": "まだ若いつもりだったのに、電車で席を　_______　ショックだった。",
+        "options": [
+          "ゆずって",
+          "ゆずられても",
+          "ゆずられて",
+          "ゆずっては"
+        ],
+        "answer_index": 3,
+        "answer_text": "ゆずられて",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"ゆずられて\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 9,
+        "prompt": "長く学校を休んだので勉強が遅れ　_______　です。",
+        "options": [
+          "っぽい",
+          "ずくめ",
+          "げ",
+          "がち"
+        ],
+        "answer_index": 4,
+        "answer_text": "がち",
+        "answered_sentence": null,
+        "explanation": "\"がち\" means \"tend to\". In \"\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 10,
+        "prompt": "「これ　_______　の風邪だったら、一日でも休んでいれば治りますよ。」",
+        "options": [
+          "だけ",
+          "ほど",
+          "ぐらい",
+          "しか"
+        ],
+        "answer_index": 3,
+        "answer_text": "ぐらい",
+        "answered_sentence": null,
+        "explanation": "\"ぐらい\" marks degree or extent, meaning something like \"to the extent that / about.\""
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 28",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-28/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "一度ぐらい　_______　　_______　…★… _______　ですよ。",
+        "options": [
+          "って",
+          "失敗した",
+          "ことはない",
+          "あきらめる"
+        ],
+        "answer_index": 4,
+        "answer_text": "あきらめる",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"あきらめる\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 2,
+        "prompt": "あそこで　_______　　_______　…★… _______　は山田さんです。",
+        "options": [
+          "テレビ",
+          "見ている",
+          "を",
+          "人"
+        ],
+        "answer_index": 2,
+        "answer_text": "見ている",
+        "answered_sentence": null,
+        "explanation": "\"見ている\" describes an ongoing state. In \"\", it modifies the noun or shows what is in progress at that point."
+      },
+      {
+        "number": 3,
+        "prompt": "そぼは　_______　　_______　…★… _______　こともあります。",
+        "options": [
+          "高い山に",
+          "元気で",
+          "年の割に",
+          "のぼる"
+        ],
+        "answer_index": 1,
+        "answer_text": "高い山に",
+        "answered_sentence": null,
+        "explanation": "\"高い山に\" ends with \"に,\" which marks the target or destination here. In \"\", it shows who or what the action is directed toward."
+      },
+      {
+        "number": 4,
+        "prompt": "北海道に住んでいた時、雪のため、　_______　　_______　…★… _______　ことはよくあった。",
+        "options": [
+          "にも",
+          "出よう",
+          "外に",
+          "出られなかった"
+        ],
+        "answer_index": 1,
+        "answer_text": "にも",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"にも\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "_______　　_______　…★… _______　たちました。",
+        "options": [
+          "いつの間にか３時間も",
+          "クラスだった",
+          "友人と電話で話していたら",
+          "ずっと同じ"
+        ],
+        "answer_index": 3,
+        "answer_text": "友人と電話で話していたら",
+        "answered_sentence": null,
+        "explanation": "\"友人と電話で話していたら\" is a conditional form. In \"\", it sets up the situation that the next part depends on."
+      },
+      {
+        "number": 6,
+        "prompt": "お店ではどんな　_______　　_______　…★… _______　なりません。",
+        "options": [
+          "敬語を",
+          "使わなければ",
+          "に対しても",
+          "お客"
+        ],
+        "answer_index": 1,
+        "answer_text": "敬語を",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"敬語を\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "家族　_______　　_______　…★… _______　だけです。",
+        "options": [
+          "は",
+          "女",
+          "母",
+          "で"
+        ],
+        "answer_index": 1,
+        "answer_text": "は",
+        "answered_sentence": null,
+        "explanation": "\"は\" marks the topic and often adds contrast. In \"\", it sets up what the speaker is focusing on."
+      },
+      {
+        "number": 8,
+        "prompt": "あの店は味も　_______　　_______　…★… _______　安くはない。",
+        "options": [
+          "いい",
+          "かわりに",
+          "値段も",
+          "雰囲気も"
+        ],
+        "answer_index": 2,
+        "answer_text": "かわりに",
+        "answered_sentence": null,
+        "explanation": "\"かわりに\" means \"instead of / in exchange for,\" depending on the context."
+      },
+      {
+        "number": 9,
+        "prompt": "最近は　_______　　_______　…★… _______　レストランでのマナーが悪い。",
+        "options": [
+          "ばかりか",
+          "親",
+          "子供",
+          "までも"
+        ],
+        "answer_index": 2,
+        "answer_text": "親",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"親\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 10,
+        "prompt": "先生　「調べた結果を説明するときは、　_______　　_______　…★… _______　なります。",
+        "options": [
+          "わかりやすく",
+          "示しながら",
+          "表やグラフを",
+          "説明すると"
+        ],
+        "answer_index": 4,
+        "answer_text": "説明すると",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"説明すると\" is the piece that makes the sentence say exactly what the speaker means."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N3 – Grammar Exercise 29",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n3-grammar-exercise-29/",
+    "level": "N3",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "「君は暑さ　_______　弱いでしょ。今日は外出するのをやめておこう。」",
+        "options": [
+          "「それはだめ。せっかくのゴールデンウィークなんだから。」",
+          "で",
+          "が",
+          "を"
+        ],
+        "answer_index": 4,
+        "answer_text": "を",
+        "answered_sentence": null,
+        "explanation": "\"を\" marks the direct object here. In \"\", it shows what the action is acting on."
+      },
+      {
+        "number": 2,
+        "prompt": "このマンションは、駅に近い　_______　価格が高い。",
+        "options": [
+          "ために",
+          "ように",
+          "によって",
+          "おかげで"
+        ],
+        "answer_index": 1,
+        "answer_text": "ために",
+        "answered_sentence": null,
+        "explanation": "\"ために\" is used for purpose or cause, depending on the sentence."
+      },
+      {
+        "number": 3,
+        "prompt": "子供のとき、よくこの川で遊んだ　_______　です。",
+        "options": [
+          "ところ",
+          "こと",
+          "もの",
+          "ものだ"
+        ],
+        "answer_index": 3,
+        "answer_text": "もの",
+        "answered_sentence": null,
+        "explanation": "\"もの\" means a nominalizer or explanatory softener, depending on context. In \"\", that is exactly what the speaker wants to say."
+      },
+      {
+        "number": 4,
+        "prompt": "A「このチョコレートは星の形　_______　していて、可愛いですね。」",
+        "options": [
+          "B「へえ、ほんとうだ。」",
+          "を",
+          "が",
+          "に"
+        ],
+        "answer_index": 1,
+        "answer_text": "B「へえ、ほんとうだ。」",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"B「へえ、ほんとうだ。」\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 5,
+        "prompt": "久しぶりに実家に帰ったが、隣のおばあちゃんはもう８０歳近いということを　_______　ほど元気だった。",
+        "options": [
+          "感じられる",
+          "感じられない",
+          "感じさせる",
+          "感じさせない"
+        ],
+        "answer_index": 4,
+        "answer_text": "感じさせない",
+        "answered_sentence": null,
+        "explanation": "\"感じさせない\" uses causative or causative-passive meaning. In \"\", the point is that someone makes another person do the action, or someone is made to do it."
+      },
+      {
+        "number": 6,
+        "prompt": "リンさんはうれしさの　_______　泣き出してしまった。",
+        "options": [
+          "あまり",
+          "のこり",
+          "わけて",
+          "おかげ"
+        ],
+        "answer_index": 1,
+        "answer_text": "あまり",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"あまり\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 7,
+        "prompt": "木村　「山田さんのそのネックレスがかわいいですね、どこで買ったんですか？」",
+        "options": [
+          "山田　「ああ、これは　_______　、自分で作ったんです。」",
+          "買わなくて",
+          "買ったんじゃなくて",
+          "買うものではなく"
+        ],
+        "answer_index": 2,
+        "answer_text": "買わなくて",
+        "answered_sentence": null,
+        "explanation": "In \"\", \"買わなくて\" is the piece that makes the sentence say exactly what the speaker means."
+      },
+      {
+        "number": 8,
+        "prompt": "ピアノを練習している　_______　、上手になりました。",
+        "options": [
+          "あいだに",
+          "うちに",
+          "場合に",
+          "ところに"
+        ],
+        "answer_index": 2,
+        "answer_text": "うちに",
+        "answered_sentence": null,
+        "explanation": "\"うちに\" means something happens \"while\" a state continues or \"before\" it changes."
+      },
+      {
+        "number": 9,
+        "prompt": "海外旅行は無理だとしても温泉　_______　行きたいわ。",
+        "options": [
+          "ぐらい",
+          "ほど",
+          "しか",
+          "ばかり"
+        ],
+        "answer_index": 1,
+        "answer_text": "ぐらい",
+        "answered_sentence": null,
+        "explanation": "\"ぐらい\" marks degree or extent, meaning something like \"to the extent that / about.\""
+      },
+      {
+        "number": 10,
+        "prompt": "ニュースで聞いたのですが、来年タクシーの運賃が上げされるという　_______　ですよ。",
+        "options": [
+          "もの",
+          "ところ",
+          "こと",
+          "はず"
+        ],
+        "answer_index": 3,
+        "answer_text": "こと",
+        "answered_sentence": null,
+        "explanation": "\"こと\" means a nominalizer. In \"\", that is exactly what the speaker wants to say."
+      }
+    ]
+  }
+]

@@ -1,0 +1,6047 @@
+{
+  "n5": {
+    "kanji": [
+      {
+        "kanji": "一",
+        "questionCount": 3,
+        "questionIds": [
+          "n5:kanji:10:3",
+          "n5:kanji:10:7",
+          "n5:kanji:14:5"
+        ]
+      },
+      {
+        "kanji": "雨",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:5:3",
+          "n5:kanji:6:1"
+        ]
+      },
+      {
+        "kanji": "円",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:1:7",
+          "n5:kanji:6:9"
+        ]
+      },
+      {
+        "kanji": "何",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:5:9"
+        ]
+      },
+      {
+        "kanji": "火",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:12:5"
+        ]
+      },
+      {
+        "kanji": "外",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:6:2",
+          "n5:kanji:8:10"
+        ]
+      },
+      {
+        "kanji": "学",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:5:7"
+        ]
+      },
+      {
+        "kanji": "間",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:10:5"
+        ]
+      },
+      {
+        "kanji": "気",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:1:9",
+          "n5:kanji:8:8"
+        ]
+      },
+      {
+        "kanji": "休",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:6:5",
+          "n5:kanji:9:10"
+        ]
+      },
+      {
+        "kanji": "金",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:1:5",
+          "n5:kanji:1:6"
+        ]
+      },
+      {
+        "kanji": "九",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:1:4"
+        ]
+      },
+      {
+        "kanji": "月",
+        "questionCount": 4,
+        "questionIds": [
+          "n5:kanji:1:1",
+          "n5:kanji:1:2",
+          "n5:kanji:19:1",
+          "n5:kanji:9:1"
+        ]
+      },
+      {
+        "kanji": "見",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:2:6"
+        ]
+      },
+      {
+        "kanji": "五",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:9:2"
+        ]
+      },
+      {
+        "kanji": "後",
+        "questionCount": 3,
+        "questionIds": [
+          "n5:kanji:3:10",
+          "n5:kanji:5:8",
+          "n5:kanji:8:9"
+        ]
+      },
+      {
+        "kanji": "語",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:11:2"
+        ]
+      },
+      {
+        "kanji": "校",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:5:7"
+        ]
+      },
+      {
+        "kanji": "行",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:7:6"
+        ]
+      },
+      {
+        "kanji": "国",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:19:6"
+        ]
+      },
+      {
+        "kanji": "今",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:14:8",
+          "n5:kanji:9:1"
+        ]
+      },
+      {
+        "kanji": "左",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:7:10"
+        ]
+      },
+      {
+        "kanji": "山",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:2:1",
+          "n5:kanji:2:2"
+        ]
+      },
+      {
+        "kanji": "四",
+        "questionCount": 3,
+        "questionIds": [
+          "n5:kanji:10:4",
+          "n5:kanji:19:1",
+          "n5:kanji:7:9"
+        ]
+      },
+      {
+        "kanji": "子",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:11:4",
+          "n5:kanji:14:1"
+        ]
+      },
+      {
+        "kanji": "時",
+        "questionCount": 3,
+        "questionIds": [
+          "n5:kanji:1:4",
+          "n5:kanji:10:5",
+          "n5:kanji:5:2"
+        ]
+      },
+      {
+        "kanji": "七",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:1:2",
+          "n5:kanji:5:2"
+        ]
+      },
+      {
+        "kanji": "十",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:10:4",
+          "n5:kanji:10:6"
+        ]
+      },
+      {
+        "kanji": "出",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:6:3"
+        ]
+      },
+      {
+        "kanji": "女",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:11:4"
+        ]
+      },
+      {
+        "kanji": "小",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:5:10"
+        ]
+      },
+      {
+        "kanji": "食",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:3:9"
+        ]
+      },
+      {
+        "kanji": "人",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:18:8",
+          "n5:kanji:2:5"
+        ]
+      },
+      {
+        "kanji": "西",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:7:8"
+        ]
+      },
+      {
+        "kanji": "先",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:3:8",
+          "n5:kanji:4:2"
+        ]
+      },
+      {
+        "kanji": "川",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:8:3"
+        ]
+      },
+      {
+        "kanji": "前",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:12:3"
+        ]
+      },
+      {
+        "kanji": "中",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:19:5"
+        ]
+      },
+      {
+        "kanji": "天",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:1:9",
+          "n5:kanji:8:8"
+        ]
+      },
+      {
+        "kanji": "読",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:7:3"
+        ]
+      },
+      {
+        "kanji": "南",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:8:2"
+        ]
+      },
+      {
+        "kanji": "二",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:10:4"
+        ]
+      },
+      {
+        "kanji": "日",
+        "questionCount": 7,
+        "questionIds": [
+          "n5:kanji:1:3",
+          "n5:kanji:10:3",
+          "n5:kanji:11:2",
+          "n5:kanji:12:5",
+          "n5:kanji:13:1",
+          "n5:kanji:14:8",
+          "n5:kanji:9:2"
+        ]
+      },
+      {
+        "kanji": "入",
+        "questionCount": 3,
+        "questionIds": [
+          "n5:kanji:1:8",
+          "n5:kanji:6:10",
+          "n5:kanji:9:9"
+        ]
+      },
+      {
+        "kanji": "白",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:1:11",
+          "n5:kanji:11:7"
+        ]
+      },
+      {
+        "kanji": "八",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:1:7",
+          "n5:kanji:6:9"
+        ]
+      },
+      {
+        "kanji": "半",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:7:2"
+        ]
+      },
+      {
+        "kanji": "百",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:2:3"
+        ]
+      },
+      {
+        "kanji": "父",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:16:5"
+        ]
+      },
+      {
+        "kanji": "分",
+        "questionCount": 3,
+        "questionIds": [
+          "n5:kanji:10:6",
+          "n5:kanji:10:7",
+          "n5:kanji:7:2"
+        ]
+      },
+      {
+        "kanji": "北",
+        "questionCount": 3,
+        "questionIds": [
+          "n5:kanji:1:10",
+          "n5:kanji:16:1",
+          "n5:kanji:4:7"
+        ]
+      },
+      {
+        "kanji": "本",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:11:2",
+          "n5:kanji:2:3"
+        ]
+      },
+      {
+        "kanji": "毎",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:19:1"
+        ]
+      },
+      {
+        "kanji": "万",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:kanji:1:7",
+          "n5:kanji:6:9"
+        ]
+      },
+      {
+        "kanji": "木",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:1:3"
+        ]
+      },
+      {
+        "kanji": "来",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:1:1"
+        ]
+      },
+      {
+        "kanji": "六",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:10:6"
+        ]
+      },
+      {
+        "kanji": "話",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:kanji:9:3"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "kanji": "こちら",
+        "kana": "こちら",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:12:1"
+        ]
+      },
+      {
+        "kanji": "すぐに",
+        "kana": "すぐに",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:1:10",
+          "n5:vocabulary:8:8"
+        ]
+      },
+      {
+        "kanji": "ストーブ",
+        "kana": "すとーぶ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:7:5"
+        ]
+      },
+      {
+        "kanji": "だんだん",
+        "kana": "だんだん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:14:5"
+        ]
+      },
+      {
+        "kanji": "ネクタイ",
+        "kana": "ねくたい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:3:8"
+        ]
+      },
+      {
+        "kanji": "ノート",
+        "kana": "のーと",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:13:9"
+        ]
+      },
+      {
+        "kanji": "バス",
+        "kana": "ばす",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:14:6"
+        ]
+      },
+      {
+        "kanji": "プール",
+        "kana": "ぷーる",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:3:10"
+        ]
+      },
+      {
+        "kanji": "ボタン",
+        "kana": "ぼたん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:11:2"
+        ]
+      },
+      {
+        "kanji": "また",
+        "kana": "また",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:17:3"
+        ]
+      },
+      {
+        "kanji": "まっすぐ",
+        "kana": "まっすぐ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:9:4"
+        ]
+      },
+      {
+        "kanji": "もっと",
+        "kana": "もっと",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:13:6",
+          "n5:vocabulary:6:10"
+        ]
+      },
+      {
+        "kanji": "ラジオ",
+        "kana": "らじお",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:1:2"
+        ]
+      },
+      {
+        "kanji": "飴",
+        "kana": "あめ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:15:4"
+        ]
+      },
+      {
+        "kanji": "暗い",
+        "kana": "くらい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:15:5"
+        ]
+      },
+      {
+        "kanji": "一緒",
+        "kana": "いっしょ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:15:7"
+        ]
+      },
+      {
+        "kanji": "一番",
+        "kana": "いちばん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:17:2"
+        ]
+      },
+      {
+        "kanji": "引く",
+        "kana": "ひく",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:14:8"
+        ]
+      },
+      {
+        "kanji": "雨",
+        "kana": "あめ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:15:4"
+        ]
+      },
+      {
+        "kanji": "汚い",
+        "kana": "きたない",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:7:8"
+        ]
+      },
+      {
+        "kanji": "家",
+        "kana": "いえ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:8:7"
+        ]
+      },
+      {
+        "kanji": "暇",
+        "kana": "ひま",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:18:1",
+          "n5:vocabulary:7:9"
+        ]
+      },
+      {
+        "kanji": "花",
+        "kana": "はな",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:16:4"
+        ]
+      },
+      {
+        "kanji": "荷物",
+        "kana": "にもつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:19:2"
+        ]
+      },
+      {
+        "kanji": "会社",
+        "kana": "かいしゃ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:17:8"
+        ]
+      },
+      {
+        "kanji": "甘い",
+        "kana": "あまい",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:4:3",
+          "n5:vocabulary:8:5"
+        ]
+      },
+      {
+        "kanji": "強い",
+        "kana": "つよい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:11:9"
+        ]
+      },
+      {
+        "kanji": "橋",
+        "kana": "はし",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:6:3"
+        ]
+      },
+      {
+        "kanji": "狭い",
+        "kana": "せまい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:2:5"
+        ]
+      },
+      {
+        "kanji": "兄",
+        "kana": "あに",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:8:9"
+        ]
+      },
+      {
+        "kanji": "犬",
+        "kana": "いぬ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:7:1"
+        ]
+      },
+      {
+        "kanji": "元気",
+        "kana": "げんき",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:1:6"
+        ]
+      },
+      {
+        "kanji": "言葉",
+        "kana": "ことば",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:11:8"
+        ]
+      },
+      {
+        "kanji": "五つ",
+        "kana": "いつつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:19:1"
+        ]
+      },
+      {
+        "kanji": "五日",
+        "kana": "いつか",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:12:5"
+        ]
+      },
+      {
+        "kanji": "公園",
+        "kana": "こうえん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:12:4"
+        ]
+      },
+      {
+        "kanji": "厚い",
+        "kana": "あつい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:11:1"
+        ]
+      },
+      {
+        "kanji": "向こう",
+        "kana": "むこう",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:19:5"
+        ]
+      },
+      {
+        "kanji": "紅茶",
+        "kana": "こうちゃ",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:1:3",
+          "n5:vocabulary:19:8"
+        ]
+      },
+      {
+        "kanji": "高い",
+        "kana": "たかい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:2:10"
+        ]
+      },
+      {
+        "kanji": "国",
+        "kana": "くに",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:11:5"
+        ]
+      },
+      {
+        "kanji": "今日",
+        "kana": "きょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:14:10"
+        ]
+      },
+      {
+        "kanji": "仕事",
+        "kana": "しごと",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:13:8"
+        ]
+      },
+      {
+        "kanji": "歯",
+        "kana": "は",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:16:9"
+        ]
+      },
+      {
+        "kanji": "時々",
+        "kana": "ときどき",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:16:10"
+        ]
+      },
+      {
+        "kanji": "時間",
+        "kana": "じかん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:14:4"
+        ]
+      },
+      {
+        "kanji": "写真",
+        "kana": "しゃしん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:16:1"
+        ]
+      },
+      {
+        "kanji": "手紙",
+        "kana": "てがみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:2:2"
+        ]
+      },
+      {
+        "kanji": "重い",
+        "kana": "おもい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:18:3"
+        ]
+      },
+      {
+        "kanji": "宿題",
+        "kana": "しゅくだい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:12:7"
+        ]
+      },
+      {
+        "kanji": "初めて",
+        "kana": "はじめて",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:2:7",
+          "n5:vocabulary:3:6"
+        ]
+      },
+      {
+        "kanji": "暑い",
+        "kana": "あつい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:11:1"
+        ]
+      },
+      {
+        "kanji": "小さい",
+        "kana": "ちいさい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:1:5"
+        ]
+      },
+      {
+        "kanji": "丈夫",
+        "kana": "じょうぶ",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:16:5",
+          "n5:vocabulary:6:1"
+        ]
+      },
+      {
+        "kanji": "食べ物",
+        "kana": "たべもの",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:10:5",
+          "n5:vocabulary:8:2"
+        ]
+      },
+      {
+        "kanji": "食堂",
+        "kana": "しょくどう",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:14:9"
+        ]
+      },
+      {
+        "kanji": "真っ直ぐ",
+        "kana": "まっすぐ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:9:4"
+        ]
+      },
+      {
+        "kanji": "辛い",
+        "kana": "からい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:12:8"
+        ]
+      },
+      {
+        "kanji": "青い",
+        "kana": "あおい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:9:1"
+        ]
+      },
+      {
+        "kanji": "切手",
+        "kana": "きって",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:5:2"
+        ]
+      },
+      {
+        "kanji": "雪",
+        "kana": "ゆき",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:13:7"
+        ]
+      },
+      {
+        "kanji": "前",
+        "kana": "まえ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:17:6"
+        ]
+      },
+      {
+        "kanji": "足",
+        "kana": "あし",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:5:10"
+        ]
+      },
+      {
+        "kanji": "多分",
+        "kana": "たぶん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:7:4"
+        ]
+      },
+      {
+        "kanji": "体",
+        "kana": "からだ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:8:4"
+        ]
+      },
+      {
+        "kanji": "大学",
+        "kana": "だいがく",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:9:2"
+        ]
+      },
+      {
+        "kanji": "大人",
+        "kana": "おとな",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:8:3"
+        ]
+      },
+      {
+        "kanji": "大勢",
+        "kana": "おおぜい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:16:3"
+        ]
+      },
+      {
+        "kanji": "沢山",
+        "kana": "たくさん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:4:9"
+        ]
+      },
+      {
+        "kanji": "弾く",
+        "kana": "ひく",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:14:8"
+        ]
+      },
+      {
+        "kanji": "暖かい",
+        "kana": "あたたかい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:15:10"
+        ]
+      },
+      {
+        "kanji": "段々",
+        "kana": "だんだん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:14:5"
+        ]
+      },
+      {
+        "kanji": "男",
+        "kana": "おとこ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:19:7"
+        ]
+      },
+      {
+        "kanji": "地図",
+        "kana": "ちず",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:11:6"
+        ]
+      },
+      {
+        "kanji": "直ぐに",
+        "kana": "すぐに",
+        "questionCount": 2,
+        "questionIds": [
+          "n5:vocabulary:1:10",
+          "n5:vocabulary:8:8"
+        ]
+      },
+      {
+        "kanji": "天気",
+        "kana": "てんき",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:5:4"
+        ]
+      },
+      {
+        "kanji": "店",
+        "kana": "みせ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:10:3"
+        ]
+      },
+      {
+        "kanji": "電気",
+        "kana": "でんき",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:19:6"
+        ]
+      },
+      {
+        "kanji": "道",
+        "kana": "みち",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:16:8"
+        ]
+      },
+      {
+        "kanji": "難しい",
+        "kana": "むずかしい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:10:1"
+        ]
+      },
+      {
+        "kanji": "二日",
+        "kana": "ふつか",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:13:2"
+        ]
+      },
+      {
+        "kanji": "猫",
+        "kana": "ねこ",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:19:3"
+        ]
+      },
+      {
+        "kanji": "熱い",
+        "kana": "あつい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:11:1"
+        ]
+      },
+      {
+        "kanji": "伯父",
+        "kana": "おじさん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:5:6"
+        ]
+      },
+      {
+        "kanji": "伯父さん",
+        "kana": "おじさん",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:5:6"
+        ]
+      },
+      {
+        "kanji": "箸",
+        "kana": "はし",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:6:3"
+        ]
+      },
+      {
+        "kanji": "八日",
+        "kana": "ようか",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:2:1"
+        ]
+      },
+      {
+        "kanji": "美味しい",
+        "kana": "おいしい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:6:6"
+        ]
+      },
+      {
+        "kanji": "鼻",
+        "kana": "はな",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:16:4"
+        ]
+      },
+      {
+        "kanji": "病気",
+        "kana": "びょうき",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:10:2"
+        ]
+      },
+      {
+        "kanji": "便利",
+        "kana": "べんり",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:3:3"
+        ]
+      },
+      {
+        "kanji": "勉強",
+        "kana": "べんきょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:15:1"
+        ]
+      },
+      {
+        "kanji": "帽子",
+        "kana": "ぼうし",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:17:7"
+        ]
+      },
+      {
+        "kanji": "忙しい",
+        "kana": "いそがしい",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:8:1"
+        ]
+      },
+      {
+        "kanji": "明日",
+        "kana": "あした",
+        "questionCount": 1,
+        "questionIds": [
+          "n5:vocabulary:1:1"
+        ]
+      }
+    ]
+  },
+  "n4": {
+    "kanji": [
+      {
+        "kanji": "安",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:4:4"
+        ]
+      },
+      {
+        "kanji": "以",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:8:9"
+        ]
+      },
+      {
+        "kanji": "意",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:6:9"
+        ]
+      },
+      {
+        "kanji": "医",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:19:4",
+          "n4:kanji:6:7"
+        ]
+      },
+      {
+        "kanji": "員",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:17:5"
+        ]
+      },
+      {
+        "kanji": "飲",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:18:6"
+        ]
+      },
+      {
+        "kanji": "院",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:10:7",
+          "n4:kanji:2:3"
+        ]
+      },
+      {
+        "kanji": "家",
+        "questionCount": 6,
+        "questionIds": [
+          "n4:kanji:13:9",
+          "n4:kanji:16:2",
+          "n4:kanji:16:8",
+          "n4:kanji:4:8",
+          "n4:kanji:6:2",
+          "n4:kanji:9:8"
+        ]
+      },
+      {
+        "kanji": "歌",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:12:5",
+          "n4:kanji:3:9"
+        ]
+      },
+      {
+        "kanji": "花",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:2:3"
+        ]
+      },
+      {
+        "kanji": "画",
+        "questionCount": 3,
+        "questionIds": [
+          "n4:kanji:1:3",
+          "n4:kanji:12:3",
+          "n4:kanji:16:2"
+        ]
+      },
+      {
+        "kanji": "会",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:14:4",
+          "n4:kanji:4:10"
+        ]
+      },
+      {
+        "kanji": "海",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:3:1",
+          "n4:kanji:7:2"
+        ]
+      },
+      {
+        "kanji": "界",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:6:3"
+        ]
+      },
+      {
+        "kanji": "開",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:17:8"
+        ]
+      },
+      {
+        "kanji": "楽",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:4:9"
+        ]
+      },
+      {
+        "kanji": "漢",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:13:4"
+        ]
+      },
+      {
+        "kanji": "究",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:12:3"
+        ]
+      },
+      {
+        "kanji": "去",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:5:9"
+        ]
+      },
+      {
+        "kanji": "魚",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:3:4"
+        ]
+      },
+      {
+        "kanji": "京",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:2:2"
+        ]
+      },
+      {
+        "kanji": "強",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:13:3",
+          "n4:kanji:3:2"
+        ]
+      },
+      {
+        "kanji": "教",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:16:4",
+          "n4:kanji:3:8"
+        ]
+      },
+      {
+        "kanji": "業",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:19:2",
+          "n4:kanji:7:5"
+        ]
+      },
+      {
+        "kanji": "近",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:11:3",
+          "n4:kanji:7:3"
+        ]
+      },
+      {
+        "kanji": "銀",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:8:7"
+        ]
+      },
+      {
+        "kanji": "兄",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:2:3",
+          "n4:kanji:5:1"
+        ]
+      },
+      {
+        "kanji": "計",
+        "questionCount": 3,
+        "questionIds": [
+          "n4:kanji:1:3",
+          "n4:kanji:12:3",
+          "n4:kanji:13:2"
+        ]
+      },
+      {
+        "kanji": "建",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:5:2"
+        ]
+      },
+      {
+        "kanji": "研",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:12:3"
+        ]
+      },
+      {
+        "kanji": "元",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:16:4"
+        ]
+      },
+      {
+        "kanji": "言",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:6:10"
+        ]
+      },
+      {
+        "kanji": "古",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:2:2"
+        ]
+      },
+      {
+        "kanji": "公",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:11:3"
+        ]
+      },
+      {
+        "kanji": "口",
+        "questionCount": 3,
+        "questionIds": [
+          "n4:kanji:11:4",
+          "n4:kanji:5:3",
+          "n4:kanji:5:8"
+        ]
+      },
+      {
+        "kanji": "工",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:19:3",
+          "n4:kanji:7:5"
+        ]
+      },
+      {
+        "kanji": "使",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:3:6",
+          "n4:kanji:9:4"
+        ]
+      },
+      {
+        "kanji": "姉",
+        "questionCount": 4,
+        "questionIds": [
+          "n4:kanji:1:7",
+          "n4:kanji:1:8",
+          "n4:kanji:18:3",
+          "n4:kanji:2:6"
+        ]
+      },
+      {
+        "kanji": "紙",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:19:1"
+        ]
+      },
+      {
+        "kanji": "事",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:1:8",
+          "n4:kanji:9:10"
+        ]
+      },
+      {
+        "kanji": "字",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:13:4"
+        ]
+      },
+      {
+        "kanji": "持",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:2:3"
+        ]
+      },
+      {
+        "kanji": "自",
+        "questionCount": 5,
+        "questionIds": [
+          "n4:kanji:1:1",
+          "n4:kanji:1:2",
+          "n4:kanji:1:3",
+          "n4:kanji:7:4",
+          "n4:kanji:9:5"
+        ]
+      },
+      {
+        "kanji": "室",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:16:4",
+          "n4:kanji:3:8"
+        ]
+      },
+      {
+        "kanji": "写",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:6:2",
+          "n4:kanji:9:8"
+        ]
+      },
+      {
+        "kanji": "社",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:14:4"
+        ]
+      },
+      {
+        "kanji": "者",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:19:4",
+          "n4:kanji:6:7"
+        ]
+      },
+      {
+        "kanji": "借",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:8:10"
+        ]
+      },
+      {
+        "kanji": "主",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:8:2"
+        ]
+      },
+      {
+        "kanji": "手",
+        "questionCount": 3,
+        "questionIds": [
+          "n4:kanji:17:1",
+          "n4:kanji:19:1",
+          "n4:kanji:7:6"
+        ]
+      },
+      {
+        "kanji": "住",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:7:1"
+        ]
+      },
+      {
+        "kanji": "少",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:16:8"
+        ]
+      },
+      {
+        "kanji": "場",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:19:3"
+        ]
+      },
+      {
+        "kanji": "色",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:5:4"
+        ]
+      },
+      {
+        "kanji": "真",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:6:2",
+          "n4:kanji:9:8"
+        ]
+      },
+      {
+        "kanji": "親",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:4:5"
+        ]
+      },
+      {
+        "kanji": "世",
+        "questionCount": 3,
+        "questionIds": [
+          "n4:kanji:15:3",
+          "n4:kanji:17:2",
+          "n4:kanji:6:3"
+        ]
+      },
+      {
+        "kanji": "正",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:14:8"
+        ]
+      },
+      {
+        "kanji": "切",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:7:6"
+        ]
+      },
+      {
+        "kanji": "送",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:7:7"
+        ]
+      },
+      {
+        "kanji": "族",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:4:8"
+        ]
+      },
+      {
+        "kanji": "多",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:5:10"
+        ]
+      },
+      {
+        "kanji": "体",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:17:6"
+        ]
+      },
+      {
+        "kanji": "代",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:4:1"
+        ]
+      },
+      {
+        "kanji": "台",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:4:6"
+        ]
+      },
+      {
+        "kanji": "知",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:14:9"
+        ]
+      },
+      {
+        "kanji": "地",
+        "questionCount": 3,
+        "questionIds": [
+          "n4:kanji:1:5",
+          "n4:kanji:1:6",
+          "n4:kanji:10:6"
+        ]
+      },
+      {
+        "kanji": "茶",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:12:1",
+          "n4:kanji:5:4"
+        ]
+      },
+      {
+        "kanji": "着",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:5:6",
+          "n4:kanji:8:3"
+        ]
+      },
+      {
+        "kanji": "注",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:6:9"
+        ]
+      },
+      {
+        "kanji": "町",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:17:3",
+          "n4:kanji:5:7"
+        ]
+      },
+      {
+        "kanji": "鳥",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:6:4"
+        ]
+      },
+      {
+        "kanji": "店",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:17:5",
+          "n4:kanji:8:1"
+        ]
+      },
+      {
+        "kanji": "転",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:9:5"
+        ]
+      },
+      {
+        "kanji": "田",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:12:3"
+        ]
+      },
+      {
+        "kanji": "度",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:16:7",
+          "n4:kanji:9:6"
+        ]
+      },
+      {
+        "kanji": "動",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:6:5",
+          "n4:kanji:7:4"
+        ]
+      },
+      {
+        "kanji": "堂",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:4:7"
+        ]
+      },
+      {
+        "kanji": "買",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:12:6"
+        ]
+      },
+      {
+        "kanji": "飯",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:3:5"
+        ]
+      },
+      {
+        "kanji": "病",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:10:7"
+        ]
+      },
+      {
+        "kanji": "風",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:13:7",
+          "n4:kanji:3:3"
+        ]
+      },
+      {
+        "kanji": "服",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:5:5"
+        ]
+      },
+      {
+        "kanji": "物",
+        "questionCount": 4,
+        "questionIds": [
+          "n4:kanji:14:4",
+          "n4:kanji:5:2",
+          "n4:kanji:6:5",
+          "n4:kanji:8:3"
+        ]
+      },
+      {
+        "kanji": "勉",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:13:3"
+        ]
+      },
+      {
+        "kanji": "歩",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:16:8"
+        ]
+      },
+      {
+        "kanji": "方",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:9:9"
+        ]
+      },
+      {
+        "kanji": "妹",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:17:3"
+        ]
+      },
+      {
+        "kanji": "夜",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:4:2"
+        ]
+      },
+      {
+        "kanji": "野",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:14:6"
+        ]
+      },
+      {
+        "kanji": "有",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:6:1",
+          "n4:kanji:9:7"
+        ]
+      },
+      {
+        "kanji": "夕",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:3:5",
+          "n4:kanji:9:9"
+        ]
+      },
+      {
+        "kanji": "理",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:3:7"
+        ]
+      },
+      {
+        "kanji": "旅",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:kanji:1:2",
+          "n4:kanji:1:3"
+        ]
+      },
+      {
+        "kanji": "料",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:kanji:3:7"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "kanji": "アルバイト",
+        "kana": "アルバイト",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:1:6",
+          "n4:vocabulary:23:1"
+        ]
+      },
+      {
+        "kanji": "エスカレーター",
+        "kana": "エスカレーター",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:1:3"
+        ]
+      },
+      {
+        "kanji": "おもちゃ",
+        "kana": "おもちゃ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:20:7"
+        ]
+      },
+      {
+        "kanji": "お見舞い",
+        "kana": "おみまい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:5:3"
+        ]
+      },
+      {
+        "kanji": "お祝い",
+        "kana": "おいわい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:20:5"
+        ]
+      },
+      {
+        "kanji": "お土産",
+        "kana": "おみやげ",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:1:8",
+          "n4:vocabulary:12:9"
+        ]
+      },
+      {
+        "kanji": "お礼",
+        "kana": "おれい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:2:9"
+        ]
+      },
+      {
+        "kanji": "ガソリンスタンド",
+        "kana": "ガソリンスタンド",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:4:9"
+        ]
+      },
+      {
+        "kanji": "さっき",
+        "kana": "さっき",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:24:4"
+        ]
+      },
+      {
+        "kanji": "サンダル",
+        "kana": "サンダル",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:1:7"
+        ]
+      },
+      {
+        "kanji": "すっかり",
+        "kana": "すっかり",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:3:6"
+        ]
+      },
+      {
+        "kanji": "それで",
+        "kana": "それで",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:23:6"
+        ]
+      },
+      {
+        "kanji": "それに",
+        "kana": "それに",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:12:2"
+        ]
+      },
+      {
+        "kanji": "それほど",
+        "kana": "それほど",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:17:5"
+        ]
+      },
+      {
+        "kanji": "そろそろ",
+        "kana": "そろそろ",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:13:2",
+          "n4:vocabulary:3:8"
+        ]
+      },
+      {
+        "kanji": "だから",
+        "kana": "だから",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:9:5"
+        ]
+      },
+      {
+        "kanji": "とうとう",
+        "kana": "とうとう",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:10:9"
+        ]
+      },
+      {
+        "kanji": "なるべく",
+        "kana": "なるべく",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:13:3",
+          "n4:vocabulary:22:2"
+        ]
+      },
+      {
+        "kanji": "パソコン",
+        "kana": "パソコン",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:22:5"
+        ]
+      },
+      {
+        "kanji": "ビル",
+        "kana": "ビル",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:1:9"
+        ]
+      },
+      {
+        "kanji": "または",
+        "kana": "または",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:15:9"
+        ]
+      },
+      {
+        "kanji": "やっと",
+        "kana": "やっと",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:17:9",
+          "n4:vocabulary:6:9"
+        ]
+      },
+      {
+        "kanji": "レジ",
+        "kana": "レジ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:14:4"
+        ]
+      },
+      {
+        "kanji": "安全",
+        "kana": "あんぜん",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:24:7"
+        ]
+      },
+      {
+        "kanji": "以下",
+        "kana": "いか",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:12:1"
+        ]
+      },
+      {
+        "kanji": "以上",
+        "kana": "いじょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:18:2"
+        ]
+      },
+      {
+        "kanji": "一度",
+        "kana": "いちど",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:2:10"
+        ]
+      },
+      {
+        "kanji": "引き出し",
+        "kana": "ひきだし",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:23:2"
+        ]
+      },
+      {
+        "kanji": "屋上",
+        "kana": "おくじょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:23:8"
+        ]
+      },
+      {
+        "kanji": "会場",
+        "kana": "かいじょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:9:10"
+        ]
+      },
+      {
+        "kanji": "看護婦",
+        "kana": "かんごふ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:3:5"
+        ]
+      },
+      {
+        "kanji": "関係",
+        "kana": "かんけい",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:23:4",
+          "n4:vocabulary:26:7"
+        ]
+      },
+      {
+        "kanji": "危険",
+        "kana": "きけん",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:4:4"
+        ]
+      },
+      {
+        "kanji": "機会",
+        "kana": "きかい",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:15:10",
+          "n4:vocabulary:5:9"
+        ]
+      },
+      {
+        "kanji": "季節",
+        "kana": "きせつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:1:1"
+        ]
+      },
+      {
+        "kanji": "規則",
+        "kana": "きそく",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:6:2"
+        ]
+      },
+      {
+        "kanji": "技術",
+        "kana": "ぎじゅつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:21:4"
+        ]
+      },
+      {
+        "kanji": "競争",
+        "kana": "きょうそう",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:9:8"
+        ]
+      },
+      {
+        "kanji": "興味",
+        "kana": "きょうみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:17:3"
+        ]
+      },
+      {
+        "kanji": "鏡",
+        "kana": "かがみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:26:5"
+        ]
+      },
+      {
+        "kanji": "隅",
+        "kana": "すみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:19:4"
+        ]
+      },
+      {
+        "kanji": "堅",
+        "kana": "かたい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:24:2"
+        ]
+      },
+      {
+        "kanji": "厳しい",
+        "kana": "きびしい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:3:9"
+        ]
+      },
+      {
+        "kanji": "喉",
+        "kana": "のど",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:19:2"
+        ]
+      },
+      {
+        "kanji": "郊外",
+        "kana": "こうがい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:15:4"
+        ]
+      },
+      {
+        "kanji": "最初",
+        "kana": "さいしょ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:26:9"
+        ]
+      },
+      {
+        "kanji": "坂",
+        "kana": "さか",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:9:1"
+        ]
+      },
+      {
+        "kanji": "残念",
+        "kana": "ざんねん",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:14:5"
+        ]
+      },
+      {
+        "kanji": "失敗",
+        "kana": "しっぱい",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:23:5",
+          "n4:vocabulary:24:9"
+        ]
+      },
+      {
+        "kanji": "邪魔",
+        "kana": "じゃま",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:18:5"
+        ]
+      },
+      {
+        "kanji": "受ける",
+        "kana": "うける",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:4:8"
+        ]
+      },
+      {
+        "kanji": "習慣",
+        "kana": "しゅうかん",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:22:4"
+        ]
+      },
+      {
+        "kanji": "十分",
+        "kana": "じゅうぶん",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:10:2"
+        ]
+      },
+      {
+        "kanji": "柔らかい",
+        "kana": "やわらかい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:13:5"
+        ]
+      },
+      {
+        "kanji": "女性",
+        "kana": "じょせい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:26:8"
+        ]
+      },
+      {
+        "kanji": "深い",
+        "kana": "ふかい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:12:4"
+        ]
+      },
+      {
+        "kanji": "親",
+        "kana": "おや",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:10:5"
+        ]
+      },
+      {
+        "kanji": "是非",
+        "kana": "ぜひ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:1:5"
+        ]
+      },
+      {
+        "kanji": "盛ん",
+        "kana": "さかん",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:4:6"
+        ]
+      },
+      {
+        "kanji": "足す",
+        "kana": "たす",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:24:3"
+        ]
+      },
+      {
+        "kanji": "暖房",
+        "kana": "だんぼう",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:15:1",
+          "n4:vocabulary:22:1"
+        ]
+      },
+      {
+        "kanji": "珍しい",
+        "kana": "めずらしい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:26:6"
+        ]
+      },
+      {
+        "kanji": "特に",
+        "kana": "とくに",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:5:7"
+        ]
+      },
+      {
+        "kanji": "内",
+        "kana": "うち",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:7:7"
+        ]
+      },
+      {
+        "kanji": "熱心",
+        "kana": "ねっしん",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:21:1"
+        ]
+      },
+      {
+        "kanji": "番組",
+        "kana": "ばんぐみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:13:1"
+        ]
+      },
+      {
+        "kanji": "必ず",
+        "kana": "かならず",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:15:7"
+        ]
+      },
+      {
+        "kanji": "不便",
+        "kana": "ふべん",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:15:6"
+        ]
+      },
+      {
+        "kanji": "怖い",
+        "kana": "こわい",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:12:10"
+        ]
+      },
+      {
+        "kanji": "壁",
+        "kana": "かべ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:18:3"
+        ]
+      },
+      {
+        "kanji": "貿易",
+        "kana": "ぼうえき",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:17:8"
+        ]
+      },
+      {
+        "kanji": "翻訳",
+        "kana": "ほんやく",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:23:9"
+        ]
+      },
+      {
+        "kanji": "眠い",
+        "kana": "ねむい",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:24:10",
+          "n4:vocabulary:9:4"
+        ]
+      },
+      {
+        "kanji": "夢",
+        "kana": "ゆめ",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:5:5"
+        ]
+      },
+      {
+        "kanji": "約束",
+        "kana": "やくそく",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:9:6"
+        ]
+      },
+      {
+        "kanji": "予習",
+        "kana": "よしゅう",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:4:3"
+        ]
+      },
+      {
+        "kanji": "予約",
+        "kana": "よやく",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:17:1"
+        ]
+      },
+      {
+        "kanji": "利用",
+        "kana": "りよう",
+        "questionCount": 2,
+        "questionIds": [
+          "n4:vocabulary:24:5",
+          "n4:vocabulary:9:2"
+        ]
+      },
+      {
+        "kanji": "力",
+        "kana": "ちから",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:24:1"
+        ]
+      },
+      {
+        "kanji": "連絡",
+        "kana": "れんらく",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:15:5"
+        ]
+      },
+      {
+        "kanji": "腕",
+        "kana": "うで",
+        "questionCount": 1,
+        "questionIds": [
+          "n4:vocabulary:18:4"
+        ]
+      }
+    ]
+  },
+  "n3": {
+    "kanji": [
+      {
+        "kanji": "引",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:14:8"
+        ]
+      },
+      {
+        "kanji": "園",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:13:5"
+        ]
+      },
+      {
+        "kanji": "演",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:6:3"
+        ]
+      },
+      {
+        "kanji": "煙",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:25:1"
+        ]
+      },
+      {
+        "kanji": "遠",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:28:5"
+        ]
+      },
+      {
+        "kanji": "横",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:5:10"
+        ]
+      },
+      {
+        "kanji": "化",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:16:4"
+        ]
+      },
+      {
+        "kanji": "加",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:10:6"
+        ]
+      },
+      {
+        "kanji": "科",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:18:8"
+        ]
+      },
+      {
+        "kanji": "果",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:11:2",
+          "n3:kanji:3:8"
+        ]
+      },
+      {
+        "kanji": "解",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:22:1"
+        ]
+      },
+      {
+        "kanji": "害",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:15:7"
+        ]
+      },
+      {
+        "kanji": "格",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:18:9",
+          "n3:kanji:30:6"
+        ]
+      },
+      {
+        "kanji": "確",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:28:6"
+        ]
+      },
+      {
+        "kanji": "覚",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:22:5"
+        ]
+      },
+      {
+        "kanji": "活",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:25:8",
+          "n3:kanji:30:2"
+        ]
+      },
+      {
+        "kanji": "完",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:19:6"
+        ]
+      },
+      {
+        "kanji": "感",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:29:3"
+        ]
+      },
+      {
+        "kanji": "関",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:25:4"
+        ]
+      },
+      {
+        "kanji": "顔",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:17:4",
+          "n3:kanji:31:9"
+        ]
+      },
+      {
+        "kanji": "寄",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:26:5",
+          "n3:kanji:30:9"
+        ]
+      },
+      {
+        "kanji": "期",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:21:2",
+          "n3:kanji:26:1"
+        ]
+      },
+      {
+        "kanji": "機",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:16:7",
+          "n3:kanji:4:10"
+        ]
+      },
+      {
+        "kanji": "記",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:28:4"
+        ]
+      },
+      {
+        "kanji": "疑",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:1:9",
+          "n3:kanji:24:10"
+        ]
+      },
+      {
+        "kanji": "議",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:16:5",
+          "n3:kanji:20:8"
+        ]
+      },
+      {
+        "kanji": "吸",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:4:12"
+        ]
+      },
+      {
+        "kanji": "許",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:19:10"
+        ]
+      },
+      {
+        "kanji": "局",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:22:2"
+        ]
+      },
+      {
+        "kanji": "苦",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:10:12",
+          "n3:kanji:10:4"
+        ]
+      },
+      {
+        "kanji": "経",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:6:5"
+        ]
+      },
+      {
+        "kanji": "決",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:21:10",
+          "n3:kanji:22:1"
+        ]
+      },
+      {
+        "kanji": "件",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:26:8",
+          "n3:kanji:30:5"
+        ]
+      },
+      {
+        "kanji": "呼",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:4:12"
+        ]
+      },
+      {
+        "kanji": "幸",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:27:3"
+        ]
+      },
+      {
+        "kanji": "合",
+        "questionCount": 4,
+        "questionIds": [
+          "n3:kanji:17:3",
+          "n3:kanji:18:9",
+          "n3:kanji:30:6",
+          "n3:kanji:9:12"
+        ]
+      },
+      {
+        "kanji": "困",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:21:1"
+        ]
+      },
+      {
+        "kanji": "座",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:15:6"
+        ]
+      },
+      {
+        "kanji": "最",
+        "questionCount": 3,
+        "questionIds": [
+          "n3:kanji:15:7",
+          "n3:kanji:18:2",
+          "n3:kanji:21:9"
+        ]
+      },
+      {
+        "kanji": "在",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:28:7",
+          "n3:kanji:6:1"
+        ]
+      },
+      {
+        "kanji": "殺",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:24:9"
+        ]
+      },
+      {
+        "kanji": "産",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:14:1"
+        ]
+      },
+      {
+        "kanji": "残",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:26:2"
+        ]
+      },
+      {
+        "kanji": "指",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:17:2",
+          "n3:kanji:2:1"
+        ]
+      },
+      {
+        "kanji": "次",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:27:5"
+        ]
+      },
+      {
+        "kanji": "示",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:23:4",
+          "n3:kanji:4:11"
+        ]
+      },
+      {
+        "kanji": "失",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:15:9"
+        ]
+      },
+      {
+        "kanji": "実",
+        "questionCount": 3,
+        "questionIds": [
+          "n3:kanji:1:3",
+          "n3:kanji:28:6",
+          "n3:kanji:3:4"
+        ]
+      },
+      {
+        "kanji": "若",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:15:6"
+        ]
+      },
+      {
+        "kanji": "首",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:2:12"
+        ]
+      },
+      {
+        "kanji": "招",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:28:9"
+        ]
+      },
+      {
+        "kanji": "消",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:9:6"
+        ]
+      },
+      {
+        "kanji": "笑",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:17:4"
+        ]
+      },
+      {
+        "kanji": "乗",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:15:2",
+          "n3:kanji:15:8"
+        ]
+      },
+      {
+        "kanji": "常",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:8:8"
+        ]
+      },
+      {
+        "kanji": "情",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:29:3",
+          "n3:kanji:3:12"
+        ]
+      },
+      {
+        "kanji": "信",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:10:8",
+          "n3:kanji:30:7"
+        ]
+      },
+      {
+        "kanji": "寝",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:27:8"
+        ]
+      },
+      {
+        "kanji": "数",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:26:10",
+          "n3:kanji:30:6"
+        ]
+      },
+      {
+        "kanji": "席",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:25:1",
+          "n3:kanji:30:9"
+        ]
+      },
+      {
+        "kanji": "昔",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:27:8"
+        ]
+      },
+      {
+        "kanji": "積",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:25:5"
+        ]
+      },
+      {
+        "kanji": "説",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:3:6",
+          "n3:kanji:6:3"
+        ]
+      },
+      {
+        "kanji": "雪",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:31:2"
+        ]
+      },
+      {
+        "kanji": "絶",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:30:7"
+        ]
+      },
+      {
+        "kanji": "選",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:1:12",
+          "n3:kanji:23:6"
+        ]
+      },
+      {
+        "kanji": "然",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:6:10"
+        ]
+      },
+      {
+        "kanji": "全",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:19:6"
+        ]
+      },
+      {
+        "kanji": "相",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:26:4"
+        ]
+      },
+      {
+        "kanji": "草",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:30:8"
+        ]
+      },
+      {
+        "kanji": "増",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:10:6"
+        ]
+      },
+      {
+        "kanji": "束",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:30:7"
+        ]
+      },
+      {
+        "kanji": "速",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:15:8"
+        ]
+      },
+      {
+        "kanji": "存",
+        "questionCount": 3,
+        "questionIds": [
+          "n3:kanji:28:7",
+          "n3:kanji:4:6",
+          "n3:kanji:6:1"
+        ]
+      },
+      {
+        "kanji": "他",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:24:1",
+          "n3:kanji:7:11"
+        ]
+      },
+      {
+        "kanji": "太",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:26:3"
+        ]
+      },
+      {
+        "kanji": "対",
+        "questionCount": 3,
+        "questionIds": [
+          "n3:kanji:15:7",
+          "n3:kanji:30:7",
+          "n3:kanji:9:10"
+        ]
+      },
+      {
+        "kanji": "達",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:13:1"
+        ]
+      },
+      {
+        "kanji": "単",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:2:7"
+        ]
+      },
+      {
+        "kanji": "断",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:16:8",
+          "n3:kanji:5:10"
+        ]
+      },
+      {
+        "kanji": "談",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:18:3"
+        ]
+      },
+      {
+        "kanji": "調",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:1:5"
+        ]
+      },
+      {
+        "kanji": "定",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:21:10"
+        ]
+      },
+      {
+        "kanji": "点",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:26:10",
+          "n3:kanji:30:6"
+        ]
+      },
+      {
+        "kanji": "都",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:2:12"
+        ]
+      },
+      {
+        "kanji": "努",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:29:5"
+        ]
+      },
+      {
+        "kanji": "当",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:12:1",
+          "n3:kanji:26:4"
+        ]
+      },
+      {
+        "kanji": "頭",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:20:1",
+          "n3:kanji:31:6"
+        ]
+      },
+      {
+        "kanji": "内",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:11:2"
+        ]
+      },
+      {
+        "kanji": "難",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:21:1"
+        ]
+      },
+      {
+        "kanji": "能",
+        "questionCount": 3,
+        "questionIds": [
+          "n3:kanji:23:5",
+          "n3:kanji:28:10",
+          "n3:kanji:4:10"
+        ]
+      },
+      {
+        "kanji": "敗",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:15:9"
+        ]
+      },
+      {
+        "kanji": "判",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:6:7"
+        ]
+      },
+      {
+        "kanji": "晩",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:31:2"
+        ]
+      },
+      {
+        "kanji": "彼",
+        "questionCount": 13,
+        "questionIds": [
+          "n3:kanji:12:6",
+          "n3:kanji:16:2",
+          "n3:kanji:17:9",
+          "n3:kanji:19:2",
+          "n3:kanji:20:1",
+          "n3:kanji:20:3",
+          "n3:kanji:20:7",
+          "n3:kanji:27:10",
+          "n3:kanji:27:8",
+          "n3:kanji:27:9",
+          "n3:kanji:29:2",
+          "n3:kanji:30:1",
+          "n3:kanji:30:7"
+        ]
+      },
+      {
+        "kanji": "費",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:9:6"
+        ]
+      },
+      {
+        "kanji": "表",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:29:4",
+          "n3:kanji:6:11"
+        ]
+      },
+      {
+        "kanji": "福",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:27:3"
+        ]
+      },
+      {
+        "kanji": "平",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:10:11"
+        ]
+      },
+      {
+        "kanji": "変",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:16:4"
+        ]
+      },
+      {
+        "kanji": "望",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:27:2"
+        ]
+      },
+      {
+        "kanji": "満",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:8:6"
+        ]
+      },
+      {
+        "kanji": "務",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:21:4"
+        ]
+      },
+      {
+        "kanji": "夢",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:15:6"
+        ]
+      },
+      {
+        "kanji": "命",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:18:6"
+        ]
+      },
+      {
+        "kanji": "面",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:11:2"
+        ]
+      },
+      {
+        "kanji": "戻",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:27:5"
+        ]
+      },
+      {
+        "kanji": "約",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:30:7"
+        ]
+      },
+      {
+        "kanji": "陽",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:26:3"
+        ]
+      },
+      {
+        "kanji": "頼",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:kanji:10:8",
+          "n3:kanji:30:7"
+        ]
+      },
+      {
+        "kanji": "利",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:3:2"
+        ]
+      },
+      {
+        "kanji": "路",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:kanji:12:2"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "kanji": "アルバム",
+        "kana": "アルバム",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:21:4"
+        ]
+      },
+      {
+        "kanji": "インタビュー",
+        "kana": "インタビュー",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:13:10"
+        ]
+      },
+      {
+        "kanji": "うっかり",
+        "kana": "うっかり",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:vocabulary:14:2",
+          "n3:vocabulary:15:10"
+        ]
+      },
+      {
+        "kanji": "お喋り",
+        "kana": "おしゃべり",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:9"
+        ]
+      },
+      {
+        "kanji": "がっかり",
+        "kana": "がっかり",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:vocabulary:1:12",
+          "n3:vocabulary:17:7"
+        ]
+      },
+      {
+        "kanji": "キャプテン",
+        "kana": "キャプテン",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:10"
+        ]
+      },
+      {
+        "kanji": "クリスマス",
+        "kana": "クリスマス",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:7"
+        ]
+      },
+      {
+        "kanji": "ゲーム",
+        "kana": "ゲーム",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:17:9"
+        ]
+      },
+      {
+        "kanji": "さっぱり",
+        "kana": "さっぱり",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:vocabulary:1:11",
+          "n3:vocabulary:17:2"
+        ]
+      },
+      {
+        "kanji": "さて",
+        "kana": "さて",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:21:9"
+        ]
+      },
+      {
+        "kanji": "しばしば",
+        "kana": "しばしば",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:19:7"
+        ]
+      },
+      {
+        "kanji": "ジュース",
+        "kana": "ジュース",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:20:3"
+        ]
+      },
+      {
+        "kanji": "スイッチ",
+        "kana": "スイッチ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:19:9"
+        ]
+      },
+      {
+        "kanji": "スープ",
+        "kana": "スープ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:20:8"
+        ]
+      },
+      {
+        "kanji": "スピーチ",
+        "kana": "スピーチ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:17:4"
+        ]
+      },
+      {
+        "kanji": "セット",
+        "kana": "セット",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:5:9"
+        ]
+      },
+      {
+        "kanji": "ダンス",
+        "kana": "ダンス",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:19:5"
+        ]
+      },
+      {
+        "kanji": "ハンサム",
+        "kana": "ハンサム",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:18:7"
+        ]
+      },
+      {
+        "kanji": "ますます",
+        "kana": "ますます",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:13:9"
+        ]
+      },
+      {
+        "kanji": "もったいない",
+        "kana": "もったいない",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:8:4"
+        ]
+      },
+      {
+        "kanji": "意志",
+        "kana": "いし",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:8:1"
+        ]
+      },
+      {
+        "kanji": "一言",
+        "kana": "ひとこと",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:18:5"
+        ]
+      },
+      {
+        "kanji": "噂",
+        "kana": "うわさ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:3"
+        ]
+      },
+      {
+        "kanji": "影響",
+        "kana": "えいきょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:9:7"
+        ]
+      },
+      {
+        "kanji": "咳",
+        "kana": "せき",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:17:6"
+        ]
+      },
+      {
+        "kanji": "確認",
+        "kana": "かくにん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:19:10"
+        ]
+      },
+      {
+        "kanji": "覚悟",
+        "kana": "かくご",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:1:3"
+        ]
+      },
+      {
+        "kanji": "完全",
+        "kana": "かんぜん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:1:10"
+        ]
+      },
+      {
+        "kanji": "感じ",
+        "kana": "かんじ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:15:2"
+        ]
+      },
+      {
+        "kanji": "感動",
+        "kana": "かんどう",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:vocabulary:14:6",
+          "n3:vocabulary:15:9"
+        ]
+      },
+      {
+        "kanji": "期限",
+        "kana": "きげん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:5"
+        ]
+      },
+      {
+        "kanji": "期待",
+        "kana": "きたい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:8:10"
+        ]
+      },
+      {
+        "kanji": "機嫌",
+        "kana": "きげん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:5"
+        ]
+      },
+      {
+        "kanji": "帰宅",
+        "kana": "きたく",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:2:2"
+        ]
+      },
+      {
+        "kanji": "気付く",
+        "kana": "きづく",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:21:7"
+        ]
+      },
+      {
+        "kanji": "起源",
+        "kana": "きげん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:5"
+        ]
+      },
+      {
+        "kanji": "逆らう",
+        "kana": "さからう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:20:9"
+        ]
+      },
+      {
+        "kanji": "休憩",
+        "kana": "きゅうけい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:21:8"
+        ]
+      },
+      {
+        "kanji": "恐怖",
+        "kana": "きょうふ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:17:1"
+        ]
+      },
+      {
+        "kanji": "偶然",
+        "kana": "ぐうぜん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:1:5"
+        ]
+      },
+      {
+        "kanji": "型",
+        "kana": "かた",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:13:5"
+        ]
+      },
+      {
+        "kanji": "欠陥",
+        "kana": "けっかん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:18:3"
+        ]
+      },
+      {
+        "kanji": "血管",
+        "kana": "けっかん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:18:3"
+        ]
+      },
+      {
+        "kanji": "減らす",
+        "kana": "へらす",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:18:8"
+        ]
+      },
+      {
+        "kanji": "幸い",
+        "kana": "さいわい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:21:3"
+        ]
+      },
+      {
+        "kanji": "攻撃",
+        "kana": "こうげき",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:3:1"
+        ]
+      },
+      {
+        "kanji": "今にも",
+        "kana": "いまにも",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:9:10"
+        ]
+      },
+      {
+        "kanji": "差",
+        "kana": "さ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:9:3"
+        ]
+      },
+      {
+        "kanji": "最低",
+        "kana": "さいてい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:8"
+        ]
+      },
+      {
+        "kanji": "才能",
+        "kana": "さいのう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:21:2"
+        ]
+      },
+      {
+        "kanji": "実行",
+        "kana": "じっこう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:20:2"
+        ]
+      },
+      {
+        "kanji": "主義",
+        "kana": "しゅぎ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:21:10"
+        ]
+      },
+      {
+        "kanji": "主張",
+        "kana": "しゅちょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:12:1"
+        ]
+      },
+      {
+        "kanji": "手段",
+        "kana": "しゅだん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:9:5"
+        ]
+      },
+      {
+        "kanji": "需要",
+        "kana": "じゅよう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:17:3"
+        ]
+      },
+      {
+        "kanji": "渋滞",
+        "kana": "じゅうたい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:9:9"
+        ]
+      },
+      {
+        "kanji": "重大",
+        "kana": "じゅうだい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:19:4"
+        ]
+      },
+      {
+        "kanji": "徐々に",
+        "kana": "じょじょに",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:17:10"
+        ]
+      },
+      {
+        "kanji": "除く",
+        "kana": "のぞく",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:11:9"
+        ]
+      },
+      {
+        "kanji": "衝突",
+        "kana": "しょうとつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:3:12"
+        ]
+      },
+      {
+        "kanji": "冗談",
+        "kana": "じょうだん",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:vocabulary:1:2",
+          "n3:vocabulary:5:4"
+        ]
+      },
+      {
+        "kanji": "常に",
+        "kana": "つねに",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:14:10"
+        ]
+      },
+      {
+        "kanji": "進学",
+        "kana": "しんがく",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:1:7"
+        ]
+      },
+      {
+        "kanji": "勢い",
+        "kana": "いきおい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:16:2"
+        ]
+      },
+      {
+        "kanji": "成長",
+        "kana": "せいちょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:3:6"
+        ]
+      },
+      {
+        "kanji": "整理",
+        "kana": "せいり",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:5:5"
+        ]
+      },
+      {
+        "kanji": "清潔",
+        "kana": "せいけつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:8:5"
+        ]
+      },
+      {
+        "kanji": "製造",
+        "kana": "せいぞう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:1:4"
+        ]
+      },
+      {
+        "kanji": "想像",
+        "kana": "そうぞう",
+        "questionCount": 2,
+        "questionIds": [
+          "n3:vocabulary:13:1",
+          "n3:vocabulary:17:5"
+        ]
+      },
+      {
+        "kanji": "代金",
+        "kana": "だいきん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:13:7"
+        ]
+      },
+      {
+        "kanji": "大した",
+        "kana": "たいした",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:19:8"
+        ]
+      },
+      {
+        "kanji": "大人しい",
+        "kana": "おとなしい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:14:7"
+        ]
+      },
+      {
+        "kanji": "注文",
+        "kana": "ちゅうもん",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:13:2"
+        ]
+      },
+      {
+        "kanji": "注目",
+        "kana": "ちゅうもく",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:11:5"
+        ]
+      },
+      {
+        "kanji": "調子",
+        "kana": "ちょうし",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:11:2"
+        ]
+      },
+      {
+        "kanji": "能力",
+        "kana": "のうりょく",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:3:2"
+        ]
+      },
+      {
+        "kanji": "覗く",
+        "kana": "のぞく",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:11:9"
+        ]
+      },
+      {
+        "kanji": "被害",
+        "kana": "ひがい",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:3:10"
+        ]
+      },
+      {
+        "kanji": "必死",
+        "kana": "ひっし",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:9:2"
+        ]
+      },
+      {
+        "kanji": "豊富",
+        "kana": "ほうふ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:1:1"
+        ]
+      },
+      {
+        "kanji": "望む",
+        "kana": "のぞむ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:2:3"
+        ]
+      },
+      {
+        "kanji": "無事",
+        "kana": "ぶじ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:5:2"
+        ]
+      },
+      {
+        "kanji": "面倒",
+        "kana": "めんどう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:3:4"
+        ]
+      },
+      {
+        "kanji": "目的",
+        "kana": "もくてき",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:18:10"
+        ]
+      },
+      {
+        "kanji": "目標",
+        "kana": "もくひょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:15:3"
+        ]
+      },
+      {
+        "kanji": "流れ",
+        "kana": "ながれ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:1:6"
+        ]
+      },
+      {
+        "kanji": "両替",
+        "kana": "りょうがえ",
+        "questionCount": 1,
+        "questionIds": [
+          "n3:vocabulary:5:10"
+        ]
+      }
+    ]
+  },
+  "n2": {
+    "kanji": [
+      {
+        "kanji": "印",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:7:1"
+        ]
+      },
+      {
+        "kanji": "雲",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:16:10"
+        ]
+      },
+      {
+        "kanji": "鋭",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:9:6"
+        ]
+      },
+      {
+        "kanji": "奥",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:7:9"
+        ]
+      },
+      {
+        "kanji": "欧",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:20:2"
+        ]
+      },
+      {
+        "kanji": "温",
+        "questionCount": 2,
+        "questionIds": [
+          "n2:kanji:19:8",
+          "n2:kanji:20:4"
+        ]
+      },
+      {
+        "kanji": "河",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:17:4"
+        ]
+      },
+      {
+        "kanji": "改",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:12:8"
+        ]
+      },
+      {
+        "kanji": "械",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:13:1"
+        ]
+      },
+      {
+        "kanji": "各",
+        "questionCount": 2,
+        "questionIds": [
+          "n2:kanji:10:6",
+          "n2:kanji:6:8"
+        ]
+      },
+      {
+        "kanji": "角",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:1:1"
+        ]
+      },
+      {
+        "kanji": "額",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:15:8"
+        ]
+      },
+      {
+        "kanji": "乾",
+        "questionCount": 2,
+        "questionIds": [
+          "n2:kanji:19:8",
+          "n2:kanji:20:4"
+        ]
+      },
+      {
+        "kanji": "祈",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:18:2"
+        ]
+      },
+      {
+        "kanji": "技",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:7:2"
+        ]
+      },
+      {
+        "kanji": "境",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:15:7"
+        ]
+      },
+      {
+        "kanji": "禁",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:10:4"
+        ]
+      },
+      {
+        "kanji": "芸",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:20:3"
+        ]
+      },
+      {
+        "kanji": "効",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:12:1"
+        ]
+      },
+      {
+        "kanji": "航",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:19:6"
+        ]
+      },
+      {
+        "kanji": "郊",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:17:3"
+        ]
+      },
+      {
+        "kanji": "骨",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:17:9"
+        ]
+      },
+      {
+        "kanji": "根",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:20:6"
+        ]
+      },
+      {
+        "kanji": "材",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:15:7"
+        ]
+      },
+      {
+        "kanji": "刷",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:7:1"
+        ]
+      },
+      {
+        "kanji": "算",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:21:4"
+        ]
+      },
+      {
+        "kanji": "刺",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:9:8"
+        ]
+      },
+      {
+        "kanji": "捨",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:14:4"
+        ]
+      },
+      {
+        "kanji": "周",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:6:3"
+        ]
+      },
+      {
+        "kanji": "将",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:16:1"
+        ]
+      },
+      {
+        "kanji": "針",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:17:7"
+        ]
+      },
+      {
+        "kanji": "震",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:8:6"
+        ]
+      },
+      {
+        "kanji": "燥",
+        "questionCount": 2,
+        "questionIds": [
+          "n2:kanji:19:8",
+          "n2:kanji:20:4"
+        ]
+      },
+      {
+        "kanji": "装",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:5:11"
+        ]
+      },
+      {
+        "kanji": "則",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:3:12"
+        ]
+      },
+      {
+        "kanji": "停",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:10:3"
+        ]
+      },
+      {
+        "kanji": "島",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:1:5"
+        ]
+      },
+      {
+        "kanji": "届",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:7:10"
+        ]
+      },
+      {
+        "kanji": "農",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:2:12"
+        ]
+      },
+      {
+        "kanji": "比",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:7:3"
+        ]
+      },
+      {
+        "kanji": "皮",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:4:5"
+        ]
+      },
+      {
+        "kanji": "被",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:8:8"
+        ]
+      },
+      {
+        "kanji": "膚",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:4:5"
+        ]
+      },
+      {
+        "kanji": "辺",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:6:3"
+        ]
+      },
+      {
+        "kanji": "募",
+        "questionCount": 2,
+        "questionIds": [
+          "n2:kanji:11:2",
+          "n2:kanji:11:3"
+        ]
+      },
+      {
+        "kanji": "油",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:17:2"
+        ]
+      },
+      {
+        "kanji": "量",
+        "questionCount": 2,
+        "questionIds": [
+          "n2:kanji:17:5",
+          "n2:kanji:21:5"
+        ]
+      },
+      {
+        "kanji": "腕",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:kanji:9:7"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "kanji": "いよいよ",
+        "kana": "いよいよ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:9:6"
+        ]
+      },
+      {
+        "kanji": "おかまいなく",
+        "kana": "おかまいなく",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:14:2"
+        ]
+      },
+      {
+        "kanji": "カロリー",
+        "kana": "カロリー",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:5:1"
+        ]
+      },
+      {
+        "kanji": "きっかけ",
+        "kana": "きっかけ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:7:4"
+        ]
+      },
+      {
+        "kanji": "クーラー",
+        "kana": "クーラー",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:17:3"
+        ]
+      },
+      {
+        "kanji": "くどい",
+        "kana": "くどい",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:1:10"
+        ]
+      },
+      {
+        "kanji": "シーズン",
+        "kana": "シーズン",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:16:3"
+        ]
+      },
+      {
+        "kanji": "しみじみ",
+        "kana": "しみじみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:9:7"
+        ]
+      },
+      {
+        "kanji": "シャッター",
+        "kana": "シャッター",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:1:11"
+        ]
+      },
+      {
+        "kanji": "スカーフ",
+        "kana": "スカーフ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:6:10"
+        ]
+      },
+      {
+        "kanji": "だらしない",
+        "kana": "だらしない",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:4:5"
+        ]
+      },
+      {
+        "kanji": "なんとなく",
+        "kana": "なんとなく",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:9:1"
+        ]
+      },
+      {
+        "kanji": "パターン",
+        "kana": "パターン",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:13:8"
+        ]
+      },
+      {
+        "kanji": "ひとりでに",
+        "kana": "ひとりでに",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:14:8"
+        ]
+      },
+      {
+        "kanji": "プログラム",
+        "kana": "プログラム",
+        "questionCount": 2,
+        "questionIds": [
+          "n2:vocabulary:10:6",
+          "n2:vocabulary:7:3"
+        ]
+      },
+      {
+        "kanji": "まごまご",
+        "kana": "まごまご",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:4:10"
+        ]
+      },
+      {
+        "kanji": "やかん",
+        "kana": "やかん",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:18:3"
+        ]
+      },
+      {
+        "kanji": "やむをえない",
+        "kana": "やむをえない",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:5:6"
+        ]
+      },
+      {
+        "kanji": "リズム",
+        "kana": "リズム",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:16:9"
+        ]
+      },
+      {
+        "kanji": "解散",
+        "kana": "かいさん",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:16:7"
+        ]
+      },
+      {
+        "kanji": "塊",
+        "kana": "かたまり",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:14:1"
+        ]
+      },
+      {
+        "kanji": "格別",
+        "kana": "かくべつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:10:8"
+        ]
+      },
+      {
+        "kanji": "割と",
+        "kana": "わりと",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:18:1"
+        ]
+      },
+      {
+        "kanji": "基準",
+        "kana": "きじゅん",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:13:1"
+        ]
+      },
+      {
+        "kanji": "稀",
+        "kana": "まれ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:26:7"
+        ]
+      },
+      {
+        "kanji": "休業",
+        "kana": "きゅうぎょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:25:3"
+        ]
+      },
+      {
+        "kanji": "響き",
+        "kana": "ひびき",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:16:5"
+        ]
+      },
+      {
+        "kanji": "交流",
+        "kana": "こうりゅう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:11:7"
+        ]
+      },
+      {
+        "kanji": "好き好き",
+        "kana": "すきずき",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:26:2"
+        ]
+      },
+      {
+        "kanji": "錆",
+        "kana": "さび",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:25:4"
+        ]
+      },
+      {
+        "kanji": "資料",
+        "kana": "しりょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:1:2"
+        ]
+      },
+      {
+        "kanji": "自ら",
+        "kana": "みずから",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:11:8"
+        ]
+      },
+      {
+        "kanji": "弱点",
+        "kana": "じゃくてん",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:1:1"
+        ]
+      },
+      {
+        "kanji": "手前",
+        "kana": "てまえ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:7:8"
+        ]
+      },
+      {
+        "kanji": "障子",
+        "kana": "しょうじ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:20:9"
+        ]
+      },
+      {
+        "kanji": "上級",
+        "kana": "じょうきゅう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:23:3"
+        ]
+      },
+      {
+        "kanji": "申し訳ない",
+        "kana": "もうしわけない",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:6:9"
+        ]
+      },
+      {
+        "kanji": "素人",
+        "kana": "しろうと",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:11:2"
+        ]
+      },
+      {
+        "kanji": "貯蔵",
+        "kana": "ちょぞう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:1:3"
+        ]
+      },
+      {
+        "kanji": "直後",
+        "kana": "ちょくご",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:1:4"
+        ]
+      },
+      {
+        "kanji": "通用",
+        "kana": "つうよう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:12:5"
+        ]
+      },
+      {
+        "kanji": "当番",
+        "kana": "とうばん",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:15:2"
+        ]
+      },
+      {
+        "kanji": "年度",
+        "kana": "ねんど",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:1:6"
+        ]
+      },
+      {
+        "kanji": "反映",
+        "kana": "はんえい",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:13:4"
+        ]
+      },
+      {
+        "kanji": "物騒",
+        "kana": "ぶっそう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:24:3"
+        ]
+      },
+      {
+        "kanji": "平気",
+        "kana": "へいき",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:1:9"
+        ]
+      },
+      {
+        "kanji": "包丁",
+        "kana": "ほうちょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:21:9"
+        ]
+      },
+      {
+        "kanji": "摩擦",
+        "kana": "まさつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:8:4"
+        ]
+      },
+      {
+        "kanji": "無沙汰",
+        "kana": "ぶさた",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:13:6"
+        ]
+      },
+      {
+        "kanji": "夜間",
+        "kana": "やかん",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:18:3"
+        ]
+      },
+      {
+        "kanji": "要旨",
+        "kana": "ようし",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:9:4"
+        ]
+      },
+      {
+        "kanji": "欲張り",
+        "kana": "よくばり",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:21:2"
+        ]
+      },
+      {
+        "kanji": "冷凍",
+        "kana": "れいとう",
+        "questionCount": 1,
+        "questionIds": [
+          "n2:vocabulary:23:6"
+        ]
+      }
+    ]
+  },
+  "n1": {
+    "kanji": [
+      {
+        "kanji": "緯",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:7:8"
+        ]
+      },
+      {
+        "kanji": "逸",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:21:1"
+        ]
+      },
+      {
+        "kanji": "暇",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:6:7"
+        ]
+      },
+      {
+        "kanji": "塊",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:1:12"
+        ]
+      },
+      {
+        "kanji": "概",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:6:11"
+        ]
+      },
+      {
+        "kanji": "環",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:1:3"
+        ]
+      },
+      {
+        "kanji": "閑",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:4:9"
+        ]
+      },
+      {
+        "kanji": "器",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:11:5"
+        ]
+      },
+      {
+        "kanji": "棄",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:5:7"
+        ]
+      },
+      {
+        "kanji": "輝",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:1:8"
+        ]
+      },
+      {
+        "kanji": "偽",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:5:10"
+        ]
+      },
+      {
+        "kanji": "義",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:6:9"
+        ]
+      },
+      {
+        "kanji": "及",
+        "questionCount": 3,
+        "questionIds": [
+          "n1:kanji:11:4",
+          "n1:kanji:2:11",
+          "n1:kanji:20:9"
+        ]
+      },
+      {
+        "kanji": "救",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:16:8"
+        ]
+      },
+      {
+        "kanji": "窮",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:20:6"
+        ]
+      },
+      {
+        "kanji": "拠",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:2:7"
+        ]
+      },
+      {
+        "kanji": "脅",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:12:2",
+          "n1:kanji:12:4"
+        ]
+      },
+      {
+        "kanji": "興",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:5:12"
+        ]
+      },
+      {
+        "kanji": "郷",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:17:8"
+        ]
+      },
+      {
+        "kanji": "菌",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:3:3"
+        ]
+      },
+      {
+        "kanji": "愚",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:16:1",
+          "n1:kanji:8:2"
+        ]
+      },
+      {
+        "kanji": "屈",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:20:6"
+        ]
+      },
+      {
+        "kanji": "掲",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:6:3"
+        ]
+      },
+      {
+        "kanji": "撃",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:13:7",
+          "n1:kanji:4:3"
+        ]
+      },
+      {
+        "kanji": "結",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:1:2"
+        ]
+      },
+      {
+        "kanji": "源",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:2:12"
+        ]
+      },
+      {
+        "kanji": "悟",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:16:10"
+        ]
+      },
+      {
+        "kanji": "護",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:17:1",
+          "n1:kanji:21:2"
+        ]
+      },
+      {
+        "kanji": "拘",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:3:1"
+        ]
+      },
+      {
+        "kanji": "控",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:21:10"
+        ]
+      },
+      {
+        "kanji": "魂",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:16:7"
+        ]
+      },
+      {
+        "kanji": "催",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:10:8",
+          "n1:kanji:4:7"
+        ]
+      },
+      {
+        "kanji": "彩",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:7:12"
+        ]
+      },
+      {
+        "kanji": "索",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:9:12"
+        ]
+      },
+      {
+        "kanji": "司",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:11:1"
+        ]
+      },
+      {
+        "kanji": "士",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:17:1"
+        ]
+      },
+      {
+        "kanji": "姿",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:20:7"
+        ]
+      },
+      {
+        "kanji": "施",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:14:7",
+          "n1:kanji:6:8"
+        ]
+      },
+      {
+        "kanji": "視",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:2:5"
+        ]
+      },
+      {
+        "kanji": "射",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:2:6"
+        ]
+      },
+      {
+        "kanji": "襲",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:4:3"
+        ]
+      },
+      {
+        "kanji": "酬",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:19:9"
+        ]
+      },
+      {
+        "kanji": "従",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:17:10"
+        ]
+      },
+      {
+        "kanji": "衝",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:13:7"
+        ]
+      },
+      {
+        "kanji": "証",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:14:3",
+          "n1:kanji:2:7"
+        ]
+      },
+      {
+        "kanji": "詳",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:1:3"
+        ]
+      },
+      {
+        "kanji": "飾",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:14:8"
+        ]
+      },
+      {
+        "kanji": "辱",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:20:10"
+        ]
+      },
+      {
+        "kanji": "振",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:3:11",
+          "n1:kanji:5:12"
+        ]
+      },
+      {
+        "kanji": "推",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:1:6",
+          "n1:kanji:14:2"
+        ]
+      },
+      {
+        "kanji": "据",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:8:6"
+        ]
+      },
+      {
+        "kanji": "惜",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:9:10"
+        ]
+      },
+      {
+        "kanji": "析",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:1:3"
+        ]
+      },
+      {
+        "kanji": "択",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:1:7"
+        ]
+      },
+      {
+        "kanji": "痴",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:8:2"
+        ]
+      },
+      {
+        "kanji": "蓄",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:18:5"
+        ]
+      },
+      {
+        "kanji": "糖",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:21:9"
+        ]
+      },
+      {
+        "kanji": "迫",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:12:2"
+        ]
+      },
+      {
+        "kanji": "繁",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:13:5"
+        ]
+      },
+      {
+        "kanji": "範",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:5:3"
+        ]
+      },
+      {
+        "kanji": "頻",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:13:5"
+        ]
+      },
+      {
+        "kanji": "侮",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:20:10"
+        ]
+      },
+      {
+        "kanji": "幣",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:5:9"
+        ]
+      },
+      {
+        "kanji": "癖",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:8:11"
+        ]
+      },
+      {
+        "kanji": "偏",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:9:4"
+        ]
+      },
+      {
+        "kanji": "弁",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:17:1"
+        ]
+      },
+      {
+        "kanji": "保",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:21:2"
+        ]
+      },
+      {
+        "kanji": "膨",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:18:6"
+        ]
+      },
+      {
+        "kanji": "模",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:7:1",
+          "n1:kanji:9:12"
+        ]
+      },
+      {
+        "kanji": "酪",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:17:9"
+        ]
+      },
+      {
+        "kanji": "率",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:kanji:18:4",
+          "n1:kanji:4:11"
+        ]
+      },
+      {
+        "kanji": "烈",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:5:1"
+        ]
+      },
+      {
+        "kanji": "露",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:kanji:12:3"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "kanji": "あっさり",
+        "kana": "あっさり",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:6:9"
+        ]
+      },
+      {
+        "kanji": "いっそ",
+        "kana": "いっそ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:5:8"
+        ]
+      },
+      {
+        "kanji": "うぬぼれ",
+        "kana": "うぬぼれ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:18:2"
+        ]
+      },
+      {
+        "kanji": "おどおど",
+        "kana": "おどおど",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:7:8"
+        ]
+      },
+      {
+        "kanji": "かろうじて",
+        "kana": "かろうじて",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:7:5"
+        ]
+      },
+      {
+        "kanji": "ぞんざい",
+        "kana": "ぞんざい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:14:5"
+        ]
+      },
+      {
+        "kanji": "つくづく",
+        "kana": "つくづく",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:1:9"
+        ]
+      },
+      {
+        "kanji": "てっきり",
+        "kana": "てっきり",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:vocabulary:15:10",
+          "n1:vocabulary:4:5"
+        ]
+      },
+      {
+        "kanji": "どうやら",
+        "kana": "どうやら",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:20:2"
+        ]
+      },
+      {
+        "kanji": "とっさに",
+        "kana": "とっさに",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:17:2"
+        ]
+      },
+      {
+        "kanji": "はらはら",
+        "kana": "はらはら",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:vocabulary:4:3",
+          "n1:vocabulary:9:3"
+        ]
+      },
+      {
+        "kanji": "ムード",
+        "kana": "ムード",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:12"
+        ]
+      },
+      {
+        "kanji": "わざわざ",
+        "kana": "わざわざ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:9:2"
+        ]
+      },
+      {
+        "kanji": "安静",
+        "kana": "あんせい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:2:7"
+        ]
+      },
+      {
+        "kanji": "闇",
+        "kana": "やみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:18:4"
+        ]
+      },
+      {
+        "kanji": "一律",
+        "kana": "いちりつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:7:4"
+        ]
+      },
+      {
+        "kanji": "応急",
+        "kana": "おうきゅう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:4:6"
+        ]
+      },
+      {
+        "kanji": "加工",
+        "kana": "かこう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:19:9"
+        ]
+      },
+      {
+        "kanji": "過密",
+        "kana": "かみつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:2:12"
+        ]
+      },
+      {
+        "kanji": "過労",
+        "kana": "かろう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:9"
+        ]
+      },
+      {
+        "kanji": "介抱",
+        "kana": "かいほう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:8:5"
+        ]
+      },
+      {
+        "kanji": "解除",
+        "kana": "かいじょ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:3"
+        ]
+      },
+      {
+        "kanji": "開発",
+        "kana": "かいはつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:6"
+        ]
+      },
+      {
+        "kanji": "慣れ",
+        "kana": "なれ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:22:4"
+        ]
+      },
+      {
+        "kanji": "棄権",
+        "kana": "きけん",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:10:8"
+        ]
+      },
+      {
+        "kanji": "記載",
+        "kana": "きさい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:1:5"
+        ]
+      },
+      {
+        "kanji": "強硬",
+        "kana": "きょうこう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:7"
+        ]
+      },
+      {
+        "kanji": "強制",
+        "kana": "きょうせい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:1:12"
+        ]
+      },
+      {
+        "kanji": "緊急",
+        "kana": "きんきゅう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:7:7"
+        ]
+      },
+      {
+        "kanji": "権威",
+        "kana": "けんい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:8:8"
+        ]
+      },
+      {
+        "kanji": "見込み",
+        "kana": "みこみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:9:6"
+        ]
+      },
+      {
+        "kanji": "軒並",
+        "kana": "のきなみ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:1:10"
+        ]
+      },
+      {
+        "kanji": "抗議",
+        "kana": "こうぎ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:4:10"
+        ]
+      },
+      {
+        "kanji": "合間",
+        "kana": "あいま",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:7:3"
+        ]
+      },
+      {
+        "kanji": "錯誤",
+        "kana": "さくご",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:21:4"
+        ]
+      },
+      {
+        "kanji": "指摘",
+        "kana": "してき",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:4"
+        ]
+      },
+      {
+        "kanji": "手掛かり",
+        "kana": "てがかり",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:10:7"
+        ]
+      },
+      {
+        "kanji": "手際",
+        "kana": "てぎわ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:2:11"
+        ]
+      },
+      {
+        "kanji": "趣",
+        "kana": "おもむき",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:4:8"
+        ]
+      },
+      {
+        "kanji": "受け入れ",
+        "kana": "うけいれ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:1:11"
+        ]
+      },
+      {
+        "kanji": "処罰",
+        "kana": "しょばつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:1"
+        ]
+      },
+      {
+        "kanji": "勝る",
+        "kana": "まさる",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:13:4"
+        ]
+      },
+      {
+        "kanji": "小柄",
+        "kana": "こがら",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:2:2"
+        ]
+      },
+      {
+        "kanji": "心細い",
+        "kana": "こころぼそい",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:vocabulary:20:5",
+          "n1:vocabulary:9:5"
+        ]
+      },
+      {
+        "kanji": "脆い",
+        "kana": "もろい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:1:8"
+        ]
+      },
+      {
+        "kanji": "先代",
+        "kana": "せんだい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:19:4"
+        ]
+      },
+      {
+        "kanji": "素っ気無い",
+        "kana": "そっけない",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:20:10"
+        ]
+      },
+      {
+        "kanji": "素早い",
+        "kana": "すばやい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:19:10"
+        ]
+      },
+      {
+        "kanji": "妥協",
+        "kana": "だきょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:15:1"
+        ]
+      },
+      {
+        "kanji": "対処",
+        "kana": "たいしょ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:10:4"
+        ]
+      },
+      {
+        "kanji": "直感",
+        "kana": "ちょっかん",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:5:3"
+        ]
+      },
+      {
+        "kanji": "直面",
+        "kana": "ちょくめん",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:1:6"
+        ]
+      },
+      {
+        "kanji": "適応",
+        "kana": "てきおう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:10:1"
+        ]
+      },
+      {
+        "kanji": "転落",
+        "kana": "てんらく",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:2:1"
+        ]
+      },
+      {
+        "kanji": "動き",
+        "kana": "うごき",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:13:7"
+        ]
+      },
+      {
+        "kanji": "動機",
+        "kana": "どうき",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:1:1"
+        ]
+      },
+      {
+        "kanji": "認識",
+        "kana": "にんしき",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:5:4"
+        ]
+      },
+      {
+        "kanji": "粘り",
+        "kana": "ねばり",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:5:10"
+        ]
+      },
+      {
+        "kanji": "配慮",
+        "kana": "はいりょ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:10"
+        ]
+      },
+      {
+        "kanji": "発足",
+        "kana": "ほっそく",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:6:3"
+        ]
+      },
+      {
+        "kanji": "煩わしい",
+        "kana": "わずらわしい",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:vocabulary:4:7",
+          "n1:vocabulary:5:9"
+        ]
+      },
+      {
+        "kanji": "負担",
+        "kana": "ふたん",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:2:6"
+        ]
+      },
+      {
+        "kanji": "覆面",
+        "kana": "ふくめん",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:20:4"
+        ]
+      },
+      {
+        "kanji": "紛らわしい",
+        "kana": "まぎらわしい",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:vocabulary:16:3",
+          "n1:vocabulary:19:3"
+        ]
+      },
+      {
+        "kanji": "保つ",
+        "kana": "たもつ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:6:4"
+        ]
+      },
+      {
+        "kanji": "望ましい",
+        "kana": "のぞましい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:2:8"
+        ]
+      },
+      {
+        "kanji": "没収",
+        "kana": "ぼっしゅう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:10:5"
+        ]
+      },
+      {
+        "kanji": "満場",
+        "kana": "まんじょう",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:8:2"
+        ]
+      },
+      {
+        "kanji": "目途",
+        "kana": "めど",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:7:1"
+        ]
+      },
+      {
+        "kanji": "凌ぐ",
+        "kana": "しのぐ",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:16:2"
+        ]
+      },
+      {
+        "kanji": "良識",
+        "kana": "りょうしき",
+        "questionCount": 2,
+        "questionIds": [
+          "n1:vocabulary:20:3",
+          "n1:vocabulary:7:2"
+        ]
+      },
+      {
+        "kanji": "類推",
+        "kana": "るいすい",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:3:11"
+        ]
+      },
+      {
+        "kanji": "和やか",
+        "kana": "なごやか",
+        "questionCount": 1,
+        "questionIds": [
+          "n1:vocabulary:10:3"
+        ]
+      }
+    ]
+  }
+}

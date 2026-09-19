@@ -1,0 +1,3848 @@
+[
+  {
+    "title": "JLPT N1 – Grammar Exercise 26",
+    "url": "https://japanesetest4you.com/jlpt-n1-grammar-exercise-26/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "箱の中身、________ にしよう。",
+        "options": [
+          "見ないこと",
+          "見なかったこと",
+          "見ないもの",
+          "見なかったもの"
+        ],
+        "answer_index": 2,
+        "answer_text": "見なかったこと",
+        "answered_sentence": null,
+        "explanation": "「〜ないものにする」 is a fixed expression meaning"
+      },
+      {
+        "number": 2,
+        "prompt": "京都 ________ 体験をしてみたいです。",
+        "options": [
+          "なり",
+          "なくして",
+          "ながらに",
+          "ならではの"
+        ],
+        "answer_index": 4,
+        "answer_text": "ならではの",
+        "answered_sentence": null,
+        "explanation": "「〜ならではの」 means"
+      },
+      {
+        "number": 3,
+        "prompt": "それは ________ 説得力のある考えだったが、なぜか私は納得しなかった。",
+        "options": [
+          "あえて",
+          "まさか",
+          "なかなか",
+          "かえって"
+        ],
+        "answer_index": 3,
+        "answer_text": "なかなか",
+        "answered_sentence": null,
+        "explanation": "「かえって」 means"
+      },
+      {
+        "number": 4,
+        "prompt": "その看板が小さすぎて、よく見なかったら ________ 。",
+        "options": [
+          "見逃すところだった",
+          "見逃そうとした",
+          "見逃したわけだ",
+          "見逃さなくてはならなかった"
+        ],
+        "answer_index": 1,
+        "answer_text": "見逃すところだった",
+        "answered_sentence": null,
+        "explanation": "「〜そうとする」 expresses an attempt to do something, so 「見逃そうとした」 means “tried to overlook it,” which fits the context of almost missing it due to the small sign."
+      },
+      {
+        "number": 5,
+        "prompt": "EURO 2020中止という聞きたくない話が現実に ________ 。",
+        "options": [
+          "なったようだ",
+          "なりかけている",
+          "なりかねない",
+          "なってはならない"
+        ],
+        "answer_index": 3,
+        "answer_text": "なりかねない",
+        "answered_sentence": null,
+        "explanation": "「〜てはならない」 means “must not (happen),” and 「現実になってはならない」 directly states that the cancellation “must not become reality,” which matches the speaker's strong negative wish about the unwanted news."
+      },
+      {
+        "number": 6,
+        "prompt": "英語が話せなくて道を ________ 聞けない。",
+        "options": [
+          "聞いては",
+          "聞くには",
+          "聞こうにも",
+          "聞かずとも"
+        ],
+        "answer_index": 3,
+        "answer_text": "聞こうにも",
+        "answered_sentence": null,
+        "explanation": "「〜ずとも」 means “even without doing,” so 「聞かずとも」 yields “even without asking,” making the sentence read “I can’t ask (for directions) even without asking,” which paradoxically fits the meaning of being unable to ask because one can’t speak English."
+      },
+      {
+        "number": 7,
+        "prompt": "人生には、とにかく ________ わからないってことが多すぎる。",
+        "options": [
+          "やってるって",
+          "やってみなきゃ",
+          "やっちゃうのが",
+          "やっちゃおうと"
+        ],
+        "answer_index": 2,
+        "answer_text": "やってみなきゃ",
+        "answered_sentence": null,
+        "explanation": "「やっちゃうのが」 uses the contracted form 〜ちゃう (〜てしまう) plus 「のが」 as a nominalizer, creating the structure 「やっちゃうのがわからない」 ("
+      },
+      {
+        "number": 8,
+        "prompt": "メキシコは北米自由貿易協定（ＮＡＦＴＡ）が ________ 、世界最大にして最も活力のある市場に、効率よく輸出を行うことができる。",
+        "options": [
+          "あってはなかっては",
+          "あろうとなかろうと",
+          "あるといいないといい",
+          "あるがまいが"
+        ],
+        "answer_index": 2,
+        "answer_text": "あろうとなかろうと",
+        "answered_sentence": null,
+        "explanation": "「あるといいないといい」 is a fixed N1 pattern meaning"
+      },
+      {
+        "number": 9,
+        "prompt": "先日も注文をいただきました。皆さん一口食べるだけで口を揃えて「もうほかのケーキは食べられない！」と言って下さるんです。本当に ________ 限りです。",
+        "options": [
+          "嬉しそう",
+          "嬉しくて",
+          "嬉しかった",
+          "嬉しい"
+        ],
+        "answer_index": 4,
+        "answer_text": "嬉しい",
+        "answered_sentence": null,
+        "explanation": "「嬉しい限りです」 is a set expression meaning"
+      },
+      {
+        "number": 10,
+        "prompt": "トランプ大統領は個人情報が中国政府に ________ として、安全保障上の懸念を理由にティックトックの禁止措置を打ち出した。",
+        "options": [
+          "流出してしまってはならない",
+          "流出してしまいつつある",
+          "流出してしまうところだ",
+          "流出するおそれがある"
+        ],
+        "answer_index": 4,
+        "answer_text": "流出するおそれがある",
+        "answered_sentence": null,
+        "explanation": "「おそれがある」 expresses the existence of a negative risk or possibility, meaning \"there is a risk that...\", which fits the context of Trump citing security concerns over TikTok's data potentially leaking to the Chinese government — the other options either express prohibition, ongoing action, or an imminent event that doesn't match the speculative, risk-based reasoning."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 01",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-1/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "私の調べたかぎりでは、何人と _______ その男を害することを欲するような理由が、どこにもまったく見あたらないんですよ。",
+        "options": [
+          "いえども",
+          "いったらば",
+          "いえばこそ",
+          "いったからには"
+        ],
+        "answer_index": 1,
+        "answer_text": "いえども",
+        "answered_sentence": "私の調べたかぎりでは、何人といえどもその男を害することを欲するような理由が、どこにもまったく見あたらないんですよ。",
+        "explanation": "「何人といえども」 is a set phrase meaning 'no matter who' or 'even if it were anyone,' and it fits here because it reinforces that absolutely no one has a reason to harm the man."
+      },
+      {
+        "number": 2,
+        "prompt": "さすがに一流の歌手　_______ 違う。１回の出演料が数百万円だという。",
+        "options": [
+          "ともすると",
+          "ともなると",
+          "のはいえ",
+          "といっても"
+        ],
+        "answer_index": 2,
+        "answer_text": "ともなると",
+        "answered_sentence": "さすがに一流の歌手ともなると違う。１回の出演料が数百万円だという。",
+        "explanation": "「ともなると」 means 'when it comes to (something of a certain status),' and in this context it contrasts the situation of a top-class singer with lower-status counterparts, making it the natural choice."
+      },
+      {
+        "number": 3,
+        "prompt": "車が角を曲がると、橋本は身を起こし、わたしの血　_______ の腕を握った。",
+        "options": [
+          "ずくめ",
+          "まみれ",
+          "ばはり",
+          "みずく"
+        ],
+        "answer_index": 2,
+        "answer_text": "まみれ",
+        "answered_sentence": "車が角を曲がると、橋本は身を起こし、わたしの血まみれの腕を握った。",
+        "explanation": "「血まみれ」 is a fixed compound meaning 'covered in blood,' and it is the only option that describes blood adhering to or smearing the surface of the arm."
+      },
+      {
+        "number": 4,
+        "prompt": "人前で演技をするのは初めての経験　_______ 、彼はひどく緊張していた。",
+        "options": [
+          "とあって",
+          "にあって",
+          "として",
+          "にして"
+        ],
+        "answer_index": 1,
+        "answer_text": "とあって",
+        "answered_sentence": "人前で演技をするのは初めての経験とあって、彼はひどく緊張していた。",
+        "explanation": "「とあって」 means 'because it was the first time...' and is the only option that forms a reason clause, logically explaining why he was nervous."
+      },
+      {
+        "number": 5,
+        "prompt": "コンピュータがデジタルハブになると最初に見 _______ のはわが社だ。",
+        "options": [
+          "ぬいて",
+          "ぬく",
+          "ぬいた",
+          "ぬき"
+        ],
+        "answer_index": 3,
+        "answer_text": "ぬいた",
+        "answered_sentence": "ンピュータがデジタルハブになると最初に見ぬいたのはわが社だ。",
+        "explanation": "「見抜く」(minuku) is a compound verb meaning 'to see through'; the sentence uses its stem form 「見抜き」 before the particle 「の」, which nominalizes the clause."
+      },
+      {
+        "number": 6,
+        "prompt": "もう少し早く病院に行けば助かった　_______ 、放っておいたので、手遅れになってしまった。",
+        "options": [
+          "もので",
+          "ものか",
+          "ものを",
+          "ものに"
+        ],
+        "answer_index": 3,
+        "answer_text": "ものを",
+        "answered_sentence": "もう少し早く病院に行けば助かったものを、放っておいたので、手遅れになってしまった。",
+        "explanation": "「ものを」 is a grammar point expressing regret or disappointment that something should have happened but didn't, fitting the context where someone should have gone to the hospital earlier but didn't."
+      },
+      {
+        "number": 7,
+        "prompt": "中村は三杯目のウォッカを飲みほし、キッチンの窓から外を見る　_______ 見た。",
+        "options": [
+          "ばかりか",
+          "のみならず",
+          "ともなしに",
+          "どころではなく"
+        ],
+        "answer_index": 3,
+        "answer_text": "ともなしに",
+        "answered_sentence": "中村は三杯目のウォッカを飲みほし、キッチンの窓から外を見るともなしに見た。",
+        "explanation": "「ともなしに」 means “without intentionally doing so,” fitting the sense that Nakamura absentmindedly gazed out the window after drinking, whereas the other options would imply an unintended or contrastive reading. (Only the context of non-deliberate action makes (3) correct.)"
+      },
+      {
+        "number": 8,
+        "prompt": "彼は自分の息子がどうなっているかを、一度　_______ 調べようとはしない。",
+        "options": [
+          "よりも",
+          "だけは",
+          "たりとも",
+          "ばかりか"
+        ],
+        "answer_index": 3,
+        "answer_text": "たりとも",
+        "answered_sentence": "彼は自分の息子がどうなっているかを、一度たりとも調べようとはしない。",
+        "explanation": "「たりとも」 followed by a negative verb means “not even once,” matching the structure of 一度たりとも〜しない, while the other options do not form this idiomatic expression of absolute negation."
+      },
+      {
+        "number": 9,
+        "prompt": "子どものころ、死については　_______ だに恐ろしかった。",
+        "options": [
+          "考え",
+          "考えた",
+          "考えて",
+          "考える"
+        ],
+        "answer_index": 4,
+        "answer_text": "考える",
+        "answered_sentence": "子どものころ、死については考えるだに恐ろしかった。",
+        "explanation": "「〜だに」 requires the dictionary form (終止形) of a verb before it, so 考える is the correct choice; the other forms cannot grammatically precede だに."
+      },
+      {
+        "number": 10,
+        "prompt": "僕が席に着く　_______ 、彼女が待ってましたとばかりにやって来た。",
+        "options": [
+          "次第で",
+          "や否や",
+          "が最後",
+          "末に"
+        ],
+        "answer_index": 2,
+        "answer_text": "や否や",
+        "answered_sentence": "僕が席に着くや否や、彼女が待ってましたとばかりにやって来た。",
+        "explanation": "「や否や」means \"as soon as\" and is used when one event immediately follows another, so it fits the sequence of \"as soon as I sat down, she came\" — 「が最後」 would mean \"once (something happens), (a negative result)\" which doesn't fit the positive, immediate action here."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 02",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-2/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "彼は思わせ _______ な笑みを浮かべてわたしを見た。",
+        "options": [
+          "びる",
+          "だの",
+          "すら",
+          "ぶり"
+        ],
+        "answer_index": 4,
+        "answer_text": "ぶり",
+        "answered_sentence": "彼は思わせぶりな笑みを浮かべてわたしを見た。",
+        "explanation": "思わせぶり is a fixed compound meaning 'coquettish/suggestive', and ぶり attaches to the ます-stem of verbs to form nouns describing a way/manner; びる, だの, and すら cannot combine this way."
+      },
+      {
+        "number": 2,
+        "prompt": "苦難に満ちたあの人の人生は、涙なくしては _______ 。",
+        "options": [
+          "語る",
+          "語らない",
+          "語れる",
+          "語れない"
+        ],
+        "answer_index": 4,
+        "answer_text": "語れない",
+        "answered_sentence": "苦難に満ちたあの人の人生は、涙なくしては語れない。",
+        "explanation": "涙なくしては語れない is a set expression meaning 'cannot talk about without tears'; the potential negative form 語れない is required after なくしては to convey 'cannot possibly do without'."
+      },
+      {
+        "number": 3,
+        "prompt": "他人を犠牲にする _______ なしに、個人の望みを達成することは困難だと考えている人も います。",
+        "options": [
+          "の",
+          "こと",
+          "もの",
+          "ところ"
+        ],
+        "answer_index": 2,
+        "answer_text": "こと",
+        "answered_sentence": "他人を犠牲にすることなしに、個人の望みを達成することは困難だと考えている人もいます。",
+        "explanation": "ことなしに is a fixed grammar pattern meaning 'without doing', preceded by a verb + こと; ものなしに, のなしに, and ところなしに are not grammatical in this construction."
+      },
+      {
+        "number": 4,
+        "prompt": "そこは小さなアパートメントで、においについて言えば、バニラの香りのキャンドルと古いカーペットが負けじと張り合っているらしかった。家具や装飾品は貧相としか　_______ 。",
+        "options": [
+          "言いそうもない",
+          "言うそうもない",
+          "言うようがない",
+          "言いようがない"
+        ],
+        "answer_index": 4,
+        "answer_text": "言いようがない",
+        "answered_sentence": "そこは小さなアパートメントで、においについて言えば、バニラの香りのキャンドルと古いカーペットが負けじと張り合っているらしかった。家具や装飾品は貧相としか言いようがない。",
+        "explanation": "「言いようがない」 is a fixed expression meaning"
+      },
+      {
+        "number": 5,
+        "prompt": "わかりました。貸金庫に何がはいっているの　_______ 、それを三浦さんに届けましょう。",
+        "options": [
+          "であれ",
+          "ごとき",
+          "まじき",
+          "にして"
+        ],
+        "answer_index": 1,
+        "answer_text": "であれ",
+        "answered_sentence": "わかりました。貸金庫に何がはいっているのであれ 、それを三浦さんに届けましょう。",
+        "explanation": "「であれ」 is a formal concessive expression meaning"
+      },
+      {
+        "number": 6,
+        "prompt": "あいつはどこへ逃げたかは　_______ 、どこから来たかだけはわかりそうです。",
+        "options": [
+          "わからるほどで",
+          "わからるまでも",
+          "わからないほどで",
+          "わからないまでも"
+        ],
+        "answer_index": 4,
+        "answer_text": "わからないまでも",
+        "answered_sentence": "あいつはどこへ逃げたかはわからないまでも、どこから来たかだけはわかりそうです。",
+        "explanation": "「～ないまでも」 means"
+      },
+      {
+        "number": 7,
+        "prompt": "映画を見終わって、主人公の生き方に　_______ 、自分の生き方がいかにいいかげんだったか、強く反省した。",
+        "options": [
+          "かけて",
+          "よって",
+          "あって",
+          "ひきかえ"
+        ],
+        "answer_index": 4,
+        "answer_text": "ひきかえ",
+        "answered_sentence": "映画を見終わって、主人公の生き方にひきかえ、自分の生き方がいかにいいかげんだったか、強く反省した。",
+        "explanation": "「〜にひきかえ」means"
+      },
+      {
+        "number": 8,
+        "prompt": "髪　_______ 、夕べはふさふさと豊かだったのに、けさはまだシャワーを浴びていないのか、べっとりと湿っている。",
+        "options": [
+          "とみると",
+          "ときている",
+          "ときたら",
+          "といわず"
+        ],
+        "answer_index": 3,
+        "answer_text": "ときたら",
+        "answered_sentence": "髪ときたら、夕べはふさふさと豊かだったのに、けさはまだシャワーを浴びていないのか、べっとりと湿っている。",
+        "explanation": "「髪ときたら」is a fixed expression meaning"
+      },
+      {
+        "number": 9,
+        "prompt": "チンパンジーは人間の模倣を　_______ のみならず、互いに協力して共同作業をしているらしいという報告もある。",
+        "options": [
+          "して",
+          "する",
+          "せず",
+          "しまい"
+        ],
+        "answer_index": 2,
+        "answer_text": "する",
+        "answered_sentence": "チンパンジーは人間の模倣をするのみならず、互いに協力して共同作業をしているらしいという報告もある。",
+        "explanation": "「するのみならず」is not a valid structure; the pattern is 「〜のみならず」after the plain form or negative stem, and here 「せずのみならず」 (せず = the negative stem of する) means"
+      },
+      {
+        "number": 10,
+        "prompt": "びっくりした。ただただ、ぼうぜん。あの瞬間のことは、　_______ 忘れることができない。",
+        "options": [
+          "忘れようにも",
+          "忘れても",
+          "忘れようとしても",
+          "忘れようとも"
+        ],
+        "answer_index": 1,
+        "answer_text": "忘れようにも",
+        "answered_sentence": "びっくりした。ただただ、ぼうぜん。あの瞬間のことは、忘れようにも忘れることができない。",
+        "explanation": "「忘れようにも」paired with the negative potential「忘れることができない」forms the set phrase 'even if I tried to forget, I cannot', where the volitional + にも gives the meaning of 'even if one tries to X, one cannot'."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 03",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-3/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "たった三十分のあいだに、高木の変わり様 _______ 。",
+        "options": [
+          "といえなかった",
+          "といおうもなかった",
+          "といってもなかった",
+          "といったらなかった"
+        ],
+        "answer_index": 4,
+        "answer_text": "といったらなかった",
+        "answered_sentence": "たった三十分のあいだに、高木の変わり様といったらなかった。",
+        "explanation": "「といったらなかった」 is a set phrase that emphatically expresses that something was indescribably extreme, so “Takagi’s change was beyond words” matches the context of a dramatic transformation in just 30 minutes."
+      },
+      {
+        "number": 2,
+        "prompt": "強風で、家から　_______ 出られなかった。",
+        "options": [
+          "出ようにも",
+          "出ようが",
+          "出たなら",
+          "出れば"
+        ],
+        "answer_index": 1,
+        "answer_text": "出ようにも",
+        "answered_sentence": "強風で、家から出ようにも出られなかった。",
+        "explanation": "「出ようにも」 is the only option that fits the 「〜ようにも〜ない」 pattern meaning “even if I tried to [verb], I couldn't,” indicating an impossible attempt; the other options (volitional+が, conditional たなら/れば) do not create this meaning."
+      },
+      {
+        "number": 3,
+        "prompt": "急に大学を退学したのはなぜか、わたし　_______ 思う理由があります。",
+        "options": [
+          "だに",
+          "なりに",
+          "ままに",
+          "なしに"
+        ],
+        "answer_index": 2,
+        "answer_text": "なりに",
+        "answered_sentence": "急に大学を退学したのはなぜか、わたしなりに思う理由があります。",
+        "explanation": "「なりに」 means “in one's own way,” so “私なりに思う理由があります” means “I have my own reasons (for thinking what I do)”; the other particles (だに, ままに, なしに) do not convey this sense of personal style or perspective."
+      },
+      {
+        "number": 4,
+        "prompt": "損失を最小限度に　_______ ことには気持ちがやすまらない。",
+        "options": [
+          "くいとめた",
+          "くいとめる",
+          "くいとめない",
+          "くいとめなかった"
+        ],
+        "answer_index": 3,
+        "answer_text": "くいとめない",
+        "answered_sentence": "損失を最小限度にくいとめないことには気持ちがやすまらない。",
+        "explanation": "「くいとめなかったことには」uses the pattern 「〜ないことには〜ない」, meaning \"unless one does X, Y cannot happen\", and the past-negative 「くいとめなかった」is the only option that fits, as the pattern requires a negative verb before 「ことには」."
+      },
+      {
+        "number": 5,
+        "prompt": "脱ぎ捨てられたドレスたちが床　_______ 、ベッド　_______ 、椅子　_______ 広げられ、鮮やかな色があれこれと重なり、そこにはぐれたリボンがごっちゃになっている。",
+        "options": [
+          "としたって/としたって/としたって",
+          "とあれば/とあれば/とあれば",
+          "ともなく/ともなく/ともなく",
+          "といわず/といわず/といわず"
+        ],
+        "answer_index": 4,
+        "answer_text": "といわず/といわず/といわず",
+        "answered_sentence": "脱ぎ捨てられたドレスたちが床といわず、ベッドといわず、椅子といわず広げられ、鮮やかな色があれこれと重なり、そこにはぐれたリボンがごっちゃになっている。",
+        "explanation": "「〜といわず〜といわず」means \"not only X but also Y (and Z)\" and lists multiple locations where the dresses are spread — the other options do not express this exhaustive listing."
+      },
+      {
+        "number": 6,
+        "prompt": "わたしたちは小道に入るころには、細かい雨さえ降りだしてきた。だが千葉くんは　_______ 、もどかしげに路をいそぐし、わたしたちもあとに続いた。",
+        "options": [
+          "ものともせず",
+          "ものとして",
+          "ものならず",
+          "ものながら"
+        ],
+        "answer_index": 1,
+        "answer_text": "ものともせず",
+        "answered_sentence": "わたしたちは小道に入るころには、細かい雨さえ降りだしてきた。だが千葉くんはものともせず、もどかしげに路をいそぐし、わたしたちもあとに続いた。",
+        "explanation": "「ものともせず」is a fixed expression meaning \"without being deterred by\" or \"ignoring (something)\", and the context describes Chiba-kun continuing despite the rain — the other options do not convey this meaning."
+      },
+      {
+        "number": 7,
+        "prompt": "白鳥がそばを離れてからはまた独りでおり、議論が白熱していくの　_______ 、一言も発さずにいた。",
+        "options": [
+          "をもとに",
+          "をよそに",
+          "をもって",
+          "をこめて"
+        ],
+        "answer_index": 2,
+        "answer_text": "をよそに",
+        "answered_sentence": "白鳥がそばを離れてからはまた独りでおり、議論が白熱していくのをよそに、一言も発さずにいた。",
+        "explanation": "「をよそに」 means 'ignoring' or 'paying no attention to,' so 議論が白熱していくのをよそに (ignoring the discussion heating up) fits the meaning of remaining silent."
+      },
+      {
+        "number": 8,
+        "prompt": "できるかぎり早く新しいウェディングドレスを作ると約束しないかぎり結婚式はおこなわない」と彼女が涙　_______ 訴えた。",
+        "options": [
+          "ながら",
+          "ながらに",
+          "ながらも",
+          "ながらで"
+        ],
+        "answer_index": 2,
+        "answer_text": "ながらに",
+        "answered_sentence": "できるかぎり早く新しいウェディングドレスを作ると約束しないかぎり結婚式はおこなわない」と彼女が涙ながらに訴えた。",
+        "explanation": "「涙ながらに」 is a fixed expression meaning 'while shedding tears' or 'with tears in one's eyes,' making it the only correct form for describing how she pleaded."
+      },
+      {
+        "number": 9,
+        "prompt": "申請書の提出締め切りは明日の午後４時だが、早めに出せればそれに　_______ 。",
+        "options": [
+          "こしたことはない",
+          "こすことはない",
+          "こしたことではない",
+          "こすことではない"
+        ],
+        "answer_index": 1,
+        "answer_text": "こしたことはない",
+        "answered_sentence": "申請書の提出締め切りは明日の午後４時だが、早めに出せればそれにこしたことはない。",
+        "explanation": "「それにこしたことはない」 is a set phrase meaning 'there is nothing better than that,' so 早めに出せればそれにこしたことはない (it couldn't be better if I can submit it early) is the correct reading."
+      },
+      {
+        "number": 10,
+        "prompt": "彼はテレビゲームが大好きでゲーム機の前に　_______　最後、何時間でもやり続ける。",
+        "options": [
+          "すわったが",
+          "すわったの",
+          "すわるの",
+          "すわったから"
+        ],
+        "answer_index": 1,
+        "answer_text": "すわったが",
+        "answered_sentence": "彼はテレビゲームが大好きでゲーム機の前にすわったが最後、何時間でもやり続ける。",
+        "explanation": "「〜たが最後」 is a fixed grammar pattern meaning \"once (someone) does X, then (inevitable result)\", so only the past-tense form 「すわった」 followed by 「が」 works here; 「〜たの最後」 and 「〜たから最後」 are not valid patterns, and 「〜るが最後」 would have to use the non-past form with a different meaning."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 04",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-4/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "まだ十五の小娘 _______ 、彼女にはプランテーションの女主人として責任を引き受ける心構えが充分にできている。",
+        "options": [
+          "といえば",
+          "とばかりに",
+          "とはいえ",
+          "ともなく"
+        ],
+        "answer_index": 3,
+        "answer_text": "とはいえ",
+        "answered_sentence": "まだ十五の小娘とはいえ、彼女にはプランテーションの女主人として責任を引き受ける心構えが充分にできている。",
+        "explanation": "「とはいえ」means “even though” or “be that as it may,” introducing a concession that contrasts with the following statement; here it concedes “even though she is still just a 15-year-old girl,” before asserting her readiness for responsibility."
+      },
+      {
+        "number": 2,
+        "prompt": "身長２メートル _______ 大男が、突然、目の前に現れた。",
+        "options": [
+          "だけある",
+          "からする",
+          "だけする",
+          "からある"
+        ],
+        "answer_index": 4,
+        "answer_text": "からある",
+        "answered_sentence": "身長２メートルからある大男が、突然、目の前に現れた。",
+        "explanation": "「からある」indicates a quantity or measurement that is impressively large, attaching to a number to mean “as much as / at least” (e.g., 身長２メートルからある大男 = “a giant as tall as 2 meters”)."
+      },
+      {
+        "number": 3,
+        "prompt": "今日び、鉄製のレールの交換 _______ 、あらゆる鉄製品は補充がきわめて困難な状況にある。",
+        "options": [
+          "はおかず",
+          "はさておき",
+          "はおろか",
+          "はそっちのけで"
+        ],
+        "answer_index": 3,
+        "answer_text": "はおろか",
+        "answered_sentence": "今日び、鉄製のレールの交換はおろか、あらゆる鉄製品は補充がきわめて困難な状況にある。",
+        "explanation": "「はおろか」means “let alone / not to mention,” used to present the first item as a lesser case and the second as obviously more extreme; here it says “let alone replacing steel rails, all iron products are in extremely short supply,” showing rails are the easy example."
+      },
+      {
+        "number": 4,
+        "prompt": "話をおもしろくするためだろうか、あの人はものごとを大げさに言う _______ 。",
+        "options": [
+          "きらいがある",
+          "きらいではない",
+          "きらいらしい",
+          "きらいがない"
+        ],
+        "answer_index": 1,
+        "answer_text": "きらいがある",
+        "answered_sentence": "話をおもしろくするためだろうか、あの人はものごとを大げさに言うきらいがある。",
+        "explanation": "「きらいがある」 means 'there is a tendency to (negative trait)', and the sentence says the person has a tendency to exaggerate things to make stories interesting."
+      },
+      {
+        "number": 5,
+        "prompt": "その頃すでに、いたずらではすまされぬことをしでかして、私が裁判所から注意を受ける _______ 。",
+        "options": [
+          "しまつだ",
+          "しまいだ",
+          "かぎりだ",
+          "おわりだ"
+        ],
+        "answer_index": 1,
+        "answer_text": "しまつだ",
+        "answered_sentence": "その頃すでに、いたずらではすまされぬことをしでかして、私が裁判所から注意を受けるしまつだ。",
+        "explanation": "「しまつだ」 means 'end up in a deplorable state', describing the embarrassing result that I ended up being warned by the court for something beyond a prank."
+      },
+      {
+        "number": 6,
+        "prompt": "大阪でわたしに会って _______ 、あなたの人生はいたってスキャンダラスなものになっているし、その責任の大半はわたしにある。",
+        "options": [
+          "というもの",
+          "はいうものの",
+          "たるもの",
+          "からというもの"
+        ],
+        "answer_index": 4,
+        "answer_text": "からというもの",
+        "answered_sentence": "大阪でわたしに会ってからというもの、あなたの人生はいたってスキャンダラスなものになっているし、その責任の大半はわたしにある。",
+        "explanation": "「からというもの」 means 'ever since (and as a result)', indicating that ever since meeting me in Osaka, your life has become scandalous."
+      },
+      {
+        "number": 7,
+        "prompt": "前線の兵力がますます衰え、ますます後方へと退却を _______ 。",
+        "options": [
+          "余儀なくしている",
+          "余儀なくされている",
+          "余儀なくさせている",
+          "余儀なくしてもらっている"
+        ],
+        "answer_index": 2,
+        "answer_text": "余儀なくされている",
+        "answered_sentence": "前線の兵力がますます衰え、ますます後方へと退却を余儀なくされている。",
+        "explanation": "The context describes the front-line forces being forced to retreat, so the passive-causative form 「余儀なくされている」 (are being forced to do) is correct — the other options incorrectly assign agency or add an extra causative layer."
+      },
+      {
+        "number": 8,
+        "prompt": "人を殺さ _______ 毒物を三日前に飲まされたのに、あなたがどうしてまだ生きているの？",
+        "options": [
+          "ずとも",
+          "ずじまい",
+          "ずにはおかない",
+          "ずにはならない"
+        ],
+        "answer_index": 3,
+        "answer_text": "ずにはおかない",
+        "answered_sentence": "人を殺さずにはおかない毒物を三日前に飲まされたのに、あなたがどうしてまだ生きているの？",
+        "explanation": "「ずにはおかない」 means 'will inevitably cause something to happen' (cannot avoid doing), so 「人を殺さずにはおかない毒物」 describes a poison that will inevitably kill a person — the other forms do not convey this unavoidable, externally-driven sense."
+      },
+      {
+        "number": 9,
+        "prompt": "腕のいい熟練工たちであり、彼ら _______ 連合軍はプストル、ライフル、大砲、弾薬などを造るのにもひどく難儀していただろう。",
+        "options": [
+          "なければ",
+          "なしには",
+          "ないので",
+          "ないのに"
+        ],
+        "answer_index": 2,
+        "answer_text": "なしには",
+        "answered_sentence": "腕のいい熟練工たちであり、彼らなしには連合軍はプストル、ライフル、大砲、弾薬などを造るのにもひどく難儀していただろう。",
+        "explanation": "「なしには」 (without) is the only structure that fits the meaning 'without them, the Allied forces would have had great difficulty' and correctly pairs with the conditional clause in the second half — the other options are either wrong parts of speech or change the logical connection."
+      },
+      {
+        "number": 10,
+        "prompt": "あの作家は天才なのだから、わずか三日で傑作を書いたからといって、驚く _______ 。",
+        "options": [
+          "にはあたらない",
+          "べきことだ",
+          "にきまっている",
+          "にちがいない"
+        ],
+        "answer_index": 1,
+        "answer_text": "にはあたらない",
+        "answered_sentence": "あの作家は天才なのだから、わずか三日で傑作を書いたからといって、驚くにはあたらない。",
+        "explanation": "「にはあたらない」 means \"it is not worth\" or \"there is no need to,\" so the sentence reads \"Since that writer is a genius, there's no need to be surprised just because he wrote a masterpiece in three days.\" — the other options all express inevitability or certainty (e.g., \"it's bound to be\" or \"it must be\"), which contradict the concessive 「からといって」 (\"just because...\")."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 05",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-5/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "子供じゃ _______ まいし、わたしだって目はついているんだよ。あなたが妊娠していることぐり分かる。",
+        "options": [
+          "いる",
+          "ある",
+          "である",
+          "いっている"
+        ],
+        "answer_index": 2,
+        "answer_text": "ある",
+        "answered_sentence": "子供じゃあるまいし、わたしだって目はついているんだよ。あなたが妊娠していることぐり分かる。",
+        "explanation": "「〜じゃあるまいし」 is a set phrase meaning “since (someone) is not…”, so 「子供じゃあるまいし」 correctly completes the grammar pattern “N＋じゃあるまいし” to mean “I’m not a child, so of course I have eyes.”"
+      },
+      {
+        "number": 2,
+        "prompt": "君自身の問題だから、「やめてしまえ」 _______ 、いまいちど考え直してみたらどうだろうか。",
+        "options": [
+          "とまでは言わなくて",
+          "とも言うまいし",
+          "とまでは言わないが",
+          "とも言わねばならず"
+        ],
+        "answer_index": 3,
+        "answer_text": "とまでは言わないが",
+        "answered_sentence": "君自身の問題だから、「やめてしまえ」 とまでは言わないが、いまいちど考え直してみたらどうだろうか。",
+        "explanation": "「〜とまでは言わないが」 means “I won’t go so far as to say…, but”, which fits the context of suggesting reconsideration without directly ordering the person to quit."
+      },
+      {
+        "number": 3,
+        "prompt": "亜美はうんざりして耐えられないと _______ ばかりに口をゆがめた。",
+        "options": [
+          "言った",
+          "言わん",
+          "言おう",
+          "言わない"
+        ],
+        "answer_index": 2,
+        "answer_text": "言わん",
+        "answered_sentence": "亜美はうんざりして耐えられないと言わんばかりに口をゆがめた。",
+        "explanation": "「〜んばかりに」 requires the volitional form of the verb before it, so 「言おう」 (volitional of 言う) is the only option that completes the pattern「言わんばかりに」, meaning “as if to say…”."
+      },
+      {
+        "number": 4,
+        "prompt": "経済問題の解決には、政府や企業の対応もさること _______ 、消費者の態度も重要な要素となる。",
+        "options": [
+          "ながら",
+          "であり",
+          "でなく",
+          "とともに"
+        ],
+        "answer_index": 1,
+        "answer_text": "ながら",
+        "answered_sentence": "経済問題の解決には、政府や企業の対応もさることながら、消費者の態度も重要な要素となる。",
+        "explanation": "「もさることながら」 is a fixed expression meaning \"not only … but also\" — the only option that pairs with 「も」 to form this grammar point is (2) 「であり」, which makes the sentence mean \"not only the response of government and corporations, but also consumer attitudes are important.\""
+      },
+      {
+        "number": 5,
+        "prompt": "必ずしも二人きりにならなくてもいいですよ。先輩がわたしたちの話に同席しても _______ のです。",
+        "options": [
+          "むりである",
+          "むりもない",
+          "さしつかえる",
+          "さしつかえない"
+        ],
+        "answer_index": 4,
+        "answer_text": "さしつかえない",
+        "answered_sentence": "必ずしも二人きりにならなくてもいいですよ。先輩がわたしたちの話に同席してもさしつかえないのです。",
+        "explanation": "「さしつかえない」 means \"it doesn't matter\" or \"there is no problem\", and 「同席してもさしつかえない」 means \"it's fine to join us\" — the speaker is saying it's okay if the senior is present."
+      },
+      {
+        "number": 6,
+        "prompt": "橋本さんは親切で _______ 五十万円くれました。",
+        "options": [
+          "ありえず",
+          "あるがまま",
+          "あればこそ",
+          "あってさえ"
+        ],
+        "answer_index": 3,
+        "answer_text": "あればこそ",
+        "answered_sentence": "橋本さんは親切であればこそ五十万円くれました。",
+        "explanation": "「〜あればこそ」 is a grammar pattern meaning \"precisely because (someone) is/was …\" — it fits the context of emphasizing the reason for the generous action, so the sentence reads \"Because Ms. Hashimoto is kind, she gave me 500,000 yen.\""
+      },
+      {
+        "number": 7,
+        "prompt": "ブラウン家の娘のなかでも一番きれいな子が、なんでまた、あんなどら声で赤ら顔で自分の耳のあたりまでしか背丈がない小男と結婚することになったのか、その理由は _______ だった。",
+        "options": [
+          "分からずすまない",
+          "分からずにはおかない",
+          "分からずにはすまない",
+          "分からずじまい"
+        ],
+        "answer_index": 4,
+        "answer_text": "分からずじまい",
+        "answered_sentence": "ブラウン家の娘のなかでも一番きれいな子が、なんでまた、あんなどら声で赤ら顔で自分の耳のあたりまでしか背丈がない小男と結婚することになったのか、その理由は分からずじまいだった。",
+        "explanation": "「分からずじまい」means 'ended up not finding out,' which is the only option that logically completes the sentence —「〜ずじまい」expresses regret that something never happened."
+      },
+      {
+        "number": 8,
+        "prompt": "町　_______　のゴミを少なく運動が効を奏して、一年でゴミの量が半滅した。",
+        "options": [
+          "さかり",
+          "ぐるみ",
+          "みどろ",
+          "まみれ"
+        ],
+        "answer_index": 2,
+        "answer_text": "ぐるみ",
+        "answered_sentence": "町ぐるみのゴミを少なく運動が効を奏して、一年でゴミの量が半滅した。",
+        "explanation": "「町ぐるみ」means 'the whole town (as a group),' functioning as a suffix-like element —「〜ぐるみ」indicates inclusion of the entire category, and only this fits the context of a town-wide campaign."
+      },
+      {
+        "number": 9,
+        "prompt": "アメリカがこの連合国の勝利に力をかす _______ 乗り込んでくるはずだ。",
+        "options": [
+          "べく",
+          "びる",
+          "かれ",
+          "なみ"
+        ],
+        "answer_index": 1,
+        "answer_text": "べく",
+        "answered_sentence": "アメリカがこの連合国の勝利に力をかすべく乗り込んでくるはずだ。",
+        "explanation": "「べく」expresses purpose ('in order to'), attaching to a verb's dictionary form and fitting the intended meaning of America coming to support the coalition's victory."
+      },
+      {
+        "number": 10,
+        "prompt": "実際には、彼があなたをねたんでいたと信ずる _______ 理由はないよ。",
+        "options": [
+          "にたえる",
+          "にたる",
+          "にたりない",
+          "にたりていない"
+        ],
+        "answer_index": 2,
+        "answer_text": "にたる",
+        "answered_sentence": "実際には、彼があなたをねたんでいたと信ずるにたる理由はないよ。",
+        "explanation": "「にたりない」 means “not worth” or “insufficient to be considered,” so 「信ずるにたりない理由」 means “a reason not worth believing,” which fits the sentence about there being no ground to think he was jealous; the other options don't carry that meaning in this construction."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 06",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-6/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "食事がすんだところへ、川島さんの来訪が告げられた。 _______ _______ …★… _______ 、わたしたちは川島さんの姿を見ていなかった。",
+        "options": [
+          "もの",
+          "という",
+          "三日",
+          "この"
+        ],
+        "answer_index": 2,
+        "answer_text": "という",
+        "answered_sentence": "食事がすんだところへ、川島さんの来訪が告げられた。この三日というもの、わたしたちは川島さんの姿を見ていなかった。",
+        "explanation": "「この三日というもの」 is a set pattern meaning \"for these three days (and the whole time)\", emphasizing the entire duration that has passed without seeing Kawashima."
+      },
+      {
+        "number": 2,
+        "prompt": "わたしは _______ _______ …★… _______ だろうが、あの人には死んでもしたくないことがたくさんあるはず。",
+        "options": [
+          "なんだって",
+          "する",
+          "とあれば",
+          "必要"
+        ],
+        "answer_index": 1,
+        "answer_text": "なんだって",
+        "answered_sentence": "わたしは必要とあればなんだってするだろうが、あの人には死んでもしたくないことがたくさんあるはず。",
+        "explanation": "「必要とあれば」 means \"if the need arises\", so the phrase 「必要とあればなんだってする」 means \"I'll do whatever if needed\", and only 「する」 can complete the conditional structure with the とあれば pattern to express \"do anything\" (なんだってする)."
+      },
+      {
+        "number": 3,
+        "prompt": "彼は馬車を馬車預かり所に預けてしまい、自分以外 _______ _______ …★… _______ 厳命まで出していた。",
+        "options": [
+          "使わせる",
+          "という",
+          "べからず",
+          "には"
+        ],
+        "answer_index": 3,
+        "answer_text": "べからず",
+        "answered_sentence": "彼は馬車を馬車預かり所に預けてしまい、自分以外には使わせるべからずという厳命まで出していた。",
+        "explanation": "「自分以外には」means \"to anyone other than himself\", where には marks the restrictive target of the prohibition, fitting with the archaic prohibitive 「使わせるべからず」(\"must not let use\") to form the command \"no one but himself shall be allowed to use it\"."
+      },
+      {
+        "number": 4,
+        "prompt": "_______ _______ …★… _______ 、喜んでお金をお返しします。新しいスマートフォンを買うというなら、お断りせざるをえません。",
+        "options": [
+          "を買う",
+          "ので",
+          "あれば",
+          "食べ物だの需品だの"
+        ],
+        "answer_index": 2,
+        "answer_text": "ので",
+        "answered_sentence": "食べ物だの需品だのを買うのであれば、喜んでお金をお返しします。新しいスマートフォンを買うというなら、お断りせざるをえません。",
+        "explanation": "「〜のであれば」 is a conditional meaning 'if it is the case that', used with the explanatory 「のだ」 pattern — the only option that creates a natural conditional clause before the second sentence's contrasting 「なら」."
+      },
+      {
+        "number": 5,
+        "prompt": "勉強よりまず健康のことを考えるべきだ。試験に合格しても、 _______ _______ …★… _______ 。",
+        "options": [
+          "しまったら",
+          "病気に",
+          "なって",
+          "それまでだ"
+        ],
+        "answer_index": 1,
+        "answer_text": "しまったら",
+        "answered_sentence": "勉強よりまず健康のことを考えるべきだ。試験に合格しても、病気になってしまったらそれまでだ。",
+        "explanation": "「病気になってしまったらそれまでだ」 uses 「〜てしまう」 (regrettably) plus 「〜たらそれまでだ」 'that's the end of it', so 「病気に」 is needed before 「なって」 to form the verb phrase 'fall into illness'."
+      },
+      {
+        "number": 6,
+        "prompt": "ベストを尽くしてやれば、成功しようと _______ _______ …★… _______ のではないか。",
+        "options": [
+          "関係",
+          "しまい",
+          "と",
+          "ない"
+        ],
+        "answer_index": 1,
+        "answer_text": "関係",
+        "answered_sentence": "ベストを尽くしてやれば、成功しようと しまいと関係ないのではないか。",
+        "explanation": "「〜ようと〜まいと」 is a fixed N1 pattern meaning 'whether one does or doesn't do', so 「しまい」 pairs with 「成功しようと」 to create the contrastive pair 'try to succeed or not'."
+      },
+      {
+        "number": 7,
+        "prompt": "服装はいつもとだいぶ違うが、やっぱりあれは _______ _______ …★… _______ 。",
+        "options": [
+          "に",
+          "相違",
+          "田中さん",
+          "ない"
+        ],
+        "answer_index": 2,
+        "answer_text": "相違",
+        "answered_sentence": "服装はいつもとだいぶ違うが、やっぱりあれは田中さんに相違ない。",
+        "explanation": "「に相違ない」 means 'there is no doubt that it is X', so the sentence reads '...that is without a doubt Tanaka-san' — 「田中さん」 is the subject of the certainty and must come before 「に」 to complete the fixed pattern."
+      },
+      {
+        "number": 8,
+        "prompt": "どこに行き着きたかったかですって？ _______ _______ …★… _______ わ。お金のある安定した生活に決まっているじゃないの。",
+        "options": [
+          "まで",
+          "ない",
+          "聞く",
+          "も"
+        ],
+        "answer_index": 4,
+        "answer_text": "も",
+        "answered_sentence": "どこに行き着きたかったかですって？ 聞くまでもないわ。お金のある安定した生活に決まっているじゃないの。",
+        "explanation": "「聞くまでもない」 means 'there's no need even to ask', so the slot after 「聞く」 is filled by the particle 「も」 as part of the grammar pattern 「〜までもない」 (it goes without saying)."
+      },
+      {
+        "number": 9,
+        "prompt": "彼女は _______ _______ …★… _______ を駆け上がった。",
+        "options": [
+          "ごとく",
+          "階段",
+          "猫",
+          "の"
+        ],
+        "answer_index": 1,
+        "answer_text": "ごとく",
+        "answered_sentence": "彼女は猫のごとく階段を駆け上がった。",
+        "explanation": "「猫のごとく」 means 'like a cat' and modifies the verb that follows, so the remaining mandatory noun before 「を駆け上がった」 is 「階段」 ('stairs')."
+      },
+      {
+        "number": 10,
+        "prompt": "あなたは自分の命を救ってくれた男性に感謝の念を持たないのですか？あの人は _______ _______ …★… _______ あなたを助けにいったんですよ。",
+        "options": [
+          "まで",
+          "さらして",
+          "自分を",
+          "危険に"
+        ],
+        "answer_index": 2,
+        "answer_text": "さらして",
+        "answered_sentence": "あなたは自分の命を救ってくれた男性に感謝の念を持たないのですか？あの人は自分を危険にさらしてまであなたを助けにいったんですよ。",
+        "explanation": "｢〜してまで｣ expresses doing something even to the extreme of that action, so the correct order is ｢自分を危険にさらしてまで｣ (even exposing themselves to danger)."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 07",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-7/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "山本は、歴史的な事実 _______ 、あるアイデアを会議で提案したのが誰かという記憶の話 _______ 、なにが真実なのかを考えることなく断言してしまう。",
+        "options": [
+          "であれ/であれ",
+          "ですら/ですら",
+          "なり/なり",
+          "やら/やら"
+        ],
+        "answer_index": 1,
+        "answer_text": "であれ/であれ",
+        "answered_sentence": "山本は、歴史的な事実であれ、あるアイデアを会議で提案したのが誰かという記憶の話であれ、なにが真実なのかを考えることなく断言してしまう。",
+        "explanation": "「〜であれ〜であれ」 means 'whether it is A or B' and is used to list two examples of a category, matching the structure where two different types of content (historical facts and memories of who proposed an idea) are given as examples of things Yamamoto asserts without considering the truth, while 「〜ですら」 means 'even' and wouldn't fit the parallel listing pattern, and the other options (〜なり〜なり, 〜やら〜やら) list options but don't carry the same concessive meaning."
+      },
+      {
+        "number": 2,
+        "prompt": "彼は良い意味でも悪い意味でも本能のおもむく _______ 行動した。",
+        "options": [
+          "おりに",
+          "なりに",
+          "ままに",
+          "よそに"
+        ],
+        "answer_index": 3,
+        "answer_text": "ままに",
+        "answered_sentence": "彼は良い意味でも悪い意味でも本能のおもむくままに行動した。",
+        "explanation": "「〜ままに」 means 'in accordance with' or 'following the dictates of', so 「本能のおもむくままに行動した」 means 'he acted in accordance with where his instincts led him' — which fits the praise/blame reading of 'acted following his instincts'."
+      },
+      {
+        "number": 3,
+        "prompt": "彼の今朝の行動は、なにもの _______ もまして、英雄的な行動でした。",
+        "options": [
+          "まで",
+          "から",
+          "で",
+          "に"
+        ],
+        "answer_index": 4,
+        "answer_text": "に",
+        "answered_sentence": "彼の今朝の行動は、なにものにもまして、英雄的な行動でした。",
+        "explanation": "「〜にもまして」 is a fixed N1 grammar pattern meaning 'more than anything else', so 「なにものにもまして」 is the only possible combination to mean 'more than anything'."
+      },
+      {
+        "number": 4,
+        "prompt": "彼女がつねに威厳と尊崇の念　_______ 語る。",
+        "options": [
+          "をへて",
+          "をかねて",
+          "をもって",
+          "をおいて"
+        ],
+        "answer_index": 3,
+        "answer_text": "をもって",
+        "answered_sentence": "彼女がつねに威厳と尊崇の念をもって語る。",
+        "explanation": "「を もって」 means 'with (a certain attitude/quality)', so 「威厳と尊崇の念をもって語る」 means 'speaks with dignity and reverence' — only 「をもって」 fits this sense of 'carrying/possessing' a manner of doing something."
+      },
+      {
+        "number": 5,
+        "prompt": "ある時、米国の安全保障にとって重要で、大統領が定めた基準を満たしたと確信したが",
+        "options": [
+          "_",
+          "、私は特定の攻撃を支持した。",
+          "ゆえに",
+          "くせに"
+        ],
+        "answer_index": 1,
+        "answer_text": "_",
+        "answered_sentence": "ある時、米国の安全保障にとって重要で、大統領が定めた基準を満たしたと確信したがゆえに、私は特定の攻撃を支持した。",
+        "explanation": "「がゆえに」 means 'because of' or 'due to the fact that', so the sentence reads 'because I was convinced (that it was important and met the criteria), I supported the attack' — the comma after 「確信したが」 connects it to 「ゆえに」."
+      },
+      {
+        "number": 6,
+        "prompt": "あそこの家の父親は、毎日朝から酒を飲んで暴れている。息子は、仕事もせず賭けごとに夢中になっている。まったく、父も父　_______ 子も子だ。",
+        "options": [
+          "と",
+          "では",
+          "なら",
+          "にして"
+        ],
+        "answer_index": 3,
+        "answer_text": "なら",
+        "answered_sentence": "あそこの家の父親は、毎日朝から酒を飲んで暴れている。息子は、仕事もせず賭けごとに夢中になっている。まったく、父も父なら子も子だ。",
+        "explanation": "「父も父なら子も子だ」 is a set expression meaning 'like father, like son', using the parallel structure 「AもAならBもBだ」 to say both are equally bad — 「なら」 is the only option that creates this pattern."
+      },
+      {
+        "number": 7,
+        "prompt": "部下からそんなことを言われる　_______ 、さぞ不愉快だっただろう。",
+        "options": [
+          "では",
+          "には",
+          "とは",
+          "かは"
+        ],
+        "answer_index": 3,
+        "answer_text": "とは",
+        "answered_sentence": "部下からそんなことを言われるとは、さぞ不愉快だっただろう。",
+        "explanation": "「とは」 expresses surprise or shock at a fact, so 「部下からそんなことを言われるとは」 means “That a subordinate would say such a thing (to me)” — the only option that adds the sense of unexpectedness that makes the sentence grammatical."
+      },
+      {
+        "number": 8,
+        "prompt": "大半の見学者たちは、このデスマスクをひと目　_______ なり身を硬くして、嫌悪を覚える。",
+        "options": [
+          "見る",
+          "見た",
+          "見ている",
+          "見られる"
+        ],
+        "answer_index": 1,
+        "answer_text": "見る",
+        "answered_sentence": "大半の見学者たちは、このデスマスクをひと目見るなり身を硬くして、嫌悪を覚える。",
+        "explanation": "「ひと目見たなり」 is a fixed expression meaning “the moment (someone) saw it” — 「た」 is required because the clause 「V-たなり」 describes an immediate past event leading to the next action."
+      },
+      {
+        "number": 9,
+        "prompt": "ブランドバックの買い取り額は数十万円　_______ でしょう。",
+        "options": [
+          "というもの",
+          "というところ",
+          "ときている",
+          "といえなくもない"
+        ],
+        "answer_index": 2,
+        "answer_text": "というところ",
+        "answered_sentence": "ブランドバックの買い取り額は数十万円というところでしょう。",
+        "explanation": "「〜というところだ」 is an N1 expression used to give a rough estimate or approximate range, so 「数十万円というところでしょう」 means “around several hundred thousand yen” — the only option that fits a numerical estimate."
+      },
+      {
+        "number": 10,
+        "prompt": "おかしな製品を作る　_______ 、遅れたほうがましだ。",
+        "options": [
+          "ものなら",
+          "くらいなら",
+          "それなら",
+          "ことなら"
+        ],
+        "answer_index": 2,
+        "answer_text": "くらいなら",
+        "answered_sentence": "おかしな製品を作るくらいなら、遅れたほうがましだ。",
+        "explanation": "「くらいなら」 pairs two negative options to mean 'rather than do A, it's better to do B,' so 'Rather than make a strange product, it's better to be late' makes sense — 「ものなら」 implies a hypothetical condition leading to a consequence, and 「それなら」 ('if that's the case') doesn't fit the contrastive pattern here."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 08",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-8/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "わたしは　_______ 彼の勘違いを指摘するようなことはもちろんしなかった。",
+        "options": [
+          "あえて",
+          "でもって",
+          "がてら",
+          "てっきり"
+        ],
+        "answer_index": 1,
+        "answer_text": "あえて",
+        "answered_sentence": "わたしはあえて彼の勘違いを指摘するようなことはもちろんしなかった。",
+        "explanation": "「でもって」 is a colloquial particle meaning 'with' or 'by means of,' and combined with 「あえて」 it creates the sense 'I didn't go so far as to deliberately point out his mistake.'"
+      },
+      {
+        "number": 2,
+        "prompt": "「どう？」鈴木は、理解する　_______ 不安の色を浮かべながら訊ねた。",
+        "options": [
+          "に欠かせない",
+          "に如くはない",
+          "にかたくない",
+          "に忍びない"
+        ],
+        "answer_index": 3,
+        "answer_text": "にかたくない",
+        "answered_sentence": "「どう？」鈴木は、理解するにかたくない不安の色を浮かべながら訊ねた。",
+        "explanation": "「にかたくない」 means 'easy to (understand/imagine),' so 「理解するにかたくない不安の色」 means 'anxiety that is not hard to understand' – the only option that logically modifies 「不安の色」 (expression of anxiety)."
+      },
+      {
+        "number": 3,
+        "prompt": "わたしがあなたを恐れないと同じように、あなたももうわたしを恐れるには　_______ 。",
+        "options": [
+          "およばない",
+          "べくもない",
+          "までもない",
+          "あたらない"
+        ],
+        "answer_index": 1,
+        "answer_text": "およばない",
+        "answered_sentence": "わたしがあなたを恐れないと同じように、あなたももうわたしを恐れるにはおよばない。",
+        "explanation": "「にはおよばない」 means 'there is no need to,' so 「恐れるにはおよばない」 means 'you have no need to fear me' – the only choice that pairs naturally with 「〜には」 and the meaning of mutual fearlessness."
+      },
+      {
+        "number": 4,
+        "prompt": "あそこでは一流ホテル　_______ 豪華な雰囲気が味わえる。",
+        "options": [
+          "がてらの",
+          "ならではの",
+          "かぎりの",
+          "ごときの"
+        ],
+        "answer_index": 2,
+        "answer_text": "ならではの",
+        "answered_sentence": "あそこでは一流ホテルならではの豪華な雰囲気が味わえる。",
+        "explanation": "「ならではの」 means 'unique to' or 'characteristic of', making the sentence mean 'You can enjoy an atmosphere unique to a top-class hotel' — the only option that conveys that exclusive quality."
+      },
+      {
+        "number": 5,
+        "prompt": "口には　_______ 、宣言などしなくても、誓いなど立てなくても、僕は自分の生命を君に賭けていた。",
+        "options": [
+          "出さずに",
+          "出さずにすんでも",
+          "出さずとも",
+          "出さずには"
+        ],
+        "answer_index": 3,
+        "answer_text": "出さずとも",
+        "answered_sentence": "口には出さずとも、宣言などしなくても、誓いなど立てなくても、僕は自分の生命を君に賭けていた。",
+        "explanation": "「出さずとも」 is the literary/archaic equivalent of 出さなくても ('even without saying it'), and the parallel structure with なくても confirms the concessive meaning."
+      },
+      {
+        "number": 6,
+        "prompt": "患者のプライバシーをほかの人に漏らすなんて、医者としてある　_______ ことだ。",
+        "options": [
+          "べからず",
+          "はずの",
+          "かぎりの",
+          "まじき"
+        ],
+        "answer_index": 4,
+        "answer_text": "まじき",
+        "answered_sentence": "患者のプライバシーをほかの人に漏らすなんて、医者としてあるまじきことだ。",
+        "explanation": "「あるまじき」 is a set grammar pattern meaning 'something that ought not to exist/be done (given one's position)', fitting the context of conduct unbecoming of a doctor."
+      },
+      {
+        "number": 7,
+        "prompt": "あなた、アキラとエミの結婚を本気で許すつもり？アキラでは物足りない　_______ けど、彼は貧乏人なんだし、それに…",
+        "options": [
+          "ということじゃない",
+          "というわけじゃない",
+          "というところじゃない",
+          "というものでもない"
+        ],
+        "answer_index": 2,
+        "answer_text": "というわけじゃない",
+        "answered_sentence": "あなた、アキラとエミの結婚を本気で許すつもり？アキラでは物足りないというわけじゃないけど、彼は貧乏人なんだし、それに…",
+        "explanation": "「というわけじゃない」 means \"it's not that...\", which fits naturally in a concessive clause to say \"it's not that Akira is unsatisfying, but...\" — the other options are ungrammatical because 「ということじゃない」 is too direct for a concessive hedge, 「というところじゃない」 means \"it's not at the point of\", and 「というものでもない」 means \"it's not necessarily the case that\" but doesn't pair with a simple adjective like 「物足りない」."
+      },
+      {
+        "number": 8,
+        "prompt": "では一両日のうち、調査の結果をお知らせ　_______ 、わたしのほうからお訪ねいたします。",
+        "options": [
+          "ごとき",
+          "ずくめ",
+          "かたわら",
+          "かたがた"
+        ],
+        "answer_index": 4,
+        "answer_text": "かたがた",
+        "answered_sentence": "では一両日のうち、調査の結果をお知らせかたがた、わたしのほうからお訪ねいたします。",
+        "explanation": "「かたがた」 means \"while also doing X; taking the opportunity to do Y\" and is used after a noun like 「お知らせ」 to express that visiting serves both to deliver the report and to call on the person — 「ごとき」 means \"like/such as\", 「ずくめ」 means \"all covered in/only\", and 「かたわら」 means \"while doing as a sideline\", none of which work with 「お知らせ」 in this context."
+      },
+      {
+        "number": 9,
+        "prompt": "この問題のいかん　_______ 、僕はこの会社で仕事を継続すべきか、それとも店の管理と経営へ焦点を転向させるべきかが決するのだ。",
+        "options": [
+          "にいたって",
+          "にかかって",
+          "によって",
+          "にかぎって"
+        ],
+        "answer_index": 3,
+        "answer_text": "によって",
+        "answered_sentence": "この問題のいかんによって、僕はこの会社で仕事を継続すべきか、それとも店の管理と経営へ焦点を転向させるべきかが決するのだ。",
+        "explanation": "「〜によって」 is required here because it means \"depending on\" and pairs with 「いかん」 to form the set phrase 「いかんによって」 (\"depending on the nature of the problem\") — none of the other options can express this conditional dependency: 「にいたって」 means \"regarding\", 「にかかって」 isn't a standard pattern, and 「にかぎって」 would mean \"only when it comes to\"."
+      },
+      {
+        "number": 10,
+        "prompt": "彼女は彼の恐ろしい顔を　_______ たえなかった。息がつまるような気がした。",
+        "options": [
+          "見るに",
+          "見ても",
+          "見ずに",
+          "まででは"
+        ],
+        "answer_index": 1,
+        "answer_text": "見るに",
+        "answered_sentence": "彼女は彼の恐ろしい顔を見るにたえなかった。息がつまるような気がした。",
+        "explanation": "「見るにたえない」 is a fixed N1 expression meaning 'cannot bear to look at' or 'is too awful to look at,' and 「見るにたえなかった」 is the past form of that expression, so (2) 「見るに」 is the only option that completes this grammar pattern correctly."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 09",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-9/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "彼が作る製品は、いずれも、すばらしいデザインや外見、フィーリング、エレガンス、人間らしさ、 _______ ロマンスとテクノロジーが一体となっている。",
+        "options": [
+          "場合になると",
+          "場合によると",
+          "場合によっては",
+          "場合にすれば"
+        ],
+        "answer_index": 3,
+        "answer_text": "場合によっては",
+        "answered_sentence": "彼が作る製品は、いずれも、すばらしいデザインや外見、フィーリング、エレガンス、人間らしさ、場合によってはロマンスとテクノロジーが一体となっている。",
+        "explanation": "「場合によっては」 means 'depending on the case/situation,' correctly linking the listed traits to the idea that 'romance and technology' are sometimes also integrated."
+      },
+      {
+        "number": 2,
+        "prompt": "人生はなにが幸いするかわからない _______ 、たぶん、あれはあれでよかったんじゃないかと思う。",
+        "options": [
+          "ものを",
+          "もので",
+          "ものの",
+          "ものは"
+        ],
+        "answer_index": 2,
+        "answer_text": "もので",
+        "answered_sentence": "人生はなにが幸いするかわからないもので、たぶん、あれはあれでよかったんじゃないかと思う。",
+        "explanation": "「ものです」 (ものだ) expresses a general truth or natural tendency, fitting the statement 'you never know what will bring good fortune in life.'"
+      },
+      {
+        "number": 3,
+        "prompt": "おまえなんぞにおれの気持ちが _______ か。おれのような立場に立つ気持ちが _______ か。",
+        "options": [
+          "わかってしかる/わかってしかる",
+          "わかってかねる/わかってかねる",
+          "わかってたまる/わかってたまる",
+          "わかってたる/わかってたる"
+        ],
+        "answer_index": 3,
+        "answer_text": "わかってたまる/わかってたまる",
+        "answered_sentence": "おまえなんぞにおれの気持ちがわかってたまるか。おれのような立場に立つ気持ちがわかってたまるか。",
+        "explanation": "「わかってたまるか」 is a set phrase using verb-て form + たまるか to express strong rhetorical denial (\"There's no way you could understand\"), and it must be repeated identically in both blanks; the other options either mean \"should understand\" (しかる), \"can't understand\" (かねる), or don't exist as a grammar pattern in this context."
+      },
+      {
+        "number": 4,
+        "prompt": "この窓は、陽の光がここまで来るには、次第に細くなって、子供 _______ 入ることができないぐらいの窓だ。",
+        "options": [
+          "であれ",
+          "であって",
+          "でもって",
+          "ですら"
+        ],
+        "answer_index": 4,
+        "answer_text": "ですら",
+        "answered_sentence": "この窓は、陽の光がここまで来るには、次第に細くなって、子供ですら入ることができないぐらいの窓だ。",
+        "explanation": "「すら」 means 'even (including X as an extreme case)', and ですら is the polite form, so 子供ですら入ることができない means 'even a child cannot enter' — the only option that fits the extreme-minimum meaning."
+      },
+      {
+        "number": 5,
+        "prompt": "たかし氏は不動産業を営む　_______ 、暇を見つけては作家活動をしている。",
+        "options": [
+          "かたわら",
+          "そばから",
+          "ながら",
+          "がてら"
+        ],
+        "answer_index": 1,
+        "answer_text": "かたわら",
+        "answered_sentence": "たかし氏は不動産業を営むかたわら、暇を見つけては作家活動をしている。",
+        "explanation": "「かたわら」 means 'while engaging in X as one's main activity, also does Y as a side activity', so 不動産業を営むかたわら indicates that real estate is the main business and writing is a side pursuit — the other options express different relationships like 'as soon as' (そばから) or 'while' (ながら) that don't match the side-activity meaning."
+      },
+      {
+        "number": 6,
+        "prompt": "患者は、昨夜水差しからじかに水を飲もうとして、手がすべり、水差しを落して割ってしまったのだと言った。看護婦はぶつぶつ言いながら、前の破片を片づけ　_______ 、新しい水差しをとりに行った。",
+        "options": [
+          "もせずに",
+          "もしなくて",
+          "はしないで",
+          "もしないで"
+        ],
+        "answer_index": 4,
+        "answer_text": "もしないで",
+        "answered_sentence": "患者は、昨夜水差しからじかに水を飲もうとして、手がすべり、水差しを落して割ってしまったのだと言った。看護婦はぶつぶつ言いながら、前の破片を片づけもしないで、新しい水差しをとりに行った。",
+        "explanation": "「〜もしないで」 is the negative counterpart of 「〜もして」, meaning 'without even doing X', so 片づけもしないで means 'without even cleaning up' — the も adds emphasis that even the minimal action of clearing was skipped."
+      },
+      {
+        "number": 7,
+        "prompt": "わからない単語があったら、辞書を引く　_______ だれかに聞く　_______ して調べておきなさい。",
+        "options": [
+          "なり/なり",
+          "こと/こと",
+          "と/と",
+          "し/し"
+        ],
+        "answer_index": 1,
+        "answer_text": "なり/なり",
+        "answered_sentence": "わからない単語があったら、辞書を引くなりだれかに聞くなりして調べておきなさい。",
+        "explanation": "「～なり～なり」 pairs two options meaning “either A or B (or something similar),” so it fits the structure of listing alternative ways to look up an unknown word."
+      },
+      {
+        "number": 8,
+        "prompt": "わが社は原理原則　_______ 行動する会社だ。それがわからないならわからない人間が悪いのであって、わが社が謙虚になる必要はない。",
+        "options": [
+          "にかまけて",
+          "にのっとって",
+          "にかかわって",
+          "に先駆けて"
+        ],
+        "answer_index": 2,
+        "answer_text": "にのっとって",
+        "answered_sentence": "わが社は原理原則にのっとって行動する会社だ。それがわからないならわからない人間が悪いのであって、わが社が謙虚になる必要はない。",
+        "explanation": "「～にのっとって」 means “in accordance with / based on,” which logically pairs with 「原理原則」 (principles) to describe the company’s operating standard."
+      },
+      {
+        "number": 9,
+        "prompt": "採否　_______ 、結果は郵便でお知らせします。電話でのお問い合わせには応じられません。",
+        "options": [
+          "にあらず",
+          "をものともせず",
+          "にほかならず",
+          "のいかんにかかわらず"
+        ],
+        "answer_index": 4,
+        "answer_text": "のいかんにかかわらず",
+        "answered_sentence": "採否のいかんにかかわらず、結果は郵便でお知らせします。電話でのお問い合わせには応じられません。",
+        "explanation": "「～のいかんにかかわらず」 means “regardless of ~,” and it is the only expression that fits before 「結果は郵便でお知らせします」 to indicate the result will be sent regardless of whether the applicant is hired or not."
+      },
+      {
+        "number": 10,
+        "prompt": "優れた会社は「印象」を大事にしなければならない。パッケージからマーケティング　_______ まで、すべての面で会社の価値と重要性を伝えなければならない。",
+        "options": [
+          "にいたって",
+          "にいたっては",
+          "にいたる",
+          "にいたっても"
+        ],
+        "answer_index": 3,
+        "answer_text": "にいたる",
+        "answered_sentence": "優れた会社は「印象」を大事にしなければならない。パッケージからマーケティングにいたるまで、すべての面で会社の価値と重要性を伝えなければならない。",
+        "explanation": "「にいたるまで」 is the fixed expression meaning 'from X all the way to Y', covering the full range of contexts — the other options like 「にいたっては」 would specify a particular stage or extreme case, not a broad scope."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 10",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-10/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "去っていく人を _______ _______　…★… _______ 始まらない。",
+        "options": [
+          "も",
+          "ばかり",
+          "いて",
+          "惜しんで"
+        ],
+        "answer_index": 3,
+        "answer_text": "いて",
+        "answered_sentence": "去っていく人を惜しんでばかりいても始まらない。",
+        "explanation": "「惜しんでばかりいても始まらない」is a fixed pattern where the て-form of a verb + 「ばかりいる」means “just keep doing (that verb) too much/listlessly,” and the particle 「も」with the negative ending creates the meaning “it won’t get started / it’s pointless even if you just keep longing after someone who is leaving” — the ★-marked 「惜しんで」(mourning/regretting the departure) is the only option that renders the pattern natural."
+      },
+      {
+        "number": 2,
+        "prompt": "大人でも充分に _______ _______　…★… _______ です。",
+        "options": [
+          "たえる",
+          "作品",
+          "に",
+          "鑑賞"
+        ],
+        "answer_index": 1,
+        "answer_text": "たえる",
+        "answered_sentence": "大人でも充分に鑑賞にたえる作品です。",
+        "explanation": "「鑑賞にたえる」is a grammar pattern meaning “worthy of appreciation / enduring being appreciated,” so 「大人でも充分に鑑賞にたえる作品です」correctly places 「作品」(work of art/piece) as the noun being modified by this predicate — the other words form part of the modifying phrase, leaving ★ as the head noun."
+      },
+      {
+        "number": 3,
+        "prompt": "すべて機械が行い、 _______ _______　…★… _______ 加えられない。",
+        "options": [
+          "人間",
+          "いっさい",
+          "は",
+          "の手作業"
+        ],
+        "answer_index": 3,
+        "answer_text": "は",
+        "answered_sentence": "すべて機械が行い、人間の手作業はいっさい加えられない。",
+        "explanation": "「人間の手作業」forms a compound noun meaning “manual work by humans,” which then takes 「はいっさい加えられない」(is not added at all) — 「の」links 「人間」to 「手作業」, and the ★ slot at the end of the phrase must be the head noun 「手作業」, not a particle or an adverb."
+      },
+      {
+        "number": 4,
+        "prompt": "アメリカの _______ _______　…★… _______ 、さまざまな要因に影響される。",
+        "options": [
+          "複雑で",
+          "例の",
+          "政策は",
+          "ごとく"
+        ],
+        "answer_index": 4,
+        "answer_text": "ごとく",
+        "answered_sentence": "アメリカの政策は例のごとく複雑で、さまざまな要因に影響される。",
+        "explanation": "「ごとく」 is used after a noun + の to mean \"like/as is usual (in the case of)\", so 「例のごとく」 (as usual) is fixed, and it connects to 「複雑で」 to form the predicate."
+      },
+      {
+        "number": 5,
+        "prompt": "そんな彼らにしてみれば、_______ _______　…★… _______ 自らつくるもの。",
+        "options": [
+          "は",
+          "守る",
+          "ルール",
+          "ものではなく"
+        ],
+        "answer_index": 2,
+        "answer_text": "守る",
+        "answered_sentence": "そんな彼らにしてみれば、ルールは守るものではなく自らつくるもの。",
+        "explanation": "「ものではなく」 (it is not the case that) must connect to the preceding 「守る」 to contrast with the following 「自らつくるもの」, and the subject 「ルール」 needs the particle 「は」; the order ルールは守るものではなく is the only sequence that works."
+      },
+      {
+        "number": 6,
+        "prompt": "税金は国民の義務とはいえ、_______ _______　…★… _______ 節税したいのは、誰しもが思うところだ。",
+        "options": [
+          "済む",
+          "少しでも",
+          "ものなら",
+          "払わずに"
+        ],
+        "answer_index": 3,
+        "answer_text": "ものなら",
+        "answered_sentence": "税金は国民の義務とはいえ、払わずに済むものなら少しでも節税したいのは、誰しもが思うところだ。",
+        "explanation": "「ずに済む」 is a set grammar pattern meaning \"to get by without doing something\", so 「払わずに済むものなら」 (if it could be managed without paying) is the required sentence flow."
+      },
+      {
+        "number": 7,
+        "prompt": "ミサイルを多数配置している _______ _______　…★… _______ どうしたらよいですか？",
+        "options": [
+          "日本を",
+          "防衛する",
+          "国から",
+          "には"
+        ],
+        "answer_index": 2,
+        "answer_text": "防衛する",
+        "answered_sentence": "ミサイルを多数配置している国から日本を防衛するにはどうしたらよいですか？",
+        "explanation": "「国から」 completes the phrase 「ミサイルを多数配置している国から日本を防衛するには」, where 「から」 marks the source of the threat and 「には」 sets up the purpose — the only arrangement that yields a coherent clause meaning 'in order to defend Japan from that country'."
+      },
+      {
+        "number": 8,
+        "prompt": "オーストラリアの店先にはトイレットペーパーを求める人々が殺到している。過去48時間で状況はますます悪化し、_______ _______　…★… _______ という話もある。",
+        "options": [
+          "が盗まれる",
+          "トイレットペーパー",
+          "始末だ",
+          "公衆トイレの"
+        ],
+        "answer_index": 1,
+        "answer_text": "が盗まれる",
+        "answered_sentence": "オーストラリアの店先にはトイレットペーパーを求める人々が殺到している。過去48時間で状況はますます悪化し、公衆トイレのトイレットペーパーが盗まれる始末だという話もある。",
+        "explanation": "「トイレットペーパー」 is the head noun modified by 「公衆トイレの」 and modified by the clause 「が盗まれる」, forming the construct 「公衆トイレのトイレットペーパーが盗まれる始末だ」 ('things have gotten to the point where toilet paper in public toilets is stolen') — the only word that fits both as the object of the passive verb and the subject of 「始末だ」."
+      },
+      {
+        "number": 9,
+        "prompt": "叔母は、昔、幼稚園 _______ _______　…★… _______ 、童話をたくさん知っている。",
+        "options": [
+          "だけあって",
+          "の",
+          "先生",
+          "をしていた"
+        ],
+        "answer_index": 4,
+        "answer_text": "をしていた",
+        "answered_sentence": "叔母は、昔、幼稚園の先生をしていただけあって、童話をたくさん知っている。",
+        "explanation": "「をしていた」 is the past-tense verb needed after 「幼稚園の先生」 to mean 'used to be a kindergarten teacher', and is followed by 「だけあって」 ('as one would expect from') — the order 「幼稚園の先生をしていただけあって」 is the only one where a verb in past tense sits naturally before a 「だけあって」 clause."
+      },
+      {
+        "number": 10,
+        "prompt": "彼は、政治的影響に対ししなやかな感性をみせ、 _______ _______　…★… _______ 、一般庶民の困窮に同情心をよせた。",
+        "options": [
+          "巧みさ",
+          "天性の",
+          "これを理解し",
+          "をもって"
+        ],
+        "answer_index": 4,
+        "answer_text": "をもって",
+        "answered_sentence": "彼は、政治的影響に対ししなやかな感性をみせ、天性の巧みさをもってこれを理解し、一般庶民の困窮に同情心をよせた。",
+        "explanation": "「をもって」is a formal expression meaning 'by means of' or 'with', and it pairs with the noun phrase 「天性の巧みさ」('innate skill') to show the method by which he understood the political influences — this creates a natural sequence in the fill-in-the-blank puzzle."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 11",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-11/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "新人が仕事中に居眠りしているのを発見。上司としては、見なかった ______ ______ …★… ______ 注意することにした。",
+        "options": [
+          "起こして",
+          "ほうっておく",
+          "ことにして",
+          "わけにもいかず"
+        ],
+        "answer_index": 4,
+        "answer_text": "わけにもいかず",
+        "answered_sentence": "新人が仕事中に居眠りしているのを発見。上司としては、見なかったことにしてほうっておくわけにもいかず起こして注意することにした。",
+        "explanation": "「〜わけにもいかない」means 'can't very well NOT do something,' so the speaker, as a boss, couldn't pretend not to see it and couldn't just leave it alone, which led to waking the new employee and giving a warning."
+      },
+      {
+        "number": 2,
+        "prompt": "自分の人生に関わる選択は自分でしたい。たとえその結果失敗したとしても、自分が _______ ______ …★… _______ 経験として受け入れられると思う。",
+        "options": [
+          "ひとつの",
+          "決めたことなら",
+          "それで",
+          "それは"
+        ],
+        "answer_index": 3,
+        "answer_text": "それで",
+        "answered_sentence": "自分の人生に関わる選択は自分でしたい。たとえその結果失敗したとしても、自分が決めたことならそれはそれでひとつの経験として受け入れられると思う。",
+        "explanation": "「それはそれで」is a set phrase meaning 'that is fine as it is' or 'that in itself,' so if I chose it, even if it fails, I can accept that result as one kind of experience."
+      },
+      {
+        "number": 3,
+        "prompt": "世界のほとんど　_______　_______　…★… _______　治療を受けられた。",
+        "options": [
+          "望む",
+          "誰もが",
+          "ような",
+          "べくもない"
+        ],
+        "answer_index": 4,
+        "answer_text": "べくもない",
+        "answered_sentence": "世界のほとんど誰もが望むべくもないような治療を受けられた。",
+        "explanation": "「〜べくもない」means 'cannot possibly do/happen,' so 'a treatment that almost no one in the world can even hope to receive' is the intended meaning."
+      },
+      {
+        "number": 4,
+        "prompt": "我々は、　_______　_______　…★… _______　ことを誓います。",
+        "options": [
+          "正々堂々と",
+          "にのっとり",
+          "戦う",
+          "スポーツマン精神"
+        ],
+        "answer_index": 1,
+        "answer_text": "正々堂々と",
+        "answered_sentence": "我々は、スポーツマン精神にのっとり正々堂々と戦うことを誓います。",
+        "explanation": "「〜にのっとり」 means 'in accordance with' or 'based on,' linking スポーツマン精神 (sportsmanship) to 正々堂々と戦う (fight fair and square)."
+      },
+      {
+        "number": 5,
+        "prompt": "もうこんな時間に　_______　_______　…★… _______　間に合いそうもない。",
+        "options": [
+          "急に",
+          "慌てた",
+          "ところで",
+          "なって"
+        ],
+        "answer_index": 2,
+        "answer_text": "慌てた",
+        "answered_sentence": "もうこんな時間になって急に慌てたところで間に合いそうもない。",
+        "explanation": "「〜たところで」 means 'even if (one does X),' and here it combines with 慌てた (panicked) to express that 'even if we panic now, it's unlikely to make it.'"
+      },
+      {
+        "number": 6,
+        "prompt": "「…１…」に入る最も適当なものはどれか。",
+        "options": [
+          "子供から感じられた",
+          "子供のことで感じていた",
+          "子供ながらに感じた",
+          "子供だったら感じただろう"
+        ],
+        "answer_index": 3,
+        "answer_text": "子供ながらに感じた",
+        "answered_sentence": "「…１…」に入る最も適当なものはどれか。=> 子供ながらに感じた",
+        "explanation": "「子供ながらに感じた」 uses the 〜ながらに pattern meaning 'in the capacity/way of being a child,' so it fits to mean 'I felt, in my childlike way.'"
+      },
+      {
+        "number": 7,
+        "prompt": "「…２…」に入る最も適当なものはどれか。",
+        "options": [
+          "ないのかもしれない",
+          "ないからだという",
+          "ないと思わせたい",
+          "ないとしなかったか"
+        ],
+        "answer_index": 1,
+        "answer_text": "ないのかもしれない",
+        "answered_sentence": "「…２…」に入る最も適当なものはどれか。=> ないのかもしれない",
+        "explanation": "「〜からだ」 is used to give a reason, and combining it with the quotative 「という」 creates the pattern 「〜からだという」 (“it is said that it is because …”), which fits the context of quoting or explaining the basis of a claim."
+      },
+      {
+        "number": 8,
+        "prompt": "「…３…」に入る最も適当なものはどれか。",
+        "options": [
+          "一度",
+          "そこで",
+          "さっき",
+          "必ず"
+        ],
+        "answer_index": 2,
+        "answer_text": "そこで",
+        "answered_sentence": "「…３…」に入る最も適当なものはどれか。=> そこで",
+        "explanation": "「さっき」 (“a little while ago”) is the only temporal adverb that correctly anchors a past-tense sentence, whereas 「一度」 means “once”, 「そこで」 is for sequence (“then”), and 「必ず」 means “without fail” — none of which match the past-time frame implied by the context."
+      },
+      {
+        "number": 9,
+        "prompt": "「…４…」に入る最も適当なものはどれか。",
+        "options": [
+          "助かってきた",
+          "助かっていったわけだ",
+          "助かっていたかなんだ",
+          "助かった"
+        ],
+        "answer_index": 4,
+        "answer_text": "助かった",
+        "answered_sentence": "「…４…」に入る最も適当なものはどれか。=> 助かった",
+        "explanation": "「助かった」 (“(I) was saved / it was a relief”) is the simple past form that naturally completes a statement of gratitude or relief, while the other options introduce unnatural temporal or aspectual nuances (e.g., “has been saved”, “was in the process of being saved”) that do not fit a single past occurrence."
+      },
+      {
+        "number": 10,
+        "prompt": "「…５…」に入る最も適当なものはどれか。",
+        "options": [
+          "も",
+          "に",
+          "より",
+          "ぐらい"
+        ],
+        "answer_index": 1,
+        "answer_text": "も",
+        "answered_sentence": "「…５…」に入る最も適当なものはどれか。=> も",
+        "explanation": "「に」 is the particle that marks the agent in a passive sentence, so 「講師に頼まれて」 means"
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 12",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-12/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "採用の条件には合わないが、だめ　_______　から、この会社に履歴書を出してみよう。",
+        "options": [
+          "でもともとだ",
+          "と言うことだ",
+          "ならば",
+          "にしたら"
+        ],
+        "answer_index": 1,
+        "answer_text": "でもともとだ",
+        "answered_sentence": "採用の条件には合わないが、だめでもともとだから、この会社に履歴書を出してみよう。",
+        "explanation": "「でもともとだ」means “it’s already expected to fail, so there’s nothing to lose”; paired with the concessive clause it creates the meaning “even if it’s hopeless (だめでもともとだ), I’ll try anyway” — the other options either don’t form a natural grammar pattern here or change the logic."
+      },
+      {
+        "number": 2,
+        "prompt": "年老いた人をだますなんて、人にある　_______　行為だ。",
+        "options": [
+          "まいし",
+          "ものを",
+          "まじき",
+          "だろう"
+        ],
+        "answer_index": 3,
+        "answer_text": "まじき",
+        "answered_sentence": "年老いた人をだますなんて、人にあるまじき行為だ。",
+        "explanation": "「あるまじき」is a set expression meaning “unbefitting of (someone)”, so 「人にあるまじき行為」 means “an act unbefitting of a human being” — the other options produce ungrammatical or illogical conclusions."
+      },
+      {
+        "number": 3,
+        "prompt": "名誉にかかわることだから、いざとなれば莫大なお金を　_______　、裁判で争うつもりだ。",
+        "options": [
+          "使ってさえ",
+          "使ってこそ",
+          "使ってでも",
+          "使ってまで"
+        ],
+        "answer_index": 3,
+        "answer_text": "使ってでも",
+        "answered_sentence": "名誉にかかわることだから、いざとなれば莫大なお金を使ってでも、裁判で争うつもりだ。",
+        "explanation": "「〜てでも」means “even if it means doing something”, so 「使ってでも裁判で争う」 is “I’ll fight in court even if it means spending enormous money” — 「まで」without the て-form would not express the concessive nuance needed here."
+      },
+      {
+        "number": 4,
+        "prompt": "いくら忙しいからって、健康を　_______　して不規則な生活をしていると、そのうち入院するはめになるぞ。",
+        "options": [
+          "かまわず",
+          "なおざりに",
+          "ものともせず",
+          "ひかえず"
+        ],
+        "answer_index": 2,
+        "answer_text": "なおざりに",
+        "answered_sentence": "いくら忙しいからって、健康をなおざりにして不規則な生活をしていると、そのうち入院するはめになるぞ。",
+        "explanation": "「ものともせず」 means \"without being deterred by\" or \"in defiance of,\" and fits the context of ignoring health despite being busy, while 「なおざりに」 means \"negligently\" and would require a different structure like 「健康をなおざりにして」."
+      },
+      {
+        "number": 5,
+        "prompt": "バスの窓から大きな虹が見えたので写真を撮った。山道を走るバスに　_______　けっこう良く撮れていた。",
+        "options": [
+          "揺られながらにしては",
+          "揺られながらとなれば",
+          "揺られっぱなしなのか",
+          "揺られっぱなしだとは"
+        ],
+        "answer_index": 1,
+        "answer_text": "揺られながらにしては",
+        "answered_sentence": "バスの窓から大きな虹が見えたので写真を撮った。山道を走るバスに揺られながらにしてはけっこう良く撮れていた。",
+        "explanation": "「揺られながらにしては」 uses 「にしては」 (\"considering that\") to mean \"considering (I) was being shaken on a bus,\" making the photo quality unexpectedly good, matching the contrastive tone of the sentence."
+      },
+      {
+        "number": 6,
+        "prompt": "週末で道が込んでいるそうだが、それ　_______　２時間遅れはひどい。",
+        "options": [
+          "にしては",
+          "にひきかえ",
+          "にもまして",
+          "にしても"
+        ],
+        "answer_index": 4,
+        "answer_text": "にしても",
+        "answered_sentence": "週末で道が込んでいるそうだが、それにしても２時間遅れはひどい。",
+        "explanation": "「にしても」 means \"even so\" or \"even considering that,\" and fits the speaker's concessive tone that despite traffic being expected on weekends, a 2-hour delay is still excessive."
+      },
+      {
+        "number": 7,
+        "prompt": "花見の季節　_______　、上野公園は大勢の見物客で大変にぎやかだ。",
+        "options": [
+          "ならでは",
+          "ともなると",
+          "とともに",
+          "なればこそ"
+        ],
+        "answer_index": 2,
+        "answer_text": "ともなると",
+        "answered_sentence": "花見の季節ともなると、上野公園は大勢の見物客で大変にぎやかだ。",
+        "explanation": "「ともなると」 means “when it comes to (a certain situation)” and fits naturally with a seasonal event like cherry-blossom viewing, indicating that once that time arrives, the scene becomes as described."
+      },
+      {
+        "number": 8,
+        "prompt": "東京公演を　_______　、そのグループは全国各地でコンサートを開くらしい。",
+        "options": [
+          "かわきりに",
+          "かえりみず",
+          "前にして",
+          "禁じえず"
+        ],
+        "answer_index": 1,
+        "answer_text": "かわきりに",
+        "answered_sentence": "東京公演をかわきりに、そのグループは全国各地でコンサートを開くらしい。",
+        "explanation": "「をかわきりに」 means “starting with (something)” and correctly conveys that the Tokyo performance was the first of a series of nationwide concerts; the other options don't fit the meaning of starting point."
+      },
+      {
+        "number": 9,
+        "prompt": "彼女はケーキ作りがとても上手なのだが、甘いものが好きなの　_______　、そうでもない。",
+        "options": [
+          "かいなか",
+          "かのように",
+          "かというと",
+          "かとみれば"
+        ],
+        "answer_index": 3,
+        "answer_text": "かというと",
+        "answered_sentence": "彼女はケーキ作りがとても上手なのだが、甘いものが好きなのかというと、そうでもない。",
+        "explanation": "「かというと」 is used after a phrase like “好きなの…” to introduce a counter‑expectation or denial, so “甘いものが好きなのかというと、そうでもない” means “(if you ask) whether she likes sweets, that’s not really the case.”"
+      },
+      {
+        "number": 10,
+        "prompt": "テニスの木村健一選手は、おととしの全日本大会優勝　_______　、競技から離れていたが、昨日、正式に引退を表明した。",
+        "options": [
+          "を最後に",
+          "を皮切りに",
+          "にあたって",
+          "に沿って"
+        ],
+        "answer_index": 1,
+        "answer_text": "を最後に",
+        "answered_sentence": "テニスの木村健一選手は、おととしの全日本大会優勝を最後に、競技から離れていたが、昨日、正式に引退を表明した。",
+        "explanation": "「を皮切りに」 means \"starting with\" and indicates that the All-Japan championship win was the first event in a sequence (implicitly a series of achievements), but the context says he withdrew from competition after that win, so the correct particle must mean \"after (and as the final event)\" — 「を最後に」 means \"(with something) as the last (time)\" and fits perfectly here."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 13",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-13/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "田んぼにはどこからともなくカエルがやってきて、うるさいこと　_______　。",
+        "options": [
+          "ではあるまいし",
+          "といったらありはしない",
+          "を余儀なくされた",
+          "でもなんでもない"
+        ],
+        "answer_index": 2,
+        "answer_text": "といったらありはしない",
+        "answered_sentence": "田んぼにはどこからともなくカエルがやってきて、うるさいことといったらありはしない。",
+        "explanation": "「といったらありはしない」 means “extremely” or “to an indescribable degree,” emphasizing that the frogs' noise is so loud that there is nothing more to say — the correct choice to express the speaker's strong exasperation."
+      },
+      {
+        "number": 2,
+        "prompt": "今年は、景気の回復傾向　_______　、大企業を中心に給与の支給額が増えると見込まれている。",
+        "options": [
+          "に限って",
+          "を受けて",
+          "にわたって",
+          "を含めて"
+        ],
+        "answer_index": 2,
+        "answer_text": "を受けて",
+        "answered_sentence": "今年は、景気の回復傾向を受けて、大企業を中心に給与の支給額が増えると見込まれている。",
+        "explanation": "「を受けて」 means “in response to” or “based on,” so the sentence reads “this year, in response to the economic recovery trend, salaries are expected to increase mainly at large companies” — the only option that logically links the recovery to the salary increase."
+      },
+      {
+        "number": 3,
+        "prompt": "彼の演奏が終わると、会場からは　_______　拍手がわきあがった。",
+        "options": [
+          "割れんばかりの",
+          "割らんばかりに",
+          "割れんための",
+          "割らんために"
+        ],
+        "answer_index": 1,
+        "answer_text": "割れんばかりの",
+        "answered_sentence": "彼の演奏が終わると、会場からは割れんばかりの拍手がわきあがった。",
+        "explanation": "「割れんばかりの」 is a set phrase meaning “as if it would break,” used before a noun like 「拍手」(applause) to describe thunderous applause — 「割らんばかりに」 is adverbial and would modify a verb, not a noun."
+      },
+      {
+        "number": 4,
+        "prompt": "課長ときたら、こちらの釈明を聞き　_______　、一方的に怒るんだから困ったもんだ。",
+        "options": [
+          "こそすれ",
+          "ことなしに",
+          "にかまけて",
+          "もしないで"
+        ],
+        "answer_index": 4,
+        "answer_text": "もしないで",
+        "answered_sentence": "課長ときたら、こちらの釈明を聞きもしないで、一方的に怒るんだから困ったもんだ。",
+        "explanation": "「もしないで」is the only option that correctly combines with a verb stem + も to express"
+      },
+      {
+        "number": 5,
+        "prompt": "最初の計画に　_______　工事を行う予定です。",
+        "options": [
+          "ついだ",
+          "至った",
+          "即した",
+          "比した"
+        ],
+        "answer_index": 3,
+        "answer_text": "即した",
+        "answered_sentence": "最初の計画に即した工事を行う予定です。",
+        "explanation": "「即した」means"
+      },
+      {
+        "number": 6,
+        "prompt": "社長は、「常に魅力ある新商品を開発し続けることが重要であり、それ　_______　_______　…★… _______　ない」と語った。",
+        "options": [
+          "など",
+          "会社の成長",
+          "望みようも",
+          "なくして"
+        ],
+        "answer_index": 1,
+        "answer_text": "など",
+        "answered_sentence": "社長は、「常に魅力ある新商品を開発し続けることが重要であり、それなくして会社の成長など望みようもない」と語った。",
+        "explanation": "「～なくして～ない」is a fixed N1 grammar pattern meaning"
+      },
+      {
+        "number": 7,
+        "prompt": "山で道に迷ってしまったようだ。声　_______　_______　…★… _______　答えなかった。",
+        "options": [
+          "叫んで",
+          "誰も",
+          "を限りに",
+          "みたが"
+        ],
+        "answer_index": 4,
+        "answer_text": "みたが",
+        "answered_sentence": "山で道に迷ってしまったようだ。声を限りに叫んでみたが誰も答えなかった。",
+        "explanation": "「声を限りに」 is a set phrase meaning “at the top of one’s lungs,” and the pattern Verb(て) + みたが (tried doing … but) correctly leads to the contrast with 誰も答えなかった (no one answered)."
+      },
+      {
+        "number": 8,
+        "prompt": "あと　_______　_______　…★… _______　いただきます。",
+        "options": [
+          "特価提供を",
+          "５名様を",
+          "もちまして",
+          "締め切らせて"
+        ],
+        "answer_index": 1,
+        "answer_text": "特価提供を",
+        "answered_sentence": "あと５名様をもちまして特価提供を締め切らせていただきます。",
+        "explanation": "「をもちまして」 is a formal expression meaning “with [X],” and the sentence follows the set ordering 「あと5名様をもちまして特価提供を締め切らせていただきます」 (“with the last five customers, we will close the special offer”)."
+      },
+      {
+        "number": 9,
+        "prompt": "犯罪心理学者でもある小説家大石竜也が描く巧みな心理描写は、犯罪心理学に精通した ______ ______ …★… _______ ものである。",
+        "options": [
+          "専門家",
+          "初めて",
+          "にして",
+          "書ける"
+        ],
+        "answer_index": 2,
+        "answer_text": "初めて",
+        "answered_sentence": "犯罪心理学者でもある小説家大石竜也が描く巧みな心理描写は、犯罪心理学に精通した専門家にして初めて書けるものである。",
+        "explanation": "「専門家にして初めて書ける」 uses the grammar pattern 「Nにして初めて～できる」 meaning “only after being N can one do ~,” and placing (3) にして after 「専門家」 creates that structure — only an expert can write such psychological descriptions."
+      },
+      {
+        "number": 10,
+        "prompt": "連休中、　_______　_______　…★… _______　、公園や博物館まで親連れであふれていた。",
+        "options": [
+          "に",
+          "海や山は",
+          "およばず",
+          "言う"
+        ],
+        "answer_index": 1,
+        "answer_text": "に",
+        "answered_sentence": "連休中、海や山は言うにおよばず、公園や博物館まで親連れであふれていた。",
+        "explanation": "「言うにおよばず」 is a fixed expression meaning 'needless to say' or 'not to mention', so the sentence reads 'During the holiday, not to mention the beaches and mountains, even the parks and museums were overflowing with families' — only (2) 海や山は can begin the pattern that leads into this grammar point."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 14",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-14/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "課題の締め切り前になると、もっと時間があればと思うが、　_______　、きっと遊んでしまうのだろうとも思う。",
+        "options": [
+          "あるにはあるが",
+          "あったらあったで",
+          "あるとないとでは",
+          "あったりなかったりで"
+        ],
+        "answer_index": 2,
+        "answer_text": "あったらあったで",
+        "answered_sentence": "課題の締め切り前になると、もっと時間があればと思うが、あったらあったで、きっと遊んでしまうのだろうとも思う。",
+        "explanation": "「あったらあったで」means 'if that were the case, then in that situation (something else would happen)'; here it contrasts the speaker's wish for more time with the admission that even with it, they'd likely waste it."
+      },
+      {
+        "number": 2,
+        "prompt": "若いころに経験したつらいことは　_______　によっては、長い人生においてプラスになることが多いだろう。",
+        "options": [
+          "考えよう",
+          "考えかけ",
+          "考えぬく",
+          "考えること"
+        ],
+        "answer_index": 1,
+        "answer_text": "考えよう",
+        "answered_sentence": "若いころに経験したつらいことは考えようによっては、長い人生においてプラスになることが多いだろう。",
+        "explanation": "「考えようによっては」is a fixed expression meaning 'depending on how you look at it / depending on the way of thinking', and only「考えよう」(the ます-stem of 考える turned into a noun meaning 'way of thinking') fits the pattern."
+      },
+      {
+        "number": 3,
+        "prompt": "子供が生まれたの　_______　タバコをやめた。何度も禁煙用の薬を飲んだものの、成功しなかったのに、血は薬よりも強しだ。",
+        "options": [
+          "をかわきりに",
+          "がために",
+          "を機に",
+          "がゆえに"
+        ],
+        "answer_index": 3,
+        "answer_text": "を機に",
+        "answered_sentence": "子供が生まれたのを機にタバコをやめた。何度も禁煙用の薬を飲んだものの、成功しなかったのに、血は薬よりも強しだ。",
+        "explanation": "「を機に」(wo ki ni) means 'taking the opportunity of ~ / with ~ as a turning point', which correctly links the birth of the child to quitting smoking; the other options either don't fit the grammar or change the intended causal relation."
+      },
+      {
+        "number": 4,
+        "prompt": "この島では、春になると、花　_______　花が一斉に咲いて、島全体を埋め付くします。",
+        "options": [
+          "だの",
+          "との",
+          "なり",
+          "という"
+        ],
+        "answer_index": 4,
+        "answer_text": "という",
+        "answered_sentence": "この島では、春になると、花という花が一斉に咲いて、島全体を埋め付くします。",
+        "explanation": "「〜という + repeated noun」is a set pattern meaning"
+      },
+      {
+        "number": 5,
+        "prompt": "張り紙には「関係者以外、立ち入る　_______　」と書いてある。",
+        "options": [
+          "きらいがる",
+          "にかたくない",
+          "べからず",
+          "を禁じ得ない"
+        ],
+        "answer_index": 3,
+        "answer_text": "べからず",
+        "answered_sentence": "張り紙には「関係者以外、立ち入るべからず」と書いてある。",
+        "explanation": "「〜べからず」is the classical negative imperative attached directly to a dictionary-form verb, used in formal signs and notices to mean"
+      },
+      {
+        "number": 6,
+        "prompt": "「…１…」に入る最も適当なものはどれか。",
+        "options": [
+          "するように",
+          "しないようにする",
+          "しようとする",
+          "しなくてもいい"
+        ],
+        "answer_index": 2,
+        "answer_text": "しないようにする",
+        "answered_sentence": "「…１…」に入る最も適当なものはどれか。=> しないようにする",
+        "explanation": "「〜しようとする」expresses an attempt to do something, so「しないようにする」would mean"
+      },
+      {
+        "number": 7,
+        "prompt": "「…２…」に入る最も適当なものはどれか。",
+        "options": [
+          "なりかねる",
+          "なりえない",
+          "なりうる",
+          "なりがち"
+        ],
+        "answer_index": 3,
+        "answer_text": "なりうる",
+        "answered_sentence": "「…２…」に入る最も適当なものはどれか。=> なりうる",
+        "explanation": "「なりがち」means"
+      },
+      {
+        "number": 8,
+        "prompt": "「…３…」に入る最も適当なものはどれか。",
+        "options": [
+          "わけです",
+          "ことです",
+          "ものです",
+          "はずです"
+        ],
+        "answer_index": 1,
+        "answer_text": "わけです",
+        "answered_sentence": "「…３…」に入る最も適当なものはどれか。=> わけです",
+        "explanation": "「ことです」 is used to give a definition or conclusion about a fact or habit, matching prompts that state a defining characteristic or rule, whereas the other options express reason, natural expectation, or logical necessity."
+      },
+      {
+        "number": 9,
+        "prompt": "「…４…」に入る最も適当なものはどれか。",
+        "options": [
+          "つまり",
+          "それでは",
+          "もっとも",
+          "ところが"
+        ],
+        "answer_index": 4,
+        "answer_text": "ところが",
+        "answered_sentence": "「…４…」に入る最も適当なものはどれか。=> ところが",
+        "explanation": "「ところが」 is a contrastive conjunction used to introduce an unexpected result or fact contrary to what preceded, whereas the other options signal restatement, a change of topic, or a concession."
+      },
+      {
+        "number": 10,
+        "prompt": "「…５…」に入る最も適当なものはどれか。",
+        "options": [
+          "でもしか",
+          "しか",
+          "でも",
+          "だけ"
+        ],
+        "answer_index": 3,
+        "answer_text": "でも",
+        "answered_sentence": "「…５…」に入る最も適当なものはどれか。=> でも",
+        "explanation": "In Japanese, 'でも' with a question word like 'どこでも' means 'anywhere,' so 'どこでもいい' means 'anywhere is fine' — that's the only reading that fits the context."
+      },
+      {
+        "number": 11,
+        "prompt": "「…６…」に入る最も適当なものはどれか。",
+        "options": [
+          "でも",
+          "しか",
+          "でもしか",
+          "だけ"
+        ],
+        "answer_index": 2,
+        "answer_text": "しか",
+        "answered_sentence": "「…６…」に入る最も適当なものはどれか。=> しか",
+        "explanation": "'でもしか' combines 'でも' (even) with 'しか' (nothing but), creating a fixed expression '〜でもしかたがない' meaning 'there's no help for even ~' — 'しか' alone cannot follow 'でも' here without being part of that set phrase."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 15",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-15/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "人はトップの座につくと、　_______　独断的な判断を下しがちになる。",
+        "options": [
+          "ともあろうものが",
+          "どうにかして",
+          "どちらからともなく",
+          "ともすれば"
+        ],
+        "answer_index": 4,
+        "answer_text": "ともすれば",
+        "answered_sentence": "人はトップの座につくと、ともすれば独断的な判断を下しがちになる。",
+        "explanation": "「ともすれば」 means"
+      },
+      {
+        "number": 2,
+        "prompt": "今回のプロジェクトは絶対とはいえ　_______　、成功する確率はかなり高いと思います。",
+        "options": [
+          "ないまでも",
+          "ないことには",
+          "ないでもない",
+          "ないでは"
+        ],
+        "answer_index": 1,
+        "answer_text": "ないまでも",
+        "answered_sentence": "今回のプロジェクトは絶対とはいえないまでも、成功する確率はかなり高いと思います。",
+        "explanation": "「ないまでも」 follows a negative verb to mean"
+      },
+      {
+        "number": 3,
+        "prompt": "３割で安くしてあげるとすれば、ただ　_______　の値段になってしまう。",
+        "options": [
+          "のみならず",
+          "も同然",
+          "同じ",
+          "同時に"
+        ],
+        "answer_index": 2,
+        "answer_text": "も同然",
+        "answered_sentence": "３割で安くしてあげるとすれば、ただも同然の値段になってしまう。",
+        "explanation": "「も同然」 means"
+      },
+      {
+        "number": 4,
+        "prompt": "歯ブラシなどの非常用品はやはり　_______　ものがいい。",
+        "options": [
+          "使いつけた",
+          "使いすてた",
+          "使いはたした",
+          "使いこなした"
+        ],
+        "answer_index": 1,
+        "answer_text": "使いつけた",
+        "answered_sentence": "歯ブラシなどの非常用品はやはり使いつけたものがいい。",
+        "explanation": "「使いすてた」 means \"disposable\" (lit. \"used and thrown away\"), which makes sense for emergency supplies like toothbrushes where a fresh, single-use item is preferred — the other options describe habitual use, completion, or mastery, none of which fit the context."
+      },
+      {
+        "number": 5,
+        "prompt": "冗談にも　_______　がある。言葉に気をつけなさい。",
+        "options": [
+          "わけ",
+          "きり",
+          "むき",
+          "ほど"
+        ],
+        "answer_index": 4,
+        "answer_text": "ほど",
+        "answered_sentence": "冗談にもほどがある。言葉に気をつけなさい。",
+        "explanation": "「ほど」 here is the grammar point 「〜にもほどがある」meaning \"there is a limit to\" — the sentence says \"Even jokes have their limits; be careful with your words,\" and only 「ほど」 can express that sense of degree/limit in this fixed expression."
+      },
+      {
+        "number": 6,
+        "prompt": "今回の最優秀作品に対して、審査員たちは、「こんな瞬間を写真に収めることができたなんて、まさに奇跡　_______　」と絶賛している。",
+        "options": [
+          "とでも言えばいい",
+          "とすら言おうとしない",
+          "としか言いようがない",
+          "と言ってもしかたがない"
+        ],
+        "answer_index": 3,
+        "answer_text": "としか言いようがない",
+        "answered_sentence": "今回の最優秀作品に対して、審査員たちは、「こんな瞬間を写真に収めることができたなんて、まさに奇跡としか言いようがない」と絶賛している。",
+        "explanation": "「としか言いようがない」 (with the correct option actually being that one, not (4)) means \"there's no other way to say it but…\" — the judges are praising the photo as \"nothing short of a miracle,\" and this grammar expresses that they can only describe it that way, with no other possible words."
+      },
+      {
+        "number": 7,
+        "prompt": "土砂崩れで道がふさがれており、それ以上　_______　進めない状態だった。",
+        "options": [
+          "進めるかたわら",
+          "進めつつも",
+          "進めるがはやいか",
+          "進めようにも"
+        ],
+        "answer_index": 4,
+        "answer_text": "進めようにも",
+        "answered_sentence": "土砂崩れで道がふさがれており、それ以上進めようにも進めない状態だった。",
+        "explanation": "「進めようにも」(even trying to advance) is the only option that fits the 〜ようにも〜ない construction, expressing inability despite intention, whereas the others —"
+      },
+      {
+        "number": 8,
+        "prompt": "夫　「見て。実家から米が届いたよ。」",
+        "options": [
+          "妻　「わあ、すごい。これだけたくさんあれば、わたしたち、当分お米は　_______　ね。」",
+          "買ってきてはないんだ",
+          "買ったきりになってる",
+          "買わなくて済みそうだ"
+        ],
+        "answer_index": 3,
+        "answer_text": "買ったきりになってる",
+        "answered_sentence": "夫「見て。実家から米が届いたよ。」妻「わあ、すごい。これだけたくさんあれば、わたしたち、当分お米は買わなくて済みそうだね。」",
+        "explanation": "「買わなくて済みそうだ」(looks like we won't need to buy rice) fits the dialogue because receiving a large amount from the in-laws means the couple can avoid purchasing it, while"
+      },
+      {
+        "number": 9,
+        "prompt": "子供サッカー教室に、プロサッカー選手の上田幸太が参加した。上田選手が来ることは参加者には　_______　、突然の登場にみんな驚いていた。",
+        "options": [
+          "知られつつも",
+          "知らされておらず",
+          "知らされていないと",
+          "知られたためか"
+        ],
+        "answer_index": 2,
+        "answer_text": "知らされておらず",
+        "answered_sentence": "子供サッカー教室に、プロサッカー選手の上田幸太が参加した。上田選手が来ることは参加者には知らされておらず、突然の登場にみんな驚いていた。",
+        "explanation": "「知らされておらず」(not having been informed) correctly sets up the cause-effect relationship — because the participants hadn't been told, their surprise is explained — whereas"
+      },
+      {
+        "number": 10,
+        "prompt": "暦の上では春になった　_______　、まだまだ肌寒い日が続いている。",
+        "options": [
+          "とはいえ",
+          "からといって",
+          "以上",
+          "だけあって"
+        ],
+        "answer_index": 1,
+        "answer_text": "とはいえ",
+        "answered_sentence": "暦の上では春になったとはいえ、まだまだ肌寒い日が続いている。",
+        "explanation": "「とはいえ」 means 'even though' or 'although', correctly pairing the contradictory statements that spring has arrived on the calendar yet cold days persist — only this concessive conjunction fits the contrast without implying a logical cause-and-effect or justification."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 16",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-16/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "来年２月のコンサート　_______　　_______　…★… _______　となるCDを発売した。",
+        "options": [
+          "をもって",
+          "６枚目にして最後",
+          "が",
+          "解散するバンド"
+        ],
+        "answer_index": 3,
+        "answer_text": "が",
+        "answered_sentence": "来年２月のコンサートをもって解散するバンドが６枚目にして最後となるCDを発売した。",
+        "explanation": "「をもって」means 'with/at the time of', marking the concert as the endpoint; the filled-in order produces 'The band that disbands with the February concert next year released a CD that is their sixth and final.'"
+      },
+      {
+        "number": 2,
+        "prompt": "期待は　_______　　_______　…★… _______　を禁じえなかった。",
+        "options": [
+          "さすがに",
+          "喜び",
+          "受賞の知らせには",
+          "しなかったけど"
+        ],
+        "answer_index": 1,
+        "answer_text": "さすがに",
+        "answered_sentence": "期待はしなかったけど受賞の知らせにはさすがに喜びを禁じえなかった。",
+        "explanation": "「喜びを禁じえなかった」is a fixed expression meaning 'could not suppress joy'; the order yields 'Having had no expectations, I could not help but feel joy at the news of winning the award.'"
+      },
+      {
+        "number": 3,
+        "prompt": "この仕事をすべて　_______　　_______　…★… _______　無理だ。",
+        "options": [
+          "一人でやる",
+          "新入社員の田中さん",
+          "には",
+          "のは"
+        ],
+        "answer_index": 2,
+        "answer_text": "新入社員の田中さん",
+        "answered_sentence": "この仕事をすべて一人でやるのは新入社員の田中さんには無理だ。",
+        "explanation": "「には」marks the person for whom something is impossible; the completed sentence reads 'It's impossible for Tanaka, a new employee, to do all this work alone.'"
+      },
+      {
+        "number": 4,
+        "prompt": "現代の映画音楽界で、作品の世界観に合わせて _______ _______ …★… _______ だろう。",
+        "options": [
+          "彼女以上に優れている",
+          "才能にかけては",
+          "作曲家はまずいない",
+          "音楽を作る"
+        ],
+        "answer_index": 1,
+        "answer_text": "彼女以上に優れている",
+        "answered_sentence": "現代の映画音楽界で、作品の世界観に合わせて音楽を作る才能にかけては彼女以上に優れている作曲家はまずいないだろう。",
+        "explanation": "「〜にかけては」 means 'when it comes to (something)', and the sentence as a whole means 'When it comes to making music that fits the world of the film, there is probably no composer who surpasses her' — the other options cannot form the required parallel structure with 「〜にかけては」."
+      },
+      {
+        "number": 5,
+        "prompt": "賭け事に一度　_______　　_______　…★… _______　人も多い。",
+        "options": [
+          "ずるずると",
+          "が最後",
+          "手を出した",
+          "抜けられなくなる"
+        ],
+        "answer_index": 1,
+        "answer_text": "ずるずると",
+        "answered_sentence": "賭け事に一度手を出したが最後ずるずると手を出した人も多い。",
+        "explanation": "「たが最後」 is a fixed grammar pattern meaning 'once something happens, then inevitably …', so 「一度手を出したが最後」 means 'once you get involved, you can't escape' — the other options wouldn't express this inevitability."
+      },
+      {
+        "number": 6,
+        "prompt": "「…１…」に入る最も適当なものはどれか。",
+        "options": [
+          "その前に",
+          "そんな日には",
+          "あのあと",
+          "あるとき"
+        ],
+        "answer_index": 2,
+        "answer_text": "そんな日には",
+        "answered_sentence": "「…１…」に入る最も適当なものはどれか。=> そんな日には",
+        "explanation": "「あのあと」 ('after that') connects naturally to a following event in the text, referring back to a previously mentioned time — the other options either introduce a new time or are not cohesive with the preceding context."
+      },
+      {
+        "number": 7,
+        "prompt": "「…２…」に入る最も適当なものはどれか。",
+        "options": [
+          "嬉しくなった",
+          "嬉しそうにこういった",
+          "嬉しくなるものだ",
+          "嬉しそうにこういうものだ"
+        ],
+        "answer_index": 2,
+        "answer_text": "嬉しそうにこういった",
+        "answered_sentence": "「…２…」に入る最も適当なものはどれか。=> 嬉しそうにこういった",
+        "explanation": "「嬉しくなるものだ」 expresses a natural emotional response (one can't help but feel happy), fitting the pattern of describing how one naturally feels in a given situation; 「嬉しそうにこういった」 would describe past speech, not a general truth or emotional tendency."
+      },
+      {
+        "number": 8,
+        "prompt": "「…３…」に入る最も適当なものはどれか。",
+        "options": [
+          "決して悪くなかったためだ",
+          "果たしてよかったのだろうか",
+          "全然悪くなかったのだ",
+          "まだよかったのではないか"
+        ],
+        "answer_index": 3,
+        "answer_text": "全然悪くなかったのだ",
+        "answered_sentence": "「…３…」に入る最も適当なものはどれか。=> 全然悪くなかったのだ",
+        "explanation": "「まだよかったのではないか」 gives the nuance 'maybe it was still all right after all,' which fits a retrospective reflection that things were not as bad as feared."
+      },
+      {
+        "number": 9,
+        "prompt": "「…４…」に入る最も適当なものはどれか。",
+        "options": [
+          "彼",
+          "子ども",
+          "大人",
+          "自分"
+        ],
+        "answer_index": 1,
+        "answer_text": "彼",
+        "answered_sentence": "「…４…」に入る最も適当なものはどれか。=> 彼",
+        "explanation": "Only 「子ども」 can be the subject of the verb 「言い出す」 in the sense of children speaking out or saying something on a whim, creating a logical and natural sentence."
+      },
+      {
+        "number": 10,
+        "prompt": "「…５…」に入る最も適当なものはどれか。",
+        "options": [
+          "出会いたくてたまらなかった",
+          "出会えたと思った",
+          "出会ってもよかった",
+          "出会えたおかげかもしれなかった"
+        ],
+        "answer_index": 2,
+        "answer_text": "出会えたと思った",
+        "answered_sentence": "「…５…」に入る最も適当なものはどれか。=> 出会えたと思った",
+        "explanation": "「出会ってもよかった」 expresses that it would have been okay to meet (but didn't), which is the odd one out and thus the intended wrong answer for the 「…５…」 slot; the actual completion should be 「出会えたと思った」(thought we would meet), matching the narrative of expectation."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 17",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-17/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "市当局の柔軟な姿勢　_______　、窓口の高圧的な対応は市民の反発を招いている。",
+        "options": [
+          "ぬきには",
+          "といったら",
+          "にひきかえ",
+          "はもとより"
+        ],
+        "answer_index": 3,
+        "answer_text": "にひきかえ",
+        "answered_sentence": "市当局の柔軟な姿勢にひきかえ、窓口の高圧的な対応は市民の反発を招いている。",
+        "explanation": "「にひきかえ」 means 'in contrast to' and is the only option that sets up the intended contrast between the municipal government's flexible attitude and the counter staff's high-handed response."
+      },
+      {
+        "number": 2,
+        "prompt": "せめて１日くれる　_______　、１時間だけとはひどすぎる。",
+        "options": [
+          "ならまだしも",
+          "ともなると",
+          "にあって",
+          "ほどでなくても"
+        ],
+        "answer_index": 1,
+        "answer_text": "ならまだしも",
+        "answered_sentence": "せめて１日くれるならまだしも、１時間だけとはひどすぎる。",
+        "explanation": "「ならまだしも」 means 'if it were (at least) ... then it would be acceptable, but ...' and correctly expresses that getting a whole day would be tolerable, yet even one hour is too harsh."
+      },
+      {
+        "number": 3,
+        "prompt": "みんなの前でミスを指摘して恥をかかせる　_______　。",
+        "options": [
+          "にかぎったことではない",
+          "にかかせない",
+          "なりなんなりだ",
+          "なんてあんまりだ"
+        ],
+        "answer_index": 4,
+        "answer_text": "なんてあんまりだ",
+        "answered_sentence": "みんなの前でミスを指摘して恥をかかせるなんてあんまりだ。",
+        "explanation": "「なんてあんまりだ」 uses the quotative/emphatic particle なんて with あんまりだ ('that's too much') to express strong disapproval of publicly pointing out someone's mistake and embarrassing them."
+      },
+      {
+        "number": 4,
+        "prompt": "普段はLサイズを着ているのに、間違えてMサイズのTシャツを買ってしまった。でも、着てみたら、少しきついが、Mサイズも　_______　。",
+        "options": [
+          "着られなくはなかった",
+          "着られもしなかった",
+          "着られてはならなかった",
+          "着るに着られなかった"
+        ],
+        "answer_index": 1,
+        "answer_text": "着られなくはなかった",
+        "answered_sentence": "普段はLサイズを着ているのに、間違えてMサイズのTシャツを買ってしまった。でも、着てみたら、少しきついが、Mサイズも着られなくはなかった。",
+        "explanation": "「着られなくはなかった」 uses the negative potential form with contrastive 「は」 to mean"
+      },
+      {
+        "number": 5,
+        "prompt": "トイレは禁煙です。センサーが感知　_______　警報ベルが鳴りますので、ご注意ください。「火のない所に煙は立たぬ」と言いますからね。",
+        "options": [
+          "しないかぎり",
+          "するように",
+          "すると",
+          "しては"
+        ],
+        "answer_index": 3,
+        "answer_text": "すると",
+        "answered_sentence": "トイレは禁煙です。センサーが感知すると警報ベルが鳴りますので、ご注意ください。「火のない所に煙は立たぬ」と言いますからね。",
+        "explanation": "「すると」 means"
+      },
+      {
+        "number": 6,
+        "prompt": "立て礼に雑誌を　_______　と書いてある。",
+        "options": [
+          "立ち読みするべし",
+          "立ち読みするべからず",
+          "立ち読みしかねる",
+          "立ち読みしかねない"
+        ],
+        "answer_index": 2,
+        "answer_text": "立ち読みするべからず",
+        "answered_sentence": "立て礼に雑誌を立ち読みするべからずと書いてある。",
+        "explanation": "「立ち読みするべからず」 expresses a prohibition ("
+      },
+      {
+        "number": 7,
+        "prompt": "彼は眠るが　_______　やすらかに、最期の時を迎えた。",
+        "options": [
+          "ごとく",
+          "なりに",
+          "らしく",
+          "じみて"
+        ],
+        "answer_index": 1,
+        "answer_text": "ごとく",
+        "answered_sentence": "彼は眠るがごとくやすらかに、最期の時を迎えた。",
+        "explanation": "「がごとく」 is a classical expression meaning 'as if/just like', so 「眠るがごとくやすらかに」 ('as peacefully as if sleeping') is the only option that correctly modifies the adverbial phrase; 「なりに」 means 'in one's own way', which doesn't fit here."
+      },
+      {
+        "number": 8,
+        "prompt": "この重要な仕事を任せられるのは彼女　_______　ほかにいるだろうか。",
+        "options": [
+          "において",
+          "をもって",
+          "にかけて",
+          "をおいて"
+        ],
+        "answer_index": 4,
+        "answer_text": "をおいて",
+        "answered_sentence": "この重要な仕事を任せられるのは彼女をおいてほかにいるだろうか。",
+        "explanation": "「をおいて」 forms the set phrase 「〜をおいてほかにいない」 meaning 'there is no one other than ~', matching the structure of 'except for her, is there anyone else?'; options like 「において」 ('in/at') make no sense with the comparison."
+      },
+      {
+        "number": 9,
+        "prompt": "日本の経済の一日も早い回復を祈って　_______　。",
+        "options": [
+          "かたくない",
+          "たえない",
+          "やまない",
+          "おかない"
+        ],
+        "answer_index": 3,
+        "answer_text": "やまない",
+        "answered_sentence": "日本の経済の一日も早い回復を祈ってやまない。",
+        "explanation": "「祈ってやまない」 is a fixed expression meaning 'to continue to pray earnestly without end', fitting the intent of fervently hoping for recovery; 「やまない」 means 'to never cease', while the other options don't collocate with the theme of prayer."
+      },
+      {
+        "number": 10,
+        "prompt": "苦労する　_______　なしに成功する人もいれば、どんなに苦労しても失敗するもいる。",
+        "options": [
+          "の",
+          "こと",
+          "もの",
+          "ところ"
+        ],
+        "answer_index": 2,
+        "answer_text": "こと",
+        "answered_sentence": "苦労することなしに成功する人もいれば、どんなに苦労しても失敗するもいる。",
+        "explanation": "「もの」in the pattern 「〜ことなしに」is a fixed expression meaning 'without doing ~', and it requires a preceding verb in attributive form, while the other options do not create this grammatical structure."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 18",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-18/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "彼はこの映画で、純粋で不器用な　_______　　_______　…★… _______　までに演じきった。",
+        "options": [
+          "その確かな",
+          "主人公を",
+          "見事な",
+          "表現力で"
+        ],
+        "answer_index": 4,
+        "answer_text": "表現力で",
+        "answered_sentence": "彼はこの映画で、純粋で不器用な主人公をその確かな表現力で見事なまでに演じきった。",
+        "explanation": "「その確かな表現力で」 uses “で” as the instrumental particle (“with/through”), linking it to “演じきった” (performed fully) — the other options cannot form a natural adverbial-modifier chain before “見事なまでに” (“to a remarkable degree”)."
+      },
+      {
+        "number": 2,
+        "prompt": "うちの娘は、なぜあんなに買い物に時間がかかるのか。ブラウス　_______　　_______　…★… _______　、全くあきれてしまった。",
+        "options": [
+          "3時間もかかる",
+          "だけのことなのに",
+          "１枚選ぶ",
+          "とは"
+        ],
+        "answer_index": 1,
+        "answer_text": "3時間もかかる",
+        "answered_sentence": "うちの娘は、なぜあんなに買い物に時間がかかるのか。ブラウス１枚選ぶだけのことなのに3時間もかかるとは、全くあきれてしまった。",
+        "explanation": "「だけのことなのに」 means “even though it’s only a matter of” and is the only option that can logically follow “ブラウス１枚選ぶ” to contrast the trivial action with the exorbitant time it takes."
+      },
+      {
+        "number": 3,
+        "prompt": "シーズンともなると、結婚式場では何組ものカップルが挙式するため、前の式が　…★…　_______　_______　 _______　次のカップルが待ち構えている。",
+        "options": [
+          "もう",
+          "終わったか",
+          "終わらないか",
+          "のうちに"
+        ],
+        "answer_index": 2,
+        "answer_text": "終わったか",
+        "answered_sentence": "シーズンともなると、結婚式場では何組ものカップルが挙式するため、前の式が終わったか終わらないかのうちにもう次のカップルが待ち構えている。",
+        "explanation": "「終わったか終わらないかのうちに」 is a fixed N1 grammar pattern, meaning “no sooner had it finished than…”, and “かのうちに” requires a verb in the past/non-past pair (Vたか Vないかのうちに)."
+      },
+      {
+        "number": 4,
+        "prompt": "彼の　_______　　_______　…★… _______　しかたがない。",
+        "options": [
+          "職務怠慢と",
+          "仕事ぶりでは",
+          "いわれても",
+          "あんな"
+        ],
+        "answer_index": 1,
+        "answer_text": "職務怠慢と",
+        "answered_sentence": "彼のあんな仕事ぶりでは職務怠慢といわれてもしかたがない。",
+        "explanation": "「あんな仕事ぶりでは 職務怠慢と いわれても しかたがない」: the phrase “～では” sets a conditional premise, so “彼のあんな仕事ぶりでは (with his work style like that)” naturally leads to the judgment “職務怠慢といわれてもしかたがない (it can’t be helped even if he’s called negligent).”"
+      },
+      {
+        "number": 5,
+        "prompt": "最近、運動不足だ。何しろ外出　_______　　_______　…★… _______　、あとは朝から晩まで家にいるという生活なのだ。",
+        "options": [
+          "もので",
+          "近所のスーパーに行く",
+          "程度の",
+          "といったら"
+        ],
+        "answer_index": 3,
+        "answer_text": "程度の",
+        "answered_sentence": "最近、運動不足だ。何しろ外出といったら近所のスーパーに行く程度のもので、あとは朝から晩まで家にいるという生活なのだ。",
+        "explanation": "「外出といったら 近所のスーパーに行く 程度の もので」: “～といったら” introduces a topic and is followed by a limiting expression like “程度のもの”, meaning “when it comes to going out, it’s only to the extent of going to the neighborhood supermarket.”"
+      },
+      {
+        "number": 6,
+        "prompt": "「…１…」に入る最も適当なものはどれか。",
+        "options": [
+          "に伴う",
+          "にたる",
+          "にたえる",
+          "じみる"
+        ],
+        "answer_index": 1,
+        "answer_text": "に伴う",
+        "answered_sentence": "「…１…」に入る最も適当なものはどれか。=> に伴う",
+        "explanation": "「にたる」 means “worthy/adequate to serve as…” and is the only choice that fits the pattern “～にたる作品 (a work worthy of being called a masterpiece).”"
+      },
+      {
+        "number": 7,
+        "prompt": "「…２…」に入る最も適当なものはどれか。",
+        "options": [
+          "に達する",
+          "におよばず",
+          "にとどまらず",
+          "にとどまる"
+        ],
+        "answer_index": 4,
+        "answer_text": "にとどまる",
+        "answered_sentence": "「…２…」に入る最も適当なものはどれか。=> にとどまる",
+        "explanation": "「にとどまる」 creates the pattern 「に～にとどまる」 meaning \"to be limited to [X]\" or \"to stop at [X]\", which is the only option that fits the context of the sentence (the speaker's request is/was limited to just that one thing)."
+      },
+      {
+        "number": 8,
+        "prompt": "「…３…」に入る最も適当なものはどれか。",
+        "options": [
+          "により",
+          "にひきかえ",
+          "たりとも",
+          "のみならず"
+        ],
+        "answer_index": 1,
+        "answer_text": "により",
+        "answered_sentence": "「…３…」に入る最も適当なものはどれか。=> により",
+        "explanation": "「にひきかえ」 means \"in contrast to\", and it is the only choice that sets up a contrast between the two clauses (one person being withdrawn vs. the other being cheerful); 「により」 means \"by means of\" and does not express opposition."
+      },
+      {
+        "number": 9,
+        "prompt": "「…４…」に入る最も適当なものはどれか。",
+        "options": [
+          "きらいがある",
+          "といったところだ",
+          "とされる",
+          "始末だ"
+        ],
+        "answer_index": 3,
+        "answer_text": "とされる",
+        "answered_sentence": "「…４…」に入る最も適当なものはどれか。=> とされる",
+        "explanation": "「始末だ」 (shimatsu da) appears at the end of a sentence to express \"things have come to such a regrettable state that…\" and is the only option that follows a final verb in plain form with the connotation of a negative outcome; 「とされる」 would need a noun or a phrase it can be attributed to, which is missing here."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 19",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-19/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "彼女は海外留学のつらい経験を並べあげ、あげくの果てには学業をあきらめて帰国したいと言って泣き出す　_______　。",
+        "options": [
+          "いかんだった",
+          "しだいだった",
+          "しまつだった",
+          "かぎりだった"
+        ],
+        "answer_index": 3,
+        "answer_text": "しまつだった",
+        "answered_sentence": "彼女は海外留学のつらい経験を並べあげ、あげくの果てには学業をあきらめて帰国したいと言って泣き出すしまつだった。",
+        "explanation": "「しまつだった」 means 'ended up in a sorry state where ...' and fits the pattern of listing hardships and then breaking down in tears — 「あげくの果てに〜しまつだった」 is a set expression for such a negative outcome."
+      },
+      {
+        "number": 2,
+        "prompt": "わたしが小学校に　_______　のころ、父とどこか大きな川へ釣りに行った記憶がある。",
+        "options": [
+          "入ろうが入るまいが",
+          "入るか入らないか",
+          "入っていてもいなくても",
+          "入るにしても入らないにしても"
+        ],
+        "answer_index": 2,
+        "answer_text": "入るか入らないか",
+        "answered_sentence": "わたしが小学校に入るか入らないかのころ、父とどこか大きな川へ釣りに行った記憶がある。",
+        "explanation": "「〜か〜ないかのうちに」 or here 「〜か〜ないかのころ」 means 'at the point when someone has just about done something or not', i.e., around the time of entering elementary school — the only option with the structure 'dictionary form vs negative form' is (2)."
+      },
+      {
+        "number": 3,
+        "prompt": "寮はうるさくて勉強できないと思いひとり暮らしを始めたが、勉強する　_______　、さびしくて電話ばかりかけている。",
+        "options": [
+          "どころか",
+          "からして",
+          "ばかりか",
+          "ゆえに"
+        ],
+        "answer_index": 1,
+        "answer_text": "どころか",
+        "answered_sentence": "寮はうるさくて勉強できないと思いひとり暮らしを始めたが、勉強するどころか、さびしくて電話ばかりかけている。",
+        "explanation": "「どころか」 means 'far from (studying), actually the opposite' and is used when the expected situation doesn't happen and a contrary one does — here, instead of studying, he spends all his time on the phone from loneliness."
+      },
+      {
+        "number": 4,
+        "prompt": "創業３３年、研究に研究を　_______　、ついに行き着いた味！！自信を持ってお勧めする一品。",
+        "options": [
+          "つらね",
+          "かさね",
+          "つないで",
+          "すすいで"
+        ],
+        "answer_index": 2,
+        "answer_text": "かさね",
+        "answered_sentence": "創業３３年、研究に研究をかさね、ついに行き着いた味！！自信を持ってお勧めする一品。",
+        "explanation": "「研究に研究を重ねる」 is the set phrase 'stack research upon research' (intensifying repeated effort), so (2) かさね is the only choice that fits this pattern — つらね means 'line up', つないで means 'connect', and すすいで means 'rinse'."
+      },
+      {
+        "number": 5,
+        "prompt": "部下　「課長、W社から納期を一週間早めてほしいという連絡があったんですが。」",
+        "options": [
+          "課長　「え、納期の日程を設定したのはあっちだろう。　_______　、納期まで2週間の今になって、早めろと言うなんて勝手過ぎる。どういうことなんだ。」",
+          "実は",
+          "というのは",
+          "ただし"
+        ],
+        "answer_index": 4,
+        "answer_text": "ただし",
+        "answered_sentence": "部下「課長、W社から納期を一週間早めてほしいという連絡があったんですが。」課長「え、納期の日程を設定したのはあっちだろう。それを、納期まで2週間の今になって、早めろと言うなんて勝手過ぎる。どういうことなんだ。」",
+        "explanation": "「それを」 is used here to pick up the previous statement and express strong disagreement or complaint ('and yet, despite that'), making it the only option that works in this angry retort — 「実は」('actually'), 「というのは」('that is to say'), and 「ただし」('however') all fail to convey the speaker's indignation."
+      },
+      {
+        "number": 6,
+        "prompt": "X交通のバス路線が一部廃止される問題で、会社側から地域住民に対し、路線を廃止する　_______　　_______　…★… _______　について、説明がなされた。",
+        "options": [
+          "及び",
+          "に至った",
+          "経緯",
+          "今後の対応"
+        ],
+        "answer_index": 1,
+        "answer_text": "及び",
+        "answered_sentence": "X交通のバス路線が一部廃止される問題で、会社側から地域住民に対し、路線を廃止するに至った経緯及び今後の対応について、説明がなされた。",
+        "explanation": "「に至った」 forms the relative clause 'the circumstances that led to the route abolition', and the correct order is 路線を廃止するに至った経緯及び今後の対応について ('regarding the circumstances that led to the abolition and future measures') — the ★ goes between 廃止する and 経緯."
+      },
+      {
+        "number": 7,
+        "prompt": "景気は回復に　_______　　_______　…★… _______　とのことだ。",
+        "options": [
+          "ように見えたが",
+          "続く",
+          "厳しい状況が",
+          "向かっている"
+        ],
+        "answer_index": 3,
+        "answer_text": "厳しい状況が",
+        "answered_sentence": "景気は回復に向かっているように見えたが厳しい状況が続くとのことだ。",
+        "explanation": "「向かっている」fits because the phrase「～に向かっている」means “is heading toward,” and the sentence needs a verb to complete「回復に向かっているように見えたが」(“it seemed to be heading toward recovery, but...”)."
+      },
+      {
+        "number": 8,
+        "prompt": "彼らは　_______　　_______　…★… _______　前に進んでいる。",
+        "options": [
+          "困難",
+          "いかなる",
+          "ひたすら",
+          "をものともせずに"
+        ],
+        "answer_index": 4,
+        "answer_text": "をものともせずに",
+        "answered_sentence": "彼らはいかなる困難をものともせずにひたすら前に進んでいる。",
+        "explanation": "「をものともせずに」is a set phrase meaning “without being daunted by,” correctly linking「いかなる困難」(any hardship) to the main verb「前に進んでいる」(“they keep moving forward”)."
+      },
+      {
+        "number": 9,
+        "prompt": "たんぱく質は体の組織を作る重要な成分ですが、多くとった　_______　　_______　…★… _______　ものでもなく、とりすぎは逆に健康に悪影響を及ぼすことがあります。",
+        "options": [
+          "より丈夫になる",
+          "かというと",
+          "からといって",
+          "そういう"
+        ],
+        "answer_index": 2,
+        "answer_text": "かというと",
+        "answered_sentence": "たんぱく質は体の組織を作る重要な成分ですが、多くとったからといってより丈夫になるかというとそういうものでもなく、とりすぎは逆に健康に悪影響を及ぼすことがあります。",
+        "explanation": "「からといって」expresses “just because…doesn’t mean,” creating the contrast between the premise (taking lots of protein) and the negation (“it doesn’t mean you’ll get stronger”)."
+      },
+      {
+        "number": 10,
+        "prompt": "家族みんなが　_______　　_______　…★… _______　幸せだと思う。",
+        "options": [
+          "それで",
+          "できれば",
+          "一緒に暮らす",
+          "ことさえ"
+        ],
+        "answer_index": 2,
+        "answer_text": "できれば",
+        "answered_sentence": "家族みんなが一緒に暮らすことさえできればそれで幸せだと思う。",
+        "explanation": "「さえ〜ば」 is the conditional structure meaning 'if only', so the core clause is 「一緒に暮らすことさえできれば」 ('if only we can live together'), and the final arrangement places 「ことさえ」 before 「できれば」 to complete the pattern, with 「それで」 serving as the concluding particle meaning 'with that'."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 20",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-20/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "_______　お前の勝手だけど、今日は割り勘だから勘定はきっちり払ってもらうぞ。",
+        "options": [
+          "食べられるか食べられないか",
+          "食べつ食べられつ",
+          "食べるか食べまいか",
+          "食べようと食べまいと"
+        ],
+        "answer_index": 4,
+        "answer_text": "食べようと食べまいと",
+        "answered_sentence": "食べようと食べまいとお前の勝手だけど、今日は割り勘だから勘定はきっちり払ってもらうぞ。",
+        "explanation": "「〜ようと〜まいと」is a fixed pattern meaning 'whether someone does something or not', showing that the following statement holds regardless of the choice — option (4) is the only one that pairs volitional and negative volitional forms to express this 'irrespective of' meaning."
+      },
+      {
+        "number": 2,
+        "prompt": "資金調達がうまくいかず、プロジェクトは中止　_______　。",
+        "options": [
+          "を余儀なくさせた",
+          "を余儀なくされた",
+          "にほかならない",
+          "にこしたことはない"
+        ],
+        "answer_index": 2,
+        "answer_text": "を余儀なくされた",
+        "answered_sentence": "資金調達がうまくいかず、プロジェクトは中止を余儀なくされた。",
+        "explanation": "「を余儀なくされた」is the passive form of the set phrase meaning 'was forced into', correctly used here because the project (the subject) was compelled to be discontinued by circumstances — option (2) is the only passive form that matches the suffering of the project."
+      },
+      {
+        "number": 3,
+        "prompt": "最先端の実験設備を持ったABC研究所の研究施設は、日本一　_______　だろう。",
+        "options": [
+          "の疑いがある",
+          "を余儀なくさせる",
+          "よりほかはない",
+          "といっても過言ではない"
+        ],
+        "answer_index": 4,
+        "answer_text": "といっても過言ではない",
+        "answered_sentence": "最先端の実験設備を持ったABC研究所の研究施設は、日本一といっても過言ではないだろう。",
+        "explanation": "「といっても過言ではない」with the 〜ない negative ending of 過言 (かごん, 'exaggeration') fits the sentence's meaning as 'it is no exaggeration to say', making sense with the strong claim that the facility is the best in Japan — option (4) is the only one that completes a declarative judgment without requiring a negative auxiliary."
+      },
+      {
+        "number": 4,
+        "prompt": "水泳を　_______　、冬でも風を引かなくなった。",
+        "options": [
+          "習い始めないにしろ",
+          "習い始めてからというもの",
+          "習い始めただけあって",
+          "習い始めてからでなければ"
+        ],
+        "answer_index": 3,
+        "answer_text": "習い始めただけあって",
+        "answered_sentence": "水泳を習い始めただけあって、冬でも風を引かなくなった。",
+        "explanation": "「〜ただけあって」 means 'as one would expect from having done X,' correctly linking the fact that she started swimming to not catching colds, while the other options express conditions, starting points, or reasons that don't fit this cause-effect relationship."
+      },
+      {
+        "number": 5,
+        "prompt": "主演映画のセット　_______　、彼女はコマーシャル、ドラマ、ミュージカルなど様々な分野で活動の場を広げている。",
+        "options": [
+          "をかわきりに",
+          "をはじめとする",
+          "を中心にして",
+          "をかぎりに"
+        ],
+        "answer_index": 1,
+        "answer_text": "をかわきりに",
+        "answered_sentence": "主演映画のセットをかわきりに、彼女はコマーシャル、ドラマ、ミュージカルなど様々な分野で活動の場を広げている。",
+        "explanation": "「〜をかわきりに(して)」 means 'starting with (as a first step),' which fits the context of her expanding activities from the movie set to various fields; 「〜をはじめとする」 means 'starting with (as a representative example),' and the other options don't convey the sequential expansion indicated here."
+      },
+      {
+        "number": 6,
+        "prompt": "「…１…」に入る最も適当なものはどれか。",
+        "options": [
+          "受けないんだって",
+          "受けるんだって",
+          "受けないでもないのね",
+          "受けただけましだね"
+        ],
+        "answer_index": 2,
+        "answer_text": "受けるんだって",
+        "answered_sentence": "「…１…」に入る最も適当なものはどれか。=> 受けるんだって",
+        "explanation": "「受けないでもないのね」 means 'so you don't NOT take the exam, huh' (i.e., 'so you might actually take it'), which matches the dialogue's surprised reaction to the statement about possibly taking the exam; the other options either assert refusal, flatly confirm, or compare unfavorably."
+      },
+      {
+        "number": 7,
+        "prompt": "「…２…」に入る最も適当なものはどれか。",
+        "options": [
+          "諦めてたまるものか",
+          "諦めるまでのことだ",
+          "諦めずにはおかない",
+          "諦めようとしない"
+        ],
+        "answer_index": 2,
+        "answer_text": "諦めるまでのことだ",
+        "answered_sentence": "「…２…」に入る最も適当なものはどれか。=> 諦めるまでのことだ",
+        "explanation": "「諦めずにはおかない」 means \"will not give up without doing something\" or \"cannot but give up,\" fitting the context of determination or inevitability, whereas the other options do not match the required nuance."
+      },
+      {
+        "number": 8,
+        "prompt": "「…３…」に入る最も適当なものはどれか。",
+        "options": [
+          "に決まっている",
+          "にかたくない",
+          "ことはないよ",
+          "のも無理もない"
+        ],
+        "answer_index": 3,
+        "answer_text": "ことはないよ",
+        "answered_sentence": "「…３…」に入る最も適当なものはどれか。=> ことはないよ",
+        "explanation": "「のも無理もない」 means \"it's no wonder that...\" or \"it's not unreasonable that,\" which fits a context expressing that something is understandable or inevitable, while the other options imply certainty or lack of necessity."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 21",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-21/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "書道の大家でいらっしゃる山田先生に丁重な　_______　ごあいさつをいただき、大変恐縮しております。",
+        "options": [
+          "極まりない",
+          "ごとき",
+          "ことこのうえない",
+          "こと請け合い"
+        ],
+        "answer_index": 3,
+        "answer_text": "ことこのうえない",
+        "answered_sentence": null,
+        "explanation": "「こと請け合いだ」 is a set phrase meaning \"I guarantee it\" or \"it is certain,\" and the prompt needs a noun that completes the pattern 「〜なごあいさつ」, so 「こと請け合い」 is the only option that can be followed directly by 「な」 — 「極まりない」 is a 〜ない adjective ending, 「ごとき」 is a na-adjective meaning \"such as,\" and 「ことこのうえない」 is not a grammatical phrase."
+      },
+      {
+        "number": 2,
+        "prompt": "試合後、木村選手は、「絶対に勝ちたい相手だっただけに、大事な場面でのミスが　_______　」とコメントした。",
+        "options": [
+          "悔やまないようにする",
+          "悔やんでばかりだ",
+          "悔やむべきではない",
+          "悔やまれてならない"
+        ],
+        "answer_index": 4,
+        "answer_text": "悔やまれてならない",
+        "answered_sentence": null,
+        "explanation": "「悔やまれてならない」 uses the passive-te form of 「悔やむ」 plus 「ならない」 to express an uncontrollable, persistent feeling — \"I can't help but regret it\" — and it is the only option that fits the grammar of the quote after 「ミスが」 (a subject marked by が must be followed by the verb's passive or spontaneous form, not the active forms in the other options)."
+      },
+      {
+        "number": 3,
+        "prompt": "浮気は夫または妻としてある　_______　ことだ。",
+        "options": [
+          "まじき",
+          "はず",
+          "わけ",
+          "極める"
+        ],
+        "answer_index": 1,
+        "answer_text": "まじき",
+        "answered_sentence": null,
+        "explanation": "「はず」 indicates that something is expected or supposed to be the case based on logic or social role, so 「あるはずのことだ」 means \"something that should not exist as a husband/wife\" — the other options are ungrammatical because 「まじき」 requires a verb in attributive form (e.g., 「あるまじき」 would be correct), 「わけ」 expresses reason rather than expected norm, and 「極める」 is transitive and needs an object."
+      },
+      {
+        "number": 4,
+        "prompt": "バーゲンセールでただ安いからといってすぐ飛びつくと、　_______　。",
+        "options": [
+          "かなり得をするだろう",
+          "かならずしも損ではない",
+          "損にも得にもならないものだ",
+          "かえって損をすることもある"
+        ],
+        "answer_index": 4,
+        "answer_text": "かえって損をすることもある",
+        "answered_sentence": null,
+        "explanation": "「からといって」 means 'just because…' and often pairs with a negative or unforeseen outcome, so 「かえって損をすることもある」 ('sometimes you end up losing instead') is the logical consequence of blindly jumping at cheap bargains."
+      },
+      {
+        "number": 5,
+        "prompt": "応援してくれる母の気持ちを考えると、やめるとは、　_______　言えない。",
+        "options": [
+          "言おうが",
+          "言うに",
+          "言おうと",
+          "言うや"
+        ],
+        "answer_index": 2,
+        "answer_text": "言うに",
+        "answered_sentence": null,
+        "explanation": "「やめるということは言えない」needs a fixed pattern 「〜う（よう）とする」or here its variant 「言おうとしない」, so the correct choice is the volitional form 「言おうと」— the other options do not form a grammatically correct sequence with the subsequent 「言えない」."
+      },
+      {
+        "number": 6,
+        "prompt": "営業部にアシスタント一人を増やす程度のことだから、全員の意見を　_______　と思う。",
+        "options": [
+          "聞きたくてもきけない",
+          "聞かなくてもさしつかえない",
+          "聞かなくてははじまらない",
+          "聞かないわけにはいかない"
+        ],
+        "answer_index": 2,
+        "answer_text": "聞かなくてもさしつかえない",
+        "answered_sentence": null,
+        "explanation": "「〜なくては始まらない」 means 'it won't get anywhere unless…', expressing that a certain prerequisite action is essential to move forward, so with a minor addition like one assistant, 'unless we hear everyone's opinions, it won't get started / won't be any good' fits perfectly."
+      },
+      {
+        "number": 7,
+        "prompt": "戦争の悲惨な写真を見ると、　_______　。",
+        "options": [
+          "怒らずにはおかない",
+          "怒りでなくてなんだろう",
+          "怒りを禁じえない",
+          "怒るにほかならない"
+        ],
+        "answer_index": 3,
+        "answer_text": "怒りを禁じえない",
+        "answered_sentence": null,
+        "explanation": "怒るにほかならない means 'nothing but anger' and is the only option that fits the pattern: a dictionary-form verb + にほかならない to express that the emotion is unavoidable, unlike the other options which would require different grammar structures."
+      },
+      {
+        "number": 8,
+        "prompt": "親の希望もさること　_______　、自分もこの大学に入りたかった。",
+        "options": [
+          "であり",
+          "でばく",
+          "とともに",
+          "ながら"
+        ],
+        "answer_index": 4,
+        "answer_text": "ながら",
+        "answered_sentence": null,
+        "explanation": "ながら here pairs with もさること to form the set phrase もさることながら, meaning 'not only that, but also,' and the other particles cannot complete this fixed expression."
+      },
+      {
+        "number": 9,
+        "prompt": "十年ぶりに復帰した人気歌手のコンサート　_______　、席は早々と埋まっていった。",
+        "options": [
+          "とばかりに",
+          "ごとく",
+          "とあって",
+          "とすると"
+        ],
+        "answer_index": 3,
+        "answer_text": "とあって",
+        "answered_sentence": null,
+        "explanation": "とあって means 'because it is' and correctly links the reason (a popular singer's concert) to the resulting situation (seats filling quickly), while とばかりに requires a quote, ごとく needs a noun or verb, and とすると means 'if so'."
+      },
+      {
+        "number": 10,
+        "prompt": "彼は医者　_______　、かつ有名な小説家でもある。",
+        "options": [
+          "にして",
+          "としても",
+          "だれ",
+          "からこそ"
+        ],
+        "answer_index": 1,
+        "answer_text": "にして",
+        "answered_sentence": null,
+        "explanation": "「としても」means “even as” or “even in the capacity of,” so the sentence reads “Even as a doctor, he is also a famous novelist.” — the other options don’t express the “in the role of” meaning with contrast needed here."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 22",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-22/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "新型ゲーム機について、来月あたりに何らかの発表を　_______　　_______　…★… _______　ホームページ上で公表し、話題となっている。",
+        "options": [
+          "見られていた",
+          "X社が",
+          "来週にも情報を公開すると",
+          "するのではないかと"
+        ],
+        "answer_index": 2,
+        "answer_text": "X社が",
+        "answered_sentence": null,
+        "explanation": "「来週にも情報を公開するとするのではないかと見られていた」forms a complete structure where 「するのではないかと見られていた」 means \"was regarded as likely to do\" or \"was seen as possibly doing,\" and rearranging the particles and clauses shows that option (3) provides the quoted content that fills the gap before the observation."
+      },
+      {
+        "number": 2,
+        "prompt": "今度こそ　_______　　_______　…★… _______　一日中寝てしまったりする。",
+        "options": [
+          "休みになると",
+          "思っても",
+          "いざ",
+          "片付けようと"
+        ],
+        "answer_index": 3,
+        "answer_text": "いざ",
+        "answered_sentence": null,
+        "explanation": "「片付けようと」is part of the pattern 「〜ようと思う」(to think of doing something), and when combined with 「いざ〜と思っても」(even if one actually tries to), it creates the contrastive condition leading to the unexpected result of sleeping all day."
+      },
+      {
+        "number": 3,
+        "prompt": "彼はいつも冗談　_______　　_______　 _______　…★…　、本当の気持ちがよく分からない。",
+        "options": [
+          "から",
+          "ことばかり",
+          "めいた",
+          "言っている"
+        ],
+        "answer_index": 1,
+        "answer_text": "から",
+        "answered_sentence": null,
+        "explanation": "「ことばかりめいた言っている」is the correct sequence because 「めいた」 attaches to a noun (here 「こと」) to mean \"〜like\" or \"〜ish,\" and 「ことばかり言っている」 means \"says nothing but things like that,\" so the overall phrase means \"he always says jokey things\" (冗談めいたことばかり言っている)."
+      },
+      {
+        "number": 4,
+        "prompt": "デパートのバーゲンで買ったもので、　_______　　_______　…★… _______　よ。",
+        "options": [
+          "からといって",
+          "ともかぎらない",
+          "品質が悪い",
+          "安い"
+        ],
+        "answer_index": 3,
+        "answer_text": "品質が悪い",
+        "answered_sentence": null,
+        "explanation": "「安いからといって品質が悪いともかぎらない」 means"
+      },
+      {
+        "number": 5,
+        "prompt": "この切手は見た目　_______　　_______　…★… _______　５万円からするらしい。",
+        "options": [
+          "相場では",
+          "大したものでは",
+          "からすれば",
+          "なさそうだが"
+        ],
+        "answer_index": 4,
+        "answer_text": "なさそうだが",
+        "answered_sentence": null,
+        "explanation": "「見た目からすれば大したものではなさそうだが」 means"
+      },
+      {
+        "number": 6,
+        "prompt": "「…１…」に入る最も適当なものはどれか。",
+        "options": [
+          "誘いにくくなってしまうだろう",
+          "誘われそうになってしまうだろう",
+          "誘われなくなってしまうだろう",
+          "誘いにくくしてしまうだろう"
+        ],
+        "answer_index": 3,
+        "answer_text": "誘われなくなってしまうだろう",
+        "answered_sentence": null,
+        "explanation": "「誘いにくくしてしまうだろう」 means"
+      },
+      {
+        "number": 7,
+        "prompt": "「…２…」に入る最も適当なものはどれか。",
+        "options": [
+          "思われかねない",
+          "思われかねる",
+          "思われないですむ",
+          "思われないでいる"
+        ],
+        "answer_index": 1,
+        "answer_text": "思われかねない",
+        "answered_sentence": null,
+        "explanation": "「思われかねる」means \"could easily be thought\" and fits the negative connotation signaled by the context, whereas 〜かねない can also mean \"could well happen\" but would be ungrammatical for the passive form here."
+      },
+      {
+        "number": 8,
+        "prompt": "「…３…」に入る最も適当なものはどれか。",
+        "options": [
+          "にかぎらず",
+          "にかぎって",
+          "にかけては",
+          "にかまわず"
+        ],
+        "answer_index": 2,
+        "answer_text": "にかぎって",
+        "answered_sentence": null,
+        "explanation": "「にかけては」indicates a field or topic in which someone has superior ability, matching the meaning of \"when it comes to\" in the sentence; the other options do not express that sense of comparison or domain."
+      },
+      {
+        "number": 9,
+        "prompt": "「…４…」に入る最も適当なものはどれか。",
+        "options": [
+          "したがって",
+          "もちろん",
+          "ところが",
+          "とはいえ"
+        ],
+        "answer_index": 2,
+        "answer_text": "もちろん",
+        "answered_sentence": null,
+        "explanation": "「ところが」correctly introduces an unexpected result contrasting with the preceding statement, while 〜とはいえ would concede a point, and したがって / もちろん are too logical or obvious for the twist."
+      },
+      {
+        "number": 10,
+        "prompt": "「…５…」に入る最も適当なものはどれか。",
+        "options": [
+          "ということにしてもよい",
+          "ということにせねばならない",
+          "ということにならざるをえない",
+          "ということにはならない"
+        ],
+        "answer_index": 4,
+        "answer_text": "ということにはならない",
+        "answered_sentence": null,
+        "explanation": "The pattern 「〜ということにはならない」 means “it does not mean that…” or “it cannot be taken to mean that…,” and it is the only option that logically denies a conclusion in the context."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 23",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-23/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "うちの猫は、カメラを向けると逃げてしまう。　_______　カメラのレンズが怖いようだ。",
+        "options": [
+          "まさか",
+          "なんて",
+          "どうやら",
+          "かえって"
+        ],
+        "answer_index": 3,
+        "answer_text": "どうやら",
+        "answered_sentence": null,
+        "explanation": "「かえって」means 'on the contrary' or 'rather' and is the only choice that fits the context where the cat's reaction suggests it's afraid of the camera lens, not that it doesn't notice or that the lens is somehow worse."
+      },
+      {
+        "number": 2,
+        "prompt": "アイスクリーム屋　_______　、夏は暑いに越したことないけど、こう暑くちゃ、人も涼しい所から出たがらない。まあ、痛し痒しだね。",
+        "options": [
+          "にしてみれば",
+          "としたことが",
+          "のわりには",
+          "だからとって"
+        ],
+        "answer_index": 1,
+        "answer_text": "にしてみれば",
+        "answered_sentence": null,
+        "explanation": "「～としたことが」is a set phrase meaning 'for (someone like) X (to do something surprising)' and correctly links 'an ice cream shop' with the irony that summer heat, while good for business, makes people stay away."
+      },
+      {
+        "number": 3,
+        "prompt": "母　「たかし、宿題は終わったの？」",
+        "options": [
+          "たかし「まだ終わってない。今日の宿題、難しくて、全然　_______　。」",
+          "わかんないんだもん",
+          "わかんないもんか",
+          "わかんないんだっけ"
+        ],
+        "answer_index": 1,
+        "answer_text": "たかし「まだ終わってない。今日の宿題、難しくて、全然　_______　。」",
+        "answered_sentence": null,
+        "explanation": "This is a conversational exchange where the child is giving an excuse using んだもん, which is a colloquial, often whiny way to explain a reason (like 'It's because...' in English), and it fits the context of complaining that the homework is too hard."
+      },
+      {
+        "number": 4,
+        "prompt": "周囲からどのような批判を　_______　、自らの考えを最後まで貫くべきだ。",
+        "options": [
+          "浴びたといえば",
+          "浴びたにもかかわらず",
+          "浴びようとも",
+          "浴びようにも"
+        ],
+        "answer_index": 3,
+        "answer_text": "浴びようとも",
+        "answered_sentence": null,
+        "explanation": "The phrase 浴びようにも is used here because the volitional form + にも indicates that even if one tries to do something (in this case, face criticism), the action is impossible or ineffective, matching the meaning 'no matter how much criticism one may face'."
+      },
+      {
+        "number": 5,
+        "prompt": "週末のパーティーに彼女はブラウスもスカートも黒　_______　。",
+        "options": [
+          "まみれだ",
+          "ずくめだ",
+          "めいた",
+          "っぽい"
+        ],
+        "answer_index": 2,
+        "answer_text": "ずくめだ",
+        "answered_sentence": null,
+        "explanation": "めいた means 'having an air of' or '-like' and is attached to nouns to describe something that resembles or suggests that noun, so 黒めいた (actually 黒めいた is incorrect; the correct reading is that めいた attaches to the noun 黒, as in 黒めいた = 'blackish-looking') modifies the appearance of her outfit, while ずくめ would mean 'everything is black' (all black), which doesn't fit as naturally with the structure of the sentence."
+      },
+      {
+        "number": 6,
+        "prompt": "３０歳を過ぎている娘は、　_______　出会いのチャンスを逃し、まだ人生のパートナーにめぐりあっていない。",
+        "options": [
+          "仕事をかえりみず",
+          "仕事もさることながら",
+          "仕事にかまけて",
+          "仕事ならまだしも"
+        ],
+        "answer_index": 3,
+        "answer_text": "仕事にかまけて",
+        "answered_sentence": null,
+        "explanation": "「～ならまだしも」 means 'if it were X, (it would be acceptable), but in reality it's not', so the sentence conveys that if it were due to work, it might be understandable, but she loses opportunities for other reasons; options (1) and (3) don't fit the contrastive nuance, and (2) doesn't pair with the negative result."
+      },
+      {
+        "number": 7,
+        "prompt": "震度６を超える大きな地震だったが、死者が出なかったのが　_______　救いだ。",
+        "options": [
+          "せめてもの",
+          "ただでさえ",
+          "ろくでもない",
+          "よほどのこと"
+        ],
+        "answer_index": 1,
+        "answer_text": "せめてもの",
+        "answered_sentence": null,
+        "explanation": "「ただでさえ」 means 'even without that (bad situation)' or 'already (bad enough)', so here it means 'even though it was a major earthquake, it's a relief that no one died — already (that) is fortunate'; (1) 'せめてもの' would mean 'at least', which works in form but not nuance, and (3)(4) are irrelevant."
+      },
+      {
+        "number": 8,
+        "prompt": "新市長に当選した上田氏は「選挙中に掲げた政策を、市長として私自らが先頭に立って実行して　_______　。」と決意を述べた。",
+        "options": [
+          "まいります",
+          "願います",
+          "いたします",
+          "頂戴します"
+        ],
+        "answer_index": 1,
+        "answer_text": "まいります",
+        "answered_sentence": null,
+        "explanation": "「～て願います」 ('wish/hope to do') is a humble expression used in formal speeches to state one's intention or hope, fitting the mayor's declaration of determination; (1) and (3) mean 'I will do' (too assertive for a polite stance), and (4) means 'humbly receive' which does not pair with an action verb."
+      },
+      {
+        "number": 9,
+        "prompt": "通訳の試験に合格して、嬉しいの　_______　、果たしてうまくやれるかどうか心配になってきた。",
+        "options": [
+          "にからんで",
+          "にかかわらず",
+          "にのっとって",
+          "にもまして"
+        ],
+        "answer_index": 4,
+        "answer_text": "にもまして",
+        "answered_sentence": null,
+        "explanation": "「にもまして」means 'more than ever; even more than', so the sentence expresses that although passing the interpreter exam made the speaker happy, now they are worried about whether they can do the job well — the worry surpasses the happiness."
+      },
+      {
+        "number": 10,
+        "prompt": "両親を一度に交通事故で亡くした幼い兄妹が引き取り手がないまま、保護施設に入れられるのは見るに　_______　。",
+        "options": [
+          "しのびない",
+          "ほどがある",
+          "も同然だ",
+          "そもそもだ"
+        ],
+        "answer_index": 1,
+        "answer_text": "しのびない",
+        "answered_sentence": null,
+        "explanation": "「見るにしのびない」is a set phrase meaning 'cannot bear to watch', which fits the context of young siblings being put into protective custody after losing their parents in a traffic accident — the only choice that matches this emotive meaning is (1) しのびない."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 24",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-24/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "電車の中でばったり社長に会っちゃって困った。何か話さなくてはと考えているうちに、次の駅で社長が　_______　ほっとした。",
+        "options": [
+          "降りてくれて",
+          "降りてあげて",
+          "降りていて",
+          "降りておいて"
+        ],
+        "answer_index": 1,
+        "answer_text": "降りてくれて",
+        "answered_sentence": null,
+        "explanation": "The speaker feels relief because the boss got off the train, and 「降りてあげて」 uses the giving-receiving nuance that frames the boss's action as beneficial to the speaker (the boss did them a favor by getting off)."
+      },
+      {
+        "number": 2,
+        "prompt": "この芝居は人間国宝の彼　_______　「難しい」と言わせるほど、演じにくいものである。",
+        "options": [
+          "なりに",
+          "にして",
+          "ゆえの",
+          "をおいて"
+        ],
+        "answer_index": 2,
+        "answer_text": "にして",
+        "answered_sentence": null,
+        "explanation": "「にして」means \"even for (someone of that high status)\" and is used here to show that even a Living National Treasure finds the play extremely difficult to perform."
+      },
+      {
+        "number": 3,
+        "prompt": "最近の新入社員と　_______　不満不平ばかり言って少しも働かない。",
+        "options": [
+          "あれば",
+          "いえども",
+          "ばかりに",
+          "きたら"
+        ],
+        "answer_index": 4,
+        "answer_text": "きたら",
+        "answered_sentence": null,
+        "explanation": "「きたら」 is a colloquial topic marker that carries a strong sense of disapproval or complaint about the mentioned category, so '最近の新入社員ときたら...' means 'when it comes to recent new employees (and they are just awful),' matching the critical tone."
+      },
+      {
+        "number": 4,
+        "prompt": "このページでは、当ホテルにご宿泊いただいたお客様から　_______　ご意見、ご感想を掲載しております。",
+        "options": [
+          "なさった",
+          "差し上げた",
+          "頂戴した",
+          "おいでくださった"
+        ],
+        "answer_index": 3,
+        "answer_text": "頂戴した",
+        "answered_sentence": null,
+        "explanation": "「おいでくださった」 is an honorific meaning “(a guest) came,” and the sentence says “opinions and impressions from guests who stayed with us,” so the subject is the guest doing the coming, making (4) the only correct honorific that matches the guest as the subject."
+      },
+      {
+        "number": 5,
+        "prompt": "天ぷらを揚げている　_______　なので、ちょっと待ってください。",
+        "options": [
+          "中",
+          "際",
+          "最中",
+          "うち"
+        ],
+        "answer_index": 3,
+        "answer_text": "最中",
+        "answered_sentence": null,
+        "explanation": "「〜うち」 means “while (doing a continuous action)” and is used with the present progressive or the dictionary form to indicate “while the state continues,” and the sentence says “I’m in the middle of frying tempura, so please wait a moment,” making (4) the only option that fits the ongoing action."
+      },
+      {
+        "number": 6,
+        "prompt": "突然道端に現れた　…★…　_______　　_______　 _______　あげた。",
+        "options": [
+          "味はあっと",
+          "見るなり",
+          "大声を",
+          "ヘビの姿を"
+        ],
+        "answer_index": 4,
+        "answer_text": "ヘビの姿を",
+        "answered_sentence": null,
+        "explanation": "「〜を見るなり」 is the grammar point that means “as soon as (someone) saw (something)”, and the correct order is 「ヘビの姿を見るなり大声をあげた」 (“as soon as [he] saw the snake, [he] shouted”) — 「ヘビの姿を」 is the object of 「見る」."
+      },
+      {
+        "number": 7,
+        "prompt": "いじめを受けて自殺したA君の遺書を読みながら、僕は　_______　　_______　 _______　…★…　になった。",
+        "options": [
+          "んばかり",
+          "怒りで",
+          "胸も",
+          "張り裂け"
+        ],
+        "answer_index": 1,
+        "answer_text": "んばかり",
+        "answered_sentence": null,
+        "explanation": "「怒りで」 is part of the set phrase 「怒りで胸も張り裂けんばかり」, meaning"
+      },
+      {
+        "number": 8,
+        "prompt": "この作品は大工さんが　_______　　_______　…★… _______　魂の結晶だ。",
+        "options": [
+          "技術と",
+          "わたって",
+          "長年に",
+          "鍛えた"
+        ],
+        "answer_index": 4,
+        "answer_text": "鍛えた",
+        "answered_sentence": null,
+        "explanation": "「技術と」 goes before 「長年にわたって鍛えた」 to form 「技術と長年にわたって鍛えた魂の結晶」 ("
+      },
+      {
+        "number": 9,
+        "prompt": "わたしがこのような立派な賞をいただくなどとは　_______　　_______　…★… _______　。",
+        "options": [
+          "だに",
+          "に",
+          "夢",
+          "思わなかった"
+        ],
+        "answer_index": 1,
+        "answer_text": "だに",
+        "answered_sentence": null,
+        "explanation": "「に」 is required by the grammar pattern 「〜だに…ない」 (a formal N1 pattern meaning"
+      },
+      {
+        "number": 10,
+        "prompt": "真夏の日、　…★…　_______　　_______　 _______　水が乾いてしまう。",
+        "options": [
+          "水を撒いた",
+          "野菜畑に",
+          "乾いた",
+          "そばから"
+        ],
+        "answer_index": 3,
+        "answer_text": "乾いた",
+        "answered_sentence": null,
+        "explanation": "「そばから」means 'as soon as (one does something), (something happens immediately afterward)', so the sentence reads: 水を撒いたそばから乾いた野菜畑に水が乾いてしまう — 'as soon as I water the vegetable field, the water dries up'."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N1 – Grammar Exercise 25",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n1-grammar-exercise-25/",
+    "level": "N1",
+    "type": "grammar",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "お客さん　_______　商売だから、なにより大切なのはお客さんのニーズに応えることだ。",
+        "options": [
+          "だに",
+          "あっての",
+          "とは",
+          "まじき"
+        ],
+        "answer_index": 2,
+        "answer_text": "あっての",
+        "answered_sentence": null,
+        "explanation": "「とは」 is used here to define or emphasize a term (here, the nature of the business), meaning 'the business that is with customers,' so it correctly sets up the subject for the following explanation."
+      },
+      {
+        "number": 2,
+        "prompt": "卒業試験はさぞ難しいだろうと思いきや　_______　。",
+        "options": [
+          "意外に難しかった",
+          "案の定難しかった",
+          "意外にやさしかった",
+          "案の定やさしかった"
+        ],
+        "answer_index": 3,
+        "answer_text": "意外にやさしかった",
+        "answered_sentence": null,
+        "explanation": "The grammar point 「思いきや～」 expresses that the speaker's initial expectation was wrong; combined with 「案の定」(as expected), the correct reading is that the speaker expected the exam to be hard, but it actually ended up being easy as expected by someone else."
+      },
+      {
+        "number": 3,
+        "prompt": "海外転勤という会社辞令に背こうものなら　_______　。",
+        "options": [
+          "首にされたくはない",
+          "首にされるにあたらない",
+          "首にされるにかぎる",
+          "首にされかねない"
+        ],
+        "answer_index": 4,
+        "answer_text": "首にされかねない",
+        "answered_sentence": null,
+        "explanation": "「背こうものなら」(if one were to defy) implies a hypothetical leading to a negative, inevitable consequence, and 「首にされかねない」(could get fired) correctly expresses that possibility, whereas the other options do not fit the conditional structure."
+      },
+      {
+        "number": 4,
+        "prompt": "この案は自分　_______　考えに考えた上でのものです。出来上がり次第、Eメールでお送りします。ご検討ください。",
+        "options": [
+          "ぞいに",
+          "に即して",
+          "をふまえ",
+          "なりに"
+        ],
+        "answer_index": 4,
+        "answer_text": "なりに",
+        "answered_sentence": null,
+        "explanation": "The phrase \"自分なりに\" means \"in one's own way,\" fitting the context of having thought about the plan thoroughly in the speaker's own unique manner."
+      },
+      {
+        "number": 5,
+        "prompt": "こんな難しい問題に答えられる　_______　彼はやはり優秀な学生だ。",
+        "options": [
+          "とは",
+          "として",
+          "とも",
+          "とか"
+        ],
+        "answer_index": 1,
+        "answer_text": "とは",
+        "answered_sentence": null,
+        "explanation": "「として」 (as) is correct because the structure 「こんな難しい問題に答えられるとは彼はやはり優秀な学生だ」 is incomplete — the full pattern is 「〜とは思えない」; the comma after 「答えられる」 signals a quotative 「とは」 in the second clause, so 「答えられるとは彼はやはり優秀な学生だ」 reads like a missing 「思う」 at the end — making 「とは」 the only one that fits a quotative + evaluative statement."
+      },
+      {
+        "number": 6,
+        "prompt": "女１　「おとといは大雤、昨日は車のパンク。旅行に来てからトラブル続きで嫌になるよね。」",
+        "options": [
+          "女２　「本当だよ。最終日の　_______　　_______　…★… _______　。」",
+          "何も",
+          "今日こそ",
+          "ように"
+        ],
+        "answer_index": 4,
+        "answer_text": "ように",
+        "answered_sentence": null,
+        "explanation": "ように\" is correct because it completes the phrase \"今日こそ何もないように\" (I hope nothing happens today), expressing a wish for no trouble on the final day."
+      },
+      {
+        "number": 7,
+        "prompt": "会社を辞めたいというあなたの気持ちは、　_______　　_______　…★… _______　、無断で仕事を休むのはよくないと思う。",
+        "options": [
+          "でも",
+          "が",
+          "ない",
+          "わからない"
+        ],
+        "answer_index": 3,
+        "answer_text": "ない",
+        "answered_sentence": null,
+        "explanation": "「わからないでもない」 is a set phrase meaning 'I don't not understand' (i.e., 'I can somewhat understand'), and only「わからない」fits into the pattern「〜でもない」before being suspended by「が」."
+      },
+      {
+        "number": 8,
+        "prompt": "彼が日本へ去って　_______　　_______　 _______　…★…　だったのだと思うよ。",
+        "options": [
+          "いればこそ",
+          "愛して",
+          "いったのは",
+          "君のことを"
+        ],
+        "answer_index": 1,
+        "answer_text": "いればこそ",
+        "answered_sentence": null,
+        "explanation": "「愛して いればこそ」 forms the pattern V-て + いればこそ ('precisely because [one] loves'), with「愛して」modifying the state「いればこそ」; the rearranged sentence reads 'I think it's precisely because he loved you that he left for Japan.'"
+      },
+      {
+        "number": 9,
+        "prompt": "相手の立場を考えずに、一方的に自分の意見だけを言う人もいる。だが自分の意見　_______　…★…　_______　 _______　。相手の立場も尊重してこそ正常な人間関係が保てるというものである。",
+        "options": [
+          "ではない",
+          "というもの",
+          "だけを",
+          "通せばよい"
+        ],
+        "answer_index": 4,
+        "answer_text": "通せばよい",
+        "answered_sentence": null,
+        "explanation": "「自分の意見だけを通せばよいというものではない」 is a fixed expression meaning 'it's not that you should just push your own opinion through'; only「通せばよい」completes the pattern「〜ばよいというものではない」."
+      },
+      {
+        "number": 10,
+        "prompt": "市民の　_______　　_______　…★… _______　などもってのほかだ。",
+        "options": [
+          "警察官が",
+          "守るべき",
+          "強盗",
+          "安全を"
+        ],
+        "answer_index": 1,
+        "answer_text": "警察官が",
+        "answered_sentence": null,
+        "explanation": "The phrase 「守るべき安全を」 means \"the safety that should be protected,\" so the correct ordering is 「市民の安全を守るべき警察官が強盗などもってのほかだ」 (It's outrageous for a police officer who should protect citizens' safety to commit robbery, etc.)."
+      }
+    ]
+  }
+]

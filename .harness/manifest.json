@@ -1,0 +1,267 @@
+{
+  "schema_version": 2,
+  "profile": "full",
+  "project": {
+    "kind": "web-app",
+    "stacks": [
+      "javascript",
+      "node",
+      "playwright",
+      "react",
+      "typescript",
+      "vite",
+      "vitest"
+    ]
+  },
+  "capabilities": {
+    "application_scaffold": {
+      "status": "implemented",
+      "artifacts": [
+        "index.html",
+        "package.json",
+        "src/main.tsx",
+        "src/app/App.tsx",
+        "vite.config.ts"
+      ],
+      "verify": ["npm run eval"]
+    },
+    "knowledge_base": {
+      "status": "implemented",
+      "artifacts": [
+        "AGENTS.md",
+        "docs/index.md",
+        "docs/architecture.md",
+        "docs/data-quality.md",
+        "docs/design-system.md",
+        "docs/development.md",
+        "docs/quality.md",
+        "docs/decisions.md"
+      ],
+      "verify": [
+        "npm run check",
+        "inspect: links resolve"
+      ]
+    },
+    "repository_commands": {
+      "status": "implemented",
+      "artifacts": [
+        "package.json",
+        "scripts/doctor.mjs",
+        "scripts/gc.mjs",
+        "scripts/serve-isolated.mjs",
+        "scripts/run-e2e.mjs"
+      ],
+      "verify": [
+        "npm run doctor",
+        "npm run check",
+        "npm test"
+      ]
+    },
+    "quality_checks": {
+      "status": "implemented",
+      "artifacts": [
+        "tsconfig.json",
+        "eslint.config.js",
+        ".prettierrc.json",
+        "scripts/check-arch.mjs",
+        "scripts/check-taste.mjs",
+        "scripts/check-docs.mjs"
+      ],
+      "verify": [
+        "npm run check",
+        "npm test"
+      ]
+    },
+    "ci": {
+      "status": "partial",
+      "artifacts": [
+        ".github/workflows/ci.yml"
+      ],
+      "verify": [
+        "npm run doctor"
+      ]
+    },
+    "evaluation": {
+      "status": "implemented",
+      "artifacts": [
+        "e2e/smoke.spec.ts",
+        "e2e/journey.spec.ts",
+        "playwright.config.ts",
+        "scripts/run-e2e.mjs"
+      ],
+      "verify": ["npm run eval"]
+    },
+    "architecture_boundaries": {
+      "status": "implemented",
+      "artifacts": [
+        "scripts/check-arch.mjs",
+        "docs/architecture.md"
+      ],
+      "verify": [
+        "npm run check"
+      ]
+    },
+    "taste_invariants": {
+      "status": "implemented",
+      "artifacts": [
+        "scripts/check-taste.mjs",
+        "docs/design-system.md"
+      ],
+      "verify": [
+        "npm run check"
+      ]
+    },
+    "domain_invariants": {
+      "status": "implemented",
+      "artifacts": [
+        "scripts/audit-data.mjs",
+        "scripts/data-baseline.json",
+        "src/content/gate.ts",
+        "src/domain/grading.ts",
+        "src/domain/progress.ts",
+        "src/domain/scheduling.ts",
+        "src/domain/numbers.ts",
+        "src/domain/dates.ts",
+        "docs/data-quality.md"
+      ],
+      "verify": ["npm run check", "npm test"]
+    },
+    "observability": {
+      "status": "partial",
+      "artifacts": [
+        "src/observability/logger.ts",
+        "src/observability/logger.test.ts"
+      ],
+      "verify": [
+        "npm test",
+        "npm run eval"
+      ]
+    },
+    "interactive_legibility": {
+      "status": "implemented",
+      "artifacts": [
+        "e2e/smoke.spec.ts",
+        "playwright.config.ts"
+      ],
+      "verify": [
+        "npm run eval",
+        "inspect: adapter exposes the critical surface"
+      ]
+    },
+    "workspace_isolation": {
+      "status": "implemented",
+      "artifacts": [
+        "scripts/serve-isolated.mjs",
+        "scripts/run-e2e.mjs",
+        "playwright.config.ts"
+      ],
+      "verify": ["npm run eval"]
+    },
+    "execution_planning": {
+      "status": "implemented",
+      "artifacts": [
+        "implementation_plan.md",
+        "DEVELOPMENT_PROMPT.md",
+        "docs/decisions.md"
+      ],
+      "verify": [
+        "npm run check"
+      ]
+    },
+    "review_loop": {
+      "status": "implemented",
+      "artifacts": [
+        "docs/quality.md",
+        "DEVELOPMENT_PROMPT.md"
+      ],
+      "verify": [
+        "npm run doctor",
+        "inspect: findings have evidence and remediation"
+      ]
+    },
+    "workspace_cleanup": {
+      "status": "implemented",
+      "artifacts": [
+        "scripts/gc.mjs",
+        ".gitignore"
+      ],
+      "verify": [
+        "npm run gc",
+        "inspect: generated paths have regeneration evidence"
+      ]
+    },
+    "entropy_control": {
+      "status": "implemented",
+      "artifacts": [
+        "scripts/gc.mjs",
+        "docs/quality.md"
+      ],
+      "verify": [
+        "npm run gc",
+        "inspect: findings have evidence and remediation"
+      ]
+    }
+  },
+  "managed_artifacts": [
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    ".harness/manifest.json",
+    ".prettierignore",
+    ".prettierrc.json",
+    "AGENTS.md",
+    "docs/architecture.md",
+    "docs/data-quality.md",
+    "docs/decisions.md",
+    "docs/design-system.md",
+    "docs/development.md",
+    "docs/index.md",
+    "docs/quality.md",
+    "e2e/smoke.spec.ts",
+    "eslint.config.js",
+    "index.html",
+    "package.json",
+    "playwright.config.ts",
+    "scripts/audit-data.mjs",
+    "scripts/check-arch.mjs",
+    "scripts/check-docs.mjs",
+    "scripts/check-taste.mjs",
+    "scripts/data-baseline.json",
+    "scripts/doctor.mjs",
+    "scripts/gc.mjs",
+    "scripts/run-e2e.mjs",
+    "scripts/serve-isolated.mjs",
+    "src/app/App.tsx",
+    "src/app/app.css",
+    "src/main.tsx",
+    "src/observability/logger.test.ts",
+    "src/observability/logger.ts",
+    "tsconfig.e2e.json",
+    "tsconfig.json",
+    "tsconfig.node.json",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
+  "commands": {
+    "setup": "npm install",
+    "dev": "npm run dev",
+    "format": "npm run format:check",
+    "check": "npm run check",
+    "test": "npm test",
+    "eval": "npm run eval",
+    "doctor": "npm run doctor",
+    "gc": "npm run gc"
+  },
+  "deferred": [
+    {
+      "capability": "ci",
+      "reason": "Repository has no git remote; the GitHub Actions workflow is YAML-validated by doctor but cannot execute until the project is pushed.",
+      "next_step": "Initialize git when the owner approves, push to GitHub, and observe the first ci.yml run."
+    },
+    {
+      "capability": "observability",
+      "reason": "Structured logging is implemented and tested; metrics and traces have no surface until real user journeys exist, and no telemetry backend applies to a static local-first app.",
+      "next_step": "Instrument one critical journey (drill completion) after Phase 1 task 4, then reassess whether metrics add value."
+    }
+  ],
+  "evidence_gaps": []
+}
