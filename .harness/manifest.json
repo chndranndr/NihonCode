@@ -73,13 +73,9 @@
       ]
     },
     "ci": {
-      "status": "partial",
-      "artifacts": [
-        ".github/workflows/ci.yml"
-      ],
-      "verify": [
-        "npm run doctor"
-      ]
+      "status": "implemented",
+      "artifacts": [".github/workflows/ci.yml"],
+      "verify": ["npm run doctor"]
     },
     "evaluation": {
       "status": "implemented",
@@ -252,11 +248,6 @@
     "gc": "npm run gc"
   },
   "deferred": [
-    {
-      "capability": "ci",
-      "reason": "Repository has no git remote; the GitHub Actions workflow is YAML-validated by doctor but cannot execute until the project is pushed.",
-      "next_step": "Initialize git when the owner approves, push to GitHub, and observe the first ci.yml run."
-    },
     {
       "capability": "observability",
       "reason": "Structured logging is implemented and tested; metrics and traces have no surface until real user journeys exist, and no telemetry backend applies to a static local-first app.",

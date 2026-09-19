@@ -49,5 +49,4 @@ Local-first Japanese practice web app. React 19 + TypeScript strict + Vite. No b
 
 - Non-trivial work: implement → `npm run check` + `npm test` → review → resolve → final verify (DEVELOPMENT_PROMPT.md section 8).
 - Observed failure → smallest durable guardrail: prefer an executable check over prose; extend `scripts/check-*.mjs` or add a test, then update `.harness/manifest.json`.
-- CI: `.github/workflows/ci.yml` runs check + test on push/PR; the browser eval runs on demand (workflow_dispatch) because it needs a browser download.
-- No git repo exists yet; do not commit, push, or initialize VCS unless asked.
+- Git: pushed to `origin` (github.com/chndranndr/NihonCode), branch `main`. CI runs check+test+build on push/PR; the browser eval is `workflow_dispatch` with `with_eval`.

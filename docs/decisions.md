@@ -2,6 +2,14 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-19 — Repository pushed; CI observed green
+
+**Decision.** Initialized git on `main`, committed the full tree, and pushed to `origin` (github.com/chndranndr/NihonCode) at the owner's explicit instruction. `.gitignore` excludes local agent tooling (`.omp/`, `.pi/`, `.pstack/`) and scratch dirs; `.harness/` and `.impeccable/` are tracked as product artifacts. `.gitattributes` pins LF so prettier `--check` and CI agree across platforms.
+
+**Why.** The owner created the remote and asked for the push. The first CI run failed on `format:check` (docs/quality.md table padding); fixed and re-pushed; run 35435907252 is green. `ci` promoted from partial to implemented with that observed evidence; the deferral entry is removed.
+
+**Binds.** .harness/manifest.json (ci implemented), docs/quality.md, AGENTS.md workflow section.
+
 ## 2026-09-19 — Eval and dev servers derive collision-free ports
 
 **Decision.** `scripts/run-e2e.mjs` finds the first free port ≥ 4173 and exports `E2E_PORT`; `playwright.config.ts` reads it for baseURL, webServer command, and url, with `strictPort` and `reuseExistingServer: false`. `scripts/serve-isolated.mjs` does the same for dev/preview (≥ 5173). Vite config binds `127.0.0.1` explicitly (Windows `localhost` resolves IPv6-first, which broke Playwright's IPv4 poll).
