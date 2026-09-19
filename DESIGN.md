@@ -24,11 +24,45 @@ typography:
     fontWeight: 400
     lineHeight: 1.2
     letterSpacing: "0.2em"
+  prompt:
+    fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
+    fontSize: "2rem"
+    fontWeight: 400
+    lineHeight: 1.3
+  title:
+    fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
+    fontSize: "1.5rem"
+    fontWeight: 400
+    lineHeight: 1.3
+  heading:
+    fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
+    fontSize: "1.25rem"
+    fontWeight: 400
+    lineHeight: 1.3
+  cell:
+    fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.2
+  micro:
+    fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
+    fontSize: "0.75rem"
+    fontWeight: 400
+    letterSpacing: "0.2em"
+  key:
+    fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
+    fontSize: "0.7rem"
+    fontWeight: 400
   body:
     fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
     fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.5
+  small:
+    fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
+    fontSize: "0.8rem"
+    fontWeight: 400
+    lineHeight: 1.4
   label:
     fontFamily: "ui-monospace, Cascadia Mono, Consolas, Menlo, monospace"
     fontSize: "0.625rem"
@@ -123,7 +157,13 @@ A two-ground neutral system (near-black dark, warm paper light) with five fixed 
 
 - **Display** (400, 3rem, 1.2, 0.2em tracking): brand mark and summary scores.
 - **Prompt** (400, 2rem, 1.3): drill prompts and inspector characters.
+- **Title** (400, 1.5rem, 1.3): lesson and surface titles.
+- **Heading** (400, 1.25rem, 1.3): panel-group headings.
+- **Cell** (400, 1rem, 1.2): kanji map glyphs; legibility at study size is the floor.
 - **Body** (400, 14px, 1.5): explanations, reasons, examples; measure capped by panel width.
+- **Small** (400, 0.8rem, 1.4): secondary translations under examples.
+- **Micro** (400, 0.75rem, 0.2em, uppercase): tracked micro buttons and bar links.
+- **Key** (400, 0.7rem): bottom-bar key legend.
 - **Label** (400, 0.625rem, 0.3em, uppercase): panel titles, status strip, buttons.
 
 ### Named Rules
@@ -181,6 +221,18 @@ Square corners (0px) as the form language; 4px is the mechanical ceiling enforce
 ### Kanji Mastery Map (signature)
 
 - Grid of square cells; unseen = ink-dim, learning = blue border, mastered = green border. Arrow-key navigable; docked inspector is a live region.
+
+### Achievement Ticker
+
+- Locked and unlocked rows in one list: open square locked, filled square unlocked, requirement text in the row title so a locked row teaches.
+
+### Coverage Readout
+
+- Percentage of the clean-slice pool (learned cards plus completed lessons), always paired with the sentence that it is not an exam-competence estimate.
+
+### Setting Row
+
+- Label plus controls on one line; the row wraps inside its panel so a six-choice accent group never overflows the hairline border.
 
 ## Do's and Don'ts
 

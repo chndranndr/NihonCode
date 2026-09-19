@@ -25,6 +25,9 @@
     },
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "Brand mark and summary scores only." },
+      "prompt": { "displayName": "Prompt", "purpose": "Drill prompts and inspector characters." },
+      "cell": { "displayName": "Cell", "purpose": "Kanji map glyphs; study-size legibility floor." },
+      "small": { "displayName": "Small", "purpose": "Secondary translations under examples." },
       "label": { "displayName": "Micro-label", "purpose": "Panel titles, status strip, buttons; tracked uppercase." }
     },
     "shadows": [],
@@ -63,6 +66,30 @@
       "description": "TTS trigger with a visible unavailable state.",
       "html": "<button class=\"speaker speaker-unavailable\" disabled>N/A</button>",
       "css": ".speaker { width: 32px; height: 32px; border: 1px solid var(--hairline); border-radius: 0; } .speaker-unavailable { color: var(--ink-dim); cursor: not-allowed; }"
+    },
+    {
+      "name": "Achievement Ticker",
+      "kind": "list",
+      "refersTo": "achievement-ticker",
+      "description": "Locked and unlocked achievement rows; a locked row teaches its requirement.",
+      "html": "<ul class=\"achievement-ticker\"><li class=\"locked\" title=\"complete any drill, lesson, or review session\">□ FIRST SESSION</li><li class=\"unlocked\" title=\"reach 100 XP\">■ CENTURY</li></ul>",
+      "css": ".achievement-ticker { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; } .achievement-ticker .locked { color: var(--ink-dim); } .achievement-ticker .unlocked { color: var(--accent-green); }"
+    },
+    {
+      "name": "Coverage Readout",
+      "kind": "readout",
+      "refersTo": "coverage",
+      "description": "Percentage of the clean-slice pool studied, paired with its not-exam-competence sentence.",
+      "html": "<p class=\"micro-label\">42% OF THE N5 CLEAN SLICE</p>",
+      "css": ".micro-label { font-size: 0.625rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-dim); }"
+    },
+    {
+      "name": "Setting Row",
+      "kind": "row",
+      "refersTo": "setting-row",
+      "description": "Label plus controls; wraps inside its panel so choice groups never overflow.",
+      "html": "<div class=\"setting-row\"><span class=\"micro-label\">ACCENT</span><button aria-pressed=\"true\">AMBER</button></div>",
+      "css": ".setting-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }"
     }
   ],
   "narrative": {
