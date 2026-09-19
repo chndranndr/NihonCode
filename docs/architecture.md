@@ -4,7 +4,7 @@ Single-page React app, one repo, no backend. Static build served from any static
 
 ## Current state
 
-Phase 1 scaffold only. `src/` contains the app entry, a minimal shell, and the observability seam. No features, no content loaders, no storage yet — those are Phase 1 tasks 1–9 in `DEVELOPMENT_PROMPT.md` section 5.
+Phase 1 shipped (tasks 1–9 plus the closeout extension). `src/` contains the full app shell, all six clean-slice drills plus SRS review, grammar lessons, progress telemetry, settings/about, the validation gate with bundler loaders, Dexie + localStorage persistence, and the observability seam. The gate's raw-file loading lives in `content/loaders.ts` (bundler side); `content/gate.ts` is a pure validator module so tests and e2e can run it without bundler JSON imports.
 
 ## Layers (target layout)
 
@@ -23,7 +23,7 @@ data/
   clean/         Phase 2 output: normalized, validated, ID-stamped datasets
 ```
 
-`observability/` is an addition to the binding layout of DEVELOPMENT_PROMPT.md section 3, recorded as a decision (docs/decisions.md): it is a leaf every layer may import, and it imports nothing from the repo. `scripts/check-arch.mjs` enforces the matrix with default-deny: a top-level `src/<dir>/` outside the matrix is a violation, so an unclassified layer can never pass silently.
+`observability/` is part of the binding layout of DEVELOPMENT_PROMPT.md section 3, recorded as a decision (docs/decisions.md). It is a leaf every layer may import, and it imports nothing from the repo. `scripts/check-arch.mjs` enforces the matrix with default-deny: a top-level `src/<dir>/` outside the matrix is a violation, so an unclassified layer can never pass silently.
 
 ## Enforced boundaries
 

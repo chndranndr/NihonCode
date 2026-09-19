@@ -272,3 +272,31 @@ test("kanji and vocab drills grade real content correctly", async ({ page }) => 
   }
   await expect(page.getByTestId("summary-score")).toHaveText("100%");
 });
+
+test("dates weekday drill grades all seven items correctly", async ({ page }) => {
+  const weekdayEn: Record<string, string> = {
+    月曜日: "Monday",
+    火曜日: "Tuesday",
+    水曜日: "Wednesday",
+    木曜日: "Thursday",
+    金曜日: "Friday",
+    土曜日: "Saturday",
+    日曜日: "Sunday",
+  };
+  await page.goto("/learn/drill/dates");
+  await page.getByRole("button", { name: "DAYS OF WEEK" }).click();
+  await page.getByRole("button", { name: "JAPANESE → ENGLISH" }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  for (let i = 0; i < 7; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    const en = weekdayEn[prompt];
+    expect(en, `weekday table covers ${prompt}`).toBeDefined();
+    await page.getByLabel("answer").fill(en);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary-score")).toHaveText("100%");
+});

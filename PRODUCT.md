@@ -57,7 +57,7 @@ Excluded (binding non-goals, PRD.md section 3):
 - No speech recording or pronunciation scoring.
 - No cloud sync, accounts, or server-backed profiles.
 
-Hard data constraint: the bundled datasets exist but are not yet grade-ready. 7,293 of 7,938 vocabulary entries hold Japanese text in the `romaji` field; N4–N1 kanji answers contain dictionary markers; JLPT sets contain truncated prompts, null keys, remote image dependencies, and unverified audio-to-question mapping. All content passes a validation gate before grading; flagged items stay out of graded pools (PRD.md section 18, implementation_plan.md Phase 2). The MVP ships on the verified-clean slice only: kana, kanji N5, the 643 N5 vocab entries with genuine Latin romaji, grammar N5 (marked reviewed), and algorithmic Numbers/Dates drills.
+Hard data constraint: the bundled datasets exist but are not yet grade-ready. 7,293 of 7,938 vocabulary entries hold Japanese text in the `romaji` field; N4–N1 kanji answers contain dictionary markers; JLPT sets contain truncated prompts, null keys, remote image dependencies, and unverified audio-to-question mapping. All content passes a validation gate before grading; flagged items stay out of graded pools (PRD.md section 18, implementation_plan.md Phase 2). The MVP ships on the verified-clean slice only: kana, kanji N5, the 643 N5 vocab entries with genuine Latin romaji (641 graded; 2 pack alternative readings and await a variants list), grammar N5 (marked reviewed), and algorithmic Numbers/Dates drills.
 
 Sequencing constraint: build order is MVP → data remediation → polish. Features depending on dirty data (JLPT practice, conjugation, N4–N1 content) are deferred by design, not by oversight.
 

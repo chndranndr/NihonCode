@@ -101,18 +101,19 @@ Stack (unchanged from PRD review): React + TypeScript (strict), Vite, React Rout
 
 ### In scope
 
-- App shell: dashboard, bottom command bar (HOME / PROGRESS / LEARN / CONFIG), level selector, routing, browser back navigation.
+- App shell: dashboard, bottom command bar (HOME / PROGRESS / LEARN / CONFIG), routing, browser back navigation. No level selector in Phase 1 (moved to Phase 3 with N4–N1 enablement, per DEVELOPMENT_PROMPT.md task 12).
 - Theme: light/dark (dark-first) + accent, persisted.
 - **Content validation gate** in `content/`: parses raw JSON, rejects/flags malformed entries, emits typed models with stable IDs. This is the backbone the later phases reuse.
 - Drills over the **clean slice only**:
   - Kana (46 hiragana + 46 katakana basic table).
   - Kanji N5 (80 entries, no dictionary markers).
-  - Vocabulary N5 restricted to entries with genuine Latin `romaji` (the 643), behind the gate. Reading-correctness review for these is deferred to Phase 2; MVP proves the drill mechanics.
+  - Vocabulary N5 restricted to entries with genuine Latin `romaji` (643 Latin entries, 641 graded after the gate excludes 2 packed-alternative entries), behind the gate. Reading-correctness review for these is deferred to Phase 2; MVP proves the drill mechanics.
   - Numbers and Dates drills (algorithmic, zero dataset dependency).
 - Core drill engine: one item at a time, typed input, correct/wrong, reveal answer + meaning, progress bar, completion summary with score, retry with reshuffle, XP on completion.
 - Grammar N5 lessons + quiz flow (72 lessons, marked reviewed).
-- SRS (FSRS) over the clean kanji N5 + gated vocab N5 slice: due-before-new, configurable daily new-card cap, correct→Good / incorrect→Again, resumable, persists compact card state.
+- SRS (FSRS) over the clean kanji N5 + gated vocab N5 slice: due-before-new, configurable daily new-card cap, correct→Good / incorrect→Again, persists compact card state. Review sessions do not resume; an aborted session discards its scheduling.
 - Progress: XP, level, streak, today's XP, simple weekly activity.
+- Progress telemetry (moved into Phase 1 per DEVELOPMENT_PROMPT.md task 13): kanji mastery map with docked inspector deriving from stored drill attempts, an achievements row, and a coverage-of-studied-material estimate.
 - Storage: persist progress, cards, preferences; survive page reload; schema version stamped.
 - Audio: Web Speech API pronunciation with Japanese-voice detection and a visible "unavailable" fallback that keeps text drills usable.
 - About page with accurate local-first + persistence-limitation copy.
@@ -124,7 +125,7 @@ Stack (unchanged from PRD review): React + TypeScript (strict), Vite, React Rout
 - Kanji/vocab/grammar N4–N1 — mislabeled `romaji`, dictionary markers, unreviewed grammar (Phase 2).
 - Full kana (voiced/contracted/small) — not in source data (Phase 2 content decision).
 - Listening audio playback, remote images — unresolved (Phase 2/3).
-- SRS statistics page, kanji mastery map, achievements, toasts — Phase 3 polish.
+- SRS statistics page and achievement toasts — Phase 3 polish. (Kanji mastery map, achievements row, and coverage estimate moved into Phase 1 above; toasts, the SRS statistics page, and practice_core.json wiring stay here.)
 
 ### Definition of done
 
@@ -206,15 +207,15 @@ Stack (unchanged from PRD review): React + TypeScript (strict), Vite, React Rout
 
 ### In scope
 
-- Enable N4–N1 kanji, vocabulary, grammar from `data/clean/`.
+- Enable N4–N1 kanji, vocabulary, grammar from `data/clean/`, and the level selector that Phase 1 deferred (nothing writes `prefs.level`; the gate refuses non-n5).
 - Conjugation drill (now backed by real metadata).
 - Full kana table if Phase 2.6 added it.
 - JLPT practice: all five categories, level + category + numbered set selection, graded runs over keyed questions only, per-set progress, listening playback on verified audio, reading passages with localized images.
 - SRS statistics page (streak, due today, learned/total, mastery %, kanji vs vocab breakdown).
-- Kanji mastery map (per-character mastered/learning/unseen) wired to `practice_core.json`.
-- Achievements + unlock toasts; weekly XP chart.
+- Wire the shipped kanji mastery map to `practice_core.json`. The map itself ships in Phase 1 deriving from drill attempts only.
+- Achievement unlock toasts. The achievements row ships in Phase 1.
 - Settings: SRS new-card cap, skip-learning-steps, theme, accent.
-- JLPT mastery recalculation from SRS + grammar completion (relabel as "coverage of studied material", not exam competence).
+- JLPT mastery recalculation from SRS + grammar completion, relabeled "coverage of studied material", not exam competence. Phase 1 ships the clean-slice coverage estimate; this extends it across levels.
 - Export/import of local progress (recommended given no cloud backup; pull forward from "future" if capacity allows).
 - Responsive desktop + mobile pass, accessibility (labels, text-paired indicators, audio-optional), performance (route/dataset/audio lazy-load, code-splitting, no layout shift on rapid drill submission).
 - About page: accurate local-first stance, persistence limits, and content attribution.
@@ -240,6 +241,6 @@ Run once at the integrated head, not per-agent mid-flight:
 
 - Treat `data/generated` and `data/jlpt` as untrusted. All access goes through the `content/` validation gate.
 - Phase 1 must not import N4–N1 content or any JLPT set, even if present, until Phase 2 clears them.
-- Fix `data/generated/index.ts`'s missing `../../types/content` import as part of Phase 1 (recreate the type contract or replace the loader).
+- `data/generated/index.ts`'s missing `../../types/content` import is resolved by quarantine, not by editing the file: the legacy loader sits outside the tsconfig and is reference-only, `src/content/gate.ts` owns the type contract, and deletion belongs to the Phase 2 pipeline (docs/quality.md debts). DEVELOPMENT_PROMPT.md section 2 forbids hand-editing the file.
 - Do not auto-approve pedagogical correctness. Normalize structure in code; route sense/answer-key decisions to the human-review queue.
 - Keep stable IDs namespaced and content-order-independent from day one; retrofitting them after progress exists is a migration headache.

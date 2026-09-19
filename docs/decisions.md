@@ -2,6 +2,46 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-19 — Phase 1 closeout: root specs amended at the owner's instruction
+
+**Decision.** The owner directed the completion agent to rewrite DEVELOPMENT_PROMPT.md and amend implementation_plan.md, PRODUCT.md, and docs/quality.md to close Phase 1. decisions.md:61-67 records these four specs as owner-authored and prettier-excluded; this entry records the relaxation. Future agents may edit these specs only under an explicit owner instruction for a named task, never as a drive-by formatting or drift fix.
+
+**Why.** Phase 1 shipped with the plan documents out of sync with reality (level selector never built, kanji map pulled forward, vocab count stale). The owner resolved the conflicts by directing the amendments. Without this entry, a future agent reading the governance rule gets contradictory orders.
+
+**Binds.** DEVELOPMENT_PROMPT.md, implementation_plan.md, PRODUCT.md, docs/quality.md, docs/architecture.md.
+
+## 2026-09-19 — Level selector deferred to Phase 3 (closeout task 12)
+
+**Decision.** Phase 1 ships no level selector. implementation_plan.md line 104 amended; the selector moves to Phase 3 with N4–N1 enablement; a gap row exists in docs/quality.md.
+
+**Why.** Nothing writes `prefs.level` and the content gate refuses non-n5 (`src/content/gate.ts`), so a selector would have nothing valid to select. The dashboard renders the level as a readout. PRD §10.1 still binds for the full release.
+
+**Binds.** implementation_plan.md Phase 1/3 scope lists, docs/quality.md gap ledger, PRD §10.1 deferred.
+
+## 2026-09-19 — Kanji map, achievements, coverage are Phase 1 (closeout task 13)
+
+**Decision.** The kanji mastery map with docked inspector, the achievements row, and the coverage-of-studied-material estimate belong to Phase 1 per DEVELOPMENT_PROMPT.md task 7. implementation_plan.md amended: the Phase 3 deferral at line 127 narrowed to toasts and the SRS statistics page; Phase 3 keeps achievement toasts, the SRS statistics page, and wiring the map to practice_core.json.
+
+**Why.** The owner's prompt placed these in Phase 1 task 7 and they shipped at the progress surface. The plan's blanket Phase 3 deferral contradicted the prompt. The practice_core wiring stays a Phase 3 obligation because the shipped map derives from drill attempts only (`src/content/ids.ts` states practice_core is not consumed).
+
+**Binds.** implementation_plan.md lines 116, 128, 215–218, docs/quality.md Proven rows.
+
+## 2026-09-19 — Gate split: pure validators plus bundler loaders
+
+**Decision.** `src/content/gate.ts` holds the pure Zod validators and ID stamping; `src/content/loaders.ts` owns the four clean-slice JSON imports and the `load*` functions. The e2e journey runs the gate validators over fs-read raw files.
+
+**Why.** Playwright's Node ESM loader rejects bundler-style top-level JSON imports, so a spec importing gate.ts crashed the eval suite. The split keeps one source of truth for validation logic while letting the e2e legs build expected answers through the same grading path. check-arch's data-gate rule still holds: all `data/` imports remain inside `src/content/`.
+
+**Binds.** src/content/gate.ts, src/content/loaders.ts, e2e/journey.spec.ts, docs/architecture.md current-state section.
+
+## 2026-09-19 — Legacy loader quarantined, not fixed (closeout task 14c)
+
+**Decision.** `data/generated/index.ts`'s missing `../../types/content` import is resolved by quarantine: the file sits outside the tsconfig, is reference-only, and `src/content/gate.ts` owns the type contract. implementation_plan.md line 243 amended from "fix as part of Phase 1" to this resolution. Deletion is Phase 2 pipeline work.
+
+**Why.** The original instruction ordered a hand-edit of a file DEVELOPMENT_PROMPT.md section 2 forbids touching, and the gate already replaced the loader's function. Quarantine was the measured outcome; the plan now records it.
+
+**Binds.** implementation_plan.md handoff notes, docs/quality.md debts.
+
 ## 2026-09-19 — Repository pushed; CI observed green
 
 **Decision.** Initialized git on `main`, committed the full tree, and pushed to `origin` (github.com/chndranndr/NihonCode) at the owner's explicit instruction. `.gitignore` excludes local agent tooling (`.omp/`, `.pi/`, `.pstack/`) and scratch dirs; `.harness/` and `.impeccable/` are tracked as product artifacts. `.gitattributes` pins LF so prettier `--check` and CI agree across platforms.
