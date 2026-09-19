@@ -3,9 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { SpeakerButton } from "../../components/SpeakerButton";
 import { usePools } from "../../components/pools";
 import { XP } from "../../domain/progress";
-import { awardXp } from "../../storage/progressRepo";
+import { awardXp, currentPrefs, recordSession } from "../../storage/progressRepo";
 import { db } from "../../storage/db";
-import { currentPrefs } from "../../storage/progressRepo";
 
 export function GrammarLessonPage() {
   const { lessonId = "" } = useParams();
@@ -57,10 +56,12 @@ export function GrammarLessonPage() {
     setAnswers((prev) => [...prev, choice === question.answer]);
   }
 
-  function next(): void {
+  async function next(): Promise<void> {
     setRevealed(null);
     if (quizIndex + 1 >= active.quiz.length) {
+      const correctCount = answers.filter(Boolean).length;
       awardXp(XP.grammarQuiz);
+      await recordSession("grammar", correctCount, active.quiz.length);
       void db().grammarState.put({
         id: active.id,
         status: "completed",

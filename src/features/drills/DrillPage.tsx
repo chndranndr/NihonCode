@@ -5,8 +5,13 @@ import { usePools } from "../../components/pools";
 import { makeNumberQuestionInRange } from "../../domain/numbers";
 import { makeFullDate, WEEKDAYS } from "../../domain/dates";
 import { perfectDrillBonus, XP } from "../../domain/progress";
-import { awardXp, recordAttempt, type AttemptKind } from "../../storage/progressRepo";
-import { currentPrefs } from "../../storage/progressRepo";
+import {
+  awardXp,
+  currentPrefs,
+  recordAttempt,
+  recordSession,
+  type AttemptKind,
+} from "../../storage/progressRepo";
 import type { JlptLevel } from "../../content/ids";
 
 const LIMITS = [10, 20, 50] as const;
@@ -177,6 +182,7 @@ export function DrillPage() {
     }
     const xp = result.correct * XP.drillCorrect + perfectDrillBonus(result.correct, result.total);
     awardXp(xp);
+    await recordSession(kind, result.correct, result.total);
     setSummary({ ...result });
     setSession(null);
   }

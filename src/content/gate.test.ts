@@ -1,13 +1,6 @@
 import { describe, expect, it } from "vitest";
-import {
-  loadGrammar,
-  loadKana,
-  loadKanji,
-  loadVocab,
-  validateJlptSets,
-  validateKanji,
-  validateVocab,
-} from "./gate";
+import { validateJlptSets, validateKanji, validateVocab } from "./gate";
+import { loadGrammar, loadKana, loadKanji, loadVocab } from "./loaders";
 
 /**
  * DEVELOPMENT_PROMPT.md task 1 acceptance: the gate excludes and flags

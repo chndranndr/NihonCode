@@ -671,3 +671,57 @@ input {
   font-family: inherit;
   padding: 0.25rem 0.5rem;
 }
+
+.telemetry {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.split-bar {
+  display: flex;
+  height: 6px;
+  border: 1px solid var(--hairline);
+  margin: 0.5rem 0;
+}
+
+.split-mastered {
+  width: var(--w, 0%);
+  background: var(--accent-green);
+}
+
+.split-learning {
+  width: var(--w, 0%);
+  background: var(--accent-blue);
+}
+
+.achievement-ticker {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.achievement-ticker .unlocked {
+  color: var(--accent-green);
+}
+
+.achievement-ticker .locked {
+  color: var(--ink-dim);
+}
+
+.about-readout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 720px;
+}
+
+.sources li {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}

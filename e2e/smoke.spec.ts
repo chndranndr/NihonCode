@@ -69,3 +69,11 @@ test("app boots, renders the shell, and emits the startup signal", async ({ page
     fullPage: true,
   });
 });
+
+test("progress surface reads honest zeros in a fresh context", async ({ page }) => {
+  await page.goto("/progress");
+  await expect(page.getByTestId("progress")).toBeVisible();
+  await expect(page.getByTestId("coverage")).toHaveText("0% OF THE N5 CLEAN SLICE");
+  await expect(page.getByTestId("achievements")).toContainText("□");
+  await expect(page.getByTestId("achievements")).not.toContainText("■");
+});

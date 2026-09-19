@@ -1,4 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
+import { readFileSync } from "node:fs";
+import { validateKanji, validateVocab } from "../src/content/gate";
 
 /**
  * Phase 1 acceptance journey (DEVELOPMENT_PROMPT.md section 6): drill -> grade
@@ -110,6 +112,20 @@ async function readQueue(page: Page): Promise<{ due: number; fresh: number }> {
   return { due, fresh };
 }
 
+// The spec runs the gate's pure validators over fs-read raw files; loaders.ts
+// (bundler-side JSON imports) does not load under Node. Same grading logic.
+const KANJI_ANSWERS = new Map(
+  validateKanji(JSON.parse(readFileSync("data/generated/kanji_n5.json", "utf8")), "n5").items.map(
+    (k) => [k.char, k.answers],
+  ),
+);
+const VOCAB_ROMAJI = new Map(
+  validateVocab(
+    JSON.parse(readFileSync("data/generated/vocabulary_n5.json", "utf8")),
+    "n5",
+  ).items.map((v) => [v.kanji, v.romaji]),
+);
+
 test("drill grades, XP persists across reload, and reviewed cards leave the new pool", async ({
   page,
 }) => {
@@ -161,6 +177,19 @@ test("drill grades, XP persists across reload, and reviewed cards leave the new 
   // and the daily cap leaves no fresh candidates for today.
   expect(after.fresh).toBe(0);
   expect(after.due).toBeLessThanOrEqual(before.fresh);
+
+  // --- progress leg: the review attempts above feed the kanji map ---
+  await page.goto("/progress");
+  await expect(page.getByTestId("progress")).toBeVisible();
+  await expect(page.locator(".kanji-cell")).toHaveCount(80);
+  const studied = page.locator(".kanji-cell.learning").first();
+  await studied.click();
+  await expect(page.getByTestId("inspector")).toContainText(/ATTEMPTS [1-9]/);
+  expect(page.url()).toContain("/progress");
+  const charBefore = await page.locator(".inspector-char").innerText();
+  await page.locator(".kanji-map").focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator(".inspector-char")).not.toHaveText(charBefore);
 });
 
 test("grammar lesson resume survives reload", async ({ page }) => {
@@ -184,4 +213,62 @@ test("numbers drill honors a user-chosen count of 50", async ({ page }) => {
   await page.getByRole("button", { name: "START" }).click();
   await expect(page.getByTestId("session")).toBeVisible();
   await expect(page.locator(".session-rail")).toContainText("1/50");
+});
+
+test("theme choice persists across reload", async ({ page }) => {
+  await page.goto("/config");
+  await page.getByRole("button", { name: "DARK" }).click();
+  await expect(page.locator("html")).toHaveClass(/theme-light/);
+  await page.reload();
+  await expect(page.locator("html")).toHaveClass(/theme-light/);
+  // restore dark default for other tests in the same context
+  await page.goto("/config");
+  await page.getByRole("button", { name: "LIGHT" }).click();
+});
+
+test("Esc abort confirms and awards nothing", async ({ page }) => {
+  await page.goto("/");
+  const xpBefore = await page.getByTestId("xp").innerText();
+  await page.goto("/learn/drill/kana");
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("alertdialog")).toBeVisible();
+  await page.getByRole("button", { name: "ABORT" }).click();
+  await page.goto("/");
+  await expect(page.getByTestId("xp")).toHaveText(xpBefore);
+});
+
+test("kanji and vocab drills grade real content correctly", async ({ page }) => {
+  await page.goto("/learn/drill/kanji");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    const answers = KANJI_ANSWERS.get(prompt);
+    expect(answers, `kanji table covers ${prompt}`).toBeDefined();
+    await page.getByLabel("answer").fill(answers![0]);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary-score")).toHaveText("100%");
+
+  await page.goto("/learn/drill/vocab");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    const romaji = VOCAB_ROMAJI.get(prompt);
+    expect(romaji, `vocab table covers ${prompt}`).toBeDefined();
+    await page.getByLabel("answer").fill(romaji!);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary-score")).toHaveText("100%");
 });

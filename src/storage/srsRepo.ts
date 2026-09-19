@@ -14,6 +14,8 @@ import {
 } from "../domain/scheduling";
 import type { JlptLevel } from "../content/ids";
 import { db, type ReviewLogRow, type SrsCardRow } from "../storage/db";
+import { loadPrefs } from "./prefs";
+import { State } from "ts-fsrs";
 
 export interface DueQueue {
   due: string[];
@@ -50,7 +52,9 @@ export async function reviewItem(
   const store = db();
   const existing = await store.srsCards.get(id);
   const card = existing ? deserializeCard(existing.state) : newCard(now);
-  const record = reviewCard(card, rating, now);
+  const record = reviewCard(card, rating, now, {
+    skipLearningSteps: loadPrefs().srs.skipLearningSteps,
+  });
   const row: SrsCardRow = {
     id,
     state: serializeCard(record.card),
@@ -80,6 +84,13 @@ export interface SrsStats {
   due: number;
   learned: number;
   lapses: number;
+  /** Long-term (Review-state) cards. */
+  mastered: number;
+  /** Cards with reps but not yet in long-term state. */
+  learning: number;
+  /** Cards never reviewed. */
+  fresh: number;
+  byKind: Record<"kanji" | "vocab", { total: number; learned: number }>;
   byLevel: Record<JlptLevel, { total: number; learned: number }>;
 }
 
@@ -90,6 +101,10 @@ export async function srsStats(now: Date = new Date()): Promise<SrsStats> {
     due: 0,
     learned: 0,
     lapses: 0,
+    mastered: 0,
+    learning: 0,
+    fresh: 0,
+    byKind: { kanji: { total: 0, learned: 0 }, vocab: { total: 0, learned: 0 } },
     byLevel: {
       n5: { total: 0, learned: 0 },
       n4: { total: 0, learned: 0 },
@@ -99,15 +114,29 @@ export async function srsStats(now: Date = new Date()): Promise<SrsStats> {
     },
   };
   for (const c of cards) {
+    const card = deserializeCard(c.state);
     const level = c.id.split(":")[1] as JlptLevel;
+    const kind =
+      level === "n5" && c.id.startsWith("kanji:")
+        ? "kanji"
+        : c.id.startsWith("vocab:")
+          ? "vocab"
+          : null;
     const bucket = stats.byLevel[level];
     if (bucket) {
       bucket.total += 1;
       if (c.reps > 0) bucket.learned += 1;
     }
+    if (kind) {
+      stats.byKind[kind].total += 1;
+      if (c.reps > 0) stats.byKind[kind].learned += 1;
+    }
     if (c.reps > 0) stats.learned += 1;
+    else stats.fresh += 1;
+    if (card.state === State.Review) stats.mastered += 1;
+    else if (c.reps > 0) stats.learning += 1;
     stats.lapses += c.lapses;
-    if (isDue(deserializeCard(c.state), now)) stats.due += 1;
+    if (isDue(card, now)) stats.due += 1;
   }
   return stats;
 }

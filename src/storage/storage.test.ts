@@ -1,6 +1,7 @@
 import "fake-indexeddb/auto";
 import { afterEach, describe, expect, it } from "vitest";
-import { DB_VERSION, NihonDb } from "./db";
+import Dexie, { type Table } from "dexie";
+import { DB_VERSION, NihonDb, type SrsCardRow } from "./db";
 import { DEFAULT_PREFS, loadPrefs, migratePrefs, savePrefs, type Prefs } from "./prefs";
 
 function memoryStorage(): Storage {
@@ -15,6 +16,20 @@ function memoryStorage(): Storage {
     removeItem: (k) => void map.delete(k),
     setItem: (k, v) => void map.set(k, v),
   };
+}
+
+class V1Db extends Dexie {
+  srsCards!: Table<SrsCardRow, string>;
+
+  constructor(name: string) {
+    super(name);
+    this.version(1).stores({
+      srsCards: "id, due",
+      reviewLogs: "++id, cardId, ts",
+      drillAttempts: "++id, itemId, kind, ts",
+      grammarState: "id, status",
+    });
+  }
 }
 
 describe("prefs storage", () => {
@@ -78,6 +93,24 @@ describe("Dexie storage", () => {
     expect(due).toHaveLength(1);
     reopened.close();
     db = reopened;
+  });
+
+  it("upgrades a v1 database additively, preserving existing rows", async () => {
+    const legacy = new V1Db("test-upgrade");
+    await legacy.srsCards.put({
+      id: "kanji:n5:水",
+      state: "{}",
+      due: 1,
+      reps: 2,
+      lapses: 0,
+      lastReview: null,
+    });
+    legacy.close();
+
+    db = new NihonDb("test-upgrade");
+    expect(db.verno).toBe(DB_VERSION);
+    expect(await db.srsCards.get("kanji:n5:水")).toMatchObject({ reps: 2 });
+    expect(await db.sessions.toArray()).toEqual([]);
   });
 
   it("opens at the declared schema version", async () => {

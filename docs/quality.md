@@ -30,13 +30,14 @@ What is proven by executable evidence today, and what is missing. Update this le
 
 ## Gap ledger (open, with owner phase)
 
-| Gap                                              | Why it is open                                                                                 | Closes in              |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------------------- | ---------------------- |
-| Grammar content defects not mechanically counted | Malformed answers / generic stems need human judgment, not regex                               | Phase 2.4 review queue |
-| Audio segment-vs-concatenation unverified        | Needs per-file listening analysis; blocks JLPT listening                                       | Phase 2.5              |
-| Vocab Problem B (sense mismatch) unquantified    | Needs kana→romaji normalizer + human review                                                    | Phase 2.2              |
-| Canonical JLPT IDs not assigned                  | practice_core positional/number conventions both unsafe as progress keys (see data-quality.md) | Phase 2.5              |
-| Attribution/license consolidation                | Redistribution clearance pending; blocks public release                                        | Phase 2.7              |
+| Gap                                              | Why it is open                                                                                 | Closes in                                                      |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Grammar content defects not mechanically counted | Malformed answers / generic stems need human judgment, not regex                               | Phase 2.4 review queue                                         |
+| Audio segment-vs-concatenation unverified        | Needs per-file listening analysis; blocks JLPT listening                                       | Phase 2.5                                                      |
+| Vocab Problem B (sense mismatch) unquantified    | Needs kana→romaji normalizer + human review                                                    | Phase 2.2                                                      |
+| Canonical JLPT IDs not assigned                  | practice_core positional/number conventions both unsafe as progress keys (see data-quality.md) | Phase 2.5                                                      |
+| Attribution/license consolidation                | Redistribution clearance pending; blocks public release                                        | Phase 2.7                                                      |
+| Metrics/traces beyond logs                       | No telemetry stack exists; logs are the honest current surface                                 | Full-profile observability beyond logs deferred (see manifest) |
 
 ## Debts
 

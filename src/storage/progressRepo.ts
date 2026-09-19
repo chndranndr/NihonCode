@@ -40,6 +40,30 @@ export async function attemptsForKind(kind: AttemptKind): Promise<DrillAttemptRo
   return db().drillAttempts.where("kind").equals(kind).toArray();
 }
 
+/** One completed drill/review/lesson session; feeds achievement inputs. */
+export async function recordSession(kind: string, correct: number, total: number): Promise<void> {
+  await db().sessions.add({ kind, correct, total, ts: Date.now() });
+}
+
+export interface SessionSummary {
+  totalSessions: number;
+  drillSessions: number;
+  perfectSessions: number;
+  reviewsCompleted: number;
+  grammarCompleted: number;
+}
+export async function sessionSummary(): Promise<SessionSummary> {
+  const rows = await db().sessions.toArray();
+  const grammar = await db().grammarState.toArray();
+  return {
+    totalSessions: rows.length,
+    drillSessions: rows.filter((r) => r.kind !== "srs" && r.kind !== "grammar").length,
+    perfectSessions: rows.filter((r) => r.total > 0 && r.correct === r.total).length,
+    reviewsCompleted: rows.filter((r) => r.kind === "srs").length,
+    grammarCompleted: grammar.filter((g) => g.status === "completed").length,
+  };
+}
+
 /** Awards XP and updates streak/weekly buckets; persists prefs. */
 export function awardXp(amount: number, now: Date = new Date()): Prefs {
   const prefs = loadPrefs();

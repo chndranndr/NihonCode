@@ -4,9 +4,8 @@ import { DrillSession, type SessionItem, type SessionResult } from "../../compon
 import { usePools, srsPoolIds } from "../../components/pools";
 import { ratingFromCorrect } from "../../domain/scheduling";
 import { XP } from "../../domain/progress";
-import { awardXp, recordAttempt } from "../../storage/progressRepo";
+import { awardXp, currentPrefs, recordAttempt, recordSession } from "../../storage/progressRepo";
 import { buildDueQueue, reviewItem } from "../../storage/srsRepo";
-import { currentPrefs } from "../../storage/progressRepo";
 
 export function ReviewPage() {
   const navigate = useNavigate();
@@ -79,6 +78,7 @@ export function ReviewPage() {
       await recordAttempt(record.id, "srs", record.correct);
     }
     awardXp(result.correct * XP.srsReview);
+    await recordSession("srs", result.correct, result.total);
     setSession(null);
     setSummary(result);
   }

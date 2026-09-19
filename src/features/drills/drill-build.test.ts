@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildItems, DEFAULT_OPTIONS, type DrillOptions } from "./DrillPage";
-import { loadGrammar, loadKana, loadKanji, loadVocab } from "../../content/gate";
+import { loadGrammar, loadKana, loadKanji, loadVocab } from "../../content/loaders";
 
 const pools = {
   kana: loadKana().items,
@@ -53,5 +53,57 @@ describe("drill pool builders (PRD 10.7 / 10.8)", () => {
     );
     expect(jp2en[0].prompt).toMatch(/[曜日]/);
     expect(en2jp[0].prompt).toMatch(/day/);
+  });
+});
+
+describe("kana, kanji, vocab builders grade real content (DEVELOPMENT_PROMPT task 11)", () => {
+  it("every graded builder emits items with non-empty accepted answers", () => {
+    for (const mode of ["kana", "kanji", "vocab"] as const) {
+      const items = buildItems(mode, "n5", pools, DEFAULT_OPTIONS);
+      expect(items.length, mode).toBeGreaterThan(0);
+      for (const item of items) {
+        expect(item.accepted.length, item.id).toBeGreaterThan(0);
+        expect(
+          item.accepted.every((a) => a.trim().length > 0),
+          item.id,
+        ).toBe(true);
+      }
+    }
+  });
+
+  it("kana prompts are single characters answered by their romaji", () => {
+    const items = buildItems("kana", "n5", pools, DEFAULT_OPTIONS);
+    expect(items).toHaveLength(92);
+    for (const item of items) {
+      expect([...item.prompt], item.id).toHaveLength(1);
+      expect(item.accepted).toHaveLength(1);
+      expect(item.id.startsWith("kana:hiragana:") || item.id.startsWith("kana:katakana:")).toBe(
+        true,
+      );
+    }
+  });
+
+  it("kanji answers carry no dictionary markers (Problem D guard)", () => {
+    const items = buildItems("kanji", "n5", pools, DEFAULT_OPTIONS);
+    expect(items).toHaveLength(80);
+    for (const item of items) {
+      expect(
+        item.accepted.some((a) => /[.-]/.test(a)),
+        `${item.id} answers`,
+      ).toBe(false);
+      expect(item.id).toMatch(/^kanji:n5:.+/);
+      expect(item.reveal.scripts).toContain(item.prompt);
+    }
+  });
+
+  it("vocab accepts genuine Latin romaji and speaks the kana", () => {
+    const items = buildItems("vocab", "n5", pools, DEFAULT_OPTIONS);
+    expect(items).toHaveLength(641);
+    for (const item of items) {
+      expect(item.accepted[0], item.id).toMatch(/^[\x20-\x7e]+$/);
+      expect(item.accepted[0], item.id).not.toMatch(/[;；/]/);
+      expect(item.id).toMatch(/^vocab:n5:.+\|.+/);
+      expect(item.reveal.scripts).toContain(item.speakText);
+    }
   });
 });

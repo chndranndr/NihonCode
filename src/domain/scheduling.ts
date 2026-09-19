@@ -20,15 +20,19 @@ export function ratingFromCorrect(correct: boolean): AppRating {
   return correct ? "good" : "again";
 }
 
-const fsrs = new FSRS({});
-
 export type ReviewRecord = RecordLogItem;
 
 export function newCard(now: Date = new Date()): Card {
   return createEmptyCard(now);
 }
 
-export function reviewCard(card: Card, rating: AppRating, now: Date = new Date()): ReviewRecord {
+export function reviewCard(
+  card: Card,
+  rating: AppRating,
+  now: Date = new Date(),
+  options: { skipLearningSteps?: boolean } = {},
+): ReviewRecord {
+  const fsrs = new FSRS(options.skipLearningSteps ? { enable_short_term: false } : {});
   return fsrs.next(card, now, RATING_MAP[rating]);
 }
 

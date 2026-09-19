@@ -1,25 +1,19 @@
 /**
  * The untrusted->typed boundary (implementation_plan.md "Validate at the
- * boundary", DEVELOPMENT_PROMPT.md section 2). Only this module may import raw
- * data/ (enforced by scripts/check-arch.mjs). Every read goes through a Zod
+ * boundary", DEVELOPMENT_PROMPT.md section 2). Every read goes through a Zod
  * schema; malformed entries are excluded from graded pools and flagged, never
- * thrown on. Components and features consume only src/content/models.ts.
+ * thrown on. Pure module: raw-file loading lives in loaders.ts (bundler side)
+ * and in fs-read e2e legs; check-arch.mjs keeps all data/ imports inside
+ * src/content. Components and features consume only src/content/models.ts.
  *
  * MVP graded pools (clean slice only): kana 46+46 basic gojuon; kanji N5 with
  * marker-free answers; vocabulary N5 entries whose romaji is genuine Latin;
  * grammar N5 lessons whose meta is reviewed and whose quiz answers are members
- * of their choices. Non-n5 levels return an "not enabled" flag without reading
- * any file: Phase 1 must not import N4-N1 content or any JLPT set, even if
- * present (implementation_plan.md handoff notes). Static imports of exactly
- * the four clean-slice files keep N4-N1 and JLPT out of the bundle entirely;
- * JLPT validation is a pure function over caller-supplied raw values.
+ * of their choices. JLPT validation is a pure function over caller-supplied
+ * raw values.
  */
 
 import { z } from "zod";
-import kanaRaw from "../../data/generated/kana.json";
-import kanjiN5Raw from "../../data/generated/kanji_n5.json";
-import vocabularyN5Raw from "../../data/generated/vocabulary_n5.json";
-import grammarN5Raw from "../../data/generated/grammar_n5.json";
 import { grammarLessonId, jlptQuestionId, kanaId, kanjiId, vocabId } from "./ids";
 import type { JlptCategory, JlptLevel } from "./ids";
 import type {
@@ -34,23 +28,9 @@ import type {
 
 const LATIN_ROMAJI = /^[\x20-\x7e]+$/;
 const DICTIONARY_MARKER = /[.-]/;
-const CLEAN_SLICE_LEVEL: JlptLevel = "n5";
 
 export function isLatinRomaji(value: string): boolean {
   return LATIN_ROMAJI.test(value);
-}
-
-function notEnabled(level: JlptLevel, file: string): GateResult<never> {
-  return {
-    items: [],
-    flags: [
-      {
-        source: file,
-        id: null,
-        reason: `level ${level} is not enabled until Phase 2 clears its content`,
-      },
-    ],
-  };
 }
 
 // ---------------------------------------------------------------- schemas ---
@@ -331,25 +311,6 @@ export function validateGrammar(raw: unknown, level: JlptLevel): GateResult<Gram
     });
   }
   return { items, flags };
-}
-
-export function loadKana(): GateResult<KanaItem> {
-  return validateKana(kanaRaw);
-}
-
-export function loadKanji(level: JlptLevel): GateResult<KanjiItem> {
-  if (level !== CLEAN_SLICE_LEVEL) return notEnabled(level, `kanji_${level}.json`);
-  return validateKanji(kanjiN5Raw, level);
-}
-
-export function loadVocab(level: JlptLevel): GateResult<VocabItem> {
-  if (level !== CLEAN_SLICE_LEVEL) return notEnabled(level, `vocabulary_${level}.json`);
-  return validateVocab(vocabularyN5Raw, level);
-}
-
-export function loadGrammar(level: JlptLevel): GateResult<GrammarLesson> {
-  if (level !== CLEAN_SLICE_LEVEL) return notEnabled(level, `grammar_${level}.json`);
-  return validateGrammar(grammarN5Raw, level);
 }
 
 /**

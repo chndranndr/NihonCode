@@ -99,4 +99,14 @@ describe("scheduling", () => {
     const good = reviewCard(newCard(now), "good", now).card;
     expect(again.due.getTime()).toBeLessThan(good.due.getTime());
   });
+  it("skipLearningSteps moves the card onto a long-term interval", () => {
+    const now = new Date("2026-09-19T12:00:00Z");
+    const withSteps = reviewCard(newCard(now), "good", now).card;
+    const skipped = reviewCard(newCard(now), "good", now, { skipLearningSteps: true }).card;
+    // Skipping learning steps leaves the short-term scheduler: the card lands
+    // on a long-term interval instead of the minutes-scale learning step.
+    expect(skipped.due.getTime() - now.getTime()).toBeGreaterThan(
+      withSteps.due.getTime() - now.getTime(),
+    );
+  });
 });

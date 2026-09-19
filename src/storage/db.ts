@@ -42,22 +42,35 @@ export interface GrammarStateRow {
   completedAt: number | null;
 }
 
+export interface SessionRow {
+  id?: number;
+  kind: string;
+  correct: number;
+  total: number;
+  ts: number;
+}
+
 export const DB_NAME = "nihoncode";
-export const DB_VERSION = 1;
+export const DB_VERSION = 2;
 
 export class NihonDb extends Dexie {
   srsCards!: Table<SrsCardRow, string>;
   reviewLogs!: Table<ReviewLogRow, number>;
   drillAttempts!: Table<DrillAttemptRow, number>;
   grammarState!: Table<GrammarStateRow, string>;
+  sessions!: Table<SessionRow, number>;
 
   constructor(name: string = DB_NAME) {
     super(name);
-    this.version(DB_VERSION).stores({
+    this.version(1).stores({
       srsCards: "id, due",
       reviewLogs: "++id, cardId, ts",
       drillAttempts: "++id, itemId, kind, ts",
       grammarState: "id, status",
+    });
+    // Additive migration: new table only; existing rows untouched.
+    this.version(2).stores({
+      sessions: "++id, kind, ts",
     });
   }
 }

@@ -4,7 +4,7 @@
  */
 
 import { useEffect, useState } from "react";
-import { loadGrammar, loadKana, loadKanji, loadVocab } from "../content/gate";
+import { loadGrammar, loadKana, loadKanji, loadVocab } from "../content/loaders";
 import type { GrammarLesson, KanaItem, KanjiItem, VocabItem } from "../content/models";
 import type { JlptLevel } from "../content/ids";
 
