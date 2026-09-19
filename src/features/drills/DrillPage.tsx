@@ -56,7 +56,7 @@ const NUMBER_PRESETS = [
  */
 const GENERATED_COUNT = 50;
 
-function buildItems(
+export function buildItems(
   mode: string,
   level: JlptLevel,
   pools: ReturnType<typeof usePools>,
