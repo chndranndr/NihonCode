@@ -182,8 +182,11 @@ test("drill grades, XP persists across reload, and reviewed cards leave the new 
   await expect(page.getByTestId("progress")).toBeVisible();
   await expect(page.locator(".kanji-cell")).toHaveCount(80);
   const studied = page.locator(".kanji-cell.learning, .kanji-cell.struggling").first();
+  const band = (await studied.getAttribute("class"))!.replace("kanji-cell ", "");
   await studied.click();
   await expect(page.getByTestId("inspector")).toContainText(/ATTEMPTS [1-9]/);
+  // Color and inspector text share one banding rule (masteryState).
+  await expect(page.getByTestId("inspector")).toContainText(`STATUS ${band.toUpperCase()}`);
   expect(page.url()).toContain("/progress");
   const charBefore = await page.locator(".inspector-char").innerText();
   await page.locator(".kanji-map").focus();

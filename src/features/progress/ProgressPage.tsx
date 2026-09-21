@@ -16,6 +16,17 @@ interface KanjiCell {
   lastSeen: number | null;
 }
 
+/** One banding rule for cell color, inspector text, and legend. */
+function masteryState(cell: {
+  attempts: number;
+  accuracy: number;
+}): "unseen" | "mastered" | "struggling" | "learning" {
+  if (cell.attempts === 0) return "unseen";
+  if (cell.accuracy >= 0.8) return "mastered";
+  if (cell.accuracy < 0.5) return "struggling";
+  return "learning";
+}
+
 const LEVELS: JlptLevel[] = ["n5", "n4", "n3", "n2", "n1"];
 
 export function ProgressPage() {
@@ -211,7 +222,7 @@ export function ProgressPage() {
                 type="button"
                 role="gridcell"
                 lang="ja"
-                className={`kanji-cell ${cell.attempts === 0 ? "unseen" : cell.accuracy >= 0.8 ? "mastered" : cell.accuracy < 0.5 ? "struggling" : "learning"}`}
+                className={`kanji-cell ${masteryState(cell)}`}
                 aria-label={`${cell.item.char}: ${cell.attempts} attempts`}
                 onClick={() => setSelected(cell)}
               >
@@ -239,12 +250,7 @@ export function ProgressPage() {
                 <p className="micro-label">
                   ATTEMPTS {selected.attempts} · ACCURACY {Math.round(selected.accuracy * 100)}% ·
                   LAST {selected.lastSeen ? new Date(selected.lastSeen).toLocaleDateString() : "—"}{" "}
-                  · STATUS{" "}
-                  {selected.attempts === 0
-                    ? "UNSEEN"
-                    : selected.accuracy >= 0.8
-                      ? "MASTERED"
-                      : "LEARNING"}
+                  · STATUS {masteryState(selected).toUpperCase()}
                 </p>
               </>
             ) : (

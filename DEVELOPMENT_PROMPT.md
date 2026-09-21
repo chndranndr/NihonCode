@@ -54,6 +54,8 @@ Execute in order; each task ends with its acceptance check passing before the ne
 8. **Responsive / accessibility / performance pass.** Labels, text-paired indicators, audio-optional flows, no layout shift on rapid drill submission, route/dataset/audio lazy-loading; About page states the local-first stance, persistence limits, and attribution accurately.
 9. **Verification and close.** Cross-phase e2e (Phase 1 drill→grade→persist→reload→review loop, plus listening and conjugation flows); Lighthouse/accessibility spot-check on main routes; docs/quality.md Proven rows and gap ledger updated to executable evidence; PRD delta list prepared for the owner; decisions entries for every new decision.
 
+## 5. Phase 3 Definition of Done
+
 Mirrors implementation_plan.md section 3 DoD, made checkable:
 
 - Every in-scope PRD feature works end to end on `data/clean/` in desktop and mobile viewports.
