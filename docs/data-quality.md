@@ -105,7 +105,23 @@ Every N5 and N4 slice was manually reviewed. `curation/adjudications.json` recor
 
 Phase 1 graded-pool superset holds: zero vocab excludes touch a raw Latin-romaji entry. Two systemic scraper artifacts (stray control bytes, U+FF0D hyphen) are scrubbed at build time (`scripts/lib/scrub.mjs`) and asserted zero by `audit-clean`; 446 question fields + 15 passages scrubbed at the post-merge rebuild.
 
-Open owner items: (1) **reading questions orphaned from dropped passages** — all 66 N5 + 129 N4 reading questions reference passages that were dropped (remote GIF); keep+restore-text vs exclude is a product call, docs/decisions.md. (2) listening remains blocked on the owner audio sample confirmation. (3) redistribution clearance still pending. (4) **keyed-answer repair needing owner confirmation**: `jlpt:n5:reading:10:bxpod7h8` shipped `answer_index: 3` with only 3 options; adjudicated replace → `answer_index: 2` (the keyed 4th option has no recoverable source text). (5) two reading-prompt typos were adjudicated directly by the owner (not via findings): `jlpt:n5:reading:10:3axd6i6` and `jlpt:n4:reading:24:2vq536m`. (6) **N3–N1 curation worklist**: the frozen 560 open items live in `curation/queue-n3-n1.json`; adjudicate them (per-entry verdicts into `curation/adjudications.json`, applied as tracked edits to `data/clean/`) when those levels are enabled.
+Open owner items: (1) **reading questions orphaned from dropped passages** — all 66 N5 + 129 N4 reading questions reference passages that were dropped (remote GIF); keep+restore-text vs exclude is a product call, docs/decisions.md. (2) listening remains blocked on the owner audio sample confirmation. (3) redistribution clearance still pending. (4) **keyed-answer repair needing owner confirmation**: `jlpt:n5:reading:10:bxpod7h8` shipped `answer_index: 3` with only 3 options; adjudicated replace → `answer_index: 2` (the keyed 4th option has no recoverable source text). (5) two reading-prompt typos were adjudicated directly by the owner (not via findings): `jlpt:n5:reading:10:3axd6i6` and `jlpt:n4:reading:24:2vq536m`. (6) ~~N3–N1 curation worklist~~ **done 2026-09-21** — all 560 items adjudicated (section below); all five levels enabled.
+
+## N3–N1 curation pass (executed 2026-09-21)
+
+The frozen worklist `curation/queue-n3-n1.json` (560 items) is fully adjudicated — 0 open; verdicts recorded per id in `curation/adjudications.json`. Dispositions:
+
+| Defect class                | Count | Disposition                                                                                                                                       |
+| --------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| vocab.untransliterable      | 93    | exclude — annotation-bearing / non-word kana artifacts; already absent from the tracked pool (verified: no twin for 68, clean twin exists for 26) |
+| vocab.kanjiInKana           | 1     | exclude                                                                                                                                           |
+| grammar.uninstantiatedTilde | 203   | exclude from graded pool — ～ in quiz answers/choices; lessons stay browsable, never scored                                                       |
+| grammar.genericStem         | 242   | exclude from graded pool — non-discriminating stems                                                                                               |
+| grammar.malformedAnswer     | 2     | exclude from graded pool — machine distractors unreliable                                                                                         |
+| grammar.duplicateExample    | 16    | replace — exact duplicate example sentence removed; lesson graded                                                                                 |
+| grammar.instructionExample  | 3     | 2 replace (instruction sentence removed, graded), 1 fix (false positive on inspection, graded)                                                    |
+
+Graded grammar floors extended in the same change (`scripts/audit-clean.mjs`): n3 67, n2 71, n1 45 — every graded lesson passes answer-in-choices, ≥2 choices, and zero ～ in examples/quiz. Kanji floors: n3 367, n2 367, n1 1232 (all marker-free). Vocab floors: n3 2097, n2 1682, n1 2655 (all Latin romaji). All five levels are now enabled in `ENABLED_LEVELS`.
 
 ## PRD §18 owner edit list (prepared 2026-09-20, Phase 2 close)
 

@@ -13,7 +13,7 @@ import type { JlptLevel } from "./ids";
 import type { GateResult, GrammarLesson, KanaItem, KanjiItem, VocabItem } from "./models";
 
 /** Levels whose pools are curated and served (docs/decisions.md). */
-export const ENABLED_LEVELS: readonly JlptLevel[] = ["n5", "n4"];
+export const ENABLED_LEVELS: readonly JlptLevel[] = ["n5", "n4", "n3", "n2", "n1"];
 
 export interface LevelData {
   level: JlptLevel;

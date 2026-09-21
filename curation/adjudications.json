@@ -19240,5 +19240,2245 @@
   "vocab.conjugation:n5": {
     "disposition": "fix",
     "reason": "Curated pos+conjugationClass on every N5 Verbs (117: godan 80, ichidan 32, irregular 5) and Adjectives (84: i 65, na 19) entry as tracked edits to data/clean/vocabulary_n5.json; classification by kana shape with per-entry overrides (入る/帰る/走る/切る/知る/要る godan; 着る ichidan; 嫌い/綺麗/有名 na; する/来る/勉強する/掃除する/コピーする irregular), never from category buckets (PRD §18). Moved 7 misbucketed entries to Nouns (下さい, お手洗い, 家庭, 時計, 野菜, 大きな, 小さな: nouns, unconjugatable). audit-clean n5 guard + self-test fixture; 44-entry spot-check in docs/data-quality.md."
+  },
+  "vocab:n3:しまった (かん)|しまった (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n3:すみません (かん)|すみません (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n3:はあ (かん)|はあ (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n3:よろしく (かん)|よろしく (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n3:来|らい～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:一～|ひと～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:〜 (まる) ごと|〜 (まる) ごと": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:〜(日本) 式|～(にほん) しき": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:～いち (にほんいち)|～いち (にほんいち)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:～おしまい (おわり)|～おしまい (おわり)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:～ほう (ひかく)|～ほう (ひかく)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:かび (～がはえる)|かび (～がはえる)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:しいんと (する)|しいんと (する)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:しつれいしました (かん)|しつれいしました (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:しめた (かん)|しめた (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:じゅうたん (カーペット)|じゅうたん (カーペット)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:しわ (かおの～)|しわ (かおの～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:それはいけませんね (かん)|それはいけませんね (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:だいいち (とりわけ)|だいいち (とりわけ)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:どういたしまして (かん)|どういたしまして (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:はい (かん)|はい (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:ほんの～|ほんの～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:ミリ (メートル)|ミリ (メートル)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:我～|わが～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:外～|がい～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:各～|かく～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:幾～|いく～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:共産～|きょうさん～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:空～|くう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:現～|げん～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:古～|ふる～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:御～|おん～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:高～|こう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:今～|こん～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:再～|さい～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:最～|さい～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:室～|しつ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:重～|じゅう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:初～|しょ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:諸～|しょ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:女～|じょ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:小～|こ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:省～|しょう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:上～|うわ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:前～|ぜん～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:総～|そう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:第～|だい～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:短～|たん～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:長～|なが～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:低～|てい～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:同～|どう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:反～|はん～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:非～|ひ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:副～|ふく～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:防～|ぼう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:毎～|まい～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:未～|み～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:民主～|みんしゅ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:名～|めい～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:明くる～|あくる～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:翌～|よく～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:両～|りょう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:和～|わ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n2:(かさを～) さす|(かさを～) さす": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:おおい (かん)|おおい (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:くじ (～をひく)|くじ (～をひく)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:こつ (をつかむ)|こつ (をつかむ)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:さきに (いぜん)|さきに (いぜん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:さぞ (さぞや。さぞかし)|さぞ (さぞや。さぞかし)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:そり (～にのる)|そり (～にのる)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:つじつま (はなしの～)|つじつま (はなしの～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:とげ (をさす)|とげ (をさす)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:ひび (かべの～)|ひび (かべの～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:よし (かん)|よし (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:よって (よりどころ)|よって (よりどころ)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:コンタクト (レンズ)|コンタクト (レンズ)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:干し～|ほし～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:当～|とう～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:掛～|かけ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:故～|こ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:片～|かた～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:～増し|～増し": {
+    "disposition": "exclude",
+    "reason": "Kanji/prefix-pattern entry in the kana field; removed from the graded pool."
+  },
+  "vocab:n1:(花を〜) 生ける, 活ける|(はなを～) いける": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:あせる (こえが～)|あせる (こえが～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:おごる (ゆうしょくを～)|おごる (ゆうしょくを～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:かく (はじを)|かく (はじを)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:こす (みずを～)|こす (みずを～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:ございます (かん)|ございます (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:ごらんなさい (かん)|ごらんなさい (かん)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:さらう (こどもを～)|さらう (こどもを～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:すくう (みずを～)|すくう (みずを～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:つぶる (めを～)|つぶる (めを～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:またがる (うまを～)|またがる (うまを～)": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "vocab:n1:マイ～|マイ～": {
+    "disposition": "exclude",
+    "reason": "Untransliterable scrape artifact (annotation-bearing or non-word kana); removed from the graded pool in the tracked pool; no clean twin exists for the 68 without one."
+  },
+  "grammar:n3:3": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:4": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:5": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:6": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:8": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:9": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:10": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:12": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:14": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:15": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:17": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:19": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:20": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:21": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:22": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:23": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:24": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:25": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:26": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:27": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:30": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:31": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:33": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:34": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:36": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:37": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:38": {
+    "disposition": "replace",
+    "reason": "Instruction-as-example sentence (…を使って文を作ってみてください) removed from examples; lesson graded."
+  },
+  "grammar:n3:39": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:43": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:44": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:46": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:47": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:48": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:49": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:51": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:52": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:53": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:55": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:56": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:57": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:58": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:59": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:61": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:62": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:64": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:66": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:68": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:69": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:70": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:72": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:73": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:74": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:75": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:76": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:78": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:79": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:81": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:82": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:83": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:85": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:86": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:87": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:92": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:93": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:94": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:95": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:96": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:97": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:98": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:102": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:104": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:105": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:107": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:110": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:111": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:112": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:114": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:115": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:118": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:119": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:120": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:121": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:122": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:123": {
+    "disposition": "replace",
+    "reason": "Instruction-as-example sentence (…を使って文を作ってみてください) removed from examples; lesson graded."
+  },
+  "grammar:n3:124": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:125": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:127": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:129": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:130": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:131": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:132": {
+    "disposition": "exclude",
+    "reason": "Machine-generated distractor answers are malformed (もしかしなら, かと思っなら); the generated set is not trustworthy; lesson stays ungraded."
+  },
+  "grammar:n3:133": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:134": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:137": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:141": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:143": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:146": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:147": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:151": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:152": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:153": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:155": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:156": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:158": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:164": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:166": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:167": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:168": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:169": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:170": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:172": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:173": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:177": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:178": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:179": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n3:180": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n3:182": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:2": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:3": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:4": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:5": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:6": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:8": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:9": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:10": {
+    "disposition": "exclude",
+    "reason": "Machine-generated distractor answers are malformed (もしかしなら, かと思っなら); the generated set is not trustworthy; lesson stays ungraded."
+  },
+  "grammar:n2:12": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:13": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:14": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:15": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:16": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:17": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:18": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:20": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:21": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:22": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:23": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:25": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:27": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:28": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:29": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:31": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:34": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:37": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n2:39": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:40": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:41": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:42": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:43": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:44": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:45": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:46": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:47": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:49": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:51": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:56": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:59": {
+    "disposition": "fix",
+    "reason": "Flagged as instruction-example but no example is one on inspection (false positive); defect flag cleared, lesson graded."
+  },
+  "grammar:n2:60": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:61": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:64": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:65": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:66": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:68": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n2:70": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:71": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:72": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:73": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n2:77": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:78": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:79": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:80": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:82": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:84": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n2:85": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:87": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:88": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:89": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:90": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:91": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:92": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:93": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:94": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:95": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:96": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:97": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:98": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:99": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:100": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:101": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:102": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:103": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:104": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:105": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:106": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:107": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:108": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:109": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:111": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:112": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:113": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:116": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:117": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:120": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:122": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:124": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n2:125": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:126": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:127": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:128": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n2:129": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:130": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:131": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:133": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:134": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:136": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:137": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:138": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:139": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:142": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:143": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:145": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:146": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:148": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:149": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:150": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:151": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:153": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:154": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:155": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:156": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:157": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:158": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:159": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:160": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:161": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:162": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n2:164": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:165": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:167": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:168": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:172": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:174": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:176": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:180": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:181": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:182": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:187": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:188": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:189": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:193": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n2:194": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n2:195": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:4": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:5": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:6": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:7": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:8": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:9": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:10": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:11": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:12": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:13": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:14": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:15": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:16": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:17": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:18": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:21": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:22": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:23": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:24": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:25": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:26": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:27": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:28": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:29": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:30": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:31": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:32": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:33": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:34": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:35": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:38": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:39": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:40": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:41": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:42": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:43": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:44": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:45": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:46": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:47": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:48": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:49": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:50": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:52": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:53": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:54": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:55": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:56": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:57": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:58": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:59": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:60": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:61": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:63": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:64": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:65": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:66": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:67": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:68": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:69": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:70": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:71": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:72": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:73": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:75": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:76": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:77": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:78": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:79": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:81": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:82": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:83": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:84": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:85": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:87": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:88": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:89": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:91": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:93": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:94": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:95": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:96": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:97": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:98": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:99": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:100": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:101": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:102": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:103": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:104": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:105": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:106": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:107": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:109": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:110": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:111": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:112": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:113": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:114": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:115": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:116": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:117": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:119": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:120": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:123": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:124": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:125": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:126": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:128": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:130": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:131": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:132": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:133": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:134": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:135": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:136": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:137": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:138": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:139": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:140": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:141": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:142": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:143": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:144": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:145": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:146": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:147": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:148": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:149": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:150": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:151": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:152": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:153": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:154": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:156": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:157": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:158": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:159": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:160": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:161": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:162": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:163": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:164": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:165": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:166": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:167": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:168": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:169": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:170": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:171": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:172": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:173": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:174": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:176": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:177": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:178": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:179": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:181": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:182": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:183": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:184": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:185": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:186": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:187": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:190": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:191": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:192": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:196": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:197": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:198": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:199": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:200": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:201": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:202": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:203": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:204": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:205": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:206": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:207": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:208": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:209": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:210": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:211": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:212": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:213": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:214": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:215": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:216": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:217": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:219": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:221": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:222": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:226": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:227": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:228": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:229": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:230": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:231": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:233": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:234": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:235": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:236": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:238": {
+    "disposition": "replace",
+    "reason": "Exact duplicate example sentence removed from examples; lesson graded."
+  },
+  "grammar:n1:239": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:240": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:241": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:243": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:244": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:245": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:246": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:247": {
+    "disposition": "exclude",
+    "reason": "Quiz answer/choices carry the uninstantiated ～ placeholder; lesson stays ungraded (browsable reference only), never enters a scored quiz."
+  },
+  "grammar:n1:248": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:249": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:250": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
+  },
+  "grammar:n1:251": {
+    "disposition": "exclude",
+    "reason": "Generic non-discriminating fill-in-the-blank stem gives no basis to pick an answer; lesson stays ungraded."
   }
 }

@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "vitest";
 import { validateGrammar, validateKanji, validateVocab } from "./gate";
-import { kanjiId, vocabId } from "./ids";
+import { kanjiId, vocabId, type JlptLevel } from "./ids";
 import { ENABLED_LEVELS, LevelUnavailableError, loadLevelData, type LevelData } from "./loaders";
 
 /**
@@ -174,9 +174,10 @@ describe("validation gate: clean pools", () => {
 });
 
 describe("validation gate: requested level", () => {
-  it("rejects levels the loader does not serve yet", async () => {
-    await expect(loadLevelData("n3")).rejects.toThrow(LevelUnavailableError);
-    await expect(loadLevelData("n1")).rejects.toThrow(LevelUnavailableError);
+  it("rejects levels outside the enabled set", async () => {
+    // Runtime level comes from storage; a corrupted stored value must be
+    // rejected, never served.
+    await expect(loadLevelData("n9" as JlptLevel)).rejects.toThrow(LevelUnavailableError);
   });
 
   it("serves every enabled level through the same gate", async () => {

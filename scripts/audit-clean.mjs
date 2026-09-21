@@ -32,9 +32,9 @@ const ADJ_CLASSES = new Set(["i", "na"]);
 const FLOORS = {
   kanaHiragana: 46,
   kanaKatakana: 46,
-  kanji: { n5: 80, n4: 166 },
-  vocab: { n5: 738, n4: 649 },
-  grammarGraded: { n5: 72, n4: 130 },
+  kanji: { n5: 80, n4: 166, n3: 367, n2: 367, n1: 1232 },
+  vocab: { n5: 738, n4: 649, n3: 2097, n2: 1682, n1: 2655 },
+  grammarGraded: { n5: 72, n4: 130, n3: 67, n2: 71, n1: 45 },
 };
 
 // Self-test fixture: put a U+FF0D into the first passage title found, so the
