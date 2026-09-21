@@ -80,6 +80,19 @@ describe("kana, kanji, vocab builders grade real content (DEVELOPMENT_PROMPT tas
     }
   });
 
+  it("kanji drill accepts romaji readings alongside kana answers", () => {
+    const items = buildItems("kanji", pools, DEFAULT_OPTIONS);
+    const mizu = items.find((i) => i.prompt === "水");
+    expect(mizu, "水 in pool").toBeDefined();
+    expect(mizu!.accepted).toContain("mizu");
+    expect(mizu!.accepted.some((a) => /[\u3040-\u30ff]/.test(a))).toBe(true);
+    for (const item of items) {
+      for (const a of item.accepted) {
+        expect(a, `${item.id} accepted "${a}"`).not.toBe("");
+      }
+    }
+  });
+
   it("vocab accepts genuine Latin romaji and speaks the kana", () => {
     const items = buildItems("vocab", pools, DEFAULT_OPTIONS);
     expect(items).toHaveLength(738);

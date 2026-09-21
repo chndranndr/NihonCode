@@ -190,6 +190,27 @@ test("drill grades, XP persists across reload, and reviewed cards leave the new 
   await page.keyboard.press("ArrowRight");
   await expect(page.locator(".inspector-char")).not.toHaveText(charBefore);
 });
+test("filled CTA keeps readable text on hover", async ({ page }) => {
+  await page.goto("/");
+  const cta = page.getByTestId("routine-cta");
+  await expect(cta).toBeVisible();
+  await cta.hover();
+  const colors = await cta.evaluate((el) => {
+    const s = getComputedStyle(el);
+    return { color: s.color, background: s.backgroundColor };
+  });
+  // Accent-on-accent made the label invisible; the text must stay the ground
+  // color while the fill stays the accent.
+  expect(colors.color).not.toBe(colors.background);
+  const rgb = (c: string) => (c.match(/\d+/g) ?? []).map(Number);
+  const [cr, cg, cb] = rgb(colors.color);
+  const [br, bg, bb] = rgb(colors.background);
+  const luminance = (r: number, g: number, b: number) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  expect(
+    Math.abs(luminance(cr, cg, cb) - luminance(br, bg, bb)),
+    `hover contrast ${colors.color} on ${colors.background}`,
+  ).toBeGreaterThan(60);
+});
 
 test("grammar lesson resume survives reload", async ({ page }) => {
   await page.goto("/learn");

@@ -67,5 +67,6 @@ test("progress surface reads honest zeros in a fresh context", async ({ page }) 
   await expect(page.getByTestId("progress")).toBeVisible();
   await expect(page.getByTestId("coverage")).toHaveText("0% OF THE N5 CLEAN SLICE");
   await expect(page.getByTestId("achievements")).toContainText("□");
+  await expect(page.getByTestId("map-legend")).toBeVisible();
   await expect(page.getByTestId("achievements")).not.toContainText("■");
 });

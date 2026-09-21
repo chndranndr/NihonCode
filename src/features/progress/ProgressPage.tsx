@@ -222,6 +222,11 @@ export function ProgressPage() {
               <p className="empty-teach">No studied material at this level yet.</p>
             )}
           </div>
+          <p className="map-legend" data-testid="map-legend" aria-label="map color key">
+            <span className="mastered">MASTERED ≥80%</span>
+            <span className="learning">LEARNING</span>
+            <span className="unseen">UNSEEN</span>
+          </p>
           <div className="inspector panel" aria-live="polite" data-testid="inspector">
             {selected ? (
               <>

@@ -407,6 +407,13 @@ button.primary {
   font-size: 0.9rem;
 }
 
+/* Filled CTAs keep their ground-colored text on hover: the generic a:hover
+   accent would otherwise render accent-on-accent (invisible). */
+.routine-cta:hover,
+.routine-cta:focus-visible {
+  color: var(--ground);
+}
+
 .dash-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -570,17 +577,42 @@ button.primary {
   font-size: 1rem;
 }
 
+.kanji-cell.unseen {
+  color: var(--ink-dim);
+}
+
+/* Mastery fill: the map reads state by color, not border alone. */
 .kanji-cell.mastered {
+  background: var(--accent-green);
   border-color: var(--accent-green);
-  color: var(--accent-green);
+  color: var(--ground);
 }
 
 .kanji-cell.learning {
+  background: var(--accent-blue);
   border-color: var(--accent-blue);
+  color: var(--ground);
+}
+
+.map-legend {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.map-legend span::before {
+  content: "■ ";
+}
+
+.map-legend .mastered::before {
+  color: var(--accent-green);
+}
+
+.map-legend .learning::before {
   color: var(--accent-blue);
 }
 
-.kanji-cell.unseen {
+.map-legend .unseen::before {
   color: var(--ink-dim);
 }
 

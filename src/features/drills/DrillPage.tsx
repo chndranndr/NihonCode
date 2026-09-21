@@ -12,6 +12,7 @@ import {
   type AttemptKind,
 } from "../../storage/progressRepo";
 import { CLEAN_SLICE_LEVEL } from "../../content/loaders";
+import { kanaToRomaji } from "../../domain/romaji";
 
 const LIMITS = [10, 20, 50] as const;
 
@@ -71,17 +72,26 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
         speakText: k.char,
       }));
     case "kanji":
-      return shuffle(pools.kanji).map((k) => ({
-        id: k.id,
-        prompt: k.char,
-        accepted: k.answers,
-        reveal: {
-          scripts: [k.char, k.reading],
-          meaning: k.meaning,
-          group: `kanji ${CLEAN_SLICE_LEVEL}`,
-        },
-        speakText: k.char,
-      }));
+      return shuffle(pools.kanji).map((k) => {
+        // Readings are kana; learners type romaji, so transliterated readings
+        // join the accepted set (grading is normalized, so case/spacing is
+        // free). Unsupported characters yield null and add nothing.
+        const romaji = k.reading
+          .split(/[、・/]/)
+          .map((r) => kanaToRomaji(r.trim()))
+          .filter((r): r is string => r !== null);
+        return {
+          id: k.id,
+          prompt: k.char,
+          accepted: [...k.answers, ...romaji],
+          reveal: {
+            scripts: [k.char, k.reading],
+            meaning: k.meaning,
+            group: `kanji ${CLEAN_SLICE_LEVEL}`,
+          },
+          speakText: k.char,
+        };
+      });
     case "vocab":
       return shuffle(pools.vocab).map((v) => ({
         id: v.id,
