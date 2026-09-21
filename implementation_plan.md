@@ -209,6 +209,7 @@ Stack (unchanged from PRD review): React + TypeScript (strict), Vite, React Rout
 
 - Enable N4–N1 kanji, vocabulary, grammar from `data/clean/`, and the level selector that Phase 1 deferred (nothing writes `prefs.level`; the gate refuses non-n5).
 - Conjugation drill (now backed by real metadata).
+- Practice-setup pool matrix on every drill setup screen (eligible-item count + browsable list from the loaded pools; owner addition 2026-09-21). The conjugation preview reuses it.
 - Full kana table if Phase 2.6 added it.
 - JLPT practice: all five categories, level + category + numbered set selection, graded runs over keyed questions only, per-set progress, listening playback on verified audio, reading passages with localized images.
 - SRS statistics page (streak, due today, learned/total, mastery %, kanji vs vocab breakdown).

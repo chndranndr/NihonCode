@@ -2,6 +2,14 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-21 — Practice-setup pool matrix scoped to Phase 3 (owner addition)
+
+**Decision.** Owner request from trial use: every drill's setup screen should show the matrix of eligible items in its pool. Recorded as Phase 3 scope, not shipped now: PRD §10.6 gains the requirement (count + browsable eligible list before start; conjugation preview reuses it), PRD §17 inventory and implementation_plan.md section 3 in-scope list match, and DEVELOPMENT_PROMPT.md Phase 3 task 2 carries the acceptance (matrix counts equal the builder's pool sizes).
+
+**Why.** PRD §10.9 already mandates an eligible-word preview for conjugation; generalizing it to all drills is the same read-only view over pools the builders already slice, so it costs one shared component in Phase 3 rather than a per-drill retrofit later. It is an owner addition beyond the PRD's original scope, hence recorded here and in the plan rather than treated as existing requirement.
+
+**Binds.** PRD.md §10.6/§17, implementation_plan.md section 3, DEVELOPMENT_PROMPT.md Phase 3 task 2.
+
 ## 2026-09-21 — Single source of truth: data/clean committed, raw scrape and build pipeline retired
 
 **Decision.** By owner directive ("jaga cukup 1 source of truth; kalau gak dipake aplikasi ya hapus, ubah pipeline-nya"), the repository now holds exactly one dataset: `data/clean/` — committed, including the 184 listening MP3s under `data/clean/audio/` — read only by `src/content/loaders.ts`. The raw scrape (`data/generated/`, `data/jlpt/`, ~54 MB) and the entire Phase 2 build pipeline are deleted: `scripts/build-clean.mjs`, `scripts/audit-data.mjs`, `scripts/data-baseline.json`, `scripts/merge-findings.mjs` + `scripts/lib/{romaji,packed,markers,grammar-defects,mp3,ids,overrides,passage-emit,findings-merge}.*` (no live consumers remain; `scripts/lib/scrub.mjs` stays as audit-clean's artifact detector). `curation/review-queue.json` is replaced by the frozen worklist `curation/queue-n3-n1.json` (560 open N3–N1 items for the future curation pass). package.json drops prepare/predev/prebuild/build:clean/audit:data/merge:findings; the check chain is typecheck+lint+format+arch+taste+docs+audit-clean self-test+audit-clean; audit-clean gains a missing-audio-file assertion; gc loses the retired targets; the manifest is pruned to existing artifacts.

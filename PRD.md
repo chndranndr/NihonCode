@@ -230,6 +230,7 @@ Shared drill behavior for kana/kanji/vocab-based drills:
 - Show a completion summary with score percentage.
 - Award XP on completion.
 - Allow retrying the drill with reshuffled items.
+- Before starting, the setup screen shows the eligible pool for the selected mode as a compact matrix: item count plus a browsable list of what the session can draw (same pools the drill builder slices). The conjugation preview (10.9) reuses this matrix.
 
 Answer rules:
 
@@ -590,6 +591,7 @@ Features in the simplified web scope:
 - Number drill setup and practice
 - Date/day drill setup and practice
 - Conjugation drill setup and practice
+- Practice-setup pool matrix: eligible-item preview (count + browsable list) on every drill setup screen
 - Built-in grammar library with quizzes (N5–N1)
 - JLPT practice sets with five categories, bundled listening audio, and per-set progress
 - FSRS-based SRS review with configurable new-card cap and learning-step skip
