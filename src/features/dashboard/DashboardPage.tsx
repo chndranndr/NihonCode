@@ -42,9 +42,8 @@ export function DashboardPage() {
       const poolIds = srsPoolIds(pools!);
       const due = await dueCount(poolIds);
       const queue = await buildDueQueue(poolIds, prefs.srs.dailyNewCap);
-      const stats = await srsStats();
       const rows = await db().grammarState.bulkGet(pools!.grammar.map((l) => l.id));
-      const grammarDone = rows.filter((r) => r?.status === "completed").length;
+      const stats = await srsStats(poolIds);
       let kanjiMastered = 0;
       for (const k of pools!.kanji) {
         const m = await masteryByItem(k.id);

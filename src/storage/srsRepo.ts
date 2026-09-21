@@ -102,8 +102,12 @@ export interface SrsStats {
   byLevel: Record<JlptLevel, { total: number; learned: number }>;
 }
 
-export async function srsStats(now: Date = new Date()): Promise<SrsStats> {
+export async function srsStats(poolIds?: string[], now: Date = new Date()): Promise<SrsStats> {
   const cards = await db().srsCards.toArray();
+  // `due` scopes to the active level's pool when given (the review queue's
+  // pool), so the dashboard's DUE readout matches its routine CTA; totals
+  // stay global. Scoping clause: decisions.md "N4 enablement".
+  const inPool = poolIds ? new Set(poolIds) : null;
   const stats: SrsStats = {
     total: cards.length,
     due: 0,
@@ -124,12 +128,7 @@ export async function srsStats(now: Date = new Date()): Promise<SrsStats> {
   for (const c of cards) {
     const card = deserializeCard(c.state);
     const level = c.id.split(":")[1] as JlptLevel;
-    const kind =
-      level === "n5" && c.id.startsWith("kanji:")
-        ? "kanji"
-        : c.id.startsWith("vocab:")
-          ? "vocab"
-          : null;
+    const kind = c.id.startsWith("kanji:") ? "kanji" : c.id.startsWith("vocab:") ? "vocab" : null;
     const bucket = stats.byLevel[level];
     if (bucket) {
       bucket.total += 1;
@@ -144,7 +143,7 @@ export async function srsStats(now: Date = new Date()): Promise<SrsStats> {
     if (card.state === State.Review) stats.mastered += 1;
     else if (c.reps > 0) stats.learning += 1;
     stats.lapses += c.lapses;
-    if (isDue(card, now)) stats.due += 1;
+    if (isDue(card, now) && (inPool === null || inPool.has(c.id))) stats.due += 1;
   }
   return stats;
 }

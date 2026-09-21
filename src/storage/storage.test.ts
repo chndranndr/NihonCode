@@ -17,6 +17,9 @@ import {
   savePrefs,
   type Prefs,
 } from "./prefs";
+import { db } from "./db";
+import { buildDueQueue, dueCount } from "./srsRepo";
+import { newCard, serializeCard } from "../domain/scheduling";
 
 function memoryStorage(): Storage {
   const map = new Map<string, string>();
@@ -209,5 +212,38 @@ describe("Dexie storage", () => {
     expect(await upgraded.srsCards.count()).toBe(1);
     upgraded.close();
     db = upgraded;
+  });
+});
+
+describe("SRS pool scoping by level", () => {
+  const now = new Date();
+  const ids = ["kanji:n5:水", "kanji:n4:X", "vocab:n4:上げる|あげる"];
+  const card = (id: string) => ({
+    id,
+    state: serializeCard(newCard(now)),
+    due: now.getTime(),
+    reps: 1,
+    lapses: 0,
+    lastReview: now.getTime() - 1000,
+  });
+
+  afterEach(async () => {
+    await db().srsCards.bulkDelete(ids);
+  });
+
+  it("excludes foreign-level cards from the due queue and due count", async () => {
+    await db().srsCards.bulkPut(ids.map(card));
+
+    const n5Pool = ["kanji:n5:水", "kanji:n5:火", "vocab:n5:水|みず"];
+    expect(await dueCount(n5Pool, now)).toBe(1);
+    const queue = await buildDueQueue(n5Pool, 20, now);
+    expect(queue.due).toEqual(["kanji:n5:水"]);
+    expect(queue.newCandidates.sort()).toEqual(["kanji:n5:火", "vocab:n5:水|みず"]);
+
+    // The N4 cards stay scheduled: switching levels surfaces exactly them.
+    const n4Pool = ["kanji:n4:X", "vocab:n4:上げる|あげる"];
+    const n4Queue = await buildDueQueue(n4Pool, 20, now);
+    expect(n4Queue.due.sort()).toEqual([...n4Pool]);
+    expect(n4Queue.newCandidates).toEqual([]);
   });
 });
