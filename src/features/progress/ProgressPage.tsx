@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { Panel } from "../../components/Panel";
-import { getPools } from "../../components/pools";
+import { useLevel } from "../../components/level";
 import { achievements, coverageEstimate } from "../../domain/achievements";
 import { dayKey, xpProgress } from "../../domain/progress";
 import { masteryByItem, sessionSummary } from "../../storage/progressRepo";
 import { srsStats, type SrsStats } from "../../storage/srsRepo";
 import { loadPrefs } from "../../storage/prefs";
+import { ENABLED_LEVELS } from "../../content/loaders";
 import type { JlptLevel } from "../../content/ids";
 import type { KanjiItem } from "../../content/models";
 
@@ -31,12 +32,11 @@ const LEVELS: JlptLevel[] = ["n5", "n4", "n3", "n2", "n1"];
 
 export function ProgressPage() {
   const prefs = loadPrefs();
-  const pools = getPools();
+  const { pools, level, setLevel } = useLevel();
   const [stats, setStats] = useState<SrsStats | null>(null);
   const [sessions, setSessions] = useState<Awaited<ReturnType<typeof sessionSummary>> | null>(null);
   const [cells, setCells] = useState<KanjiCell[]>([]);
   const [selected, setSelected] = useState<KanjiCell | null>(null);
-  const [levelFilter, setLevelFilter] = useState<JlptLevel>("n5");
 
   useEffect(() => {
     void srsStats().then(setStats);
@@ -44,6 +44,7 @@ export function ProgressPage() {
   }, []);
 
   useEffect(() => {
+    if (!pools) return;
     let cancelled = false;
     void (async () => {
       const next: KanjiCell[] = [];
@@ -67,7 +68,7 @@ export function ProgressPage() {
   const weekMax = Math.max(1, ...week.map(([, v]) => v));
 
   const coverage = useMemo(() => {
-    if (!stats) return 0;
+    if (!stats || !pools) return 0;
     return coverageEstimate(
       stats.learned,
       pools.kanji.length + pools.vocab.length,
@@ -87,10 +88,7 @@ export function ProgressPage() {
     weeklyXp: prefs.progress.weeklyXp,
   });
 
-  const visibleCells = useMemo(
-    () => cells.filter((c) => c.item.level === levelFilter),
-    [cells, levelFilter],
-  );
+  const visibleCells = useMemo(() => cells.filter((c) => c.item.level === level), [cells, level]);
 
   return (
     <div className="progress-page" data-testid="progress">
@@ -174,7 +172,7 @@ export function ProgressPage() {
 
         <Panel title="COVERAGE OF STUDIED MATERIAL">
           <p className="micro-label" data-testid="coverage">
-            {Math.round(coverage * 100)}% OF THE N5 CLEAN SLICE
+            {Math.round(coverage * 100)}% OF THE {level.toUpperCase()} CLEAN SLICE
           </p>
           <p className="empty-teach">
             Coverage counts learned SRS cards and completed lessons against the clean-slice pool. It
@@ -186,18 +184,21 @@ export function ProgressPage() {
           title="KANJI MASTERY MAP"
           actions={
             <div className="limit-row" role="radiogroup" aria-label="level filter">
-              {LEVELS.map((l) => (
-                <button
-                  key={l}
-                  type="button"
-                  aria-pressed={levelFilter === l}
-                  disabled={l !== "n5"}
-                  title={l === "n5" ? undefined : "cleared in Phase 2"}
-                  onClick={() => setLevelFilter(l)}
-                >
-                  {l.toUpperCase()}
-                </button>
-              ))}
+              {LEVELS.map((l) => {
+                const enabled = ENABLED_LEVELS.includes(l);
+                return (
+                  <button
+                    key={l}
+                    type="button"
+                    aria-pressed={level === l}
+                    disabled={!enabled}
+                    title={enabled ? undefined : "map shows the active level's kanji"}
+                    onClick={() => setLevel(l)}
+                  >
+                    {l.toUpperCase()}
+                  </button>
+                );
+              })}
             </div>
           }
         >

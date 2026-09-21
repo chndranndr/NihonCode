@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { SpeakerButton } from "../../components/SpeakerButton";
-import { getPools } from "../../components/pools";
+import { useLevel } from "../../components/level";
 import { XP } from "../../domain/progress";
 import { awardXp, recordSession } from "../../storage/progressRepo";
 import { db } from "../../storage/db";
+import { grammarLessonId } from "../../content/ids";
 
 export function GrammarLessonPage() {
   const { lessonId = "" } = useParams();
   const navigate = useNavigate();
-  const pools = getPools();
+  const { pools, level } = useLevel();
   const [quizIndex, setQuizIndex] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
   const [revealed, setRevealed] = useState<string | null>(null);
   const [resumed, setResumed] = useState(false);
 
-  const lesson = pools.grammar.find((l) => l.lessonId === lessonId) ?? null;
+  const lesson = pools?.grammar.find((l) => l.lessonId === lessonId) ?? null;
 
   useEffect(() => {
     let cancelled = false;
     void (async () => {
-      const state = await db().grammarState.get(`grammar:n5:${lessonId}`);
+      const state = await db().grammarState.get(grammarLessonId(level, lessonId));
       if (cancelled) return;
       if (state && state.status === "in-progress") setQuizIndex(state.resumeQuizIndex);
       setResumed(true);
@@ -28,7 +29,7 @@ export function GrammarLessonPage() {
     return () => {
       cancelled = true;
     };
-  }, [lessonId]);
+  }, [lessonId, level]);
 
   // Persist only after the resume load has resolved; otherwise the mount-time
   // write clobbers the stored index back to 0 before the read lands.

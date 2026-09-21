@@ -6,7 +6,7 @@
  */
 
 export const PREFS_KEY = "NihonCode-prefs";
-export const PREFS_SCHEMA_VERSION = 1;
+export const PREFS_SCHEMA_VERSION = 2;
 
 export type AccentName = "amber" | "green" | "blue" | "orange" | "red";
 
@@ -14,6 +14,8 @@ export const ACCENTS: readonly AccentName[] = ["amber", "green", "blue", "orange
 
 export interface Prefs {
   schemaVersion: number;
+  /** Active JLPT level; the loader rejects levels it does not serve yet. */
+  level: "n5" | "n4" | "n3" | "n2" | "n1";
   srs: {
     dailyNewCap: number;
     skipLearningSteps: boolean;
@@ -28,6 +30,7 @@ export interface Prefs {
 
 export const DEFAULT_PREFS: Prefs = {
   schemaVersion: PREFS_SCHEMA_VERSION,
+  level: "n5",
   srs: { dailyNewCap: 20, skipLearningSteps: false },
   progress: { xp: 0, streakDays: 0, lastStudyDay: null, weeklyXp: {} },
 };

@@ -2,6 +2,14 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-21 — N4 enablement + level selector: async per-level loaders, level-scoped SRS
+
+**Decision.** Level data now loads through `loadLevelData(level)`: per-level dynamic imports of `data/clean/{kanji,vocabulary,grammar}_<level>.json` plus one shared kana load, cached per level per session; the loader throws `LevelUnavailableError` for levels outside `ENABLED_LEVELS` (n5, n4 today). `prefs.level` (schema v2) stores the choice; `LevelProvider` wraps the shell and every content-consuming feature migrated from the deleted sync `getPools()` to `useLevel()`. Three scoping rules landed with it: the SRS due queue and due count filter to the active level's pool (cards from other levels stay scheduled but never surface); grammar lesson resume keys use the active level's namespace; the conjugation drill stays pinned to N5 vocab per PRD §10.9 even when another level is active, with one effective-pools derivation shared by the setup preview and START. The level selector lives on the dashboard (PRD §10.1); the progress-page kanji-map buttons switch the app level instead of filtering a single-level pool against a hardcoded n5.
+
+**Why.** Phase 3 DoD requires the initial load to carry no inactive-level chunks; static imports of all levels would violate that, so the dynamic imports are the genuine runtime-selection exception. Level-scoped SRS keeps progress honest across switches: reviewing at N5 must never resurface N4 cards as new or hide them from N4's own queue. The loader rejecting disabled levels is the executable pin that a stale stored preference cannot surface uncurated content.
+
+**Binds.** src/storage/prefs.ts (schema v2, level), src/content/loaders.ts (async per-level), src/components/level.tsx + pools.ts, src/app/AppShell.tsx, all six getPools consumers (dashboard, learn, drills, review, progress, grammar), src/storage/srsRepo.ts (pool-scoped due), src/content/gate.test.ts (requested-level rejection), e2e/journey.spec.ts (level switch persists, inactive chunks never load, N4 vocab drill grades, conjugation pin exercised through START). N3–N1 join `ENABLED_LEVELS` with their curation pass (task 4).
+
 ## 2026-09-21 — Conjugation drill shipped (PRD §10.9); Hepburn yōon + form-set decisions
 
 **Decision.** The conjugation drill is live: a pure domain conjugator (`src/domain/conjugation.ts`) produces kana/kanji/romaji for every verb form and adjective form; the builder slices it over the gate's `pos`/`conjugationClass` metadata; the setup screen reuses the shared pool matrix; the LOCKED CONJUGATION panel is replaced by a live link on Learn and Dashboard.

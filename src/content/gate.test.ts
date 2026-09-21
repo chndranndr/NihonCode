@@ -1,7 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import { validateGrammar, validateKanji, validateVocab } from "./gate";
 import { kanjiId, vocabId } from "./ids";
-import { loadGrammar, loadKana, loadKanji, loadVocab } from "./loaders";
+import { ENABLED_LEVELS, LevelUnavailableError, loadLevelData, type LevelData } from "./loaders";
 
 /**
  * DEVELOPMENT_PROMPT.md task 1 acceptance: the gate excludes and flags
@@ -108,9 +108,14 @@ describe("validation gate: known-bad samples are flagged, not thrown on", () => 
   });
 });
 
+let n5!: LevelData;
+beforeAll(async () => {
+  n5 = await loadLevelData("n5");
+});
+
 describe("validation gate: clean pools", () => {
   it("loads the 46+46 basic gojuon", () => {
-    const { items, flags } = loadKana();
+    const { items, flags } = n5.kana;
     expect(flags).toEqual([]);
     expect(items.filter((i) => i.table === "hiragana")).toHaveLength(46);
     expect(items.filter((i) => i.table === "katakana")).toHaveLength(46);
@@ -118,14 +123,14 @@ describe("validation gate: clean pools", () => {
   });
 
   it("loads 80 marker-free kanji N5 entries", () => {
-    const { items, flags } = loadKanji();
+    const { items, flags } = n5.kanji;
     expect(flags).toEqual([]);
     expect(items).toHaveLength(80);
     for (const item of items) expect(item.answers.length).toBeGreaterThan(0);
   });
 
   it("loads the curated N5 vocab pool: 738 graded entries, all Latin romaji", () => {
-    const { items, flags } = loadVocab();
+    const { items, flags } = n5.vocab;
     // Post-curation clean pool (docs/data-quality.md): 738 graded N5 vocab
     // entries; packed alternatives carry variants lists and grade on primary.
     expect(items).toHaveLength(738);
@@ -134,7 +139,7 @@ describe("validation gate: clean pools", () => {
   });
 
   it("carries curated conjugation metadata for exactly the conjugable entries", () => {
-    const { items } = loadVocab();
+    const { items } = n5.vocab;
     const conjugatable = items.filter((v) => v.pos !== undefined);
     const verbs = conjugatable.filter((v) => v.pos === "verb");
     const adjs = conjugatable.filter((v) => v.pos === "adjective");
@@ -149,7 +154,7 @@ describe("validation gate: clean pools", () => {
   });
 
   it("loads the 72 graded N5 grammar lessons with answer-in-choices quizzes", () => {
-    const { items, flags } = loadGrammar();
+    const { items, flags } = n5.grammar;
     expect(flags).toEqual([]);
     expect(items).toHaveLength(72);
     for (const lesson of items) {
@@ -165,6 +170,24 @@ describe("validation gate: clean pools", () => {
       "lesson not graded; excluded from graded pool",
       "id outside this level's namespace",
     ]);
+  });
+});
+
+describe("validation gate: requested level", () => {
+  it("rejects levels the loader does not serve yet", async () => {
+    await expect(loadLevelData("n3")).rejects.toThrow(LevelUnavailableError);
+    await expect(loadLevelData("n1")).rejects.toThrow(LevelUnavailableError);
+  });
+
+  it("serves every enabled level through the same gate", async () => {
+    for (const lvl of ENABLED_LEVELS) {
+      const data = await loadLevelData(lvl);
+      expect(data.level).toBe(lvl);
+      expect(data.kana.items.length).toBeGreaterThan(0);
+      expect(data.kanji.items.length).toBeGreaterThan(0);
+      expect(data.vocab.items.length).toBeGreaterThan(0);
+      expect(data.grammar.items.length).toBeGreaterThan(0);
+    }
   });
 });
 

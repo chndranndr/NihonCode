@@ -107,7 +107,11 @@ const GOJUON: Record<string, string> = {
 };
 
 async function readQueue(page: Page): Promise<{ due: number; fresh: number }> {
-  const text = await page.getByTestId("review").innerText();
+  // The queue resolves once the active level's pools load (async loaders);
+  // wait for the count line, then read it.
+  const review = page.getByTestId("review");
+  await expect(review).toContainText(/DUE \d+ · NEW \d+/);
+  const text = await review.innerText();
   const due = Number(/DUE (\d+)/.exec(text)?.[1] ?? 0);
   const fresh = Number(/NEW (\d+)/.exec(text)?.[1] ?? 0);
   return { due, fresh };
@@ -387,4 +391,86 @@ test("conjugation drill grades verb and adjective forms from curated metadata", 
     await page.keyboard.press("Enter");
   }
   await expect(page.getByTestId("summary-score")).toHaveText("100%");
+});
+
+const N4_VOCAB_ROMAJI: Record<string, string[]> = {};
+for (const v of validateVocab(
+  JSON.parse(readFileSync("data/clean/vocabulary_n4.json", "utf8")),
+  "n4",
+).items) {
+  (N4_VOCAB_ROMAJI[v.kanji] ??= []).push(v.romaji);
+}
+test("level switch persists across reload and lazy-loads only the active level", async ({
+  page,
+}) => {
+  const chunks: string[] = [];
+  page.on("request", (req) => {
+    const url = req.url();
+    if (url.includes("/assets/") && url.endsWith(".js")) chunks.push(url.split("/").pop() ?? url);
+  });
+
+  await page.goto("/");
+  await expect(page.getByText("LVL N5")).toBeVisible();
+  await expect(page.getByTestId("routine-cta")).toBeVisible();
+
+  // Initial load: n5 chunks only (kana is shared, no level suffix).
+  const loaded = chunks.join(" ");
+  expect(loaded).toContain("kanji_n5");
+  expect(loaded).toContain("vocabulary_n5");
+  expect(loaded).toContain("grammar_n5");
+  for (const lvl of ["n4", "n3", "n2", "n1"]) {
+    expect(loaded).not.toContain(`kanji_${lvl}`);
+    expect(loaded).not.toContain(`vocabulary_${lvl}`);
+    expect(loaded).not.toContain(`grammar_${lvl}`);
+  }
+
+  // Switch to N4 from the dashboard selector.
+  await page.getByRole("button", { name: "N4" }).click();
+  await expect(page.getByText("LVL N4")).toBeVisible();
+  await page.goto("/learn");
+  await expect(page.getByText("KANJI N4")).toBeVisible();
+  await expect(page.getByText("GRAMMAR N4")).toBeVisible();
+  expect(chunks.join(" ")).toContain("kanji_n4");
+
+  // N4 vocab drill grades real N4 content.
+  await page.goto("/learn/drill/vocab");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    const romaji = N4_VOCAB_ROMAJI[prompt];
+    expect(romaji, `n4 vocab table covers ${prompt}`).toBeDefined();
+    await page.getByLabel("answer").fill(romaji[0]);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary-score")).toHaveText("100%");
+
+  // Conjugation stays scoped to N5 vocab even at N4 (PRD 10.9), and START
+  // must draw from the same N5 pool the preview shows.
+  await page.goto("/learn/drill/conjugation");
+  await expect(page.getByTestId("pool-matrix")).toContainText("117");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  const conjPrompt = (await page.locator(".prompt-text").innerText()).trim();
+  await page.getByLabel("answer").fill(CONJ_BY_KANJI[conjPrompt]);
+  await page.keyboard.press("Enter");
+  await expect(page.getByTestId("reveal")).toBeVisible();
+  await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+
+  // Back to the dashboard: the choice persists and no n5 level chunk is fetched.
+  chunks.length = 0;
+  await page.goto("/");
+  await expect(page.getByText("LVL N4")).toBeVisible();
+  await page.goto("/learn");
+  await expect(page.getByText("KANJI N4")).toBeVisible();
+  const reloaded = chunks.join(" ");
+  expect(reloaded).toContain("kanji_n4");
+  expect(reloaded).not.toContain("kanji_n5");
+  expect(reloaded).not.toContain("vocabulary_n5");
+  expect(reloaded).not.toContain("grammar_n5");
 });

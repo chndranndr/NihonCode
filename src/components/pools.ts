@@ -1,10 +1,11 @@
 /**
- * Loads the gate pools once per session and caches them. Features read from
- * here; the gate stays the only raw-data boundary. The loaders are synchronous
- * (static JSON imports), so pools are available on first render.
+ * Pool derivation from loaded level data (Phase 3). The loaders are async
+ * (per-level dynamic imports); LevelProvider (components/level.tsx) fetches
+ * and caches the active level, then hands the raw LevelData here. This module
+ * stays pure: no cache, no side effects, no React.
  */
 
-import { loadGrammar, loadKana, loadKanji, loadVocab } from "../content/loaders";
+import type { LevelData } from "../content/loaders";
 import type { GrammarLesson, KanaItem, KanjiItem, VocabItem } from "../content/models";
 
 export interface Pools {
@@ -14,21 +15,17 @@ export interface Pools {
   grammar: GrammarLesson[];
 }
 
-let cache: Pools | null = null;
-
-export function getPools(): Pools {
-  if (!cache) {
-    cache = {
-      kana: loadKana().items,
-      kanji: loadKanji().items,
-      vocab: loadVocab().items,
-      grammar: loadGrammar().items,
-    };
-  }
-  return cache;
+/** Items-only view of a loaded level, for features that slice content. */
+export function poolsFromLevelData(data: LevelData): Pools {
+  return {
+    kana: data.kana.items,
+    kanji: data.kanji.items,
+    vocab: data.vocab.items,
+    grammar: data.grammar.items,
+  };
 }
 
-/** All gradable content IDs for the SRS pool (kanji N5 + gated vocab N5). */
+/** All gradable content IDs for the SRS pool (kanji + gated vocab). */
 export function srsPoolIds(pools: Pools): string[] {
   return [...pools.kanji.map((k) => k.id), ...pools.vocab.map((v) => v.id)];
 }

@@ -1,8 +1,12 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import { buildItems, DEFAULT_OPTIONS, type DrillOptions } from "./DrillPage";
-import { getPools } from "../../components/pools";
+import { loadLevelData } from "../../content/loaders";
+import { poolsFromLevelData, type Pools } from "../../components/pools";
 
-const pools = getPools();
+let pools!: Pools;
+beforeAll(async () => {
+  pools = poolsFromLevelData(await loadLevelData("n5"));
+});
 
 function options(patch: Partial<DrillOptions>): DrillOptions {
   return { ...DEFAULT_OPTIONS, ...patch };

@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { LevelProvider } from "../components/level";
 import { ThemeProvider } from "../components/theme";
 import "./app.css";
 
@@ -76,7 +77,9 @@ function Shell({ children }: { children: ReactNode }) {
 export function AppShell({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider>
-      <Shell>{children}</Shell>
+      <LevelProvider>
+        <Shell>{children}</Shell>
+      </LevelProvider>
     </ThemeProvider>
   );
 }

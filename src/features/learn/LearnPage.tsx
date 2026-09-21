@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { LockedPanel, Panel } from "../../components/Panel";
-import { getPools } from "../../components/pools";
+import { useLevel } from "../../components/level";
 
 export function LearnPage() {
-  const pools = getPools();
+  const { pools, level } = useLevel();
+
+  if (!pools) return <p className="micro-label">LOADING…</p>;
 
   return (
     <div className="learn" data-testid="learn">
@@ -15,10 +17,10 @@ export function LearnPage() {
               <Link to="/learn/drill/kana">KANA</Link>
             </li>
             <li>
-              <Link to="/learn/drill/kanji">KANJI N5</Link>
+              <Link to="/learn/drill/kanji">{`KANJI ${level.toUpperCase()}`}</Link>
             </li>
             <li>
-              <Link to="/learn/drill/vocab">VOCAB N5</Link>
+              <Link to="/learn/drill/vocab">{`VOCAB ${level.toUpperCase()}`}</Link>
             </li>
             <li>
               <Link to="/learn/drill/numbers">NUMBERS</Link>
@@ -32,7 +34,7 @@ export function LearnPage() {
           </ul>
         </Panel>
 
-        <Panel title="GRAMMAR N5">
+        <Panel title={`GRAMMAR ${level.toUpperCase()}`}>
           <ul className="lesson-list">
             {pools.grammar.slice(0, 12).map((l) => (
               <li key={l.id}>

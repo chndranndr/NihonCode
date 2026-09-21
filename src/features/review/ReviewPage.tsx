@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
-import { getPools, srsPoolIds } from "../../components/pools";
+import { srsPoolIds } from "../../components/pools";
+import { useLevel } from "../../components/level";
 import { ratingFromCorrect } from "../../domain/scheduling";
 import { kanaToRomaji } from "../../domain/romaji";
 import { XP } from "../../domain/progress";
@@ -12,12 +13,13 @@ import { loadPrefs } from "../../storage/prefs";
 export function ReviewPage() {
   const navigate = useNavigate();
   const prefs = loadPrefs();
-  const pools = getPools();
+  const { pools } = useLevel();
   const [queue, setQueue] = useState<{ due: string[]; fresh: string[] } | null>(null);
   const [session, setSession] = useState<SessionItem[] | null>(null);
   const [summary, setSummary] = useState<SessionResult | null>(null);
 
   useEffect(() => {
+    if (!pools) return;
     let cancelled = false;
     void (async () => {
       const q = await buildDueQueue(srsPoolIds(pools), prefs.srs.dailyNewCap);
@@ -33,7 +35,7 @@ export function ReviewPage() {
       string,
       { prompt: string; accepted: string[]; scripts: string[]; meaning: string; speak: string }
     >();
-    for (const k of pools.kanji)
+    for (const k of pools?.kanji ?? [])
       map.set(k.id, {
         prompt: k.char,
         accepted: [
@@ -44,7 +46,7 @@ export function ReviewPage() {
         meaning: k.meaning,
         speak: k.char,
       });
-    for (const v of pools.vocab)
+    for (const v of pools?.vocab ?? [])
       map.set(v.id, {
         prompt: v.kanji,
         accepted: [v.romaji],

@@ -23,9 +23,10 @@ export interface DueQueue {
 }
 
 /**
- * Builds the review queue: every stored card that is due, then new content IDs
- * (from the clean slice) that have no card yet, capped by dailyNewCap minus
- * cards already introduced today.
+ * Builds the review queue for one level's pool: stored cards that are due
+ * AND belong to the active pool, then new content IDs that have no card yet,
+ * capped by dailyNewCap minus cards already introduced today. Cards from
+ * other levels stay scheduled but never surface here.
  */
 export async function buildDueQueue(
   poolIds: string[],
@@ -35,9 +36,15 @@ export async function buildDueQueue(
   const store = db();
   const cards = await store.srsCards.toArray();
   const byId = new Map(cards.map((c) => [c.id, c]));
-  const due = cards.filter((c) => isDue(deserializeCard(c.state), now)).map((c) => c.id);
+  const inPool = new Set(poolIds);
+  const due = cards
+    .filter((c) => inPool.has(c.id) && isDue(deserializeCard(c.state), now))
+    .map((c) => c.id);
   const introducedToday = cards.filter(
-    (c) => c.lastReview !== null && new Date(c.lastReview).toDateString() === now.toDateString(),
+    (c) =>
+      inPool.has(c.id) &&
+      c.lastReview !== null &&
+      new Date(c.lastReview).toDateString() === now.toDateString(),
   ).length;
   const unseen = poolIds.filter((id) => !byId.has(id));
   const remaining = Math.max(0, dailyNewCap - introducedToday);
@@ -74,9 +81,10 @@ export async function reviewItem(
   return { due: record.card.due };
 }
 
-export async function dueCount(now: Date = new Date()): Promise<number> {
+export async function dueCount(poolIds: string[], now: Date = new Date()): Promise<number> {
   const cards = await db().srsCards.toArray();
-  return cards.filter((c) => isDue(deserializeCard(c.state), now)).length;
+  const inPool = new Set(poolIds);
+  return cards.filter((c) => inPool.has(c.id) && isDue(deserializeCard(c.state), now)).length;
 }
 
 export interface SrsStats {

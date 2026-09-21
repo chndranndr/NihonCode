@@ -1,7 +1,8 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
-import { getPools, type Pools } from "../../components/pools";
+import { type Pools } from "../../components/pools";
+import { useLevel } from "../../components/level";
 import { PoolMatrix } from "../../components/PoolMatrix";
 import { makeNumberQuestionInRange } from "../../domain/numbers";
 import { makeFullDate, WEEKDAYS } from "../../domain/dates";
@@ -12,7 +13,9 @@ import {
   recordSession,
   type AttemptKind,
 } from "../../storage/progressRepo";
-import { CLEAN_SLICE_LEVEL } from "../../content/loaders";
+import { loadLevelData } from "../../content/loaders";
+import type { VocabItem } from "../../content/models";
+
 import { kanaToRomaji } from "../../domain/romaji";
 import {
   ADJ_FORM_LABELS,
@@ -114,7 +117,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
           reveal: {
             scripts: [k.char, k.reading],
             meaning: k.meaning,
-            group: `kanji ${CLEAN_SLICE_LEVEL}`,
+            group: `kanji ${k.level}`,
           },
           speakText: k.char,
         };
@@ -127,7 +130,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
         reveal: {
           scripts: [v.kanji, v.kana],
           meaning: v.meaning,
-          group: `vocab ${CLEAN_SLICE_LEVEL}`,
+          group: `vocab ${v.level}`,
         },
         speakText: v.kana,
       }));
@@ -182,8 +185,9 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
       });
     }
     case "conjugation": {
-      // PRD 10.9: base word + target form; romaji answers only. Eligible
-      // words are the gate's conjugable entries (curated pos/class metadata).
+      // PRD 10.9: base word + target form; romaji answers only; N5 vocabulary
+      // by scope. Eligible words are the gate's conjugable entries (curated
+      // pos/class metadata).
       const isVerb = options.conjWordType === "verb";
       const classes = isVerb ? options.conjVerbClasses : options.conjAdjClasses;
       const forms = isVerb ? options.conjVerbForms : options.conjAdjForms;
@@ -225,22 +229,48 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
 export function DrillPage() {
   const { mode = "kana" } = useParams();
   const navigate = useNavigate();
-  const pools = getPools();
+  const { pools } = useLevel();
   const [limit, setLimit] = useState<number | "all">(10);
   const [options, setOptions] = useState<DrillOptions>(DEFAULT_OPTIONS);
   const [session, setSession] = useState<SessionItem[] | null>(null);
   const [summary, setSummary] = useState<SessionResult | null>(null);
 
-  const all = useMemo(() => buildItems(mode, pools, options), [mode, pools, options]);
+  const [n5Vocab, setN5Vocab] = useState<VocabItem[] | null>(null);
+  useEffect(() => {
+    // Conjugation stays on N5 vocab even when another level is active (PRD
+    // 10.9 scope); the loader cache makes repeat fetches instant.
+    if (mode !== "conjugation" || n5Vocab) return;
+    let cancelled = false;
+    void loadLevelData("n5").then((d) => {
+      if (!cancelled) setN5Vocab(d.vocab.items);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [mode, n5Vocab]);
+
+  // Conjugation always slices the N5 vocab pool (PRD 10.9 scope), even when
+  // another level is active; every other mode uses the live level. One
+  // derivation keeps the setup preview and start() on the same source.
+  const effectivePools = useMemo(() => {
+    if (!pools) return null;
+    return mode === "conjugation" && n5Vocab ? { ...pools, vocab: n5Vocab } : pools;
+  }, [mode, pools, n5Vocab]);
+
+  const all = useMemo(
+    () => (effectivePools ? buildItems(mode, effectivePools, options) : []),
+    [mode, effectivePools, options],
+  );
   const selectable = all;
 
   function start(): void {
     // Generated modes rebuild their pool per start so a retry reshuffles into
     // fresh questions, not the same 50 (PRD 10.6 retry-reshuffled); the
     // conjugation word×form draw reslices the same way.
+    if (!effectivePools) return;
     const pool =
       mode === "numbers" || mode === "dates" || mode === "conjugation"
-        ? buildItems(mode, pools, options)
+        ? buildItems(mode, effectivePools, options)
         : selectable;
     const picked = limit === "all" ? pool : pool.slice(0, limit);
     setSession(shuffle(picked));

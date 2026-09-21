@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { routineAction, routineLabel, type RoutineAction } from "../../domain/routine";
 import { xpProgress } from "../../domain/progress";
-import { getPools, srsPoolIds } from "../../components/pools";
+import { srsPoolIds } from "../../components/pools";
+import { useLevel } from "../../components/level";
 import { buildDueQueue, dueCount, srsStats, type SrsStats } from "../../storage/srsRepo";
 import { db } from "../../storage/db";
 import { masteryByItem } from "../../storage/progressRepo";
 import { LockedPanel, Panel } from "../../components/Panel";
 import { useTheme } from "../../components/theme";
 import { loadPrefs } from "../../storage/prefs";
-import { CLEAN_SLICE_LEVEL } from "../../content/loaders";
+import { ENABLED_LEVELS } from "../../content/loaders";
+import type { JlptLevel } from "../../content/ids";
 
 interface DashboardState {
   action: RoutineAction | null;
@@ -23,7 +25,7 @@ interface DashboardState {
 export function DashboardPage() {
   const prefs = loadPrefs();
   const liveTheme = useTheme();
-  const pools = getPools();
+  const { pools, level, setLevel } = useLevel();
   const [state, setState] = useState<DashboardState>({
     action: null,
     stats: null,
@@ -34,16 +36,17 @@ export function DashboardPage() {
   });
 
   useEffect(() => {
+    if (!pools) return;
     let cancelled = false;
     async function compute(): Promise<void> {
-      const poolIds = srsPoolIds(pools);
-      const due = await dueCount();
+      const poolIds = srsPoolIds(pools!);
+      const due = await dueCount(poolIds);
       const queue = await buildDueQueue(poolIds, prefs.srs.dailyNewCap);
       const stats = await srsStats();
-      const rows = await db().grammarState.bulkGet(pools.grammar.map((l) => l.id));
+      const rows = await db().grammarState.bulkGet(pools!.grammar.map((l) => l.id));
       const grammarDone = rows.filter((r) => r?.status === "completed").length;
       let kanjiMastered = 0;
-      for (const k of pools.kanji) {
+      for (const k of pools!.kanji) {
         const m = await masteryByItem(k.id);
         if (m.attempts > 0 && m.accuracy >= 0.8) kanjiMastered += 1;
       }
@@ -56,9 +59,9 @@ export function DashboardPage() {
         }),
         stats,
         grammarDone,
-        grammarTotal: pools.grammar.length,
+        grammarTotal: pools!.grammar.length,
         kanjiMastered,
-        kanjiTotal: pools.kanji.length,
+        kanjiTotal: pools!.kanji.length,
       });
     }
     void compute();
@@ -67,6 +70,14 @@ export function DashboardPage() {
     };
   }, [pools, prefs.srs.dailyNewCap]);
 
+  if (!pools) {
+    return (
+      <p className="micro-label" data-testid="dashboard-loading">
+        LOADING…
+      </p>
+    );
+  }
+
   const { action, stats } = state;
   const progress = xpProgress(prefs.progress.xp);
 
@@ -74,13 +85,28 @@ export function DashboardPage() {
     <div className="dashboard" data-testid="dashboard">
       <div className="status-strip" role="status">
         <span className="micro-label">キタ NIHONCODE</span>
-        <span className="micro-label">LVL {CLEAN_SLICE_LEVEL.toUpperCase()}</span>
+        <span className="micro-label">LVL {level.toUpperCase()}</span>
         <span className="micro-label" data-testid="streak">
           STREAK {prefs.progress.streakDays}
         </span>
         <span className="micro-label" data-testid="xp">
           XP {prefs.progress.xp}
         </span>
+      </div>
+
+      <div className="limit-row level-selector" role="radiogroup" aria-label="study level">
+        {(["n5", "n4", "n3", "n2", "n1"] as JlptLevel[]).map((l) => (
+          <button
+            key={l}
+            type="button"
+            aria-pressed={level === l}
+            disabled={!ENABLED_LEVELS.includes(l)}
+            title={ENABLED_LEVELS.includes(l) ? undefined : "enabled after its curation pass lands"}
+            onClick={() => setLevel(l)}
+          >
+            {l.toUpperCase()}
+          </button>
+        ))}
       </div>
 
       <section className="routine-card panel" data-testid="routine-card">

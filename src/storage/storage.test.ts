@@ -9,7 +9,14 @@ import {
   type SrsCardRow,
 } from "./db";
 import { VOCAB_N5_REKEYS } from "./vocab-migration";
-import { DEFAULT_PREFS, loadPrefs, migratePrefs, savePrefs, type Prefs } from "./prefs";
+import {
+  DEFAULT_PREFS,
+  loadPrefs,
+  migratePrefs,
+  PREFS_SCHEMA_VERSION,
+  savePrefs,
+  type Prefs,
+} from "./prefs";
 
 function memoryStorage(): Storage {
   const map = new Map<string, string>();
@@ -63,9 +70,10 @@ describe("prefs storage", () => {
     const legacy = { progress: { xp: 50, streakDays: 3, lastStudyDay: null, weeklyXp: {} } };
     const once = migratePrefs(legacy);
     const twice = migratePrefs(once);
-    expect(once.schemaVersion).toBe(1);
+    expect(once.schemaVersion).toBe(PREFS_SCHEMA_VERSION);
     expect(once.progress.xp).toBe(50);
     expect(once.srs.dailyNewCap).toBe(DEFAULT_PREFS.srs.dailyNewCap);
+    expect(once.level).toBe("n5");
     expect(twice).toEqual(once);
   });
 
