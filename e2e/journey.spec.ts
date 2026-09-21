@@ -181,7 +181,7 @@ test("drill grades, XP persists across reload, and reviewed cards leave the new 
   await page.goto("/progress");
   await expect(page.getByTestId("progress")).toBeVisible();
   await expect(page.locator(".kanji-cell")).toHaveCount(80);
-  const studied = page.locator(".kanji-cell.learning").first();
+  const studied = page.locator(".kanji-cell.learning, .kanji-cell.struggling").first();
   await studied.click();
   await expect(page.getByTestId("inspector")).toContainText(/ATTEMPTS [1-9]/);
   expect(page.url()).toContain("/progress");
