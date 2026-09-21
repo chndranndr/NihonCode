@@ -9,6 +9,7 @@ import { ReviewPage } from "../features/review/ReviewPage";
 import { JlptPage } from "../features/jlpt/JlptPage";
 import { JlptRunPage } from "../features/jlpt/JlptRunPage";
 import { ConfigPage } from "../features/settings/ConfigPage";
+import { SrsStatsPage } from "../features/stats/SrsStatsPage";
 
 export function App() {
   return (
@@ -22,6 +23,7 @@ export function App() {
           <Route path="/learn/grammar/:lessonId" element={<GrammarLessonPage />} />
           <Route path="/learn/jlpt" element={<JlptPage />} />
           <Route path="/learn/jlpt/:category" element={<JlptPage />} />
+          <Route path="/stats" element={<SrsStatsPage />} />
           <Route path="/learn/jlpt/:category/:setNumber" element={<JlptRunPage />} />
           <Route path="/learn/review" element={<ReviewPage />} />
           <Route path="/config" element={<ConfigPage />} />

@@ -4,9 +4,10 @@ import { useLevel } from "../../components/level";
 import { achievements, coverageEstimate } from "../../domain/achievements";
 import { dayKey, xpProgress } from "../../domain/progress";
 import { masteryByItem, sessionSummary } from "../../storage/progressRepo";
+import { srsPoolIds } from "../../components/pools";
 import { srsStats, type SrsStats } from "../../storage/srsRepo";
 import { loadPrefs } from "../../storage/prefs";
-import { ENABLED_LEVELS } from "../../content/loaders";
+import { ENABLED_LEVELS, loadPracticeCore } from "../../content/loaders";
 import type { JlptLevel } from "../../content/ids";
 import type { KanjiItem } from "../../content/models";
 
@@ -37,11 +38,26 @@ export function ProgressPage() {
   const [sessions, setSessions] = useState<Awaited<ReturnType<typeof sessionSummary>> | null>(null);
   const [cells, setCells] = useState<KanjiCell[]>([]);
   const [selected, setSelected] = useState<KanjiCell | null>(null);
+  const [practiceCounts, setPracticeCounts] = useState<Map<string, number> | null>(null);
 
   useEffect(() => {
-    void srsStats().then(setStats);
+    if (!pools) return;
+    void srsStats(srsPoolIds(pools)).then(setStats);
     void sessionSummary().then(setSessions);
-  }, []);
+  }, [pools]);
+
+  useEffect(() => {
+    let cancelled = false;
+    void loadPracticeCore().then((core) => {
+      if (cancelled) return;
+      const counts = new Map<string, number>();
+      for (const rec of core[level].kanji) counts.set(rec.kanji, rec.questionCount);
+      setPracticeCounts(counts);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [level]);
 
   useEffect(() => {
     if (!pools) return;
@@ -253,6 +269,11 @@ export function ProgressPage() {
                   LAST {selected.lastSeen ? new Date(selected.lastSeen).toLocaleDateString() : "—"}{" "}
                   · STATUS {masteryState(selected).toUpperCase()}
                 </p>
+                {practiceCounts && (
+                  <p className="micro-label" data-testid="practice-links">
+                    JLPT QUESTIONS TOUCHING THIS KANJI {practiceCounts.get(selected.item.char) ?? 0}
+                  </p>
+                )}
               </>
             ) : (
               <p className="empty-teach">Select a kanji to inspect its mastery record.</p>

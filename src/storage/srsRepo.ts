@@ -104,19 +104,25 @@ export interface SrsStats {
 
 export async function srsStats(poolIds?: string[], now: Date = new Date()): Promise<SrsStats> {
   const cards = await db().srsCards.toArray();
-  // `due` scopes to the active level's pool when given (the review queue's
-  // pool), so the dashboard's DUE readout matches its routine CTA; totals
-  // stay global. Scoping clause: decisions.md "N4 enablement".
+  // With a pool, totals come from the pool (every content id that could hold a
+  // card), so a fresh learner sees "learned 0 / total N" rather than "0 / 0".
+  // `due` also scopes to the pool so the DUE readout matches the review queue
+  // (decisions.md "N4 enablement"). Without a pool, totals are card-derived.
   const inPool = poolIds ? new Set(poolIds) : null;
+  const kanjiPool = poolIds ? poolIds.filter((id) => id.startsWith("kanji:")).length : 0;
+  const vocabPool = poolIds ? poolIds.filter((id) => id.startsWith("vocab:")).length : 0;
   const stats: SrsStats = {
-    total: cards.length,
+    total: poolIds ? poolIds.length : cards.length,
     due: 0,
     learned: 0,
     lapses: 0,
     mastered: 0,
     learning: 0,
     fresh: 0,
-    byKind: { kanji: { total: 0, learned: 0 }, vocab: { total: 0, learned: 0 } },
+    byKind: {
+      kanji: { total: kanjiPool, learned: 0 },
+      vocab: { total: vocabPool, learned: 0 },
+    },
     byLevel: {
       n5: { total: 0, learned: 0 },
       n4: { total: 0, learned: 0 },
@@ -125,25 +131,28 @@ export async function srsStats(poolIds?: string[], now: Date = new Date()): Prom
       n1: { total: 0, learned: 0 },
     },
   };
+  if (poolIds) {
+    for (const id of poolIds) {
+      const bucket = stats.byLevel[id.split(":")[1] as JlptLevel];
+      if (bucket) bucket.total += 1;
+    }
+  }
   for (const c of cards) {
+    if (inPool !== null && !inPool.has(c.id)) continue;
     const card = deserializeCard(c.state);
     const level = c.id.split(":")[1] as JlptLevel;
     const kind = c.id.startsWith("kanji:") ? "kanji" : c.id.startsWith("vocab:") ? "vocab" : null;
     const bucket = stats.byLevel[level];
-    if (bucket) {
-      bucket.total += 1;
-      if (c.reps > 0) bucket.learned += 1;
+    if (bucket && c.reps > 0) bucket.learned += 1;
+    if (kind && c.reps > 0) stats.byKind[kind].learned += 1;
+    if (c.reps > 0) {
+      stats.learned += 1;
+      if (card.state === State.Review) stats.mastered += 1;
+      else stats.learning += 1;
     }
-    if (kind) {
-      stats.byKind[kind].total += 1;
-      if (c.reps > 0) stats.byKind[kind].learned += 1;
-    }
-    if (c.reps > 0) stats.learned += 1;
-    else stats.fresh += 1;
-    if (card.state === State.Review) stats.mastered += 1;
-    else if (c.reps > 0) stats.learning += 1;
     stats.lapses += c.lapses;
-    if (isDue(card, now) && (inPool === null || inPool.has(c.id))) stats.due += 1;
+    if (isDue(card, now)) stats.due += 1;
   }
+  stats.fresh = stats.total - stats.learned;
   return stats;
 }

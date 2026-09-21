@@ -73,6 +73,7 @@ export function awardXp(amount: number, now: Date = new Date()): Prefs {
   const next: Prefs = {
     ...prefs,
     progress: {
+      ...prefs.progress,
       xp: prefs.progress.xp + amount,
       streakDays: withStudy.streakDays,
       lastStudyDay: withStudy.lastStudyDay,

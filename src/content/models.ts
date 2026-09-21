@@ -82,6 +82,28 @@ export interface JlptSet {
   questions: JlptQuestion[];
 }
 
+/** practice_core.json reverse index: which JLPT questions touch a kanji or
+ * vocab entry. Frozen, audit-clean; IDs resolve to the graded JLPT pools. */
+export interface PracticeCoreKanjiRecord {
+  kanji: string;
+  questionCount: number;
+  questionIds: string[];
+}
+
+export interface PracticeCoreVocabRecord {
+  kanji: string;
+  kana: string;
+  questionCount: number;
+  questionIds: string[];
+}
+
+export interface PracticeCoreLevel {
+  kanji: PracticeCoreKanjiRecord[];
+  vocabulary: PracticeCoreVocabRecord[];
+}
+
+export type PracticeCoreIndex = Record<JlptLevel, PracticeCoreLevel>;
+
 /** A gate decision on one raw entry: excluded from graded pools, with reason. */
 export interface Flag {
   source: string;

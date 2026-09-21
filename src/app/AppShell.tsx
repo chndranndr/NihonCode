@@ -2,6 +2,7 @@ import { useEffect, type ReactNode } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { LevelProvider } from "../components/level";
 import { ThemeProvider } from "../components/theme";
+import { AchievementToasts } from "../components/AchievementToasts";
 import "./app.css";
 
 const SECTIONS = [
@@ -51,6 +52,7 @@ function Shell({ children }: { children: ReactNode }) {
         ))}
       </nav>
       <div className="app-main">
+        <AchievementToasts />
         <main className="app-content">{children}</main>
         <footer className="bottom-bar">
           <nav aria-label="Primary mobile">

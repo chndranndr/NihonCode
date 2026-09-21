@@ -156,9 +156,12 @@ export function DashboardPage() {
 
         <Panel title="SRS">
           {stats ? (
-            <p className="micro-label">
-              DUE {stats.due} / LEARNED {stats.learned} / TOTAL {stats.total}
-            </p>
+            <>
+              <p className="micro-label">
+                DUE {stats.due} / LEARNED {stats.learned} / TOTAL {stats.total}
+              </p>
+              <Link to="/stats">SRS STATISTICS</Link>
+            </>
           ) : (
             <p className="micro-label">LOADING…</p>
           )}

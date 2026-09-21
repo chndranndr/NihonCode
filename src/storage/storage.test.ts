@@ -77,6 +77,7 @@ describe("prefs storage", () => {
     expect(once.progress.xp).toBe(50);
     expect(once.srs.dailyNewCap).toBe(DEFAULT_PREFS.srs.dailyNewCap);
     expect(once.level).toBe("n5");
+    expect(once.progress.seenAchievements).toEqual([]);
     expect(twice).toEqual(once);
   });
 

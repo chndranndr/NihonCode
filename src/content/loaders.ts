@@ -17,6 +17,7 @@ import type {
   JlptSet,
   KanaItem,
   KanjiItem,
+  PracticeCoreIndex,
   VocabItem,
 } from "./models";
 
@@ -101,4 +102,18 @@ export async function loadJlptLevel(level: JlptLevel): Promise<JlptPool> {
   };
   jlptCache.set(level, pool);
   return pool;
+}
+
+let practiceCoreCache: PracticeCoreIndex | null = null;
+
+/**
+ * The practice_core reverse index (which JLPT questions touch a kanji/vocab
+ * entry). Shared across levels; one cached load. Frozen and audit-clean —
+ * referential integrity is guarded by scripts/audit-clean.mjs.
+ */
+export async function loadPracticeCore(): Promise<PracticeCoreIndex> {
+  if (practiceCoreCache) return practiceCoreCache;
+  const mod = await import("../../data/clean/practice_core.json");
+  practiceCoreCache = mod.default as PracticeCoreIndex;
+  return practiceCoreCache;
 }

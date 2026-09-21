@@ -524,3 +524,51 @@ test("JLPT practice grades a keyed set and persists per-set progress", async ({ 
   // No request in the whole run may leave the app origin.
   assertNoRemote();
 });
+
+test("SRS statistics page shows level-scoped stats and links practice_core", async ({ page }) => {
+  await page.goto("/stats");
+  await expect(page.getByTestId("srs-stats")).toBeVisible();
+  await expect(page.getByTestId("stat-streak")).toContainText("STREAK");
+  await expect(page.getByTestId("stat-due")).toContainText("DUE TODAY");
+  await expect(page.getByTestId("stat-learned")).toContainText("LEARNED 0 / TOTAL 818");
+  await expect(page.getByTestId("stat-mastery")).toContainText("MASTERY 0%");
+  await expect(page.getByTestId("stat-split")).toContainText("NOT STARTED 818");
+  await expect(page.getByTestId("stat-kind")).toContainText("KANJI 0/80");
+
+  // practice_core wiring: the kanji map inspector shows linked JLPT questions.
+  await page.goto("/progress");
+  await expect(page.locator(".kanji-cell").first()).toBeVisible();
+  await page.locator(".kanji-cell").first().click();
+  await expect(page.getByTestId("inspector")).toBeVisible();
+  await expect(page.getByTestId("practice-links")).toBeVisible();
+});
+
+test("achievement toast fires once when a drill unlocks FIRST SESSION", async ({ page }) => {
+  await page.goto("/learn/drill/kana");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    await page.getByLabel("answer").fill(GOJUON[prompt]);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary")).toBeVisible();
+
+  // The toast host polls every 1.5s; wait out one interval plus margin.
+  await expect(page.getByTestId("toasts")).toContainText("ACHIEVEMENT UNLOCKED", {
+    timeout: 10_000,
+  });
+  await expect(page.getByTestId("toasts")).toContainText("FIRST SESSION");
+
+  // Once-only: the unlock is remembered in prefs and never re-fires.
+  const seen = await page.evaluate(() => {
+    const prefs = JSON.parse(localStorage.getItem("NihonCode-prefs") ?? "{}");
+    return prefs.progress?.seenAchievements ?? [];
+  });
+  expect(seen).toContain("first-session");
+  await page.goto("/");
+  await page.waitForTimeout(2500);
+  await expect(page.getByTestId("toasts")).not.toBeVisible();
+});
