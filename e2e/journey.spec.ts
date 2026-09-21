@@ -654,3 +654,38 @@ test("export/import round-trips progress without loss", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByTestId("xp")).toHaveText("XP 70");
 });
+
+test("rapid drill submission causes no layout shift", async ({ page }) => {
+  await page.goto("/learn/drill/kana");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+
+  // The acceptance line (DEVELOPMENT_PROMPT task 8) made measurable: the
+  // input-dock <-> reveal swap on rapid submits must not shift the layout.
+  await page.evaluate(() => {
+    document.documentElement.dataset.cls = "0";
+    new PerformanceObserver((list) => {
+      let total = Number(document.documentElement.dataset.cls);
+      for (const entry of list.getEntries()) {
+        const shift = entry as PerformanceEntry & { hadRecentInput?: boolean; value?: number };
+        if (!shift.hadRecentInput && typeof shift.value === "number") {
+          total += shift.value;
+        }
+      }
+      document.documentElement.dataset.cls = String(total);
+    }).observe({ type: "layout-shift", buffered: true });
+  });
+
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    await page.getByLabel("answer").fill(GOJUON[prompt]);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary")).toBeVisible();
+
+  const cls = await page.evaluate(() => Number(document.documentElement.dataset.cls ?? "0"));
+  expect(cls).toBeLessThan(0.05);
+});
