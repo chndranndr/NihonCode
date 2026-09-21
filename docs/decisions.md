@@ -2,6 +2,14 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-21 — Phase 3 close: integrated-head verification and the PRD delta list
+
+**Decision.** Task 9 closes Phase 3. Final integrated-head state: `npm run check` green (typecheck + lint + format + arch + taste + docs + audit-clean self-test + audit-clean), 119 unit tests, 36 e2e across desktop and mobile (journey + smoke + a11y), `doctor` green, production build code-split with gated content provably absent. A new a11y spec pins landmarks, labeled controls, and text-paired indicators on the main routes. The PRD delta list (docs/quality.md "PRD owner edit list (Phase 3)") is prepared for the owner; PRD.md itself is untouched (owner-authored). Open owner items are unchanged in substance: listening audio-sample confirmation, reading keep+restore vs exclude, redistribution clearance — all recorded in docs/data-quality.md open items.
+
+**Why.** DEVELOPMENT_PROMPT section 9 requires the cross-phase e2e, the a11y/spot check, executable-evidence records, and the PRD delta list. Every acceptance line now has a named test; every shipped feature has a decisions entry; every owner-gated item has measured facts instead of guesses.
+
+**Binds.** e2e/a11y.spec.ts, docs/quality.md (proven rows + PRD delta list), docs/decisions.md (this phase's entries), AGENTS.md (Phase 3 status).
+
 ## 2026-09-21 — Responsive/a11y/perf pass: route splitting, gated-chunk exclusion, CLS guard, About accuracy
 
 **Decision.** Task 8 landed five changes. (1) Secondary routes lazy-load behind `React.lazy` + Suspense (dashboard and learn hub stay eager so first paint and the study entry never block). (2) `loadJlptLevel` imports JLPT categories through literal per-category paths (`JLPT_IMPORTS`), so the bundler emits chunks only for grammar/kanji/vocabulary — the gated listening/reading dataset chunks no longer exist in the bundle at all (verified: zero `listening-*`/`reading-*` files in `dist/assets`, and the JLPT e2e asserts no such chunk is ever requested). (3) `.session` reserves a min-height so the input-dock↔reveal swap on rapid drill submits cannot shift the shell (CLS guard). (4) The backup file input carries `aria-label="import backup file"`. (5) The About storage panel now states the truth: progress lives in IndexedDB/localStorage, and the backup panel's export is the mitigation — the old "NO BACKUP" copy was false after task 7.

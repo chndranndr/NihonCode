@@ -46,6 +46,17 @@ What is proven by executable evidence today, and what is missing. Update this le
 | Level selector deferred to Phase 3        | **Shipped 2026-09-21**: `prefs.level` (schema v2), `ENABLED_LEVELS` in loaders, dashboard selector, level-scoped SRS (decisions.md "N4 enablement")                                                                                                  | — (done)                                                       |
 | Conjugation drill locked                  | **Shipped 2026-09-21**: N5 conjugation metadata curated (task 1), pure conjugator + drill + pool matrix (task 2); `implementation_plan.md:197` closed                                                                                                | — (done)                                                       |
 
+## PRD owner edit list (Phase 3, prepared 2026-09-21)
+
+PRD.md is owner-authored; these are the deltas Phase 3 produced, prepared as edits for the owner (precedent: docs/data-quality.md "PRD §18 owner edit list"):
+
+1. §10.9 "Current source scope": the blocking gap is closed for N5 — conjugation metadata is curated (`pos`/`conjugationClass` on all N5 verbs/adjectives, audit-guarded); the drill ships. N4–N1 metadata is not curated (drill scope is N5 per §10.9).
+2. §10.17 listening/reading: shipped categories are grammar, kanji, vocabulary (all levels). Listening sets (43/54/22/35/28) and reading sets (12/21/16/41/55) are **not served** — honest locked panels — pending the two owner decisions (audio-sample confirmation; reading keep+restore-text vs exclude). Data facts: listening questions surviving curation total 6 (2 each in n4/n3/n1); N5/N4 reading has zero local passages (194 orphaned questions), N3–N1 reading has 271 local passages but no question→passage link in the data shape.
+3. §10.13 "Recalculate JLPT mastery from SRS progress and grammar quiz completion": shipped as **coverage of studied material** (learned cards + completed lessons over the active pool), relabeled per the standing decision that JLPT mastery must not read as exam competence.
+4. §10.12 SRS statistics: shipped at `/stats` (streak, due today, learned/total, mastery %, mastered/learning/not-started, kanji-vs-vocab, review CTA), level-scoped.
+5. §17 inventory: conjugation drill, practice-setup pool matrix, SRS statistics page, achievement toasts, and export/import are shipped; "JLPT practice sets with five categories, bundled listening audio" is shipped as three categories, listening gated (as in item 2).
+6. §14/§18 persistence: export/import shipped (one JSON document, whole-browser restore), so "no cloud backup" is mitigated but not eliminated — clearing browser data without exporting still loses progress.
+
 ## Debts
 
 - `data/generated/index.ts` was deleted as Phase 2 task 1 pipeline cleanup (historical: the baseline it re-based was retired with the pipeline at the 2026-09-21 cutover).
