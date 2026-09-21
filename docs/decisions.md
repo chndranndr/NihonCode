@@ -2,6 +2,14 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-21 — Responsive/a11y/perf pass: route splitting, gated-chunk exclusion, CLS guard, About accuracy
+
+**Decision.** Task 8 landed five changes. (1) Secondary routes lazy-load behind `React.lazy` + Suspense (dashboard and learn hub stay eager so first paint and the study entry never block). (2) `loadJlptLevel` imports JLPT categories through literal per-category paths (`JLPT_IMPORTS`), so the bundler emits chunks only for grammar/kanji/vocabulary — the gated listening/reading dataset chunks no longer exist in the bundle at all (verified: zero `listening-*`/`reading-*` files in `dist/assets`, and the JLPT e2e asserts no such chunk is ever requested). (3) `.session` reserves a min-height so the input-dock↔reveal swap on rapid drill submits cannot shift the shell (CLS guard). (4) The backup file input carries `aria-label="import backup file"`. (5) The About storage panel now states the truth: progress lives in IndexedDB/localStorage, and the backup panel's export is the mitigation — the old "NO BACKUP" copy was false after task 7.
+
+**Why.** Phase 3 DoD requires route/dataset lazy-loading and no layout shift on rapid drill submission. Literal category paths are the only form that satisfies both "per-level lazy chunks" and "gated content must not ship"; a template-literal category globbed every file under `jlpt/<level>/` into the bundle. The about-text fix follows the owner's standing directive that docs never claim what is not true.
+
+**Binds.** src/app/App.tsx (lazy routes), src/content/loaders.ts (JLPT_IMPORTS + as-const LIVE_JLPT_CATEGORIES), src/app/app.css (.session min-height), src/features/settings/ConfigPage.tsx (aria-label, storage copy), e2e/journey.spec.ts (gated-chunk assertion), docs/quality.md (bundle-scope row rewritten to the measured truth).
+
 ## 2026-09-21 — Export/import of local progress: one JSON document, whole-browser restore
 
 **Decision.** Task 7 ships export/import (PRD: "recommended given no cloud backup"). Export serializes every durable store — all six Dexie tables (srsCards, reviewLogs, drillAttempts, grammarState, sessions, jlptProgress) plus localStorage prefs — into one versioned JSON document. Import validates with Zod (untrusted external input) before writing anything, then replaces state wholesale inside one Dexie transaction and restores prefs via `migratePrefs`. Two implementation rules: restored rows with auto-increment ids (reviewLogs, drillAttempts, sessions) are re-added without their old ids so they never collide with future inserts (content identity lives in the semantic fields, not the surrogate key); and import runs through the app's live connection, so the e2e wipes stores with a readwrite transaction rather than `deleteDatabase` (which the live connection blocks).

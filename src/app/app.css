@@ -255,6 +255,9 @@ select:focus-visible {
   gap: 1rem;
   max-width: 720px;
   margin: 0 auto;
+  /* Rapid drill submits swap input dock and reveal in place; a reserved
+     column height keeps the shell below from shifting (CLS guard). */
+  min-height: 24rem;
 }
 
 .session-rail {

@@ -125,6 +125,7 @@ export function ConfigPage() {
                 ref={fileRef}
                 type="file"
                 accept="application/json"
+                aria-label="import backup file"
                 hidden
                 onChange={(e) => {
                   const file = e.target.files?.[0];
@@ -168,9 +169,16 @@ export function ConfigPage() {
             <p>No account. No cloud. No server. Everything lives in this browser.</p>
           </Panel>
           <Panel title="STORAGE">
-            <p>IndexedDB (Dexie): SRS cards, review logs, drill attempts, sessions.</p>
-            <p>localStorage: theme, accent, SRS prefs, compact progress.</p>
-            <p className="micro-label">CLEARING BROWSER DATA ERASES ALL PROGRESS. NO BACKUP.</p>
+            <p>
+              IndexedDB (Dexie): SRS cards, review logs, drill attempts, grammar state, sessions,
+              JLPT set progress.
+            </p>
+            <p>
+              localStorage: theme, accent, level, SRS prefs, compact progress, seen achievements.
+            </p>
+            <p className="micro-label">
+              CLEARING BROWSER DATA ERASES PROGRESS — USE EXPORT IN THE BACKUP PANEL FIRST.
+            </p>
           </Panel>
           <Panel title="PLATFORM">
             <p>React 19 · TypeScript · Vite · ts-fsrs · Web Speech API</p>

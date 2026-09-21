@@ -78,20 +78,32 @@ export async function loadLevelData(level: JlptLevel): Promise<LevelData> {
 /** Categories served today. Listening awaits the owner's audio confirmation
  * and reading the owner's keep/exclude call (docs/decisions.md); both show
  * honest locked panels, not dead tiles. */
-export const LIVE_JLPT_CATEGORIES: readonly JlptCategory[] = ["grammar", "kanji", "vocabulary"];
+export const LIVE_JLPT_CATEGORIES = ["grammar", "kanji", "vocabulary"] as const;
 
 export type JlptPool = Record<JlptCategory, GateResult<JlptSet>>;
 
 const jlptCache = new Map<JlptLevel, JlptPool>();
+
+// Literal category segments: a template-literal category would make the
+// bundler emit chunks for every file under jlpt/<level>/ — including the
+// gated listening/reading sets the UI refuses to serve. With literals, only
+// the three live categories exist in the bundle.
+const JLPT_IMPORTS: Record<
+  (typeof LIVE_JLPT_CATEGORIES)[number],
+  (level: JlptLevel) => Promise<{ default: unknown }>
+> = {
+  grammar: (level) => import(`../../data/clean/jlpt/${level}/grammar.json`),
+  kanji: (level) => import(`../../data/clean/jlpt/${level}/kanji.json`),
+  vocabulary: (level) => import(`../../data/clean/jlpt/${level}/vocabulary.json`),
+};
 
 /** Load one level's JLPT practice sets through the gate, cached per level. */
 export async function loadJlptLevel(level: JlptLevel): Promise<JlptPool> {
   if (!ENABLED_LEVELS.includes(level)) throw new LevelUnavailableError(level);
   const cached = jlptCache.get(level);
   if (cached) return cached;
-  // Per-level chunk selection; see loadKana for why dynamic imports here.
   const [grammarMod, kanjiMod, vocabMod] = await Promise.all(
-    LIVE_JLPT_CATEGORIES.map((cat) => import(`../../data/clean/jlpt/${level}/${cat}.json`)),
+    LIVE_JLPT_CATEGORIES.map((cat) => JLPT_IMPORTS[cat](level)),
   );
   const pool: JlptPool = {
     grammar: validateJlpt(grammarMod.default, level, "grammar"),

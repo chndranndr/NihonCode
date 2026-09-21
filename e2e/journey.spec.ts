@@ -493,10 +493,16 @@ test("JLPT practice grades a keyed set and persists per-set progress", async ({ 
 
   // Acceptance: zero remote image references anywhere in a JLPT run. Capture
   // every request the feature makes; only the app's own origin may appear.
+  // Also capture chunk names: the gated listening/reading datasets must never
+  // be bundled in or fetched by a live session.
   const remote = new Set<string>();
+  const chunks: string[] = [];
   page.on("request", (req) => {
     const url = new URL(req.url());
     if (url.origin !== new URL(page.url()).origin) remote.add(req.url());
+    if (url.pathname.includes("/assets/") && url.pathname.endsWith(".js")) {
+      chunks.push(url.pathname.split("/").pop() ?? url.pathname);
+    }
   });
   const assertNoRemote = () => expect([...remote]).toEqual([]);
 
@@ -524,6 +530,11 @@ test("JLPT practice grades a keyed set and persists per-set progress", async ({ 
 
   // No request in the whole run may leave the app origin.
   assertNoRemote();
+
+  // The gated listening/reading dataset chunks are not in the bundle and must
+  // never be fetched by a live session.
+  const gated = chunks.filter((c) => /^(listening|reading)-/.test(c));
+  expect(gated).toEqual([]);
 });
 
 test("SRS statistics page shows level-scoped stats and links practice_core", async ({ page }) => {
