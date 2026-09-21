@@ -33,6 +33,9 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+      // Rest-destructure is the idiomatic way to strip a field (backup import
+      // drops surrogate auto-increment ids); the sibling stays intentionally.
+      "@typescript-eslint/no-unused-vars": ["error", { ignoreRestSiblings: true }],
     },
   },
   {
