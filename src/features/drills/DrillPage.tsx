@@ -208,6 +208,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
               scripts: [conj.kanji, conj.kana],
               meaning: v.meaning,
               group: `${v.pos} · ${v.conjugationClass}`,
+              romaji: conj.romaji,
             },
             speakText: conj.kana,
             hint: isVerb ? `${v.conjugationClass} verb` : `${v.conjugationClass}-adjective`,

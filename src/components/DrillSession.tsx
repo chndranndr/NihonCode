@@ -28,6 +28,8 @@ export interface SessionItem {
     scripts: string[];
     meaning: string;
     group: string;
+    /** Romaji rendering shown in the result view (PRD 10.9). */
+    romaji?: string;
   };
   speakText: string;
   /** Context line under the prompt (e.g. the conjugation target form). */
@@ -167,6 +169,7 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
               </li>
             ))}
           </ul>
+          {item.reveal.romaji && <p className="reveal-romaji">{item.reveal.romaji}</p>}
           <p className="reveal-meaning">{item.reveal.meaning}</p>
           <p className="micro-label">{item.reveal.group}</p>
           {!answered.correct && (

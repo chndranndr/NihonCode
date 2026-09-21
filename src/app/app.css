@@ -331,6 +331,11 @@ button.primary {
   margin: 0.25rem 0;
 }
 
+.reveal-romaji {
+  margin: 0.25rem 0;
+  color: var(--ink-dim);
+}
+
 .reveal-accepted {
   color: var(--ink-dim);
   font-size: 0.8rem;

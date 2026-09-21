@@ -2,6 +2,20 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-21 — Conjugation drill shipped (PRD §10.9); Hepburn yōon + form-set decisions
+
+**Decision.** The conjugation drill is live: a pure domain conjugator (`src/domain/conjugation.ts`) produces kana/kanji/romaji for every verb form and adjective form; the builder slices it over the gate's `pos`/`conjugationClass` metadata; the setup screen reuses the shared pool matrix; the LOCKED CONJUGATION panel is replaced by a live link on Learn and Dashboard.
+
+Three sub-decisions were made in the same change:
+
+1. **Hepburn yōon in the transliterator.** `kanaToRomaji` now drops the `y` for j/sh/ch-row yōon (じゅ→ju, しゃ→sha, ちょ→cho), matching the pool's curated romaji (`じゅう→juu`, `しゃしん→shashin`). This is the single source of romaji for both display and grading; it changes accepted romaji in the kanji drill, which is the intended effect.
+2. **Romaji-only accepted answers.** Conjugated forms accept only romaji, not kana. Learners type romaji per PRD 10.9; kana acceptance would require a kana normalizer that doesn't exist. Grading is case/punctuation-normalized.
+3. **Form set.** Verbs: masu, masen, mashita, te, nai, ta. Adjectives: negative, past, adverb. The PRD names the drill and the metadata but does not enumerate forms; this set covers the conjugations an N5 learner must produce and is the unit the unit tests assert.
+
+**Why.** Task 2 acceptance is "sampled godan/ichidan/irregular and i-/na-adjective grading correct"; a wrong romaji style (jya vs ja) or a wrong form set would fail that line. Recording the form set and the romaji-only rule makes the builder's contract reviewable.
+
+**Binds.** src/domain/conjugation.ts (+tests), src/domain/romaji.ts (yōon fix + test), src/features/drills/DrillPage.tsx (conjugation builder + setup), src/components/DrillSession.tsx (subprompt, hint, romaji reveal), src/components/PoolMatrix.tsx, src/features/learn/LearnPage.tsx, src/features/dashboard/DashboardPage.tsx, src/storage/db.ts (conjugation attempt kind), e2e/journey.spec.ts.
+
 ## 2026-09-21 — N5 conjugation metadata curated per entry (task 1; closes implementation_plan.md:197)
 
 **Decision.** Every conjugable N5 vocab entry now carries curated `pos` + `conjugationClass`, applied as tracked edits to `data/clean/vocabulary_n5.json`: Verbs 117 (godan 80, ichidan 32, irregular 5) and Adjectives 84 (i 65, na 19). Seven entries that sat in Verbs/Adjectives but are unconjugatable moved to Nouns with no metadata: 下さい (a polite request form, not a verb) and the nouns お手洗い, 家庭, 時計, 野菜, 大きな, 小さな. Classification was mechanical kana-shape with per-entry overrides, never inferred from category buckets (PRD §18 makes the buckets unreliable by definition): godan-る overrides 入る/帰る/走る/切る/知る/要る; ichidan override 着る; na overrides 嫌い/綺麗/有名; irregular covers する/来る/コピーする plus the 勉強・掃除 suru stems. `audit-clean` enforces the invariant per level (N5 now: every Verbs/Adjectives entry has a valid class, no other category carries one) with a self-test fixture; N4–N1 join the guard level by level as their curation passes land. The 44-entry spot-check sample is recorded in docs/data-quality.md.
