@@ -20,6 +20,7 @@ import {
 import { db } from "./db";
 import { buildDueQueue, dueCount } from "./srsRepo";
 import { newCard, serializeCard } from "../domain/scheduling";
+import { exportBackup, importBackup } from "./backup";
 
 function memoryStorage(): Storage {
   const map = new Map<string, string>();
@@ -246,5 +247,92 @@ describe("SRS pool scoping by level", () => {
     const n4Queue = await buildDueQueue(n4Pool, 20, now);
     expect(n4Queue.due.sort()).toEqual([...n4Pool]);
     expect(n4Queue.newCandidates).toEqual([]);
+  });
+});
+
+describe("backup export/import round-trip", () => {
+  afterEach(async () => {
+    // Leave the shared test database empty for the next suite.
+    const store = db();
+    await Promise.all([
+      store.srsCards.clear(),
+      store.reviewLogs.clear(),
+      store.drillAttempts.clear(),
+      store.grammarState.clear(),
+      store.sessions.clear(),
+      store.jlptProgress.clear(),
+    ]);
+    localStorage.clear();
+  });
+
+  it("round-trips every store and prefs without loss", async () => {
+    const store = db();
+    await store.srsCards.put({
+      id: "kanji:n5:水",
+      state: '{"due":"2026-01-02T00:00:00.000Z"}',
+      due: 2,
+      reps: 3,
+      lapses: 1,
+      lastReview: 1,
+    });
+    await store.reviewLogs.add({ cardId: "kanji:n5:水", rating: "good", ts: 5, elapsedDays: 0 });
+    await store.drillAttempts.add({
+      itemId: "kana:hiragana:あ",
+      kind: "kana",
+      correct: true,
+      ts: 7,
+    });
+    await store.grammarState.put({
+      id: "grammar:n5:1",
+      status: "completed",
+      resumeQuizIndex: 0,
+      completedAt: 9,
+    });
+    await store.sessions.add({ kind: "kana", correct: 10, total: 10, ts: 11 });
+    await store.jlptProgress.put({
+      id: "jlpt:n5:vocabulary:1",
+      bestCorrect: 9,
+      total: 10,
+      completedAt: 13,
+    });
+    savePrefs({ ...loadPrefs(), progress: { ...loadPrefs().progress, xp: 777 } });
+
+    const json = await exportBackup();
+
+    // Wipe: simulate a fresh browser.
+    await Promise.all([
+      store.srsCards.clear(),
+      store.reviewLogs.clear(),
+      store.drillAttempts.clear(),
+      store.grammarState.clear(),
+      store.sessions.clear(),
+      store.jlptProgress.clear(),
+    ]);
+    localStorage.clear();
+
+    const result = await importBackup(json);
+    expect(result.ok).toBe(true);
+    expect(result.counts).toEqual({
+      srsCards: 1,
+      reviewLogs: 1,
+      drillAttempts: 1,
+      grammarState: 1,
+      sessions: 1,
+      jlptProgress: 1,
+    });
+
+    expect((await store.srsCards.get("kanji:n5:水"))?.reps).toBe(3);
+    expect(await store.reviewLogs.count()).toBe(1);
+    expect(await store.drillAttempts.count()).toBe(1);
+    expect((await store.grammarState.get("grammar:n5:1"))?.status).toBe("completed");
+    expect(await store.sessions.count()).toBe(1);
+    expect((await store.jlptProgress.get("jlpt:n5:vocabulary:1"))?.bestCorrect).toBe(9);
+    expect(loadPrefs().progress.xp).toBe(777);
+  });
+
+  it("rejects malformed and foreign documents", async () => {
+    expect((await importBackup("{not json")).ok).toBe(false);
+    expect((await importBackup('{"app":"other"}')).ok).toBe(false);
+    expect((await importBackup('{"app":"nihoncode","schemaVersion":"x"}')).ok).toBe(false);
   });
 });

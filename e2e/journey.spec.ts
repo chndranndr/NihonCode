@@ -1,5 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
+import { Buffer } from "node:buffer";
 import { validateJlpt, validateKanji, validateVocab } from "../src/content/gate";
 import { conjugateAdjective, conjugateVerb } from "../src/domain/conjugation";
 
@@ -571,4 +572,74 @@ test("achievement toast fires once when a drill unlocks FIRST SESSION", async ({
   await page.goto("/");
   await page.waitForTimeout(2500);
   await expect(page.getByTestId("toasts")).not.toBeVisible();
+});
+
+test("export/import round-trips progress without loss", async ({ page }) => {
+  // Seed real progress with a perfect 10-item kana drill (50 XP + bonus 20).
+  await page.goto("/learn/drill/kana");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    await page.getByLabel("answer").fill(GOJUON[prompt]);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary-score")).toHaveText("100%");
+  await page.goto("/");
+  await expect(page.getByTestId("xp")).toHaveText("XP 70");
+
+  // Export the backup file.
+  await page.goto("/config");
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "EXPORT PROGRESS" }).click();
+  const download = await downloadPromise;
+  const backupPath = await download.path();
+  expect(backupPath).toBeTruthy();
+  const backupJson = readFileSync(backupPath!, "utf8");
+  expect(JSON.parse(backupJson).app).toBe("nihoncode");
+
+  // Wipe this browser's state. deleteDatabase is blocked by the app's live
+  // Dexie connection, so clear every object store through IndexedDB itself
+  // and wipe localStorage.
+  await page.goto("/config");
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve, reject) => {
+        localStorage.clear();
+        const rq = indexedDB.open("nihoncode");
+        rq.onerror = () => reject(new Error("open failed"));
+        rq.onsuccess = (e) => {
+          const idb = (e.target as IDBOpenDBRequest).result;
+          const stores = [
+            "srsCards",
+            "reviewLogs",
+            "drillAttempts",
+            "grammarState",
+            "sessions",
+            "jlptProgress",
+          ];
+          const tx = idb.transaction(stores, "readwrite");
+          for (const s of stores) tx.objectStore(s).clear();
+          tx.oncomplete = () => resolve();
+          tx.onerror = () => reject(new Error("clear failed"));
+        };
+      }),
+  );
+  await page.goto("/");
+  await expect(page.getByTestId("xp")).toHaveText("XP 0");
+
+  // Import the backup; the handler reloads once the restore commits. Wait
+  // for that reload, then read fresh state from the dashboard.
+  await page.goto("/config");
+  const reload = page.waitForEvent("load");
+  await page.locator('input[type="file"]').setInputFiles({
+    name: "backup.json",
+    mimeType: "application/json",
+    buffer: Buffer.from(backupJson),
+  });
+  await reload;
+  await page.goto("/");
+  await expect(page.getByTestId("xp")).toHaveText("XP 70");
 });

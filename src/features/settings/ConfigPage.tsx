@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Panel } from "../../components/Panel";
 import { status } from "../../components/tts";
 import { useTheme } from "../../components/theme";
 import { APP_VERSION, CONTACT_PLACEHOLDER, CONTENT_SOURCES } from "../../content/sources";
 import { ACCENTS, loadPrefs, savePrefs } from "../../storage/prefs";
+import { exportBackup, importBackup } from "../../storage/backup";
 
 export function ConfigPage() {
   const theme = useTheme();
   const [prefs, setPrefs] = useState(() => loadPrefs());
   const [tab, setTab] = useState<"settings" | "about">("settings");
+  const [backupStatus, setBackupStatus] = useState<string | null>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
   const tts = status();
 
   function update(next: typeof prefs): void {
@@ -93,6 +96,59 @@ export function ConfigPage() {
                 }
               />
             </div>
+          </Panel>
+
+          <Panel title="BACKUP">
+            <div className="setting-row">
+              <button
+                type="button"
+                onClick={() => {
+                  void (async () => {
+                    const json = await exportBackup();
+                    const blob = new Blob([json], { type: "application/json" });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = `nihoncode-backup-${new Date().toISOString().slice(0, 10)}.json`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    setBackupStatus("EXPORTED");
+                  })();
+                }}
+              >
+                EXPORT PROGRESS
+              </button>
+              <button type="button" onClick={() => fileRef.current?.click()}>
+                IMPORT PROGRESS
+              </button>
+              <input
+                ref={fileRef}
+                type="file"
+                accept="application/json"
+                hidden
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (!file) return;
+                  void file.text().then(async (text) => {
+                    const result = await importBackup(text);
+                    setBackupStatus(
+                      result.ok
+                        ? `IMPORTED: ${JSON.stringify(result.counts)}`
+                        : `IMPORT FAILED: ${result.reason}`,
+                    );
+                    if (result.ok) window.location.reload();
+                  });
+                }}
+              />
+            </div>
+            {backupStatus && (
+              <p className="micro-label" data-testid="backup-status">
+                {backupStatus}
+              </p>
+            )}
+            <p className="empty-teach">
+              Import replaces everything in this browser. No cloud is involved.
+            </p>
           </Panel>
 
           <Panel title="AUDIO">

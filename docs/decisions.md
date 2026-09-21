@@ -2,6 +2,14 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-21 — Export/import of local progress: one JSON document, whole-browser restore
+
+**Decision.** Task 7 ships export/import (PRD: "recommended given no cloud backup"). Export serializes every durable store — all six Dexie tables (srsCards, reviewLogs, drillAttempts, grammarState, sessions, jlptProgress) plus localStorage prefs — into one versioned JSON document. Import validates with Zod (untrusted external input) before writing anything, then replaces state wholesale inside one Dexie transaction and restores prefs via `migratePrefs`. Two implementation rules: restored rows with auto-increment ids (reviewLogs, drillAttempts, sessions) are re-added without their old ids so they never collide with future inserts (content identity lives in the semantic fields, not the surrogate key); and import runs through the app's live connection, so the e2e wipes stores with a readwrite transaction rather than `deleteDatabase` (which the live connection blocks).
+
+**Why.** With no account or cloud, a cleared browser is total loss; a portable, human-readable file is the honest mitigation. Import-replaces-everything (not merges) is the only semantics that guarantees "round-trip without loss" and avoids half-applied merges across schema versions. Zod at the boundary keeps foreign/malformed files from touching storage at all.
+
+**Binds.** src/storage/backup.ts, src/features/settings/ConfigPage.tsx (BACKUP panel), src/storage/storage.test.ts (round-trip + rejection cases), e2e/journey.spec.ts (export → wipe → import → XP 70 restored).
+
 ## 2026-09-21 — Statistics and telemetry: SRS stats page, achievement toasts, practice_core wired to the kanji map
 
 **Decision.** Task 6 ships three things. (1) The SRS statistics page (`/stats`) shows streak, due today, learned/total, mastery %, mastered/learning/not-started, and kanji-vs-vocabulary progress, all level-scoped to the active pool via `srsStats(poolIds)`, with a review CTA when cards are due. (2) Achievement toasts (`AchievementToasts`) announce unlocks exactly once: unlock ids are remembered in `prefs.progress.seenAchievements` (prefs schema v3), so reloads never re-fire a toast; the poll re-reads prefs immediately before saving and merges only `seenAchievements`, so a concurrent `awardXp` is never clobbered. (3) The kanji mastery map inspector is wired to `practice_core.json` via `loadPracticeCore()`: selecting a kanji shows the count of JLPT questions that touch it.
