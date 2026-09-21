@@ -8,9 +8,17 @@
  * files instead, because bundler imports do not load under bare Node.
  */
 
-import { validateGrammar, validateKana, validateKanji, validateVocab } from "./gate";
+import { validateGrammar, validateJlpt, validateKana, validateKanji, validateVocab } from "./gate";
 import type { JlptLevel } from "./ids";
-import type { GateResult, GrammarLesson, KanaItem, KanjiItem, VocabItem } from "./models";
+import type {
+  GateResult,
+  GrammarLesson,
+  JlptCategory,
+  JlptSet,
+  KanaItem,
+  KanjiItem,
+  VocabItem,
+} from "./models";
 
 /** Levels whose pools are curated and served (docs/decisions.md). */
 export const ENABLED_LEVELS: readonly JlptLevel[] = ["n5", "n4", "n3", "n2", "n1"];
@@ -64,4 +72,33 @@ export async function loadLevelData(level: JlptLevel): Promise<LevelData> {
     vocab: validateVocab(vocabMod.default, level),
     grammar: validateGrammar(grammarMod.default, level),
   };
+}
+
+/** Categories served today. Listening awaits the owner's audio confirmation
+ * and reading the owner's keep/exclude call (docs/decisions.md); both show
+ * honest locked panels, not dead tiles. */
+export const LIVE_JLPT_CATEGORIES: readonly JlptCategory[] = ["grammar", "kanji", "vocabulary"];
+
+export type JlptPool = Record<JlptCategory, GateResult<JlptSet>>;
+
+const jlptCache = new Map<JlptLevel, JlptPool>();
+
+/** Load one level's JLPT practice sets through the gate, cached per level. */
+export async function loadJlptLevel(level: JlptLevel): Promise<JlptPool> {
+  if (!ENABLED_LEVELS.includes(level)) throw new LevelUnavailableError(level);
+  const cached = jlptCache.get(level);
+  if (cached) return cached;
+  // Per-level chunk selection; see loadKana for why dynamic imports here.
+  const [grammarMod, kanjiMod, vocabMod] = await Promise.all(
+    LIVE_JLPT_CATEGORIES.map((cat) => import(`../../data/clean/jlpt/${level}/${cat}.json`)),
+  );
+  const pool: JlptPool = {
+    grammar: validateJlpt(grammarMod.default, level, "grammar"),
+    kanji: validateJlpt(kanjiMod.default, level, "kanji"),
+    vocabulary: validateJlpt(vocabMod.default, level, "vocabulary"),
+    listening: { items: [], flags: [] },
+    reading: { items: [], flags: [] },
+  };
+  jlptCache.set(level, pool);
+  return pool;
 }

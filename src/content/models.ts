@@ -61,6 +61,27 @@ export interface GrammarLesson {
   quiz: GrammarQuizQuestion[];
 }
 
+export type JlptCategory = "grammar" | "kanji" | "listening" | "reading" | "vocabulary";
+
+export interface JlptQuestion {
+  id: string;
+  /** Position within the set; not unique, never used as a key. */
+  number: number;
+  prompt: string;
+  options: string[];
+  /** Index into options; every pooled question is keyed (audit-clean). */
+  answerIndex: number;
+  answerText: string;
+}
+
+export interface JlptSet {
+  level: JlptLevel;
+  category: JlptCategory;
+  setNumber: number;
+  title: string;
+  questions: JlptQuestion[];
+}
+
 /** A gate decision on one raw entry: excluded from graded pools, with reason. */
 export interface Flag {
   source: string;

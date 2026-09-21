@@ -43,6 +43,14 @@ export interface GrammarStateRow {
   completedAt: number | null;
 }
 
+export interface JlptProgressRow {
+  /** jlpt:<level>:<category>:<setNumber> */
+  id: string;
+  bestCorrect: number;
+  total: number;
+  completedAt: number;
+}
+
 export interface SessionRow {
   id?: number;
   kind: string;
@@ -52,7 +60,7 @@ export interface SessionRow {
 }
 
 export const DB_NAME = "nihoncode";
-export const DB_VERSION = 4;
+export const DB_VERSION = 5;
 
 // VOCAB_N5_REKEYS lives in ./vocab-migration (the map and its version(4)
 // upgrade travel together; db.ts would otherwise import its own dependent).
@@ -63,6 +71,7 @@ export class NihonDb extends Dexie {
   drillAttempts!: Table<DrillAttemptRow, number>;
   grammarState!: Table<GrammarStateRow, string>;
   sessions!: Table<SessionRow, number>;
+  jlptProgress!: Table<JlptProgressRow, string>;
 
   constructor(name: string = DB_NAME) {
     super(name);
@@ -87,6 +96,10 @@ export class NihonDb extends Dexie {
     this.version(4)
       .stores({})
       .upgrade((tx) => upgradeVocabN5Rekeys(tx));
+    // Additive migration: JLPT per-set progress table only.
+    this.version(5).stores({
+      jlptProgress: "id",
+    });
   }
 }
 

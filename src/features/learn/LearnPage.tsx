@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LockedPanel, Panel } from "../../components/Panel";
+import { Panel } from "../../components/Panel";
 import { useLevel } from "../../components/level";
 
 export function LearnPage() {
@@ -50,10 +50,12 @@ export function LearnPage() {
           </Link>
         </Panel>
 
-        <LockedPanel
-          title="JLPT PRACTICE"
-          reason="Deferred to Phase 2/3: remote images, truncated prompts, and unverified audio aliasing in the source sets."
-        />
+        <Panel title="JLPT PRACTICE">
+          <p className="micro-label">GRAMMAR · KANJI · VOCAB SETS BY LEVEL</p>
+          <Link className="primary inline-cta" to="/learn/jlpt">
+            BROWSE EXERCISE SETS
+          </Link>
+        </Panel>
         <Panel title="CONJUGATION">
           <Link to="/learn/drill/conjugation">VERB & ADJECTIVE FORMS</Link>
         </Panel>

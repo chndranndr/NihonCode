@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
-import { validateKanji, validateVocab } from "../src/content/gate";
+import { validateJlpt, validateKanji, validateVocab } from "../src/content/gate";
 import { conjugateAdjective, conjugateVerb } from "../src/domain/conjugation";
 
 /**
@@ -473,4 +473,54 @@ test("level switch persists across reload and lazy-loads only the active level",
   expect(reloaded).not.toContain("kanji_n5");
   expect(reloaded).not.toContain("vocabulary_n5");
   expect(reloaded).not.toContain("grammar_n5");
+});
+
+// JLPT practice (PRD 10.17): expected answers come from the same gate the
+// app uses, over fs-read clean files.
+const JLPT_N5_VOCAB = validateJlpt(
+  JSON.parse(readFileSync("data/clean/jlpt/n5/vocabulary.json", "utf8")),
+  "n5",
+  "vocabulary",
+).items;
+
+test("JLPT practice grades a keyed set and persists per-set progress", async ({ page }) => {
+  await page.goto("/learn/jlpt");
+  await expect(page.getByTestId("jlpt")).toBeVisible();
+  // Gated categories stay honest locked panels.
+  await expect(page.getByRole("heading", { name: "LISTENING" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "READING" })).toBeVisible();
+
+  // Acceptance: zero remote image references anywhere in a JLPT run. Capture
+  // every request the feature makes; only the app's own origin may appear.
+  const remote = new Set<string>();
+  page.on("request", (req) => {
+    const url = new URL(req.url());
+    if (url.origin !== new URL(page.url()).origin) remote.add(req.url());
+  });
+  const assertNoRemote = () => expect([...remote]).toEqual([]);
+
+  await page.goto("/learn/jlpt/vocabulary");
+  await expect(page.getByTestId("jlpt-sets")).toBeVisible();
+  await page.getByTestId("set-link").first().click();
+  await expect(page.getByTestId("session")).toBeVisible();
+
+  const set = JLPT_N5_VOCAB[0];
+  for (const q of set.questions) {
+    await expect(page.locator(".prompt-text")).toContainText(q.prompt);
+    await page.locator(".option").nth(q.answerIndex).click();
+    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+    await page.getByRole("button", { name: /NEXT|FINISH/ }).click();
+  }
+  // setFinished renders only after the committed progress write, so this
+  // assertion is also the persistence gate before the reload-style goto.
+  await expect(page.getByTestId("summary-score")).toHaveText("100%");
+
+  // Per-set progress persists: the set list shows the recorded best score.
+  await page.goto("/learn/jlpt/vocabulary");
+  await expect(page.getByTestId("set-link").first()).toContainText(
+    `BEST ${set.questions.length}/${set.questions.length}`,
+  );
+
+  // No request in the whole run may leave the app origin.
+  assertNoRemote();
 });

@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it } from "vitest";
-import { validateGrammar, validateKanji, validateVocab } from "./gate";
+import { validateGrammar, validateJlpt, validateKanji, validateVocab } from "./gate";
 import { kanjiId, vocabId, type JlptLevel } from "./ids";
 import { ENABLED_LEVELS, LevelUnavailableError, loadLevelData, type LevelData } from "./loaders";
 
@@ -189,6 +189,52 @@ describe("validation gate: requested level", () => {
       expect(data.vocab.items.length).toBeGreaterThan(0);
       expect(data.grammar.items.length).toBeGreaterThan(0);
     }
+  });
+});
+
+describe("validation gate: JLPT practice sets", () => {
+  function jlptFixture(overrides: Record<string, unknown> = {}) {
+    const question = {
+      id: "jlpt:n5:vocabulary:1:abc123",
+      number: 1,
+      prompt: "あした、えいがをみませんか",
+      options: ["いいえ", "はい", "きのう"],
+      answer_index: 1,
+      answer_text: "はい",
+      ...overrides,
+    };
+    return [{ set_number: 1, title: "N5 Vocabulary Exercise 01", questions: [question] }];
+  }
+
+  it("serves keyed sets with normalized answerIndex", () => {
+    const { items, flags } = validateJlpt(jlptFixture(), "n5", "vocabulary");
+    expect(flags).toEqual([]);
+    expect(items).toHaveLength(1);
+    expect(items[0].setNumber).toBe(1);
+    expect(items[0].questions[0].answerIndex).toBe(1);
+    expect(items[0].questions[0].answerText).toBe("はい");
+  });
+
+  it("excludes a truncated prompt, never serving a broken question", () => {
+    const { items, flags } = validateJlpt(jlptFixture({ prompt: "「" }), "n5", "vocabulary");
+    expect(items).toEqual([]);
+    expect(flags[0].reason).toContain("truncated prompt");
+  });
+
+  it("excludes a question whose answer_index is out of range", () => {
+    const { items, flags } = validateJlpt(jlptFixture({ answer_index: 9 }), "n5", "vocabulary");
+    expect(items).toEqual([]);
+    expect(flags[0].reason).toContain("answer_index out of range");
+  });
+
+  it("excludes a question whose answer_text disagrees with its option", () => {
+    const { items, flags } = validateJlpt(
+      jlptFixture({ answer_text: "いいえ" }),
+      "n5",
+      "vocabulary",
+    );
+    expect(items).toEqual([]);
+    expect(flags[0].reason).toContain("disagrees");
   });
 });
 

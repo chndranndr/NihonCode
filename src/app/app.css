@@ -831,3 +831,59 @@ input {
 .pool-matrix-list .matrix-tag {
   color: var(--ink-dim);
 }
+
+.set-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.set-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border: 1px solid var(--hairline);
+  padding: 0.75rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.set-list a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option {
+  text-align: left;
+  padding: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.option:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.option.ok {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+.option.miss {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.option:disabled {
+  cursor: default;
+}

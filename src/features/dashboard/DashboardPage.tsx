@@ -7,7 +7,7 @@ import { useLevel } from "../../components/level";
 import { buildDueQueue, dueCount, srsStats, type SrsStats } from "../../storage/srsRepo";
 import { db } from "../../storage/db";
 import { masteryByItem } from "../../storage/progressRepo";
-import { LockedPanel, Panel } from "../../components/Panel";
+import { Panel } from "../../components/Panel";
 import { useTheme } from "../../components/theme";
 import { loadPrefs } from "../../storage/prefs";
 import { ENABLED_LEVELS } from "../../content/loaders";
@@ -173,10 +173,10 @@ export function DashboardPage() {
           <Link to="/learn">OPEN LIBRARY</Link>
         </Panel>
 
-        <LockedPanel
-          title="JLPT PRACTICE"
-          reason="Deferred to Phase 2/3: remote images, truncated prompts, and unverified audio aliasing in the source sets."
-        />
+        <Panel title="JLPT PRACTICE">
+          <p className="micro-label">{`N5–N1 SETS · ${level.toUpperCase()} ACTIVE`}</p>
+          <Link to="/learn/jlpt">OPEN EXERCISE SETS</Link>
+        </Panel>
         <Panel title="PROGRESS">
           <p className="micro-label">
             LEVEL {progress.level} · {progress.intoLevel}/{progress.levelSpan} XP
