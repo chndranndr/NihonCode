@@ -1,18 +1,17 @@
 import { useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
-import { usePools } from "../../components/pools";
+import { getPools, type Pools } from "../../components/pools";
 import { makeNumberQuestionInRange } from "../../domain/numbers";
 import { makeFullDate, WEEKDAYS } from "../../domain/dates";
 import { perfectDrillBonus, XP } from "../../domain/progress";
 import {
   awardXp,
-  currentPrefs,
   recordAttempt,
   recordSession,
   type AttemptKind,
 } from "../../storage/progressRepo";
-import type { JlptLevel } from "../../content/ids";
+import { CLEAN_SLICE_LEVEL } from "../../content/loaders";
 
 const LIMITS = [10, 20, 50] as const;
 
@@ -61,13 +60,7 @@ const NUMBER_PRESETS = [
  */
 const GENERATED_COUNT = 50;
 
-export function buildItems(
-  mode: string,
-  level: JlptLevel,
-  pools: ReturnType<typeof usePools>,
-  options: DrillOptions,
-): SessionItem[] {
-  if (!pools) return [];
+export function buildItems(mode: string, pools: Pools, options: DrillOptions): SessionItem[] {
   switch (mode) {
     case "kana":
       return shuffle(pools.kana).map((k) => ({
@@ -82,7 +75,11 @@ export function buildItems(
         id: k.id,
         prompt: k.char,
         accepted: k.answers,
-        reveal: { scripts: [k.char, k.reading], meaning: k.meaning, group: `kanji ${level}` },
+        reveal: {
+          scripts: [k.char, k.reading],
+          meaning: k.meaning,
+          group: `kanji ${CLEAN_SLICE_LEVEL}`,
+        },
         speakText: k.char,
       }));
     case "vocab":
@@ -90,7 +87,11 @@ export function buildItems(
         id: v.id,
         prompt: v.kanji,
         accepted: [v.romaji],
-        reveal: { scripts: [v.kanji, v.kana], meaning: v.meaning, group: `vocab ${level}` },
+        reveal: {
+          scripts: [v.kanji, v.kana],
+          meaning: v.meaning,
+          group: `vocab ${CLEAN_SLICE_LEVEL}`,
+        },
         speakText: v.kana,
       }));
     case "numbers": {
@@ -149,26 +150,20 @@ export function buildItems(
 export function DrillPage() {
   const { mode = "kana" } = useParams();
   const navigate = useNavigate();
-  const prefs = currentPrefs();
-  const pools = usePools(prefs.level);
+  const pools = getPools();
   const [limit, setLimit] = useState<number | "all">(10);
   const [options, setOptions] = useState<DrillOptions>(DEFAULT_OPTIONS);
   const [session, setSession] = useState<SessionItem[] | null>(null);
   const [summary, setSummary] = useState<SessionResult | null>(null);
 
-  const all = useMemo(
-    () => buildItems(mode, prefs.level, pools, options),
-    [mode, pools, prefs.level, options],
-  );
+  const all = useMemo(() => buildItems(mode, pools, options), [mode, pools, options]);
   const selectable = all;
 
   function start(): void {
     // Generated modes rebuild their pool per start so a retry reshuffles into
     // fresh questions, not the same 50 (PRD 10.6 retry-reshuffled).
     const pool =
-      mode === "numbers" || mode === "dates"
-        ? buildItems(mode, prefs.level, pools, options)
-        : selectable;
+      mode === "numbers" || mode === "dates" ? buildItems(mode, pools, options) : selectable;
     const picked = limit === "all" ? pool : pool.slice(0, limit);
     setSession(shuffle(picked));
     setSummary(null);

@@ -1,9 +1,9 @@
 // Documentation link checker.
 //
-// Scans the Kuskus-managed doc surface (AGENTS.md, docs/) for markdown links
-// and verifies every relative link target exists, and every anchor points at a
-// heading in the target file. Absolute http(s) links are syntax-checked only
-// (no network). Exits nonzero with per-link evidence on failure.
+// Scans the Kuskus-managed doc surface (AGENTS.md, README.md, docs/) for
+// markdown links and verifies every relative link target exists, and every
+// anchor points at a heading in the target file. Absolute http(s) links are
+// syntax-checked only (no network). Exits nonzero with per-link evidence on failure.
 
 import { readFileSync, existsSync } from "node:fs";
 import { join, dirname, resolve, relative, sep } from "node:path";
@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 import { readdirSync, statSync } from "node:fs";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
-const targets = [join(repoRoot, "AGENTS.md")];
+const targets = [join(repoRoot, "AGENTS.md"), join(repoRoot, "README.md")];
 
 const docsDir = join(repoRoot, "docs");
 if (existsSync(docsDir)) {

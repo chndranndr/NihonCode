@@ -1,0 +1,328 @@
+// audit-clean: the tracked-pool validator. data/clean/ is the repository's
+// single source of truth (committed; docs/decisions.md 2026-09-21), so this
+// script is the guardrail against bad edits: zero defect classes, unique IDs,
+// graded-pool floors, practice_core referential integrity, and every
+// referenced listening MP3 present on disk.
+//
+//   node scripts/audit-clean.mjs              validate data/clean/
+//   node scripts/audit-clean.mjs --self-test  prove each guard fires
+
+import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { tmpdir } from "node:os";
+import { scrubJapanese } from "./lib/scrub.mjs";
+
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
+const cleanRoot = join(repoRoot, "data", "clean");
+const levels = ["n5", "n4", "n3", "n2", "n1"];
+const cats = ["grammar", "reading", "kanji", "listening", "vocabulary"];
+
+const isLatin = (s) => typeof s === "string" && s.length > 0 && /^[\x20-\x7e]+$/.test(s);
+const hasMarker = (s) => /[.-]/.test(s);
+const REMOTE = /^https?:\/\//i;
+const BOILERPLATE = /Click here to download this test/i;
+// scrubJapanese is idempotent: if it changes a tracked string, a scraper
+// artifact (control byte or U+FF0D hyphen) was reintroduced by an edit.
+const scrubbed = (s) => typeof s === "string" && scrubJapanese(s) === s;
+
+// Graded-pool floors (docs/data-quality.md "Tracked-pool gate").
+const FLOORS = {
+  kanaHiragana: 46,
+  kanaKatakana: 46,
+  kanji: { n5: 80, n4: 166 },
+  vocab: { n5: 738, n4: 649 },
+  grammarGraded: { n5: 72, n4: 130 },
+};
+
+// Self-test fixture: put a U+FF0D into the first passage title found, so the
+// title-scrub assertion is proven to fire (the tracked pool is healthy).
+function injectTitleArtifact(root) {
+  for (const lvl of levels)
+    for (const cat of cats) {
+      const path = join(root, "jlpt", lvl, `${cat}.json`);
+      if (!existsSync(path)) continue;
+      const sets = JSON.parse(readFileSync(path, "utf8"));
+      for (const set of sets) {
+        const p = (set.passages || [])[0];
+        if (!p) continue;
+        p.title = `${p.title || "題"}\uff0d`;
+        writeFileSync(path, JSON.stringify(sets), "utf8");
+        return true;
+      }
+    }
+  return false;
+}
+
+export function auditClean(root) {
+  const rd = (rel) => JSON.parse(readFileSync(join(root, rel), "utf8"));
+  const failures = [];
+  const fail = (msg) => failures.push(msg);
+
+  function assertUniqueIds(poolName, ids) {
+    const seen = new Set();
+    for (const id of ids) {
+      if (seen.has(id)) fail(`${poolName}: duplicate ID ${id}`);
+      seen.add(id);
+    }
+  }
+
+  const kana = rd("kana.json");
+  assertUniqueIds(
+    "kana",
+    [...kana.hiragana, ...kana.katakana].map((e) => e.id),
+  );
+  for (const table of ["hiragana", "katakana"]) {
+    for (const e of kana[table]) {
+      if (!isLatin(e.romaji)) fail(`kana ${table} ${e.char}: non-latin romaji "${e.romaji}"`);
+      // Ids are content-derived (src/content/ids.ts); a stored id that
+      // disagrees with its own fields orphans progress rows silently.
+      if (e.id !== `kana:${table}:${e.char}`)
+        fail(`kana ${table} ${e.char}: id "${e.id}" does not match its char`);
+    }
+  }
+  if (kana.hiragana.length < FLOORS.kanaHiragana)
+    fail(`kana hiragana below floor: ${kana.hiragana.length} < ${FLOORS.kanaHiragana}`);
+  if (kana.katakana.length < FLOORS.kanaKatakana)
+    fail(`kana katakana below floor: ${kana.katakana.length} < ${FLOORS.kanaKatakana}`);
+
+  const kanjiCounts = {};
+  for (const lvl of levels) {
+    const d = rd(`kanji_${lvl}.json`);
+    const ids = [];
+    for (const g of d.groups) {
+      for (const e of g.entries) {
+        ids.push(e.id);
+        const marked = (e.answers || []).filter(hasMarker);
+        if (marked.length > 0) {
+          fail(`kanji ${lvl} ${e.kanji}: dictionary markers in accepted set: ${marked.join(", ")}`);
+        }
+        if (e.id !== `kanji:${lvl}:${e.kanji}`)
+          fail(`kanji ${lvl} ${e.kanji}: id "${e.id}" does not match its kanji`);
+      }
+    }
+    kanjiCounts[lvl] = ids.length;
+    assertUniqueIds(`kanji_${lvl}`, ids);
+  }
+  for (const lvl of Object.keys(FLOORS.kanji))
+    if (kanjiCounts[lvl] < FLOORS.kanji[lvl])
+      fail(`kanji ${lvl} below floor: ${kanjiCounts[lvl]} < ${FLOORS.kanji[lvl]}`);
+
+  const vocabCounts = {};
+  for (const lvl of levels) {
+    const d = rd(`vocabulary_${lvl}.json`);
+    const ids = [];
+    for (const c of d.categories) {
+      for (const e of c.entries) {
+        ids.push(e.id);
+        if (!isLatin(e.romaji)) {
+          fail(`vocab ${lvl} ${e.id}: non-latin romaji "${e.romaji}"`);
+        }
+        if (e.id !== `vocab:${lvl}:${e.kanji}|${e.kana}`)
+          fail(`vocab ${lvl} ${e.id}: id does not match its kanji|kana`);
+      }
+    }
+    vocabCounts[lvl] = ids.length;
+    assertUniqueIds(`vocabulary_${lvl}`, ids);
+  }
+  for (const lvl of Object.keys(FLOORS.vocab))
+    if (vocabCounts[lvl] < FLOORS.vocab[lvl])
+      fail(`vocab ${lvl} below floor: ${vocabCounts[lvl]} < ${FLOORS.vocab[lvl]}`);
+
+  const gradedCounts = {};
+  for (const lvl of levels) {
+    const d = rd(`grammar_${lvl}.json`);
+    const ids = [];
+    let graded = 0;
+    for (const l of d.lessons) {
+      ids.push(l.id);
+      if (l.graded) {
+        graded++;
+        const quizStrings = [];
+        for (const q of l.quiz || []) {
+          quizStrings.push(q.answer ?? "", ...(q.choices || []));
+          if (!(q.choices || []).includes(q.answer)) {
+            fail(`grammar ${lvl} ${l.id}: quiz ${q.id} answer not among choices`);
+          }
+        }
+        if (quizStrings.some((s) => /[〜～]/.test(s))) {
+          fail(`grammar ${lvl} ${l.id}: graded lesson still holds ～ in quiz strings`);
+        }
+      }
+    }
+    gradedCounts[lvl] = graded;
+    assertUniqueIds(`grammar_${lvl}`, ids);
+  }
+  for (const lvl of Object.keys(FLOORS.grammarGraded))
+    if (gradedCounts[lvl] < FLOORS.grammarGraded[lvl])
+      fail(
+        `grammar ${lvl} graded below floor: ${gradedCounts[lvl]} < ${FLOORS.grammarGraded[lvl]}`,
+      );
+
+  const jlptIds = [];
+  for (const lvl of levels) {
+    for (const cat of cats) {
+      const arr = rd(`jlpt/${lvl}/${cat}.json`);
+      for (const set of arr) {
+        for (const q of set.questions || []) {
+          jlptIds.push(q.id);
+          if (typeof q.prompt === "string" && q.prompt.trim() === "「") {
+            fail(`jlpt ${lvl} ${cat} ${set.set_number} ${q.id}: truncated prompt in graded pool`);
+          }
+          if (q.answer_index == null) {
+            fail(`jlpt ${lvl} ${cat} ${set.set_number} ${q.id}: null answer_index in graded pool`);
+          }
+          if ((q.image_urls || []).some((u) => REMOTE.test(u))) {
+            fail(`jlpt ${lvl} ${cat} ${q.id}: remote image_url survived in graded pool`);
+          }
+          if ((q.image_urls || []).some((u) => /\.mp3(\?|$)/i.test(u))) {
+            fail(`jlpt ${lvl} ${cat} ${q.id}: MP3 URL still in image_urls`);
+          }
+          if (q.answer_index != null) {
+            const opt = (q.options || [])[q.answer_index];
+            if (opt !== q.answer_text) {
+              fail(`jlpt ${lvl} ${cat} ${q.id}: answer_text does not match options[answer_index]`);
+            }
+          }
+          const scrubFields = [q.prompt, ...(q.options || []), q.answer_text];
+          for (const s of scrubFields) {
+            if (typeof s !== "string") continue;
+            if (!scrubbed(s))
+              fail(`jlpt ${lvl} ${cat} ${q.id}: scrub artifact survived in question text`);
+          }
+        }
+        for (const p of set.passages || []) {
+          const text = (p.text || "").trim();
+          if (!text) fail(`jlpt ${lvl} ${cat} ${set.set_number} ${p.id}: empty passage survived`);
+          if (BOILERPLATE.test(text))
+            fail(`jlpt ${lvl} ${cat} ${set.set_number} ${p.id}: boilerplate passage survived`);
+          if ((p.image_urls || []).length > 0)
+            fail(`jlpt ${lvl} ${cat} ${p.id}: image_urls survived on passage`);
+          if (!scrubbed(p.text || "") || !scrubbed(p.title || ""))
+            fail(`jlpt ${lvl} ${cat} ${p.id}: scrub artifact survived in passage`);
+        }
+        for (const a of set.audio || []) {
+          if (REMOTE.test(a.local_path || "")) {
+            fail(`jlpt ${lvl} ${cat} ${set.set_number}: remote audio local_path`);
+          }
+          if (a.local_path && !existsSync(join(root, a.local_path))) {
+            fail(`jlpt ${lvl} ${cat} ${set.set_number}: missing audio file ${a.local_path}`);
+          }
+        }
+      }
+    }
+  }
+  assertUniqueIds("jlpt", jlptIds);
+
+  // practice_core integrity: every reverse-index reference must resolve to a
+  // question that exists in the graded pools, with matching counts.
+  const jlptIdSet = new Set(jlptIds);
+  const core = rd("practice_core.json");
+  for (const lvl of levels) {
+    for (const cat of Object.keys(core[lvl] || {})) {
+      for (const rec of core[lvl][cat]) {
+        const refs = rec.questionIds || [];
+        if (rec.questionCount !== refs.length)
+          fail(
+            `practice_core ${lvl} ${cat} ${rec.kanji ?? rec.vocab ?? "?"}: questionCount ${rec.questionCount} != ${refs.length} refs`,
+          );
+        for (const qid of refs) {
+          if (!jlptIdSet.has(qid))
+            fail(`practice_core ${lvl} ${cat}: dangling question ref ${qid}`);
+        }
+      }
+    }
+  }
+
+  return failures;
+}
+
+if (process.argv.includes("--self-test")) {
+  // Prove the validator fails on: a duplicate ID, a scrub artifact in a
+  // passage title, a graded pool dropping below its floor, a referenced MP3
+  // going missing, and a stored id that disagrees with its own content
+  // fields. Each fixture is the only executable proof its guard fires (the
+  // tracked pool is healthy, so none can occur naturally).
+  const tmp = mkdtempSync(join(tmpdir(), "audit-clean-selftest-"));
+  try {
+    cpSync(cleanRoot, tmp, { recursive: true });
+    const vocabPath = join(tmp, "vocabulary_n5.json");
+    const vocab = JSON.parse(readFileSync(vocabPath, "utf8"));
+    const first = vocab.categories[0].entries[0];
+    vocab.categories[0].entries[1].id = first.id;
+    writeFileSync(vocabPath, JSON.stringify(vocab), "utf8");
+    const failures = auditClean(tmp);
+    if (!failures.some((f) => f.includes("duplicate ID"))) {
+      console.error("audit-clean --self-test: FAIL — duplicate ID not detected");
+      process.exit(1);
+    }
+    rmSync(vocabPath);
+    cpSync(join(cleanRoot, "vocabulary_n5.json"), vocabPath);
+    if (!injectTitleArtifact(tmp)) {
+      console.error("audit-clean --self-test: FAIL — no passage found to inject into");
+      process.exit(1);
+    }
+    const titleFailures = auditClean(tmp);
+    if (!titleFailures.some((f) => f.includes("scrub artifact survived in passage"))) {
+      console.error("audit-clean --self-test: FAIL — passage title artifact not detected");
+      process.exit(1);
+    }
+    const floorVocab = JSON.parse(readFileSync(vocabPath, "utf8"));
+    floorVocab.categories[0].entries = floorVocab.categories[0].entries.slice(0, 10);
+    writeFileSync(vocabPath, JSON.stringify(floorVocab), "utf8");
+    const floorFailures = auditClean(tmp);
+    if (!floorFailures.some((f) => f.includes("vocab n5 below floor"))) {
+      console.error("audit-clean --self-test: FAIL — graded-pool floor not detected");
+      process.exit(1);
+    }
+    rmSync(vocabPath);
+    cpSync(join(cleanRoot, "vocabulary_n5.json"), vocabPath);
+    let audioRel = null;
+    const sets = JSON.parse(readFileSync(join(tmp, "jlpt", "n5", "listening.json"), "utf8"));
+    outer: for (const s of sets)
+      for (const a of s.audio || [])
+        if (a.local_path) {
+          audioRel = a.local_path;
+          break outer;
+        }
+    if (!audioRel) {
+      console.error("audit-clean --self-test: FAIL — no audio ref found to delete");
+      process.exit(1);
+    }
+    rmSync(join(tmp, audioRel));
+    const audioFailures = auditClean(tmp);
+    if (!audioFailures.some((f) => f.includes("missing audio file"))) {
+      console.error("audit-clean --self-test: FAIL — missing audio file not detected");
+      process.exit(1);
+    }
+    const deriveVocab = JSON.parse(readFileSync(vocabPath, "utf8"));
+    deriveVocab.categories[0].entries[0].kana = "かわったよみ";
+    writeFileSync(vocabPath, JSON.stringify(deriveVocab), "utf8");
+    const deriveFailures = auditClean(tmp);
+    if (!deriveFailures.some((f) => f.includes("does not match its kanji|kana"))) {
+      console.error("audit-clean --self-test: FAIL — id/content derivation mismatch not detected");
+      process.exit(1);
+    }
+    console.log(
+      "audit-clean --self-test: OK (duplicate ID, passage title artifact, pool floor, missing audio, id derivation rejected)",
+    );
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+  process.exit(0);
+}
+
+if (!existsSync(join(cleanRoot, "kana.json"))) {
+  console.error("audit-clean: data/clean/ missing — it is tracked; restore it from git");
+  process.exit(1);
+}
+
+const failures = auditClean(cleanRoot);
+if (failures.length > 0) {
+  console.error(`audit-clean: FAIL (${failures.length} finding(s))`);
+  for (const f of failures.slice(0, 40)) console.error(`  - ${f}`);
+  if (failures.length > 40) console.error(`  … ${failures.length - 40} more`);
+  process.exit(1);
+}
+
+console.log("audit-clean: OK (zero defects, floors hold, IDs unique, audio present)");

@@ -2,8 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./app/App";
 import { createLogger, setMinLevel } from "./observability/logger";
-
-const APP_VERSION = "0.1.0-scaffold";
+import { APP_VERSION } from "./content/sources";
 
 setMinLevel(import.meta.env.PROD ? "info" : "debug");
 const log = createLogger("app");

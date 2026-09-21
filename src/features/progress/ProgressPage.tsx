@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { Panel } from "../../components/Panel";
-import { usePools } from "../../components/pools";
+import { getPools } from "../../components/pools";
 import { achievements, coverageEstimate } from "../../domain/achievements";
 import { dayKey, xpProgress } from "../../domain/progress";
-import { currentPrefs, masteryByItem, sessionSummary } from "../../storage/progressRepo";
+import { masteryByItem, sessionSummary } from "../../storage/progressRepo";
 import { srsStats, type SrsStats } from "../../storage/srsRepo";
+import { loadPrefs } from "../../storage/prefs";
 import type { JlptLevel } from "../../content/ids";
 import type { KanjiItem } from "../../content/models";
 
@@ -18,8 +19,8 @@ interface KanjiCell {
 const LEVELS: JlptLevel[] = ["n5", "n4", "n3", "n2", "n1"];
 
 export function ProgressPage() {
-  const prefs = currentPrefs();
-  const pools = usePools(prefs.level);
+  const prefs = loadPrefs();
+  const pools = getPools();
   const [stats, setStats] = useState<SrsStats | null>(null);
   const [sessions, setSessions] = useState<Awaited<ReturnType<typeof sessionSummary>> | null>(null);
   const [cells, setCells] = useState<KanjiCell[]>([]);
@@ -34,7 +35,6 @@ export function ProgressPage() {
   useEffect(() => {
     let cancelled = false;
     void (async () => {
-      if (!pools) return;
       const next: KanjiCell[] = [];
       for (const item of pools.kanji) {
         const m = await masteryByItem(item.id);
@@ -56,7 +56,7 @@ export function ProgressPage() {
   const weekMax = Math.max(1, ...week.map(([, v]) => v));
 
   const coverage = useMemo(() => {
-    if (!pools || !stats) return 0;
+    if (!stats) return 0;
     return coverageEstimate(
       stats.learned,
       pools.kanji.length + pools.vocab.length,

@@ -20,7 +20,7 @@ export const CONTENT_SOURCES: readonly ContentSource[] = [
     origin: "amgidex",
     license: "unspecified",
     clearance: "pending",
-    note: "Redistribution rights unconfirmed; blocks public release (Phase 2.7).",
+    note: "Redistribution rights unconfirmed; blocks public release (docs/attribution.md).",
   },
   {
     name: "Example sentences",
@@ -34,7 +34,7 @@ export const CONTENT_SOURCES: readonly ContentSource[] = [
     origin: "japanesetest4you",
     license: "unspecified",
     clearance: "pending",
-    note: "Scraped sets; audio aliasing unresolved (Phase 2.5).",
+    note: "Scraped sets; rights unconfirmed; release blocked (docs/attribution.md).",
   },
 ] as const;
 

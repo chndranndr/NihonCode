@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-
+import type { LogRecord } from "../src/observability/logger";
 /**
  * Smoke evaluation: the representative acceptance path available at scaffold
  * stage. Proves the production bundle boots in a real browser at both target
@@ -12,14 +12,6 @@ import { expect, test } from "@playwright/test";
  * snapshots: the eval must not go red when the scaffold shell is replaced by
  * the real dashboard.
  */
-
-interface LogRecord {
-  ts: string;
-  level: string;
-  ns: string;
-  msg: string;
-  data?: Record<string, unknown>;
-}
 
 test("app boots, renders the shell, and emits the startup signal", async ({ page }, testInfo) => {
   const bootRecords: LogRecord[] = [];

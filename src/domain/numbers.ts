@@ -97,20 +97,10 @@ export function numberToJapanese(n: number): string {
   return numberReading(n).jp;
 }
 
-export function numberToRomaji(n: number): string {
-  return numberReading(n).romaji;
-}
-
 export interface NumberQuestion {
   value: number;
   japanese: string;
   romaji: string;
-}
-
-export function makeNumberQuestion(rand: () => number = Math.random): NumberQuestion {
-  const value = Math.floor(rand() * 999_999) + 1;
-  const reading = numberReading(value);
-  return { value, japanese: reading.jp, romaji: reading.romaji };
 }
 
 /** Question within an inclusive custom range (PRD 10.7 preset/custom ranges). */

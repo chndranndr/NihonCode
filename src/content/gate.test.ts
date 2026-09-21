@@ -1,12 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { validateJlptSets, validateKanji, validateVocab } from "./gate";
+import { validateGrammar, validateKanji, validateVocab } from "./gate";
+import { kanjiId, vocabId } from "./ids";
 import { loadGrammar, loadKana, loadKanji, loadVocab } from "./loaders";
 
 /**
  * DEVELOPMENT_PROMPT.md task 1 acceptance: the gate excludes and flags
  * known-bad samples (vocab with Japanese romaji, kanji answer with dictionary
- * markers, JLPT record with null key) by excluding and flagging them, not
- * throwing.
+ * markers) by excluding and flagging them, not throwing. Samples are
+ * clean-pool shaped (stamped ids), matching data/clean.
  */
 
 describe("validation gate: known-bad samples are flagged, not thrown on", () => {
@@ -18,8 +19,20 @@ describe("validation gate: known-bad samples are flagged, not thrown on", () => 
             id: "c1",
             name: "C",
             entries: [
-              { kanji: "一日", romaji: "ついたち", meaning: "first day", kana: "ついたち" },
-              { kanji: "水", romaji: "mizu", meaning: "water", kana: "みず" },
+              {
+                id: vocabId("n5", "一日", "ついたち"),
+                kanji: "一日",
+                romaji: "ついたち",
+                meaning: "first day",
+                kana: "ついたち",
+              },
+              {
+                id: vocabId("n5", "水", "みず"),
+                kanji: "水",
+                romaji: "mizu",
+                meaning: "water",
+                kana: "みず",
+              },
             ],
           },
         ],
@@ -40,8 +53,20 @@ describe("validation gate: known-bad samples are flagged, not thrown on", () => 
             id: "g1",
             name: "G",
             entries: [
-              { kanji: "足", reading: "あし", meaning: "leg", answers: ["あし", "た.りる"] },
-              { kanji: "水", reading: "みず", meaning: "water", answers: ["みず", "スイ"] },
+              {
+                id: kanjiId("n5", "足"),
+                kanji: "足",
+                reading: "あし",
+                meaning: "leg",
+                answers: ["あし", "た.りる"],
+              },
+              {
+                id: kanjiId("n5", "水"),
+                kanji: "水",
+                reading: "みず",
+                meaning: "water",
+                answers: ["みず", "スイ"],
+              },
             ],
           },
         ],
@@ -52,42 +77,38 @@ describe("validation gate: known-bad samples are flagged, not thrown on", () => 
     expect(result.flags[0].reason).toContain("dictionary markers");
   });
 
-  it("excludes JLPT records with null keys and truncated prompts", () => {
-    const result = validateJlptSets(
-      [
-        {
-          title: "Set 1",
-          level: "N5",
-          type: "reading",
-          questions: [
-            { number: 1, prompt: "「", options: ["a", "b"], answer_index: 1 },
-            { number: 2, prompt: "ok?", options: ["a", "b"], answer_index: null },
-            { number: 3, prompt: "fine?", options: ["a", "b"], answer_index: 2 },
-            { number: 4, prompt: "range?", options: ["a"], answer_index: 5 },
-          ],
-        },
-      ],
+  it("flags entries whose stamped id disagrees with their content", () => {
+    const result = validateVocab(
+      {
+        categories: [
+          {
+            id: "c1",
+            name: "C",
+            entries: [
+              {
+                id: vocabId("n5", "水", "みず"),
+                kanji: "一日",
+                romaji: "mizu",
+                meaning: "water",
+                kana: "みず",
+              },
+            ],
+          },
+        ],
+      },
       "n5",
-      "reading",
     );
-    expect(result.items).toHaveLength(1);
-    expect(result.items[0].answerIndex).toBe(1);
-    const reasons = result.flags.map((f) => f.reason);
-    expect(reasons).toContain("truncated prompt; question fragment lives in choices");
-    expect(reasons).toContain("null answer_index (scraped reference row)");
-    expect(reasons).toContain("answer_index outside options range");
+    expect(result.items).toEqual([]);
+    expect(result.flags[0].reason).toContain("id does not match");
   });
 
   it("survives a structurally broken file without throwing", () => {
     expect(validateVocab({ nope: true }, "n5").flags[0].reason).toBe("file schema invalid");
     expect(validateKanji(null, "n5").items).toEqual([]);
-    expect(validateJlptSets("not an array", "n5", "kanji").flags[0].reason).toBe(
-      "file schema invalid",
-    );
   });
 });
 
-describe("validation gate: clean slice pools", () => {
+describe("validation gate: clean pools", () => {
   it("loads the 46+46 basic gojuon", () => {
     const { items, flags } = loadKana();
     expect(flags).toEqual([]);
@@ -97,25 +118,23 @@ describe("validation gate: clean slice pools", () => {
   });
 
   it("loads 80 marker-free kanji N5 entries", () => {
-    const { items, flags } = loadKanji("n5");
+    const { items, flags } = loadKanji();
     expect(flags).toEqual([]);
     expect(items).toHaveLength(80);
     for (const item of items) expect(item.answers.length).toBeGreaterThan(0);
   });
 
-  it("loads the graded N5 vocab pool: 643 Latin romaji minus 2 packed alternatives", () => {
-    const { items, flags } = loadVocab("n5");
-    // 643 entries hold genuine Latin romaji (audit ledger); 2 of them pack
-    // alternatives ("maitoshi / mainen") and are excluded from exact-match
-    // grading until Problem C gives them a variants list.
-    expect(items).toHaveLength(641);
+  it("loads the curated N5 vocab pool: 738 graded entries, all Latin romaji", () => {
+    const { items, flags } = loadVocab();
+    // Post-curation clean pool (docs/data-quality.md): 738 graded N5 vocab
+    // entries; packed alternatives carry variants lists and grade on primary.
+    expect(items).toHaveLength(738);
+    expect(flags).toEqual([]);
     for (const item of items) expect(/^[\x20-\x7e]+$/.test(item.romaji)).toBe(true);
-    expect(flags.length).toBeGreaterThan(0);
-    expect(flags.every((f) => f.id !== null)).toBe(true);
   });
 
-  it("loads the 72 reviewed N5 grammar lessons with answer-in-choices quizzes", () => {
-    const { items, flags } = loadGrammar("n5");
+  it("loads the 72 graded N5 grammar lessons with answer-in-choices quizzes", () => {
+    const { items, flags } = loadGrammar();
     expect(flags).toEqual([]);
     expect(items).toHaveLength(72);
     for (const lesson of items) {
@@ -124,11 +143,29 @@ describe("validation gate: clean slice pools", () => {
     }
   });
 
-  it("refuses non-clean-slice levels without reading files", () => {
-    const kanji = loadKanji("n1");
-    expect(kanji.items).toEqual([]);
-    expect(kanji.flags[0].reason).toContain("not enabled until Phase 2");
-    expect(loadVocab("n3").items).toEqual([]);
-    expect(loadGrammar("n4").items).toEqual([]);
+  it("excludes ungraded lessons and lessons outside the level namespace", () => {
+    const result = validateGrammarFixture([{ graded: false }, { id: "grammar:n4:1" }]);
+    expect(result.items).toEqual([]);
+    expect(result.flags.map((f) => f.reason)).toEqual([
+      "lesson not graded; excluded from graded pool",
+      "id outside this level's namespace",
+    ]);
   });
 });
+
+function validateGrammarFixture(overrides: Array<Record<string, unknown>>) {
+  const lesson = (over: Record<string, unknown>) => ({
+    id: "grammar:n5:1",
+    graded: true,
+    defects: [],
+    title: "t",
+    level: "n5",
+    category: "c",
+    pattern: "p",
+    explanation: "e",
+    examples: [{ jp: "j" }],
+    quiz: [{ id: 1, choices: ["a"], answer: "a" }],
+    ...over,
+  });
+  return validateGrammar({ lessons: overrides.map(lesson) }, "n5");
+}

@@ -1,16 +1,17 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
-import { usePools, srsPoolIds } from "../../components/pools";
+import { getPools, srsPoolIds } from "../../components/pools";
 import { ratingFromCorrect } from "../../domain/scheduling";
 import { XP } from "../../domain/progress";
-import { awardXp, currentPrefs, recordAttempt, recordSession } from "../../storage/progressRepo";
+import { awardXp, recordAttempt, recordSession } from "../../storage/progressRepo";
 import { buildDueQueue, reviewItem } from "../../storage/srsRepo";
+import { loadPrefs } from "../../storage/prefs";
 
 export function ReviewPage() {
   const navigate = useNavigate();
-  const prefs = currentPrefs();
-  const pools = usePools(prefs.level);
+  const prefs = loadPrefs();
+  const pools = getPools();
   const [queue, setQueue] = useState<{ due: string[]; fresh: string[] } | null>(null);
   const [session, setSession] = useState<SessionItem[] | null>(null);
   const [summary, setSummary] = useState<SessionResult | null>(null);
@@ -18,7 +19,6 @@ export function ReviewPage() {
   useEffect(() => {
     let cancelled = false;
     void (async () => {
-      if (!pools) return;
       const q = await buildDueQueue(srsPoolIds(pools), prefs.srs.dailyNewCap);
       if (!cancelled) setQueue({ due: q.due, fresh: q.newCandidates });
     })();
@@ -32,7 +32,6 @@ export function ReviewPage() {
       string,
       { prompt: string; accepted: string[]; scripts: string[]; meaning: string; speak: string }
     >();
-    if (!pools) return map;
     for (const k of pools.kanji)
       map.set(k.id, {
         prompt: k.char,

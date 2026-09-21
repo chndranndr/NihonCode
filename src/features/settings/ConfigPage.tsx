@@ -3,9 +3,7 @@ import { Panel } from "../../components/Panel";
 import { status } from "../../components/tts";
 import { useTheme } from "../../components/theme";
 import { APP_VERSION, CONTACT_PLACEHOLDER, CONTENT_SOURCES } from "../../content/sources";
-import { loadPrefs, savePrefs, type AccentName } from "../../storage/prefs";
-
-const ACCENTS: AccentName[] = ["amber", "green", "blue", "orange", "red"];
+import { ACCENTS, loadPrefs, savePrefs } from "../../storage/prefs";
 
 export function ConfigPage() {
   const theme = useTheme();
@@ -115,7 +113,7 @@ export function ConfigPage() {
           </Panel>
           <Panel title="STORAGE">
             <p>IndexedDB (Dexie): SRS cards, review logs, drill attempts, sessions.</p>
-            <p>localStorage: theme, accent, level, SRS prefs, compact progress.</p>
+            <p>localStorage: theme, accent, SRS prefs, compact progress.</p>
             <p className="micro-label">CLEARING BROWSER DATA ERASES ALL PROGRESS. NO BACKUP.</p>
           </Panel>
           <Panel title="PLATFORM">

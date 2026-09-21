@@ -3,7 +3,8 @@
 // Derives a collision-free port (first free at/above 4173), exports it as
 // E2E_PORT for playwright.config.ts, and forwards to the test runner. On a
 // missing browser binary, prints the remediation command (captured stdio, so
-// the hint can actually fire).
+// the hint can actually fire). data/clean/ is the tracked dataset, so no
+// build step is needed here.
 //
 //   node scripts/run-e2e.mjs [extra playwright args]
 

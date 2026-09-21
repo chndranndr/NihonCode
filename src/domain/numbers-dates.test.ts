@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { dayReading, makeFullDate, monthReading, WEEKDAYS, yearReading } from "./dates";
-import { makeNumberQuestion, numberReading, numberToJapanese, numberToRomaji } from "./numbers";
+import { makeNumberQuestionInRange, numberReading, numberToJapanese } from "./numbers";
 
 describe("numbers", () => {
   it("reads irregular hundreds and thousands", () => {
@@ -22,8 +22,8 @@ describe("numbers", () => {
   });
 
   it("romaji agrees with the japanese form structurally", () => {
-    expect(numberToRomaji(300)).toBe("sanbyaku");
-    expect(numberToRomaji(1234)).toBe("sennihyakusanjuuyon");
+    expect(numberReading(300).romaji).toBe("sanbyaku");
+    expect(numberReading(1234).romaji).toBe("sennihyakusanjuuyon");
     expect(numberReading(46).romaji).toBe("yonjuuroku");
   });
 
@@ -32,11 +32,9 @@ describe("numbers", () => {
     expect(() => numberToJapanese(1_000_000)).toThrow(RangeError);
   });
 
-  it("generates questions inside the supported range", () => {
-    let seeded = 0.5;
-    const q = makeNumberQuestion(() => seeded++);
-    expect(q.value).toBeGreaterThanOrEqual(1);
-    expect(q.value).toBeLessThanOrEqual(999_999);
+  it("generates questions inside the chosen range", () => {
+    const q = makeNumberQuestionInRange(1, 99, () => 0.5);
+    expect(q.value).toBe(50);
     expect(q.japanese).toBe(numberToJapanese(q.value));
   });
 });

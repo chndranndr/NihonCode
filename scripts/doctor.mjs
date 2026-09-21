@@ -2,11 +2,10 @@
 //
 // Order (cheapest fail-fast first):
 //   1. manifest validation (schema v2 grammar, artifacts, verify resolution)
-//   2. CI workflow YAML syntax (when present)
-//   3. npm run check       (typecheck, lint, format:check, arch, taste, docs, data audit)
-//   4. npm test            (vitest unit suite)
-//   5. npm run gc -- --dry-run (cleanup + entropy scan, read-only)
-//   6. npm run eval        (Playwright smoke eval; only with --with-eval)
+//   2. npm run check       (typecheck, lint, format:check, arch, taste, docs, data audit)
+//   3. npm test            (vitest unit suite)
+//   4. npm run gc -- --dry-run (cleanup + entropy scan, read-only)
+//   5. npm run eval        (Playwright smoke eval; only with --with-eval)
 //
 // Flags:
 //   --with-eval   also run the browser smoke evaluation (builds the app)
@@ -18,7 +17,6 @@ import { spawnSync } from "node:child_process";
 import { readFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import yaml from "js-yaml";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const args = new Set(process.argv.slice(2));
@@ -193,22 +191,7 @@ function validateManifest() {
 
 const manifest = validateManifest();
 
-// ---------- 2. CI YAML syntax ----------
-
-const ciPath = join(repoRoot, ".github", "workflows", "ci.yml");
-if (existsSync(ciPath)) {
-  try {
-    const doc = yaml.load(readFileSync(ciPath, "utf8"));
-    if (!doc || typeof doc !== "object" || !("jobs" in doc)) throw new Error("no jobs key");
-    record("ci-yaml", "pass", ".github/workflows/ci.yml parses; jobs present");
-  } catch (e) {
-    record("ci-yaml", "fail", `ci.yml invalid YAML: ${e.message}`);
-  }
-} else {
-  record("ci-yaml", "skipped", "no CI workflow present");
-}
-
-// ---------- 3-6. executable checks ----------
+// ---------- 2-5. executable checks ----------
 
 if (manifest) {
   const npm = process.platform === "win32" ? "npm.cmd" : "npm";

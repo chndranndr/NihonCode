@@ -36,10 +36,6 @@ export async function masteryByItem(itemId: string): Promise<ItemMastery> {
   };
 }
 
-export async function attemptsForKind(kind: AttemptKind): Promise<DrillAttemptRow[]> {
-  return db().drillAttempts.where("kind").equals(kind).toArray();
-}
-
 /** One completed drill/review/lesson session; feeds achievement inputs. */
 export async function recordSession(kind: string, correct: number, total: number): Promise<void> {
   await db().sessions.add({ kind, correct, total, ts: Date.now() });
@@ -85,8 +81,4 @@ export function awardXp(amount: number, now: Date = new Date()): Prefs {
   };
   savePrefs(next);
   return next;
-}
-
-export function currentPrefs(): Prefs {
-  return loadPrefs();
 }

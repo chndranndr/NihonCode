@@ -6,13 +6,11 @@
  */
 
 import { createEmptyCard, FSRS, Rating, type Card, type RecordLogItem } from "ts-fsrs";
-export type AppRating = "again" | "hard" | "good" | "easy";
+export type AppRating = "again" | "good";
 
 const RATING_MAP = {
   again: Rating.Again,
-  hard: Rating.Hard,
   good: Rating.Good,
-  easy: Rating.Easy,
 } as const;
 
 /** MVP rating map: incorrect -> Again, correct -> Good. */

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { estimateReviewMinutes, routineAction, routineLabel } from "./routine";
+import { routineAction, routineLabel } from "./routine";
 
 describe("routine CTA state machine", () => {
   it("prefers due review with count and estimate", () => {
@@ -27,8 +27,11 @@ describe("routine CTA state machine", () => {
   });
 
   it("estimates at least one minute for any due card", () => {
-    expect(estimateReviewMinutes(1)).toBe(1);
-    expect(estimateReviewMinutes(0)).toBe(0);
-    expect(estimateReviewMinutes(25)).toBe(5);
+    const one = routineAction({ dueCount: 1, newCardCount: 0, poolSize: 1 });
+    expect(one.kind).toBe("review");
+    expect(routineLabel(one)).toContain("~1 min");
+    expect(routineLabel(routineAction({ dueCount: 25, newCardCount: 0, poolSize: 1 }))).toContain(
+      "~5 min",
+    );
   });
 });

@@ -19,23 +19,25 @@
       "artifacts": [
         "index.html",
         "package.json",
-        "src/main.tsx",
         "src/app/App.tsx",
+        "src/main.tsx",
         "vite.config.ts"
       ],
-      "verify": ["npm run eval"]
+      "verify": [
+        "npm run eval"
+      ]
     },
     "knowledge_base": {
       "status": "implemented",
       "artifacts": [
         "AGENTS.md",
-        "docs/index.md",
         "docs/architecture.md",
         "docs/data-quality.md",
+        "docs/decisions.md",
         "docs/design-system.md",
         "docs/development.md",
-        "docs/quality.md",
-        "docs/decisions.md"
+        "docs/index.md",
+        "docs/quality.md"
       ],
       "verify": [
         "npm run check",
@@ -48,8 +50,8 @@
         "package.json",
         "scripts/doctor.mjs",
         "scripts/gc.mjs",
-        "scripts/serve-isolated.mjs",
-        "scripts/run-e2e.mjs"
+        "scripts/run-e2e.mjs",
+        "scripts/serve-isolated.mjs"
       ],
       "verify": [
         "npm run doctor",
@@ -60,12 +62,12 @@
     "quality_checks": {
       "status": "implemented",
       "artifacts": [
-        "tsconfig.json",
-        "eslint.config.js",
         ".prettierrc.json",
+        "eslint.config.js",
         "scripts/check-arch.mjs",
+        "scripts/check-docs.mjs",
         "scripts/check-taste.mjs",
-        "scripts/check-docs.mjs"
+        "tsconfig.json"
       ],
       "verify": [
         "npm run check",
@@ -74,24 +76,30 @@
     },
     "ci": {
       "status": "implemented",
-      "artifacts": [".github/workflows/ci.yml"],
-      "verify": ["npm run doctor"]
+      "artifacts": [
+        ".github/workflows/ci.yml"
+      ],
+      "verify": [
+        "npm run doctor"
+      ]
     },
     "evaluation": {
       "status": "implemented",
       "artifacts": [
-        "e2e/smoke.spec.ts",
         "e2e/journey.spec.ts",
+        "e2e/smoke.spec.ts",
         "playwright.config.ts",
         "scripts/run-e2e.mjs"
       ],
-      "verify": ["npm run eval"]
+      "verify": [
+        "npm run eval"
+      ]
     },
     "architecture_boundaries": {
       "status": "implemented",
       "artifacts": [
-        "scripts/check-arch.mjs",
-        "docs/architecture.md"
+        "docs/architecture.md",
+        "scripts/check-arch.mjs"
       ],
       "verify": [
         "npm run check"
@@ -100,8 +108,8 @@
     "taste_invariants": {
       "status": "implemented",
       "artifacts": [
-        "scripts/check-taste.mjs",
-        "docs/design-system.md"
+        "docs/design-system.md",
+        "scripts/check-taste.mjs"
       ],
       "verify": [
         "npm run check"
@@ -110,23 +118,25 @@
     "domain_invariants": {
       "status": "implemented",
       "artifacts": [
-        "scripts/audit-data.mjs",
-        "scripts/data-baseline.json",
+        "docs/data-quality.md",
+        "scripts/audit-clean.mjs",
         "src/content/gate.ts",
-        "src/domain/grading.ts",
-        "src/domain/progress.ts",
-        "src/domain/scheduling.ts",
-        "src/domain/numbers.ts",
         "src/domain/dates.ts",
-        "docs/data-quality.md"
+        "src/domain/grading.ts",
+        "src/domain/numbers.ts",
+        "src/domain/progress.ts",
+        "src/domain/scheduling.ts"
       ],
-      "verify": ["npm run check", "npm test"]
+      "verify": [
+        "npm run check",
+        "npm test"
+      ]
     },
     "observability": {
       "status": "partial",
       "artifacts": [
-        "src/observability/logger.ts",
-        "src/observability/logger.test.ts"
+        "src/observability/logger.test.ts",
+        "src/observability/logger.ts"
       ],
       "verify": [
         "npm test",
@@ -147,18 +157,20 @@
     "workspace_isolation": {
       "status": "implemented",
       "artifacts": [
-        "scripts/serve-isolated.mjs",
+        "playwright.config.ts",
         "scripts/run-e2e.mjs",
-        "playwright.config.ts"
+        "scripts/serve-isolated.mjs"
       ],
-      "verify": ["npm run eval"]
+      "verify": [
+        "npm run eval"
+      ]
     },
     "execution_planning": {
       "status": "implemented",
       "artifacts": [
-        "implementation_plan.md",
         "DEVELOPMENT_PROMPT.md",
-        "docs/decisions.md"
+        "docs/decisions.md",
+        "implementation_plan.md"
       ],
       "verify": [
         "npm run check"
@@ -167,8 +179,8 @@
     "review_loop": {
       "status": "implemented",
       "artifacts": [
-        "docs/quality.md",
-        "DEVELOPMENT_PROMPT.md"
+        "DEVELOPMENT_PROMPT.md",
+        "docs/quality.md"
       ],
       "verify": [
         "npm run doctor",
@@ -178,8 +190,8 @@
     "workspace_cleanup": {
       "status": "implemented",
       "artifacts": [
-        "scripts/gc.mjs",
-        ".gitignore"
+        ".gitignore",
+        "scripts/gc.mjs"
       ],
       "verify": [
         "npm run gc",
@@ -189,8 +201,8 @@
     "entropy_control": {
       "status": "implemented",
       "artifacts": [
-        "scripts/gc.mjs",
-        "docs/quality.md"
+        "docs/quality.md",
+        "scripts/gc.mjs"
       ],
       "verify": [
         "npm run gc",
@@ -205,7 +217,9 @@
     ".prettierignore",
     ".prettierrc.json",
     "AGENTS.md",
+    "curation/adjudications.json",
     "docs/architecture.md",
+    "docs/attribution.md",
     "docs/data-quality.md",
     "docs/decisions.md",
     "docs/design-system.md",
@@ -217,13 +231,15 @@
     "index.html",
     "package.json",
     "playwright.config.ts",
-    "scripts/audit-data.mjs",
+    "scripts/audit-clean.mjs",
     "scripts/check-arch.mjs",
     "scripts/check-docs.mjs",
+    "scripts/check-rekeys.mjs",
     "scripts/check-taste.mjs",
-    "scripts/data-baseline.json",
     "scripts/doctor.mjs",
     "scripts/gc.mjs",
+    "scripts/lib/scrub.mjs",
+    "scripts/lib/scrub.test.mjs",
     "scripts/run-e2e.mjs",
     "scripts/serve-isolated.mjs",
     "src/app/App.tsx",
@@ -231,6 +247,7 @@
     "src/main.tsx",
     "src/observability/logger.test.ts",
     "src/observability/logger.ts",
+    "src/storage/vocab-migration.ts",
     "tsconfig.e2e.json",
     "tsconfig.json",
     "tsconfig.node.json",

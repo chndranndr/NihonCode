@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { createLogger, drainLog, getMinLevel, peekLog, setMinLevel } from "./logger";
+import { createLogger, setMinLevel } from "./logger";
 
 afterEach(() => {
-  drainLog();
+  window.__nihonLog?.splice(0);
   setMinLevel("debug");
   vi.restoreAllMocks();
 });
@@ -25,26 +25,16 @@ describe("logger", () => {
     createLogger("test").info("quiet");
     createLogger("test").warn("loud");
     expect(spy).toHaveBeenCalledTimes(1);
-    expect(peekLog().map((r) => r.msg)).toEqual(["quiet", "loud"]);
-    expect(getMinLevel()).toBe("warn");
+    expect(window.__nihonLog?.map((r) => r.msg)).toEqual(["quiet", "loud"]);
   });
 
   it("bounds the ring buffer, dropping oldest records", () => {
     vi.spyOn(console, "log").mockImplementation(() => {});
     const log = createLogger("ring");
     for (let i = 0; i < 600; i++) log.debug(`m${i}`);
-    const all = peekLog();
+    const all = window.__nihonLog ?? [];
     expect(all).toHaveLength(500);
     expect(all[0].msg).toBe("m100");
     expect(all[499].msg).toBe("m599");
-  });
-
-  it("drain empties the buffer and returns records in order", () => {
-    vi.spyOn(console, "log").mockImplementation(() => {});
-    createLogger("d").info("one");
-    createLogger("d").info("two");
-    const drained = drainLog();
-    expect(drained.map((r) => r.msg)).toEqual(["one", "two"]);
-    expect(peekLog()).toHaveLength(0);
   });
 });

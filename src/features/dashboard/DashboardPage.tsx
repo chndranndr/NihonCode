@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { routineAction, routineLabel, type RoutineAction } from "../../domain/routine";
 import { xpProgress } from "../../domain/progress";
-import { usePools, srsPoolIds } from "../../components/pools";
+import { getPools, srsPoolIds } from "../../components/pools";
 import { buildDueQueue, dueCount, srsStats, type SrsStats } from "../../storage/srsRepo";
 import { db } from "../../storage/db";
-import { currentPrefs, masteryByItem } from "../../storage/progressRepo";
+import { masteryByItem } from "../../storage/progressRepo";
 import { LockedPanel, Panel } from "../../components/Panel";
 import { useTheme } from "../../components/theme";
-import type { Prefs } from "../../storage/prefs";
+import { loadPrefs } from "../../storage/prefs";
+import { CLEAN_SLICE_LEVEL } from "../../content/loaders";
 
 interface DashboardState {
   action: RoutineAction | null;
-  prefs: Prefs | null;
   stats: SrsStats | null;
   grammarDone: number;
   grammarTotal: number;
@@ -21,12 +21,11 @@ interface DashboardState {
 }
 
 export function DashboardPage() {
-  const prefs0 = currentPrefs();
+  const prefs = loadPrefs();
   const liveTheme = useTheme();
-  const pools = usePools(prefs0.level);
+  const pools = getPools();
   const [state, setState] = useState<DashboardState>({
     action: null,
-    prefs: prefs0,
     stats: null,
     grammarDone: 0,
     grammarTotal: 0,
@@ -37,25 +36,16 @@ export function DashboardPage() {
   useEffect(() => {
     let cancelled = false;
     async function compute(): Promise<void> {
-      const prefs = currentPrefs();
-      const poolIds = pools ? srsPoolIds(pools) : [];
+      const poolIds = srsPoolIds(pools);
       const due = await dueCount();
-      const queue = pools
-        ? await buildDueQueue(poolIds, prefs.srs.dailyNewCap)
-        : { due: [], newCandidates: [] };
+      const queue = await buildDueQueue(poolIds, prefs.srs.dailyNewCap);
       const stats = await srsStats();
-      const grammarTotal = pools?.grammar.length ?? 0;
-      let grammarDone = 0;
-      if (pools) {
-        const rows = await db().grammarState.bulkGet(pools.grammar.map((l) => l.id));
-        grammarDone = rows.filter((r) => r?.status === "completed").length;
-      }
+      const rows = await db().grammarState.bulkGet(pools.grammar.map((l) => l.id));
+      const grammarDone = rows.filter((r) => r?.status === "completed").length;
       let kanjiMastered = 0;
-      if (pools) {
-        for (const k of pools.kanji) {
-          const m = await masteryByItem(k.id);
-          if (m.attempts > 0 && m.accuracy >= 0.8) kanjiMastered += 1;
-        }
+      for (const k of pools.kanji) {
+        const m = await masteryByItem(k.id);
+        if (m.attempts > 0 && m.accuracy >= 0.8) kanjiMastered += 1;
       }
       if (cancelled) return;
       setState({
@@ -64,33 +54,32 @@ export function DashboardPage() {
           newCardCount: queue.newCandidates.length,
           poolSize: poolIds.length,
         }),
-        prefs,
         stats,
         grammarDone,
-        grammarTotal,
+        grammarTotal: pools.grammar.length,
         kanjiMastered,
-        kanjiTotal: pools?.kanji.length ?? 0,
+        kanjiTotal: pools.kanji.length,
       });
     }
     void compute();
     return () => {
       cancelled = true;
     };
-  }, [pools]);
+  }, [pools, prefs.srs.dailyNewCap]);
 
-  const { action, prefs, stats } = state;
-  const progress = prefs ? xpProgress(prefs.progress.xp) : null;
+  const { action, stats } = state;
+  const progress = xpProgress(prefs.progress.xp);
 
   return (
     <div className="dashboard" data-testid="dashboard">
       <div className="status-strip" role="status">
         <span className="micro-label">キタ NIHONCODE</span>
-        <span className="micro-label">LVL {prefs?.level.toUpperCase() ?? "—"}</span>
+        <span className="micro-label">LVL {CLEAN_SLICE_LEVEL.toUpperCase()}</span>
         <span className="micro-label" data-testid="streak">
-          STREAK {prefs?.progress.streakDays ?? 0}
+          STREAK {prefs.progress.streakDays}
         </span>
         <span className="micro-label" data-testid="xp">
-          XP {prefs?.progress.xp ?? 0}
+          XP {prefs.progress.xp}
         </span>
       </div>
 
@@ -160,18 +149,14 @@ export function DashboardPage() {
           reason="Deferred to Phase 2/3: remote images, truncated prompts, and unverified audio aliasing in the source sets."
         />
         <Panel title="PROGRESS">
-          {progress ? (
-            <p className="micro-label">
-              LEVEL {progress.level} · {progress.intoLevel}/{progress.levelSpan} XP
-            </p>
-          ) : (
-            <p className="micro-label">LOADING…</p>
-          )}
+          <p className="micro-label">
+            LEVEL {progress.level} · {progress.intoLevel}/{progress.levelSpan} XP
+          </p>
         </Panel>
 
         <LockedPanel
           title="CONJUGATION"
-          reason="Deferred to Phase 2: vocabulary lacks per-entry verb/adjective class metadata."
+          reason="Locked: vocabulary carries no per-entry conjugation-class metadata (godan/ichidan/irregular, i-/na-adjective); the drill ships with it in Phase 3."
         />
 
         <Panel title="KANJI MAP">
@@ -184,7 +169,7 @@ export function DashboardPage() {
         <Panel title="SETTINGS">
           <p className="micro-label">
             THEME {liveTheme.theme.toUpperCase()} · ACCENT {liveTheme.accent.toUpperCase()} · CAP{" "}
-            {prefs?.srs.dailyNewCap ?? "—"}
+            {prefs.srs.dailyNewCap}
           </p>
           <Link to="/config">OPEN CONFIG</Link>
         </Panel>

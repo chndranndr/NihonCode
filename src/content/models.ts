@@ -3,7 +3,7 @@
  * this boundary: features and components consume only these shapes.
  */
 
-import type { JlptCategory, JlptLevel, KanaTable } from "./ids";
+import type { JlptLevel, KanaTable } from "./ids";
 
 export interface KanaItem {
   id: string;
@@ -55,19 +55,6 @@ export interface GrammarLesson {
   explanation: string;
   examples: GrammarExample[];
   quiz: GrammarQuizQuestion[];
-}
-
-export interface JlptQuestion {
-  id: string;
-  level: JlptLevel;
-  category: JlptCategory;
-  set: number;
-  number: number;
-  prompt: string;
-  options: string[];
-  /** 0-based index into options, normalized from the 1-based source field. */
-  answerIndex: number;
-  explanation: string;
 }
 
 /** A gate decision on one raw entry: excluded from graded pools, with reason. */

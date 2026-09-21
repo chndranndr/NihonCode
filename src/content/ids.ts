@@ -7,7 +7,6 @@
 
 export type JlptLevel = "n5" | "n4" | "n3" | "n2" | "n1";
 export type KanaTable = "hiragana" | "katakana";
-export type JlptCategory = "grammar" | "reading" | "kanji" | "listening" | "vocabulary";
 
 export function kanaId(table: KanaTable, char: string): string {
   return `kana:${table}:${char}`;
@@ -23,13 +22,4 @@ export function vocabId(level: JlptLevel, kanji: string, kana: string): string {
 
 export function grammarLessonId(level: JlptLevel, lessonId: string): string {
   return `grammar:${level}:${lessonId}`;
-}
-
-export function jlptQuestionId(
-  level: JlptLevel,
-  category: JlptCategory,
-  set: number,
-  question: number,
-): string {
-  return `jlpt:${level}:${category}:${set}:${question}`;
 }

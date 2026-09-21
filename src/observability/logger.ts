@@ -39,22 +39,6 @@ export function setMinLevel(level: LogLevel): void {
   minLevel = level;
 }
 
-export function getMinLevel(): LogLevel {
-  return minLevel;
-}
-
-/** Remove and return all buffered records (e2e/test inspection). */
-export function drainLog(): LogRecord[] {
-  const copy = ring.slice();
-  ring.length = 0;
-  return copy;
-}
-
-/** Buffered records without consuming them. */
-export function peekLog(): readonly LogRecord[] {
-  return ring;
-}
-
 export interface Logger {
   debug(msg: string, data?: Record<string, unknown>): void;
   info(msg: string, data?: Record<string, unknown>): void;

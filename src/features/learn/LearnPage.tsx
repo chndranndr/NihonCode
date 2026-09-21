@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import { LockedPanel, Panel } from "../../components/Panel";
-import { usePools } from "../../components/pools";
-import { currentPrefs } from "../../storage/progressRepo";
+import { getPools } from "../../components/pools";
 
 export function LearnPage() {
-  const prefs = currentPrefs();
-  const pools = usePools(prefs.level);
+  const pools = getPools();
 
   return (
     <div className="learn" data-testid="learn">
@@ -32,17 +30,13 @@ export function LearnPage() {
         </Panel>
 
         <Panel title="GRAMMAR N5">
-          {pools ? (
-            <ul className="lesson-list">
-              {pools.grammar.slice(0, 12).map((l) => (
-                <li key={l.id}>
-                  <Link to={`/learn/grammar/${l.lessonId}`}>{l.title}</Link>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="micro-label">LOADING…</p>
-          )}
+          <ul className="lesson-list">
+            {pools.grammar.slice(0, 12).map((l) => (
+              <li key={l.id}>
+                <Link to={`/learn/grammar/${l.lessonId}`}>{l.title}</Link>
+              </li>
+            ))}
+          </ul>
         </Panel>
 
         <Panel title="SRS REVIEW">
@@ -57,7 +51,7 @@ export function LearnPage() {
         />
         <LockedPanel
           title="CONJUGATION"
-          reason="Deferred to Phase 2: vocabulary lacks per-entry verb/adjective class metadata."
+          reason="Locked: vocabulary carries no per-entry conjugation-class metadata (godan/ichidan/irregular, i-/na-adjective); the drill ships with it in Phase 3."
         />
       </div>
     </div>

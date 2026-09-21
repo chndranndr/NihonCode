@@ -7,9 +7,6 @@
  */
 
 import { createLogger } from "../observability/logger";
-import { romajiToKana } from "./romaji";
-
-export { romajiToKana };
 
 const log = createLogger("tts");
 

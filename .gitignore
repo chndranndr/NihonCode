@@ -26,3 +26,6 @@ Thumbs.db
 # detector scratch dirs
 .detectprobe/
 .detectprobe2/
+
+# Curation scratch (provenance only; adjudications.json is the tracked record)
+curation/findings/

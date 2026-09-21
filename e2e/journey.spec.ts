@@ -112,18 +112,17 @@ async function readQueue(page: Page): Promise<{ due: number; fresh: number }> {
   return { due, fresh };
 }
 
-// The spec runs the gate's pure validators over fs-read raw files; loaders.ts
+// The spec runs the gate's pure validators over fs-read clean files; loaders.ts
 // (bundler-side JSON imports) does not load under Node. Same grading logic.
-const KANJI_ANSWERS = new Map(
-  validateKanji(JSON.parse(readFileSync("data/generated/kanji_n5.json", "utf8")), "n5").items.map(
+const KANJI_ANSWERS: Record<string, string[]> = Object.fromEntries(
+  validateKanji(JSON.parse(readFileSync("data/clean/kanji_n5.json", "utf8")), "n5").items.map(
     (k) => [k.char, k.answers],
   ),
 );
-const VOCAB_ROMAJI = new Map(
-  validateVocab(
-    JSON.parse(readFileSync("data/generated/vocabulary_n5.json", "utf8")),
-    "n5",
-  ).items.map((v) => [v.kanji, v.romaji]),
+const VOCAB_ROMAJI: Record<string, string> = Object.fromEntries(
+  validateVocab(JSON.parse(readFileSync("data/clean/vocabulary_n5.json", "utf8")), "n5").items.map(
+    (v) => [v.kanji, v.romaji],
+  ),
 );
 
 test("drill grades, XP persists across reload, and reviewed cards leave the new pool", async ({
@@ -246,9 +245,9 @@ test("kanji and vocab drills grade real content correctly", async ({ page }) => 
   await expect(page.getByTestId("session")).toBeVisible();
   for (let i = 0; i < 10; i++) {
     const prompt = (await page.locator(".prompt-text").innerText()).trim();
-    const answers = KANJI_ANSWERS.get(prompt);
+    const answers = KANJI_ANSWERS[prompt];
     expect(answers, `kanji table covers ${prompt}`).toBeDefined();
-    await page.getByLabel("answer").fill(answers![0]);
+    await page.getByLabel("answer").fill(answers[0]);
     await page.keyboard.press("Enter");
     await expect(page.getByTestId("reveal")).toBeVisible();
     await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
@@ -262,9 +261,9 @@ test("kanji and vocab drills grade real content correctly", async ({ page }) => 
   await expect(page.getByTestId("session")).toBeVisible();
   for (let i = 0; i < 10; i++) {
     const prompt = (await page.locator(".prompt-text").innerText()).trim();
-    const romaji = VOCAB_ROMAJI.get(prompt);
+    const romaji = VOCAB_ROMAJI[prompt];
     expect(romaji, `vocab table covers ${prompt}`).toBeDefined();
-    await page.getByLabel("answer").fill(romaji!);
+    await page.getByLabel("answer").fill(romaji);
     await page.keyboard.press("Enter");
     await expect(page.getByTestId("reveal")).toBeVisible();
     await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");

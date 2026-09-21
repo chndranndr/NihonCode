@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import type { AccentName } from "../storage/prefs";
+import { ACCENTS, type AccentName } from "../storage/prefs";
 
 export const THEME_KEY = "NihonCode-theme";
 export const ACCENT_KEY = "NihonCode-theme-accent";
@@ -30,8 +30,6 @@ function writeStored(key: string, value: string): void {
     // storage unavailable (private mode): theme still applies for the session
   }
 }
-
-const ACCENTS: readonly AccentName[] = ["amber", "green", "blue", "orange", "red"];
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<ThemeName>(() =>

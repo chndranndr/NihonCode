@@ -61,7 +61,8 @@ const cleanup = [];
 for (const t of cleanupTargets) {
   const abs = join(repoRoot, t.path);
   if (!existsSync(abs)) continue;
-  const entry = { ...t, size: human(dirSize(abs)), removed: false };
+  const size = statSync(abs).isDirectory() ? dirSize(abs) : statSync(abs).size;
+  const entry = { ...t, size: human(size), removed: false };
   if (!dryRun) {
     rmSync(abs, { recursive: true, force: true });
     entry.removed = true;
@@ -96,11 +97,6 @@ function probe(name, script, remediation) {
 }
 
 probe("doc-links", "check-docs.mjs", "fix or remove the broken links listed above");
-probe(
-  "data-baseline",
-  "audit-data.mjs",
-  "review the drift; if deliberate, record with audit-data.mjs --write-baseline and update docs/data-quality.md",
-);
 probe(
   "architecture-boundaries",
   "check-arch.mjs",

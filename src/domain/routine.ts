@@ -21,7 +21,7 @@ export type RoutineAction =
 
 const MINUTES_PER_CARD = 0.2;
 
-export function estimateReviewMinutes(dueCount: number): number {
+function estimateReviewMinutes(dueCount: number): number {
   return dueCount === 0 ? 0 : Math.max(1, Math.round(dueCount * MINUTES_PER_CARD));
 }
 

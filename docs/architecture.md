@@ -29,7 +29,7 @@ data/
 
 `scripts/check-arch.mjs` resolves every relative import to a repository path (depth-independent) and fails the build on violations:
 
-1. **The data gate is content/-only.** No file outside `src/content/` may import from `data/generated` or `data/jlpt`. Raw JSON never reaches a component; components and features consume typed models emitted by the gate.
+1. **The data gate is clean-only.** The app's single source of truth is the committed `data/clean/`, imported only by `content/loaders.ts`; `check-arch` rejects any `src/` import of `data/clean` outside content, and of `data/generated`/`data/jlpt` anywhere (those raw dirs were retired at the 2026-09-21 cutover — the rule also blocks reintroducing them). Raw JSON never reaches a component; components and features consume typed models emitted by the gate.
 2. **domain/ is pure.** No React imports, no DOM/BOM globals (`document`, `window`, `localStorage`, `indexedDB`, `navigator`), no imports from `app/`, `features/`, `components/`, or `storage/`. Everything in domain is unit-testable without React.
 3. **content/ is pure.** No React, no imports from the UI layers; it owns parsing, normalization, flagging, and ID stamping only.
 4. **Features do not import across each other.** `features/drills` must not import `features/grammar`. Shared logic goes to `domain/`; shared UI goes to `components/`.
@@ -46,21 +46,21 @@ Raw `data/` is untrusted input. The gate in `src/content/` must:
 - restrict graded pools to the clean slice (see [data-quality.md](data-quality.md));
 - emit a machine-readable flag report for the review queue.
 
-Acceptance (DEVELOPMENT_PROMPT.md task 1): gate unit tests pass against known-bad samples — a vocab entry with Japanese in `romaji`, a kanji answer with dictionary markers, a JLPT record with a null `answer_index` — by excluding and flagging them, not throwing.
+Acceptance (DEVELOPMENT_PROMPT.md task 1): gate unit tests pass against known-bad samples — a vocab entry with Japanese in `romaji`, a kanji answer with dictionary markers — by excluding and flagging them, not throwing.
 
 ## Stable IDs
 
 Namespaced, content-order-independent, from day one (progress rows reference IDs, never positions):
 
-| Content       | ID shape                                   | Example                  |
-| ------------- | ------------------------------------------ | ------------------------ |
-| Kana          | `kana:<table>:<char>`                      | `kana:hiragana:あ`       |
-| Kanji         | `kanji:<level>:<char>`                     | `kanji:n5:水`            |
-| Vocabulary    | `vocab:<level>:<kanji>\|<kana>`            | `vocab:n5:水\|みず`      |
-| Grammar       | `grammar:<level>:<lessonId>`               | `grammar:n5:12`          |
-| JLPT question | `jlpt:<level>:<category>:<set>:<question>` | `jlpt:n5:listening:12:3` |
+| Content       | ID shape                               | Example                         |
+| ------------- | -------------------------------------- | ------------------------------- |
+| Kana          | `kana:<table>:<char>`                  | `kana:hiragana:あ`              |
+| Kanji         | `kanji:<level>:<char>`                 | `kanji:n5:水`                   |
+| Vocabulary    | `vocab:<level>:<kanji>\|<kana>`        | `vocab:n5:水\|みず`             |
+| Grammar       | `grammar:<level>:<lessonId>`           | `grammar:n5:12`                 |
+| JLPT question | `jlpt:<level>:<category>:<set>:<hash>` | `jlpt:n5:listening:12:a3f9c2d1` |
 
-**Measured fact**: the existing `practice_core.json` IDs do not satisfy this scheme — they resolve only by array position (32 of them fail to resolve by the `number` field, which is duplicated/gapped in 62 sets). Neither convention is gated as canonical; the audit records both and routes canonical ID assignment to Phase 2. See [data-quality.md](data-quality.md#practice-core-id-convention-blocking-finding-for-phase-2).
+**Resolved in Phase 2 task 8, frozen at the 2026-09-21 cutover**: the raw `practice_core.json` IDs never satisfied this scheme — they resolve only by array position (32 of them fail to resolve by the `number` field, which is duplicated/gapped in 62 sets). The tracked pool stores the canonical content-hash shape directly; `scripts/audit-clean.mjs` asserts referential integrity (every `questionIds` ref resolves to a graded question, counts match). The deriver and the raw file were retired with the build pipeline (docs/decisions.md 2026-09-21). See [data-quality.md](data-quality.md#practice-core-id-convention-resolved-phase-2-task-8).
 
 ## Persistence (decided)
 
