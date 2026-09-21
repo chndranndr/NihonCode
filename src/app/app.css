@@ -604,6 +604,16 @@ button.primary {
   content: "■ ";
 }
 
+.kanji-cell.struggling {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: var(--ground);
+}
+
+.map-legend .struggling::before {
+  color: var(--accent-orange);
+}
+
 .map-legend .mastered::before {
   color: var(--accent-green);
 }

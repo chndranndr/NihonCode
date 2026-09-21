@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
 import { getPools, srsPoolIds } from "../../components/pools";
 import { ratingFromCorrect } from "../../domain/scheduling";
+import { kanaToRomaji } from "../../domain/romaji";
 import { XP } from "../../domain/progress";
 import { awardXp, recordAttempt, recordSession } from "../../storage/progressRepo";
 import { buildDueQueue, reviewItem } from "../../storage/srsRepo";
@@ -35,7 +36,10 @@ export function ReviewPage() {
     for (const k of pools.kanji)
       map.set(k.id, {
         prompt: k.char,
-        accepted: k.answers,
+        accepted: [
+          ...k.answers,
+          ...k.answers.map((a) => kanaToRomaji(a)).filter((r): r is string => r !== null),
+        ],
         scripts: [k.char, k.reading],
         meaning: k.meaning,
         speak: k.char,

@@ -85,12 +85,30 @@ describe("kana, kanji, vocab builders grade real content (DEVELOPMENT_PROMPT tas
     const mizu = items.find((i) => i.prompt === "水");
     expect(mizu, "水 in pool").toBeDefined();
     expect(mizu!.accepted).toContain("mizu");
-    expect(mizu!.accepted.some((a) => /[\u3040-\u30ff]/.test(a))).toBe(true);
+    // Multi-reading kanji: answers are atomic, so every reading gets romaji —
+    // 九's display reading "ここのつ / キュウ ク" must not starve its on-reads.
+    const kyuu = items.find((i) => i.prompt === "九");
+    expect(kyuu, "九 in pool").toBeDefined();
+    expect(kyuu!.accepted).toContain("kokonotsu");
+    expect(kyuu!.accepted).toContain("kyuu");
+    expect(kyuu!.accepted).toContain("ku");
     for (const item of items) {
       for (const a of item.accepted) {
         expect(a, `${item.id} accepted "${a}"`).not.toBe("");
       }
     }
+  });
+
+  it("weekdays en→jp accept the reading and its romaji", () => {
+    const items = buildItems("dates", pools, {
+      ...DEFAULT_OPTIONS,
+      direction: "en2jp",
+      dateMode: "weekdays",
+    });
+    expect(items).toHaveLength(7);
+    const monday = items.find((i) => i.prompt === "Monday");
+    expect(monday!.accepted).toContain("月曜日");
+    expect(monday!.accepted).toContain("getsuyoubi");
   });
 
   it("vocab accepts genuine Latin romaji and speaks the kana", () => {

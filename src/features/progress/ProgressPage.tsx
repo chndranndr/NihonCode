@@ -211,7 +211,7 @@ export function ProgressPage() {
                 type="button"
                 role="gridcell"
                 lang="ja"
-                className={`kanji-cell ${cell.attempts === 0 ? "unseen" : cell.accuracy >= 0.8 ? "mastered" : "learning"}`}
+                className={`kanji-cell ${cell.attempts === 0 ? "unseen" : cell.accuracy >= 0.8 ? "mastered" : cell.accuracy < 0.5 ? "struggling" : "learning"}`}
                 aria-label={`${cell.item.char}: ${cell.attempts} attempts`}
                 onClick={() => setSelected(cell)}
               >
@@ -224,7 +224,8 @@ export function ProgressPage() {
           </div>
           <p className="map-legend" data-testid="map-legend" aria-label="map color key">
             <span className="mastered">MASTERED ≥80%</span>
-            <span className="learning">LEARNING</span>
+            <span className="learning">LEARNING 50–79%</span>
+            <span className="struggling">STRUGGLING &lt;50%</span>
             <span className="unseen">UNSEEN</span>
           </p>
           <div className="inspector panel" aria-live="polite" data-testid="inspector">

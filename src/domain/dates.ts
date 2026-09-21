@@ -7,13 +7,13 @@
 import { numberToJapanese } from "./numbers";
 
 export const WEEKDAYS = [
-  { jp: "月曜日", en: "Monday" },
-  { jp: "火曜日", en: "Tuesday" },
-  { jp: "水曜日", en: "Wednesday" },
-  { jp: "木曜日", en: "Thursday" },
-  { jp: "金曜日", en: "Friday" },
-  { jp: "土曜日", en: "Saturday" },
-  { jp: "日曜日", en: "Sunday" },
+  { jp: "月曜日", en: "Monday", romaji: "getsuyoubi" },
+  { jp: "火曜日", en: "Tuesday", romaji: "kayoubi" },
+  { jp: "水曜日", en: "Wednesday", romaji: "suiyoubi" },
+  { jp: "木曜日", en: "Thursday", romaji: "mokuyoubi" },
+  { jp: "金曜日", en: "Friday", romaji: "kinyoubi" },
+  { jp: "土曜日", en: "Saturday", romaji: "doyoubi" },
+  { jp: "日曜日", en: "Sunday", romaji: "nichiyoubi" },
 ] as const;
 
 const DAY_READINGS: Record<number, string> = {

@@ -73,13 +73,10 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
       }));
     case "kanji":
       return shuffle(pools.kanji).map((k) => {
-        // Readings are kana; learners type romaji, so transliterated readings
-        // join the accepted set (grading is normalized, so case/spacing is
-        // free). Unsupported characters yield null and add nothing.
-        const romaji = k.reading
-          .split(/[、・/]/)
-          .map((r) => kanaToRomaji(r.trim()))
-          .filter((r): r is string => r !== null);
+        // Readings display as one string ("ここのつ / キュウ ク"); the gate
+        // guarantees answers are atomic marker-free kana, so transliterate
+        // those — learners type romaji, grading is normalized.
+        const romaji = k.answers.map((a) => kanaToRomaji(a)).filter((r): r is string => r !== null);
         return {
           id: k.id,
           prompt: k.char,
@@ -136,7 +133,9 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
         return WEEKDAYS.map((w) => ({
           id: `dates:weekday:${w.jp}`,
           prompt: jp2en ? w.jp : w.en,
-          accepted: [jp2en ? w.en : w.jp],
+          // Weekday names are kanji, so the romaji lives on the model;
+          // en→jp accepts the reading and its romaji.
+          accepted: jp2en ? [w.en] : [w.jp, w.romaji],
           reveal: { scripts: [w.jp], meaning: w.en, group: "weekdays" },
           speakText: w.jp,
         }));
