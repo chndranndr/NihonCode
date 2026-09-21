@@ -19236,5 +19236,9 @@
   "vocab:n5:～階|～かい": {
     "disposition": "fix",
     "reason": "Verified correct: counter ～階 ～かい 'counter for stories (floors)' — kana reads the kanji, romaji derives, meaning accurate."
+  },
+  "vocab.conjugation:n5": {
+    "disposition": "fix",
+    "reason": "Curated pos+conjugationClass on every N5 Verbs (117: godan 80, ichidan 32, irregular 5) and Adjectives (84: i 65, na 19) entry as tracked edits to data/clean/vocabulary_n5.json; classification by kana shape with per-entry overrides (入る/帰る/走る/切る/知る godan; 着る ichidan; 嫌い/綺麗/有名 na; する/来る/勉強する/掃除する/コピーする irregular), never from category buckets (PRD §18). Moved 7 misbucketed entries to Nouns (下さい, お手洗い, 家庭, 時計, 野菜, 大きな, 小さな: nouns, unconjugatable). audit-clean n5 guard + self-test fixture; 40-entry spot-check in docs/data-quality.md."
   }
 }

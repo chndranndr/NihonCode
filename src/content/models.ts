@@ -30,6 +30,10 @@ export interface VocabItem {
   /** Guaranteed genuine Latin romaji by the gate. */
   romaji: string;
   meaning: string;
+  /** Curated part of speech; only conjugable entries carry it (PRD §10.9). */
+  pos?: "verb" | "adjective";
+  /** Curated conjugation class; paired with pos, never inferred from category. */
+  conjugationClass?: "godan" | "ichidan" | "irregular" | "i" | "na";
 }
 
 export interface GrammarExample {

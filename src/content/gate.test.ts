@@ -133,6 +133,21 @@ describe("validation gate: clean pools", () => {
     for (const item of items) expect(/^[\x20-\x7e]+$/.test(item.romaji)).toBe(true);
   });
 
+  it("carries curated conjugation metadata for exactly the conjugable entries", () => {
+    const { items } = loadVocab();
+    const conjugatable = items.filter((v) => v.pos !== undefined);
+    const verbs = conjugatable.filter((v) => v.pos === "verb");
+    const adjs = conjugatable.filter((v) => v.pos === "adjective");
+    // Curation counts (docs/data-quality.md "Conjugation metadata").
+    expect(verbs).toHaveLength(117);
+    expect(adjs).toHaveLength(84);
+    for (const v of verbs) expect(["godan", "ichidan", "irregular"]).toContain(v.conjugationClass);
+    for (const a of adjs) expect(["i", "na"]).toContain(a.conjugationClass);
+    expect(items.filter((v) => v.pos === undefined && v.conjugationClass !== undefined)).toEqual(
+      [],
+    );
+  });
+
   it("loads the 72 graded N5 grammar lessons with answer-in-choices quizzes", () => {
     const { items, flags } = loadGrammar();
     expect(flags).toEqual([]);

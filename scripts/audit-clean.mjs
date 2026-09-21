@@ -25,6 +25,8 @@ const BOILERPLATE = /Click here to download this test/i;
 // scrubJapanese is idempotent: if it changes a tracked string, a scraper
 // artifact (control byte or U+FF0D hyphen) was reintroduced by an edit.
 const scrubbed = (s) => typeof s === "string" && scrubJapanese(s) === s;
+const VERB_CLASSES = new Set(["godan", "ichidan", "irregular"]);
+const ADJ_CLASSES = new Set(["i", "na"]);
 
 // Graded-pool floors (docs/data-quality.md "Tracked-pool gate").
 const FLOORS = {
@@ -120,6 +122,16 @@ export function auditClean(root) {
         }
         if (e.id !== `vocab:${lvl}:${e.kanji}|${e.kana}`)
           fail(`vocab ${lvl} ${e.id}: id does not match its kanji|kana`);
+        if ((c.id === "verbs" || c.id === "adjectives") && lvl === "n5") {
+          // Curated per entry (DEVELOPMENT_PROMPT task 1); N4-N1 get theirs
+          // with their curation pass, then this guard extends level by level.
+          const pos = c.id === "verbs" ? "verb" : "adjective";
+          const classes = c.id === "verbs" ? VERB_CLASSES : ADJ_CLASSES;
+          if (e.pos !== pos || !classes.has(e.conjugationClass))
+            fail(`vocab ${lvl} ${e.id}: ${c.id} entry missing valid ${pos} conjugation class`);
+        } else if (e.pos !== undefined || e.conjugationClass !== undefined) {
+          fail(`vocab ${lvl} ${e.id}: conjugation metadata on non-conjugable ${c.id}`);
+        }
       }
     }
     vocabCounts[lvl] = ids.length;
@@ -303,8 +315,19 @@ if (process.argv.includes("--self-test")) {
       console.error("audit-clean --self-test: FAIL — id/content derivation mismatch not detected");
       process.exit(1);
     }
+    rmSync(vocabPath);
+    cpSync(join(cleanRoot, "vocabulary_n5.json"), vocabPath);
+    const classVocab = JSON.parse(readFileSync(vocabPath, "utf8"));
+    const verbsCat = classVocab.categories.find((c) => c.id === "verbs");
+    verbsCat.entries[0].conjugationClass = "ichidan-super";
+    writeFileSync(vocabPath, JSON.stringify(classVocab), "utf8");
+    const classFailures = auditClean(tmp);
+    if (!classFailures.some((f) => f.includes("conjugation class"))) {
+      console.error("audit-clean --self-test: FAIL — invalid conjugation class not detected");
+      process.exit(1);
+    }
     console.log(
-      "audit-clean --self-test: OK (duplicate ID, passage title artifact, pool floor, missing audio, id derivation rejected)",
+      "audit-clean --self-test: OK (duplicate ID, passage title artifact, pool floor, missing audio, id derivation, conjugation class rejected)",
     );
   } finally {
     rmSync(tmp, { recursive: true, force: true });

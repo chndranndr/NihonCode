@@ -2,6 +2,14 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-21 — N5 conjugation metadata curated per entry (task 1; closes implementation_plan.md:197)
+
+**Decision.** Every conjugable N5 vocab entry now carries curated `pos` + `conjugationClass`, applied as tracked edits to `data/clean/vocabulary_n5.json`: Verbs 117 (godan 80, ichidan 32, irregular 5) and Adjectives 84 (i 65, na 19). Seven entries that sat in Verbs/Adjectives but are unconjugatable moved to Nouns with no metadata: 下さい (a polite request form, not a verb) and the nouns お手洗い, 家庭, 時計, 野菜, 大きな, 小さな. Classification was mechanical kana-shape with per-entry overrides, never inferred from category buckets (PRD §18 makes the buckets unreliable by definition): godan-る overrides 入る/帰る/走る/切る/知る; ichidan override 着る; na overrides 嫌い/綺麗/有名; irregular covers する/来る/コピーする plus the 勉強・掃除 suru stems. `audit-clean` enforces the invariant per level (N5 now: every Verbs/Adjectives entry has a valid class; no other category carries one) with a self-test fixture; N4–N1 join the guard level by level as their curation passes land. The 40-entry spot-check sample is recorded in docs/data-quality.md.
+
+**Why.** The conjugation drill (PRD §10.9) grades conjugated forms; a wrong class silently teaches wrong forms, and the category buckets are proven wrong on the two example entries the owner named. Per-entry curation with an audit guard is the only form that is both correct and checkable; the metadata travels with the content it describes, so no app-side inference or codegen was added.
+
+**Binds.** data/clean/vocabulary_n5.json, src/content/gate.ts (optional pos/conjugationClass schema + pass-through), src/content/models.ts (VocabItem), scripts/audit-clean.mjs (n5 conjugation-class guard + sixth self-test fixture), curation/adjudications.json (`vocab.conjugation:n5`), docs/data-quality.md (spot-check ledger). N4–N1 metadata is task 4 scope; the drill itself is task 2.
+
 ## 2026-09-21 — Practice-setup pool matrix scoped to Phase 3 (owner addition)
 
 **Decision.** Owner request from trial use: every drill's setup screen should show the matrix of eligible items in its pool. Recorded as Phase 3 scope, not shipped now: PRD §10.6 gains the requirement (count + browsable eligible list before start; conjugation preview reuses it), PRD §17 inventory and implementation_plan.md section 3 in-scope list match, and DEVELOPMENT_PROMPT.md Phase 3 task 2 carries the acceptance (matrix counts equal the builder's pool sizes).

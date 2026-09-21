@@ -62,6 +62,8 @@ const vocabEntrySchema = z.object({
   kana: z.string(),
   kanaVariants: z.array(z.string()).optional(),
   romajiVariants: z.array(z.string()).optional(),
+  pos: z.enum(["verb", "adjective"]).optional(),
+  conjugationClass: z.enum(["godan", "ichidan", "irregular", "i", "na"]).optional(),
 });
 
 const vocabFileSchema = z.object({
@@ -257,6 +259,8 @@ export function validateVocab(raw: unknown, level: JlptLevel): GateResult<VocabI
         kana: entry.data.kana,
         romaji: entry.data.romaji,
         meaning: entry.data.meaning,
+        pos: entry.data.pos,
+        conjugationClass: entry.data.conjugationClass,
       });
     }
   }
