@@ -1,6 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import { validateKanji, validateVocab } from "../src/content/gate";
+import { conjugateAdjective, conjugateVerb } from "../src/domain/conjugation";
 
 /**
  * Phase 1 acceptance journey (DEVELOPMENT_PROMPT.md section 6): drill -> grade
@@ -316,6 +317,70 @@ test("dates weekday drill grades all seven items correctly", async ({ page }) =>
     const en = weekdayEn[prompt];
     expect(en, `weekday table covers ${prompt}`).toBeDefined();
     await page.getByLabel("answer").fill(en);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary-score")).toHaveText("100%");
+});
+
+// Conjugation drill (PRD 10.9): expected answers come from the same pure
+// conjugator the app uses, applied to the gate-validated clean pool.
+const CONJ_VOCAB = validateVocab(
+  JSON.parse(readFileSync("data/clean/vocabulary_n5.json", "utf8")),
+  "n5",
+).items.filter((v) => v.pos !== undefined);
+const CONJ_BY_KANJI: Record<string, string> = {};
+for (const v of CONJ_VOCAB) {
+  const conj =
+    v.pos === "verb"
+      ? conjugateVerb(
+          v.kana,
+          v.kanji,
+          v.conjugationClass as "godan" | "ichidan" | "irregular",
+          "masu",
+        )
+      : conjugateAdjective(v.kana, v.kanji, v.conjugationClass as "i" | "na", "negative");
+  if (conj !== null) CONJ_BY_KANJI[v.kanji] = conj.romaji;
+}
+
+test("conjugation drill grades verb and adjective forms from curated metadata", async ({
+  page,
+}) => {
+  await page.goto("/learn/drill/conjugation");
+  await expect(page.getByTestId("pool-matrix")).toContainText("117");
+  await page.getByRole("button", { name: "ICHIDAN" }).click();
+  await page.getByRole("button", { name: "IRREGULAR" }).click();
+  await expect(page.getByTestId("pool-matrix")).toContainText("80");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    const answer = CONJ_BY_KANJI[prompt];
+    expect(answer, `conjugation covers ${prompt}`).toBeDefined();
+    await page.getByLabel("answer").fill(answer);
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary-score")).toHaveText("100%");
+
+  await page.goto("/learn/drill/conjugation");
+  await page.getByRole("button", { name: "ADJECTIVES" }).click();
+  // Default selection is both classes; drop I to grade na-adjectives alone.
+  await page.getByRole("button", { name: "I", exact: true }).click();
+  await expect(page.getByTestId("pool-matrix")).toContainText("19");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    const answer = CONJ_BY_KANJI[prompt];
+    expect(answer, `conjugation covers ${prompt}`).toBeDefined();
+    await page.getByLabel("answer").fill(answer);
     await page.keyboard.press("Enter");
     await expect(page.getByTestId("reveal")).toBeVisible();
     await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");

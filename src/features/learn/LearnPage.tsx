@@ -26,6 +26,9 @@ export function LearnPage() {
             <li>
               <Link to="/learn/drill/dates">DATES</Link>
             </li>
+            <li>
+              <Link to="/learn/drill/conjugation">CONJUGATION</Link>
+            </li>
           </ul>
         </Panel>
 
@@ -49,10 +52,9 @@ export function LearnPage() {
           title="JLPT PRACTICE"
           reason="Deferred to Phase 2/3: remote images, truncated prompts, and unverified audio aliasing in the source sets."
         />
-        <LockedPanel
-          title="CONJUGATION"
-          reason="Locked: vocabulary carries no per-entry conjugation-class metadata (godan/ichidan/irregular, i-/na-adjective); the drill ships with it in Phase 3."
-        />
+        <Panel title="CONJUGATION">
+          <Link to="/learn/drill/conjugation">VERB & ADJECTIVE FORMS</Link>
+        </Panel>
       </div>
     </div>
   );

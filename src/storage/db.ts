@@ -30,7 +30,7 @@ export interface ReviewLogRow {
 export interface DrillAttemptRow {
   id?: number;
   itemId: string;
-  kind: "kana" | "kanji" | "vocab" | "numbers" | "dates" | "srs";
+  kind: "kana" | "kanji" | "vocab" | "numbers" | "dates" | "conjugation" | "srs";
   correct: boolean;
   ts: number;
 }

@@ -122,3 +122,63 @@ describe("kana, kanji, vocab builders grade real content (DEVELOPMENT_PROMPT tas
     }
   });
 });
+
+describe("conjugation builder (PRD 10.9)", () => {
+  it("draws every conjugable verb, one item per word per form", () => {
+    const items = buildItems("conjugation", pools, DEFAULT_OPTIONS);
+    // 117 curated verbs (docs/data-quality.md) × 1 form (masu).
+    expect(items).toHaveLength(117);
+    for (const item of items) {
+      expect(item.accepted[0], item.id).toMatch(/^[\x20-\x7e]+$/);
+      expect(item.reveal.scripts).toHaveLength(2);
+    }
+  });
+
+  it("draws every conjugable adjective when word type is adjective", () => {
+    const items = buildItems("conjugation", pools, {
+      ...DEFAULT_OPTIONS,
+      conjWordType: "adjective",
+    });
+    // 84 curated adjectives × 1 form (negative).
+    expect(items).toHaveLength(84);
+  });
+
+  it("class selection narrows the pool to that class", () => {
+    const items = buildItems("conjugation", pools, {
+      ...DEFAULT_OPTIONS,
+      conjVerbClasses: ["godan"],
+    });
+    expect(items).toHaveLength(80);
+  });
+
+  it("multiple selected forms multiply the question pool", () => {
+    const items = buildItems("conjugation", pools, {
+      ...DEFAULT_OPTIONS,
+      conjVerbForms: ["masu", "te"],
+    });
+    expect(items).toHaveLength(234);
+  });
+
+  it("te-form answers carry the godan sound changes", () => {
+    const items = buildItems("conjugation", pools, {
+      ...DEFAULT_OPTIONS,
+      conjVerbForms: ["te"],
+      conjVerbClasses: ["godan"],
+    });
+    const iku = items.find((i) => i.prompt === "行く");
+    expect(iku!.accepted).toEqual(["itte"]);
+    const aruku = items.find((i) => i.prompt === "歩く");
+    expect(aruku!.accepted).toEqual(["aruite"]);
+  });
+
+  it("いい negative grades the よ stem, not the い", () => {
+    const items = buildItems("conjugation", pools, {
+      ...DEFAULT_OPTIONS,
+      conjWordType: "adjective",
+      conjAdjForms: ["negative"],
+    });
+    const ii = items.find((i) => i.prompt === "いい");
+    expect(ii!.accepted).toEqual(["yokunai"]);
+    expect(ii!.reveal.scripts).toEqual(["よくない", "よくない"]);
+  });
+});

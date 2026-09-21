@@ -768,3 +768,61 @@ input {
   gap: 0.75rem;
   align-items: baseline;
 }
+
+.prompt-sub {
+  margin: 0.25rem 0 0;
+  color: var(--ink-dim);
+}
+
+.hint-toggle {
+  color: var(--ink-dim);
+}
+
+.hint-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hint-line {
+  margin: 0;
+  width: 100%;
+  color: var(--ink-dim);
+}
+
+.pool-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pool-matrix-toggle {
+  align-self: flex-start;
+  color: var(--ink-dim);
+}
+
+.pool-matrix-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pool-matrix-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-height: 14rem;
+  overflow-y: auto;
+}
+
+.pool-matrix-list li {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.pool-matrix-list .matrix-tag {
+  color: var(--ink-dim);
+}

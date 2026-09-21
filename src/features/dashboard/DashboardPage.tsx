@@ -122,6 +122,9 @@ export function DashboardPage() {
             <li>
               <Link to="/learn/drill/dates">DATES</Link>
             </li>
+            <li>
+              <Link to="/learn/drill/conjugation">CONJUGATION</Link>
+            </li>
           </ul>
         </Panel>
 
@@ -154,10 +157,10 @@ export function DashboardPage() {
           </p>
         </Panel>
 
-        <LockedPanel
-          title="CONJUGATION"
-          reason="Locked: vocabulary carries no per-entry conjugation-class metadata (godan/ichidan/irregular, i-/na-adjective); the drill ships with it in Phase 3."
-        />
+        <Panel title="CONJUGATION">
+          <p className="micro-label">N5 VERB & ADJECTIVE FORMS</p>
+          <Link to="/learn/drill/conjugation">OPEN DRILL</Link>
+        </Panel>
 
         <Panel title="KANJI MAP">
           <p className="micro-label" data-testid="kanji-map-compact">

@@ -16,6 +16,15 @@ describe("kanaToRomaji", () => {
     expect(kanaToRomaji("おにいさん")).toBe("oniisan");
   });
 
+  it("j/sh/ch-row yōon is Hepburn, matching pool romaji style", () => {
+    expect(kanaToRomaji("じゅう")).toBe("juu");
+    expect(kanaToRomaji("じょうず")).toBe("jouzu");
+    expect(kanaToRomaji("しずかじゃない")).toBe("shizukajanai");
+    expect(kanaToRomaji("しゃしん")).toBe("shashin");
+    expect(kanaToRomaji("ちょう")).toBe("chou");
+    expect(kanaToRomaji("きょう")).toBe("kyou");
+  });
+
   it("doubles the consonant for sokuon, t- before ch-", () => {
     expect(kanaToRomaji("きっと")).toBe("kitto");
     expect(kanaToRomaji("こっち")).toBe("kotchi");

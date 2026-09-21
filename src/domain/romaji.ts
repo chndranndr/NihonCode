@@ -160,7 +160,11 @@ function mora(chars: string[], i: number): { rom: string; consumed: number } | n
   if (base === undefined) return null;
   const small = chars[i + 1];
   if (base.endsWith("i") && small !== undefined && YOON[small]) {
-    return { rom: base.slice(0, -1) + YOON[small], consumed: 2 };
+    // Hepburn: j/sh/ch-row yōon drops the y (じゅ→ju, しゃ→sha, ちょ→cho),
+    // matching the pool's curated romaji (じゅう→juu, しゃしん→shashin).
+    const dropY = base === "ji" || base === "shi" || base === "chi";
+    const tail = dropY ? YOON[small].slice(1) : YOON[small];
+    return { rom: base.slice(0, -1) + tail, consumed: 2 };
   }
   return { rom: base, consumed: 1 };
 }

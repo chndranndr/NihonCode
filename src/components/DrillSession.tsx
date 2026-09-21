@@ -30,6 +30,10 @@ export interface SessionItem {
     group: string;
   };
   speakText: string;
+  /** Context line under the prompt (e.g. the conjugation target form). */
+  subprompt?: string;
+  /** Hint the learner can reveal on demand (PRD 10.9 word-type hint). */
+  hint?: string;
 }
 
 export interface SessionResult {
@@ -57,6 +61,7 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
   const [input, setInput] = useState("");
   const [answered, setAnswered] = useState<Answered | null>(null);
   const [confirmAbort, setConfirmAbort] = useState(false);
+  const [hintShown, setHintShown] = useState(false);
   const [results, setResults] = useState<Answered[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const advanceRef = useRef<HTMLButtonElement>(null);
@@ -103,6 +108,7 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
     setIndex(index + 1);
     setInput("");
     setAnswered(null);
+    setHintShown(false);
   }
 
   function onKey(event: ReactKeyboardEvent) {
@@ -145,6 +151,7 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
         <p className="prompt-text" lang="ja">
           {item.prompt}
         </p>
+        {item.subprompt && <p className="prompt-sub">{item.subprompt}</p>}
         <SpeakerButton text={item.speakText} label="prompt" />
       </div>
 
@@ -182,6 +189,12 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
           <button type="button" className="primary" onClick={submit}>
             SUBMIT
           </button>
+          {item.hint && (
+            <button type="button" className="hint-toggle" onClick={() => setHintShown(true)}>
+              HINT
+            </button>
+          )}
+          {item.hint && hintShown && <p className="hint-line">{item.hint}</p>}
         </div>
       )}
 

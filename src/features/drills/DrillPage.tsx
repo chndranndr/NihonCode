@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
 import { getPools, type Pools } from "../../components/pools";
+import { PoolMatrix } from "../../components/PoolMatrix";
 import { makeNumberQuestionInRange } from "../../domain/numbers";
 import { makeFullDate, WEEKDAYS } from "../../domain/dates";
 import { perfectDrillBonus, XP } from "../../domain/progress";
@@ -13,10 +14,29 @@ import {
 } from "../../storage/progressRepo";
 import { CLEAN_SLICE_LEVEL } from "../../content/loaders";
 import { kanaToRomaji } from "../../domain/romaji";
+import {
+  ADJ_FORM_LABELS,
+  ADJ_FORMS,
+  conjugateAdjective,
+  conjugateVerb,
+  VERB_FORM_LABELS,
+  VERB_FORMS,
+  type AdjClass,
+  type AdjForm,
+  type VerbClass,
+  type VerbForm,
+} from "../../domain/conjugation";
 
 const LIMITS = [10, 20, 50] as const;
 
-const DRILL_KINDS: readonly AttemptKind[] = ["kana", "kanji", "vocab", "numbers", "dates"];
+const DRILL_KINDS: readonly AttemptKind[] = [
+  "kana",
+  "kanji",
+  "vocab",
+  "numbers",
+  "dates",
+  "conjugation",
+];
 
 function drillKind(mode: string): AttemptKind | null {
   return DRILL_KINDS.find((k) => k === mode) ?? null;
@@ -38,6 +58,11 @@ export interface DrillOptions {
   yearMax: number;
   rangeMin: number;
   rangeMax: number;
+  conjWordType: "verb" | "adjective";
+  conjVerbClasses: string[];
+  conjAdjClasses: string[];
+  conjVerbForms: string[];
+  conjAdjForms: string[];
 }
 
 export const DEFAULT_OPTIONS: DrillOptions = {
@@ -47,6 +72,11 @@ export const DEFAULT_OPTIONS: DrillOptions = {
   yearMax: 2030,
   rangeMin: 1,
   rangeMax: 999_999,
+  conjWordType: "verb",
+  conjVerbClasses: ["godan", "ichidan", "irregular"],
+  conjAdjClasses: ["i", "na"],
+  conjVerbForms: ["masu"],
+  conjAdjForms: ["negative"],
 };
 
 const NUMBER_PRESETS = [
@@ -151,6 +181,41 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
         };
       });
     }
+    case "conjugation": {
+      // PRD 10.9: base word + target form; romaji answers only. Eligible
+      // words are the gate's conjugable entries (curated pos/class metadata).
+      const isVerb = options.conjWordType === "verb";
+      const classes = isVerb ? options.conjVerbClasses : options.conjAdjClasses;
+      const forms = isVerb ? options.conjVerbForms : options.conjAdjForms;
+      const items: SessionItem[] = [];
+      for (const v of pools.vocab) {
+        if (v.pos !== options.conjWordType) continue;
+        if (v.conjugationClass === undefined || !classes.includes(v.conjugationClass)) continue;
+        for (const f of forms) {
+          // The gate pairs pos with its class set (audit-clean enforces it),
+          // so each branch narrows to its own class union.
+          const conj = isVerb
+            ? conjugateVerb(v.kana, v.kanji, v.conjugationClass as VerbClass, f as VerbForm)
+            : conjugateAdjective(v.kana, v.kanji, v.conjugationClass as AdjClass, f as AdjForm);
+          if (conj === null) continue;
+          const label = isVerb ? VERB_FORM_LABELS[f as VerbForm] : ADJ_FORM_LABELS[f as AdjForm];
+          items.push({
+            id: `${v.id}:${f}`,
+            prompt: v.kanji,
+            subprompt: `${label} · ${v.kana} · ${v.meaning}`,
+            accepted: [conj.romaji],
+            reveal: {
+              scripts: [conj.kanji, conj.kana],
+              meaning: v.meaning,
+              group: `${v.pos} · ${v.conjugationClass}`,
+            },
+            speakText: conj.kana,
+            hint: isVerb ? `${v.conjugationClass} verb` : `${v.conjugationClass}-adjective`,
+          });
+        }
+      }
+      return items;
+    }
     default:
       return [];
   }
@@ -170,9 +235,12 @@ export function DrillPage() {
 
   function start(): void {
     // Generated modes rebuild their pool per start so a retry reshuffles into
-    // fresh questions, not the same 50 (PRD 10.6 retry-reshuffled).
+    // fresh questions, not the same 50 (PRD 10.6 retry-reshuffled); the
+    // conjugation word×form draw reslices the same way.
     const pool =
-      mode === "numbers" || mode === "dates" ? buildItems(mode, pools, options) : selectable;
+      mode === "numbers" || mode === "dates" || mode === "conjugation"
+        ? buildItems(mode, pools, options)
+        : selectable;
     const picked = limit === "all" ? pool : pool.slice(0, limit);
     setSession(shuffle(picked));
     setSummary(null);
@@ -359,6 +427,83 @@ export function DrillPage() {
           )}
         </div>
       )}
+
+      {mode === "conjugation" && (
+        <div className="option-rows">
+          <div className="limit-row" role="radiogroup" aria-label="word type">
+            <button
+              type="button"
+              aria-pressed={options.conjWordType === "verb"}
+              onClick={() => setOptions({ ...options, conjWordType: "verb" })}
+            >
+              VERBS
+            </button>
+            <button
+              type="button"
+              aria-pressed={options.conjWordType === "adjective"}
+              onClick={() => setOptions({ ...options, conjWordType: "adjective" })}
+            >
+              ADJECTIVES
+            </button>
+          </div>
+          <div className="limit-row" role="group" aria-label="included classes">
+            {(options.conjWordType === "verb"
+              ? (["godan", "ichidan", "irregular"] as const)
+              : (["i", "na"] as const)
+            ).map((cls) => {
+              const selected =
+                options.conjWordType === "verb" ? options.conjVerbClasses : options.conjAdjClasses;
+              const on = selected.includes(cls);
+              return (
+                <button
+                  key={cls}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => {
+                    // Zero classes would empty the pool; keep at least one.
+                    if (on && selected.length === 1) return;
+                    const next = on ? selected.filter((c) => c !== cls) : [...selected, cls];
+                    setOptions(
+                      options.conjWordType === "verb"
+                        ? { ...options, conjVerbClasses: next }
+                        : { ...options, conjAdjClasses: next },
+                    );
+                  }}
+                >
+                  {cls.toUpperCase()}
+                </button>
+              );
+            })}
+          </div>
+          <div className="limit-row" role="group" aria-label="conjugation forms">
+            {(options.conjWordType === "verb" ? VERB_FORMS : ADJ_FORMS).map((f) => {
+              const selected =
+                options.conjWordType === "verb" ? options.conjVerbForms : options.conjAdjForms;
+              const on = selected.includes(f);
+              return (
+                <button
+                  key={f}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => {
+                    if (on && selected.length === 1) return;
+                    const next = on ? selected.filter((x) => x !== f) : [...selected, f];
+                    setOptions(
+                      options.conjWordType === "verb"
+                        ? { ...options, conjVerbForms: next }
+                        : { ...options, conjAdjForms: next },
+                    );
+                  }}
+                >
+                  {f.toUpperCase()}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <PoolMatrix items={all} />
 
       <div className="limit-row" role="radiogroup" aria-label="question limit">
         {LIMITS.map((l) => (
