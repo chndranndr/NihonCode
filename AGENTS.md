@@ -13,7 +13,7 @@ Local-first Japanese practice web app. React 19 + TypeScript strict + Vite. No b
 1. [PRD.md](PRD.md) — scope, non-goals (binding), section 18 measured data defects.
 2. [PRODUCT.md](PRODUCT.md) — product truth: users, positioning, brand commitments.
 3. [implementation_plan.md](implementation_plan.md) — three phases with definitions of done. Phase gates are strict: finish Phase 1 before touching Phase 2.
-4. [DEVELOPMENT_PROMPT.md](DEVELOPMENT_PROMPT.md) — Phase 2 hard constraints, task order, curation/review-queue contract, verification protocol.
+4. [DEVELOPMENT_PROMPT.md](DEVELOPMENT_PROMPT.md) — Phase 3 hard constraints, task order, owner-decision gates, verification protocol (Phase 2 record lives in git at `b15c717`).
 5. `.impeccable/surfaces/*.md` — locked surface briefs (dashboard, drill, progress, about). `mockup.png` — binding visual authority for the dashboard.
 
 ## Knowledge base
