@@ -74,15 +74,15 @@ The historical raw-data floors (643 latin N5 vocab, etc.) are ledger history; th
 
 ## Conjugation metadata (N5, curated 2026-09-21)
 
-DEVELOPMENT_PROMPT task 1 closed implementation_plan.md:197: every N5 Verbs and Adjectives entry now carries curated `pos` + `conjugationClass` (tracked edit to `data/clean/vocabulary_n5.json`; verdict record `curation/adjudications.json` key `vocab.conjugation:n5`). Counts after curation: Verbs 117 (godan 80, ichidan 32, irregular 5), Adjectives 84 (i 65, na 19). Seven misbucketed entries moved to Nouns — unconjugatable content, exactly the PRD §18 failure class the metadata exists to catch: 下さい (a polite request, not a verb), and the nouns お手洗い, 家庭, 時計, 野菜, 大きな, 小さな (pre-noun adnominals, not na-adjectives). Classification was by kana shape with per-entry overrides, never from category buckets: godan-る overrides 入る/帰る/走る/切る/知る, ichidan 着る, na overrides 嫌い/綺麗/有名, irregular する/来る/コピーする/勉強(する)/掃除(する). N4–N1 entries carry no metadata until their curation passes; `audit-clean` enforces the invariant per level (N5 today: every Verbs/Adjectives entry has a valid class, no other category carries one) with a self-test fixture. Spot-check sample (40 entries, verified against class definitions):
+DEVELOPMENT_PROMPT task 1 closed implementation_plan.md:197: every N5 Verbs and Adjectives entry now carries curated `pos` + `conjugationClass` (tracked edit to `data/clean/vocabulary_n5.json`; verdict record `curation/adjudications.json` key `vocab.conjugation:n5`). Counts after curation: Verbs 117 (godan 80, ichidan 32, irregular 5), Adjectives 84 (i 65, na 19). Seven misbucketed entries moved to Nouns — unconjugatable content, exactly the PRD §18 failure class the metadata exists to catch: 下さい (a polite request, not a verb), and the nouns お手洗い, 家庭, 時計, 野菜, 大きな, 小さな (pre-noun adnominals, not na-adjectives). Classification was by kana shape with per-entry overrides, never from category buckets: godan-る overrides 入る/帰る/走る/切る/知る/要る, ichidan 着る, na overrides 嫌い/綺麗/有名, irregular する/来る/コピーする/勉強(する)/掃除(する). N4–N1 entries carry no metadata until their curation passes; `audit-clean` enforces the invariant per level (N5 today: every Verbs/Adjectives entry has a valid class, no other category carries one) with a self-test fixture. Spot-check sample (44 entries, verified against class definitions):
 
-| Class     | Sample                                                                                   |
-| --------- | ---------------------------------------------------------------------------------------- |
-| godan     | ある, 有る, 入る, 帰る, 走る, 死ぬ, 行く, 泳ぐ, 持つ, 洗う, 座る, 貸す, 置く, 話す, 鳴く |
-| ichidan   | かける, 晴れる, 食べる, 着る, できる, 見る, 浴びる, 出る                                 |
-| irregular | する, 勉強, 来る                                                                         |
-| i         | いい, 楽しい, 黒い, ない                                                                 |
-| na        | にぎやか, 大変, 静か, 綺麗, 嫌い, 有名, 好き, 上手, 下手, 大丈夫                         |
+| Class     | Sample                                                                                         |
+| --------- | ---------------------------------------------------------------------------------------------- |
+| godan     | ある, 有る, 入る, 帰る, 走る, 死ぬ, 行く, 泳ぐ, 持つ, 洗う, 座る, 貸す, 置く, 話す, 鳴く, 要る |
+| ichidan   | かける, 晴れる, 食べる, 着る, できる, 見る, 浴びる, 出る                                       |
+| irregular | する, 勉強, 掃除, 来る, コピーする                                                             |
+| i         | いい, 楽しい, 黒い, ない, よい                                                                 |
+| na        | にぎやか, 大変, 静か, 綺麗, 嫌い, 有名, 好き, 上手, 下手, 大丈夫                               |
 
 ## Legacy loader
 
