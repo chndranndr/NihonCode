@@ -43,6 +43,7 @@ export function DashboardPage() {
       const due = await dueCount(poolIds);
       const queue = await buildDueQueue(poolIds, prefs.srs.dailyNewCap);
       const rows = await db().grammarState.bulkGet(pools!.grammar.map((l) => l.id));
+      const grammarDone = rows.filter((r) => r?.status === "completed").length;
       const stats = await srsStats(poolIds);
       let kanjiMastered = 0;
       for (const k of pools!.kanji) {
