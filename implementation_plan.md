@@ -232,6 +232,14 @@ Stack (unchanged from PRD review): React + TypeScript (strict), Vite, React Rout
 
 ## Cross-phase verification
 
+### Owner addition — study activity visualization (2026-09-22)
+
+The HTML mockup replaces Home/Progress weekly bars with contribution calendars and adds a four-axis activity mix to Progress. This is an additional requirement after Phase 3, not a claim that production already ships it. PRD §10.13 owns the counting, calendar, category, accessibility, and empty-state contracts.
+
+Remaining production work: inspect existing completion records for drills/SRS/grammar/JLPT; preserve history while adding any missing stable session ID/local-date/category fields; aggregate completed sessions exactly once; render the compact 91-day Home calendar, year-selectable Progress calendar, and Drills/SRS Review/JLPT/Grammar polygon from the same scoped totals. Do not infer missing legacy categories from XP.
+
+Acceptance: actual persisted completions update both views; reload/export/import preserve them; aborts and duplicate writes do not inflate counts; retries count as separate completed runs; year boundaries, leap day, local dates, empty history, inaccessible legacy data, keyboard/touch inspection, and mobile panel scrolling are verified. Sample mockup checks do not close this production gate.
+
 Run once at the integrated head, not per-agent mid-flight:
 - Type-check + lint + full Vitest suite.
 - Playwright: drill→grade→persist→reload→review loop (Phase 1), plus a JLPT listening and a conjugation flow (Phase 3).
