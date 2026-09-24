@@ -43,6 +43,14 @@ export interface SessionResult {
   correct: number;
   misses: SessionItem[];
   records: Array<{ id: string; correct: boolean }>;
+  /** Per-item outcomes in question order, for the results review table. */
+  answers: Array<{
+    id: string;
+    prompt: string;
+    submitted: string;
+    correct: boolean;
+    accepted: string[];
+  }>;
 }
 
 interface Props {
@@ -104,7 +112,14 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
       const misses = results.filter((r) => !r.correct).map((r) => r.item);
       const correct = results.filter((r) => r.correct).length;
       const records = results.map((r) => ({ id: r.item.id, correct: r.correct }));
-      onFinish({ total: results.length, correct, misses, records });
+      const answers = results.map((r) => ({
+        id: r.item.id,
+        prompt: r.item.prompt,
+        submitted: r.submitted,
+        correct: r.correct,
+        accepted: r.item.accepted,
+      }));
+      onFinish({ total: results.length, correct, misses, records, answers });
       return;
     }
     setIndex(index + 1);

@@ -487,22 +487,17 @@ const JLPT_N5_VOCAB = validateJlpt(
 test("JLPT practice grades a keyed set and persists per-set progress", async ({ page }) => {
   await page.goto("/learn/jlpt");
   await expect(page.getByTestId("jlpt")).toBeVisible();
-  // Gated categories stay honest locked panels.
-  await expect(page.getByRole("heading", { name: "LISTENING" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "READING" })).toBeVisible();
+  // All five categories ship (data-recon 2026-09-23): tiles, not locked panels.
+  for (const c of ["grammar", "kanji", "vocabulary", "reading", "listening"]) {
+    await expect(page.getByTestId(`jlpt-category-${c}`)).toBeVisible();
+  }
 
   // Acceptance: zero remote image references anywhere in a JLPT run. Capture
   // every request the feature makes; only the app's own origin may appear.
-  // Also capture chunk names: the gated listening/reading datasets must never
-  // be bundled in or fetched by a live session.
   const remote = new Set<string>();
-  const chunks: string[] = [];
   page.on("request", (req) => {
     const url = new URL(req.url());
     if (url.origin !== new URL(page.url()).origin) remote.add(req.url());
-    if (url.pathname.includes("/assets/") && url.pathname.endsWith(".js")) {
-      chunks.push(url.pathname.split("/").pop() ?? url.pathname);
-    }
   });
   const assertNoRemote = () => expect([...remote]).toEqual([]);
 
@@ -531,10 +526,43 @@ test("JLPT practice grades a keyed set and persists per-set progress", async ({ 
   // No request in the whole run may leave the app origin.
   assertNoRemote();
 
-  // The gated listening/reading dataset chunks are not in the bundle and must
-  // never be fetched by a live session.
-  const gated = chunks.filter((c) => /^(listening|reading)-/.test(c));
-  expect(gated).toEqual([]);
+  // Reading/listening are live categories now (data-recon 2026-09-23); their
+  // chunks load with the level pool like the other three. The surviving
+  // invariant is that no request leaves the app origin (asserted above).
+});
+
+// The 10 sets whose source-URL count differs from their question count ship
+// set-level audio only (no per-question span evidence). The audio element is
+// keyed "set-audio" for those, so advancing must NOT remount it and restart
+// playback (data-recon 2026-09-23).
+test("fallback listening audio survives question advance without remount", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByTestId("dashboard")).toBeVisible();
+  await page.getByRole("button", { name: "N2" }).click();
+  await expect(page.getByText("LVL N2")).toBeVisible();
+
+  await page.goto("/learn/jlpt/listening");
+  await expect(page.getByTestId("jlpt-sets")).toBeVisible();
+  await page.getByTestId("set-link").filter({ hasText: "Exercise 11" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+
+  await page.evaluate(() => {
+    const el = document.querySelector('[data-testid="jlpt-audio"]') as HTMLElement & {
+      __probe?: number;
+    };
+    if (el) el.__probe = 1;
+  });
+  await page.locator(".option").first().click();
+  await expect(page.getByTestId("reveal")).toBeVisible();
+  await page.getByRole("button", { name: /NEXT/ }).click();
+  await expect(page.locator(".option").first()).toBeVisible();
+
+  const sameElement = await page.evaluate(() => {
+    const el = document.querySelector('[data-testid="jlpt-audio"]') as
+      (HTMLElement & { __probe?: number }) | null;
+    return el?.__probe === 1;
+  });
+  expect(sameElement).toBe(true);
 });
 
 test("SRS statistics page shows level-scoped stats and links practice_core", async ({ page }) => {

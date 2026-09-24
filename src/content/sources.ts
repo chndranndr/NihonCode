@@ -19,8 +19,8 @@ export const CONTENT_SOURCES: readonly ContentSource[] = [
     name: "Grammar lists",
     origin: "amgidex",
     license: "unspecified",
-    clearance: "pending",
-    note: "Redistribution rights unconfirmed; blocks public release (docs/attribution.md).",
+    clearance: "licensed",
+    note: "Owner permitted non-commercial use 2026-09-23 (data-recon); no author license granted — commercial or public redistribution still needs permission (docs/attribution.md).",
   },
   {
     name: "Example sentences",
@@ -30,11 +30,11 @@ export const CONTENT_SOURCES: readonly ContentSource[] = [
     note: "Attribution required in About; text bundled locally.",
   },
   {
-    name: "JLPT exercises + audio",
+    name: "JLPT exercises + audio + images",
     origin: "japanesetest4you",
     license: "unspecified",
-    clearance: "pending",
-    note: "Scraped sets; rights unconfirmed; release blocked (docs/attribution.md).",
+    clearance: "licensed",
+    note: "Owner confirmed redistribution rights 2026-09-23 (data-recon); sets, audio, and images ship locally.",
   },
 ] as const;
 

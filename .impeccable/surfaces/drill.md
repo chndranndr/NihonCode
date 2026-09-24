@@ -1,32 +1,20 @@
 ---
-version: 1
+version: 2
 slug: "drill"
-primary_target: "drill"
+primary_target: "DrillPage / PoolMatrix / DrillSession"
 related_targets: []
 ---
 
-# Surface brief: Drill (setup, session, summary)
+# Surface brief: Practice setup, practice and results
 
-Scope and visitor mode: Operate. The full drill surface: six per-mode setup screens (kana, kanji, vocabulary, numbers, dates, conjugation), one shared session engine, one completion summary. Phased states: conjugation setup renders locked until Phase 2 metadata lands; kanji and vocabulary setups list only clean-slice groups in MVP. Inherits the dashboard's console world; no new identity.
+Mode: Operate. Updated 2026-09-22. Authority and delivery status: [reference map](../README.md). This replaces the historical launch brief for the approved redesign.
 
-Audience, job, action, proof: A learner mid-routine picks a mode, configures it in one screen, and runs a sub-five-minute session. The job is recall under low friction: type the reading, get graded, learn from the miss. Proof is the session's own numbers: position, score, XP awarded on completion, and a miss list that teaches. Content ranges: kana 10-92 items, kanji/vocab drills 10-50 from a selected group, numbers 1-999,999, dates with configurable year range, conjugation forms from tagged N5 vocab (locked in MVP).
+Reference the setup, practice and results views in mockups/app.js. Setup covers Kana, Kanji, Vocabulary, Numbers, Dates and Conjugation. Use the same eligible data as the session builder; display counts, controls, search and pagination honestly.
 
-Chosen direction and memorable moment: Instrument channel, locked from the surface roll (seed ea55bcc0, dealt 6/3/5, lead taken). The session is one focused measurement loop: status rail, prompt plate, input dock. The memorable moment is the reveal flip: the plate turns in place and teaches every script, the meaning, and the speaker; a miss adds every accepted reading and the entry's group or category from real data.
+Kana shows character/romaji; kanji shows character, onyomi/kunyomi and meaning; vocabulary shows word, actual word reading and meaning, without invented per-word onyomi/kunyomi. Number/date previews derive from configured generators and label bounded examples as samples. Conjugation shows base form and generated example for the chosen form/class. Conjugation is available, not awaiting Phase 2.
 
-Constraints: session contract confirmed by the owner. Enter submits; graded reveal; Enter advances; Esc aborts with confirm; XP on completion only; no mid-session resume; retry reshuffles. Keyboard-first on desktop; input dock stays reachable on mobile. Console vocabulary hand-built in CSS Modules and CSS variables; no component library; no glass, gradients, rounded card shells, or display serifs. Japanese-capable face chosen at build by measurement, not now. TTS unavailable keeps drills usable with a visible state. Data gate binds: only clean-slice content enters a drill.
+The session has one clear question, position, answer control and submit action, then explicit correct/incorrect feedback with accepted readings/explanation where available. Preserve production grading and TTS fallback. Enter submits/advances; Esc confirms abort. Keep existing session lifecycle and navigation behavior; do not introduce a timer just because an old brief mentioned one.
 
-Open decisions: exact mono and JP faces; whether summary misses link to an inline item review or stay list-only; setup preview lists cap and paginate long groups.
+Results use actual score, misses and awarded progress with retry and return-to-setup actions. No fabricated XP. A completed retry is a distinct activity session, while repeated saving of one completion is idempotent. Aborts do not contribute. Setup and results can remain states within the existing route.
 
-## Direction contract
-
-THESIS: The drill session is one instrument channel, a status rail, one prompt plate, one input dock, a focused measurement loop. It refuses the category-default flashcard stack and the quiz card grid.
-
-OWN-WORLD: Near-black ground, hairline panel borders with corner ticks, monospace UI face, tracked uppercase micro-labels, amber primary action, green, blue, orange, red semantic states, box-drawing ornament. Recognizable with all content removed.
-
-STORY: The learner sees position and elapsed time, answers one item, the plate flips to teach every script, the meaning, and the speaker, and on a miss every accepted reading. Enter advances. The summary readout proves the session in numbers.
-
-FIRST VIEWPORT: Status rail across the top with position, mode, timer, and session dots. Prompt plate centered at display scale. Input dock pinned at the bottom with the NihonCode:-> prompt and speaker control. No nav chrome beyond the rail. The primary action is the input itself.
-
-FORM: Instrument channel, position 6 of 7 in the grounded ordered list (flashcard stack, quiz board, exam sheet, split console, terminal prompt loop, instrument channel, gauntlet ladder). Seed ea55bcc0, dealt 6, 3, 5; the roll's lead locked by the user.
-
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+Mobile keeps input/action reachable, matrices scroll within their panel, and disabled/empty/error states explain next steps. Production redesign integration shipped 2026-09-22; evidence in docs/quality.md "Redesign integration".

@@ -18,8 +18,10 @@ import {
   type Prefs,
 } from "./prefs";
 import { db } from "./db";
+import { activityRows, newSessionId, recordSession } from "./progressRepo";
 import { buildDueQueue, dueCount } from "./srsRepo";
 import { newCard, serializeCard } from "../domain/scheduling";
+import { dayKey } from "../domain/progress";
 import { exportBackup, importBackup } from "./backup";
 
 function memoryStorage(): Storage {
@@ -49,6 +51,23 @@ class V1Db extends Dexie {
       drillAttempts: "++id, itemId, kind, ts",
       grammarState: "id, status",
     });
+  }
+}
+
+class V5Db extends Dexie {
+  sessions!: Table<{ id?: number; kind: string; correct: number; total: number; ts: number }>;
+
+  constructor(name: string) {
+    super(name);
+    this.version(1).stores({
+      srsCards: "id, due",
+      reviewLogs: "++id, cardId, ts",
+      drillAttempts: "++id, itemId, kind, ts",
+      grammarState: "id, status",
+    });
+    this.version(2).stores({ sessions: "++id, kind, ts" });
+    this.version(3).stores({ reviewLogs: "++id" });
+    this.version(5).stores({ jlptProgress: "id" });
   }
 }
 
@@ -261,6 +280,7 @@ describe("backup export/import round-trip", () => {
       store.grammarState.clear(),
       store.sessions.clear(),
       store.jlptProgress.clear(),
+      store.activity.clear(),
     ]);
     localStorage.clear();
   });
@@ -289,6 +309,12 @@ describe("backup export/import round-trip", () => {
       completedAt: 9,
     });
     await store.sessions.add({ kind: "kana", correct: 10, total: 10, ts: 11 });
+    await store.activity.put({
+      id: "drill:kana:11",
+      category: "drill",
+      date: "2026-09-22",
+      ts: 11,
+    });
     await store.jlptProgress.put({
       id: "jlpt:n5:vocabulary:1",
       bestCorrect: 9,
@@ -307,6 +333,7 @@ describe("backup export/import round-trip", () => {
       store.grammarState.clear(),
       store.sessions.clear(),
       store.jlptProgress.clear(),
+      store.activity.clear(),
     ]);
     localStorage.clear();
 
@@ -319,6 +346,7 @@ describe("backup export/import round-trip", () => {
       grammarState: 1,
       sessions: 1,
       jlptProgress: 1,
+      activity: 1,
     });
 
     expect((await store.srsCards.get("kanji:n5:水"))?.reps).toBe(3);
@@ -327,6 +355,7 @@ describe("backup export/import round-trip", () => {
     expect((await store.grammarState.get("grammar:n5:1"))?.status).toBe("completed");
     expect(await store.sessions.count()).toBe(1);
     expect((await store.jlptProgress.get("jlpt:n5:vocabulary:1"))?.bestCorrect).toBe(9);
+    expect((await store.activity.get("drill:kana:11"))?.date).toBe("2026-09-22");
     expect(loadPrefs().progress.xp).toBe(777);
   });
 
@@ -334,5 +363,137 @@ describe("backup export/import round-trip", () => {
     expect((await importBackup("{not json")).ok).toBe(false);
     expect((await importBackup('{"app":"other"}')).ok).toBe(false);
     expect((await importBackup('{"app":"nihoncode","schemaVersion":"x"}')).ok).toBe(false);
+  });
+});
+
+describe("activity completion contract", () => {
+  afterEach(async () => {
+    const store = db();
+    await Promise.all([store.sessions.clear(), store.activity.clear()]);
+  });
+
+  it("records one exclusive category with the captured local date", async () => {
+    await recordSession("drill:kana:1", "kana", 8, 10, new Date(2026, 0, 15, 23, 59));
+    await recordSession("srs:2", "srs", 3, 5, new Date(2026, 0, 16, 0, 1));
+    const rows = await activityRows();
+    expect(rows).toHaveLength(2);
+    expect(rows.find((r) => r.id === "drill:kana:1")).toMatchObject({
+      category: "drill",
+      date: "2026-01-15",
+    });
+    expect(rows.find((r) => r.id === "srs:2")).toMatchObject({
+      category: "srs",
+      date: "2026-01-16",
+    });
+  });
+
+  it("is idempotent under repeated completion of the same session id", async () => {
+    const id = newSessionId("drill:kanji");
+    expect(await recordSession(id, "kanji", 10, 10)).toBe(true);
+    expect(await recordSession(id, "kanji", 10, 10)).toBe(false);
+    expect(await recordSession(id, "kanji", 10, 10)).toBe(false);
+    expect(await activityRows()).toHaveLength(1);
+    expect(await db().sessions.count()).toBe(1);
+  });
+
+  it("counts a completed retry as a new session", async () => {
+    const first = newSessionId("jlpt");
+    const retry = newSessionId("jlpt");
+    await recordSession(first, "jlpt", 4, 10);
+    await recordSession(retry, "jlpt", 9, 10);
+    const rows = await activityRows();
+    expect(rows).toHaveLength(2);
+    expect(new Set(rows.map((r) => r.id))).toEqual(new Set([first, retry]));
+  });
+});
+
+describe("v6 activity migration", () => {
+  it("copies legacy sessions into activity with mapped categories", async () => {
+    const legacy = new V5Db("test-v6-upgrade");
+    await legacy.sessions.bulkAdd([
+      { kind: "kana", correct: 10, total: 10, ts: new Date(2025, 11, 31, 23, 0).getTime() },
+      { kind: "srs", correct: 2, total: 3, ts: new Date(2026, 0, 2, 9, 0).getTime() },
+      { kind: "jlpt", correct: 5, total: 5, ts: new Date(2026, 0, 3, 10, 0).getTime() },
+    ]);
+    legacy.close();
+
+    const upgraded = new NihonDb("test-v6-upgrade");
+    const rows = await upgraded.activity.toArray();
+    expect(rows).toHaveLength(3);
+    const byCategory = rows.map((r) => r.category).sort();
+    expect(byCategory).toEqual(["drill", "jlpt", "srs"]);
+    const legacyRow = rows.find((r) => r.category === "drill")!;
+    expect(legacyRow.date).toBe("2025-12-31");
+    expect(legacyRow.id).toMatch(/^legacy-session:/);
+    upgraded.close();
+    await upgraded.delete();
+  });
+});
+
+describe("backup compatibility", () => {
+  afterEach(async () => {
+    const store = db();
+    await Promise.all([store.sessions.clear(), store.activity.clear()]);
+    localStorage.clear();
+  });
+
+  it("imports an old schemaVersion-1 document and derives its activity", async () => {
+    const old = JSON.stringify({
+      app: "nihoncode",
+      schemaVersion: 1,
+      exportedAt: 1,
+      prefs: {},
+      srsCards: [],
+      reviewLogs: [],
+      drillAttempts: [],
+      grammarState: [],
+      sessions: [{ kind: "kana", correct: 1, total: 1, ts: 5 }],
+      jlptProgress: [],
+    });
+    const result = await importBackup(old);
+    expect(result.ok).toBe(true);
+    expect(result.counts?.activity).toBe(1);
+    expect(await db().sessions.count()).toBe(1);
+    const rows = await db().activity.toArray();
+    expect(rows).toHaveLength(1);
+    expect(rows[0]).toMatchObject({ category: "drill", date: dayKey(new Date(5)) });
+  });
+
+  it("keeps a v2 document's own activity without re-deriving sessions", async () => {
+    const doc = JSON.stringify({
+      app: "nihoncode",
+      schemaVersion: 2,
+      exportedAt: 1,
+      prefs: {},
+      srsCards: [],
+      reviewLogs: [],
+      drillAttempts: [],
+      grammarState: [],
+      sessions: [{ kind: "kana", correct: 1, total: 1, ts: 5 }],
+      jlptProgress: [],
+      activity: [{ id: "drill:kana:1:a1", category: "drill", date: "2026-01-01", ts: 5 }],
+    });
+    const result = await importBackup(doc);
+    expect(result.ok).toBe(true);
+    expect(result.counts?.activity).toBe(1);
+    const rows = await db().activity.toArray();
+    expect(rows.map((r) => r.id)).toEqual(["drill:kana:1:a1"]);
+  });
+
+  it("rejects an activity row with a foreign category", async () => {
+    const bad = JSON.stringify({
+      app: "nihoncode",
+      schemaVersion: 2,
+      exportedAt: 1,
+      prefs: {},
+      srsCards: [],
+      reviewLogs: [],
+      drillAttempts: [],
+      grammarState: [],
+      sessions: [],
+      jlptProgress: [],
+      activity: [{ id: "x", category: "duolingo", date: "2026-01-01", ts: 1 }],
+    });
+    expect((await importBackup(bad)).ok).toBe(false);
   });
 });

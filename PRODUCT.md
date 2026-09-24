@@ -1,5 +1,7 @@
 # Product
 
+> Current-state clarification (2026-09-22): Phase 1–3 have shipped on `data/clean/`; the dirty-pool/MVP sequencing and pre-code inventory below are historical planning evidence, not current availability constraints. Consult AGENTS.md and docs/quality.md for shipped capabilities and remaining owner gates. The approved nine-view HTML redesign is documented in DESIGN.md and .impeccable/README.md; production redesign integration is pending. Do not restore retired datasets or lock supported levels/conjugation based on the historical paragraphs.
+
 <!-- impeccable:product-schema 1 -->
 
 ## Platform
@@ -44,7 +46,7 @@ In scope (PRD.md sections 9–10):
 - Built-in grammar library with lessons and quizzes (N5–N1).
 - JLPT practice: five categories, numbered local exercise sets, bundled listening audio, per-set progress.
 - SRS: FSRS scheduling, due-before-new ordering, configurable daily new-card cap, optional learning-step skip. Access is open at every level; no prerequisite gating.
-- Progress: XP, level (quadratic curve to 50), streak, weekly chart, JLPT mastery, achievements, kanji mastery map.
+- Progress: XP, level (quadratic curve to 50), streak, study contribution calendar, four-axis activity mix, JLPT mastery, achievements, kanji mastery map. The calendar and activity mix are an owner-requested extension (2026-09-22), currently demonstrated in the HTML mockup; production integration is pending. Activity mix measures participation, not proficiency (PRD §10.13).
 - Settings: SRS preferences, light/dark theme, accent color.
 - About page with accurate local-first and persistence-limitation copy.
 

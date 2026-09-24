@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
 import { type Pools } from "../../components/pools";
 import { useLevel } from "../../components/level";
@@ -9,6 +9,7 @@ import { makeFullDate, WEEKDAYS } from "../../domain/dates";
 import { perfectDrillBonus, XP } from "../../domain/progress";
 import {
   awardXp,
+  newSessionId,
   recordAttempt,
   recordSession,
   type AttemptKind,
@@ -43,6 +44,19 @@ const DRILL_KINDS: readonly AttemptKind[] = [
 
 function drillKind(mode: string): AttemptKind | null {
   return DRILL_KINDS.find((k) => k === mode) ?? null;
+}
+
+const MODE_TITLES: Record<string, string> = {
+  kana: "Kana",
+  kanji: "Kanji",
+  vocab: "Vocabulary",
+  numbers: "Numbers",
+  dates: "Dates",
+  conjugation: "Conjugation",
+};
+
+function modeName(mode: string): string {
+  return MODE_TITLES[mode] ?? mode;
 }
 
 function shuffle<T>(items: T[]): T[] {
@@ -229,11 +243,13 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
 export function DrillPage() {
   const { mode = "kana" } = useParams();
   const navigate = useNavigate();
-  const { pools } = useLevel();
+  const { pools, level } = useLevel();
   const [limit, setLimit] = useState<number | "all">(10);
   const [options, setOptions] = useState<DrillOptions>(DEFAULT_OPTIONS);
   const [session, setSession] = useState<SessionItem[] | null>(null);
   const [summary, setSummary] = useState<SessionResult | null>(null);
+  // Stable per run: retries reshuffle and take a fresh id (PRD §10.13).
+  const sessionIdRef = useRef("");
 
   const [n5Vocab, setN5Vocab] = useState<VocabItem[] | null>(null);
   useEffect(() => {
@@ -273,6 +289,7 @@ export function DrillPage() {
         ? buildItems(mode, effectivePools, options)
         : selectable;
     const picked = limit === "all" ? pool : pool.slice(0, limit);
+    sessionIdRef.current = newSessionId(`drill:${mode}`);
     setSession(shuffle(picked));
     setSummary(null);
   }
@@ -280,12 +297,15 @@ export function DrillPage() {
   async function finish(result: SessionResult): Promise<void> {
     const kind = drillKind(mode);
     if (!kind) return;
+    // The completion record is the idempotency gate: a double FINISH must not
+    // double XP or duplicate per-item attempts (PRD §10.13).
+    const inserted = await recordSession(sessionIdRef.current, kind, result.correct, result.total);
+    if (!inserted) return;
     for (const record of result.records) {
       await recordAttempt(record.id, kind, record.correct);
     }
     const xp = result.correct * XP.drillCorrect + perfectDrillBonus(result.correct, result.total);
     awardXp(xp);
-    await recordSession(kind, result.correct, result.total);
     setSummary({ ...result });
     setSession(null);
   }
@@ -293,29 +313,68 @@ export function DrillPage() {
   if (summary) {
     const pct = summary.total === 0 ? 0 : Math.round((summary.correct / summary.total) * 100);
     return (
-      <div className="session" data-testid="summary">
-        <h2 className="micro-label">SESSION COMPLETE</h2>
-        <p className="summary-score" data-testid="summary-score">
-          {pct}%
-        </p>
-        <p className="micro-label">
-          {summary.correct}/{summary.total} CORRECT
-        </p>
-        {summary.misses.length > 0 && (
-          <ul className="miss-list">
-            {summary.misses.map((m) => (
-              <li key={m.id} lang="ja">
-                {m.prompt} → {m.accepted.join(" / ")}
-              </li>
-            ))}
-          </ul>
-        )}
+      <div className="results" data-testid="summary">
+        <div className="page-head">
+          <div>
+            <p className="label">キタ / {level.toUpperCase()} STUDY</p>
+            <h1>Session complete.</h1>
+            <p className="description">
+              Take a moment to look back. Every attempt gives you something to build on.
+            </p>
+          </div>
+        </div>
+        <div className="result-head">
+          <div className="result-score">
+            <span data-testid="summary-score">{pct}%</span>
+            <small>accuracy</small>
+          </div>
+          <div className="result-metrics">
+            <div>
+              <strong>
+                {summary.correct} / {summary.total}
+              </strong>
+              <span>correct answers</span>
+            </div>
+            <div>
+              <strong>{summary.total - summary.correct}</strong>
+              <span>to revisit</span>
+            </div>
+          </div>
+        </div>
+        <div className="panel-head">
+          <h2>
+            {summary.answers.some((a) => !a.correct)
+              ? "Review your answers"
+              : "A clean run. Nicely done."}
+          </h2>
+          <span className="label">THIS SESSION</span>
+        </div>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Your answer</th>
+                <th>Expected answer</th>
+              </tr>
+            </thead>
+            <tbody>
+              {summary.answers.map((a) => (
+                <tr key={a.id}>
+                  <td lang="ja">{a.prompt}</td>
+                  <td>{a.submitted}</td>
+                  <td lang="ja">{a.accepted.join(" / ")}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <div className="summary-actions">
           <button type="button" className="primary" onClick={start}>
             RETRY (RESHUFFLED)
           </button>
           <button type="button" onClick={() => navigate("/learn")}>
-            BACK
+            CHOOSE ANOTHER PRACTICE
           </button>
         </div>
       </div>
@@ -325,7 +384,7 @@ export function DrillPage() {
   if (session) {
     return (
       <DrillSession
-        title={mode.toUpperCase()}
+        title={`${modeName(mode)} practice`}
         items={session}
         onFinish={(r) => void finish(r)}
         onAbort={() => {
@@ -336,219 +395,275 @@ export function DrillPage() {
     );
   }
 
+  const sessionCount = Math.min(limit === "all" ? selectable.length : limit, selectable.length);
+
   return (
     <div className="setup" data-testid="drill-setup">
-      <h2 className="micro-label">{mode.toUpperCase()} SETUP</h2>
-      <p className="micro-label">{selectable.length} ITEMS IN POOL</p>
-
-      {mode === "numbers" && (
-        <div className="option-rows">
-          <div className="limit-row" role="radiogroup" aria-label="direction">
-            <button
-              type="button"
-              aria-pressed={options.direction === "jp2num"}
-              onClick={() => setOptions({ ...options, direction: "jp2num" })}
-            >
-              JAPANESE → NUMBER
-            </button>
-            <button
-              type="button"
-              aria-pressed={options.direction === "num2jp"}
-              onClick={() => setOptions({ ...options, direction: "num2jp" })}
-            >
-              NUMBER → JAPANESE
-            </button>
-          </div>
-          <div className="limit-row" role="radiogroup" aria-label="range">
-            {NUMBER_PRESETS.map((p) => (
-              <button
-                key={p.label}
-                type="button"
-                aria-pressed={options.rangeMin === p.min && options.rangeMax === p.max}
-                onClick={() => setOptions({ ...options, rangeMin: p.min, rangeMax: p.max })}
-              >
-                {p.label}
-              </button>
-            ))}
-            <label className="micro-label" htmlFor="range-min">
-              MIN
-            </label>
-            <input
-              id="range-min"
-              type="number"
-              min={1}
-              max={999999}
-              value={options.rangeMin}
-              onChange={(e) => setOptions({ ...options, rangeMin: Number(e.target.value) })}
-            />
-            <label className="micro-label" htmlFor="range-max">
-              MAX
-            </label>
-            <input
-              id="range-max"
-              type="number"
-              min={1}
-              max={999999}
-              value={options.rangeMax}
-              onChange={(e) => setOptions({ ...options, rangeMax: Number(e.target.value) })}
-            />
-          </div>
+      <Link className="back" to="/learn">
+        ← Choose a practice
+      </Link>
+      <div className="page-head">
+        <div>
+          <p className="label">キタ / {level.toUpperCase()} STUDY</p>
+          <h1>{modeName(mode)} practice</h1>
+          <p className="description">
+            Explore the available items, then choose how much to practice.
+          </p>
         </div>
-      )}
+      </div>
 
-      {mode === "dates" && (
-        <div className="option-rows">
-          <div className="limit-row" role="radiogroup" aria-label="date mode">
-            <button
-              type="button"
-              aria-pressed={options.dateMode === "weekdays"}
-              onClick={() => setOptions({ ...options, dateMode: "weekdays" })}
-            >
-              DAYS OF WEEK
-            </button>
-            <button
-              type="button"
-              aria-pressed={options.dateMode === "full"}
-              onClick={() => setOptions({ ...options, dateMode: "full" })}
-            >
-              FULL DATES
-            </button>
-          </div>
-          <div className="limit-row" role="radiogroup" aria-label="direction">
-            <button
-              type="button"
-              aria-pressed={options.direction === "jp2en"}
-              onClick={() => setOptions({ ...options, direction: "jp2en" })}
-            >
-              JAPANESE → ENGLISH
-            </button>
-            <button
-              type="button"
-              aria-pressed={options.direction === "en2jp"}
-              onClick={() => setOptions({ ...options, direction: "en2jp" })}
-            >
-              ENGLISH → JAPANESE
-            </button>
-          </div>
-          {options.dateMode === "full" && (
-            <div className="limit-row">
-              <label className="micro-label" htmlFor="year-min">
-                YEAR MIN
-              </label>
+      <div className="toolbar">
+        {mode === "numbers" && (
+          <>
+            <div className="field" role="radiogroup" aria-label="direction">
+              <span>Direction</span>
+              <div className="segmented">
+                <button
+                  type="button"
+                  aria-pressed={options.direction === "jp2num"}
+                  onClick={() => setOptions({ ...options, direction: "jp2num" })}
+                >
+                  JAPANESE → NUMBER
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={options.direction === "num2jp"}
+                  onClick={() => setOptions({ ...options, direction: "num2jp" })}
+                >
+                  NUMBER → JAPANESE
+                </button>
+              </div>
+            </div>
+            <div className="field">
+              <span>Range</span>
+              <div className="limit-row" role="radiogroup" aria-label="range">
+                {NUMBER_PRESETS.map((p) => (
+                  <button
+                    key={p.label}
+                    type="button"
+                    aria-pressed={options.rangeMin === p.min && options.rangeMax === p.max}
+                    onClick={() => setOptions({ ...options, rangeMin: p.min, rangeMax: p.max })}
+                  >
+                    {p.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="field">
+              <label htmlFor="range-min">Min</label>
               <input
-                id="year-min"
+                id="range-min"
                 type="number"
                 min={1}
-                max={9999}
-                value={options.yearMin}
-                onChange={(e) => setOptions({ ...options, yearMin: Number(e.target.value) })}
-              />
-              <label className="micro-label" htmlFor="year-max">
-                YEAR MAX
-              </label>
-              <input
-                id="year-max"
-                type="number"
-                min={1}
-                max={9999}
-                value={options.yearMax}
-                onChange={(e) => setOptions({ ...options, yearMax: Number(e.target.value) })}
+                max={999999}
+                value={options.rangeMin}
+                onChange={(e) => setOptions({ ...options, rangeMin: Number(e.target.value) })}
               />
             </div>
-          )}
-        </div>
-      )}
+            <div className="field">
+              <label htmlFor="range-max">Max</label>
+              <input
+                id="range-max"
+                type="number"
+                min={1}
+                max={999999}
+                value={options.rangeMax}
+                onChange={(e) => setOptions({ ...options, rangeMax: Number(e.target.value) })}
+              />
+            </div>
+          </>
+        )}
 
-      {mode === "conjugation" && (
-        <div className="option-rows">
-          <div className="limit-row" role="radiogroup" aria-label="word type">
-            <button
-              type="button"
-              aria-pressed={options.conjWordType === "verb"}
-              onClick={() => setOptions({ ...options, conjWordType: "verb" })}
-            >
-              VERBS
-            </button>
-            <button
-              type="button"
-              aria-pressed={options.conjWordType === "adjective"}
-              onClick={() => setOptions({ ...options, conjWordType: "adjective" })}
-            >
-              ADJECTIVES
-            </button>
-          </div>
-          <div className="limit-row" role="group" aria-label="included classes">
-            {(options.conjWordType === "verb"
-              ? (["godan", "ichidan", "irregular"] as const)
-              : (["i", "na"] as const)
-            ).map((cls) => {
-              const selected =
-                options.conjWordType === "verb" ? options.conjVerbClasses : options.conjAdjClasses;
-              const on = selected.includes(cls);
-              return (
+        {mode === "dates" && (
+          <>
+            <div className="field" role="radiogroup" aria-label="date mode">
+              <span>Date mode</span>
+              <div className="segmented">
                 <button
-                  key={cls}
                   type="button"
-                  aria-pressed={on}
-                  onClick={() => {
-                    // Zero classes would empty the pool; keep at least one.
-                    if (on && selected.length === 1) return;
-                    const next = on ? selected.filter((c) => c !== cls) : [...selected, cls];
-                    setOptions(
-                      options.conjWordType === "verb"
-                        ? { ...options, conjVerbClasses: next }
-                        : { ...options, conjAdjClasses: next },
-                    );
-                  }}
+                  aria-pressed={options.dateMode === "weekdays"}
+                  onClick={() => setOptions({ ...options, dateMode: "weekdays" })}
                 >
-                  {cls.toUpperCase()}
+                  DAYS OF WEEK
                 </button>
-              );
-            })}
-          </div>
-          <div className="limit-row" role="group" aria-label="conjugation forms">
-            {(options.conjWordType === "verb" ? VERB_FORMS : ADJ_FORMS).map((f) => {
-              const selected =
-                options.conjWordType === "verb" ? options.conjVerbForms : options.conjAdjForms;
-              const on = selected.includes(f);
-              return (
                 <button
-                  key={f}
                   type="button"
-                  aria-pressed={on}
-                  onClick={() => {
-                    if (on && selected.length === 1) return;
-                    const next = on ? selected.filter((x) => x !== f) : [...selected, f];
-                    setOptions(
-                      options.conjWordType === "verb"
-                        ? { ...options, conjVerbForms: next }
-                        : { ...options, conjAdjForms: next },
-                    );
-                  }}
+                  aria-pressed={options.dateMode === "full"}
+                  onClick={() => setOptions({ ...options, dateMode: "full" })}
                 >
-                  {f.toUpperCase()}
+                  FULL DATES
                 </button>
-              );
-            })}
+              </div>
+            </div>
+            <div className="field" role="radiogroup" aria-label="direction">
+              <span>Direction</span>
+              <div className="segmented">
+                <button
+                  type="button"
+                  aria-pressed={options.direction === "jp2en"}
+                  onClick={() => setOptions({ ...options, direction: "jp2en" })}
+                >
+                  JAPANESE → ENGLISH
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={options.direction === "en2jp"}
+                  onClick={() => setOptions({ ...options, direction: "en2jp" })}
+                >
+                  ENGLISH → JAPANESE
+                </button>
+              </div>
+            </div>
+            {options.dateMode === "full" && (
+              <>
+                <div className="field">
+                  <label htmlFor="year-min">Year min</label>
+                  <input
+                    id="year-min"
+                    type="number"
+                    min={1}
+                    max={9999}
+                    value={options.yearMin}
+                    onChange={(e) => setOptions({ ...options, yearMin: Number(e.target.value) })}
+                  />
+                </div>
+                <div className="field">
+                  <label htmlFor="year-max">Year max</label>
+                  <input
+                    id="year-max"
+                    type="number"
+                    min={1}
+                    max={9999}
+                    value={options.yearMax}
+                    onChange={(e) => setOptions({ ...options, yearMax: Number(e.target.value) })}
+                  />
+                </div>
+              </>
+            )}
+          </>
+        )}
+
+        {mode === "conjugation" && (
+          <>
+            <div className="field" role="radiogroup" aria-label="word type">
+              <span>Word type</span>
+              <div className="segmented">
+                <button
+                  type="button"
+                  aria-pressed={options.conjWordType === "verb"}
+                  onClick={() => setOptions({ ...options, conjWordType: "verb" })}
+                >
+                  VERBS
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={options.conjWordType === "adjective"}
+                  onClick={() => setOptions({ ...options, conjWordType: "adjective" })}
+                >
+                  ADJECTIVES
+                </button>
+              </div>
+            </div>
+            <div className="field" role="group" aria-label="included classes">
+              <span>Classes</span>
+              <div className="limit-row">
+                {(options.conjWordType === "verb"
+                  ? (["godan", "ichidan", "irregular"] as const)
+                  : (["i", "na"] as const)
+                ).map((cls) => {
+                  const selected =
+                    options.conjWordType === "verb"
+                      ? options.conjVerbClasses
+                      : options.conjAdjClasses;
+                  const on = selected.includes(cls);
+                  return (
+                    <button
+                      key={cls}
+                      type="button"
+                      aria-pressed={on}
+                      onClick={() => {
+                        // Zero classes would empty the pool; keep at least one.
+                        if (on && selected.length === 1) return;
+                        const next = on ? selected.filter((c) => c !== cls) : [...selected, cls];
+                        setOptions(
+                          options.conjWordType === "verb"
+                            ? { ...options, conjVerbClasses: next }
+                            : { ...options, conjAdjClasses: next },
+                        );
+                      }}
+                    >
+                      {cls.toUpperCase()}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="field" role="group" aria-label="conjugation forms">
+              <span>Target forms</span>
+              <div className="limit-row">
+                {(options.conjWordType === "verb" ? VERB_FORMS : ADJ_FORMS).map((f) => {
+                  const selected =
+                    options.conjWordType === "verb" ? options.conjVerbForms : options.conjAdjForms;
+                  const on = selected.includes(f);
+                  return (
+                    <button
+                      key={f}
+                      type="button"
+                      aria-pressed={on}
+                      onClick={() => {
+                        if (on && selected.length === 1) return;
+                        const next = on ? selected.filter((x) => x !== f) : [...selected, f];
+                        setOptions(
+                          options.conjWordType === "verb"
+                            ? { ...options, conjVerbForms: next }
+                            : { ...options, conjAdjForms: next },
+                        );
+                      }}
+                    >
+                      {f.toUpperCase()}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </>
+        )}
+
+        <div className="field">
+          <span>Questions</span>
+          <div className="segmented" role="radiogroup" aria-label="question limit">
+            {LIMITS.map((l) => (
+              <button key={l} type="button" aria-pressed={limit === l} onClick={() => setLimit(l)}>
+                {l}
+              </button>
+            ))}
+            <button type="button" aria-pressed={limit === "all"} onClick={() => setLimit("all")}>
+              ALL
+            </button>
           </div>
         </div>
-      )}
+      </div>
 
-      <PoolMatrix items={all} />
+      <PoolMatrix mode={mode} items={all} />
 
-      <div className="limit-row" role="radiogroup" aria-label="question limit">
-        {LIMITS.map((l) => (
-          <button key={l} type="button" aria-pressed={limit === l} onClick={() => setLimit(l)}>
-            {l}
-          </button>
-        ))}
-        <button type="button" aria-pressed={limit === "all"} onClick={() => setLimit("all")}>
-          ALL
+      <div className="start-dock">
+        <div>
+          <p>
+            {sessionCount} questions · from {selectable.length} eligible items
+          </p>
+          <p className="sample-note">
+            Search and pagination browse the preview; they do not change your session pool.
+          </p>
+        </div>
+        <button
+          type="button"
+          className="primary"
+          onClick={start}
+          disabled={selectable.length === 0}
+        >
+          START
         </button>
       </div>
-      <button type="button" className="primary" onClick={start} disabled={selectable.length === 0}>
-        START
-      </button>
     </div>
   );
 }

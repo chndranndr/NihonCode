@@ -1,15 +1,31 @@
+/**
+ * Progress view: annual contribution calendar + four-axis activity overview
+ * (PRD §10.13 owner addition 2026-09-22) above the existing telemetry.
+ * Activity is all-level and driven by one shared year selector; the study
+ * level only scopes SRS/kanji content. Legacy completions survive through the
+ * v6 migration with derived categories (docs/decisions.md).
+ */
+
 import { useEffect, useMemo, useState } from "react";
 import { Panel } from "../../components/Panel";
+import { ActivityCalendar } from "../../components/ActivityCalendar";
+import { ActivityQuadrant } from "../../components/ActivityQuadrant";
 import { useLevel } from "../../components/level";
 import { achievements, coverageEstimate } from "../../domain/achievements";
+import {
+  activityRows,
+  masteryByItem,
+  sessionSummary,
+  type SessionSummary,
+} from "../../storage/progressRepo";
 import { dayKey, xpProgress } from "../../domain/progress";
-import { masteryByItem, sessionSummary } from "../../storage/progressRepo";
 import { srsPoolIds } from "../../components/pools";
 import { srsStats, type SrsStats } from "../../storage/srsRepo";
 import { loadPrefs } from "../../storage/prefs";
 import { ENABLED_LEVELS, loadPracticeCore } from "../../content/loaders";
 import type { JlptLevel } from "../../content/ids";
 import type { KanjiItem } from "../../content/models";
+import { countsByDay, type ActivityRow } from "../../domain/activity";
 
 interface KanjiCell {
   item: KanjiItem;
@@ -35,10 +51,15 @@ export function ProgressPage() {
   const prefs = loadPrefs();
   const { pools, level, setLevel } = useLevel();
   const [stats, setStats] = useState<SrsStats | null>(null);
-  const [sessions, setSessions] = useState<Awaited<ReturnType<typeof sessionSummary>> | null>(null);
+  const [sessions, setSessions] = useState<SessionSummary | null>(null);
   const [cells, setCells] = useState<KanjiCell[]>([]);
   const [selected, setSelected] = useState<KanjiCell | null>(null);
   const [practiceCounts, setPracticeCounts] = useState<Map<string, number> | null>(null);
+  const [activity, setActivity] = useState<ActivityRow[]>([]);
+
+  useEffect(() => {
+    void activityRows().then(setActivity);
+  }, []);
 
   useEffect(() => {
     if (!pools) return;
@@ -75,13 +96,30 @@ export function ProgressPage() {
     };
   }, [pools]);
 
-  const progress = xpProgress(prefs.progress.xp);
   const today = dayKey(new Date());
+  const currentYear = Number(today.slice(0, 4));
+
+  // Available years: recorded history plus the current year, newest first.
+  const years = useMemo(() => {
+    const set = new Set<number>([currentYear]);
+    for (const row of activity) {
+      const y = Number(row.date.slice(0, 4));
+      if (!Number.isNaN(y)) set.add(y);
+    }
+    return [...set].sort((a, b) => b - a);
+  }, [activity, currentYear]);
+
+  const [year, setYear] = useState(currentYear);
+  const selectedYear = years.includes(year) ? year : currentYear;
+
+  const yearRows = useMemo(
+    () => activity.filter((r) => r.date.startsWith(String(selectedYear))),
+    [activity, selectedYear],
+  );
+  const yearByDay = useMemo(() => countsByDay(yearRows), [yearRows]);
+
+  const progress = xpProgress(prefs.progress.xp);
   const todayXp = prefs.progress.weeklyXp[today] ?? 0;
-  const week = Object.entries(prefs.progress.weeklyXp)
-    .sort(([a], [b]) => a.localeCompare(b))
-    .slice(-7);
-  const weekMax = Math.max(1, ...week.map(([, v]) => v));
 
   const coverage = useMemo(() => {
     if (!stats || !pools) return 0;
@@ -108,96 +146,131 @@ export function ProgressPage() {
 
   return (
     <div className="progress-page" data-testid="progress">
-      <h2 className="micro-label">PROGRESS</h2>
-      <div className="status-strip" role="status">
-        <span className="micro-label">XP {prefs.progress.xp}</span>
-        <span className="micro-label">LEVEL {progress.level}</span>
-        <span className="micro-label" data-testid="p-today">
-          TODAY {todayXp} XP
-        </span>
+      <div className="page-head">
+        <div>
+          <p className="label">キタ / {level.toUpperCase()} PROGRESS</p>
+          <h1>Your effort, taking shape.</h1>
+          <p className="description">
+            Every day adds up. Explore when you studied and how you spent your sessions.
+          </p>
+          <div className="status-strip" role="status">
+            <span className="micro-label">XP {prefs.progress.xp}</span>
+            <span className="micro-label">LEVEL {progress.level}</span>
+            <span className="micro-label" data-testid="p-today">
+              TODAY {todayXp} XP
+            </span>
+          </div>
+        </div>
       </div>
 
+      <section className="panel annual-panel">
+        <div className="panel-head">
+          <h2>Study activity</h2>
+          <label className="year-select">
+            Year
+            <select
+              data-testid="year-select"
+              value={selectedYear}
+              onChange={(e) => setYear(Number(e.target.value))}
+            >
+              {years.map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <ActivityCalendar
+          rows={yearRows}
+          startKey={`${selectedYear}-01-01`}
+          endKey={`${selectedYear}-12-31`}
+          todayKey={today}
+        />
+      </section>
+
+      <section className="panel activity-overview">
+        <div className="panel-head">
+          <h2>Activity overview</h2>
+          <span className="label">{selectedYear} · ALL LEVELS</span>
+        </div>
+        <ActivityQuadrant byDay={[...yearByDay.values()]} year={selectedYear} />
+      </section>
+
       <div className="telemetry">
-        <Panel title="WEEKLY ACTIVITY">
-          <div className="week-bars" role="img" aria-label="weekly XP bars">
-            {week.map(([day, xp]) => (
-              <div key={day} className="week-bar" title={`${day}: ${xp} XP`}>
+        <div className="progress-layout">
+          <Panel title="SPACED REPETITION">
+            {stats ? (
+              <>
+                <div className="srs-row">
+                  <span>Ready to review</span>
+                  <strong className="blue">{stats.due} cards</strong>
+                </div>
+                <div className="srs-row">
+                  <span>Learned</span>
+                  <strong>
+                    {stats.learned} / {stats.total}
+                  </strong>
+                </div>
+                <div className="srs-row">
+                  <span>Not started</span>
+                  <strong>{stats.fresh}</strong>
+                </div>
                 <div
-                  className="week-fill"
-                  ref={(el) => el?.style.setProperty("--h", `${(xp / weekMax) * 100}%`)}
-                />
-                <span className="micro-label">{day.slice(8)}</span>
-              </div>
-            ))}
-            {week.length === 0 && <p className="empty-teach">No study days recorded yet.</p>}
-          </div>
-        </Panel>
+                  className="split-bar"
+                  role="img"
+                  aria-label={`mastered ${stats.mastered}, learning ${stats.learning}, new ${stats.fresh}`}
+                >
+                  <div
+                    className="split-mastered"
+                    ref={(el) =>
+                      el?.style.setProperty(
+                        "--w",
+                        `${stats.total === 0 ? 0 : (stats.mastered / stats.total) * 100}%`,
+                      )
+                    }
+                  />
+                  <div
+                    className="split-learning"
+                    ref={(el) =>
+                      el?.style.setProperty(
+                        "--w",
+                        `${stats.total === 0 ? 0 : (stats.learning / stats.total) * 100}%`,
+                      )
+                    }
+                  />
+                </div>
+                <p className="micro-label" data-testid="srs-gauge">
+                  MASTERED {stats.mastered} · LEARNING {stats.learning} · NEW {stats.fresh}
+                </p>
+                <p className="sample-note">Your next review builds on what you already know.</p>
+              </>
+            ) : (
+              <p className="micro-label">LOADING…</p>
+            )}
+          </Panel>
 
-        <Panel title="SRS GAUGES">
-          {stats ? (
-            <>
-              <p className="micro-label" data-testid="srs-gauge">
-                DUE {stats.due} · LEARNED {stats.learned}/{stats.total} · LAPSES {stats.lapses}
-              </p>
-              <div
-                className="split-bar"
-                role="img"
-                aria-label={`mastered ${stats.mastered}, learning ${stats.learning}, new ${stats.fresh}`}
-              >
-                <div
-                  className="split-mastered"
-                  ref={(el) =>
-                    el?.style.setProperty(
-                      "--w",
-                      `${stats.total === 0 ? 0 : (stats.mastered / stats.total) * 100}%`,
-                    )
-                  }
-                />
-                <div
-                  className="split-learning"
-                  ref={(el) =>
-                    el?.style.setProperty(
-                      "--w",
-                      `${stats.total === 0 ? 0 : (stats.learning / stats.total) * 100}%`,
-                    )
-                  }
-                />
-              </div>
-              <p className="micro-label">
-                MASTERED {stats.mastered} · LEARNING {stats.learning} · NEW {stats.fresh}
-              </p>
-              <p className="micro-label">
-                KANJI {stats.byKind.kanji.learned}/{stats.byKind.kanji.total} · VOCAB{" "}
-                {stats.byKind.vocab.learned}/{stats.byKind.vocab.total}
-              </p>
-            </>
-          ) : (
-            <p className="micro-label">LOADING…</p>
-          )}
-        </Panel>
-
-        <Panel title="ACHIEVEMENTS">
-          <ul className="achievement-ticker" data-testid="achievements">
-            {achievementList.map((a) => (
-              <li key={a.id} className={a.unlocked ? "unlocked" : "locked"} title={a.requirement}>
-                {a.unlocked ? "■" : "□"} {a.label}
-              </li>
-            ))}
-          </ul>
-        </Panel>
-
-        <Panel title="COVERAGE OF STUDIED MATERIAL">
-          <p className="micro-label" data-testid="coverage">
-            {Math.round(coverage * 100)}% OF THE {level.toUpperCase()} CLEAN SLICE
-          </p>
-          <p className="empty-teach">
-            Coverage counts learned SRS cards and completed lessons against the clean-slice pool. It
-            is not an exam-competence estimate.
-          </p>
-        </Panel>
+          <Panel title="MILESTONES">
+            <ul className="achievement-list" data-testid="achievements">
+              {achievementList.map((a) => (
+                <li key={a.id} className={a.unlocked ? "" : "muted"} title={a.requirement}>
+                  <b>{a.unlocked ? "✓" : "□"}</b>
+                  {a.label}
+                </li>
+              ))}
+            </ul>
+            <p className="micro-label" data-testid="coverage">
+              {Math.round(coverage * 100)}% OF THE {level.toUpperCase()} CLEAN SLICE
+            </p>
+            <p className="empty-teach">
+              Coverage counts learned SRS cards and completed lessons against the clean-slice pool.
+              It is not an exam-competence estimate.
+            </p>
+          </Panel>
+        </div>
 
         <Panel
-          title="KANJI MASTERY MAP"
+          title={`KANJI · ${level.toUpperCase()}`}
           actions={
             <div className="limit-row" role="radiogroup" aria-label="level filter">
               {LEVELS.map((l) => {
@@ -280,6 +353,10 @@ export function ProgressPage() {
             )}
           </div>
         </Panel>
+
+        <p className="sample-note">
+          Study activity measures participation, not JLPT exam readiness.
+        </p>
       </div>
     </div>
   );

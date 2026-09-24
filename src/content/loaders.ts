@@ -75,42 +75,87 @@ export async function loadLevelData(level: JlptLevel): Promise<LevelData> {
   };
 }
 
-/** Categories served today. Listening awaits the owner's audio confirmation
- * and reading the owner's keep/exclude call (docs/decisions.md); both show
- * honest locked panels, not dead tiles. */
-export const LIVE_JLPT_CATEGORIES = ["grammar", "kanji", "vocabulary"] as const;
+/** All five categories ship (data-recon 2026-09-23): reading passages and
+ * listening questions restored from the source; docs/decisions.md records the
+ * owner's unlock and the superseded locked-panel decisions. */
+export const LIVE_JLPT_CATEGORIES = [
+  "grammar",
+  "kanji",
+  "vocabulary",
+  "reading",
+  "listening",
+] as const;
 
 export type JlptPool = Record<JlptCategory, GateResult<JlptSet>>;
 
 const jlptCache = new Map<JlptLevel, JlptPool>();
 
-// Literal category segments: a template-literal category would make the
-// bundler emit chunks for every file under jlpt/<level>/ — including the
-// gated listening/reading sets the UI refuses to serve. With literals, only
-// the three live categories exist in the bundle.
-const JLPT_IMPORTS: Record<
-  (typeof LIVE_JLPT_CATEGORIES)[number],
-  (level: JlptLevel) => Promise<{ default: unknown }>
-> = {
-  grammar: (level) => import(`../../data/clean/jlpt/${level}/grammar.json`),
-  kanji: (level) => import(`../../data/clean/jlpt/${level}/kanji.json`),
-  vocabulary: (level) => import(`../../data/clean/jlpt/${level}/vocabulary.json`),
+// Literal category segments per level: a template-literal category makes the
+// bundler glob every file under jlpt/ and emit chunks for content the app
+// should not serve. One literal thunk per level keeps the chunk set exact.
+const JLPT_IMPORTS: Record<JlptLevel, () => Promise<JlptFileBundle>> = {
+  n5: () =>
+    Promise.all([
+      import("../../data/clean/jlpt/n5/grammar.json"),
+      import("../../data/clean/jlpt/n5/kanji.json"),
+      import("../../data/clean/jlpt/n5/vocabulary.json"),
+      import("../../data/clean/jlpt/n5/reading.json"),
+      import("../../data/clean/jlpt/n5/listening.json"),
+    ]) as Promise<JlptFileBundle>,
+  n4: () =>
+    Promise.all([
+      import("../../data/clean/jlpt/n4/grammar.json"),
+      import("../../data/clean/jlpt/n4/kanji.json"),
+      import("../../data/clean/jlpt/n4/vocabulary.json"),
+      import("../../data/clean/jlpt/n4/reading.json"),
+      import("../../data/clean/jlpt/n4/listening.json"),
+    ]) as Promise<JlptFileBundle>,
+  n3: () =>
+    Promise.all([
+      import("../../data/clean/jlpt/n3/grammar.json"),
+      import("../../data/clean/jlpt/n3/kanji.json"),
+      import("../../data/clean/jlpt/n3/vocabulary.json"),
+      import("../../data/clean/jlpt/n3/reading.json"),
+      import("../../data/clean/jlpt/n3/listening.json"),
+    ]) as Promise<JlptFileBundle>,
+  n2: () =>
+    Promise.all([
+      import("../../data/clean/jlpt/n2/grammar.json"),
+      import("../../data/clean/jlpt/n2/kanji.json"),
+      import("../../data/clean/jlpt/n2/vocabulary.json"),
+      import("../../data/clean/jlpt/n2/reading.json"),
+      import("../../data/clean/jlpt/n2/listening.json"),
+    ]) as Promise<JlptFileBundle>,
+  n1: () =>
+    Promise.all([
+      import("../../data/clean/jlpt/n1/grammar.json"),
+      import("../../data/clean/jlpt/n1/kanji.json"),
+      import("../../data/clean/jlpt/n1/vocabulary.json"),
+      import("../../data/clean/jlpt/n1/reading.json"),
+      import("../../data/clean/jlpt/n1/listening.json"),
+    ]) as Promise<JlptFileBundle>,
 };
+
+type JlptFileBundle = [
+  { default: unknown },
+  { default: unknown },
+  { default: unknown },
+  { default: unknown },
+  { default: unknown },
+];
 
 /** Load one level's JLPT practice sets through the gate, cached per level. */
 export async function loadJlptLevel(level: JlptLevel): Promise<JlptPool> {
   if (!ENABLED_LEVELS.includes(level)) throw new LevelUnavailableError(level);
   const cached = jlptCache.get(level);
   if (cached) return cached;
-  const [grammarMod, kanjiMod, vocabMod] = await Promise.all(
-    LIVE_JLPT_CATEGORIES.map((cat) => JLPT_IMPORTS[cat](level)),
-  );
+  const [grammarMod, kanjiMod, vocabMod, readingMod, listeningMod] = await JLPT_IMPORTS[level]();
   const pool: JlptPool = {
     grammar: validateJlpt(grammarMod.default, level, "grammar"),
     kanji: validateJlpt(kanjiMod.default, level, "kanji"),
     vocabulary: validateJlpt(vocabMod.default, level, "vocabulary"),
-    listening: { items: [], flags: [] },
-    reading: { items: [], flags: [] },
+    reading: validateJlpt(readingMod.default, level, "reading"),
+    listening: validateJlpt(listeningMod.default, level, "listening"),
   };
   jlptCache.set(level, pool);
   return pool;

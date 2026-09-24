@@ -88,12 +88,12 @@ Stack: React 19, TypeScript strict, Vite, React Router, Dexie, ts-fsrs, Zod. Sta
 
 ## Honest status
 
-|                                                     |                                                                                                                      |
-| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Phase 1 — MVP on the clean slice                    | **shipped and verified** (64 unit + 18 e2e tests green)                                                              |
-| Phase 2 — data remediation pipeline                 | next; spec in [DEVELOPMENT_PROMPT.md](DEVELOPMENT_PROMPT.md)                                                         |
-| Phase 3 — N4–N1, JLPT practice, conjugation, polish | gated on Phase 2                                                                                                     |
-| Public release                                      | **blocked** on redistribution clearance for scraped sources — status ledger renders in-app (About → CONTENT SOURCES) |
+|                                                     |                                                                                                                                                                                              |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Phase 1 — MVP on the clean slice                    | **shipped and verified** (64 unit + 18 e2e tests green)                                                                                                                                      |
+| Phase 2 — data remediation pipeline                 | next; spec in [DEVELOPMENT_PROMPT.md](DEVELOPMENT_PROMPT.md)                                                                                                                                 |
+| Phase 3 — N4–N1, JLPT practice, conjugation, polish | gated on Phase 2                                                                                                                                                                             |
+| Public release                                      | **non-commercial cleared** (owner decisions 2026-09-23); commercial redistribution of amgidex content still needs author permission — status ledger renders in-app (About → CONTENT SOURCES) |
 
 What is deliberately absent, forever: AI features, accounts, cloud sync, native wrappers, pronunciation scoring, curriculum gating. The non-goals in [PRD.md](PRD.md) are binding.
 
@@ -101,4 +101,4 @@ What is deliberately absent, forever: AI features, accounts, cloud sync, native 
 
 [AGENTS.md](AGENTS.md) is the map for agents and humans alike: authority order, hard rules, commands. The knowledge base lives in [docs/](docs/index.md) — architecture, data-quality ledger, quality evidence, decision log (append-only ADRs), development protocol.
 
-Content sources: amgidex (grammar lists), Tatoeba (CC BY 2.0 FR examples), japanesetest4you (exercises/audio, clearance pending).
+Content sources: amgidex (grammar lists, permitted for non-commercial use), Tatoeba (CC BY 2.0 FR examples), japanesetest4you (exercises/audio/images, owner-confirmed for this project).

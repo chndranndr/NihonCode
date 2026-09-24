@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
 import { srsPoolIds } from "../../components/pools";
@@ -6,7 +6,7 @@ import { useLevel } from "../../components/level";
 import { ratingFromCorrect } from "../../domain/scheduling";
 import { kanaToRomaji } from "../../domain/romaji";
 import { XP } from "../../domain/progress";
-import { awardXp, recordAttempt, recordSession } from "../../storage/progressRepo";
+import { awardXp, newSessionId, recordAttempt, recordSession } from "../../storage/progressRepo";
 import { buildDueQueue, reviewItem } from "../../storage/srsRepo";
 import { loadPrefs } from "../../storage/prefs";
 
@@ -17,6 +17,7 @@ export function ReviewPage() {
   const [queue, setQueue] = useState<{ due: string[]; fresh: string[] } | null>(null);
   const [session, setSession] = useState<SessionItem[] | null>(null);
   const [summary, setSummary] = useState<SessionResult | null>(null);
+  const sessionIdRef = useRef("");
 
   useEffect(() => {
     if (!pools) return;
@@ -73,17 +74,19 @@ export function ReviewPage() {
         };
       })
       .filter((x): x is SessionItem => x !== null);
+    sessionIdRef.current = newSessionId("srs");
     setSession(items);
   }
 
   async function finish(result: SessionResult): Promise<void> {
+    const inserted = await recordSession(sessionIdRef.current, "srs", result.correct, result.total);
+    if (!inserted) return;
     for (const record of result.records) {
       const rating = ratingFromCorrect(record.correct);
       await reviewItem(record.id, rating);
       await recordAttempt(record.id, "srs", record.correct);
     }
     awardXp(result.correct * XP.srsReview);
-    await recordSession("srs", result.correct, result.total);
     setSession(null);
     setSummary(result);
   }
@@ -121,7 +124,13 @@ export function ReviewPage() {
 
   return (
     <div className="setup" data-testid="review">
-      <h2 className="micro-label">SRS REVIEW QUEUE</h2>
+      <div className="page-head">
+        <div>
+          <p className="label">キタ / SPACED REPETITION</p>
+          <h1>Review what you know.</h1>
+          <p className="description">Cards return as their FSRS interval elapses.</p>
+        </div>
+      </div>
       {queue ? (
         <>
           <p className="micro-label">

@@ -1,5 +1,7 @@
 # NihonCode development prompt — Phase 3 (polish and full scope)
 
+> Redesign handoff (2026-09-22): Phase 3 is complete. Use [UI_IMPLEMENTATION_PROMPT.md](UI_IMPLEMENTATION_PROMPT.md), [DESIGN.md](DESIGN.md), and [.impeccable/README.md](.impeccable/README.md) for the approved redesign. HTML mockups are the current visual authority; production integration is pending. Phase task order and old version numbers below are historical. Architecture, non-goals, data gates and verification remain binding. Owner-authorized design-document synchronization is permitted; it does not resolve listening/reading/release gates.
+
 > Phase 1–2 history: MVP shipped; N5/N4 manually curated (2,298 verdicts in `curation/adjudications.json`); app swapped to `data/clean/` as the committed single source of truth; raw scrape and the Phase 2 build pipeline retired. The Phase 2 prompt and its record live in git at `b15c717` and earlier. This prompt governs Phase 3 only.
 
 ## 0. Mission
@@ -33,10 +35,10 @@ You are the implementation agent for NihonCode (キタ) Phase 3. Your job is imp
 
 ## 3. Owner decisions that gate tasks
 
-- **Reading passages**: keep+restore-text vs exclude (docs/decisions.md 2026-09-20) — gates the JLPT reading UI.
-- **Listening sample confirmation** — gates listening playback.
-- **`jlpt:n5:reading:10:bxpod7h8`** answer_index repair confirmation.
-- **Redistribution clearance** — gates public release, not development.
+- ~~**Reading passages**: keep+restore-text vs exclude~~ — **resolved 2026-09-23** (data-recon.md owner brief): passages restored from source, category ships.
+- ~~**Listening sample confirmation**~~ — **resolved 2026-09-23** (data-recon.md owner brief): audio confirmed correct, redistribution rights held; category ships.
+- ~~**`jlpt:n5:reading:10:bxpod7h8`** answer_index repair confirmation~~ — **confirmed 2026-09-23**: the question lives at `jlpt:n5:reading:11:bxpod7h8` (the gate text had the set number wrong) and ships with the repaired distractor set (電話しまあした → 電話しました) and valid key.
+- ~~**Redistribution clearance**~~ — **resolved 2026-09-23**: JLPT assets carry the owner redistribution confirmation; amgidex grammar lists permitted for this non-commercial project. Only commercial redistribution of amgidex content would need author permission.
 
 When a gated task arrives: stop its dependent work, write the decision request into your report with measured counts and options, proceed on the rest. Record resolutions in docs/decisions.md when they land.
 

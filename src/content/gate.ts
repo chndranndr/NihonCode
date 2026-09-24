@@ -349,6 +349,29 @@ export function validateGrammar(raw: unknown, level: JlptLevel): GateResult<Gram
   return { items, flags };
 }
 
+const jlptImageSchema = z.object({
+  url: z.string(),
+  local_path: z.string(),
+});
+
+const jlptAudioSpanSchema = z.object({
+  start: z.number(),
+  end: z.number(),
+});
+
+const jlptQuestionAudioSchema = z.object({
+  url: z.string(),
+  local_path: z.string(),
+  span: jlptAudioSpanSchema,
+});
+
+const jlptPassageSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  text: z.string(),
+  images: z.array(jlptImageSchema).optional(),
+});
+
 const jlptQuestionSchema = z.object({
   id: z.string(),
   number: z.number(),
@@ -356,12 +379,19 @@ const jlptQuestionSchema = z.object({
   options: z.array(z.string()).min(2),
   answer_index: z.number(),
   answer_text: z.string(),
+  explanation: z.string().optional(),
+  answered_sentence: z.string().nullable().optional(),
+  images: z.array(jlptImageSchema).optional(),
+  passage_id: z.string().nullable().optional(),
+  audio: jlptQuestionAudioSchema.nullable().optional(),
 });
 
 const jlptSetSchema = z.object({
   set_number: z.number(),
   title: z.string(),
   questions: z.array(z.unknown()),
+  passages: z.array(jlptPassageSchema).optional(),
+  audio: z.array(z.object({ url: z.string(), local_path: z.string() })).optional(),
 });
 
 /**
@@ -437,6 +467,16 @@ export function validateJlpt(
         setOk = false;
         break;
       }
+      const passageId = d.passage_id ?? null;
+      if (passageId && !(setRaw.passages || []).some((p) => p.id === passageId)) {
+        flags.push({
+          source: `jlpt/${level}/${category}.json`,
+          id: d.id,
+          reason: "passage_id does not resolve in this set",
+        });
+        setOk = false;
+        break;
+      }
       questions.push({
         id: d.id,
         number: d.number,
@@ -444,6 +484,13 @@ export function validateJlpt(
         options: d.options,
         answerIndex: d.answer_index,
         answerText: d.answer_text,
+        ...(d.explanation !== undefined ? { explanation: d.explanation } : {}),
+        ...(d.answered_sentence ? { answeredSentence: d.answered_sentence } : {}),
+        images: (d.images || []).map((im) => ({ url: im.url, localPath: im.local_path })),
+        passageId,
+        audio: d.audio
+          ? { url: d.audio.url, localPath: d.audio.local_path, span: d.audio.span }
+          : null,
       });
     }
     if (!setOk || questions.length === 0) continue;
@@ -453,6 +500,13 @@ export function validateJlpt(
       setNumber: setRaw.set_number,
       title: setRaw.title,
       questions,
+      passages: (setRaw.passages || []).map((p) => ({
+        id: p.id,
+        title: p.title,
+        text: p.text,
+        images: (p.images || []).map((im) => ({ url: im.url, localPath: im.local_path })),
+      })),
+      audio: (setRaw.audio || []).map((a) => ({ url: a.url, localPath: a.local_path })),
     });
   }
   return { items, flags };

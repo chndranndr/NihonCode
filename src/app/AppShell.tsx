@@ -6,10 +6,10 @@ import { AchievementToasts } from "../components/AchievementToasts";
 import "./app.css";
 
 const SECTIONS = [
-  { key: "1", to: "/", label: "HOME", glyph: "[H]" },
-  { key: "2", to: "/progress", label: "PROGRESS", glyph: "[P]" },
-  { key: "3", to: "/learn", label: "LEARN", glyph: "[L]" },
-  { key: "4", to: "/config", label: "CONFIG", glyph: "[C]" },
+  { key: "1", to: "/", label: "Home", glyph: "⌂" },
+  { key: "2", to: "/progress", label: "Progress", glyph: "▥" },
+  { key: "3", to: "/learn", label: "Learn", glyph: "本" },
+  { key: "4", to: "/config", label: "Config", glyph: "⚙" },
 ] as const;
 
 const TICKER_TEXT =
@@ -42,26 +42,45 @@ function Shell({ children }: { children: ReactNode }) {
   }, [navigate]);
 
   return (
-    <div className="app-frame">
-      <nav className="icon-rail" aria-label="Primary">
-        {SECTIONS.map((s) => (
-          <NavLink key={s.key} to={s.to} title={s.label} className="rail-link">
-            <span aria-hidden="true">{s.glyph}</span>
-            <span className="sr-only">{s.label}</span>
-          </NavLink>
-        ))}
-      </nav>
-      <div className="app-main">
-        <AchievementToasts />
-        <main className="app-content">{children}</main>
+    <>
+      <a className="skip" href="#main">
+        Skip to content
+      </a>
+      <aside className="rail">
+        <NavLink to="/" className="brand" aria-label="Kita home">
+          <span lang="ja">キタ</span>
+          <b>KITA</b>
+        </NavLink>
+        <nav aria-label="Primary">
+          {SECTIONS.map((s) => (
+            <NavLink key={s.key} to={s.to} title={s.label} end={s.to === "/"}>
+              <span aria-hidden="true">{s.glyph}</span>
+              {s.label}
+            </NavLink>
+          ))}
+        </nav>
+        <div className="rail-note">
+          <span lang="ja">毎日、少しずつ。</span>
+          <p>A little, every day.</p>
+        </div>
+      </aside>
+      <div className="workspace">
+        <header className="topbar">
+          <span>
+            JAPANESE PRACTICE <span className="muted">/ STUDY CONSOLE</span>
+          </span>
+          <span className="console-tag" aria-hidden="true">
+            LOCAL DATA ONLY
+          </span>
+        </header>
+        <main className="app-content" id="main" tabIndex={-1}>
+          <AchievementToasts />
+          {children}
+        </main>
         <footer className="bottom-bar">
-          <nav aria-label="Primary mobile">
-            {SECTIONS.map((s) => (
-              <NavLink key={s.key} to={s.to} className="bar-link">
-                {s.label}
-              </NavLink>
-            ))}
-          </nav>
+          <span>
+            キタ <span className="muted">/ No account. Your own pace.</span>
+          </span>
           <Ticker />
           <div className="key-legend" aria-hidden="true">
             {SECTIONS.map((s) => (
@@ -72,7 +91,7 @@ function Shell({ children }: { children: ReactNode }) {
           </div>
         </footer>
       </div>
-    </div>
+    </>
   );
 }
 

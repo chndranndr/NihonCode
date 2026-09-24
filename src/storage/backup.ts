@@ -9,9 +9,10 @@
 
 import { z } from "zod";
 import { db } from "./db";
+import { legacyActivityRows } from "./legacy-activity";
 import { loadPrefs, migratePrefs, savePrefs } from "./prefs";
 
-export const BACKUP_SCHEMA_VERSION = 1;
+export const BACKUP_SCHEMA_VERSION = 2;
 
 const srsCardRowSchema = z.object({
   id: z.string(),
@@ -60,6 +61,13 @@ const jlptProgressRowSchema = z.object({
   completedAt: z.number(),
 });
 
+const activityRowSchema = z.object({
+  id: z.string(),
+  category: z.enum(["drill", "srs", "grammar", "jlpt"]),
+  date: z.string(),
+  ts: z.number(),
+});
+
 const backupSchema = z.object({
   app: z.literal("nihoncode"),
   schemaVersion: z.number(),
@@ -71,6 +79,8 @@ const backupSchema = z.object({
   grammarState: z.array(grammarStateRowSchema),
   sessions: z.array(sessionRowSchema),
   jlptProgress: z.array(jlptProgressRowSchema),
+  // Old exports (schemaVersion 1) predate activity; restore without it.
+  activity: z.array(activityRowSchema).default([]),
 });
 
 export type BackupDocument = z.infer<typeof backupSchema>;
@@ -83,7 +93,7 @@ export interface BackupResult {
 
 export async function exportBackup(): Promise<string> {
   const store = db();
-  const [srsCards, reviewLogs, drillAttempts, grammarState, sessions, jlptProgress] =
+  const [srsCards, reviewLogs, drillAttempts, grammarState, sessions, jlptProgress, activity] =
     await Promise.all([
       store.srsCards.toArray(),
       store.reviewLogs.toArray(),
@@ -91,6 +101,7 @@ export async function exportBackup(): Promise<string> {
       store.grammarState.toArray(),
       store.sessions.toArray(),
       store.jlptProgress.toArray(),
+      store.activity.toArray(),
     ]);
   const doc: BackupDocument = {
     app: "nihoncode",
@@ -103,6 +114,7 @@ export async function exportBackup(): Promise<string> {
     grammarState,
     sessions,
     jlptProgress,
+    activity,
   };
   return JSON.stringify(doc);
 }
@@ -120,6 +132,11 @@ export async function importBackup(text: string): Promise<BackupResult> {
     return { ok: false, reason: "not a NihonCode backup (schema mismatch)" };
   }
   const doc = parsed.data;
+  // v2 documents carry their own activity coverage; only legacy documents
+  // (no activity key) get the shared derivation, so restored history matches
+  // the in-place v6 migration without double counting.
+  const restoredActivity =
+    doc.activity.length > 0 ? doc.activity : legacyActivityRows(doc.sessions);
   const store = db();
   await store.transaction(
     "rw",
@@ -130,6 +147,7 @@ export async function importBackup(text: string): Promise<BackupResult> {
       store.grammarState,
       store.sessions,
       store.jlptProgress,
+      store.activity,
     ],
     async () => {
       await Promise.all([
@@ -139,6 +157,7 @@ export async function importBackup(text: string): Promise<BackupResult> {
         store.grammarState.clear(),
         store.sessions.clear(),
         store.jlptProgress.clear(),
+        store.activity.clear(),
       ]);
       await store.srsCards.bulkPut(doc.srsCards);
       // Drop auto-increment ids on re-import so restored rows never collide
@@ -148,6 +167,7 @@ export async function importBackup(text: string): Promise<BackupResult> {
       await store.grammarState.bulkPut(doc.grammarState);
       await store.sessions.bulkAdd(doc.sessions.map(({ id: _id, ...row }) => row));
       await store.jlptProgress.bulkPut(doc.jlptProgress);
+      await store.activity.bulkPut(restoredActivity);
     },
   );
   savePrefs(migratePrefs(doc.prefs));
@@ -160,6 +180,7 @@ export async function importBackup(text: string): Promise<BackupResult> {
       grammarState: doc.grammarState.length,
       sessions: doc.sessions.length,
       jlptProgress: doc.jlptProgress.length,
+      activity: restoredActivity.length,
     },
   };
 }

@@ -140,6 +140,7 @@ The dashboard must:
 - Show the flagship daily routine with the next recommended action (SRS review, SRS start, vocabulary drill, or progress check).
 - Show entry points to all practice modes, built-in grammar, JLPT practice, and progress.
 - Show SRS availability (due count or new-card start) on the daily routine card.
+- Show a compact GitHub-style study contribution calendar in **Your momentum**, covering the last 13 weeks and linking to the full Progress activity view (see §10.13).
 
 Navigation behavior:
 
@@ -387,12 +388,25 @@ Requirements:
   - Level
   - Streak
   - Today's XP
-  - Weekly XP chart
+  - Study contribution calendar (compact on Home; annual on Progress)
+  - Four-axis activity overview showing the mix of completed study sessions
   - JLPT mastery
   - Achievements
 - A dedicated Kanji mastery map shows per-character status (mastered / learning / unseen) computed from attempts and accuracy.
 - Recalculate JLPT mastery from SRS progress and grammar quiz completion.
 - Surface achievement toast notifications when achievements unlock.
+
+#### Study activity calendar and quadrant (owner addition, 2026-09-22)
+
+- Replace the weekly activity bars with a contribution calendar: one square per local calendar day, seven rows (Sunday–Saturday), week columns, month labels, and a Less–More legend. Home shows the last 13 weeks (91 days); Progress shows a selected calendar year, including leap day where applicable. Future days are unavailable, not recorded as inactivity.
+- A contribution means **one completed study session**, regardless of score or duration. Count drills, completed SRS review runs, grammar quiz completions, and completed JLPT sets. Do not count page visits, setup changes, individual answers, aborted runs, or XP/streak bonuses. A completed retry counts as a new session; duplicate persistence of the same session ID does not.
+- Use fixed daily intensity bins: 0, 1, 2, 3, and 4+ sessions. Hover, keyboard focus, or selection exposes the date and exact count; selection also shows counts by activity type. Zero activity has an honest empty state.
+- Activity is **all-level**, independently of the study-level selector. The Progress year selector controls both the calendar and its activity overview. Available years come from recorded history plus the current year. The compact Home window remains anchored to today.
+- Under the annual calendar, show a four-axis polygon like the supplied GitHub activity overview: **Drills** left (all six drills), **SRS Review** top, **JLPT** right (served categories only), **Grammar** bottom. Each axis has the same fixed 0–100% scale, measured from the center. Share = completed sessions in that category / all completed sessions in the selected year. Round labels to one decimal; rounding may produce a displayed total slightly different from 100%.
+- Pair the polygon with exact category counts and percentage text. No sessions means four zero counts, 0% labels, and an empty-state message; never divide by zero or invent a balanced polygon. This is participation distribution, not mastery, proficiency, an exam prediction, or a target learners must balance.
+- Retain historical daily activity beyond weekly XP buckets using stable session IDs, completion timestamps, a captured local date, and one mutually exclusive activity category. Reuse existing records where sufficient; any required storage extension must preserve existing progress. Do not fabricate historical category counts from XP alone; mark unavailable legacy history explicitly.
+- Accessibility: each day exposes its date/count without color alone; arrow keys navigate days with one calendar tab stop; year selection and day details work with keyboard and touch. Small screens scroll the annual calendar within its panel, and stack the overview text and chart without page overflow. Support dark/light themes; activity green stays semantic when the primary accent changes.
+- Delivery status: designed and demonstrated with explicitly labeled sample data in `mockups/`; production aggregation, storage coverage, and `src/` UI integration are follow-up implementation work. This addition supersedes the original weekly-bars-only launch constraint, not the completed MVP record.
 
 Current progress logic:
 

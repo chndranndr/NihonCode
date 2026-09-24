@@ -1,9 +1,16 @@
-import { useEffect, useState } from "react";
+/**
+ * Grammar lesson (redesign 2026-09-22): a readable lesson column with the
+ * curated pattern, explanation, examples and quiz. Completion contributes one
+ * activity session per run via a stable id; re-saving the same completion is
+ * a no-op (PRD §10.13). Resume position and completed status persist.
+ */
+
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { SpeakerButton } from "../../components/SpeakerButton";
 import { useLevel } from "../../components/level";
 import { XP } from "../../domain/progress";
-import { awardXp, recordSession } from "../../storage/progressRepo";
+import { awardXp, newSessionId, recordSession } from "../../storage/progressRepo";
 import { db } from "../../storage/db";
 import { grammarLessonId } from "../../content/ids";
 
@@ -15,6 +22,9 @@ export function GrammarLessonPage() {
   const [answers, setAnswers] = useState<boolean[]>([]);
   const [revealed, setRevealed] = useState<string | null>(null);
   const [resumed, setResumed] = useState(false);
+  // Stable per lesson mount: a re-render or double FINISH re-saving the same
+  // completion is a no-op (PRD §10.13); a fresh visit retries from scratch.
+  const sessionIdRef = useRef("");
 
   const lesson = pools?.grammar.find((l) => l.lessonId === lessonId) ?? null;
 
@@ -49,6 +59,7 @@ export function GrammarLessonPage() {
   const active = lesson;
 
   const question = active.quiz[quizIndex];
+  const firstExample = active.examples[0];
 
   function choose(choice: string): void {
     if (revealed !== null) return;
@@ -60,8 +71,15 @@ export function GrammarLessonPage() {
     setRevealed(null);
     if (quizIndex + 1 >= active.quiz.length) {
       const correctCount = answers.filter(Boolean).length;
+      if (!sessionIdRef.current) sessionIdRef.current = newSessionId("grammar");
+      const inserted = await recordSession(
+        sessionIdRef.current,
+        "grammar",
+        correctCount,
+        active.quiz.length,
+      );
+      if (!inserted) return;
       awardXp(XP.grammarQuiz);
-      await recordSession("grammar", correctCount, active.quiz.length);
       void db().grammarState.put({
         id: active.id,
         status: "completed",
@@ -75,50 +93,90 @@ export function GrammarLessonPage() {
   }
 
   return (
-    <article className="lesson" data-testid="lesson">
-      <h2 className="lesson-title">{lesson.title}</h2>
-      <p className="micro-label">{lesson.pattern}</p>
-      <p className="lesson-explanation">{lesson.explanation}</p>
-
-      <ul className="lesson-examples">
-        {lesson.examples.map((e) => (
-          <li key={e.jp}>
-            <span lang="ja">{e.jp}</span>
-            <span className="example-romaji">{e.romaji}</span>
-            <span className="example-en">{e.en}</span>
-            <SpeakerButton text={e.jp} label="example" />
-          </li>
-        ))}
-      </ul>
-
-      {question && (
-        <div className="quiz panel" data-testid="quiz">
-          <p className="micro-label">
-            QUIZ {quizIndex + 1}/{lesson.quiz.length}
+    <article className="grammar" data-testid="lesson">
+      <button className="back" type="button" onClick={() => navigate("/learn")}>
+        ← Grammar library
+      </button>
+      <div className="page-head">
+        <div>
+          <p className="label">
+            {level.toUpperCase()} GRAMMAR · {active.category}
           </p>
-          <p className="quiz-prompt" lang="ja">
-            {question.prompt}
-          </p>
-          <div className="quiz-choices" role="group" aria-label="answer choices">
-            {question.choices.map((c) => (
-              <button
-                key={c}
-                type="button"
-                className={revealed === c ? (c === question.answer ? "ok" : "miss") : ""}
-                onClick={() => choose(c)}
-                lang="ja"
-              >
-                {c}
-              </button>
-            ))}
+          <h1 lang="ja">{active.title}</h1>
+        </div>
+      </div>
+
+      <div className="grammar-layout">
+        <div className="reading">
+          <p>{active.explanation}</p>
+          <div className="formula">
+            <em lang="ja">{active.pattern}</em>
           </div>
-          {revealed !== null && (
-            <button type="button" className="primary" onClick={next}>
-              {quizIndex + 1 >= lesson.quiz.length ? "FINISH" : "NEXT"}
-            </button>
+
+          <h2 id="examples">See it in a sentence</h2>
+          {active.examples.map((e) => (
+            <div className="example" key={e.jp}>
+              <p className="jp" lang="ja">
+                {e.jp}
+              </p>
+              <p className="roman">{e.romaji}</p>
+              <p>{e.en}</p>
+              <SpeakerButton text={e.jp} label="example" />
+            </div>
+          ))}
+
+          {question && (
+            <div className="quiz panel" data-testid="quiz">
+              <p className="micro-label">
+                QUIZ {quizIndex + 1}/{active.quiz.length}
+              </p>
+              <p className="quiz-prompt" lang="ja">
+                {question.prompt}
+              </p>
+              <div className="quiz-choices" role="group" aria-label="answer choices">
+                {question.choices.map((c) => (
+                  <button
+                    key={c}
+                    type="button"
+                    className={revealed === c ? (c === question.answer ? "ok" : "miss") : ""}
+                    onClick={() => choose(c)}
+                    lang="ja"
+                  >
+                    {c}
+                  </button>
+                ))}
+              </div>
+              {revealed !== null && (
+                <button type="button" className="primary" onClick={next}>
+                  {quizIndex + 1 >= active.quiz.length ? "FINISH" : "NEXT"}
+                </button>
+              )}
+            </div>
           )}
         </div>
-      )}
+
+        <aside className="grammar-aside">
+          <div>
+            <p className="label">In this lesson</p>
+            <p className="muted">{firstExample ? firstExample.jp : active.pattern}</p>
+          </div>
+          <div>
+            <p className="label">Pattern</p>
+            <p className="muted" lang="ja">
+              {active.pattern}
+            </p>
+          </div>
+          <div>
+            <p className="label">Progress</p>
+            <p className="muted">
+              {answers.length} of {active.quiz.length} questions answered
+            </p>
+          </div>
+          <button className="back" type="button" onClick={() => navigate("/learn")}>
+            ← Back to library
+          </button>
+        </aside>
+      </div>
     </article>
   );
 }

@@ -8,6 +8,8 @@
 import Dexie, { type Table } from "dexie";
 
 import { upgradeVocabN5Rekeys } from "./vocab-migration";
+import { legacyActivityRows } from "./legacy-activity";
+import type { ActivityRow } from "../domain/activity";
 export interface SrsCardRow {
   /** Stable content ID (src/content/ids.ts), never an array position. */
   id: string;
@@ -60,7 +62,7 @@ export interface SessionRow {
 }
 
 export const DB_NAME = "nihoncode";
-export const DB_VERSION = 5;
+export const DB_VERSION = 6;
 
 // VOCAB_N5_REKEYS lives in ./vocab-migration (the map and its version(4)
 // upgrade travel together; db.ts would otherwise import its own dependent).
@@ -72,6 +74,7 @@ export class NihonDb extends Dexie {
   grammarState!: Table<GrammarStateRow, string>;
   sessions!: Table<SessionRow, number>;
   jlptProgress!: Table<JlptProgressRow, string>;
+  activity!: Table<ActivityRow, string>;
 
   constructor(name: string = DB_NAME) {
     super(name);
@@ -100,6 +103,19 @@ export class NihonDb extends Dexie {
     this.version(5).stores({
       jlptProgress: "id",
     });
+    // Activity contributions (PRD §10.13): new table keyed by stable session
+    // id. Legacy sessions rows survive as activity with their recorded kind
+    // mapped to a category and the local date derived from the completion
+    // timestamp at migration time (docs/decisions.md legacy-history policy).
+    this.version(6)
+      .stores({
+        activity: "id, date",
+      })
+      .upgrade(async (tx) => {
+        const legacy = (await tx.table("sessions").toArray()) as SessionRow[];
+        const rows = legacyActivityRows(legacy);
+        if (rows.length) await tx.table("activity").bulkPut(rows);
+      });
   }
 }
 

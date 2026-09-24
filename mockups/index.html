@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0a0c" />
+    <title>Kita — study console mockup</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <aside class="rail">
+      <a class="brand" href="#home"><span lang="ja">キタ</span><b>KITA</b></a>
+      <nav aria-label="Main navigation">
+        <a href="#home"><span aria-hidden="true">⌂</span>Home</a>
+        <a href="#progress"><span aria-hidden="true">▥</span>Progress</a>
+        <a href="#learn"><span aria-hidden="true">本</span>Learn</a>
+        <a href="#config"><span aria-hidden="true">⚙</span>Config</a>
+      </nav>
+      <div class="rail-note">
+        <span lang="ja">毎日、少しずつ。</span>
+        <p>A little, every day.</p>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <span>JAPANESE PRACTICE <span class="muted">/ STUDY CONSOLE</span></span
+        ><span class="demo">DESIGN PREVIEW · SAMPLE DATA</span>
+      </header>
+      <main id="main" tabindex="-1"></main>
+      <footer>
+        <span>キタ <span class="muted">/ No account. Your own pace.</span></span
+        ><label
+          >Preview page
+          <select id="page-switch" aria-label="Preview page">
+            <option value="home">Home</option>
+            <option value="progress">Progress</option>
+            <option value="learn">Learn</option>
+            <option value="config">Config</option>
+            <option value="setup">Practice setup</option>
+            <option value="practice">Practice</option>
+            <option value="results">Practice results</option>
+            <option value="grammar">Grammar lesson</option>
+            <option value="jlpt">JLPT practice</option>
+          </select></label
+        >
+      </footer>
+    </div>
+    <dialog id="exit-dialog">
+      <h2>Leave this practice?</h2>
+      <p>Your answers in this preview session will be discarded.</p>
+      <div class="actions">
+        <button id="resume">Keep practicing</button
+        ><button id="leave" class="primary">Leave session</button>
+      </div>
+    </dialog>
+  </body>
+</html>

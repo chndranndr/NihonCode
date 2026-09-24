@@ -7,19 +7,35 @@ import { useLevel } from "../../components/level";
 import { buildDueQueue, dueCount, srsStats, type SrsStats } from "../../storage/srsRepo";
 import { db } from "../../storage/db";
 import { masteryByItem } from "../../storage/progressRepo";
-import { Panel } from "../../components/Panel";
+import { activityRows } from "../../storage/progressRepo";
+import type { ActivityRow } from "../../domain/activity";
+import { compactWindow } from "../../domain/activity";
+import { dayKey } from "../../domain/progress";
+import { ActivityCalendar } from "../../components/ActivityCalendar";
 import { useTheme } from "../../components/theme";
 import { loadPrefs } from "../../storage/prefs";
 import { ENABLED_LEVELS } from "../../content/loaders";
 import type { JlptLevel } from "../../content/ids";
 
+const FUJI = `                 /\\
+              . /  \\ .
+           .   / /\\ \\   .
+        ._____/ /  \\ \\_____.
+      ─────────────────────────
+            毎日、少しずつ。`;
+
+type KanjiBand = "mastered" | "learning" | "unseen";
+
 interface DashboardState {
   action: RoutineAction | null;
+  due: number;
+  fresh: number;
   stats: SrsStats | null;
   grammarDone: number;
   grammarTotal: number;
-  kanjiMastered: number;
-  kanjiTotal: number;
+  grammarTitle: string | null;
+  kanjiBands: { char: string; band: KanjiBand }[];
+  activity: ActivityRow[];
 }
 
 export function DashboardPage() {
@@ -28,11 +44,14 @@ export function DashboardPage() {
   const { pools, level, setLevel } = useLevel();
   const [state, setState] = useState<DashboardState>({
     action: null,
+    due: 0,
+    fresh: 0,
     stats: null,
     grammarDone: 0,
     grammarTotal: 0,
-    kanjiMastered: 0,
-    kanjiTotal: 0,
+    grammarTitle: null,
+    kanjiBands: [],
+    activity: [],
   });
 
   useEffect(() => {
@@ -44,12 +63,16 @@ export function DashboardPage() {
       const queue = await buildDueQueue(poolIds, prefs.srs.dailyNewCap);
       const rows = await db().grammarState.bulkGet(pools!.grammar.map((l) => l.id));
       const grammarDone = rows.filter((r) => r?.status === "completed").length;
+      const nextLesson = pools!.grammar.find((_l, i) => rows[i]?.status !== "completed") ?? null;
       const stats = await srsStats(poolIds);
-      let kanjiMastered = 0;
+      const kanjiBands: { char: string; band: KanjiBand }[] = [];
       for (const k of pools!.kanji) {
         const m = await masteryByItem(k.id);
-        if (m.attempts > 0 && m.accuracy >= 0.8) kanjiMastered += 1;
+        const band: KanjiBand =
+          m.attempts === 0 ? "unseen" : m.accuracy >= 0.8 ? "mastered" : "learning";
+        kanjiBands.push({ char: k.char, band });
       }
+      const activity = await activityRows();
       if (cancelled) return;
       setState({
         action: routineAction({
@@ -57,11 +80,14 @@ export function DashboardPage() {
           newCardCount: queue.newCandidates.length,
           poolSize: poolIds.length,
         }),
+        due,
+        fresh: queue.newCandidates.length,
         stats,
         grammarDone,
         grammarTotal: pools!.grammar.length,
-        kanjiMastered,
-        kanjiTotal: pools!.kanji.length,
+        grammarTitle: nextLesson?.title ?? null,
+        kanjiBands,
+        activity,
       });
     }
     void compute();
@@ -80,131 +106,182 @@ export function DashboardPage() {
 
   const { action, stats } = state;
   const progress = xpProgress(prefs.progress.xp);
+  const today = dayKey(new Date());
+  const window = compactWindow(today);
+  const mastered = state.kanjiBands.filter((k) => k.band === "mastered").length;
+  const learning = state.kanjiBands.filter((k) => k.band === "learning").length;
+
+  const momentumLine =
+    state.due > 0
+      ? `${state.due} cards are ready for another look.`
+      : state.fresh > 0
+        ? `${state.fresh} new cards are waiting to be introduced.`
+        : "Nothing is due right now. A short drill keeps it moving.";
 
   return (
     <div className="dashboard" data-testid="dashboard">
-      <div className="status-strip" role="status">
-        <span className="micro-label">キタ NIHONCODE</span>
-        <span className="micro-label">LVL {level.toUpperCase()}</span>
-        <span className="micro-label" data-testid="streak">
-          STREAK {prefs.progress.streakDays}
-        </span>
-        <span className="micro-label" data-testid="xp">
-          XP {prefs.progress.xp}
-        </span>
+      <div className="page-head">
+        <div>
+          <p className="label">YOUR JAPANESE, A LITTLE EVERY DAY</p>
+          <h1>Welcome back.</h1>
+          <div className="status-strip" role="status">
+            <span className="micro-label">LVL {level.toUpperCase()}</span>
+            <span className="micro-label" data-testid="streak">
+              STREAK {prefs.progress.streakDays}
+            </span>
+            <span className="micro-label" data-testid="xp">
+              XP {prefs.progress.xp}
+            </span>
+          </div>
+        </div>
+        <pre className="fuji" aria-hidden="true">
+          {FUJI}
+        </pre>
       </div>
 
-      <div className="limit-row level-selector" role="radiogroup" aria-label="study level">
-        {(["n5", "n4", "n3", "n2", "n1"] as JlptLevel[]).map((l) => (
-          <button
-            key={l}
-            type="button"
-            aria-pressed={level === l}
-            disabled={!ENABLED_LEVELS.includes(l)}
-            title={ENABLED_LEVELS.includes(l) ? undefined : "enabled after its curation pass lands"}
-            onClick={() => setLevel(l)}
-          >
-            {l.toUpperCase()}
-          </button>
-        ))}
+      <div className="field" role="radiogroup" aria-label="study level">
+        <span>Study level</span>
+        <div className="segmented">
+          {(["n5", "n4", "n3", "n2", "n1"] as JlptLevel[]).map((l) => (
+            <button
+              key={l}
+              type="button"
+              aria-pressed={level === l}
+              disabled={!ENABLED_LEVELS.includes(l)}
+              title={
+                ENABLED_LEVELS.includes(l) ? undefined : "enabled after its curation pass lands"
+              }
+              onClick={() => setLevel(l)}
+            >
+              {l.toUpperCase()}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <section className="routine-card panel" data-testid="routine-card">
-        <h2 className="micro-label">DAILY ROUTINE</h2>
-        {action ? (
-          <Link
-            className="routine-cta primary"
-            data-testid="routine-cta"
-            to={
-              action.kind === "review" || action.kind === "new-cards"
-                ? "/learn/review"
-                : action.kind === "progress"
-                  ? "/progress"
-                  : `/learn/drill/${action.kind === "drill" ? action.mode : "kana"}`
-            }
-          >
-            {routineLabel(action)}
-          </Link>
-        ) : (
-          <p className="micro-label">LOADING…</p>
-        )}
-      </section>
-
-      <div className="dash-grid">
-        <Panel title="PRACTICE MODES">
-          <ul className="mode-grid">
-            <li>
-              <Link to="/learn/drill/kana">KANA</Link>
-            </li>
-            <li>
-              <Link to="/learn/drill/kanji">KANJI</Link>
-            </li>
-            <li>
-              <Link to="/learn/drill/vocab">VOCAB</Link>
-            </li>
-            <li>
-              <Link to="/learn/drill/numbers">NUMBERS</Link>
-            </li>
-            <li>
-              <Link to="/learn/drill/dates">DATES</Link>
-            </li>
-            <li>
-              <Link to="/learn/drill/conjugation">CONJUGATION</Link>
-            </li>
-          </ul>
-        </Panel>
-
-        <Panel title="SRS">
-          {stats ? (
-            <>
-              <p className="micro-label">
-                DUE {stats.due} / LEARNED {stats.learned} / TOTAL {stats.total}
-              </p>
-              <Link to="/stats">SRS STATISTICS</Link>
-            </>
+      <div className="grid-home">
+        <section className="panel routine" data-testid="routine-card">
+          <p className="label">TODAY’S PRACTICE</p>
+          <h2>Keep your Japanese moving.</h2>
+          <p className="muted">{momentumLine}</p>
+          {action ? (
+            <Link
+              className="button primary routine-cta"
+              data-testid="routine-cta"
+              to={
+                action.kind === "review" || action.kind === "new-cards"
+                  ? "/learn/review"
+                  : action.kind === "progress"
+                    ? "/progress"
+                    : `/learn/drill/${action.kind === "drill" ? action.mode : "kana"}`
+              }
+            >
+              {routineLabel(action)}
+            </Link>
           ) : (
             <p className="micro-label">LOADING…</p>
           )}
-        </Panel>
+          <span className="muted">Choose your session before you begin.</span>
+        </section>
 
-        <Panel title="GRAMMAR N5">
-          <p className="micro-label" data-testid="grammar-position">
-            {state.grammarTotal > 0 && state.grammarDone >= state.grammarTotal
-              ? `ALL ${state.grammarTotal} COMPLETE`
-              : `LESSON ${Math.min(state.grammarDone + 1, state.grammarTotal || 1)}/${state.grammarTotal || "—"}`}
+        <section className="panel">
+          <div className="panel-head">
+            <h2>Your momentum</h2>
+          </div>
+          <ActivityCalendar
+            rows={state.activity}
+            startKey={window.start}
+            endKey={window.end}
+            todayKey={today}
+            compact
+          />
+          <Link className="text-link" to="/progress">
+            View full activity →
+          </Link>
+        </section>
+
+        <section className="panel span-all">
+          <div className="panel-head">
+            <h2>Choose a practice</h2>
+          </div>
+          <div className="practice-list">
+            {[
+              ["あ", "Kana", "Hiragana & katakana", "kana"],
+              ["漢", "Kanji", "Characters & readings", "kanji"],
+              ["語", "Vocabulary", "Words & meanings", "vocab"],
+              ["123", "Numbers", "Counting practice", "numbers"],
+              ["日", "Dates", "Days & dates", "dates"],
+              ["活", "Conjugation", "Verbs & adjectives", "conjugation"],
+            ].map(([glyph, name, desc, mode]) => (
+              <Link key={mode} className="practice-link" to={`/learn/drill/${mode}`}>
+                <span lang={mode === "numbers" ? undefined : "ja"}>{glyph}</span>
+                <span>
+                  <b>{name}</b>
+                  <small>{desc}</small>
+                </span>
+                <span className="arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <div className="compact-grid">
+        <section className="panel">
+          <div className="panel-head">
+            <h2>{`Grammar · ${level.toUpperCase()}`}</h2>
+          </div>
+          <div className="lesson-preview">
+            <p className="label" data-testid="grammar-position">
+              {state.grammarTotal > 0 && state.grammarDone >= state.grammarTotal
+                ? `ALL ${state.grammarTotal} COMPLETE`
+                : `LESSON ${Math.min(state.grammarDone + 1, state.grammarTotal || 1)}/${state.grammarTotal || "—"}`}
+            </p>
+            <p className="muted">
+              {state.grammarTitle ?? "Every grammar lesson at this level is complete."}
+            </p>
+            {state.grammarTitle && (
+              <Link className="button" to="/learn">
+                Continue lesson →
+              </Link>
+            )}
+          </div>
+        </section>
+
+        <section className="panel">
+          <div className="panel-head">
+            <h2>Your kanji</h2>
+          </div>
+          <div className="kanji-map" aria-hidden="true">
+            {state.kanjiBands.map((k, i) => (
+              <span key={`${k.char}-${i}`} className={`kanji-cell ${k.band}`} lang="ja">
+                {k.char}
+              </span>
+            ))}
+          </div>
+          <p className="map-legend">
+            <span className="mastered">MASTERED</span>
+            <span className="learning">LEARNING</span>
+            <span className="unseen">UNSEEN</span>
           </p>
-          <Link to="/learn">OPEN LIBRARY</Link>
-        </Panel>
-
-        <Panel title="JLPT PRACTICE">
-          <p className="micro-label">{`N5–N1 SETS · ${level.toUpperCase()} ACTIVE`}</p>
-          <Link to="/learn/jlpt">OPEN EXERCISE SETS</Link>
-        </Panel>
-        <Panel title="PROGRESS">
-          <p className="micro-label">
-            LEVEL {progress.level} · {progress.intoLevel}/{progress.levelSpan} XP
-          </p>
-        </Panel>
-
-        <Panel title="CONJUGATION">
-          <p className="micro-label">N5 VERB & ADJECTIVE FORMS</p>
-          <Link to="/learn/drill/conjugation">OPEN DRILL</Link>
-        </Panel>
-
-        <Panel title="KANJI MAP">
           <p className="micro-label" data-testid="kanji-map-compact">
-            MASTERED {state.kanjiMastered}/{state.kanjiTotal || "—"}
+            MASTERED {mastered}/{state.kanjiBands.length || "—"} · LEARNING {learning}
           </p>
-          <Link to="/progress">FULL MAP + INSPECTOR</Link>
-        </Panel>
+          <Link className="text-link" to="/progress">
+            Full map + inspector →
+          </Link>
+        </section>
+      </div>
 
-        <Panel title="SETTINGS">
-          <p className="micro-label">
-            THEME {liveTheme.theme.toUpperCase()} · ACCENT {liveTheme.accent.toUpperCase()} · CAP{" "}
-            {prefs.srs.dailyNewCap}
-          </p>
-          <Link to="/config">OPEN CONFIG</Link>
-        </Panel>
+      <div className="jlpt-strip">
+        <Link to="/learn/jlpt">Explore JLPT practice →</Link>
+        <span className="muted">
+          All five JLPT categories ship locally.
+          {stats ? ` · LEVEL ${progress.level}` : ""}
+          {` · THEME ${liveTheme.theme.toUpperCase()}`}
+        </span>
       </div>
     </div>
   );

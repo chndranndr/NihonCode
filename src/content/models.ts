@@ -63,6 +63,34 @@ export interface GrammarLesson {
 
 export type JlptCategory = "grammar" | "kanji" | "listening" | "reading" | "vocabulary";
 
+/** A pool media reference: remote provenance URL plus the local file the app
+ * actually uses. audit-clean proves the local file exists. */
+export interface JlptImage {
+  url: string;
+  /** Pool-relative path under data/clean/ ("images/<level>/<category>/…"). */
+  localPath: string;
+}
+
+export interface JlptAudioSpan {
+  start: number;
+  end: number;
+}
+
+/** Explicit per-question audio binding. Only present when the mapping is
+ * evidenced (measured concatenation spans), never guessed from indices. */
+export interface JlptAudioRef {
+  url: string;
+  localPath: string;
+  span: JlptAudioSpan;
+}
+
+export interface JlptPassage {
+  id: string;
+  title: string;
+  text: string;
+  images: JlptImage[];
+}
+
 export interface JlptQuestion {
   id: string;
   /** Position within the set; not unique, never used as a key. */
@@ -72,6 +100,22 @@ export interface JlptQuestion {
   /** Index into options; every pooled question is keyed (audit-clean). */
   answerIndex: number;
   answerText: string;
+  /** Restored from the source; shown after answering. Absent for listening,
+   * where the source has none. */
+  explanation?: string;
+  /** The full sentence with the answer in place, where the source had one. */
+  answeredSentence?: string;
+  images: JlptImage[];
+  /** Resolves against the owning set's passages; null when none. */
+  passageId: string | null;
+  /** Explicit audio binding; null when no evidenced mapping exists. */
+  audio: JlptAudioRef | null;
+}
+
+/** Set-level audio file (concatenated track) without a per-question span. */
+export interface JlptSetAudioRef {
+  url: string;
+  localPath: string;
 }
 
 export interface JlptSet {
@@ -80,6 +124,9 @@ export interface JlptSet {
   setNumber: number;
   title: string;
   questions: JlptQuestion[];
+  passages: JlptPassage[];
+  /** Set-level audio; the per-question binding lives on the question. */
+  audio: JlptSetAudioRef[];
 }
 
 /** practice_core.json reverse index: which JLPT questions touch a kanji or

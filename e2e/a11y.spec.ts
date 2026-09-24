@@ -42,6 +42,54 @@ test("main routes expose landmarks and labeled controls", async ({ page }) => {
   await expect(page.getByTestId("srs-stats")).toBeVisible();
 });
 
+test("mobile layout never widens the initial containing block", async ({ page }) => {
+  // A nowrap row (e.g. the footer ticker) that exceeds the viewport widens
+  // the mobile ICB: the page zooms out and every touch hit-test breaks.
+  for (const route of ["/", "/learn/drill/kana", "/progress", "/config"]) {
+    await page.goto(route);
+    await page.waitForSelector(".rail");
+    const widths = await page.evaluate(() => ({
+      inner: innerWidth,
+      scroll: document.documentElement.scrollWidth,
+    }));
+    expect(widths.scroll, `${route} widened the ICB`).toBeLessThanOrEqual(widths.inner);
+  }
+});
+
+test("calendar days move with arrow keys and keep one tab stop", async ({ page }) => {
+  const today = new Date();
+  // The annual grid cannot demonstrate a +7-day move in the first week of a
+  // year; skip honestly rather than assert a vacuous no-op.
+  test.skip(today.getMonth() === 0 && today.getDate() < 15, "no in-year +7 target");
+  const key = (d: Date) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const start = key(new Date(today.getFullYear(), today.getMonth(), today.getDate() - 8));
+  const right = key(new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1));
+  const down = key(today);
+  await page.goto("/progress");
+  const grid = page.getByTestId("calendar-annual");
+  await expect(grid).toBeVisible();
+  const cells = grid.locator("button[data-day]");
+  await expect(cells.first()).toBeVisible();
+  const focusable = await cells.evaluateAll((els) => els.filter((e) => e.tabIndex === 0).length);
+  expect(focusable).toBe(1);
+  await cells.evaluateAll((els, k) => {
+    const target = els.find((e) => e.getAttribute("data-day") === k);
+    if (target) {
+      target.tabIndex = 0;
+      (target as HTMLElement).focus();
+    }
+  }, start);
+  await page.keyboard.press("ArrowRight");
+  await expect(page.evaluate(() => document.activeElement?.getAttribute("data-day"))).resolves.toBe(
+    right,
+  );
+  await page.keyboard.press("ArrowDown");
+  await expect(page.evaluate(() => document.activeElement?.getAttribute("data-day"))).resolves.toBe(
+    down,
+  );
+});
+
 test("indicators pair text with every status color", async ({ page }) => {
   // The reveal verdict pairs CORRECT/WRONG text with color; option states
   // pair the same text. Check the text is present, not color alone.

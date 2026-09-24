@@ -1,29 +1,29 @@
 /**
- * JLPT practice hub (PRD 10.17): the active level's categories and numbered
- * local sets, per-set progress from storage, live categories only. Listening
- * and reading stay behind honest locked panels until the owner decisions land
- * (docs/decisions.md); nothing dead, nothing faked.
+ * JLPT practice hub (PRD 10.17, redesign 2026-09-22, data-recon 2026-09-23):
+ * the active level's five categories and numbered local sets with per-set
+ * progress. Reading and listening ship now that passages, questions, and
+ * local media are restored (docs/decisions.md 2026-09-23).
  */
 
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useLevel } from "../../components/level";
-import { LockedPanel, Panel } from "../../components/Panel";
 import { LIVE_JLPT_CATEGORIES, loadJlptLevel, type JlptPool } from "../../content/loaders";
-import type { JlptCategory } from "../../content/models";
 import { jlptProgressMap } from "../../storage/jlptRepo";
 
-const CATEGORY_LABELS: Record<JlptCategory, string> = {
-  grammar: "GRAMMAR",
-  kanji: "KANJI",
-  listening: "LISTENING",
-  reading: "READING",
-  vocabulary: "VOCABULARY",
-};
+const CATEGORY_META: Record<string, { glyph: string; label: string; desc: string; route: string }> =
+  {
+    grammar: { glyph: "文", label: "Grammar", desc: "Sentence patterns", route: "grammar" },
+    kanji: { glyph: "漢", label: "Kanji", desc: "Character readings", route: "kanji" },
+    vocabulary: { glyph: "語", label: "Vocabulary", desc: "Word meanings", route: "vocabulary" },
+    reading: { glyph: "読", label: "Reading", desc: "Passages and questions", route: "reading" },
+    listening: { glyph: "聴", label: "Listening", desc: "Audio exercises", route: "listening" },
+  };
 
 export function JlptPage() {
   const { level } = useLevel();
   const { category = "" } = useParams();
+  const navigate = useNavigate();
   const [pool, setPool] = useState<JlptPool | null>(null);
   const [progress, setProgress] = useState<Map<
     string,
@@ -35,7 +35,14 @@ export function JlptPage() {
     void Promise.all([loadJlptLevel(level), jlptProgressMap()]).then(([p, prog]) => {
       if (cancelled) return;
       setPool(p);
-      setProgress(prog);
+      setProgress(
+        new Map(
+          [...prog.entries()].map(([id, row]) => [
+            id,
+            { bestCorrect: row.bestCorrect, total: row.total },
+          ]),
+        ),
+      );
     });
     return () => {
       cancelled = true;
@@ -49,59 +56,91 @@ export function JlptPage() {
   const cat = LIVE_JLPT_CATEGORIES.find((c) => c === category) ?? null;
 
   if (cat) {
+    const meta = CATEGORY_META[cat];
     const sets = pool[cat].items;
     return (
       <div className="jlpt-page" data-testid="jlpt-sets">
-        <h2 className="micro-label">
-          {level.toUpperCase()} · {CATEGORY_LABELS[cat]} SETS
-        </h2>
-        <ul className="set-list">
+        <button className="back" type="button" onClick={() => navigate("/learn/jlpt")}>
+          ← All categories
+        </button>
+        <div className="page-head">
+          <div>
+            <p className="label">
+              キタ / {level.toUpperCase()} · {meta.label.toUpperCase()}
+            </p>
+            <h1>{meta.label} sets</h1>
+            <p className="description">
+              {sets.length} sets · work through each question, then review your answers.
+            </p>
+          </div>
+        </div>
+        <div>
           {sets.map((s) => {
             const prog = progress.get(`jlpt:${level}:${cat}:${s.setNumber}`);
             return (
-              <li key={s.setNumber}>
-                <Link to={`/learn/jlpt/${cat}/${s.setNumber}`} data-testid="set-link">
-                  <span>{`EXERCISE ${String(s.setNumber).padStart(2, "0")}`}</span>
-                  <span className="micro-label">
-                    {s.questions.length} QUESTIONS
+              <Link
+                key={s.setNumber}
+                className="jlpt-set"
+                data-testid="set-link"
+                to={`/learn/jlpt/${cat}/${s.setNumber}`}
+              >
+                <span lang="ja" aria-hidden="true">
+                  {meta.glyph}
+                </span>
+                <span>
+                  <b>{`Exercise ${String(s.setNumber).padStart(2, "0")}`}</b>
+                  <small>
+                    {s.questions.length} questions
                     {prog ? ` · BEST ${prog.bestCorrect}/${prog.total}` : ""}
-                  </span>
-                </Link>
-              </li>
+                  </small>
+                </span>
+                <span className="micro-label">{prog ? "COMPLETED" : "NOT ATTEMPTED"}</span>
+              </Link>
             );
           })}
-        </ul>
-        <Link to="/learn/jlpt">← ALL CATEGORIES</Link>
+          {sets.length === 0 && (
+            <p className="empty">No {meta.label.toLowerCase()} sets at this level yet.</p>
+          )}
+        </div>
       </div>
     );
   }
 
   return (
     <div className="jlpt-page" data-testid="jlpt">
-      <h2 className="micro-label">JLPT PRACTICE · {level.toUpperCase()}</h2>
-      <div className="dash-grid">
+      <button className="back" type="button" onClick={() => navigate("/learn")}>
+        ← Learning library
+      </button>
+      <div className="page-head">
+        <div>
+          <p className="label">キタ / {level.toUpperCase()} STUDY</p>
+          <h1>JLPT practice.</h1>
+          <p className="description">
+            Choose a category and a set. Work through each question, then review your answers.
+          </p>
+        </div>
+      </div>
+      <div className="jlpt-categories" aria-label="JLPT category">
         {LIVE_JLPT_CATEGORIES.map((c) => {
+          const meta = CATEGORY_META[c];
           const sets = pool[c].items;
           const questions = sets.reduce((n, s) => n + s.questions.length, 0);
           return (
-            <Panel key={c} title={CATEGORY_LABELS[c]}>
-              <p className="micro-label">
-                {sets.length} SETS · {questions} QUESTIONS
-              </p>
-              <Link to={`/learn/jlpt/${c}`}>
-                {questions > 0 ? "BROWSE SETS" : "NO SETS AT THIS LEVEL"}
-              </Link>
-            </Panel>
+            <button
+              key={c}
+              type="button"
+              data-testid={`jlpt-category-${c}`}
+              onClick={() => navigate(`/learn/jlpt/${c}`)}
+              aria-pressed={false}
+            >
+              <span lang="ja">{meta.glyph}</span>
+              <b>{meta.label}</b>
+              <small>
+                {meta.desc} · {questions} questions
+              </small>
+            </button>
           );
         })}
-        <LockedPanel
-          title="LISTENING"
-          reason="Locked: the bundled audio's per-question correspondence is unconfirmed (all files are concatenation candidates). Ships once the owner confirms the listening sample."
-        />
-        <LockedPanel
-          title="READING"
-          reason="Locked: every N5/N4 reading question references a dropped remote-image passage. Ships per the owner's keep+restore-text vs exclude decision."
-        />
       </div>
     </div>
   );
