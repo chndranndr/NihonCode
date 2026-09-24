@@ -7,9 +7,9 @@
 //
 // Enforced rules (import specifiers are resolved to repository paths, so the
 // rules are depth-independent — ../, ../../, and deeper all classify alike):
-//   1. data-gate: no src/ file may import raw data/generated or data/jlpt
-//      (frozen evidence), and only src/content/ may import data/clean
-//      (the app's single source of truth; docs/architecture.md rule 1).
+//   1. data-gate: no src/ file may import raw data/generated, data/jlpt, or
+//      data/jlpt-raw (comparison evidence), and only src/content/ may import
+//      data/clean (the app's single source of truth; docs/architecture.md rule 1).
 //   2. domain purity: no React, no DOM/BOM globals, no imports from
 //      app/, features/, components/, or storage/.
 //   3. content purity: no React, no imports from app/, features/, components/.
@@ -79,7 +79,12 @@ function add(file, line, rule, detail) {
 /** Classify a resolved repository-relative path into layer / data access. */
 function classify(absPath) {
   const r = relative(repoRoot, absPath).split(sep).join("/");
-  if (r.startsWith("data/generated/") || r.startsWith("data/jlpt/")) return { kind: "raw-data" };
+  if (
+    r.startsWith("data/generated/") ||
+    r.startsWith("data/jlpt/") ||
+    r.startsWith("data/jlpt-raw/")
+  )
+    return { kind: "raw-data" };
   if (r.startsWith("data/clean/")) return { kind: "clean-data" };
   if (!r.startsWith("src/")) return { kind: "external" };
   const segs = r.split("/");

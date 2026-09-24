@@ -2,6 +2,38 @@
 
 Append-only. Newest first. One entry per decision: what, why, where it binds.
 
+## 2026-09-23 — Content repair authorized: truncated explanations and wrong-sense lessons rewritten
+
+**Decision.** The owner authorized authoring proper content instead of shipping truncated or wrong-sense material ("is it possible to write the proper explanations/examples" — yes; non-commercial project). This overturns the earlier data-recon stance of "attach verbatim from the source, never fabricate": (1) 119 explanations truncated mid-sentence by the source website are being rewritten into complete ones grounded in each question's key and passage; (2) 40 wrong-sense graded grammar lessons (18/13/9 for N3/N2/N1) are getting new examples and quizzes that teach the lesson's actual pattern, plus the 11 quiz stems missing their （　） blank; (3) the 4 explanations removed earlier for contradicting their own key (SecondCheckFixes) are authored instead of left empty. Lesson/quiz/question IDs are untouched — qhash derives from prompt+options+answer_index only — so no Dexie migration or rekey is needed, and graded flags/floors stay frozen.
+
+**Why.** Half-finished explanations teach nothing at the moment a learner needs help, and wrong-sense examples actively mis-teach. The owner's authorization replaces the verbatim-only constraint for this pass; each rewrite is still grounded in the keyed answer rather than invented.
+
+**Binds.** data/clean/jlpt/_/{grammar,kanji,vocabulary,reading}.json, data/clean/grammar_n{3,2,1}.json, .recon/findings/Expl_.tsv + GramEx*.tsv, docs/data-quality.md ledger.
+
+## 2026-09-23 — amgidex grammar lists: owner permits non-commercial use
+
+**Decision.** NihonCode is a non-commercial project; the owner permits the amgidex grammar lesson lists to ship in the app. sources.ts flips the amgidex row to cleared with the license left "unspecified" — no author license exists, and the honest note says commercial or public redistribution of those lists still needs the author's permission. This matches the JLPT precedent (owner confirmation clears the row; the license field records what was actually granted).
+
+**Why.** The owner answered the pending rights question for the project's actual use. Recording "licensed" without a license would be the doc lie the repo forbids; recording "pending" after the owner's decision would be stale.
+
+**Binds.** src/content/sources.ts, docs/attribution.md, docs/quality.md (redistribution gap row closes for non-commercial scope).
+
+## 2026-09-23 — data-recon: reading/listening unlocked, local media contract, comparison datasets
+
+**Decision.** The owner's data-recon brief (data-recon.md, 2026-09-23) rescinded the two locks that kept reading and listening behind honest panels: the audio sample is confirmed (owner declared the raw audio correct and redistribution rights held) and reading passages are restored from the source rather than excluded. Five JLPT categories now ship. Media keeps provenance plus local runtime paths: questions and passages carry `images: [{url, local_path}]` and audio keeps `{url, local_path}`; the app resolves local paths only (src/content/assets.ts), audit-clean proves every referenced local file exists and rejects bare `image_urls`. Listening questions bind audio explicitly per question with spans derived by uniform division of the ffprobe-measured track duration, applied only where the set's source-URL count equals its question count (the accepted Phase-2 convention, data/clean/audio-evidence.json); boundaries are NOT acoustically verified (no silencedetect pass). The 10 sets where the counts differ ship set-level audio only, never an index guess. Explanations and answered sentences are restored from the source where present; listening has none and says so. The non-author second-check (findings/SecondCheckFixes.tsv) confirmed four restored explanations contradicted their own shipped key — those were removed (the brief forbids fabricating replacements); 41 graded grammar lessons were flagged wrong-sense by the grammar auditor; the non-author reviewer confirmed the six sampled classifications (all genuine substring-match false positives from the amgidex source) — the remaining 35 are the auditor's classification, not independently confirmed — and all 41 are blocked pending reviewer-authored replacement content.
+
+**ID policy.** Unchanged questions keep their frozen IDs. Restored questions reuse the ID recorded in `dropped[]` verbatim. New IDs mint only for questions with no prior identity via the documented FNV-1a deriver (scripts/lib/qhash.mjs); the original Phase-2 deriver was retired at b15c717 and is not reconstructed. `jlptProgress` is keyed per set (`jlpt:<level>:<category>:<setNumber>`), so restored questions change no progress rows.
+
+**Comparison datasets.** `data/generated/` and `data/jlpt-raw/` return as read-only comparison input. `data/jlpt-raw/` JSON is tracked (provenance for the reconciliation); its audio tree is git-ignored because it is byte-identical to `data/clean/audio/` (184/184 measured). `data/generated/` stays untracked retired evidence. check-arch blocks any `src/` import of all three.
+
+**Rights.** The owner confirmed redistribution rights for the JLPT assets (docs/attribution.md); the amgidex grammar lists remain pending and still block public release.
+
+**Binds.** src/content/{models,gate,loaders,assets}.ts, src/features/jlpt/*, scripts/audit-clean.mjs (media contract + passage linkage), scripts/lib/qhash.mjs, scripts/check-arch.mjs (jlpt-raw), .gitignore, e2e/journey.spec.ts (five-category assertions), docs/{attribution,architecture,data-quality,quality}.md.
+
+## 2026-09-22 — Synchronize approved redesign documentation
+
+Owner requested design-system.md, DESIGN.md and .impeccable artifacts be synchronized before agent implementation. The current HTML mockup is visual authority for all nine views; root mockup.png and existing review screenshots remain historical assets. Refreshed target tokens, component previews and surface briefs replace conflicting launch-only design instructions; AGENTS.md and development handoffs point to the same authority. Production redesign integration remains pending. This decision does not unlock Listening/Reading, alter curated content, or claim production verification. Prior briefs remain recoverable in Git history.
+
 ## 2026-09-21 — Phase 3 close: integrated-head verification and the PRD delta list
 
 **Decision.** Task 9 closes Phase 3. Final integrated-head state (measured, not claimed): `npm run check` green (typecheck + lint + format + arch + taste + docs + audit-clean self-test + audit-clean), 119 unit tests green, 38 e2e across desktop and mobile (journey + smoke + a11y, incl. the CLS layout-shift measurement), `npm run doctor --with-eval` 5/5 pass, CI green on push, production build code-split with gated content provably absent. A new a11y spec pins landmarks, labeled controls, and text-paired indicators on the main routes; the CLS acceptance line is measured (< 0.05) rather than assumed. The PRD delta list (docs/quality.md "PRD owner edit list (Phase 3)") is prepared for the owner; PRD.md itself is untouched (owner-authored). Open owner items are unchanged in substance: listening audio-sample confirmation, reading keep+restore vs exclude, redistribution clearance — all recorded in docs/data-quality.md open items.
@@ -321,6 +353,26 @@ Three sub-decisions were made in the same change:
 **Why.** No backend, no telemetry vendor, and the honest current surface is boot/error signals plus e2e-capturable records. Metrics and traces would be speculative infrastructure for an app that has no features yet; the manifest records observability as partial with this reason.
 
 **Binds.** src/observability/logger.ts (tested), e2e/smoke.spec.ts asserts the boot record.
+
+## 2026-09-22 — Contribution calendar and four-axis study activity
+
+**Decision.** At the owner's request, replace Home's Your momentum and Progress weekly bar presentation with GitHub-style contribution calendars; add a four-axis activity overview on Progress. The owner explicitly authorized updating PRD and related documents. The reference image supplies composition, not GitHub-specific activity categories.
+
+**Design interpretation.** Count completed sessions across all levels. Home spans 91 days; Progress's calendar-year selector scopes both its heatmap and the Drills/SRS Review/Grammar/JLPT breakdown. Use fixed bins and a fixed 0–100% axis scale. PRD §10.13 contains the exact semantics and legacy-data policy.
+
+**Status.** HTML mockup with deterministic sample history only. Production data integration is pending; no dataset or learning-progress mutation occurs. This supersedes the surface brief's original weekly-bars-only constraint for the new design without rewriting the historical MVP completion record.
+
+**Binds.** PRD §10.1/§10.13, PRODUCT.md, implementation_plan.md extension, docs/design-system.md, dashboard/progress briefs. Verification and remaining production scope are recorded in docs/quality.md.
+
+## 2026-09-22 — Redesign production integration and the activity storage contract
+
+**Decision.** The approved nine-view HTML mockup is integrated into production `src/` (shell, tokens, all views) under UI_IMPLEMENTATION_PROMPT.md. Activity contributions live in a new Dexie `activity` table (version 6) keyed by a stable session id: `{ id, category: drill|srs|grammar|jlpt, date (local, captured at completion), ts }`. `recordSession(sessionId, kind, …)` maps kind→category in one place and is idempotent per session id inside one transaction; callers mint the id at run start (`newSessionId`), so retries are new sessions and double-saves are no-ops. The v6 upgrade copies legacy `sessions` rows into `activity` with derived categories and a local date frozen at migration time; nothing is fabricated from XP. Backup schema v2 carries `activity` and imports v1 documents without it.
+
+**Why.** PRD §10.13 requires one contribution per completed session with a stable identity, exclusive category, and captured local date; the old `sessions` table had none of the three. A single mapping function keeps the four categories exclusive (JLPT never counts as drill). Idempotency by key makes double-click and effect-replay safe without caller-side locks. Backup import applies the same legacy derivation when a document carries no `activity` array (schema v1), so a restored pre-v6 backup shows the same calendar history as an in-place v6 migration; documents that carry `activity` are trusted as-is to avoid double counting.
+
+**Conflicts resolved by authority.** Quadrant axis order follows PRD §10.13 (Drills left, SRS top, JLPT right, Grammar bottom), not the mockup's Grammar-right/JLPT-bottom. Production token names (`--ink-dim`, `--hairline`, `--accent-*`) and the five accents are kept; mockup values are adopted and mockup names aliased. The footer ticker and key legend stay hidden below 768px: their `white-space: nowrap` widens the mobile initial containing block, zooming the page out and breaking every touch hit-test (e2e a11y guard pins ICB width).
+
+**Binds.** src/storage/db.ts (v6), src/storage/progressRepo.ts, src/storage/backup.ts (schema 2), src/domain/activity.ts, src/components/ActivityCalendar.tsx, src/components/ActivityQuadrant.tsx, e2e/a11y.spec.ts (ICB + calendar-keyboard guardrails). Evidence: docs/quality.md "Redesign integration", `.evidence/after/`.
 
 ## Prior (owner-authored, recorded elsewhere)
 

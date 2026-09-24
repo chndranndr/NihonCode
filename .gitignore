@@ -29,3 +29,11 @@ Thumbs.db
 
 # Curation scratch (provenance only; adjudications.json is the tracked record)
 curation/findings/
+
+# Comparison datasets (data-recon 2026-09-23): jlpt-raw JSON is tracked provenance;
+# its audio duplicates data/clean/audio byte-for-byte (184/184 identical) and stays out.
+data/jlpt-raw/audio/
+# data/generated is retired frozen evidence; intentionally untracked.
+# data-recon session evidence (scratch; findings summarized in docs/decisions.md)
+.recon/
+.audit/

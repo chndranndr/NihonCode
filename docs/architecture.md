@@ -18,9 +18,9 @@ src/
   components/    shared UI
   observability/ structured logging seam (exists now) — dependency-free leaf
 data/
-  generated/     source content (untrusted input, read-only)
-  jlpt/          source exercises + audio (untrusted input, read-only)
-  clean/         Phase 2 output: normalized, validated, ID-stamped datasets
+  generated/     retired frozen evidence (untracked comparison input)
+  jlpt-raw/      raw scrape: JSON tracked as provenance, audio ignored (duplicate of clean)
+  clean/         the app's single source of truth: graded pools, JLPT sets, local media
 ```
 
 `observability/` is part of the binding layout of DEVELOPMENT_PROMPT.md section 3, recorded as a decision (docs/decisions.md). It is a leaf every layer may import, and it imports nothing from the repo. `scripts/check-arch.mjs` enforces the matrix with default-deny: a top-level `src/<dir>/` outside the matrix is a violation, so an unclassified layer can never pass silently.
@@ -29,7 +29,7 @@ data/
 
 `scripts/check-arch.mjs` resolves every relative import to a repository path (depth-independent) and fails the build on violations:
 
-1. **The data gate is clean-only.** The app's single source of truth is the committed `data/clean/`, imported only by `content/loaders.ts`; `check-arch` rejects any `src/` import of `data/clean` outside content, and of `data/generated`/`data/jlpt` anywhere (those raw dirs were retired at the 2026-09-21 cutover — the rule also blocks reintroducing them). Raw JSON never reaches a component; components and features consume typed models emitted by the gate.
+1. **The data gate is clean-only.** The app's single source of truth is the committed `data/clean/`, imported only by `content/loaders.ts`; `check-arch` rejects any `src/` import of `data/clean` outside content, and of `data/generated`/`data/jlpt`/`data/jlpt-raw` anywhere (comparison evidence, never runtime input). Raw JSON never reaches a component; components and features consume typed models emitted by the gate.
 2. **domain/ is pure.** No React imports, no DOM/BOM globals (`document`, `window`, `localStorage`, `indexedDB`, `navigator`), no imports from `app/`, `features/`, `components/`, or `storage/`. Everything in domain is unit-testable without React.
 3. **content/ is pure.** No React, no imports from the UI layers; it owns parsing, normalization, flagging, and ID stamping only.
 4. **Features do not import across each other.** `features/drills` must not import `features/grammar`. Shared logic goes to `domain/`; shared UI goes to `components/`.

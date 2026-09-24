@@ -1,0 +1,1824 @@
+[
+  {
+    "title": "JLPT N5 – Kanji Exercise 01",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-1/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "来月",
+        "options": ["くげつ", "らいがつ", "くがつ", "らいげつ"],
+        "answer_index": 4,
+        "answer_text": "らいげつ",
+        "answered_sentence": "来月: らいげつ",
+        "explanation": "来 is read らい (on'yomi) and 月 for months is always がつ, so 来月 (next month) is らいげつ."
+      },
+      {
+        "number": 2,
+        "prompt": "七月",
+        "options": ["しちがつ", "しちげつ", "なのがつ", "なのげつ"],
+        "answer_index": 1,
+        "answer_text": "しちがつ",
+        "answered_sentence": "七月: しちがつ",
+        "explanation": "七 is read しち and 月 for months is がつ, so 七月 (July) is しちがつ; げつ is only for the standalone word 'moon' or some rare compounds."
+      },
+      {
+        "number": 3,
+        "prompt": "木よう日",
+        "options": ["きにょうび", "すいようび", "かようび", "もくようび"],
+        "answer_index": 4,
+        "answer_text": "もくようび",
+        "answered_sentence": "木よう日: もくようび",
+        "explanation": "In 曜日 compounds, the days of the week use on'yomi: 木 (もく) + ようび = もくようび (Thursday)."
+      },
+      {
+        "number": 4,
+        "prompt": "九時",
+        "options": ["くうじ", "きゅじ", "くじ", "きゅうじ"],
+        "answer_index": 3,
+        "answer_text": "くじ",
+        "answered_sentence": "九時: くじ",
+        "explanation": "九 is read く and 時 (o'clock) is じ, giving くじ (nine o'clock); the elongated きゅう reading is not used here."
+      },
+      {
+        "number": 5,
+        "prompt": "ふうとうに",
+        "options": ["お金", "が", "八万円入って", "いました。"],
+        "answer_index": 4,
+        "answer_text": "いました。",
+        "answered_sentence": "お金: おかね",
+        "explanation": "The complete sentence is ふうとうにおかねがはちまんえんはいっていました ('80,000 yen was in the envelope'). いました is the polite past of います, used for something existing in a place."
+      },
+      {
+        "number": 5,
+        "prompt": "お金",
+        "options": ["おちゃ", "おかし", "おさら", "おかね"],
+        "answer_index": 4,
+        "answer_text": "おかね",
+        "answered_sentence": "お金: おかね",
+        "explanation": "The complete sentence is ふうとうにおかねがはちまんえんはいっていました ('80,000 yen was in the envelope'). いました is the polite past of います, used for something existing in a place."
+      },
+      {
+        "number": 6,
+        "prompt": "八万円",
+        "options": [
+          "はちまんえん",
+          "はっせんえん",
+          "はちばんえん",
+          "はっけんえん"
+        ],
+        "answer_index": 1,
+        "answer_text": "はちまんえん",
+        "answered_sentence": "八万円: はちまんえん",
+        "explanation": "お金 is the polite/common word for 'money': the prefix お + 金 read with kun'yomi かね."
+      },
+      {
+        "number": 7,
+        "prompt": "入って",
+        "options": ["いれって", "いって", "はって", "はいって"],
+        "answer_index": 4,
+        "answer_text": "はいって",
+        "answered_sentence": "入って: はいって",
+        "explanation": "八 is はち, 万 is まん, 円 is えん, so 八万円 (80,000 yen) is はちまんえん."
+      },
+      {
+        "number": 8,
+        "prompt": "天気",
+        "options": ["げんき", "けんき", "てんき", "でんき"],
+        "answer_index": 3,
+        "answer_text": "てんき",
+        "answered_sentence": "天気: てんき",
+        "explanation": "入 is read はい (on'yomi) in compounds; the te-form of 入る (はいる) is はいって (with gemination), meaning 'entered/was inside'."
+      },
+      {
+        "number": 9,
+        "prompt": "北",
+        "options": ["みなみ", "きた", "ひがし", "にし"],
+        "answer_index": 2,
+        "answer_text": "きた",
+        "answered_sentence": "北: きた",
+        "explanation": "天 is てん and 気 is き, so 天気 (weather) is てんき; げん/けん are wrong readings for 天, and でんき means 'electricity/light'."
+      },
+      {
+        "number": 10,
+        "prompt": "白い",
+        "options": ["たかい", "ひろい", "しろい", "おかい"],
+        "answer_index": 3,
+        "answer_text": "しろい",
+        "answered_sentence": "白い: しろい",
+        "explanation": "北 is read with kun'yomi きた, meaning 'north'; the other options are みなみ (south), ひがし (east), and にし (west)."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 02",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-2/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "この",
+        "options": ["山", "には", "百本", "のさくらがあります。"],
+        "answer_index": 4,
+        "answer_text": "のさくらがあります。",
+        "answered_sentence": "山: やま",
+        "explanation": "\"山\" is read \"やま\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 1,
+        "prompt": "山",
+        "options": ["まち", "むら", "かわ", "やま"],
+        "answer_index": 4,
+        "answer_text": "やま",
+        "answered_sentence": "山: やま",
+        "explanation": "\"山\" is read \"やま\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "百本",
+        "options": ["ひゃくぼん", "ひゃっぽん", "ひゃっぷん", "ひゃくふん"],
+        "answer_index": 2,
+        "answer_text": "ひゃっぽん",
+        "answered_sentence": "百本: ひゃっぽん",
+        "explanation": "\"百本\" is read \"ひゃっぽん\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "春",
+        "options": ["はる", "なつ", "あき", "ふゆ"],
+        "answer_index": 1,
+        "answer_text": "はる",
+        "answered_sentence": "春: はる",
+        "explanation": "\"春\" is read \"はる\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 4,
+        "prompt": "人",
+        "options": ["にん", "ひと", "じん", "いと"],
+        "answer_index": 2,
+        "answer_text": "ひと",
+        "answered_sentence": "人: ひと",
+        "explanation": "\"人\" is read \"ひと\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "花見",
+        "options": ["つきみ", "はなみ", "かぜみ", "ゆきみ"],
+        "answer_index": 2,
+        "answer_text": "はなみ",
+        "answered_sentence": "花見:  はなみ",
+        "explanation": "\"花見\" is read \"はなみ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "はは",
+        "options": ["父", "火", "花", "母"],
+        "answer_index": 4,
+        "answer_text": "母",
+        "answered_sentence": "はは:  母",
+        "explanation": "\"はは\" is read \"母\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "まいにち",
+        "options": ["宙日", "週日", "中日", "毎日"],
+        "answer_index": 4,
+        "answer_text": "毎日",
+        "answered_sentence": "まいにち:  毎日",
+        "explanation": "\"まいにち\" is read \"毎日\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "だいがく",
+        "options": ["大核", "退学", "大学", "最核"],
+        "answer_index": 3,
+        "answer_text": "大学",
+        "answered_sentence": "だいがく:  大学",
+        "explanation": "\"だいがく\" is read \"大学\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "としょかん",
+        "options": ["図書館", "図所館", "読所管", "読書館"],
+        "answer_index": 1,
+        "answer_text": "図書館",
+        "answered_sentence": "としょかん:  図書館",
+        "explanation": "\"としょかん\" is read \"図書館\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "はたらいて",
+        "options": ["動いて", "隠いて", "働いて", "行いて"],
+        "answer_index": 3,
+        "answer_text": "働いて",
+        "answered_sentence": "はたらいて: 働いて",
+        "explanation": "\"はたらいて\" is read \"働いて\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 03",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-3/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "ちいさい",
+        "options": ["中さい", "少さい", "小さい", "大さい"],
+        "answer_index": 3,
+        "answer_text": "小さい",
+        "answered_sentence": "ちいさい: 小さい",
+        "explanation": "\"ちいさい\" is read \"小さい\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "らじお",
+        "options": ["ラゾオ", "ラジオ", "ウゾオ", "ウジオ"],
+        "answer_index": 2,
+        "answer_text": "ラジオ",
+        "answered_sentence": "らじお: ラジオ",
+        "explanation": "\"らじお\" is read \"ラジオ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "ぽけっと",
+        "options": ["ポケット", "パクット", "ポクット", "パケット"],
+        "answer_index": 1,
+        "answer_text": "ポケット",
+        "answered_sentence": "ぽけっと: ポケット",
+        "explanation": "\"ぽけっと\" is read \"ポケット\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 4,
+        "prompt": "でかけ",
+        "options": ["外かけ", "行かけ", "来かけ", "出かけ"],
+        "answer_index": 4,
+        "answer_text": "出かけ",
+        "answered_sentence": "でかけ: 出かけ",
+        "explanation": "\"でかけ\" is read \"出かけ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "でんしゃ",
+        "options": ["電車", "雷車", "電東", "雷東"],
+        "answer_index": 1,
+        "answer_text": "電車",
+        "answered_sentence": "でんしゃ: 電車",
+        "explanation": "\"でんしゃ\" is read \"電車\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "きき",
+        "options": ["聞き", "開き", "閉き", "間き"],
+        "answer_index": 1,
+        "answer_text": "聞き",
+        "answered_sentence": "きき: 聞き",
+        "explanation": "\"きき\" is read \"聞き\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "かいしゃ",
+        "options": ["社員", "社会", "会計", "会社"],
+        "answer_index": 4,
+        "answer_text": "会社",
+        "answered_sentence": "かいしゃ: 会社",
+        "explanation": "\"かいしゃ\" is read \"会社\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "先",
+        "options": ["せん", "つぎ", "すぐ", "さき"],
+        "answer_index": 4,
+        "answer_text": "さき",
+        "answered_sentence": "先: さき",
+        "explanation": "\"先\" is read \"さき\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "食べて",
+        "options": ["とべて", "のべて", "たべて", "くべて"],
+        "answer_index": 3,
+        "answer_text": "たべて",
+        "answered_sentence": "食べて: たべて",
+        "explanation": "\"食べて\" is read \"たべて\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "後で",
+        "options": ["あとで", "のちで", "ごで", "こうで"],
+        "answer_index": 1,
+        "answer_text": "あとで",
+        "answered_sentence": "後で: あとで",
+        "explanation": "\"後で\" is read \"あとで\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 04",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-4/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "水を",
+        "options": ["買って", "いきます。", "かって", "つくって"],
+        "answer_index": 1,
+        "answer_text": "買って",
+        "answered_sentence": "買って: かって",
+        "explanation": "\"買って\" is read \"かって\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "お",
+        "options": ["先", "にしつれいします。", "せん", "ぜん"],
+        "answer_index": 4,
+        "answer_text": "ぜん",
+        "answered_sentence": "先: さき",
+        "explanation": "\"先\" is read \"さき\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "きのうはゆうはんに",
+        "options": ["ぎゅうにく", "をたべた。", "牛内", "午内"],
+        "answer_index": 3,
+        "answer_text": "牛内",
+        "answered_sentence": "ぎゅうにく: 牛肉",
+        "explanation": "\"ぎゅうにく\" is read \"牛肉\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "わたしの",
+        "options": ["こども", "ははながすきです。", "了ども", "子ども"],
+        "answer_index": 2,
+        "answer_text": "ははながすきです。",
+        "answered_sentence": "こども: 子ども",
+        "explanation": "\"こども\" is read \"子ども\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "この部屋は",
+        "options": ["明るく", "てひろいです。", "かおるくて", "あかるくて"],
+        "answer_index": 2,
+        "answer_text": "てひろいです。",
+        "answered_sentence": "明るくて: あかるくて",
+        "explanation": "\"明るくて\" is read \"あかるくて\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "むいかの",
+        "options": ["ごご", "にあいましょう。", "午役", "牛役"],
+        "answer_index": 3,
+        "answer_text": "午役",
+        "answered_sentence": "ごご: 午後",
+        "explanation": "\"ごご\" is read \"午後\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "えきの",
+        "options": [
+          "北口",
+          "をでて、まっすぐいってください。",
+          "にしくち",
+          "にしぐち"
+        ],
+        "answer_index": 4,
+        "answer_text": "にしぐち",
+        "answered_sentence": "北口: きたぐち",
+        "explanation": "\"北口\" is read \"きたぐち\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "これはなんの",
+        "options": ["ぱーていー", "ですか。", "ベーティー", "バーティー"],
+        "answer_index": 4,
+        "answer_text": "バーティー",
+        "answered_sentence": "ぱーていー: パーティー",
+        "explanation": "\"ぱーていー\" is read \"パーティー\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "せんせいは",
+        "options": ["黒い", "めがねをかけています。", "しろい", "くらい"],
+        "answer_index": 3,
+        "answer_text": "しろい",
+        "answered_sentence": "黒い: くろい",
+        "explanation": "\"黒い\" is read \"くろい\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 05",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-5/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "朝",
+        "options": ["あさ", "ひる", "よる", "ばん"],
+        "answer_index": 1,
+        "answer_text": "あさ",
+        "answered_sentence": "朝: あさ",
+        "explanation": "\"朝\" is read \"あさ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "七時",
+        "options": ["ななじ", "しちじ", "はち", "ろくじ"],
+        "answer_index": 2,
+        "answer_text": "しちじ",
+        "answered_sentence": "七時: しちじ",
+        "explanation": "\"七時\" is read \"しちじ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "雨",
+        "options": ["あめ", "うま", "いみ", "ゆめ"],
+        "answer_index": 1,
+        "answer_text": "あめ",
+        "answered_sentence": "雨: あめ",
+        "explanation": "\"雨\" is read \"あめ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 4,
+        "prompt": "飲み",
+        "options": ["よみ", "くみ", "のみ", "すみ"],
+        "answer_index": 3,
+        "answer_text": "のみ",
+        "answered_sentence": "飲み: のみ",
+        "explanation": "\"飲み\" is read \"のみ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "きた",
+        "options": ["非", "化", "北", "比"],
+        "answer_index": 3,
+        "answer_text": "北",
+        "answered_sentence": "きた: 北",
+        "explanation": "\"きた\" is read \"北\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "うまれ",
+        "options": ["主まれ", "佳まれ", "住まれ", "生まれ"],
+        "answer_index": 4,
+        "answer_text": "生まれ",
+        "answered_sentence": "うまれ: 生まれ",
+        "explanation": "\"うまれ\" is read \"生まれ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "学校",
+        "options": ["かっこう", "がっこう", "がこう", "かこう"],
+        "answer_index": 2,
+        "answer_text": "がっこう",
+        "answered_sentence": "学校: がっこう",
+        "explanation": "\"学校\" is read \"がっこう\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "後ろ",
+        "options": ["うしろ", "いしろ", "あしろ", "おしろ"],
+        "answer_index": 1,
+        "answer_text": "うしろ",
+        "answered_sentence": "後ろ: うしろ",
+        "explanation": "\"後ろ\" is read \"うしろ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "何",
+        "options": ["なに", "なん", "か", "なんに"],
+        "answer_index": 1,
+        "answer_text": "なに",
+        "answered_sentence": "何: なに",
+        "explanation": "\"何\" is read \"なに\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "小さい",
+        "options": ["ちさい", "すくさい", "ちいさい", "しさい"],
+        "answer_index": 3,
+        "answer_text": "ちいさい",
+        "answered_sentence": "小さい: ちいさい",
+        "explanation": "\"小さい\" is read \"ちいさい\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 06",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-6/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "雨",
+        "options": ["うみ", "かみ", "あめ", "あさ"],
+        "answer_index": 3,
+        "answer_text": "あめ",
+        "answered_sentence": "雨: あめ",
+        "explanation": "\"雨\" is read \"あめ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "外",
+        "options": ["がい", "そど", "かい", "そと"],
+        "answer_index": 4,
+        "answer_text": "そと",
+        "answered_sentence": "外: そと",
+        "explanation": "\"外\" is read \"そと\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "出ない",
+        "options": ["だない", "でない", "しゅつない", "しゅない"],
+        "answer_index": 2,
+        "answer_text": "でない",
+        "answered_sentence": "出ない: でない",
+        "explanation": "\"出ない\" is read \"でない\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 4,
+        "prompt": "家",
+        "options": ["いえ", "や", "けん", "かん"],
+        "answer_index": 1,
+        "answer_text": "いえ",
+        "answered_sentence": "家: いえ",
+        "explanation": "\"家\" is read \"いえ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "休み",
+        "options": ["やすみ", "すすみ", "すみ", "やみ"],
+        "answer_index": 1,
+        "answer_text": "やすみ",
+        "answered_sentence": "休み: やすみ",
+        "explanation": "\"休み\" is read \"やすみ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "すいようび",
+        "options": ["金曜日", "水曜日", "木曜日", "火曜日"],
+        "answer_index": 2,
+        "answer_text": "水曜日",
+        "answered_sentence": "すいようび: 水曜日",
+        "explanation": "\"すいようび\" is read \"水曜日\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "がっこう",
+        "options": ["学功", "学赤", "学変", "学校"],
+        "answer_index": 4,
+        "answer_text": "学校",
+        "answered_sentence": "がっこう: 学校",
+        "explanation": "\"がっこう\" is read \"学校\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "たべ",
+        "options": ["飲べ", "食べ", "館べ", "吸べ"],
+        "answer_index": 2,
+        "answer_text": "食べ",
+        "answered_sentence": "たべ: 食べ",
+        "explanation": "\"たべ\" is read \"食べ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "八万円",
+        "options": [
+          "はちせんえん",
+          "はっせんえん",
+          "はちまんえん",
+          "はっちまんえん"
+        ],
+        "answer_index": 3,
+        "answer_text": "はちまんえん",
+        "answered_sentence": "八万円: はちまんえん",
+        "explanation": "\"八万円\" is read \"はちまんえん\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "入って",
+        "options": ["はいって", "いって", "はって", "いいって"],
+        "answer_index": 1,
+        "answer_text": "はいって",
+        "answered_sentence": "入って: はいって",
+        "explanation": "\"入って\" is read \"はいって\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 07",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-7/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "手紙",
+        "options": ["てかみ", "しゅかみ", "てがみ", "しゅがみ"],
+        "answer_index": 3,
+        "answer_text": "てがみ",
+        "answered_sentence": "手紙: てがみ",
+        "explanation": "\"手紙\" is read \"てがみ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "半分",
+        "options": ["かんぶん", "はんぶん", "はんふｎ", "かんふｎ"],
+        "answer_index": 2,
+        "answer_text": "はんぶん",
+        "answered_sentence": "半分: はんぶん",
+        "explanation": "\"半分\" is read \"はんぶん\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "読んで",
+        "options": ["すんで", "やんで", "さいんで", "よんで"],
+        "answer_index": 4,
+        "answer_text": "よんで",
+        "answered_sentence": "読んで: よんで",
+        "explanation": "\"読んで\" is read \"よんで\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 4,
+        "prompt": "すこし",
+        "options": ["小し", "炎し", "火し", "少し"],
+        "answer_index": 4,
+        "answer_text": "少し",
+        "answered_sentence": "すこし: 少し",
+        "explanation": "\"すこし\" is read \"少し\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "たかい",
+        "options": ["高い", "重い", "低い", "広い"],
+        "answer_index": 1,
+        "answer_text": "高い",
+        "answered_sentence": "たかい: 高い",
+        "explanation": "\"たかい\" is read \"高い\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "銀行",
+        "options": ["きんこう", "ぎんこう", "ぎんきょ", "きんきょ"],
+        "answer_index": 2,
+        "answer_text": "ぎんこう",
+        "answered_sentence": "銀行: ぎんこう",
+        "explanation": "\"銀行\" is read \"ぎんこう\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "道",
+        "options": ["みち", "まち", "どう", "とう"],
+        "answer_index": 1,
+        "answer_text": "みち",
+        "answered_sentence": "道: みち",
+        "explanation": "\"道\" is read \"みち\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "西",
+        "options": ["にし", "きた", "みなみ", "ひがし"],
+        "answer_index": 1,
+        "answer_text": "にし",
+        "answered_sentence": "西: にし",
+        "explanation": "\"西\" is read \"にし\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "四",
+        "options": ["し", "いし", "よん", "よ"],
+        "answer_index": 3,
+        "answer_text": "よん",
+        "answered_sentence": "四: よん",
+        "explanation": "\"四\" is read \"よん\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "左",
+        "options": ["みぎ", "した", "うえ", "ひだり"],
+        "answer_index": 4,
+        "answer_text": "ひだり",
+        "answered_sentence": "左: ひだり",
+        "explanation": "\"左\" is read \"ひだり\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 08",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-8/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "駅",
+        "options": ["えき", "あき", "うま", "ゆき"],
+        "answer_index": 1,
+        "answer_text": "えき",
+        "answered_sentence": "駅: えき",
+        "explanation": "\"駅\" is read \"えき\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "南",
+        "options": ["ひがし", "きた", "にし", "みなみ"],
+        "answer_index": 4,
+        "answer_text": "みなみ",
+        "answered_sentence": "南: みなみ",
+        "explanation": "\"南\" is read \"みなみ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "川",
+        "options": ["がわ", "かわ", "せん", "くに"],
+        "answer_index": 2,
+        "answer_text": "かわ",
+        "answered_sentence": "川: かわ",
+        "explanation": "\"川\" is read \"かわ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 4,
+        "prompt": "らいねん",
+        "options": ["昨年", "来年", "去年", "行年"],
+        "answer_index": 2,
+        "answer_text": "来年",
+        "answered_sentence": "らいねん: 来年",
+        "explanation": "\"らいねん\" is read \"来年\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "なつ",
+        "options": ["夏", "冬", "春", "秋"],
+        "answer_index": 1,
+        "answer_text": "夏",
+        "answered_sentence": "なつ: 夏",
+        "explanation": "\"なつ\" is read \"夏\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "がいこく",
+        "options": ["外玉", "例国", "例玉", "外国"],
+        "answer_index": 4,
+        "answer_text": "外国",
+        "answered_sentence": "がいこく: 外国",
+        "explanation": "\"がいこく\" is read \"外国\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "いきたい",
+        "options": ["来たい", "住たい", "行きたい", "主たい"],
+        "answer_index": 3,
+        "answer_text": "行きたい",
+        "answered_sentence": "いきたい: 行きたい",
+        "explanation": "\"いきたい\" is read \"行きたい\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "天気",
+        "options": ["てんけ", "ていき", "てんき", "ていけ"],
+        "answer_index": 3,
+        "answer_text": "てんき",
+        "answered_sentence": "天気: てんき",
+        "explanation": "\"天気\" is read \"てんき\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "後で",
+        "options": ["うしろで", "ごで", "あとで", "こうで"],
+        "answer_index": 3,
+        "answer_text": "あとで",
+        "answered_sentence": "後で: あとで",
+        "explanation": "\"後で\" is read \"あとで\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "外",
+        "options": ["がい", "そこ", "かい", "そと"],
+        "answer_index": 4,
+        "answer_text": "そと",
+        "answered_sentence": "外: そと",
+        "explanation": "\"外\" is read \"そと\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 09",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-9/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "今月",
+        "options": ["こんつき", "こんげつ", "いまつき", "こんがつ"],
+        "answer_index": 2,
+        "answer_text": "こんげつ",
+        "answered_sentence": "今月: こんげつ",
+        "explanation": "\"今月\" is read \"こんげつ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "五日",
+        "options": ["ごにち", "ごひ", "いつか", "いっか"],
+        "answer_index": 3,
+        "answer_text": "いつか",
+        "answered_sentence": "五日: いつか",
+        "explanation": "\"五日\" is read \"いつか\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "話",
+        "options": ["はなし", "ばなし", "わ", "ごん"],
+        "answer_index": 1,
+        "answer_text": "はなし",
+        "answered_sentence": "話: はなし",
+        "explanation": "\"話\" is read \"はなし\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 4,
+        "prompt": "まえ",
+        "options": ["下", "後", "上", "前"],
+        "answer_index": 4,
+        "answer_text": "前",
+        "answered_sentence": "まえ: 前",
+        "explanation": "\"まえ\" is read \"前\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "みなみ",
+        "options": ["北", "東", "南", "西"],
+        "answer_index": 3,
+        "answer_text": "南",
+        "answered_sentence": "みなみ: 南",
+        "explanation": "\"みなみ\" is read \"南\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "いって",
+        "options": ["来て", "行って", "着て", "住て"],
+        "answer_index": 2,
+        "answer_text": "行って",
+        "answered_sentence": "いって: 行って",
+        "explanation": "\"いって\" is read \"行って\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "ひだり",
+        "options": ["左", "右", "石", "在"],
+        "answer_index": 1,
+        "answer_text": "左",
+        "answered_sentence": "ひだり: 左",
+        "explanation": "\"ひだり\" is read \"左\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "おおきい",
+        "options": ["小きい", "太きい", "大きい", "少きい"],
+        "answer_index": 3,
+        "answer_text": "大きい",
+        "answered_sentence": "おおきい: 大きい",
+        "explanation": "\"おおきい\" is read \"大きい\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "入って",
+        "options": ["いって", "はいって", "はって", "いて"],
+        "answer_index": 2,
+        "answer_text": "はいって",
+        "answered_sentence": "入って: はいって",
+        "explanation": "\"入って\" is read \"はいって\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "休んで",
+        "options": ["やすんで", "すすんで", "ぬすんで", "やんで"],
+        "answer_index": 1,
+        "answer_text": "やすんで",
+        "answered_sentence": "休んで: やすんで",
+        "explanation": "\"休んで\" is read \"やすんで\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 10",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-10/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "しんぶん",
+        "options": ["新聞", "新刊", "新間", "新門"],
+        "answer_index": 1,
+        "answer_text": "新聞",
+        "answered_sentence": "しんぶん: 新聞",
+        "explanation": "\"しんぶん\" is read \"新聞\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 2,
+        "prompt": "かい",
+        "options": ["会い", "行い", "食い", "買い"],
+        "answer_index": 4,
+        "answer_text": "買い",
+        "answered_sentence": "かい: 買い",
+        "explanation": "\"かい\" is read \"買い\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 3,
+        "prompt": "一日",
+        "options": ["いちひ", "いっちにち", "いちにち", "いっちに"],
+        "answer_index": 3,
+        "answer_text": "いちにち",
+        "answered_sentence": "一日: いちにち",
+        "explanation": "\"一日\" is read \"いちにち\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 4,
+        "prompt": "二十四",
+        "options": ["にちゅうよん", "にじゅうよ", "にじゅよん", "にちゅよん"],
+        "answer_index": 2,
+        "answer_text": "にじゅうよ",
+        "answered_sentence": "二十四: にじゅうよ",
+        "explanation": "\"二十四\" is read \"にじゅうよ\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 5,
+        "prompt": "時間",
+        "options": ["じかん", "じけん", "しかん", "しけん"],
+        "answer_index": 1,
+        "answer_text": "じかん",
+        "answered_sentence": "時間: じかん",
+        "explanation": "\"時間\" is read \"じかん\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 6,
+        "prompt": "六十分",
+        "options": [
+          "ろくじゅうふん",
+          "ろくじゅうふん",
+          "ろっくじゅっぷん",
+          "ろくじゅっぷん"
+        ],
+        "answer_index": 4,
+        "answer_text": "ろくじゅっぷん",
+        "answered_sentence": "六十分: ろくじゅっぷん",
+        "explanation": "\"六十分\" is read \"ろくじゅっぷん\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 7,
+        "prompt": "一分",
+        "options": ["いちふん", "いっぷん", "いっちぷん", "いちぷん"],
+        "answer_index": 2,
+        "answer_text": "いっぷん",
+        "answered_sentence": "一分: いっぷん",
+        "explanation": "\"一分\" is read \"いっぷん\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 8,
+        "prompt": "ながい",
+        "options": ["高い", "張い", "長い", "短い"],
+        "answer_index": 3,
+        "answer_text": "長い",
+        "answered_sentence": "ながい: 長い",
+        "explanation": "\"ながい\" is read \"長い\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 9,
+        "prompt": "でんしゃ",
+        "options": ["雷車", "雷社", "電社", "電車"],
+        "answer_index": 4,
+        "answer_text": "電車",
+        "answered_sentence": "でんしゃ: 電車",
+        "explanation": "\"でんしゃ\" is read \"電車\" here. This is the correct reading for the word or expression in this kanji item."
+      },
+      {
+        "number": 10,
+        "prompt": "あかるく",
+        "options": ["明るく", "昼るく", "月るく", "日るく"],
+        "answer_index": 1,
+        "answer_text": "明るく",
+        "answered_sentence": "あかるく: 明るく",
+        "explanation": "\"あかるく\" is read \"明るく\" here. This is the correct reading for the word or expression in this kanji item."
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 11",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-11/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "このほんを",
+        "options": ["よんで", "ください。", "諸んで", "続んで"],
+        "answer_index": 3,
+        "answer_text": "諸んで",
+        "answered_sentence": "よんで => 読んで",
+        "explanation": "\"よんで\" is written as \"読んで\" in this item. "
+      },
+      {
+        "number": 2,
+        "prompt": "日本語の",
+        "options": ["授業", "をうけます。", "しゅきょう", "しゅうきょう"],
+        "answer_index": 3,
+        "answer_text": "しゅきょう",
+        "answered_sentence": "授業 => じゅぎょう",
+        "explanation": "\"授業\" is written as \"じゅぎょう\" in this item. "
+      },
+      {
+        "number": 3,
+        "prompt": "あの古いいえには",
+        "options": ["電話", "がありません。", "でんき", "でんわ"],
+        "answer_index": 2,
+        "answer_text": "がありません。",
+        "answered_sentence": "電話 => でんわ",
+        "explanation": "\"電話\" is written as \"でんわ\" in this item. "
+      },
+      {
+        "number": 5,
+        "prompt": "かわいい女の子が",
+        "options": ["生まれました", "。", "ほまれました", "ふまれました"],
+        "answer_index": 4,
+        "answer_text": "ふまれました",
+        "answered_sentence": "生まれました => うまれました",
+        "explanation": "\"生まれました\" is written as \"うまれました\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "みなさん、みぎのドアから",
+        "options": ["でて", "ください。", "缶て", "申て"],
+        "answer_index": 3,
+        "answer_text": "缶て",
+        "answered_sentence": "でて => 出て",
+        "explanation": "\"でて\" is written as \"出て\" in this item. "
+      },
+      {
+        "number": 7,
+        "prompt": "きのうはじめて",
+        "options": ["魚", "をたべました。", "さくら", "さらく"],
+        "answer_index": 4,
+        "answer_text": "さらく",
+        "answered_sentence": "魚 => さかな",
+        "explanation": "\"魚\" is written as \"さかな\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "この白い魚は",
+        "options": ["高い", "です。", "ほそい", "ひくい"],
+        "answer_index": 4,
+        "answer_text": "ひくい",
+        "answered_sentence": "高い => たかい",
+        "explanation": "\"高い\" is written as \"たかい\" in this item. "
+      },
+      {
+        "number": 9,
+        "prompt": "せんせいの",
+        "options": ["はなし", "をよくきいてください。", "話", "語"],
+        "answer_index": 1,
+        "answer_text": "はなし",
+        "answered_sentence": "はなし => 話",
+        "explanation": "\"はなし\" is written as \"話\" in this item. "
+      },
+      {
+        "number": 10,
+        "prompt": "さとうさんはきょう",
+        "options": ["がっこう", "をやすんだ。", "学校", "字校"],
+        "answer_index": 1,
+        "answer_text": "がっこう",
+        "answered_sentence": "がっこう => 学校",
+        "explanation": "\"がっこう\" is written as \"学校\" in this item. "
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 12",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-12/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 3,
+        "prompt": "あの",
+        "options": ["人", "はとても有名です。", "にん", "ひと"],
+        "answer_index": 2,
+        "answer_text": "はとても有名です。",
+        "answered_sentence": "人 => ひと",
+        "explanation": "\"人\" is written as \"ひと\" in this item. "
+      },
+      {
+        "number": 4,
+        "prompt": "わたしは",
+        "options": ["えいご", "がぜんぜんできません。", "英話", "英詰"],
+        "answer_index": 4,
+        "answer_text": "英詰",
+        "answered_sentence": "えいご => 英語",
+        "explanation": "\"えいご\" is written as \"英語\" in this item. "
+      },
+      {
+        "number": 5,
+        "prompt": "ドアの前に",
+        "options": ["立って", "ください。", "たって", "すわって"],
+        "answer_index": 1,
+        "answer_text": "立って",
+        "answered_sentence": "立って => たって",
+        "explanation": "\"立って\" is written as \"たって\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "きのうの",
+        "options": ["ごご", "へやでラジオをききました。", "半後", "牛後"],
+        "answer_index": 3,
+        "answer_text": "半後",
+        "answered_sentence": "ごご => 午後",
+        "explanation": "\"ごご\" is written as \"午後\" in this item. "
+      },
+      {
+        "number": 7,
+        "prompt": "火よう日に",
+        "options": ["駅", "で会いましょう。", "へや", "もん"],
+        "answer_index": 3,
+        "answer_text": "へや",
+        "answered_sentence": "駅 => えき",
+        "explanation": "\"駅\" is written as \"えき\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "ビールを",
+        "options": ["三本", "かいました。", "さんほん", "さんぽん"],
+        "answer_index": 3,
+        "answer_text": "さんほん",
+        "answered_sentence": "三本 => さんぼん",
+        "explanation": "\"三本\" is written as \"さんぼん\" in this item. "
+      },
+      {
+        "number": 9,
+        "prompt": "このへやは",
+        "options": ["くらくて", "さむい。", "黒くて", "暗くて"],
+        "answer_index": 2,
+        "answer_text": "さむい。",
+        "answered_sentence": "くらくて => 暗くて",
+        "explanation": "\"くらくて\" is written as \"暗くて\" in this item. "
+      },
+      {
+        "number": 10,
+        "prompt": "あした",
+        "options": ["れぽーと", "をだします。", "ルポート", "ルプート"],
+        "answer_index": 3,
+        "answer_text": "ルポート",
+        "answered_sentence": "れぽーと => レポート",
+        "explanation": "\"れぽーと\" is written as \"レポート\" in this item. "
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 13",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-13/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "昨日はとなりの村から",
+        "options": ["歩いて", "帰ってきた。", "ないて", "はいて"],
+        "answer_index": 3,
+        "answer_text": "ないて",
+        "answered_sentence": "歩いて => あるいて",
+        "explanation": "\"歩いて\" is written as \"あるいて\" in this item. "
+      },
+      {
+        "number": 2,
+        "prompt": "わたしはりょうしんと",
+        "options": ["一緒", "にすんでいます。", "いっしゅう", "いっしゅ"],
+        "answer_index": 4,
+        "answer_text": "いっしゅ",
+        "answered_sentence": "一緒 => いっしょ",
+        "explanation": "\"一緒\" is written as \"いっしょ\" in this item. "
+      },
+      {
+        "number": 3,
+        "prompt": "ふくがよごれたから、",
+        "options": ["あらった", "。", "沈った", "洗った"],
+        "answer_index": 2,
+        "answer_text": "。",
+        "answered_sentence": "あらった => 洗った",
+        "explanation": "\"あらった\" is written as \"洗った\" in this item. "
+      },
+      {
+        "number": 4,
+        "prompt": "テーブルのうえにおさらが",
+        "options": ["並んで", "います。", "ならんで", "あそんで"],
+        "answer_index": 1,
+        "answer_text": "並んで",
+        "answered_sentence": "並んで => ならんで",
+        "explanation": "\"並んで\" is written as \"ならんで\" in this item. "
+      },
+      {
+        "number": 5,
+        "prompt": "わたしのかいしゃはあのビルの",
+        "options": ["なか", "です。", "史", "中"],
+        "answer_index": 2,
+        "answer_text": "です。",
+        "answered_sentence": "なか => 中",
+        "explanation": "\"なか\" is written as \"中\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "あの",
+        "options": ["男", "のひとはだれですか。", "おどこ", "おとこ"],
+        "answer_index": 2,
+        "answer_text": "のひとはだれですか。",
+        "answered_sentence": "男 => おとこ",
+        "explanation": "\"男\" is written as \"おとこ\" in this item. "
+      },
+      {
+        "number": 7,
+        "prompt": "ひがしの",
+        "options": ["そら", "がきれいです。", "川", "池"],
+        "answer_index": 3,
+        "answer_text": "川",
+        "answered_sentence": "そら => 空",
+        "explanation": "\"そら\" is written as \"空\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "きのう、",
+        "options": ["雨", "がふりました。", "ゆき", "きり"],
+        "answer_index": 3,
+        "answer_text": "ゆき",
+        "answered_sentence": "雨 => あめ",
+        "explanation": "\"雨\" is written as \"あめ\" in this item. "
+      },
+      {
+        "number": 9,
+        "prompt": "店の",
+        "options": ["入り口", "はどこですか。", "のりぐち", "かえりぐち"],
+        "answer_index": 4,
+        "answer_text": "かえりぐち",
+        "answered_sentence": "入り口 => いりぐち",
+        "explanation": "\"入り口\" is written as \"いりぐち\" in this item. "
+      },
+      {
+        "number": 10,
+        "prompt": "おかあさんはお",
+        "options": ["げんき", "ですか。", "元气", "元気"],
+        "answer_index": 2,
+        "answer_text": "ですか。",
+        "answered_sentence": "げんき => 元気",
+        "explanation": "\"げんき\" is written as \"元気\" in this item. "
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 14",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-14/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "この門は子どもの力では",
+        "options": ["開けられません", "。", "あけられません", "うけられません"],
+        "answer_index": 1,
+        "answer_text": "開けられません",
+        "answered_sentence": "開けられません => あけられません",
+        "explanation": "\"開けられません\" is written as \"あけられません\" in this item. "
+      },
+      {
+        "number": 2,
+        "prompt": "パンを",
+        "options": ["はんぶん", "たべました。", "半部", "半分"],
+        "answer_index": 2,
+        "answer_text": "たべました。",
+        "answered_sentence": "はんぶん => 半分",
+        "explanation": "\"はんぶん\" is written as \"半分\" in this item. "
+      },
+      {
+        "number": 3,
+        "prompt": "きょうは",
+        "options": ["お金", "がたくさんあります。", "おぎん", "おかね"],
+        "answer_index": 2,
+        "answer_text": "がたくさんあります。",
+        "answered_sentence": "お金 => おかね",
+        "explanation": "\"お金\" is written as \"おかね\" in this item. "
+      },
+      {
+        "number": 4,
+        "prompt": "このレストランの",
+        "options": ["りょうり", "はおいしいです。", "科理", "料理"],
+        "answer_index": 2,
+        "answer_text": "はおいしいです。",
+        "answered_sentence": "りょうり => 料理",
+        "explanation": "\"りょうり\" is written as \"料理\" in this item. "
+      },
+      {
+        "number": 5,
+        "prompt": "これは一つ",
+        "options": ["千円", "です。", "せいえん", "せいねん"],
+        "answer_index": 4,
+        "answer_text": "せいねん",
+        "answered_sentence": "千円 => せんえん",
+        "explanation": "\"千円\" is written as \"せんえん\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "こどもたちはかわで",
+        "options": ["およいで", "います。", "凍いで", "水いで"],
+        "answer_index": 4,
+        "answer_text": "水いで",
+        "answered_sentence": "およいで => 泳いで",
+        "explanation": "\"およいで\" is written as \"泳いで\" in this item. "
+      },
+      {
+        "number": 7,
+        "prompt": "これは",
+        "options": ["なん", "ですか。", "同", "何"],
+        "answer_index": 2,
+        "answer_text": "ですか。",
+        "answered_sentence": "なん => 何",
+        "explanation": "\"なん\" is written as \"何\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "今日はじゅうがつ",
+        "options": ["十日", "です。", "とおか", "とうか"],
+        "answer_index": 1,
+        "answer_text": "十日",
+        "answered_sentence": "十日 => とおか",
+        "explanation": "\"十日\" is written as \"とおか\" in this item. "
+      },
+      {
+        "number": 9,
+        "prompt": "この",
+        "options": [
+          "道",
+          "を百メートいってください。左にこうばんがあります。",
+          "かど",
+          "はし"
+        ],
+        "answer_index": 4,
+        "answer_text": "はし",
+        "answered_sentence": "道 => みち",
+        "explanation": "\"道\" is written as \"みち\" in this item. "
+      },
+      {
+        "number": 10,
+        "prompt": "このへやは",
+        "options": ["せまい", "です。", "広い", "小い"],
+        "answer_index": 4,
+        "answer_text": "小い",
+        "answered_sentence": "せまい => 狭い",
+        "explanation": "\"せまい\" is written as \"狭い\" in this item. "
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 15",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-15/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "その",
+        "options": ["ちいさい", "かれんだーをください。", "小い", "小さい"],
+        "answer_index": 2,
+        "answer_text": "かれんだーをください。",
+        "answered_sentence": "ちいさい => 小さい",
+        "explanation": "\"ちいさい\" is written as \"小さい\" in this item. "
+      },
+      {
+        "number": 2,
+        "prompt": "いすの",
+        "options": ["した", "にねこがいます。", "下", "外"],
+        "answer_index": 1,
+        "answer_text": "した",
+        "answered_sentence": "した => 下",
+        "explanation": "\"した\" is written as \"下\" in this item. "
+      },
+      {
+        "number": 4,
+        "prompt": "しんかんせんに",
+        "options": ["乗った", "ことがありますか。", "やった", "いった"],
+        "answer_index": 3,
+        "answer_text": "やった",
+        "answered_sentence": "乗った => のった",
+        "explanation": "\"乗った\" is written as \"のった\" in this item. "
+      },
+      {
+        "number": 5,
+        "prompt": "よく考えてから",
+        "options": ["質問", "に答えてください。", "しつもん", "せつめい"],
+        "answer_index": 1,
+        "answer_text": "質問",
+        "answered_sentence": "質問 => しつもん",
+        "explanation": "\"質問\" is written as \"しつもん\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "たなかさんはあした",
+        "options": ["会社", "をやすみます。", "かいじや", "かいしや"],
+        "answer_index": 4,
+        "answer_text": "かいしや",
+        "answered_sentence": "会社 => かいしゃ",
+        "explanation": "\"会社\" is written as \"かいしゃ\" in this item. "
+      },
+      {
+        "number": 7,
+        "prompt": "このまちの",
+        "options": ["にし", "にはおおきなかわがあります。", "酉", "西"],
+        "answer_index": 2,
+        "answer_text": "にはおおきなかわがあります。",
+        "answered_sentence": "にし => 西",
+        "explanation": "\"にし\" is written as \"西\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "きのう",
+        "options": [
+          "たくしー",
+          "でかいしゃへいきました。",
+          "タクシー",
+          "タウシー"
+        ],
+        "answer_index": 1,
+        "answer_text": "たくしー",
+        "answered_sentence": "たくしー => タクシー",
+        "explanation": "\"たくしー\" is written as \"タクシー\" in this item. "
+      },
+      {
+        "number": 10,
+        "prompt": "うちのちかくに",
+        "options": [
+          "新しい",
+          "としょかんがあります。",
+          "いそがしい",
+          "あたらしい"
+        ],
+        "answer_index": 2,
+        "answer_text": "としょかんがあります。",
+        "answered_sentence": "新しい => あたらしい",
+        "explanation": "\"新しい\" is written as \"あたらしい\" in this item. "
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 16",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-16/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 2,
+        "prompt": "北のまちに",
+        "options": ["電車", "ででかけました。", "てんしゃ", "てんじゃ"],
+        "answer_index": 3,
+        "answer_text": "てんしゃ",
+        "answered_sentence": "電車 => でんしゃ",
+        "explanation": "\"電車\" is written as \"でんしゃ\" in this item. "
+      },
+      {
+        "number": 3,
+        "prompt": "このかばんを",
+        "options": ["だいじ", "につかっています。", "大字", "大事"],
+        "answer_index": 2,
+        "answer_text": "につかっています。",
+        "answered_sentence": "だいじ => 大事",
+        "explanation": "\"だいじ\" is written as \"大事\" in this item. "
+      },
+      {
+        "number": 4,
+        "prompt": "あの",
+        "options": ["えいがかん", "はおとがいいです。", "眩写館", "映写館"],
+        "answer_index": 3,
+        "answer_text": "眩写館",
+        "answered_sentence": "えいがかん => 映画館",
+        "explanation": "\"えいがかん\" is written as \"映画館\" in this item. "
+      },
+      {
+        "number": 5,
+        "prompt": "ちちはいましんぶんを",
+        "options": ["読んで", "います。", "よんで", "のんで"],
+        "answer_index": 1,
+        "answer_text": "読んで",
+        "answered_sentence": "読んで => よんで",
+        "explanation": "\"読んで\" is written as \"よんで\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "父は目も",
+        "options": ["耳", "もおおきい。", "くち", "あたま"],
+        "answer_index": 3,
+        "answer_text": "くち",
+        "answered_sentence": "耳 => みみ",
+        "explanation": "\"耳\" is written as \"みみ\" in this item. "
+      },
+      {
+        "number": 7,
+        "prompt": "そのほんを",
+        "options": ["みせて", "ください。", "目せて", "覚せて"],
+        "answer_index": 4,
+        "answer_text": "覚せて",
+        "answered_sentence": "みせて => 見せて",
+        "explanation": "\"みせて\" is written as \"見せて\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "わたしのこどもは",
+        "options": ["はな", "がすきです。", "衣", "芘"],
+        "answer_index": 4,
+        "answer_text": "芘",
+        "answered_sentence": "はな => 花",
+        "explanation": "\"はな\" is written as \"花\" in this item. "
+      },
+      {
+        "number": 9,
+        "prompt": "らいねん",
+        "options": ["外国", "へりゅうがくにいきます。", "がいこく", "がいごく"],
+        "answer_index": 1,
+        "answer_text": "外国",
+        "answered_sentence": "外国 => がいこく",
+        "explanation": "\"外国\" is written as \"がいこく\" in this item. "
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 17",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-17/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "スポーツをして頭も",
+        "options": ["体", "もすっきりしました。", "からた", "かだら"],
+        "answer_index": 4,
+        "answer_text": "かだら",
+        "answered_sentence": "体 => からだ",
+        "explanation": "\"体\" is written as \"からだ\" in this item. "
+      },
+      {
+        "number": 2,
+        "prompt": "ここはこうつうが",
+        "options": ["不便", "です。", "ぶべん", "ぶへん"],
+        "answer_index": 3,
+        "answer_text": "ぶべん",
+        "answered_sentence": "不便 => ふべん",
+        "explanation": "\"不便\" is written as \"ふべん\" in this item. "
+      },
+      {
+        "number": 3,
+        "prompt": "このぶんを",
+        "options": ["えいご", "にしてください。", "芙語", "荼語"],
+        "answer_index": 4,
+        "answer_text": "荼語",
+        "answered_sentence": "えいご => 英語",
+        "explanation": "\"えいご\" is written as \"英語\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "シャワーを",
+        "options": ["浴びます", "。", "いびます", "あびます"],
+        "answer_index": 2,
+        "answer_text": "。",
+        "answered_sentence": "浴びます => あびます",
+        "explanation": "\"浴びます\" is written as \"あびます\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "たばこを",
+        "options": ["吸って", "もいいですか。", "あって", "かって"],
+        "answer_index": 4,
+        "answer_text": "かって",
+        "answered_sentence": "吸って => すって",
+        "explanation": "\"吸って\" is written as \"すって\" in this item. "
+      },
+      {
+        "number": 9,
+        "prompt": "この道を",
+        "options": [
+          "百",
+          "メートいってください。左にこうばんがあります。",
+          "ひゃく",
+          "びゃく"
+        ],
+        "answer_index": 1,
+        "answer_text": "百",
+        "answered_sentence": "百 => ひゃく",
+        "explanation": "\"百\" is written as \"ひゃく\" in this item. "
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 18",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-18/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "ははと",
+        "options": ["やま", "にのぼりました。", "上", "山"],
+        "answer_index": 2,
+        "answer_text": "にのぼりました。",
+        "answered_sentence": "やま => 山",
+        "explanation": "\"やま\" is written as \"山\" in this item. "
+      },
+      {
+        "number": 2,
+        "prompt": "きのうじゅぎょうに",
+        "options": ["遅れました", "。", "おかれました", "おくれました"],
+        "answer_index": 2,
+        "answer_text": "。",
+        "answered_sentence": "遅れました => おくれました",
+        "explanation": "\"遅れました\" is written as \"おくれました\" in this item. "
+      },
+      {
+        "number": 3,
+        "prompt": "きのうは",
+        "options": ["ゆうはん", "にぎゅうにくをたべた。", "夕飲", "夕飯"],
+        "answer_index": 2,
+        "answer_text": "にぎゅうにくをたべた。",
+        "answered_sentence": "ゆうはん => 夕飯",
+        "explanation": "\"ゆうはん\" is written as \"夕飯\" in this item. "
+      },
+      {
+        "number": 4,
+        "prompt": "また",
+        "options": ["病気", "になりました。", "びょうき", "ぴょうき"],
+        "answer_index": 1,
+        "answer_text": "病気",
+        "answered_sentence": "病気 => びょうき",
+        "explanation": "\"病気\" is written as \"びょうき\" in this item. "
+      },
+      {
+        "number": 5,
+        "prompt": "きかいは",
+        "options": ["ただしく", "つかってください。", "止しく", "丘して"],
+        "answer_index": 3,
+        "answer_text": "止しく",
+        "answered_sentence": "ただしく => 正しく",
+        "explanation": "\"ただしく\" is written as \"正しく\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "きょうしつに",
+        "options": ["何人", "いますか。", "なにじん", "なににん"],
+        "answer_index": 4,
+        "answer_text": "なににん",
+        "answered_sentence": "何人 => なんにん",
+        "explanation": "\"何人\" is written as \"なんにん\" in this item. "
+      },
+      {
+        "number": 7,
+        "prompt": "こんしゅうは",
+        "options": ["てんき", "がよかった。", "天気", "天汽"],
+        "answer_index": 1,
+        "answer_text": "てんき",
+        "answered_sentence": "てんき => 天気",
+        "explanation": "\"てんき\" is written as \"天気\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "人によって考え方も",
+        "options": ["違います", "。", "ちがいます", "ちかいます"],
+        "answer_index": 1,
+        "answer_text": "違います",
+        "answered_sentence": "違います => ちがいます",
+        "explanation": "\"違います\" is written as \"ちがいます\" in this item. "
+      },
+      {
+        "number": 9,
+        "prompt": "それはいい",
+        "options": ["かめら", "ですね。", "刀メラ", "カメヲ"],
+        "answer_index": 4,
+        "answer_text": "カメヲ",
+        "answered_sentence": "かめら => カメラ",
+        "explanation": "\"かめら\" is written as \"カメラ\" in this item. "
+      }
+    ]
+  },
+  {
+    "title": "JLPT N5 – Kanji Exercise 19",
+    "url": "https://japanesetest4you.com/japanese-language-proficiency-test-jlpt-n5-kanji-exercise-19/",
+    "level": "N5",
+    "type": "kanji",
+    "audio": [],
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "おがわさんは四月から毎朝ぎゅうにゅうを",
+        "options": ["飲んで", "います。", "たのんで", "すんで"],
+        "answer_index": 3,
+        "answer_text": "たのんで",
+        "answered_sentence": "飲んで => のんで",
+        "explanation": "\"飲んで\" is written as \"のんで\" in this item. "
+      },
+      {
+        "number": 2,
+        "prompt": "あそこには",
+        "options": ["ながい", "かわがあります。", "安い", "広い"],
+        "answer_index": 4,
+        "answer_text": "広い",
+        "answered_sentence": "ながい => 長い",
+        "explanation": "\"ながい\" is written as \"長い\" in this item. "
+      },
+      {
+        "number": 3,
+        "prompt": "この",
+        "options": ["門", "は子どもの力では開けられません。", "と", "はこ"],
+        "answer_index": 4,
+        "answer_text": "はこ",
+        "answered_sentence": "門 => もん",
+        "explanation": "\"門\" is written as \"もん\" in this item. "
+      },
+      {
+        "number": 4,
+        "prompt": "はやく",
+        "options": ["しゃしん", "をおくってください。", "曷真", "曷頁"],
+        "answer_index": 3,
+        "answer_text": "曷真",
+        "answered_sentence": "しゃしん => 写真",
+        "explanation": "\"しゃしん\" is written as \"写真\" in this item. "
+      },
+      {
+        "number": 5,
+        "prompt": "中田さんはくろい",
+        "options": ["背広", "をきています。", "せびろ", "せひろ"],
+        "answer_index": 1,
+        "answer_text": "背広",
+        "answered_sentence": "背広 => せびろ",
+        "explanation": "\"背広\" is written as \"せびろ\" in this item. "
+      },
+      {
+        "number": 6,
+        "prompt": "この国はふゆでも",
+        "options": ["２０ど", "いじょうになることがある。", "２０広", "２０度"],
+        "answer_index": 2,
+        "answer_text": "いじょうになることがある。",
+        "answered_sentence": "２０ど => ２０度",
+        "explanation": "\"２０ど\" is written as \"２０度\" in this item. "
+      },
+      {
+        "number": 7,
+        "prompt": "このことばの",
+        "options": ["意味", "はなんですか。", "いみ", "いい"],
+        "answer_index": 1,
+        "answer_text": "意味",
+        "answered_sentence": "意味 => いみ",
+        "explanation": "\"意味\" is written as \"いみ\" in this item. "
+      },
+      {
+        "number": 8,
+        "prompt": "かわいい",
+        "options": ["女の子", "が生まれました。", "おんなのこ", "おなのこ"],
+        "answer_index": 1,
+        "answer_text": "女の子",
+        "answered_sentence": "女の子 => おんなのこ",
+        "explanation": "\"女の子\" is written as \"おんなのこ\" in this item. "
+      },
+      {
+        "number": 9,
+        "prompt": "えきの",
+        "options": ["後ろ", "にこうえんがあります。", "あとろ", "ごろ"],
+        "answer_index": 3,
+        "answer_text": "あとろ",
+        "answered_sentence": "後ろ => うしろ",
+        "explanation": "\"後ろ\" is written as \"うしろ\" in this item. "
+      },
+      {
+        "number": 10,
+        "prompt": "このまちのにしには",
+        "options": ["おおきな", "かわがあります。", "犬きな", "夫きな"],
+        "answer_index": 3,
+        "answer_text": "犬きな",
+        "answered_sentence": "おおきな => 大きな",
+        "explanation": "\"おおきな\" is written as \"大きな\" in this item. "
+      }
+    ]
+  }
+]
