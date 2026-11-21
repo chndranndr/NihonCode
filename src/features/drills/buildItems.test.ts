@@ -94,3 +94,21 @@ describe("drill answer cues describe what the grader accepts", () => {
     expect(item.example?.split(",")[0]).toMatch(/day$/);
   });
 });
+
+// The vocab prompt is the kanji alone, so homographs (N4 挨拶: aisatsu "a
+// greeting" and aisatsusuru "to greet") show the learner the same card. Every
+// item behind one prompt must accept the same readings, or a correct answer
+// grades WRONG for whichever entry was drawn (flaky e2e, 2026-11-21).
+describe("vocab items that share a prompt accept the same readings", () => {
+  it.each(["n5", "n4", "n3", "n2", "n1"] as const)("%s", async (level) => {
+    const levelPools = poolsFromLevelData(await loadLevelData(level));
+    const items = buildItems("vocab", levelPools, DEFAULT_OPTIONS);
+    const byPrompt = new Map<string, string>();
+    for (const item of items) {
+      const accepted = [...item.accepted].sort().join(" / ");
+      const seen = byPrompt.get(item.prompt);
+      if (seen === undefined) byPrompt.set(item.prompt, accepted);
+      else expect(accepted, `${level} ${item.prompt}`).toBe(seen);
+    }
+  });
+});
