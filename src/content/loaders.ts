@@ -8,7 +8,6 @@
  * files instead, because bundler imports do not load under bare Node.
  */
 
-import { validateGrammar, validateJlpt, validateKana, validateKanji, validateVocab } from "./gate";
 import type { JlptLevel } from "./ids";
 import type {
   GateResult,
@@ -20,6 +19,10 @@ import type {
   PracticeCoreIndex,
   VocabItem,
 } from "./models";
+
+// The gate (and zod) load lazily, alongside the data chunks, so the entry
+// bundle carries no validation code (docs/quality.md "Entry chunk optimize").
+const loadGate = () => import("./gate");
 
 /** Levels whose pools are curated and served (docs/decisions.md). */
 export const ENABLED_LEVELS: readonly JlptLevel[] = ["n5", "n4", "n3", "n2", "n1"];
@@ -47,8 +50,8 @@ async function loadKana(): Promise<GateResult<KanaItem>> {
     // Dynamic import: the active level is selected at runtime from prefs and
     // only that level's chunks may load (Phase 3 DoD); static imports would
     // bundle every level up front.
-    const mod = await import("../../data/clean/kana.json");
-    kanaCache = validateKana(mod.default);
+    const [gate, mod] = await Promise.all([loadGate(), import("../../data/clean/kana.json")]);
+    kanaCache = gate.validateKana(mod.default);
   }
   return kanaCache;
 }
@@ -60,7 +63,8 @@ async function loadKana(): Promise<GateResult<KanaItem>> {
 export async function loadLevelData(level: JlptLevel): Promise<LevelData> {
   if (!ENABLED_LEVELS.includes(level)) throw new LevelUnavailableError(level);
   // Per-level chunk selection; see loadKana for why dynamic imports here.
-  const [kana, kanjiMod, vocabMod, grammarMod] = await Promise.all([
+  const [gate, kana, kanjiMod, vocabMod, grammarMod] = await Promise.all([
+    loadGate(),
     loadKana(),
     import(`../../data/clean/kanji_${level}.json`),
     import(`../../data/clean/vocabulary_${level}.json`),
@@ -69,9 +73,9 @@ export async function loadLevelData(level: JlptLevel): Promise<LevelData> {
   return {
     level,
     kana,
-    kanji: validateKanji(kanjiMod.default, level),
-    vocab: validateVocab(vocabMod.default, level),
-    grammar: validateGrammar(grammarMod.default, level),
+    kanji: gate.validateKanji(kanjiMod.default, level),
+    vocab: gate.validateVocab(vocabMod.default, level),
+    grammar: gate.validateGrammar(grammarMod.default, level),
   };
 }
 
@@ -149,7 +153,11 @@ export async function loadJlptLevel(level: JlptLevel): Promise<JlptPool> {
   if (!ENABLED_LEVELS.includes(level)) throw new LevelUnavailableError(level);
   const cached = jlptCache.get(level);
   if (cached) return cached;
-  const [grammarMod, kanjiMod, vocabMod, readingMod, listeningMod] = await JLPT_IMPORTS[level]();
+  const [gate, [grammarMod, kanjiMod, vocabMod, readingMod, listeningMod]] = await Promise.all([
+    loadGate(),
+    JLPT_IMPORTS[level](),
+  ]);
+  const { validateJlpt } = gate;
   const pool: JlptPool = {
     grammar: validateJlpt(grammarMod.default, level, "grammar"),
     kanji: validateJlpt(kanjiMod.default, level, "kanji"),

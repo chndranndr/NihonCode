@@ -49,6 +49,7 @@
         ".prettierrc.json",
         "eslint.config.js",
         "scripts/check-arch.mjs",
+        "scripts/check-bundle.mjs",
         "scripts/check-docs.mjs",
         "scripts/check-taste.mjs",
         "tsconfig.json"

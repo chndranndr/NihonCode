@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "dev:isolated": "node scripts/serve-isolated.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/check-bundle.mjs",
     "preview:isolated": "node scripts/serve-isolated.mjs --preview",
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.node.json --noEmit && tsc -p tsconfig.e2e.json --noEmit",
@@ -16,6 +16,7 @@
     "format:check": "prettier --check src scripts e2e docs AGENTS.md .prettierrc.json tsconfig.json tsconfig.node.json tsconfig.e2e.json vite.config.ts vitest.config.ts playwright.config.ts eslint.config.js .github",
     "check:arch": "node scripts/check-arch.mjs",
     "check:taste": "node scripts/check-taste.mjs",
+    "check:bundle": "node scripts/check-bundle.mjs",
     "check:docs": "node scripts/check-docs.mjs",
     "audit:clean": "node scripts/audit-clean.mjs",
     "check:rekeys": "node scripts/check-rekeys.mjs",
