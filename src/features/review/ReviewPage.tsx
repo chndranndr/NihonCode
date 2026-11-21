@@ -5,6 +5,7 @@ import { srsPoolIds } from "../../components/pools";
 import { useLevel } from "../../components/level";
 import { ratingFromCorrect } from "../../domain/scheduling";
 import { kanaToRomaji } from "../../domain/romaji";
+import { countOf } from "../../domain/format";
 import { XP } from "../../domain/progress";
 import { awardXp, newSessionId, recordAttempt, recordSession } from "../../storage/progressRepo";
 import { buildDueQueue, reviewItem } from "../../storage/srsRepo";
@@ -144,8 +145,9 @@ export function ReviewPage() {
       </div>
       {queue ? (
         <>
-          <p className="micro-label">
-            DUE {queue.due.length} · NEW {queue.fresh.length}
+          <p className="review-counts">
+            {countOf(queue.due.length, "card")} due · {countOf(queue.fresh.length, "new card")}{" "}
+            ready to introduce
           </p>
           <button
             type="button"

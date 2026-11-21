@@ -8,6 +8,7 @@ colors:
   ink: "#eeeae1"
   dim: "#b2afa5"
   line: "#3a403b"
+  control-edge: "#68706a"
   accent: "#e6b65c"
   on-accent: "#1b1c19"
   green: "#3ddc84"
@@ -25,6 +26,7 @@ colors:
   ink-light: "#24251f"
   dim-light: "#62645c"
   line-light: "#c6c8bc"
+  control-edge-light: "#83877c"
   accent-light: "#925600"
   on-accent-light: "#fffdf7"
   green-light: "#176c42"
@@ -143,7 +145,7 @@ Frontmatter contains the target tokens. Light-suffixed entries override the corr
 
 Signal Amber is the default primary action color. Green, Blue, Orange, and Red remain available as user-selected accents. Success/activity Green, learning/info Blue, and error Red remain semantic regardless of primary selection. Preserve warning/due semantics and all existing theme persistence behavior.
 
-Ground, Panel, and Panel Soft provide tonal separation. Ink and Dim separate primary and supporting text. Line carries dividers. On Accent supplies explicit foreground text for filled primary actions instead of assuming that the page ground is suitable. The five Heat steps represent 0, 1, 2, 3, and 4+ completed sessions, not score or XP.
+Ground, Panel, and Panel Soft provide tonal separation. Ink and Dim separate primary and supporting text. Line carries dividers and panel edges. Control Edge outlines what must be found at a glance, text fields and calendar day cells, at 3:1 against every surface in both themes; hairlines stay for structure. On Accent supplies explicit foreground text for filled primary actions instead of assuming that the page ground is suitable. The five Heat steps represent 0, 1, 2, 3, and 4+ completed sessions, not score or XP.
 
 **The One Accent Rule.** Primary selection never recolors semantic status or activity intensity.
 

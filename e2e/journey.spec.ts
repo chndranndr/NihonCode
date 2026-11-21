@@ -250,10 +250,10 @@ async function readQueue(page: Page): Promise<{ due: number; fresh: number }> {
   // The queue resolves once the active level's pools load (async loaders);
   // wait for the count line, then read it.
   const review = page.getByTestId("review");
-  await expect(review).toContainText(/DUE \d+ · NEW \d+/);
+  await expect(review).toContainText(/\d+ cards? due · \d+ new cards? ready to introduce/);
   const text = await review.innerText();
-  const due = Number(/DUE (\d+)/.exec(text)?.[1] ?? 0);
-  const fresh = Number(/NEW (\d+)/.exec(text)?.[1] ?? 0);
+  const due = Number(/(\d+) cards? due/.exec(text)?.[1] ?? 0);
+  const fresh = Number(/(\d+) new cards? ready/.exec(text)?.[1] ?? 0);
   return { due, fresh };
 }
 
@@ -856,12 +856,12 @@ test("quiet instrument JLPT reserves media and distinguishes missing sets", asyn
 test("SRS statistics page shows level-scoped stats and links practice_core", async ({ page }) => {
   await page.goto("/stats");
   await expect(page.getByTestId("srs-stats")).toBeVisible();
-  await expect(page.getByTestId("stat-streak")).toContainText("STREAK");
-  await expect(page.getByTestId("stat-due")).toContainText("DUE TODAY");
-  await expect(page.getByTestId("stat-learned")).toContainText("LEARNED 0 / TOTAL 818");
-  await expect(page.getByTestId("stat-mastery")).toContainText("MASTERY 0%");
-  await expect(page.getByTestId("stat-split")).toContainText("NOT STARTED 818");
-  await expect(page.getByTestId("stat-kind")).toContainText("KANJI 0/80");
+  await expect(page.getByTestId("stat-streak")).toContainText("Streak");
+  await expect(page.getByTestId("stat-due")).toContainText("Due today");
+  await expect(page.getByTestId("stat-learned")).toContainText("0 / 818");
+  await expect(page.getByTestId("stat-mastery")).toContainText("0%");
+  await expect(page.getByTestId("stat-split")).toContainText("Not started 818");
+  await expect(page.getByTestId("stat-kind")).toContainText("0 / 80");
 
   // practice_core wiring: the kanji map inspector shows linked JLPT questions.
   await page.goto("/progress");

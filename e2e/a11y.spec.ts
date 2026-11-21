@@ -515,8 +515,8 @@ test("quiet instrument progress and statistics keep real readable readouts", asy
 
   await page.goto("/stats");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("SRS statistics.");
-  await expect(page.getByTestId("stat-mastery")).toContainText("MASTERY 0%");
-  await expect(page.getByTestId("stat-kind")).toContainText("KANJI 0/80");
+  await expect(page.getByTestId("stat-mastery")).toContainText("0%");
+  await expect(page.getByTestId("stat-kind")).toContainText("0 / 80");
 });
 
 test("quiet instrument JLPT load failure retries the actual content", async ({ page }) => {
@@ -580,5 +580,67 @@ test("page headings carry no eyebrow above them", async ({ page }) => {
       (el) => el.previousElementSibling?.matches("p.label") ?? false,
     );
     expect(eyebrow, `${route} has an eyebrow above its h1`).toBe(false);
+  }
+});
+
+test("control edges meet 3:1 in both themes", async ({ page }) => {
+  test.skip(test.info().project.name !== "desktop", "contrast matrix runs once on desktop");
+  await page.addInitScript(() => {
+    localStorage.setItem("NihonCode-theme", "dark");
+  });
+
+  const measure = (selector: string) =>
+    page.evaluate((sel) => {
+      const element = document.querySelector(sel);
+      if (!element) throw new Error(`Missing ${sel}`);
+      const channels = (color: string): number[] => {
+        const parts = color.match(/[\d.]+/g);
+        if (!parts || parts.length < 3) throw new Error(`Unexpected color: ${color}`);
+        return parts.slice(0, 3).map(Number);
+      };
+      const luminance = (color: string): number => {
+        const [r, g, b] = channels(color).map((channel) => {
+          const value = channel / 255;
+          return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+        });
+        return 0.2126 * (r ?? 0) + 0.7152 * (g ?? 0) + 0.0722 * (b ?? 0);
+      };
+      let background: string | null = null;
+      for (
+        let ancestor: Element | null = element.parentElement;
+        ancestor;
+        ancestor = ancestor.parentElement
+      ) {
+        const color = getComputedStyle(ancestor).backgroundColor;
+        if (color !== "rgba(0, 0, 0, 0)" && color !== "transparent") {
+          background = color;
+          break;
+        }
+      }
+      if (!background) throw new Error("Expected painted background");
+      const [first, second] = [
+        luminance(getComputedStyle(element).borderTopColor),
+        luminance(background),
+      ].sort((a, b) => b - a);
+      return ((first ?? 0) + 0.05) / ((second ?? 0) + 0.05);
+    }, selector);
+
+  for (const theme of ["dark", "light"] as const) {
+    await page.goto("/config");
+    if (theme === "light") await page.getByRole("button", { name: "LIGHT", exact: true }).click();
+    else await page.getByRole("button", { name: "DARK", exact: true }).click();
+    await expect(page.locator("html")).toHaveClass(new RegExp(`theme-${theme}`));
+
+    await page.goto("/learn/drill/kana");
+    await page.waitForTimeout(300);
+    expect(await measure('input[type="search"]'), `${theme} pool search`).toBeGreaterThanOrEqual(3);
+
+    await page.goto("/");
+    await page.locator(".heat-cell").first().waitFor();
+    await page.waitForTimeout(300);
+    expect(
+      await measure(".heat-cell:not(.padding):not(.future)"),
+      `${theme} heat cell`,
+    ).toBeGreaterThanOrEqual(3);
   }
 });

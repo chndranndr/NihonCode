@@ -6,6 +6,7 @@
   --ink: #eeeae1;
   --ink-dim: #b2afa5;
   --hairline: #3a403b;
+  --control-edge: #68706a;
   --accent-amber: #e6b65c;
   --accent-green: #3ddc84;
   --accent-blue: #4aa3ff;
@@ -50,6 +51,7 @@
   --ink: #24251f;
   --ink-dim: #62645c;
   --hairline: #c6c8bc;
+  --control-edge: #83877c;
   --accent-amber: #925600;
   --accent-green: #176c42;
   --accent-blue: #225aa0;
@@ -92,6 +94,12 @@ input {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 3px;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  border-color: var(--control-edge);
 }
 
 button,
@@ -652,7 +660,7 @@ p + p {
   height: var(--cell, 12px);
   min-height: 0;
   padding: 0;
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-edge);
   background: var(--heat-0);
 }
 
@@ -1220,7 +1228,7 @@ tbody tr:hover {
 .setting-row input[type="number"],
 .option-rows input[type="number"] {
   background: var(--panel);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-edge);
   color: var(--ink);
   padding: 0.25rem 0.5rem;
 }
@@ -2545,4 +2553,9 @@ select {
 .theme-switching input,
 .theme-switching select {
   transition: none;
+}
+
+.review-counts {
+  margin: 8px 0 20px;
+  color: var(--dim);
 }
