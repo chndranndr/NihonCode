@@ -3,8 +3,10 @@
 // Reads dist/index.html, finds the entry <script type="module" src=...>, and
 // fails if that file's gzip size exceeds BUDGET_GZIP_KB. Run after `vite build`
 // (the `build` script chains it). Fails loudly if the build output is missing.
+// Also guards the long-lived /assets cache from public/_headers: the rule must
+// be present in dist/_headers and every file under dist/assets must be hashed.
 
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
@@ -41,6 +43,27 @@ if (gzKb > BUDGET_GZIP_KB) {
   );
   process.exit(1);
 }
+// Long-lived caching (public/_headers) is only safe while every /assets file
+// is content-hashed: an unhashed name would stay stale in browsers for a year.
+const headersPath = join(dist, "_headers");
+const headers = existsSync(headersPath) ? readFileSync(headersPath, "utf8") : "";
+if (!/^\/assets\/\*\s*\n\s+Cache-Control:[^\n]*immutable/m.test(headers)) {
+  console.error(
+    "check-bundle: FAIL dist/_headers lacks the /assets/* immutable Cache-Control rule (public/_headers)",
+  );
+  process.exit(1);
+}
+const assetsDir = join(dist, "assets");
+const unhashed = readdirSync(assetsDir, { recursive: true, withFileTypes: true })
+  .filter((d) => d.isFile() && !/-[A-Za-z0-9_-]{8}\.[a-z0-9]+$/.test(d.name))
+  .map((d) => d.name);
+if (unhashed.length > 0) {
+  console.error(
+    `check-bundle: FAIL ${unhashed.length} unhashed file(s) in dist/assets would be cached for a year: ${unhashed.slice(0, 5).join(", ")}`,
+  );
+  process.exit(1);
+}
+
 console.log(
-  `check-bundle: OK (entry ${name} ${rawKb.toFixed(1)} KB raw / ${gzKb.toFixed(1)} KB gzip, budget ${BUDGET_GZIP_KB} KB gzip)`,
+  `check-bundle: OK (entry ${name} ${rawKb.toFixed(1)} KB raw / ${gzKb.toFixed(1)} KB gzip, budget ${BUDGET_GZIP_KB} KB gzip; immutable /assets cache, all hashed)`,
 );

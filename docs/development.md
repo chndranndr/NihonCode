@@ -52,17 +52,17 @@ Concurrent agents or working copies must not share ports or learner state:
 
 All under `scripts/`, all dependency-light (Node stdlib only):
 
-| Script               | Guards                                                                                                                      |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `check-arch.mjs`     | Layer boundaries ([architecture.md](architecture.md))                                                                       |
-| `check-taste.mjs`    | Design contract mechanics ([design-system.md](design-system.md))                                                            |
-| `check-bundle.mjs`   | Entry chunk gzip budget after `vite build` (chained into `npm run build`)                                                   |
-| `check-docs.mjs`     | Relative links + anchors in AGENTS.md, README.md, and docs/                                                                 |
-| `audit-clean.mjs`    | Tracked pool: defect zeros, floors, unique IDs, practice_core integrity, MP3 presence (self-test proves five failure paths) |
-| `check-rekeys.mjs`   | VOCAB_N5_REKEYS map vs the tracked pool (24 pairs, non-vacuous)                                                             |
-| `doctor.mjs`         | Manifest validity + orchestrated health report                                                                              |
-| `gc.mjs`             | Generated-artifact cleanup + entropy scan                                                                                   |
-| `serve-isolated.mjs` | Collision-free dev/preview server                                                                                           |
-| `run-e2e.mjs`        | Eval wrapper with browser-install remediation                                                                               |
+| Script               | Guards                                                                                                                                        |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `check-arch.mjs`     | Layer boundaries ([architecture.md](architecture.md))                                                                                         |
+| `check-taste.mjs`    | Design contract mechanics ([design-system.md](design-system.md))                                                                              |
+| `check-bundle.mjs`   | Entry chunk gzip budget after `vite build` (chained into `npm run build`); `_headers` immutable `/assets` rule present and every asset hashed |
+| `check-docs.mjs`     | Relative links + anchors in AGENTS.md, README.md, and docs/                                                                                   |
+| `audit-clean.mjs`    | Tracked pool: defect zeros, floors, unique IDs, practice_core integrity, MP3 presence (self-test proves five failure paths)                   |
+| `check-rekeys.mjs`   | VOCAB_N5_REKEYS map vs the tracked pool (24 pairs, non-vacuous)                                                                               |
+| `doctor.mjs`         | Manifest validity + orchestrated health report                                                                                                |
+| `gc.mjs`             | Generated-artifact cleanup + entropy scan                                                                                                     |
+| `serve-isolated.mjs` | Collision-free dev/preview server                                                                                                             |
+| `run-e2e.mjs`        | Eval wrapper with browser-install remediation                                                                                                 |
 
 Adding a guardrail: write the smallest executable check, wire it into `npm run check` (or `doctor`), prove it fails on the original failure class, then update `.harness/manifest.json` capabilities.
