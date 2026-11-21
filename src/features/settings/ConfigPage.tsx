@@ -49,12 +49,18 @@ export function ConfigPage() {
                 <h3>Theme</h3>
                 <p>The same study console, in daylight or after dark.</p>
               </div>
-              <button
-                type="button"
-                onClick={() => theme.setTheme(theme.theme === "dark" ? "light" : "dark")}
-              >
-                {theme.theme.toUpperCase()}
-              </button>
+              <div className="segmented" role="group" aria-label="theme">
+                {(["dark", "light"] as const).map((t) => (
+                  <button
+                    key={t}
+                    type="button"
+                    aria-pressed={theme.theme === t}
+                    onClick={() => theme.setTheme(t)}
+                  >
+                    {t.toUpperCase()}
+                  </button>
+                ))}
+              </div>
             </div>
             <div className="setting">
               <div>
@@ -138,7 +144,10 @@ export function ConfigPage() {
             <div className="setting">
               <div>
                 <h3>Backup</h3>
-                <p>Export replaces nothing until you import it. No cloud is involved.</p>
+                <p>
+                  Export downloads a backup file. Import replaces all progress in this browser with
+                  the file's contents. Nothing is sent anywhere.
+                </p>
               </div>
               <div className="actions">
                 <button

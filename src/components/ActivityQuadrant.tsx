@@ -7,6 +7,7 @@
  */
 
 import { ACTIVITY_CATEGORIES, categoryTotals, type DayCounts } from "../domain/activity";
+import { countOf } from "../domain/format";
 
 const CATEGORY_LABELS: Record<(typeof ACTIVITY_CATEGORIES)[number], string> = {
   drill: "Drills",
@@ -39,7 +40,7 @@ export function ActivityQuadrant({ byDay, year }: { byDay: DayCounts[]; year: nu
         <h3>Your study mix</h3>
         <p className="description">
           {total
-            ? `${CATEGORY_LABELS[largest]} makes up the largest share of your ${total} completed sessions.`
+            ? `Your largest share of ${countOf(total, "completed session")}: ${CATEGORY_LABELS[largest]}.`
             : "No completed sessions in this period yet."}
         </p>
         <dl className="activity-breakdown">
@@ -47,7 +48,7 @@ export function ActivityQuadrant({ byDay, year }: { byDay: DayCounts[]; year: nu
             <div key={c}>
               <dt>{CATEGORY_LABELS[c]}</dt>
               <dd>
-                {counts[c]} sessions <strong>{shares[c].toFixed(1)}%</strong>
+                {countOf(counts[c], "session")} <strong>{shares[c].toFixed(1)}%</strong>
               </dd>
             </div>
           ))}

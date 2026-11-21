@@ -30,6 +30,7 @@ import {
   type VerbClass,
   type VerbForm,
 } from "../../domain/conjugation";
+import { countOf } from "../../domain/format";
 
 const LIMITS = [10, 20, 50] as const;
 
@@ -683,7 +684,7 @@ export function DrillPage() {
       <div className="start-dock">
         <div>
           <p>
-            {sessionCount} questions · from {selectable.length} eligible items
+            {countOf(sessionCount, "question")} · from {countOf(selectable.length, "eligible item")}
           </p>
         </div>
         <button

@@ -13,6 +13,7 @@ import type { DueQueue, SrsStats } from "../../storage/srsRepo";
 import { activityRows, masteryByItems } from "../../storage/progressRepo";
 import { dashboardSrsData } from "../../storage/srsRepo";
 import { db } from "../../storage/db";
+import { loadPrefs, savePrefs } from "../../storage/prefs";
 
 vi.mock("../../storage/srsRepo", () => ({ dashboardSrsData: vi.fn() }));
 vi.mock("../../storage/progressRepo", () => ({ masteryByItems: vi.fn(), activityRows: vi.fn() }));
@@ -142,6 +143,16 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe("DashboardPage repository state", () => {
+  it("greets a first visit plainly and a returning visitor back", async () => {
+    const first = renderDashboard();
+    expect((await screen.findByRole("heading", { level: 1 })).textContent).toBe("Welcome.");
+    first.unmount();
+    const prefs = loadPrefs();
+    savePrefs({ ...prefs, progress: { ...prefs.progress, lastStudyDay: "2026-11-20" } });
+    renderDashboard();
+    expect((await screen.findByRole("heading", { level: 1 })).textContent).toBe("Welcome back.");
+  });
+
   it("claims no counts or completion while repository reads are pending", async () => {
     const pending = deferred<never>().promise;
     vi.mocked(dashboardSrsData).mockReturnValue(pending);

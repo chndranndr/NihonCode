@@ -11,6 +11,7 @@ import { useLevel } from "../../components/level";
 import type { JlptLevel } from "../../content/ids";
 import { LIVE_JLPT_CATEGORIES, loadJlptLevel, type JlptPool } from "../../content/loaders";
 import { jlptProgressMap } from "../../storage/jlptRepo";
+import { countOf } from "../../domain/format";
 
 interface JlptLoadState {
   level: JlptLevel;
@@ -121,7 +122,7 @@ export function JlptPage() {
                 <span>
                   <b>{`Exercise ${String(s.setNumber).padStart(2, "0")}`}</b>
                   <small>
-                    {s.questions.length} questions
+                    {countOf(s.questions.length, "question")}
                     {prog ? ` · BEST ${prog.bestCorrect}/${prog.total}` : ""}
                   </small>
                 </span>
@@ -166,7 +167,7 @@ export function JlptPage() {
               <span lang="ja">{meta.glyph}</span>
               <b>{meta.label}</b>
               <small>
-                {meta.desc} · {questions} questions
+                {meta.desc} · {countOf(questions, "question")}
               </small>
             </button>
           );

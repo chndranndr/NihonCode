@@ -26,6 +26,7 @@ import { ENABLED_LEVELS, loadPracticeCore } from "../../content/loaders";
 import type { JlptLevel } from "../../content/ids";
 import type { KanjiItem } from "../../content/models";
 import { countsByDay, type ActivityRow } from "../../domain/activity";
+import { countOf } from "../../domain/format";
 
 interface KanjiCell {
   item: KanjiItem;
@@ -204,7 +205,7 @@ export function ProgressPage() {
               <>
                 <div className="srs-row">
                   <span>Ready to review</span>
-                  <strong className="blue">{stats.due} cards</strong>
+                  <strong className="blue">{countOf(stats.due, "card")}</strong>
                 </div>
                 <div className="srs-row">
                   <span>Learned</span>
@@ -255,18 +256,19 @@ export function ProgressPage() {
           <Panel title="MILESTONES">
             <ul className="achievement-list" data-testid="achievements">
               {achievementList.map((a) => (
-                <li key={a.id} className={a.unlocked ? "" : "muted"} title={a.requirement}>
+                <li key={a.id} className={a.unlocked ? "" : "muted"}>
                   <b>{a.unlocked ? "✓" : "□"}</b>
                   {a.label}
+                  <span className="achievement-req">{a.requirement}</span>
                 </li>
               ))}
             </ul>
             <p className="micro-label" data-testid="coverage">
-              {Math.round(coverage * 100)}% OF THE {level.toUpperCase()} CLEAN SLICE
+              {Math.round(coverage * 100)}% OF {level.toUpperCase()} COVERED
             </p>
             <p className="empty-teach">
-              Coverage counts learned SRS cards and completed lessons against the clean-slice pool.
-              It is not an exam-competence estimate.
+              Coverage counts learned SRS cards and completed lessons against everything available
+              at this level. It is not an exam-competence estimate.
             </p>
           </Panel>
         </div>

@@ -7,6 +7,7 @@ import { dueCount } from "../../storage/srsRepo";
 import { db } from "../../storage/db";
 import { ENABLED_LEVELS } from "../../content/loaders";
 import type { JlptLevel } from "../../content/ids";
+import { countOf } from "../../domain/format";
 
 const PRACTICE: Array<[string, string, string, string]> = [
   ["kana", "あ", "KANA", "Hiragana & katakana"],
@@ -116,8 +117,8 @@ export function LearnPage() {
             {due === null
               ? "Counting due cards…"
               : due > 0
-                ? `${due} cards are ready for review.`
-                : "Nothing is due right now. Cards return as their intervals elapse."}
+                ? `${countOf(due, "card")} ${due === 1 ? "is" : "are"} ready for review.`
+                : "Nothing is due right now. Cards come back as they fall due."}
           </p>
           <Link
             className={due !== null && due > 0 ? "primary inline-cta" : "button inline-cta"}

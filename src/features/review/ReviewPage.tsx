@@ -138,7 +138,9 @@ export function ReviewPage() {
         <div>
           <p className="label">キタ / SPACED REPETITION</p>
           <h1>Review what you know.</h1>
-          <p className="description">Cards return as their FSRS interval elapses.</p>
+          <p className="description">
+            Each card comes back when it is due, sooner if you missed it.
+          </p>
         </div>
       </div>
       {queue ? (
@@ -155,9 +157,7 @@ export function ReviewPage() {
             START REVIEW
           </button>
           {queue.due.length + queue.fresh.length === 0 && (
-            <p className="empty-teach">
-              Nothing due. Cards return when their FSRS interval elapses.
-            </p>
+            <p className="empty-teach">Nothing due right now. Cards come back as they fall due.</p>
           )}
         </>
       ) : (

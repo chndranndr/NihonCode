@@ -291,7 +291,7 @@ test("accent text meets WCAG AA in both themes and every accent", async ({ page 
   await page.goto("/config");
 
   for (const theme of ["dark", "light"] as const) {
-    if (theme === "light") await page.getByRole("button", { name: "DARK" }).click();
+    if (theme === "light") await page.getByRole("button", { name: "LIGHT", exact: true }).click();
     await expect(page.locator("html")).toHaveClass(new RegExp(`theme-${theme}`));
 
     for (const accent of ["amber", "green", "blue", "orange", "red"] as const) {
@@ -396,7 +396,7 @@ test("quiet instrument foundation uses approved tokens and readable type", async
   expect(foundation.ctaColor).toBe("rgb(27, 28, 25)");
 
   await page.goto("/config");
-  await page.getByRole("button", { name: "DARK", exact: true }).click();
+  await page.getByRole("button", { name: "LIGHT", exact: true }).click();
   await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute("content", "#f5f2ea");
   const light = await page.evaluate(() => {
     const root = getComputedStyle(document.documentElement);

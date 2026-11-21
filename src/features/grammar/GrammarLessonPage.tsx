@@ -13,6 +13,7 @@ import { XP } from "../../domain/progress";
 import { awardXp, newSessionId, recordSession } from "../../storage/progressRepo";
 import { db } from "../../storage/db";
 import { grammarLessonId } from "../../content/ids";
+import { countOf } from "../../domain/format";
 
 export function GrammarLessonPage() {
   const { lessonId = "" } = useParams();
@@ -171,7 +172,7 @@ export function GrammarLessonPage() {
           <div>
             <p className="label">Progress</p>
             <p className="muted">
-              {answers.length} of {active.quiz.length} questions answered
+              {answers.length} of {countOf(active.quiz.length, "question")} answered
             </p>
           </div>
           <button className="back" type="button" onClick={() => navigate("/learn")}>

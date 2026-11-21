@@ -411,13 +411,13 @@ test("numbers drill honors a user-chosen count of 50", async ({ page }) => {
 
 test("theme choice persists across reload", async ({ page }) => {
   await page.goto("/config");
-  await page.getByRole("button", { name: "DARK" }).click();
+  await page.getByRole("button", { name: "LIGHT", exact: true }).click();
   await expect(page.locator("html")).toHaveClass(/theme-light/);
   await page.reload();
   await expect(page.locator("html")).toHaveClass(/theme-light/);
   // restore dark default for other tests in the same context
   await page.goto("/config");
-  await page.getByRole("button", { name: "LIGHT" }).click();
+  await page.getByRole("button", { name: "DARK", exact: true }).click();
 });
 
 test("Esc abort confirms and awards nothing", async ({ page }) => {

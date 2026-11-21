@@ -17,6 +17,7 @@ import {
   parseDayKey,
   type ActivityRow,
 } from "../domain/activity";
+import { countOf } from "../domain/format";
 import { dayKey, type DayKey } from "../domain/progress";
 
 const CATEGORY_LABELS: Record<(typeof ACTIVITY_CATEGORIES)[number], string> = {
@@ -120,7 +121,7 @@ export function ActivityCalendar({
   return (
     <div className={`activity-calendar ${compact ? "compact" : "annual"}`}>
       <div className="activity-caption">
-        <strong>{totals.total} sessions</strong>
+        <strong>{countOf(totals.total, "session")}</strong>
         <span>{compact ? "Last 13 weeks" : startKey.slice(0, 4)} · all levels</span>
       </div>
       <div
@@ -154,7 +155,7 @@ export function ActivityCalendar({
               const future = key > todayKey;
               const counts = byDay.get(key);
               const total = counts ? ACTIVITY_CATEGORIES.reduce((sum, c) => sum + counts[c], 0) : 0;
-              const label = `${key}: ${future ? "future date" : `${total} completed sessions`}`;
+              const label = `${key}: ${future ? "future date" : countOf(total, "completed session")}`;
               return (
                 <button
                   key={key}
@@ -193,7 +194,11 @@ export function ActivityCalendar({
         <span className="heat-legend">
           Less{" "}
           {[0, 1, 2, 3, 4].map((n) => (
-            <i key={n} className={`heat-cell heat-${n}`} title={`${n === 4 ? "4+" : n} sessions`} />
+            <i
+              key={n}
+              className={`heat-cell heat-${n}`}
+              title={n === 4 ? "4+ sessions" : countOf(n, "session")}
+            />
           ))}{" "}
           More
         </span>
@@ -201,7 +206,7 @@ export function ActivityCalendar({
       <p className="day-detail" role="status">
         {selectionError ??
           (selected
-            ? `${selected} · ${selectedTotal} sessions${
+            ? `${selected} · ${countOf(selectedTotal, "session")}${
                 selectedCounts
                   ? `: ${ACTIVITY_CATEGORIES.map(
                       (c) => `${CATEGORY_LABELS[c]}: ${selectedCounts[c]}`,

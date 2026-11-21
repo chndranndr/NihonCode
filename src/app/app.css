@@ -1744,15 +1744,29 @@ tbody tr:hover {
   font-variant-numeric: tabular-nums;
 }
 
+/* Two even columns: each milestone now carries its requirement text, which
+   made a wrapping row ragged. */
 .achievement-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 24px;
   margin-top: 20px;
+  padding: 0;
+  list-style: none;
 }
 
 .achievement-list li {
   font-size: 12px;
+}
+
+.achievement-req {
+  display: block;
+  margin-top: 4px;
+  color: var(--dim);
+  font-size: 12px;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .achievement-list b {

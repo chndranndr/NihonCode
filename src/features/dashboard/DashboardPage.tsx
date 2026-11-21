@@ -13,6 +13,7 @@ import { ActivityCalendar } from "../../components/ActivityCalendar";
 import { loadPrefs } from "../../storage/prefs";
 import { ENABLED_LEVELS } from "../../content/loaders";
 import type { JlptLevel } from "../../content/ids";
+import { countOf } from "../../domain/format";
 
 type KanjiBand = "mastered" | "learning" | "unseen";
 
@@ -44,8 +45,9 @@ type ContentState =
   | { status: "error"; level: JlptLevel; cap: number };
 
 function momentumLine(due: number, fresh: number): string {
-  if (due > 0) return `${due} cards are ready for another look.`;
-  if (fresh > 0) return `${fresh} new cards are waiting to be introduced.`;
+  if (due > 0) return `${countOf(due, "card")} ${due === 1 ? "is" : "are"} ready for another look.`;
+  if (fresh > 0)
+    return `${countOf(fresh, "new card")} ${fresh === 1 ? "is" : "are"} waiting to be introduced.`;
   return "Nothing is due right now. A short drill keeps it moving.";
 }
 
@@ -142,7 +144,7 @@ export function DashboardPage() {
         <div className="page-head">
           <div>
             <p className="label">YOUR JAPANESE, A LITTLE EVERY DAY</p>
-            <h1>Welcome back.</h1>
+            <h1>{prefs.progress.lastStudyDay ? "Welcome back." : "Welcome."}</h1>
             <p className="description">A quiet place for drills, review, and steady progress.</p>
             <div className="status-strip" role="status">
               <span className="micro-label">JLPT {level.toUpperCase()}</span>
