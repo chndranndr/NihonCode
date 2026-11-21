@@ -83,6 +83,7 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
   const [results, setResults] = useState<Answered[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const advanceRef = useRef<HTMLButtonElement>(null);
+  const resumeRef = useRef<HTMLButtonElement>(null);
 
   const item = items[index];
 
@@ -91,6 +92,10 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
     if (answered) advanceRef.current?.focus();
     else inputRef.current?.focus();
   }, [index, answered, confirmAbort]);
+
+  useEffect(() => {
+    if (confirmAbort) resumeRef.current?.focus();
+  }, [confirmAbort]);
 
   const progress = useMemo(
     () => ({ position: index + 1, total: items.length }),
@@ -146,17 +151,19 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
     }
     if (event.key === "Escape") {
       event.preventDefault();
-      setConfirmAbort(true);
+      setConfirmAbort((open) => !open);
     }
   }
 
   return (
     <div className="session" data-testid="session" onKeyDown={onKey}>
-      <div className="session-rail" role="status">
-        <span className="micro-label">{title}</span>
-        <span className="micro-label">
-          {progress.position}/{progress.total}
-        </span>
+      <div className="session-rail">
+        <div className="session-rail-status" role="status">
+          <span className="micro-label">{title}</span>
+          <span className="micro-label">
+            {progress.position}/{progress.total}
+          </span>
+        </div>
         <div
           className="progress-track"
           role="progressbar"
@@ -172,6 +179,14 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
             }}
           />
         </div>
+        <button
+          type="button"
+          className="session-exit"
+          aria-keyshortcuts="Escape"
+          onClick={() => setConfirmAbort(true)}
+        >
+          EXIT SESSION
+        </button>
       </div>
 
       <div className="prompt-plate panel">
@@ -250,7 +265,7 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
           <button type="button" onClick={onAbort}>
             ABORT
           </button>
-          <button type="button" onClick={() => setConfirmAbort(false)}>
+          <button ref={resumeRef} type="button" onClick={() => setConfirmAbort(false)}>
             RESUME
           </button>
         </div>

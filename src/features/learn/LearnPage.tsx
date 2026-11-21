@@ -46,7 +46,6 @@ export function LearnPage() {
     <div className="learn" data-testid="learn">
       <div className="page-head">
         <div>
-          <p className="label">キタ / {level.toUpperCase()} STUDY</p>
           <h1>Choose what to learn.</h1>
           <p className="description">
             Practice a skill, explore a grammar point, or return to your review queue.

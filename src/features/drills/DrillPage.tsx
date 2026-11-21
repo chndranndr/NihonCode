@@ -253,7 +253,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
 export function DrillPage() {
   const { mode = "kana" } = useParams();
   const navigate = useNavigate();
-  const { pools, level } = useLevel();
+  const { pools } = useLevel();
   const [limit, setLimit] = useState<number | "all">(10);
   const [options, setOptions] = useState<DrillOptions>(DEFAULT_OPTIONS);
   const [session, setSession] = useState<SessionItem[] | null>(null);
@@ -336,7 +336,6 @@ export function DrillPage() {
       <div className="results" data-testid="summary">
         <div className="page-head">
           <div>
-            <p className="label">キタ / {level.toUpperCase()} STUDY</p>
             <h1>Session complete.</h1>
             <p className="description">
               Take a moment to look back. Every attempt gives you something to build on.
@@ -443,7 +442,6 @@ export function DrillPage() {
       </Link>
       <div className="page-head">
         <div>
-          <p className="label">キタ / {level.toUpperCase()} STUDY</p>
           <h1>{modeName(mode)} practice</h1>
           <p className="description">Pick how many questions, then start.</p>
         </div>

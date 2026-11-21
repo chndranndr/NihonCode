@@ -100,10 +100,8 @@ export function GrammarLessonPage() {
       </button>
       <div className="page-head">
         <div>
-          <p className="label">
-            {level.toUpperCase()} GRAMMAR · {active.category}
-          </p>
           <h1 lang="ja">{active.title}</h1>
+          <p className="micro-label page-meta">Grammar · {active.category}</p>
         </div>
       </div>
 

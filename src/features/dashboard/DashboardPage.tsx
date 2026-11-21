@@ -143,7 +143,6 @@ export function DashboardPage() {
       <div className="home-intro">
         <div className="page-head">
           <div>
-            <p className="label">YOUR JAPANESE, A LITTLE EVERY DAY</p>
             <h1>{prefs.progress.lastStudyDay ? "Welcome back." : "Welcome."}</h1>
             <p className="description">A quiet place for drills, review, and steady progress.</p>
             <div className="status-strip" role="status">
@@ -189,7 +188,6 @@ export function DashboardPage() {
         <>
           <div className="grid-home">
             <section className="panel routine" data-testid="routine-card">
-              <p className="label">TODAY’S PRACTICE</p>
               <h2>Keep your Japanese moving.</h2>
               <p className="muted">{momentumLine(data.due, data.fresh)}</p>
               <Link

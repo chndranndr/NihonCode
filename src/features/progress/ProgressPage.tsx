@@ -149,7 +149,6 @@ export function ProgressPage() {
     <div className="progress-page" data-testid="progress">
       <div className="page-head">
         <div>
-          <p className="label">キタ / {level.toUpperCase()} PROGRESS</p>
           <h1>Your effort, taking shape.</h1>
           <p className="description">
             Every day adds up. Explore when you studied and how you spent your sessions.

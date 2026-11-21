@@ -466,6 +466,11 @@ p + p {
   margin-bottom: 10px;
 }
 
+.page-meta {
+  margin-top: 8px;
+  color: var(--dim);
+}
+
 .home-intro {
   display: flex;
   align-items: end;
@@ -1244,7 +1249,27 @@ tbody tr:hover {
 .session-rail {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.session-rail-status {
+  display: flex;
+  align-items: center;
   gap: 1rem;
+}
+
+.session-exit {
+  margin-left: auto;
+}
+
+/* Phones: the exit button would squeeze the progress bar to a sliver, so the
+   bar takes its own full-width line under the status and exit row. */
+@media (max-width: 767px) {
+  .session-rail .progress-track {
+    flex-basis: 100%;
+    order: 3;
+  }
 }
 
 .progress-track {

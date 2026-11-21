@@ -97,9 +97,6 @@ export function JlptPage() {
         </button>
         <div className="page-head">
           <div>
-            <p className="label">
-              キタ / {level.toUpperCase()} · {meta.label.toUpperCase()}
-            </p>
             <h1>{meta.label} sets</h1>
             <p className="description">
               {sets.length} sets · work through each question, then review your answers.
@@ -145,7 +142,6 @@ export function JlptPage() {
       </button>
       <div className="page-head">
         <div>
-          <p className="label">キタ / {level.toUpperCase()} STUDY</p>
           <h1>JLPT practice.</h1>
           <p className="description">
             Choose a category and a set. Work through each question, then review your answers.

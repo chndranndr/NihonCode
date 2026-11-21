@@ -61,6 +61,60 @@ export function JlptRunPage() {
     return cat.items.find((s) => String(s.setNumber) === setNumber) ?? null;
   }, [pool, category, setNumber]);
 
+  const sessionShown = set !== null && !finished;
+  const optionCount = set?.questions[index]?.options.length ?? 0;
+  const answerIndex = set?.questions[index]?.answerIndex ?? -1;
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const promptRef = useRef<HTMLDivElement>(null);
+  const keepRef = useRef<HTMLButtonElement>(null);
+  const lastIndexRef = useRef(index);
+
+  // Keyboard operation: A-H / 1-8 answer, Esc toggles the leave confirm.
+  // Alt/Ctrl/Meta combos are left alone (global Alt+1-4 navigation).
+  useEffect(() => {
+    if (!sessionShown) return;
+    function onKey(event: KeyboardEvent): void {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      const target = event.target;
+      if (
+        target instanceof HTMLElement &&
+        (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
+      ) {
+        return;
+      }
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setConfirmExit(!confirmExit);
+        return;
+      }
+      if (chosen !== null || confirmExit) return;
+      const k = event.key.toLowerCase();
+      const i = /^[1-8]$/.test(k) ? Number(k) - 1 : "abcdefgh".indexOf(k);
+      if (k.length !== 1 || i < 0 || i >= optionCount) return;
+      event.preventDefault();
+      setChosen(i);
+      if (i === answerIndex) setCorrectCount((c) => c + 1);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [sessionShown, chosen, confirmExit, optionCount, answerIndex]);
+
+  // After answering, NEXT takes focus (scrolls into view; Enter advances).
+  useEffect(() => {
+    if (chosen !== null) nextRef.current?.focus();
+  }, [chosen]);
+
+  // Each new question: focus the prompt, away from the option list.
+  useEffect(() => {
+    if (lastIndexRef.current === index) return;
+    lastIndexRef.current = index;
+    promptRef.current?.focus();
+  }, [index]);
+
+  useEffect(() => {
+    if (confirmExit) keepRef.current?.focus();
+  }, [confirmExit]);
+
   if (error) {
     return (
       <section className="route-state panel" role="alert">
@@ -133,10 +187,10 @@ export function JlptRunPage() {
       <div className="results" data-testid="summary">
         <div className="page-head">
           <div>
-            <p className="label">
-              キタ / {level.toUpperCase()} · {category.toUpperCase()} · SET {set.setNumber}
-            </p>
             <h1>Set complete.</h1>
+            <p className="micro-label page-meta">
+              {category.toUpperCase()} · SET {set.setNumber}
+            </p>
           </div>
         </div>
         <div className="result-head">
@@ -183,10 +237,10 @@ export function JlptRunPage() {
     <div className="session" data-testid="session">
       <div className="session-top">
         <div>
-          <p className="micro-label">
-            {level.toUpperCase()} · {category.toUpperCase()} · SET {set.setNumber}
-          </p>
           <h1>Choose the best answer.</h1>
+          <p className="micro-label page-meta">
+            {category.toUpperCase()} · SET {set.setNumber}
+          </p>
         </div>
         <button type="button" onClick={() => setConfirmExit(true)}>
           EXIT SESSION
@@ -269,7 +323,7 @@ export function JlptRunPage() {
         />
       )}
 
-      <div className="prompt-plate panel jlpt-prompt">
+      <div className="prompt-plate panel jlpt-prompt" ref={promptRef} tabIndex={-1}>
         <p className="jlpt-question" lang="ja">
           {question.prompt}
         </p>
@@ -285,6 +339,7 @@ export function JlptRunPage() {
               type="button"
               className={`option ${isCorrect ? "ok" : ""} ${isWrongPick ? "miss" : ""}`}
               aria-pressed={chosen === i}
+              aria-keyshortcuts={`${LABEL[i]} ${i + 1}`}
               disabled={chosen !== null}
               onClick={() => choose(i)}
             >
@@ -317,7 +372,7 @@ export function JlptRunPage() {
               {question.explanation}
             </p>
           )}
-          <button type="button" className="primary" onClick={() => void advance()}>
+          <button ref={nextRef} type="button" className="primary" onClick={() => void advance()}>
             {index + 1 >= set.questions.length ? "FINISH" : "NEXT"}
           </button>
         </div>
@@ -329,7 +384,7 @@ export function JlptRunPage() {
           <button type="button" onClick={() => navigate(`/learn/jlpt/${category}`)}>
             LEAVE
           </button>
-          <button type="button" onClick={() => setConfirmExit(false)}>
+          <button ref={keepRef} type="button" onClick={() => setConfirmExit(false)}>
             KEEP PRACTICING
           </button>
         </div>

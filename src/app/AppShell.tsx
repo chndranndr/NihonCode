@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { LevelProvider } from "../components/level";
+import { LevelProvider, useLevel } from "../components/level";
 import { ThemeProvider } from "../components/theme";
 import { AchievementToasts } from "../components/AchievementToasts";
 import "./app.css";
@@ -29,6 +29,7 @@ function titleForPath(pathname: string): string {
 function Shell({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { level } = useLevel();
 
   useEffect(() => {
     document.title = `${titleForPath(pathname)} · NihonCode`;
@@ -80,7 +81,9 @@ function Shell({ children }: { children: ReactNode }) {
       </aside>
       <div className="workspace">
         <header className="topbar">
-          <span>{titleForPath(pathname)}</span>
+          <span className="micro-label" data-testid="topbar-level">
+            JLPT {level.toUpperCase()}
+          </span>
           <span className="console-tag">LOCAL DATA ONLY</span>
         </header>
         <main className="app-content" id="main" tabIndex={-1}>

@@ -424,7 +424,7 @@ test("quiet instrument route failure keeps the shell and reloads for recovery", 
 test("quiet instrument shell keeps destinations, focus, and motion usable", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator(".ticker")).toHaveCount(0);
-  await expect(page.locator(".topbar")).toContainText("Home");
+  await expect(page.locator(".topbar")).toContainText("JLPT N5");
   await expect(page).toHaveTitle("Home · NihonCode");
   await page.locator(".skip").focus();
   await page.keyboard.press("Enter");
@@ -554,5 +554,31 @@ test("quiet instrument setup preserves pool controls and actual start counts", a
   );
   for (const control of controls) {
     expect(control.height, control.name).toBeGreaterThanOrEqual(44);
+  }
+});
+
+test("page headings carry no eyebrow above them", async ({ page }) => {
+  const routes = [
+    "/",
+    "/progress",
+    "/learn",
+    "/learn/drill/kana",
+    "/learn/jlpt",
+    "/learn/jlpt/grammar",
+    "/learn/review",
+    "/stats",
+    "/config",
+    "/learn/grammar/1",
+  ];
+  await page.goto("/");
+  await expect(page.getByTestId("topbar-level")).toHaveText("JLPT N5");
+  for (const route of routes) {
+    await page.goto(route);
+    const h1 = page.locator("main h1").first();
+    await expect(h1).toBeVisible();
+    const eyebrow = await h1.evaluate(
+      (el) => el.previousElementSibling?.matches("p.label") ?? false,
+    );
+    expect(eyebrow, `${route} has an eyebrow above its h1`).toBe(false);
   }
 });

@@ -437,6 +437,51 @@ test("Esc abort confirms and awards nothing", async ({ page }) => {
   await expect(page.getByTestId("xp-value")).toHaveText(xpBefore);
 });
 
+test("drill exit is visible and Esc toggles the confirm", async ({ page }) => {
+  await page.goto("/learn/drill/kana");
+  await page.getByRole("button", { name: "START" }).click();
+  await expect(page.getByTestId("session")).toBeVisible();
+  const exit = page.getByRole("button", { name: "EXIT SESSION" });
+  await expect(exit).toBeVisible();
+  await exit.click();
+  await expect(page.getByRole("alertdialog")).toBeVisible();
+  await expect(page.getByRole("button", { name: "RESUME", exact: true })).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("alertdialog")).toBeHidden();
+  await expect(page.getByLabel("Answer", { exact: true })).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("alertdialog")).toBeVisible();
+});
+
+test("JLPT answers by keyboard and keeps NEXT in reach", async ({ page }) => {
+  await page.goto("/learn/jlpt/grammar/1");
+  const options = page.locator(".option");
+  await expect(options.nth(1)).toBeVisible();
+  await page.keyboard.press("b");
+  await expect(options.nth(1)).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByTestId("reveal")).toBeVisible();
+  // Question 1 of this set carries an explanation; NEXT stays reachable.
+  await expect(page.getByTestId("explanation")).toBeVisible();
+  const next = page.getByRole("button", { name: "NEXT", exact: true });
+  await expect(next).toBeFocused();
+  await expect(next).toBeInViewport();
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".session-rail")).toContainText("2/");
+  await page.keyboard.press("3");
+  await expect(options.nth(2)).toHaveAttribute("aria-pressed", "true");
+});
+
+test("JLPT Esc toggles the leave confirm", async ({ page }) => {
+  await page.goto("/learn/jlpt/grammar/1");
+  await expect(page.locator(".option").first()).toBeVisible();
+  await page.keyboard.press("Escape");
+  const dialog = page.getByRole("alertdialog", { name: "leave session" });
+  await expect(dialog).toBeVisible();
+  await expect(page.getByRole("button", { name: "KEEP PRACTICING" })).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(dialog).toBeHidden();
+});
+
 test("kanji and vocab drills grade real content correctly", async ({ page }) => {
   await page.goto("/learn/drill/kanji");
   await page.getByRole("button", { name: "10", exact: true }).click();

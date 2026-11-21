@@ -14,7 +14,7 @@ import { srsStats, type SrsStats } from "../../storage/srsRepo";
 import { loadPrefs } from "../../storage/prefs";
 
 export function SrsStatsPage() {
-  const { pools, level } = useLevel();
+  const { pools } = useLevel();
   const prefs = loadPrefs();
   const [stats, setStats] = useState<SrsStats | null>(null);
 
@@ -43,7 +43,6 @@ export function SrsStatsPage() {
     <div className="progress-page" data-testid="srs-stats">
       <div className="page-head">
         <div>
-          <p className="label">キタ / {level.toUpperCase()} REVIEW</p>
           <h1>SRS statistics.</h1>
           <p className="description">
             Scheduler counts for the active level, not an exam-readiness estimate.

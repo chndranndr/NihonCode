@@ -22,7 +22,6 @@ export function ConfigPage() {
     <div className="config" data-testid="config">
       <div className="page-head">
         <div>
-          <p className="label">キタ / CONFIG</p>
           <h1>Make space for your routine.</h1>
           <p className="description">Adjust the look and session preferences of this app.</p>
         </div>

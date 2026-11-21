@@ -136,7 +136,6 @@ export function ReviewPage() {
     <div className="setup" data-testid="review">
       <div className="page-head">
         <div>
-          <p className="label">キタ / SPACED REPETITION</p>
           <h1>Review what you know.</h1>
           <p className="description">
             Each card comes back when it is due, sooner if you missed it.
