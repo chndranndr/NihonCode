@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
-import { type Pools } from "../../components/pools";
+import { type Pools, vocabReadingsByPrompt } from "../../components/pools";
 import { useLevel } from "../../components/level";
 import { PoolMatrix } from "../../components/PoolMatrix";
 import { makeNumberQuestionInRange } from "../../domain/numbers";
@@ -139,11 +139,12 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
           speakText: k.char,
         };
       });
-    case "vocab":
+    case "vocab": {
+      const readings = vocabReadingsByPrompt(pools.vocab);
       return shuffle(pools.vocab).map((v) => ({
         id: v.id,
         prompt: v.kanji,
-        accepted: [v.romaji],
+        accepted: readings.get(v.kanji) ?? [v.romaji],
         ask: "reading in romaji",
         reveal: {
           scripts: [v.kanji, v.kana],
@@ -152,6 +153,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
         },
         speakText: v.kana,
       }));
+    }
     case "numbers": {
       // PRD 10.7: Japanese -> Number answers numerically; Number -> Japanese
       // answers in romaji.

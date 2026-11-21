@@ -29,3 +29,18 @@ export function poolsFromLevelData(data: LevelData): Pools {
 export function srsPoolIds(pools: Pools): string[] {
   return [...pools.kanji.map((k) => k.id), ...pools.vocab.map((v) => v.id)];
 }
+
+/**
+ * Romaji readings per vocab prompt. Drills and review show the kanji form
+ * alone, so homographs (N4 挨拶: aisatsu, aisatsusuru) share one card face;
+ * each must accept every reading behind that face.
+ */
+export function vocabReadingsByPrompt(vocab: VocabItem[]): Map<string, string[]> {
+  const readings = new Map<string, string[]>();
+  for (const v of vocab) {
+    const list = readings.get(v.kanji);
+    if (!list) readings.set(v.kanji, [v.romaji]);
+    else if (!list.includes(v.romaji)) list.push(v.romaji);
+  }
+  return readings;
+}

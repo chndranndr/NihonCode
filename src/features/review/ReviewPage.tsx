@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DrillSession, type SessionItem, type SessionResult } from "../../components/DrillSession";
-import { srsPoolIds } from "../../components/pools";
+import { srsPoolIds, vocabReadingsByPrompt } from "../../components/pools";
 import { useLevel } from "../../components/level";
 import { ratingFromCorrect } from "../../domain/scheduling";
 import { kanaToRomaji } from "../../domain/romaji";
@@ -56,10 +56,11 @@ export function ReviewPage() {
         meaning: k.meaning,
         speak: k.char,
       });
+    const readings = vocabReadingsByPrompt(pools?.vocab ?? []);
     for (const v of pools?.vocab ?? [])
       map.set(v.id, {
         prompt: v.kanji,
-        accepted: [v.romaji],
+        accepted: readings.get(v.kanji) ?? [v.romaji],
         ask: "reading in romaji",
         scripts: [v.kanji, v.kana],
         meaning: v.meaning,
