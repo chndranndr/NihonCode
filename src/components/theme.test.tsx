@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { act, cleanup, render } from "@testing-library/react";
 import { ACCENTS } from "../storage/prefs";
 import {
@@ -66,29 +66,36 @@ describe("ThemeProvider transition hold", () => {
     );
   }
 
-  it("holds control transitions during a theme switch, then releases them", async () => {
+  // Fake timers, not sleeps: real two-frame timing varies under load and made
+  // a fixed 50ms wait flaky (1 in 15 runs).
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("holds control transitions during a theme switch, then frames release them", () => {
+    vi.useFakeTimers({
+      toFake: ["setTimeout", "clearTimeout", "requestAnimationFrame", "cancelAnimationFrame"],
+    });
     const { getByRole } = render(
       <ThemeProvider>
         <Toggle />
       </ThemeProvider>,
     );
     const root = document.documentElement;
-    await act(async () => {
-      await new Promise((r) => setTimeout(r, 50));
-    });
+    act(() => vi.advanceTimersByTime(100));
     expect(root.classList.contains("theme-switching")).toBe(false);
 
     act(() => getByRole("button").click());
     expect(root.classList.contains("theme-light")).toBe(true);
     expect(root.classList.contains("theme-switching")).toBe(true);
 
-    await act(async () => {
-      await new Promise((r) => setTimeout(r, 50));
-    });
+    // Two animation frames (~32ms) release it well before the 100ms fallback.
+    act(() => vi.advanceTimersByTime(40));
     expect(root.classList.contains("theme-switching")).toBe(false);
   });
 
-  it("releases the hold even when animation frames never run", async () => {
+  it("releases the hold at the 100ms fallback when animation frames never run", () => {
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
     const raf = window.requestAnimationFrame;
     window.requestAnimationFrame = () => 0;
     try {
@@ -99,9 +106,9 @@ describe("ThemeProvider transition hold", () => {
       );
       const root = document.documentElement;
       expect(root.classList.contains("theme-switching")).toBe(true);
-      await act(async () => {
-        await new Promise((r) => setTimeout(r, 150));
-      });
+      act(() => vi.advanceTimersByTime(99));
+      expect(root.classList.contains("theme-switching")).toBe(true);
+      act(() => vi.advanceTimersByTime(1));
       expect(root.classList.contains("theme-switching")).toBe(false);
     } finally {
       window.requestAnimationFrame = raf;

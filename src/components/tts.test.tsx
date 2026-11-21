@@ -161,6 +161,7 @@ describe("SpeakerButton", () => {
             id: "kanji:n5:一",
             prompt: "一",
             accepted: ["いち"],
+            ask: "reading in kana or romaji",
             reveal: { scripts: ["一", "いち"], meaning: "one", group: "srs review" },
             speakText: "一",
           },

@@ -9,20 +9,9 @@
 
 import { useState } from "react";
 import type { SessionItem } from "./DrillSession";
+import { scriptSplit } from "../domain/kanjiReadings";
 
 const PAGE_SIZE = 6;
-
-function scriptSplit(reading: string): { on: string; kun: string } {
-  const on: string[] = [];
-  const kun: string[] = [];
-  for (const segment of reading.split("/")) {
-    const trimmed = segment.trim();
-    if (!trimmed) continue;
-    if (/^[\u30A0-\u30FF・]+$/.test(trimmed)) on.push(trimmed);
-    else kun.push(trimmed);
-  }
-  return { on: on.join("、"), kun: kun.join("、") };
-}
 
 function matrixRows(mode: string, items: SessionItem[]): { heads: string[]; rows: string[][] } {
   switch (mode) {

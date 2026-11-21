@@ -23,6 +23,14 @@ export interface SessionItem {
   prompt: string;
   /** Accepted answers (normalized comparison in domain/grading). */
   accepted: string[];
+  /**
+   * What to type, shown beside the Answer label for the whole session
+   * ("reading in kana or romaji"). Must describe exactly what `accepted`
+   * holds: the grader does not transliterate.
+   */
+  ask: string;
+  /** A format sample for answers whose shape is not obvious (full dates). */
+  example?: string;
   /** What the reveal teaches. */
   reveal: {
     scripts: string[];
@@ -209,15 +217,19 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
         </div>
       ) : (
         <div className="input-dock">
-          <label className="answer-label" htmlFor="drill-answer">
-            Answer
-          </label>
+          <p className="answer-label">
+            <label htmlFor="drill-answer">Answer</label>
+            <span id="drill-answer-ask" className="answer-ask" data-testid="answer-ask">
+              {item.ask}
+            </span>
+          </p>
           <input
             id="drill-answer"
+            aria-describedby="drill-answer-ask"
             ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="type your answer, Enter to submit"
+            placeholder={item.example ? `e.g. ${item.example}` : "Enter to submit"}
             autoComplete="off"
           />
           <button type="button" className="primary" onClick={submit}>

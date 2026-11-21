@@ -67,6 +67,17 @@ export function applyStudyDay(
   return { streakDays: 1, lastStudyDay: today };
 }
 
+/**
+ * A session score at or above this percentage reads as a strong result: the
+ * summary shows it in the accent. Below it the score stays plain ink and the
+ * summary leads with retrying the misses.
+ */
+export const STRONG_SCORE_PCT = 60;
+
+export function isStrongScore(pct: number): boolean {
+  return pct >= STRONG_SCORE_PCT;
+}
+
 export function perfectDrillBonus(correct: number, total: number): number {
   return total > 0 && correct === total ? XP.perfectDrillBonus : 0;
 }

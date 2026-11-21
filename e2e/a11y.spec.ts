@@ -41,6 +41,7 @@ test("main routes expose landmarks and labeled controls", async ({ page }) => {
   const answer = page.getByLabel("Answer", { exact: true });
   await expect(answer).toBeVisible();
   await expect(page.locator('label[for="drill-answer"]')).toHaveText("Answer");
+  await expect(answer).toHaveAccessibleDescription("romaji reading");
   const answerHeight = await answer.evaluate((el) => el.getBoundingClientRect().height);
   expect(answerHeight).toBeGreaterThanOrEqual(48);
   const promptSize = await page
@@ -535,6 +536,7 @@ test("quiet instrument JLPT load failure retries the actual content", async ({ p
 test("quiet instrument setup preserves pool controls and actual start counts", async ({ page }) => {
   await page.goto("/learn/drill/kana");
   await expect(page.getByRole("group", { name: "question limit" })).toBeVisible();
+  await expect(page.locator(".start-dock .primary")).toBeInViewport();
   await expect(page.locator(".pool-matrix")).toBeVisible();
   await page.getByRole("button", { name: "20", exact: true }).click();
   await expect(page.locator(".start-dock .primary")).toContainText("START");

@@ -34,7 +34,14 @@ export function ReviewPage() {
   const lookup = useMemo(() => {
     const map = new Map<
       string,
-      { prompt: string; accepted: string[]; scripts: string[]; meaning: string; speak: string }
+      {
+        prompt: string;
+        accepted: string[];
+        ask: string;
+        scripts: string[];
+        meaning: string;
+        speak: string;
+      }
     >();
     for (const k of pools?.kanji ?? [])
       map.set(k.id, {
@@ -43,6 +50,7 @@ export function ReviewPage() {
           ...k.answers,
           ...k.answers.map((a) => kanaToRomaji(a)).filter((r): r is string => r !== null),
         ],
+        ask: "reading in kana or romaji",
         scripts: [k.char, k.reading],
         meaning: k.meaning,
         speak: k.char,
@@ -51,6 +59,7 @@ export function ReviewPage() {
       map.set(v.id, {
         prompt: v.kanji,
         accepted: [v.romaji],
+        ask: "reading in romaji",
         scripts: [v.kanji, v.kana],
         meaning: v.meaning,
         speak: v.kana,
@@ -69,6 +78,7 @@ export function ReviewPage() {
           id,
           prompt: entry.prompt,
           accepted: entry.accepted,
+          ask: entry.ask,
           reveal: { scripts: entry.scripts, meaning: entry.meaning, group: "srs review" },
           speakText: entry.speak,
         };

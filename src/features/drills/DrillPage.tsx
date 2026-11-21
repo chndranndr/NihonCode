@@ -6,7 +6,7 @@ import { useLevel } from "../../components/level";
 import { PoolMatrix } from "../../components/PoolMatrix";
 import { makeNumberQuestionInRange } from "../../domain/numbers";
 import { makeFullDate, WEEKDAYS } from "../../domain/dates";
-import { perfectDrillBonus, XP } from "../../domain/progress";
+import { isStrongScore, perfectDrillBonus, XP } from "../../domain/progress";
 import {
   awardXp,
   newSessionId,
@@ -115,6 +115,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
         id: k.id,
         prompt: k.char,
         accepted: [k.romaji],
+        ask: "romaji reading",
         reveal: { scripts: [k.char], meaning: k.romaji, group: k.table },
         speakText: k.char,
       }));
@@ -128,6 +129,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
           id: k.id,
           prompt: k.char,
           accepted: [...k.answers, ...romaji],
+          ask: "reading in kana or romaji",
           reveal: {
             scripts: [k.char, k.reading],
             meaning: k.meaning,
@@ -141,6 +143,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
         id: v.id,
         prompt: v.kanji,
         accepted: [v.romaji],
+        ask: "reading in romaji",
         reveal: {
           scripts: [v.kanji, v.kana],
           meaning: v.meaning,
@@ -159,6 +162,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
               id: `numbers:${q.value}`,
               prompt: q.japanese,
               accepted: [String(q.value)],
+              ask: "number in digits",
               reveal: { scripts: [q.japanese], meaning: String(q.value), group: "numbers" },
               speakText: q.japanese,
             }
@@ -166,6 +170,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
               id: `numbers:${q.value}`,
               prompt: String(q.value),
               accepted: [q.romaji],
+              ask: "reading in romaji",
               reveal: { scripts: [q.japanese], meaning: q.romaji, group: "numbers" },
               speakText: q.japanese,
             };
@@ -183,6 +188,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
           // Weekday names are kanji, so the romaji lives on the model;
           // en→jp accepts the reading and its romaji.
           accepted: jp2en ? [w.en] : [w.jp, w.romaji],
+          ask: jp2en ? "English day name" : "day name in kanji or romaji",
           reveal: { scripts: [w.jp], meaning: w.en, group: "weekdays" },
           speakText: w.jp,
         }));
@@ -193,6 +199,8 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
           id: `dates:full:${d.year}-${d.month}-${d.day}`,
           prompt: jp2en ? d.japanese : d.english,
           accepted: [jp2en ? d.english : d.japanese],
+          ask: jp2en ? "English date with weekday" : "reading in hiragana",
+          ...(jp2en ? { example: "Monday, March 3, 2025" } : {}),
           reveal: { scripts: [d.japanese], meaning: d.english, group: "full dates" },
           speakText: d.japanese,
         };
@@ -222,6 +230,7 @@ export function buildItems(mode: string, pools: Pools, options: DrillOptions): S
             prompt: v.kanji,
             subprompt: `${label} · ${v.kana} · ${v.meaning}`,
             accepted: [conj.romaji],
+            ask: "conjugated form in romaji",
             reveal: {
               scripts: [conj.kanji, conj.kana],
               meaning: v.meaning,
@@ -248,6 +257,7 @@ export function DrillPage() {
   const [options, setOptions] = useState<DrillOptions>(DEFAULT_OPTIONS);
   const [session, setSession] = useState<SessionItem[] | null>(null);
   const [summary, setSummary] = useState<SessionResult | null>(null);
+  const [earnedXp, setEarnedXp] = useState(0);
   // Stable per run: retries reshuffle and take a fresh id (PRD §10.13).
   const sessionIdRef = useRef("");
 
@@ -289,8 +299,13 @@ export function DrillPage() {
         ? buildItems(mode, effectivePools, options)
         : selectable;
     const picked = limit === "all" ? pool : pool.slice(0, limit);
+    begin(picked);
+  }
+
+  /** Run exactly these items again (the summary's "retry misses"). */
+  function begin(items: SessionItem[]): void {
     sessionIdRef.current = newSessionId(`drill:${mode}`);
-    setSession(shuffle(picked));
+    setSession(shuffle(items));
     setSummary(null);
   }
 
@@ -306,12 +321,16 @@ export function DrillPage() {
     }
     const xp = result.correct * XP.drillCorrect + perfectDrillBonus(result.correct, result.total);
     awardXp(xp);
+    setEarnedXp(xp);
     setSummary({ ...result });
     setSession(null);
   }
 
   if (summary) {
     const pct = summary.total === 0 ? 0 : Math.round((summary.correct / summary.total) * 100);
+    const missed = summary.total - summary.correct;
+    // Misses first: they are what the learner came back to look at.
+    const rows = [...summary.answers].sort((a, b) => Number(a.correct) - Number(b.correct));
     return (
       <div className="results" data-testid="summary">
         <div className="page-head">
@@ -324,7 +343,7 @@ export function DrillPage() {
           </div>
         </div>
         <div className="result-head">
-          <div className="result-score">
+          <div className={`result-score${isStrongScore(pct) ? " strong" : ""}`}>
             <span data-testid="summary-score">{pct}%</span>
             <small>accuracy</small>
           </div>
@@ -336,10 +355,33 @@ export function DrillPage() {
               <span>correct answers</span>
             </div>
             <div>
-              <strong>{summary.total - summary.correct}</strong>
+              <strong>{missed}</strong>
               <span>to revisit</span>
             </div>
+            <div>
+              <strong data-testid="summary-xp">+{earnedXp}</strong>
+              <span>XP earned</span>
+            </div>
           </div>
+        </div>
+        <div className="summary-actions">
+          {missed > 0 ? (
+            <>
+              <button type="button" className="primary" onClick={() => begin(summary.misses)}>
+                RETRY MISSES ({missed})
+              </button>
+              <button type="button" onClick={start}>
+                RETRY ALL (RESHUFFLED)
+              </button>
+            </>
+          ) : (
+            <button type="button" className="primary" onClick={start}>
+              RETRY (RESHUFFLED)
+            </button>
+          )}
+          <button type="button" onClick={() => navigate("/learn")}>
+            CHOOSE ANOTHER PRACTICE
+          </button>
         </div>
         <div className="panel-head">
           <h2>
@@ -353,14 +395,18 @@ export function DrillPage() {
           <table>
             <thead>
               <tr>
+                <th>Result</th>
                 <th>Item</th>
                 <th>Your answer</th>
                 <th>Expected answer</th>
               </tr>
             </thead>
             <tbody>
-              {summary.answers.map((a) => (
+              {rows.map((a) => (
                 <tr key={a.id}>
+                  <td className={`row-verdict ${a.correct ? "ok" : "miss"}`}>
+                    {a.correct ? "Correct" : "Missed"}
+                  </td>
                   <td lang="ja">{a.prompt}</td>
                   <td>{a.submitted}</td>
                   <td lang="ja">{a.accepted.join(" / ")}</td>
@@ -368,14 +414,6 @@ export function DrillPage() {
               ))}
             </tbody>
           </table>
-        </div>
-        <div className="summary-actions">
-          <button type="button" className="primary" onClick={start}>
-            RETRY (RESHUFFLED)
-          </button>
-          <button type="button" onClick={() => navigate("/learn")}>
-            CHOOSE ANOTHER PRACTICE
-          </button>
         </div>
       </div>
     );
@@ -406,9 +444,7 @@ export function DrillPage() {
         <div>
           <p className="label">キタ / {level.toUpperCase()} STUDY</p>
           <h1>{modeName(mode)} practice</h1>
-          <p className="description">
-            Explore the available items, then choose how much to practice.
-          </p>
+          <p className="description">Pick how many questions, then start.</p>
         </div>
       </div>
 
@@ -644,15 +680,10 @@ export function DrillPage() {
         </div>
       </div>
 
-      <PoolMatrix mode={mode} items={all} />
-
       <div className="start-dock">
         <div>
           <p>
             {sessionCount} questions · from {selectable.length} eligible items
-          </p>
-          <p className="sample-note">
-            Search and pagination browse the preview; they do not change your session pool.
           </p>
         </div>
         <button
@@ -664,6 +695,8 @@ export function DrillPage() {
           START
         </button>
       </div>
+
+      <PoolMatrix mode={mode} items={all} />
     </div>
   );
 }

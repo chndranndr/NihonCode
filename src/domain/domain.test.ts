@@ -4,6 +4,7 @@ import {
   applyStudyDay,
   levelFromXp,
   MAX_LEVEL,
+  isStrongScore,
   perfectDrillBonus,
   xpForLevel,
   xpProgress,
@@ -73,6 +74,12 @@ describe("progress rules", () => {
     expect(perfectDrillBonus(10, 10)).toBe(20);
     expect(perfectDrillBonus(9, 10)).toBe(0);
     expect(perfectDrillBonus(0, 0)).toBe(0);
+  });
+
+  it("only a score of 60% or more reads as strong", () => {
+    expect(isStrongScore(59)).toBe(false);
+    expect(isStrongScore(60)).toBe(true);
+    expect(isStrongScore(100)).toBe(true);
   });
 });
 

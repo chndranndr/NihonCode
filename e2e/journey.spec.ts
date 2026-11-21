@@ -856,6 +856,47 @@ test("achievement toast fires once when a drill unlocks FIRST SESSION", async ({
   await expect(page.getByTestId("toasts")).not.toBeVisible();
 });
 
+test("a weak drill summary leads with retrying the misses", async ({ page }) => {
+  // 2026-11-21 critique P1: a 30% run read as a celebration, hid the XP, and
+  // put RETRY below the answer table.
+  await page.goto("/learn/drill/kana");
+  await page.getByRole("button", { name: "10", exact: true }).click();
+  await page.getByRole("button", { name: "START" }).click();
+  for (let i = 0; i < 10; i++) {
+    const prompt = (await page.locator(".prompt-text").innerText()).trim();
+    await page.getByLabel("answer").fill(i < 3 ? GOJUON[prompt] : "zz");
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("reveal")).toBeVisible();
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("summary-score")).toHaveText("30%");
+  await expect(page.locator(".result-score")).not.toHaveClass(/strong/);
+  await expect(page.getByTestId("summary-xp")).toHaveText("+15");
+
+  const retry = page.getByRole("button", { name: "RETRY MISSES (7)" });
+  await expect(retry).toBeInViewport();
+  const verdicts = page.locator("td.row-verdict");
+  await expect(verdicts.first()).toHaveText("Missed");
+  await expect(verdicts.last()).toHaveText("Correct");
+
+  // The FIRST SESSION toast must not cover the result stats.
+  await expect(page.getByTestId("toasts")).toBeVisible({ timeout: 10_000 });
+  const [toast, stats] = await Promise.all([
+    page.getByTestId("toasts").boundingBox(),
+    page.locator(".result-head").boundingBox(),
+  ]);
+  if (!toast || !stats) throw new Error("toast or stats not laid out");
+  const overlaps =
+    toast.x < stats.x + stats.width &&
+    stats.x < toast.x + toast.width &&
+    toast.y < stats.y + stats.height &&
+    stats.y < toast.y + toast.height;
+  expect(overlaps, "toast covers the result stats").toBe(false);
+
+  await retry.click();
+  await expect(page.getByTestId("session")).toContainText("1/7");
+});
+
 test("export/import round-trips progress without loss", async ({ page }) => {
   // Seed real progress with a perfect 10-item kana drill (50 XP + bonus 20).
   await page.goto("/learn/drill/kana");

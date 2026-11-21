@@ -13,7 +13,7 @@ import { assetUrl } from "../../content/assets";
 import type { JlptLevel } from "../../content/ids";
 import { loadJlptLevel, type JlptPool } from "../../content/loaders";
 import type { JlptCategory, JlptSet } from "../../content/models";
-import { perfectDrillBonus, XP } from "../../domain/progress";
+import { isStrongScore, perfectDrillBonus, XP } from "../../domain/progress";
 import { awardXp, newSessionId, recordSession } from "../../storage/progressRepo";
 import { recordJlptResult } from "../../storage/jlptRepo";
 
@@ -140,7 +140,7 @@ export function JlptRunPage() {
           </div>
         </div>
         <div className="result-head">
-          <div className="result-score">
+          <div className={`result-score${isStrongScore(pct) ? " strong" : ""}`}>
             <span data-testid="summary-score">{pct}%</span>
             <small>accuracy</small>
           </div>
