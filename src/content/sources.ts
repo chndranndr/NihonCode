@@ -20,7 +20,7 @@ export const CONTENT_SOURCES: readonly ContentSource[] = [
     origin: "amgidex",
     license: "unspecified",
     clearance: "licensed",
-    note: "Owner permitted non-commercial use 2026-09-23 (data-recon); no author license granted — commercial or public redistribution still needs permission (docs/attribution.md).",
+    note: "Owner permitted non-commercial use 2026-09-23 and public non-commercial deployment 2026-11-21; no author license granted, so commercial redistribution still needs permission (docs/attribution.md).",
   },
   {
     name: "Example sentences",

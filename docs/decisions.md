@@ -390,6 +390,14 @@ Three sub-decisions were made in the same change:
 
 **Consequences.** Activity and XP are still recorded once per completed set (same formula, same `recordSession` idempotency); RETRY SET takes a new session id. Exit before checking records nothing. The old per-question reveal, NEXT/FINISH controls, and progress rail are gone from JLPT; drills are unchanged. Binds `src/features/jlpt/JlptRunPage.tsx`, `src/app/app.css`, `e2e/journey.spec.ts`, `e2e/a11y.spec.ts`, DESIGN.md.
 
+## 2026-11-21 — Public, non-commercial deployment (owner directive)
+
+**Context.** The owner wants NihonCode on the public web (Cloudflare Pages). docs/attribution.md recorded that public redistribution of the amgidex grammar lists still needed the author's permission; no author license has been granted.
+
+**Decision.** The owner accepts that risk and deploys publicly because the app is free, carries no ads, and requires no registration. Scope stays non-commercial: no payments, ads, sponsorship, or paid tiers. Source attribution remains visible on the About page. Commercial use of the amgidex lists still needs the author's permission, and a takedown or objection from the author is handled by removing or replacing the lists.
+
+**Consequences.** docs/attribution.md and `src/content/sources.ts` state the public, non-commercial scope instead of "public redistribution still needs permission". The JLPT assets stay covered by the owner's 2026-09-23 confirmation. Hosting is a static build (`npm run build`, `dist/`); no server, accounts, or analytics are added.
+
 ## Prior (owner-authored, recorded elsewhere)
 
 - Storage: Dexie/IndexedDB for SRS + localStorage for settings (DEVELOPMENT_PROMPT.md section 2; resolves the PRODUCT.md open item; PRODUCT.md/PRD wording update is owner-authored and due with the storage commit).
