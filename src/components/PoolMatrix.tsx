@@ -36,7 +36,7 @@ function matrixRows(mode: string, items: SessionItem[]): { heads: string[]; rows
         heads: ["Kanji", "On'yomi", "Kun'yomi", "Meaning"],
         rows: items.map((i) => {
           const { on, kun } = scriptSplit(i.reveal.scripts[1] ?? "");
-          return [i.prompt, on || "—", kun || "—", i.reveal.meaning];
+          return [i.prompt, on || "None", kun || "None", i.reveal.meaning];
         }),
       };
     case "vocab":
@@ -107,7 +107,7 @@ export function PoolMatrix({ mode, items }: { mode: string; items: SessionItem[]
         <input
           type="search"
           aria-label="Search available items"
-          placeholder="Search character, reading or meaning…"
+          placeholder="Search items or meanings…"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -162,7 +162,7 @@ export function PoolMatrix({ mode, items }: { mode: string; items: SessionItem[]
             disabled={current >= pages - 1}
             onClick={() => setPage(current + 1)}
           >
-            Next →
+            Next
           </button>
         </div>
       </div>

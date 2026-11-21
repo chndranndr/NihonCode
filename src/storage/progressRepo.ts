@@ -26,15 +26,30 @@ export interface ItemMastery {
   lastSeen: number | null;
 }
 
-export async function masteryByItem(itemId: string): Promise<ItemMastery> {
-  const rows = await db().drillAttempts.where("itemId").equals(itemId).toArray();
-  const correct = rows.filter((r) => r.correct).length;
-  return {
-    attempts: rows.length,
-    correct,
-    accuracy: rows.length === 0 ? 0 : correct / rows.length,
-    lastSeen: rows.length === 0 ? null : Math.max(...rows.map((r) => r.ts)),
-  };
+/**
+ * Mastery for many items from one indexed query. Attempts of every kind count,
+ * including SRS reviews; unknown IDs keep a zeroed entry so callers can map
+ * the full requested pool without extra lookups.
+ */
+export async function masteryByItems(itemIds: string[]): Promise<Map<string, ItemMastery>> {
+  const result = new Map<string, ItemMastery>();
+  const uniqueIds = [...new Set(itemIds)];
+  for (const id of uniqueIds) {
+    result.set(id, { attempts: 0, correct: 0, accuracy: 0, lastSeen: null });
+  }
+  if (uniqueIds.length === 0) return result;
+  const rows = await db().drillAttempts.where("itemId").anyOf(uniqueIds).toArray();
+  for (const row of rows) {
+    const mastery = result.get(row.itemId);
+    if (!mastery) continue;
+    mastery.attempts += 1;
+    if (row.correct) mastery.correct += 1;
+    mastery.lastSeen = mastery.lastSeen === null ? row.ts : Math.max(mastery.lastSeen, row.ts);
+  }
+  for (const mastery of result.values()) {
+    mastery.accuracy = mastery.attempts === 0 ? 0 : mastery.correct / mastery.attempts;
+  }
+  return result;
 }
 
 /**

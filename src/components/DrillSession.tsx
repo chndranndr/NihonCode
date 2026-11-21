@@ -79,9 +79,10 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
   const item = items[index];
 
   useEffect(() => {
+    if (confirmAbort) return;
     if (answered) advanceRef.current?.focus();
     else inputRef.current?.focus();
-  }, [index, answered]);
+  }, [index, answered, confirmAbort]);
 
   const progress = useMemo(
     () => ({ position: index + 1, total: items.length }),
@@ -130,6 +131,7 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
 
   function onKey(event: ReactKeyboardEvent) {
     if (event.key === "Enter") {
+      if (event.target instanceof Element && event.target.closest("button")) return;
       event.preventDefault();
       if (!answered) submit();
       else advance();
@@ -173,7 +175,7 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
       </div>
 
       {answered ? (
-        <div className="reveal panel" data-testid="reveal">
+        <div className={`reveal panel ${answered.correct ? "ok" : "miss"}`} data-testid="reveal">
           <p className={`reveal-verdict ${answered.correct ? "ok" : "miss"}`}>
             {answered.correct ? "CORRECT" : "WRONG"}
           </p>
@@ -188,7 +190,18 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
           <p className="reveal-meaning">{item.reveal.meaning}</p>
           <p className="micro-label">{item.reveal.group}</p>
           {!answered.correct && (
-            <p className="reveal-accepted">accepted: {item.accepted.join(" / ")}</p>
+            <>
+              <p className="reveal-accepted" data-testid="reveal-typed">
+                {answered.submitted.trim() ? (
+                  <>
+                    you typed: <span lang="ja">{answered.submitted.trim()}</span>
+                  </>
+                ) : (
+                  "no answer typed"
+                )}
+              </p>
+              <p className="reveal-accepted">accepted: {item.accepted.join(" / ")}</p>
+            </>
           )}
           <button ref={advanceRef} type="button" className="primary" onClick={advance}>
             {index + 1 >= items.length ? "FINISH" : "NEXT"}
@@ -196,12 +209,15 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
         </div>
       ) : (
         <div className="input-dock">
+          <label className="answer-label" htmlFor="drill-answer">
+            Answer
+          </label>
           <input
+            id="drill-answer"
             ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="type your answer, Enter to submit"
-            aria-label="answer"
             autoComplete="off"
           />
           <button type="button" className="primary" onClick={submit}>

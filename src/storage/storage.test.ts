@@ -1,6 +1,7 @@
 import "fake-indexeddb/auto";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import Dexie, { type Table } from "dexie";
+import { State } from "ts-fsrs";
 import {
   DB_VERSION,
   NihonDb,
@@ -18,8 +19,8 @@ import {
   type Prefs,
 } from "./prefs";
 import { db } from "./db";
-import { activityRows, newSessionId, recordSession } from "./progressRepo";
-import { buildDueQueue, dueCount } from "./srsRepo";
+import { activityRows, masteryByItems, newSessionId, recordSession } from "./progressRepo";
+import { buildDueQueue, dashboardSrsData, dueCount, srsStats } from "./srsRepo";
 import { newCard, serializeCard } from "../domain/scheduling";
 import { dayKey } from "../domain/progress";
 import { exportBackup, importBackup } from "./backup";
@@ -266,6 +267,137 @@ describe("SRS pool scoping by level", () => {
     const n4Queue = await buildDueQueue(n4Pool, 20, now);
     expect(n4Queue.due.sort()).toEqual([...n4Pool]);
     expect(n4Queue.newCandidates).toEqual([]);
+  });
+});
+
+describe("dashboard SRS snapshot", () => {
+  const now = new Date(2026, 9, 28, 12, 0, 0);
+  const DAY = 86_400_000;
+  const poolIds = ["kanji:n5:火", "kanji:n5:水", "kanji:n5:木", "kanji:n5:金", "vocab:n5:水|みず"];
+  const reviewState = (due: Date) => serializeCard({ ...newCard(now), state: State.Review, due });
+  const seededRows: SrsCardRow[] = [
+    {
+      id: "kanji:n4:X",
+      state: reviewState(new Date(now.getTime() - DAY)),
+      due: now.getTime() - DAY,
+      reps: 1,
+      lapses: 0,
+      lastReview: now.getTime() - 2 * DAY,
+    },
+    {
+      id: "kanji:n5:火",
+      state: reviewState(new Date(now.getTime() - DAY)),
+      due: now.getTime() - DAY,
+      reps: 5,
+      lapses: 2,
+      lastReview: now.getTime() - 5 * DAY,
+    },
+    {
+      id: "kanji:n5:水",
+      state: serializeCard(newCard(now)),
+      due: now.getTime(),
+      reps: 0,
+      lapses: 0,
+      lastReview: null,
+    },
+    {
+      id: "vocab:n5:水|みず",
+      state: reviewState(new Date(now.getTime() + DAY)),
+      due: now.getTime() + DAY,
+      reps: 1,
+      lapses: 0,
+      lastReview: now.getTime(),
+    },
+  ];
+
+  beforeEach(async () => {
+    const store = db();
+    await store.srsCards.clear();
+    await store.srsCards.bulkPut(seededRows);
+  });
+
+  afterEach(async () => {
+    vi.restoreAllMocks();
+    await db().srsCards.clear();
+  });
+
+  it("matches separate queue and stats semantics from one table read", async () => {
+    const spy = vi.spyOn(db().srsCards, "toArray");
+    const snapshot = await dashboardSrsData(poolIds, 2, now);
+    expect(spy).toHaveBeenCalledTimes(1);
+
+    expect(snapshot.queue).toEqual(await buildDueQueue(poolIds, 2, now));
+    expect(snapshot.stats).toEqual(await srsStats(poolIds, now));
+    expect(snapshot.queue.due).toEqual(["kanji:n5:水", "kanji:n5:火"]);
+    expect(snapshot.queue.newCandidates).toEqual(["kanji:n5:木"]);
+    expect(snapshot.stats).toMatchObject({
+      total: 5,
+      due: 2,
+      learned: 2,
+      lapses: 2,
+      mastered: 2,
+      learning: 0,
+      fresh: 3,
+      byKind: { kanji: { total: 4, learned: 1 }, vocab: { total: 1, learned: 1 } },
+    });
+    expect(snapshot.stats.byLevel.n5).toEqual({ total: 5, learned: 2 });
+    expect(snapshot.stats.byLevel.n4).toEqual({ total: 0, learned: 0 });
+
+    const uncapped = await dashboardSrsData(poolIds, 10, now);
+    expect(uncapped.queue.newCandidates).toEqual(["kanji:n5:木", "kanji:n5:金"]);
+  });
+});
+
+describe("batched item mastery", () => {
+  const seededRows: DrillAttemptRow[] = [
+    { itemId: "kanji:n5:水", kind: "kanji", correct: false, ts: 30 },
+    { itemId: "kanji:n5:水", kind: "srs", correct: true, ts: 20 },
+    { itemId: "kanji:n5:水", kind: "kanji", correct: true, ts: 10 },
+    { itemId: "kanji:n5:火", kind: "vocab", correct: false, ts: 5 },
+    { itemId: "kanji:n4:X", kind: "kanji", correct: true, ts: 99 },
+  ];
+
+  beforeEach(async () => {
+    const store = db();
+    await store.drillAttempts.clear();
+    await store.drillAttempts.bulkAdd(seededRows);
+  });
+
+  afterEach(async () => {
+    vi.restoreAllMocks();
+    await db().drillAttempts.clear();
+  });
+
+  it("returns an empty map without querying for no ids", async () => {
+    const whereSpy = vi.spyOn(db().drillAttempts, "where");
+    const map = await masteryByItems([]);
+    expect(map.size).toBe(0);
+    expect(whereSpy).not.toHaveBeenCalled();
+  });
+
+  it("aggregates one indexed query into first-occurrence map order", async () => {
+    const store = db();
+    const collectionProto = Object.getPrototypeOf(store.drillAttempts.where("itemId")) as {
+      anyOf: (keys: string[]) => unknown;
+    };
+    const anyOfSpy = vi.spyOn(collectionProto, "anyOf");
+    const whereSpy = vi.spyOn(store.drillAttempts, "where");
+
+    const requested = ["vocab:n5:水|みず", "kanji:n5:水", "kanji:n5:水", "kanji:n5:火"];
+    const map = await masteryByItems(requested);
+
+    expect(whereSpy).toHaveBeenCalledTimes(1);
+    expect(whereSpy).toHaveBeenCalledWith("itemId");
+    expect(anyOfSpy).toHaveBeenCalledTimes(1);
+    expect(anyOfSpy).toHaveBeenCalledWith(["vocab:n5:水|みず", "kanji:n5:水", "kanji:n5:火"]);
+    expect([...map.keys()]).toEqual(["vocab:n5:水|みず", "kanji:n5:水", "kanji:n5:火"]);
+    const water = map.get("kanji:n5:水");
+    const fire = map.get("kanji:n5:火");
+    const zero = map.get("vocab:n5:水|みず");
+    expect(water).toEqual({ attempts: 3, correct: 2, accuracy: 2 / 3, lastSeen: 30 });
+    expect(fire).toEqual({ attempts: 1, correct: 0, accuracy: 0, lastSeen: 5 });
+    expect(zero).toEqual({ attempts: 0, correct: 0, accuracy: 0, lastSeen: null });
+    expect(map.has("kanji:n4:X")).toBe(false);
   });
 });
 

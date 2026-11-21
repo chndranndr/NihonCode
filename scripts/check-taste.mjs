@@ -12,6 +12,9 @@
 //      FIRST VIEWPORT:/FORM:) must never appear in shipped source — scanned on
 //      the RAW file text, including comments, because DEVELOPMENT_PROMPT.md
 //      section 2 bans them in "no code comments" too.
+//   7. type-ramp: every CSS font-size is a step from DESIGN.md frontmatter
+//      typography (fontSize values, read at check time), so the ramp cannot
+//      drift and utility text cannot drop below the 12px floor.
 //
 // Contextual rules live in docs/design-system.md (finish review).
 // Fails when it scans zero source files (a vacuous pass is a failure).
@@ -55,6 +58,27 @@ function toPx(value, unit) {
   return null;
 }
 
+/** fontSize values from DESIGN.md frontmatter `typography:` roles. */
+function readTypeRamp() {
+  const design = readFileSync(join(repoRoot, "DESIGN.md"), "utf8");
+  const front = /^---\n([\s\S]*?)\n---/.exec(design.replace(/\r\n/g, "\n"))?.[1] ?? "";
+  const typography = /^typography:\n((?:[ \t]+.*\n?)*)/m.exec(front)?.[1] ?? "";
+  const steps = new Set();
+  for (const m of typography.matchAll(/fontSize:\s*"([^"]+)"/g)) {
+    const value = m[1].trim();
+    steps.add(value);
+    // A fluid role's px bounds are steps too (e.g. the 30px title floor).
+    for (const px of value.matchAll(/\b\d+(?:\.\d+)?px\b/g)) steps.add(px[0]);
+  }
+  return steps;
+}
+
+const typeRamp = readTypeRamp();
+if (typeRamp.size === 0) {
+  console.error("check-taste: no typography fontSize steps found in DESIGN.md frontmatter");
+  process.exit(1);
+}
+
 const files = listFiles(srcRoot);
 if (files.length === 0) {
   console.error("check-taste: scanned zero files under src/ — refusing to report OK");
@@ -93,6 +117,19 @@ for (const file of files) {
         violations.push(
           `${r}:${lineNo} [no-glass] backdrop-filter is banned (design contract: no glass)`,
         );
+      }
+      const fontSize = text.match(/font-size:\s*([^;]+);/);
+      if (fontSize && !/^(inherit|initial|unset|var\(--)/.test(fontSize[1].trim())) {
+        const value = fontSize[1].trim();
+        // A step may be written in rem (16px root) so it follows the reader's
+        // text size; 1.5rem is the 24px step.
+        const rem = /^(\d*\.?\d+)rem$/.exec(value);
+        const asPx = rem ? `${Number(rem[1]) * 16}px` : null;
+        if (!typeRamp.has(value) && !(asPx && typeRamp.has(asPx))) {
+          violations.push(
+            `${r}:${lineNo} [type-ramp] font-size ${value} is not a DESIGN.md typography step (${[...typeRamp].join(", ")})`,
+          );
+        }
       }
       const radius = text.match(/border-radius:\s*([\d.]+)(px|rem|em|%)/);
       if (radius) {
@@ -147,4 +184,4 @@ if (violations.length > 0) {
   console.error("\nRemediation: see docs/design-system.md for the binding design grammar.");
   process.exit(1);
 }
-console.log(`check-taste: OK (${files.length} files scanned, 6 mechanical rules over src/)`);
+console.log(`check-taste: OK (${files.length} files scanned, 7 mechanical rules over src/)`);

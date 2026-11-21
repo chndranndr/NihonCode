@@ -14,7 +14,7 @@ Local-first Japanese practice web app. React 19 + TypeScript strict + Vite. No b
 2. [PRODUCT.md](PRODUCT.md) — product truth: users, positioning, brand commitments.
 3. [implementation_plan.md](implementation_plan.md) — three phases with definitions of done. Phase gates are strict: finish Phase 1 before touching Phase 2.
 4. [DEVELOPMENT_PROMPT.md](DEVELOPMENT_PROMPT.md) — Phase 3 hard constraints, task order, owner-decision gates, verification protocol (Phase 2 record lives in git at `b15c717`).
-5. [UI_IMPLEMENTATION_PROMPT.md](UI_IMPLEMENTATION_PROMPT.md) — redesign integration scope, executed 2026-09-22: all nine mockup views run in production `src/` on real data. `mockups/` remains the visual authority for future changes; [DESIGN.md](DESIGN.md) owns target tokens and [.impeccable/README.md](.impeccable/README.md) maps all briefs. `mockup.png` and old review screenshots are historical only.
+5. [UI_IMPLEMENTATION_PROMPT.md](UI_IMPLEMENTATION_PROMPT.md): historical redesign integration scope, executed 2026-09-22. [DESIGN.md](DESIGN.md) now owns the approved Quiet Instrument visual system and production tokens; `mockups/` and [.impeccable/README.md](.impeccable/README.md) are historical composition references. `mockup.png` and old review screenshots are historical only.
 
 ## Knowledge base
 
@@ -25,7 +25,7 @@ Local-first Japanese practice web app. React 19 + TypeScript strict + Vite. No b
 - [docs/design-system.md](docs/design-system.md) — binding visual grammar + taste rules
 - [docs/quality.md](docs/quality.md) — gap ledger: what is verified, what is missing
 - [docs/decisions.md](docs/decisions.md) — decision log (ADR-style)
-- [DESIGN.md](DESIGN.md) — approved HTML redesign target (production integration pending); `.impeccable/design.json` sidecar
+- [DESIGN.md](DESIGN.md): approved Quiet Instrument visual system; production integration complete and verified on 2026-11-20. `.impeccable/design.json` is a historical sidecar.
 
 ## Commands
 
@@ -47,7 +47,7 @@ Local-first Japanese practice web app. React 19 + TypeScript strict + Vite. No b
 
 - **Data gate**: `data/clean/` is the only dataset and the app's single source of truth; `src/content/loaders.ts` is its only importer (enforced by `scripts/check-arch.mjs`, which also bans imports of `data/generated/`, `data/jlpt/`, and `data/jlpt-raw/` — comparison evidence only). Content changes land as tracked edits to `data/clean/` plus a docs/data-quality.md ledger update in the same change; `scripts/audit-clean.mjs` fails on any defect, duplicate ID, floor breach, dangling practice_core ref, missing MP3/image, bare `image_urls`, or unresolved passage ref.
 - **Layer boundaries**: `src/domain/` is pure (no React, no DOM, no UI imports). Features never import across `src/features/<other>/`. Enforced by `scripts/check-arch.mjs`.
-- **Taste**: no inline styles, no hardcoded colors outside `:root`, no glass/gradients/rounded shells. Enforced by `scripts/check-taste.mjs`.
+- **Taste**: no inline styles, no hardcoded colors outside `:root`, no glass/gradients/rounded shells, and every CSS `font-size` is a DESIGN.md typography step (12px floor). Enforced by `scripts/check-taste.mjs`.
 - **Graded pool (curated)**: graded content is kana 46+46; kanji N5–N1 (80/166/367/367/1,232); vocab N5–N1 (738/649/2,097/1,682/2,655); grammar N5–N1 graded lessons (72/130/67/71/45); algorithmic numbers/dates; all five JLPT categories ship (grammar/kanji/vocabulary/reading/listening; data-recon 2026-09-23). Floors enforced by `scripts/audit-clean.mjs`.
 - **Direction-contract text never ships**: THESIS/OWN-WORLD/STORY/FIRST VIEWPORT/FORM blocks stay out of code, DOM, and bundles.
 - **Stable namespaced IDs** from day one (`kana:hiragana:あ`, `grammar:n5:12`, …); progress never references array positions. `practice_core.json` uses canonical `jlpt:<level>:<category>:<set>:<hash>` ids in the tracked pool; `audit-clean` checks referential integrity directly (docs/data-quality.md "Practice core ID convention").
@@ -57,3 +57,21 @@ Local-first Japanese practice web app. React 19 + TypeScript strict + Vite. No b
 - Non-trivial work: implement → `npm run check` + `npm test` → review → resolve → final verify (DEVELOPMENT_PROMPT.md section 8).
 - Observed failure → smallest durable guardrail: prefer an executable check over prose; extend `scripts/check-*.mjs` or add a test, then update `.harness/manifest.json`.
 - Git: pushed to `origin` (github.com/chndranndr/NihonCode), branch `main`. CI runs check+test+build on push/PR; the browser eval is `workflow_dispatch` with `with_eval`.
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+When the user types `/graphify`, use the installed graphify skill or instructions before doing anything else.
+
+Rules:
+
+- When graphify-out/graph.json exists, run `graphify query "<question>"` before your first grep, search or source-file read for a codebase question, and put this rule in every subagent prompt that explores code. Read raw files only for lines the graph or an earlier read already located. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- Dirty graphify-out/ files are expected after hooks or incremental updates; dirty graph files are not a reason to skip graphify. Only skip graphify if the task is about stale or incorrect graph output, or the user explicitly says not to use it.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+- A committed graphify-out/graph.json is rewritten whole on every build, so a large diff to it in a pull request is expected. Do not flag it as churn or suggest skipping the graph rebuild or its hooks.
+
+- Three people open every screen: the user experience (UX), developer experience (DX), and agent experience (AX) that edits it next. Serve all three, or you're robbing one to pay another.
+- Kill any label that only exists to explain the layout. If the screen needs a caption, the screen is broken.

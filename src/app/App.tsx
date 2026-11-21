@@ -6,8 +6,9 @@
  */
 
 import { Suspense, lazy } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AppShell } from "./AppShell";
+import { RouteErrorBoundary } from "./RouteErrorBoundary";
 import { DashboardPage } from "../features/dashboard/DashboardPage";
 import { LearnPage } from "../features/learn/LearnPage";
 
@@ -36,26 +37,41 @@ const SrsStatsPage = lazy(() =>
   import("../features/stats/SrsStatsPage").then((m) => ({ default: m.SrsStatsPage })),
 );
 
+function RoutedContent() {
+  const { pathname } = useLocation();
+  return (
+    <RouteErrorBoundary resetKey={pathname}>
+      <Suspense
+        fallback={
+          <div className="route-state" role="status">
+            <p>Loading this view…</p>
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/progress" element={<ProgressPage />} />
+          <Route path="/learn" element={<LearnPage />} />
+          <Route path="/learn/drill/:mode" element={<DrillPage />} />
+          <Route path="/learn/grammar/:lessonId" element={<GrammarLessonPage />} />
+          <Route path="/learn/jlpt" element={<JlptPage />} />
+          <Route path="/learn/jlpt/:category" element={<JlptPage />} />
+          <Route path="/stats" element={<SrsStatsPage />} />
+          <Route path="/learn/jlpt/:category/:setNumber" element={<JlptRunPage />} />
+          <Route path="/learn/review" element={<ReviewPage />} />
+          <Route path="/config" element={<ConfigPage />} />
+          <Route path="*" element={<DashboardPage />} />
+        </Routes>
+      </Suspense>
+    </RouteErrorBoundary>
+  );
+}
+
 export function App() {
   return (
     <BrowserRouter>
       <AppShell>
-        <Suspense fallback={<p className="micro-label">LOADING…</p>}>
-          <Routes>
-            <Route path="/" element={<DashboardPage />} />
-            <Route path="/progress" element={<ProgressPage />} />
-            <Route path="/learn" element={<LearnPage />} />
-            <Route path="/learn/drill/:mode" element={<DrillPage />} />
-            <Route path="/learn/grammar/:lessonId" element={<GrammarLessonPage />} />
-            <Route path="/learn/jlpt" element={<JlptPage />} />
-            <Route path="/learn/jlpt/:category" element={<JlptPage />} />
-            <Route path="/stats" element={<SrsStatsPage />} />
-            <Route path="/learn/jlpt/:category/:setNumber" element={<JlptRunPage />} />
-            <Route path="/learn/review" element={<ReviewPage />} />
-            <Route path="/config" element={<ConfigPage />} />
-            <Route path="*" element={<DashboardPage />} />
-          </Routes>
-        </Suspense>
+        <RoutedContent />
       </AppShell>
     </BrowserRouter>
   );

@@ -54,7 +54,7 @@ export function LearnPage() {
       </div>
 
       <div className="toolbar">
-        <div className="field" role="radiogroup" aria-label="study level">
+        <div className="field" role="group" aria-label="study level">
           <span>Study level</span>
           <div className="segmented">
             {(["n5", "n4", "n3", "n2", "n1"] as JlptLevel[]).map((l) => (
@@ -90,9 +90,6 @@ export function LearnPage() {
                   </b>
                   <small>{desc}</small>
                 </span>
-                <span className="arrow" aria-hidden="true">
-                  ↗
-                </span>
               </Link>
             ))}
           </div>
@@ -108,7 +105,6 @@ export function LearnPage() {
                     <b lang="ja">{l.title}</b>
                     <small>{completed.has(l.id) ? "Completed" : l.category}</small>
                   </span>
-                  <span className="end">→</span>
                 </Link>
               </li>
             ))}
@@ -123,7 +119,10 @@ export function LearnPage() {
                 ? `${due} cards are ready for review.`
                 : "Nothing is due right now. Cards return as their intervals elapse."}
           </p>
-          <Link className="primary inline-cta" to="/learn/review">
+          <Link
+            className={due !== null && due > 0 ? "primary inline-cta" : "button inline-cta"}
+            to="/learn/review"
+          >
             OPEN REVIEW QUEUE
           </Link>
         </Panel>
@@ -132,7 +131,7 @@ export function LearnPage() {
           <p className="muted">
             Grammar, kanji, vocabulary, reading and listening exercise sets by level.
           </p>
-          <Link className="primary inline-cta" to="/learn/jlpt">
+          <Link className="button inline-cta" to="/learn/jlpt">
             BROWSE JLPT SETS
           </Link>
         </Panel>

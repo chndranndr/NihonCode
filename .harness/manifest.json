@@ -3,15 +3,7 @@
   "profile": "full",
   "project": {
     "kind": "web-app",
-    "stacks": [
-      "javascript",
-      "node",
-      "playwright",
-      "react",
-      "typescript",
-      "vite",
-      "vitest"
-    ]
+    "stacks": ["javascript", "node", "playwright", "react", "typescript", "vite", "vitest"]
   },
   "capabilities": {
     "application_scaffold": {
@@ -23,14 +15,13 @@
         "src/main.tsx",
         "vite.config.ts"
       ],
-      "verify": [
-        "npm run eval"
-      ]
+      "verify": ["npm run eval"]
     },
     "knowledge_base": {
       "status": "implemented",
       "artifacts": [
         "AGENTS.md",
+        "DESIGN.md",
         "docs/architecture.md",
         "docs/data-quality.md",
         "docs/decisions.md",
@@ -39,10 +30,7 @@
         "docs/index.md",
         "docs/quality.md"
       ],
-      "verify": [
-        "npm run check",
-        "inspect: links resolve"
-      ]
+      "verify": ["npm run check", "inspect: links resolve"]
     },
     "repository_commands": {
       "status": "implemented",
@@ -53,11 +41,7 @@
         "scripts/run-e2e.mjs",
         "scripts/serve-isolated.mjs"
       ],
-      "verify": [
-        "npm run doctor",
-        "npm run check",
-        "npm test"
-      ]
+      "verify": ["npm run doctor", "npm run check", "npm test"]
     },
     "quality_checks": {
       "status": "implemented",
@@ -69,51 +53,33 @@
         "scripts/check-taste.mjs",
         "tsconfig.json"
       ],
-      "verify": [
-        "npm run check",
-        "npm test"
-      ]
+      "verify": ["npm run check", "npm test"]
     },
     "ci": {
       "status": "implemented",
-      "artifacts": [
-        ".github/workflows/ci.yml"
-      ],
-      "verify": [
-        "npm run doctor"
-      ]
+      "artifacts": [".github/workflows/ci.yml"],
+      "verify": ["npm run doctor"]
     },
     "evaluation": {
       "status": "implemented",
       "artifacts": [
+        "e2e/a11y.spec.ts",
         "e2e/journey.spec.ts",
         "e2e/smoke.spec.ts",
         "playwright.config.ts",
         "scripts/run-e2e.mjs"
       ],
-      "verify": [
-        "npm run eval"
-      ]
+      "verify": ["npm run eval"]
     },
     "architecture_boundaries": {
       "status": "implemented",
-      "artifacts": [
-        "docs/architecture.md",
-        "scripts/check-arch.mjs"
-      ],
-      "verify": [
-        "npm run check"
-      ]
+      "artifacts": ["docs/architecture.md", "scripts/check-arch.mjs"],
+      "verify": ["npm run check"]
     },
     "taste_invariants": {
       "status": "implemented",
-      "artifacts": [
-        "docs/design-system.md",
-        "scripts/check-taste.mjs"
-      ],
-      "verify": [
-        "npm run check"
-      ]
+      "artifacts": ["docs/design-system.md", "scripts/check-taste.mjs"],
+      "verify": ["npm run check"]
     },
     "domain_invariants": {
       "status": "implemented",
@@ -127,87 +93,48 @@
         "src/domain/progress.ts",
         "src/domain/scheduling.ts"
       ],
-      "verify": [
-        "npm run check",
-        "npm test"
-      ]
+      "verify": ["npm run check", "npm test"]
     },
     "observability": {
       "status": "partial",
-      "artifacts": [
-        "src/observability/logger.test.ts",
-        "src/observability/logger.ts"
-      ],
-      "verify": [
-        "npm test",
-        "npm run eval"
-      ]
+      "artifacts": ["src/observability/logger.test.ts", "src/observability/logger.ts"],
+      "verify": ["npm test", "npm run eval"]
     },
     "interactive_legibility": {
       "status": "implemented",
       "artifacts": [
         "e2e/smoke.spec.ts",
-        "playwright.config.ts"
+        "e2e/journey.spec.ts",
+        "playwright.config.ts",
+        "src/components/SpeakerButton.tsx",
+        "src/components/tts.test.tsx"
       ],
-      "verify": [
-        "npm run eval",
-        "inspect: adapter exposes the critical surface"
-      ]
+      "verify": ["npm run eval", "npm test", "inspect: adapter exposes the critical surface"]
     },
     "workspace_isolation": {
       "status": "implemented",
-      "artifacts": [
-        "playwright.config.ts",
-        "scripts/run-e2e.mjs",
-        "scripts/serve-isolated.mjs"
-      ],
-      "verify": [
-        "npm run eval"
-      ]
+      "artifacts": ["playwright.config.ts", "scripts/run-e2e.mjs", "scripts/serve-isolated.mjs"],
+      "verify": ["npm run eval"]
     },
     "execution_planning": {
       "status": "implemented",
-      "artifacts": [
-        "DEVELOPMENT_PROMPT.md",
-        "docs/decisions.md",
-        "implementation_plan.md"
-      ],
-      "verify": [
-        "npm run check"
-      ]
+      "artifacts": ["DEVELOPMENT_PROMPT.md", "docs/decisions.md", "implementation_plan.md"],
+      "verify": ["npm run check"]
     },
     "review_loop": {
       "status": "implemented",
-      "artifacts": [
-        "DEVELOPMENT_PROMPT.md",
-        "docs/quality.md"
-      ],
-      "verify": [
-        "npm run doctor",
-        "inspect: findings have evidence and remediation"
-      ]
+      "artifacts": ["DEVELOPMENT_PROMPT.md", "docs/quality.md"],
+      "verify": ["npm run doctor", "inspect: findings have evidence and remediation"]
     },
     "workspace_cleanup": {
       "status": "implemented",
-      "artifacts": [
-        ".gitignore",
-        "scripts/gc.mjs"
-      ],
-      "verify": [
-        "npm run gc",
-        "inspect: generated paths have regeneration evidence"
-      ]
+      "artifacts": [".gitignore", "scripts/gc.mjs"],
+      "verify": ["npm run gc", "inspect: generated paths have regeneration evidence"]
     },
     "entropy_control": {
       "status": "implemented",
-      "artifacts": [
-        "docs/quality.md",
-        "scripts/gc.mjs"
-      ],
-      "verify": [
-        "npm run gc",
-        "inspect: findings have evidence and remediation"
-      ]
+      "artifacts": ["docs/quality.md", "scripts/gc.mjs"],
+      "verify": ["npm run gc", "inspect: findings have evidence and remediation"]
     }
   },
   "managed_artifacts": [

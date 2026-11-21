@@ -345,7 +345,7 @@ export function DrillPage() {
           <h2>
             {summary.answers.some((a) => !a.correct)
               ? "Review your answers"
-              : "A clean run. Nicely done."}
+              : "Session complete. Review your answers below."}
           </h2>
           <span className="label">THIS SESSION</span>
         </div>
@@ -415,7 +415,7 @@ export function DrillPage() {
       <div className="toolbar">
         {mode === "numbers" && (
           <>
-            <div className="field" role="radiogroup" aria-label="direction">
+            <div className="field" role="group" aria-label="direction">
               <span>Direction</span>
               <div className="segmented">
                 <button
@@ -436,7 +436,7 @@ export function DrillPage() {
             </div>
             <div className="field">
               <span>Range</span>
-              <div className="limit-row" role="radiogroup" aria-label="range">
+              <div className="limit-row" role="group" aria-label="range">
                 {NUMBER_PRESETS.map((p) => (
                   <button
                     key={p.label}
@@ -476,7 +476,7 @@ export function DrillPage() {
 
         {mode === "dates" && (
           <>
-            <div className="field" role="radiogroup" aria-label="date mode">
+            <div className="field" role="group" aria-label="date mode">
               <span>Date mode</span>
               <div className="segmented">
                 <button
@@ -495,7 +495,7 @@ export function DrillPage() {
                 </button>
               </div>
             </div>
-            <div className="field" role="radiogroup" aria-label="direction">
+            <div className="field" role="group" aria-label="direction">
               <span>Direction</span>
               <div className="segmented">
                 <button
@@ -545,7 +545,7 @@ export function DrillPage() {
 
         {mode === "conjugation" && (
           <>
-            <div className="field" role="radiogroup" aria-label="word type">
+            <div className="field" role="group" aria-label="word type">
               <span>Word type</span>
               <div className="segmented">
                 <button
@@ -631,7 +631,7 @@ export function DrillPage() {
 
         <div className="field">
           <span>Questions</span>
-          <div className="segmented" role="radiogroup" aria-label="question limit">
+          <div className="segmented" role="group" aria-label="question limit">
             {LIMITS.map((l) => (
               <button key={l} type="button" aria-pressed={limit === l} onClick={() => setLimit(l)}>
                 {l}

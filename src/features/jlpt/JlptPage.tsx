@@ -8,8 +8,16 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useLevel } from "../../components/level";
+import type { JlptLevel } from "../../content/ids";
 import { LIVE_JLPT_CATEGORIES, loadJlptLevel, type JlptPool } from "../../content/loaders";
 import { jlptProgressMap } from "../../storage/jlptRepo";
+
+interface JlptLoadState {
+  level: JlptLevel;
+  pool: JlptPool | null;
+  progress: Map<string, { bestCorrect: number; total: number }> | null;
+  error: boolean;
+}
 
 const CATEGORY_META: Record<string, { glyph: string; label: string; desc: string; route: string }> =
   {
@@ -24,33 +32,56 @@ export function JlptPage() {
   const { level } = useLevel();
   const { category = "" } = useParams();
   const navigate = useNavigate();
-  const [pool, setPool] = useState<JlptPool | null>(null);
-  const [progress, setProgress] = useState<Map<
-    string,
-    { bestCorrect: number; total: number }
-  > | null>(null);
+  const [load, setLoad] = useState<JlptLoadState | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    void Promise.all([loadJlptLevel(level), jlptProgressMap()]).then(([p, prog]) => {
-      if (cancelled) return;
-      setPool(p);
-      setProgress(
-        new Map(
-          [...prog.entries()].map(([id, row]) => [
-            id,
-            { bestCorrect: row.bestCorrect, total: row.total },
-          ]),
-        ),
-      );
-    });
+    void Promise.all([loadJlptLevel(level), jlptProgressMap()])
+      .then(([p, prog]) => {
+        if (cancelled) return;
+        setLoad({
+          level,
+          pool: p,
+          progress: new Map(
+            [...prog.entries()].map(([id, row]) => [
+              id,
+              { bestCorrect: row.bestCorrect, total: row.total },
+            ]),
+          ),
+          error: false,
+        });
+      })
+      .catch(() => {
+        if (!cancelled) setLoad({ level, pool: null, progress: null, error: true });
+      });
     return () => {
       cancelled = true;
     };
   }, [level]);
 
+  const current = load?.level === level ? load : null;
+  const pool = current?.pool ?? null;
+  const progress = current?.progress ?? null;
+  const error = current?.error ?? false;
+
+  if (error) {
+    return (
+      <section className="route-state panel" role="alert">
+        <h1>JLPT practice could not be loaded.</h1>
+        <p className="description">The rest of your study workspace is still available.</p>
+        <button type="button" className="primary" onClick={() => window.location.reload()}>
+          RETRY
+        </button>
+      </section>
+    );
+  }
+
   if (!pool || !progress) {
-    return <p className="micro-label">LOADING…</p>;
+    return (
+      <div className="route-state" role="status">
+        <p>Loading JLPT practice…</p>
+      </div>
+    );
   }
 
   const cat = LIVE_JLPT_CATEGORIES.find((c) => c === category) ?? null;
@@ -120,7 +151,7 @@ export function JlptPage() {
           </p>
         </div>
       </div>
-      <div className="jlpt-categories" aria-label="JLPT category">
+      <div className="jlpt-categories" role="group" aria-label="JLPT categories">
         {LIVE_JLPT_CATEGORIES.map((c) => {
           const meta = CATEGORY_META[c];
           const sets = pool[c].items;
@@ -131,7 +162,6 @@ export function JlptPage() {
               type="button"
               data-testid={`jlpt-category-${c}`}
               onClick={() => navigate(`/learn/jlpt/${c}`)}
-              aria-pressed={false}
             >
               <span lang="ja">{meta.glyph}</span>
               <b>{meta.label}</b>

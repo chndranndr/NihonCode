@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { status } from "../../components/tts";
+import { useTtsStatus } from "../../components/tts";
 import { useTheme } from "../../components/theme";
 import { APP_VERSION, CONTACT_PLACEHOLDER, CONTENT_SOURCES } from "../../content/sources";
 import { ACCENTS, loadPrefs, savePrefs } from "../../storage/prefs";
@@ -11,7 +11,7 @@ export function ConfigPage() {
   const [tab, setTab] = useState<"settings" | "about">("settings");
   const [backupStatus, setBackupStatus] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
-  const tts = status();
+  const tts = useTtsStatus();
 
   function update(next: typeof prefs): void {
     setPrefs(next);
@@ -26,21 +26,15 @@ export function ConfigPage() {
           <h1>Make space for your routine.</h1>
           <p className="description">Adjust the look and session preferences of this app.</p>
         </div>
-        <div className="limit-row" role="tablist" aria-label="config views">
+        <div className="limit-row" role="group" aria-label="config views">
           <button
             type="button"
-            role="tab"
-            aria-selected={tab === "settings"}
+            aria-pressed={tab === "settings"}
             onClick={() => setTab("settings")}
           >
             SETTINGS
           </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === "about"}
-            onClick={() => setTab("about")}
-          >
+          <button type="button" aria-pressed={tab === "about"} onClick={() => setTab("about")}>
             ABOUT
           </button>
         </div>
@@ -67,7 +61,7 @@ export function ConfigPage() {
                 <h3>Accent</h3>
                 <p>Used for selected controls and your next action.</p>
               </div>
-              <div className="segmented" role="radiogroup" aria-label="accent color">
+              <div className="segmented" role="group" aria-label="accent color">
                 {ACCENTS.map((a) => (
                   <button
                     key={a}
@@ -205,19 +199,19 @@ export function ConfigPage() {
 
       {tab === "about" && (
         <div className="about-readout">
-          <section className="panel">
+          <section className="about-section">
             <div className="panel-head">
               <h2>PRODUCT</h2>
             </div>
-            <p>Kita (キタ) — local-first Japanese practice. Drills, grammar, SRS, progress.</p>
+            <p>Kita (キタ): local-first Japanese practice. Drills, grammar, SRS, progress.</p>
           </section>
-          <section className="panel">
+          <section className="about-section">
             <div className="panel-head">
               <h2>STANCE</h2>
             </div>
             <p>No account. No cloud. No server. Everything lives in this browser.</p>
           </section>
-          <section className="panel">
+          <section className="about-section">
             <div className="panel-head">
               <h2>STORAGE</h2>
             </div>
@@ -229,16 +223,16 @@ export function ConfigPage() {
               localStorage: theme, accent, level, SRS prefs, compact progress, seen achievements.
             </p>
             <p className="micro-label">
-              CLEARING BROWSER DATA ERASES PROGRESS — USE EXPORT IN THE BACKUP SECTION FIRST.
+              CLEARING BROWSER DATA ERASES PROGRESS. USE EXPORT IN THE BACKUP SECTION FIRST.
             </p>
           </section>
-          <section className="panel">
+          <section className="about-section">
             <div className="panel-head">
               <h2>PLATFORM</h2>
             </div>
             <p>React 19 · TypeScript · Vite · ts-fsrs · Web Speech API</p>
           </section>
-          <section className="panel">
+          <section className="about-section">
             <div className="panel-head">
               <h2>CONTENT SOURCES</h2>
             </div>
@@ -255,13 +249,13 @@ export function ConfigPage() {
               ))}
             </ul>
           </section>
-          <section className="panel">
+          <section className="about-section">
             <div className="panel-head">
               <h2>CONTACT</h2>
             </div>
-            <p className="micro-label">{CONTACT_PLACEHOLDER} (PLACEHOLDER — NOT A REAL INBOX)</p>
+            <p className="micro-label">{CONTACT_PLACEHOLDER} (PLACEHOLDER, NOT A REAL INBOX)</p>
           </section>
-          <section className="panel">
+          <section className="about-section">
             <div className="panel-head">
               <h2>VERSION</h2>
             </div>

@@ -4,6 +4,145 @@ import { Buffer } from "node:buffer";
 import { validateJlpt, validateKanji, validateVocab } from "../src/content/gate";
 import { conjugateAdjective, conjugateVerb } from "../src/domain/conjugation";
 
+async function stubSpeech(
+  page: Page,
+  mode: "loading" | "ready" | "missing" | "unsupported" | "error",
+) {
+  await page.addInitScript((mode) => {
+    if (mode === "unsupported") {
+      Object.defineProperty(window, "speechSynthesis", { configurable: true, value: undefined });
+      return;
+    }
+    const voice = {
+      name: "Japanese",
+      lang: "ja-JP",
+      voiceURI: "Japanese",
+      default: false,
+      localService: true,
+    };
+    const engine = Object.assign(new EventTarget(), {
+      getVoices: () => (mode === "ready" || mode === "error" ? [voice] : []),
+      cancel: () => {},
+      speak: (utterance: {
+        text: string;
+        lang: string;
+        voice: { lang: string };
+        onerror: ((event: { error: string }) => void) | null;
+      }) => {
+        if (mode === "error") {
+          utterance.onerror?.({ error: "synthesis-failed" });
+          return;
+        }
+        document.documentElement.dataset.spoken = JSON.stringify({
+          text: utterance.text,
+          lang: utterance.lang,
+          voice: utterance.voice.lang,
+        });
+      },
+    });
+    Object.defineProperty(window, "speechSynthesis", { configurable: true, value: engine });
+    Object.defineProperty(window, "SpeechSynthesisUtterance", {
+      configurable: true,
+      value: class {
+        constructor(public text: string) {}
+      },
+    });
+  }, mode);
+}
+
+async function loadJapaneseVoice(page: Page) {
+  await page.evaluate(() => {
+    speechSynthesis.getVoices = () => [
+      {
+        name: "Japanese",
+        lang: "ja-JP",
+        voiceURI: "Japanese",
+        default: false,
+        localService: true,
+      },
+    ];
+    speechSynthesis.dispatchEvent(new Event("voiceschanged"));
+  });
+}
+
+test("Japanese speech loads late and Enter plays kanji without submitting an answer", async ({
+  page,
+}) => {
+  await stubSpeech(page, "loading");
+  await page.goto("/learn/review");
+  await page.getByRole("button", { name: "START REVIEW" }).click();
+  await expect(page.locator(".prompt-text")).toHaveText("一");
+  const unavailable = page.getByRole("button", {
+    name: "Audio unavailable: prompt",
+    exact: true,
+  });
+  await expect(unavailable).toBeDisabled();
+  await expect(unavailable).toContainText("Audio unavailable");
+  await loadJapaneseVoice(page);
+  const speaker = page.getByRole("button", { name: "Listen: prompt", exact: true });
+  await expect(speaker).toBeVisible();
+  await expect(speaker).toContainText("Listen");
+  await expect(speaker).toBeEnabled();
+  const size = await speaker.evaluate((el) => ({
+    width: el.getBoundingClientRect().width,
+    height: el.getBoundingClientRect().height,
+  }));
+  expect(size.width).toBeGreaterThanOrEqual(44);
+  expect(size.height).toBeGreaterThanOrEqual(44);
+  await speaker.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator("html")).toHaveAttribute(
+    "data-spoken",
+    JSON.stringify({ text: "一", lang: "ja-JP", voice: "ja-JP" }),
+  );
+  await expect(page.getByTestId("reveal")).toHaveCount(0);
+  await page.getByLabel("answer").fill("ichi");
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".session-rail")).toContainText("2/20");
+
+  await page.goto("/config");
+  await expect(page.getByTestId("tts-status")).toContainText("UNAVAILABLE");
+  await loadJapaneseVoice(page);
+  await expect(page.getByTestId("tts-status")).toHaveText("JAPANESE VOICE READY");
+});
+
+for (const mode of ["unsupported", "missing"] as const) {
+  test(`Japanese speech ${mode} explains the cause and leaves review usable`, async ({ page }) => {
+    await stubSpeech(page, mode);
+    await page.goto("/learn/review");
+    await page.getByRole("button", { name: "START REVIEW" }).click();
+    const unavailable = page.getByRole("button", {
+      name: "Audio unavailable: prompt",
+      exact: true,
+    });
+    await expect(unavailable).toBeDisabled();
+    await expect(unavailable).toContainText("Audio unavailable");
+    await expect(page.locator(".speaker-status")).toContainText(
+      mode === "unsupported" ? "unsupported" : "Add Japanese text-to-speech",
+    );
+    await expect(page.locator(".speaker")).not.toContainText("N/A");
+    await page.getByLabel("answer").fill("ichi");
+    await page.keyboard.press("Enter");
+    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+  });
+}
+
+test("Japanese speech playback errors are visible without blocking review", async ({ page }) => {
+  await stubSpeech(page, "error");
+  await page.goto("/learn/review");
+  await page.getByRole("button", { name: "START REVIEW" }).click();
+  const speaker = page.getByRole("button", { name: "Listen: prompt", exact: true });
+  await speaker.click();
+  await expect(page.locator(".speaker-status")).toContainText("could not play");
+  await expect(speaker).toBeEnabled();
+  await expect(page.getByTestId("reveal")).toHaveCount(0);
+  await page.getByLabel("answer").fill("ichi");
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+});
+
 /**
  * Phase 1 acceptance journey (DEVELOPMENT_PROMPT.md section 6): drill -> grade
  * -> persist -> reload -> review, in one flow over the production bundle.
@@ -156,9 +295,9 @@ test("drill grades, XP persists across reload, and reviewed cards leave the new 
 
   // --- persist leg: XP awarded and survives a reload ---
   await page.goto("/");
-  await expect(page.getByTestId("xp")).toHaveText("XP 70");
+  await expect(page.getByTestId("xp-value")).toHaveText("70");
   await page.reload();
-  await expect(page.getByTestId("xp")).toHaveText("XP 70");
+  await expect(page.getByTestId("xp-value")).toHaveText("70");
 
   // --- review leg: new cards enter, then leave the new pool after review ---
   await page.goto("/learn/review");
@@ -222,11 +361,37 @@ test("filled CTA keeps readable text on hover", async ({ page }) => {
 });
 
 test("grammar lesson resume survives reload", async ({ page }) => {
+  await stubSpeech(page, "ready");
   await page.goto("/learn");
   const firstLesson = page.locator(".lesson-list a").first();
   await firstLesson.click();
   await expect(page.getByTestId("quiz")).toBeVisible();
   await expect(page.getByTestId("quiz")).toContainText("QUIZ 1/3");
+
+  const listen = page.getByRole("button", { name: "Listen: example 1", exact: true });
+  await expect(listen).toBeVisible();
+  await expect(listen).toContainText("Listen");
+  const reading = await page.locator(".reading").evaluate((el) => ({
+    size: parseFloat(getComputedStyle(el).fontSize),
+    lineHeight: parseFloat(getComputedStyle(el).lineHeight),
+  }));
+  expect(reading.size).toBeGreaterThanOrEqual(17);
+  expect(reading.lineHeight / reading.size).toBeGreaterThanOrEqual(1.65);
+  const exampleSize = await page
+    .locator(".example .jp")
+    .first()
+    .evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+  expect(exampleSize).toBeGreaterThanOrEqual(24);
+
+  const viewport = page.viewportSize();
+  await page.setViewportSize({ width: 320, height: 800 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
+    true,
+  );
+  const speakerBox = await listen.boundingBox();
+  expect(speakerBox?.width).toBeGreaterThanOrEqual(44);
+  expect(speakerBox?.height).toBeGreaterThanOrEqual(44);
+  if (viewport) await page.setViewportSize(viewport);
 
   // Answer the first question so the lesson becomes in-progress at index 1.
   await page.locator(".quiz-choices button").first().click();
@@ -257,15 +422,19 @@ test("theme choice persists across reload", async ({ page }) => {
 
 test("Esc abort confirms and awards nothing", async ({ page }) => {
   await page.goto("/");
-  const xpBefore = await page.getByTestId("xp").innerText();
+  const xpBefore = await page.getByTestId("xp-value").innerText();
   await page.goto("/learn/drill/kana");
   await page.getByRole("button", { name: "START" }).click();
   await expect(page.getByTestId("session")).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("alertdialog")).toBeVisible();
+  await page.getByRole("button", { name: "RESUME", exact: true }).click();
+  await expect(page.getByLabel("Answer", { exact: true })).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("alertdialog")).toBeVisible();
   await page.getByRole("button", { name: "ABORT" }).click();
   await page.goto("/");
-  await expect(page.getByTestId("xp")).toHaveText(xpBefore);
+  await expect(page.getByTestId("xp-value")).toHaveText(xpBefore);
 });
 
 test("kanji and vocab drills grade real content correctly", async ({ page }) => {
@@ -411,7 +580,7 @@ test("level switch persists across reload and lazy-loads only the active level",
   });
 
   await page.goto("/");
-  await expect(page.getByText("LVL N5")).toBeVisible();
+  await expect(page.getByTestId("dashboard").getByRole("status").first()).toContainText("JLPT N5");
   await expect(page.getByTestId("routine-cta")).toBeVisible();
 
   // Initial load: n5 chunks only (kana is shared, no level suffix).
@@ -427,7 +596,7 @@ test("level switch persists across reload and lazy-loads only the active level",
 
   // Switch to N4 from the dashboard selector.
   await page.getByRole("button", { name: "N4" }).click();
-  await expect(page.getByText("LVL N4")).toBeVisible();
+  await expect(page.getByTestId("dashboard").getByRole("status").first()).toContainText("JLPT N4");
   await page.goto("/learn");
   await expect(page.getByText("KANJI N4")).toBeVisible();
   await expect(page.getByText("GRAMMAR N4")).toBeVisible();
@@ -466,7 +635,7 @@ test("level switch persists across reload and lazy-loads only the active level",
   // Back to the dashboard: the choice persists and no n5 level chunk is fetched.
   chunks.length = 0;
   await page.goto("/");
-  await expect(page.getByText("LVL N4")).toBeVisible();
+  await expect(page.getByTestId("dashboard").getByRole("status").first()).toContainText("JLPT N4");
   await page.goto("/learn");
   await expect(page.getByText("KANJI N4")).toBeVisible();
   const reloaded = chunks.join(" ");
@@ -483,6 +652,55 @@ const JLPT_N5_VOCAB = validateJlpt(
   "n5",
   "vocabulary",
 ).items;
+
+test("JLPT sentences stay readable without shrinking single-kanji prompts", async ({ page }) => {
+  await page.goto("/learn/jlpt/grammar");
+  await page.getByTestId("set-link").first().click();
+  const prompt = page.locator('.prompt-plate p[lang="ja"]');
+  await expect(prompt).toContainText("まいにちしんぶん");
+  const typography = await prompt.evaluate((el) => {
+    const style = getComputedStyle(el);
+    return { size: parseFloat(style.fontSize), leading: parseFloat(style.lineHeight) };
+  });
+  expect(typography.size).toBeGreaterThanOrEqual(20);
+  expect(typography.size).toBeLessThanOrEqual(36);
+  expect(typography.leading / typography.size).toBeGreaterThanOrEqual(1.6);
+  await expect(page.locator(".option").last()).toBeInViewport();
+
+  await page.goto("/learn/review");
+  await page.getByRole("button", { name: "START REVIEW" }).click();
+  await expect(page.locator(".prompt-text")).toHaveText("一");
+  const glyphSize = await page
+    .locator(".prompt-text")
+    .evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+  expect(glyphSize).toBeGreaterThanOrEqual(60);
+});
+
+test("JLPT sentences reflow at 320px with enlarged text and remain answerable", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto("/learn/jlpt/grammar");
+  await page.getByTestId("set-link").first().click();
+  const prompt = page.locator('.prompt-plate p[lang="ja"]');
+  await expect(prompt).toContainText("まいにちしんぶん");
+  const initialSize = await prompt.evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = "200%";
+  });
+  const enlarged = await prompt.evaluate((el) => ({
+    size: parseFloat(getComputedStyle(el).fontSize),
+    width: el.clientWidth,
+    scrollWidth: el.scrollWidth,
+    viewport: window.innerWidth,
+    documentWidth: document.documentElement.scrollWidth,
+  }));
+  expect(enlarged.size).toBeGreaterThanOrEqual(initialSize * 1.8);
+  expect(enlarged.scrollWidth).toBeLessThanOrEqual(enlarged.width);
+  expect(enlarged.documentWidth).toBeLessThanOrEqual(enlarged.viewport);
+  await page.locator(".option").nth(1).click();
+  await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+});
 
 test("JLPT practice grades a keyed set and persists per-set progress", async ({ page }) => {
   await page.goto("/learn/jlpt");
@@ -508,7 +726,7 @@ test("JLPT practice grades a keyed set and persists per-set progress", async ({ 
 
   const set = JLPT_N5_VOCAB[0];
   for (const q of set.questions) {
-    await expect(page.locator(".prompt-text")).toContainText(q.prompt);
+    await expect(page.locator(".jlpt-question")).toContainText(q.prompt);
     await page.locator(".option").nth(q.answerIndex).click();
     await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
     await page.getByRole("button", { name: /NEXT|FINISH/ }).click();
@@ -539,7 +757,7 @@ test("fallback listening audio survives question advance without remount", async
   await page.goto("/");
   await expect(page.getByTestId("dashboard")).toBeVisible();
   await page.getByRole("button", { name: "N2" }).click();
-  await expect(page.getByText("LVL N2")).toBeVisible();
+  await expect(page.getByTestId("dashboard").getByRole("status").first()).toContainText("JLPT N2");
 
   await page.goto("/learn/jlpt/listening");
   await expect(page.getByTestId("jlpt-sets")).toBeVisible();
@@ -563,6 +781,31 @@ test("fallback listening audio survives question advance without remount", async
     return el?.__probe === 1;
   });
   expect(sameElement).toBe(true);
+});
+
+test("quiet instrument JLPT reserves media and distinguishes missing sets", async ({ page }) => {
+  await page.route(/\.(png|jpe?g|webp|gif)(\?.*)?$/, (route) => route.abort());
+  await page.goto("/learn/jlpt/reading/2");
+  const media = page.locator(".jlpt-media").first();
+  await expect(media).toBeVisible();
+  const box = await media.boundingBox();
+  expect(box).not.toBeNull();
+  expect(box!.height).toBeGreaterThan(100);
+  expect(await media.evaluate((el) => getComputedStyle(el).aspectRatio)).not.toBe("auto");
+
+  const altTexts = await page
+    .locator(".jlpt-media")
+    .evaluateAll((els) => els.map((el) => el.getAttribute("alt")));
+  expect(altTexts.every((alt) => alt && alt.trim().length > 0)).toBe(true);
+
+  await page.goto("/learn/jlpt/vocabulary/99999");
+  await expect(page.getByRole("status")).toContainText("not available");
+  await expect(page.getByRole("button", { name: "ALL SETS" })).toBeVisible();
+
+  await page.goto("/learn/jlpt/listening/1");
+  const audio = page.getByTestId("jlpt-audio");
+  await expect(audio).toBeVisible();
+  expect((await audio.boundingBox())!.height).toBeGreaterThanOrEqual(44);
 });
 
 test("SRS statistics page shows level-scoped stats and links practice_core", async ({ page }) => {
@@ -627,7 +870,7 @@ test("export/import round-trips progress without loss", async ({ page }) => {
   }
   await expect(page.getByTestId("summary-score")).toHaveText("100%");
   await page.goto("/");
-  await expect(page.getByTestId("xp")).toHaveText("XP 70");
+  await expect(page.getByTestId("xp-value")).toHaveText("70");
 
   // Export the backup file.
   await page.goto("/config");
@@ -667,7 +910,7 @@ test("export/import round-trips progress without loss", async ({ page }) => {
       }),
   );
   await page.goto("/");
-  await expect(page.getByTestId("xp")).toHaveText("XP 0");
+  await expect(page.getByTestId("xp-value")).toHaveText("0");
 
   // Import the backup; the handler reloads once the restore commits. Wait
   // for that reload, then read fresh state from the dashboard.
@@ -680,7 +923,7 @@ test("export/import round-trips progress without loss", async ({ page }) => {
   });
   await reload;
   await page.goto("/");
-  await expect(page.getByTestId("xp")).toHaveText("XP 70");
+  await expect(page.getByTestId("xp-value")).toHaveText("70");
 });
 
 test("rapid drill submission causes no layout shift", async ({ page }) => {

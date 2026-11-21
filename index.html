@@ -4,8 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#0a0a0c" />
-    <title>キタ — NihonCode</title>
+    <meta name="theme-color" content="#141615" />
+    <title>キタ · NihonCode</title>
+    <script>
+      // Pre-paint theme bootstrap: mirrors src/components/theme.tsx (keys,
+      // accents, theme-color) so a stored light theme or accent is on <html>
+      // before first paint. theme.test.ts keeps the two in sync.
+      (function () {
+        var root = document.documentElement;
+        var theme = "dark";
+        var accent = "amber";
+        try {
+          if (localStorage.getItem("NihonCode-theme") === "light") theme = "light";
+          var stored = localStorage.getItem("NihonCode-theme-accent");
+          if (["amber", "green", "blue", "orange", "red"].indexOf(stored) !== -1) accent = stored;
+        } catch (e) {}
+        root.classList.add("theme-" + theme, "theme-switching");
+        root.dataset.accent = accent;
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "light" ? "#f5f2ea" : "#141615");
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

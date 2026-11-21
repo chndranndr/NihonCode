@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Kita (キタ) — local-first Japanese practice web app",
+  "description": "Kita (キタ): local-first Japanese practice web app",
   "scripts": {
     "dev": "vite",
     "dev:isolated": "node scripts/serve-isolated.mjs",

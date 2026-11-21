@@ -10,6 +10,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useLevel } from "../../components/level";
 import { assetUrl } from "../../content/assets";
+import type { JlptLevel } from "../../content/ids";
 import { loadJlptLevel, type JlptPool } from "../../content/loaders";
 import type { JlptCategory, JlptSet } from "../../content/models";
 import { perfectDrillBonus, XP } from "../../domain/progress";
@@ -22,7 +23,11 @@ export function JlptRunPage() {
   const { level } = useLevel();
   const { category = "", setNumber = "" } = useParams();
   const navigate = useNavigate();
-  const [pool, setPool] = useState<JlptPool | null>(null);
+  const [load, setLoad] = useState<{
+    level: JlptLevel;
+    pool: JlptPool | null;
+    error: boolean;
+  } | null>(null);
   const [index, setIndex] = useState(0);
   const [chosen, setChosen] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(0);
@@ -33,13 +38,21 @@ export function JlptRunPage() {
 
   useEffect(() => {
     let cancelled = false;
-    void loadJlptLevel(level).then((p) => {
-      if (!cancelled) setPool(p);
-    });
+    void loadJlptLevel(level)
+      .then((p) => {
+        if (!cancelled) setLoad({ level, pool: p, error: false });
+      })
+      .catch(() => {
+        if (!cancelled) setLoad({ level, pool: null, error: true });
+      });
     return () => {
       cancelled = true;
     };
   }, [level]);
+
+  const current = load?.level === level ? load : null;
+  const pool = current?.pool ?? null;
+  const error = current?.error ?? false;
 
   const set: JlptSet | null = useMemo(() => {
     if (!pool) return null;
@@ -48,8 +61,35 @@ export function JlptRunPage() {
     return cat.items.find((s) => String(s.setNumber) === setNumber) ?? null;
   }, [pool, category, setNumber]);
 
-  if (!pool || !set) {
-    return <p className="micro-label">SET NOT FOUND OR STILL LOADING…</p>;
+  if (error) {
+    return (
+      <section className="route-state panel" role="alert">
+        <h1>JLPT practice could not be loaded.</h1>
+        <p className="description">The rest of your study workspace is still available.</p>
+        <button type="button" className="primary" onClick={() => window.location.reload()}>
+          RETRY
+        </button>
+      </section>
+    );
+  }
+
+  if (!pool) {
+    return (
+      <div className="route-state" role="status">
+        <p>Loading JLPT practice…</p>
+      </div>
+    );
+  }
+
+  if (!set) {
+    return (
+      <div className="route-state" role="status">
+        <p>This set is not available at {level.toUpperCase()}.</p>
+        <button type="button" onClick={() => navigate(`/learn/jlpt/${category}`)}>
+          ALL SETS
+        </button>
+      </div>
+    );
   }
 
   const question = set.questions[index];
@@ -180,9 +220,16 @@ export function JlptRunPage() {
           <p className="jlpt-passage-text" lang="ja">
             {passage.text}
           </p>
-          {passage.images.map((im) => {
+          {passage.images.map((im, i) => {
             const src = assetUrl(im.localPath);
-            return src ? <img key={im.localPath} src={src} alt="" className="jlpt-media" /> : null;
+            return src ? (
+              <img
+                key={im.localPath}
+                src={src}
+                alt={`Passage illustration ${passage.images.length > 1 ? i + 1 : ""}`.trim()}
+                className="jlpt-media"
+              />
+            ) : null;
           })}
         </section>
       )}
@@ -222,13 +269,13 @@ export function JlptRunPage() {
         />
       )}
 
-      <div className="prompt-plate panel">
-        <p className="prompt-text" lang="ja">
+      <div className="prompt-plate panel jlpt-prompt">
+        <p className="jlpt-question" lang="ja">
           {question.prompt}
         </p>
       </div>
 
-      <div className="option-list" role="radiogroup" aria-label="choices">
+      <div className="option-list" role="group" aria-label="choices">
         {question.options.map((opt, i) => {
           const isCorrect = chosen !== null && i === question.answerIndex;
           const isWrongPick = chosen === i && i !== question.answerIndex;
@@ -249,7 +296,7 @@ export function JlptRunPage() {
 
       {chosen !== null && (
         <div
-          className={`reveal panel ${chosen !== question.answerIndex ? "miss-border" : ""}`}
+          className={`reveal panel ${chosen === question.answerIndex ? "ok" : "miss"}`}
           data-testid="reveal"
         >
           <p className={`reveal-verdict ${chosen === question.answerIndex ? "ok" : "miss"}`}>

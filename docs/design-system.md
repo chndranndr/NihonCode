@@ -2,40 +2,89 @@
 
 ## Authority and delivery status
 
-The approved redesign is implemented in `mockups/index.html`, `mockups/style.css`, and `mockups/app.js` and integrated into production `src/` (2026-09-22): shell, tokens, all nine views, contribution calendars and the activity quadrant run on stored completions. Sample data and preview controls are not product requirements.
+Quiet Instrument is implemented across the production application shell and study, progress, configuration, and informational views, and verified through static checks, unit and browser suites, and an element-by-element production click-through.
 
-Use this order: PRD for behavior and non-goals; the latest HTML mockup for visual composition; [DESIGN.md](../DESIGN.md) for extracted tokens and reusable patterns; [.impeccable surface briefs](../.impeccable/README.md) for page contracts. [UI_IMPLEMENTATION_PROMPT.md](../UI_IMPLEMENTATION_PROMPT.md) governs integration and verification. The original `mockup.png` and old review screenshots are historical references, not competing redesign authority.
+Use this authority order: [PRD.md](../PRD.md) for behavior and non-goals; [PRODUCT.md](../PRODUCT.md) for product and brand commitments; [DESIGN.md](../DESIGN.md) for the approved visual direction and exact tokens; the [Quiet Instrument design specification](superpowers/specs/2026-11-20-quiet-instrument-ui-revamp-design.md) for interaction, state, and verification contracts. The earlier HTML mockups and `.impeccable` surface briefs are historical composition references. They do not override the approved revamp.
 
-## Visual grammar
+## Design Read and dials
 
-Terminal console / command deck: near-black dark default, warm-paper light variant, monospace text, square surfaces, hairline dividers, restrained corner details and ASCII Fuji ornament where shown in the mockup. Use the mockup's labeled navigation rail and spacious, differentiated page layouts, not the original icon-only dashboard composition.
+Reading this as a desktop-first Japanese study workspace for self-directed learners, using a warm instrument-panel language with ENERGY 2, RHYTHM 2, and MOTION 1.
 
-Primary accent is selectable. Green success/activity, blue learning/info and red error roles do not follow that selection. Existing due/warning semantics remain available; do not remove production states merely because sample data omits them. DESIGN.md owns exact target values and layout measurements.
+- **ENERGY 2:** Warm color, confident typography, and one clear action make the workspace welcoming without promotional spectacle.
+- **RHYTHM 2:** The shell remains consistent while study, reading, setup, progress, and configuration screens use compositions suited to their tasks.
+- **MOTION 1:** Motion is limited to brief state feedback, hover, focus, answer feedback, and existing achievement notifications. Scroll choreography, ambient animation, confetti, and decorative movement do not belong.
 
-No glass, gradient panel fills, rounded shells, stock illustrations, confetti or display serifs. No decorative invented statistics. No inline JSX styles or hardcoded CSS colors outside `:root`; use CSS tokens and classes. Keep layer boundaries, native controls and existing dependencies.
+## Visual decisions and reasons
 
-## Interaction and responsive contracts
+| Decision                                                  | Purpose                                                                                     |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Warm green-grey charcoal and warm paper themes            | Make long study sessions feel calm and comfortable in both lighting contexts.               |
+| Humanist sans reading type                                | Keep Japanese and English explanations readable without a terminal aesthetic.               |
+| Monospace utility values                                  | Make levels, counts, and compact readouts easy to scan without turning all copy into code.  |
+| Tonal surfaces and hairlines                              | Establish hierarchy through separation rather than shadows or floating cards.               |
+| Three-pixel controls and four-pixel panels                | Retain precise instrument geometry without sharp brutality or pill-shaped defaults.         |
+| Sparse registration corners on focal study surfaces       | Repeat a specific identity motif without decorating every container.                        |
+| One primary action per focal region                       | Make the next step clear without urgency, praise, or competing calls to action.             |
+| Visible Listen controls                                   | Make pronunciation discoverable and understandable without relying on an unexplained icon.  |
+| Structural whitespace and task-specific grids             | Give reading, practice, setup, and telemetry the space and composition their content needs. |
+| Real zero, loading, error, disabled, and populated states | Keep the interface honest and usable outside the ideal path.                                |
 
-Desktop rail is 156px, reduced to 110px at widths up to 1100px. Below 768px use the four-slot bottom navigation. Content is capped at 1376px with 36px desktop padding, 26px intermediate and 18px horizontal mobile padding. Retain production URLs, browser back and keyboard shortcuts without intercepting text input.
+## Color, type, and shape
 
-Controls have visible focus and clear disabled/loading/error/empty states. Primary controls target at least 44px height. Dense calendar cells use roving keyboard focus plus touch-selectable details. Long tables and annual calendars scroll within their panels; no page overflow. Text and Japanese glyphs must remain legible in both themes.
+[DESIGN.md](../DESIGN.md) owns exact values. Dark mode uses warm green-grey surfaces; light mode uses coordinated paper surfaces. Amber is the default selectable accent, with green, blue, orange, and red also available. Accent selection does not recolor semantic success, learning, error, warning, or activity intensity. Filled actions always use the explicit on-accent foreground.
 
-Enter submits/advances drills; Esc confirms exit. Feedback remains text-paired and screen-reader accessible. TTS absence never blocks text practice. Avoid decorative motion; any added state feedback follows the existing 150–250ms limit and reduced-motion preference. Do not invent a mandatory typing ticker where the mockup has none.
+The local humanist stack is `"Avenir Next", "Segoe UI", "Noto Sans JP", system-ui, sans-serif`. It carries headings, navigation, controls, explanations, and study reading. The local monospace stack carries levels, counts, progress values, and short utility labels. No remote font dependency is allowed.
 
-## Study activity
+Interface body copy is 15px, grammar reading is 17px, supporting copy is 13px, and utility text does not drop below 12px. Japanese drill prompts scale from 64px to 104px; grammar examples use approximately 24px to 25px. Uppercase tracking is limited to short utility labels. Long text wraps naturally.
 
-PRD §10.13 owns the full data contract. Home displays 91 days through today; Progress displays the selected year and its activity overview. Seven Sunday–Saturday rows, week columns, month/day labels, green 0/1/2/3/4+ completed-session bins, exact-count inspector and legend.
+Panels may use a 4px radius and controls a 3px radius. These are maxima, not instructions to round every element. No glass, gradient panel fills, glow, large shadows, rounded shells, stock illustrations, confetti, or decorative ticker. Colors live in the root or theme scopes; components use tokens and classes rather than inline JSX styles or hardcoded colors.
 
-All levels contribute. Available years come from history plus the current year. Future dates are unavailable. One completed session counts once; retries are separate sessions, aborted runs and individual answers are not contributions. Production needs stable completion IDs and captured local dates; unavailable legacy detail must not be fabricated from XP.
+## Layout and navigation
 
-The overview has equal fixed 0–100% axes: Drills left, SRS Review top, JLPT right, Grammar bottom. Restrained green polygon and visible points accompany exact counts and one-decimal shares. Zero sessions means zero shares and an empty state. This is participation, not proficiency or a target balance.
+Desktop uses a fixed 156px labeled rail and matching workspace offset. At widths up to 1100px the rail and offset become 110px and main padding becomes 26px. Below 768px, four equal bottom navigation slots replace the rail. Main content is capped at 1376px with 36px desktop padding and 18px mobile inline padding.
 
-## Components and surfaces
+Mobile content reserves 66px plus `env(safe-area-inset-bottom, 0px)` for the bottom rail, with matching scroll padding and scroll margin. This prevents focused fields and final controls from being hidden behind navigation.
 
-Shared target patterns: labeled navigation, routine panel, metric readout, pool matrix, contribution calendar, activity quadrant, typed-answer dock, JLPT radio options, answer feedback, results summary, grammar reading layout, and settings rows.
+Home emphasizes the next study action. Progress gives the annual calendar room. Setup preserves the eligible-pool matrix. Grammar prioritizes long-form reading. Practice reduces distractions. Settings uses readable rows, and About uses restrained section separators. Do not replace these compositions with an equal-card auto-fit grid.
 
-See [.impeccable/README.md](../.impeccable/README.md) for all nine view mappings plus retained About/review/statistics obligations. Keep actual eligible pools, grading, SRS, achievements, export/import, preferences and owner-gated JLPT categories intact.
+Long matrices and annual calendars scroll inside their panels. Production routes, browser Back behavior, lazy loading, and Alt+1 through Alt+4 shortcuts remain intact.
 
-## Verification
+## Controls and interaction
 
-Use the existing checks and browser eval documented in [development.md](development.md). Compare all production views with the mockup at desktop, tablet and mobile widths, both themes; exercise real completion and reload/backup flows. Mockup checks prove only the reference demo. Production evidence is recorded in [quality.md](quality.md) (integration row, 2026-09-22).
+Use native controls with visible text labels, hairline borders, and targets of at least 44px. Focal primary actions and answer fields use 48px where appropriate. Focus uses a visible 2px accent outline with 4px offset. Hover, active, focus, selected, and disabled states differ through border, text, shape, or opacity in addition to color. Enabled controls show `cursor: pointer`; disabled controls show `cursor: not-allowed` and a real reason where needed.
+
+State-only transitions affect color, border color, background color, and opacity for 160ms under `prefers-reduced-motion: no-preference`. Under reduced motion their duration is zero. Do not add entrance, floating, parallax, typing, or celebration animation.
+
+Enter submits or advances drills. Escape opens exit confirmation where the study flow requires it. Dialogs close with Escape and expose a visible resume action. Feedback remains text-paired and screen-reader accessible.
+
+## Pronunciation and listening
+
+Reuse the shared SpeakerButton for drill prompts, SRS prompts, and every curated Japanese grammar example. Available controls show a speaker icon and visible **Listen** text. Unavailable controls show **Audio unavailable**, remain disabled, and expose the existing reason. Accessible names combine the visible label with prompt or example context.
+
+Pronunciation controls remain at least 44px in both dimensions and wrap without colliding with Japanese text. Existing voice detection, playback, errors, and `role="status"` feedback remain intact. Optional audio failure never blocks text study. JLPT Listening retains its bundled native audio player; speech synthesis is not substituted for recorded material.
+
+## Study activity and data views
+
+PRD §10.13 owns counting and storage. Home displays 91 days through today; Progress displays the selected year and activity overview. Seven Sunday–Saturday rows, week columns, month labels, green 0/1/2/3/4+ completed-session bins, exact-count detail, and a legend make the calendar understandable without color alone.
+
+All levels contribute. Available years come from history plus the current year. Future dates are unavailable. One completed session counts once; retries are separate sessions, while aborted runs and individual answers are not contributions. Legacy detail is never fabricated from XP.
+
+The overview has equal fixed 0–100% axes: Drills left, SRS Review top, JLPT right, Grammar bottom. Exact counts and one-decimal shares accompany the green polygon. Zero sessions means zero shares and an empty state. This measures participation, not proficiency, exam readiness, or a target balance.
+
+Kanji mastery, achievements, coverage, SRS statistics, JLPT progress, and configuration values use actual local state. Preserve their test IDs, stable namespaced IDs, keyboard behavior, and real actions.
+
+## UI states
+
+- **Loading:** Keep the shell stable, reserve asynchronous content space, and expose textual loading with `role="status"`.
+- **Empty:** Show real zero values and a useful next action where appropriate. Never show sample achievements or fictional activity as product data.
+- **Error:** Preserve navigation and explain failure in the relevant content region. Retry only when wired to real recovery.
+- **Disabled:** Keep labels and reasons legible. Do not render unavailable choices as actionable controls.
+- **Populated:** Use validated content and existing local persistence without changing grading, scheduling, XP, result payloads, or import/export formats.
+
+## Accessibility and verification
+
+Preserve landmarks, one logical `h1` per view, hierarchical headings, document titles, Japanese language metadata, zoom support, visible field labels, and image alt text. Keyboard users retain logical Tab and Shift+Tab order, Enter and Space activation, Escape dialogs, calendar roving focus, kanji arrow navigation, and route shortcuts.
+
+Verify 320px, 390px, 768px, 1024px, and 1440px layouts without document overflow, clipping, collision, or bottom-rail occlusion. Verify 200% text zoom for study and JLPT controls. All text and meaningful graphical controls meet WCAG AA in both themes and every accent.
+
+Use `npm run check`, `npm test`, `npm run build`, `npm run audit:clean`, `npm run eval`, and `npm run doctor`. The visual and interaction contracts live in `e2e/a11y.spec.ts`, `e2e/journey.spec.ts`, and the existing browser suites. Final production evidence also requires an element-by-element browser click-through, both themes, all accents, reduced motion, keyboard use, responsive widths, and exact console and resource results.

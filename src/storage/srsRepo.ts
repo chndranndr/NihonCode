@@ -28,13 +28,12 @@ export interface DueQueue {
  * capped by dailyNewCap minus cards already introduced today. Cards from
  * other levels stay scheduled but never surface here.
  */
-export async function buildDueQueue(
+function queueFromSnapshot(
+  cards: SrsCardRow[],
   poolIds: string[],
   dailyNewCap: number,
-  now: Date = new Date(),
-): Promise<DueQueue> {
-  const store = db();
-  const cards = await store.srsCards.toArray();
+  now: Date,
+): DueQueue {
   const byId = new Map(cards.map((c) => [c.id, c]));
   const inPool = new Set(poolIds);
   const due = cards
@@ -49,6 +48,28 @@ export async function buildDueQueue(
   const unseen = poolIds.filter((id) => !byId.has(id));
   const remaining = Math.max(0, dailyNewCap - introducedToday);
   return { due, newCandidates: unseen.slice(0, remaining) };
+}
+
+export async function buildDueQueue(
+  poolIds: string[],
+  dailyNewCap: number,
+  now: Date = new Date(),
+): Promise<DueQueue> {
+  const cards = await db().srsCards.toArray();
+  return queueFromSnapshot(cards, poolIds, dailyNewCap, now);
+}
+
+/** Queue + stats from one card-table read, for callers that need both. */
+export async function dashboardSrsData(
+  poolIds: string[],
+  dailyNewCap: number,
+  now: Date = new Date(),
+): Promise<{ queue: DueQueue; stats: SrsStats }> {
+  const cards = await db().srsCards.toArray();
+  return {
+    queue: queueFromSnapshot(cards, poolIds, dailyNewCap, now),
+    stats: statsFromSnapshot(cards, poolIds, now),
+  };
 }
 
 export async function reviewItem(
@@ -102,8 +123,11 @@ export interface SrsStats {
   byLevel: Record<JlptLevel, { total: number; learned: number }>;
 }
 
-export async function srsStats(poolIds?: string[], now: Date = new Date()): Promise<SrsStats> {
-  const cards = await db().srsCards.toArray();
+function statsFromSnapshot(
+  cards: SrsCardRow[],
+  poolIds: string[] | undefined,
+  now: Date,
+): SrsStats {
   // With a pool, totals come from the pool (every content id that could hold a
   // card), so a fresh learner sees "learned 0 / total N" rather than "0 / 0".
   // `due` also scopes to the pool so the DUE readout matches the review queue
@@ -155,4 +179,9 @@ export async function srsStats(poolIds?: string[], now: Date = new Date()): Prom
   }
   stats.fresh = stats.total - stats.learned;
   return stats;
+}
+
+export async function srsStats(poolIds?: string[], now: Date = new Date()): Promise<SrsStats> {
+  const cards = await db().srsCards.toArray();
+  return statsFromSnapshot(cards, poolIds, now);
 }

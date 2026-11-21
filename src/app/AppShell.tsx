@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { LevelProvider } from "../components/level";
 import { ThemeProvider } from "../components/theme";
 import { AchievementToasts } from "../components/AchievementToasts";
@@ -12,19 +12,27 @@ const SECTIONS = [
   { key: "4", to: "/config", label: "Config", glyph: "⚙" },
 ] as const;
 
-const TICKER_TEXT =
-  "NIHONCODE // KITA v0.1 // LOCAL-FIRST // NO ACCOUNT // NO CLOUD // DATA STAYS IN THIS BROWSER //";
-
-function Ticker() {
-  return (
-    <div className="ticker" aria-hidden="true">
-      <span className="ticker-run">{TICKER_TEXT}</span>
-    </div>
-  );
+function titleForPath(pathname: string): string {
+  const path = pathname.replace(/\/+$/, "") || "/";
+  if (path === "/") return "Home";
+  if (path === "/progress") return "Progress";
+  if (path === "/learn") return "Learn";
+  if (path.startsWith("/learn/drill/")) return "Drill";
+  if (path.startsWith("/learn/grammar/")) return "Grammar lesson";
+  if (path === "/learn/jlpt" || path.startsWith("/learn/jlpt/")) return "JLPT practice";
+  if (path === "/stats") return "SRS statistics";
+  if (path === "/learn/review") return "Review";
+  if (path === "/config") return "Config";
+  return "Home";
 }
 
 function Shell({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.title = `${titleForPath(pathname)} · NihonCode`;
+  }, [pathname]);
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
@@ -34,8 +42,14 @@ function Shell({ children }: { children: ReactNode }) {
         (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)
       )
         return;
-      const section = SECTIONS.find((s) => s.key === event.key);
-      if (section) navigate(section.to);
+      const section =
+        event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey
+          ? SECTIONS.find((s) => s.key === event.key)
+          : undefined;
+      if (section) {
+        event.preventDefault();
+        navigate(section.to);
+      }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -66,12 +80,8 @@ function Shell({ children }: { children: ReactNode }) {
       </aside>
       <div className="workspace">
         <header className="topbar">
-          <span>
-            JAPANESE PRACTICE <span className="muted">/ STUDY CONSOLE</span>
-          </span>
-          <span className="console-tag" aria-hidden="true">
-            LOCAL DATA ONLY
-          </span>
+          <span>{titleForPath(pathname)}</span>
+          <span className="console-tag">LOCAL DATA ONLY</span>
         </header>
         <main className="app-content" id="main" tabIndex={-1}>
           <AchievementToasts />
@@ -81,11 +91,10 @@ function Shell({ children }: { children: ReactNode }) {
           <span>
             キタ <span className="muted">/ No account. Your own pace.</span>
           </span>
-          <Ticker />
-          <div className="key-legend" aria-hidden="true">
+          <div className="key-legend">
             {SECTIONS.map((s) => (
               <span key={s.key}>
-                <kbd>{s.key}</kbd> {s.label}
+                <kbd>Alt+{s.key}</kbd> {s.label}
               </span>
             ))}
           </div>

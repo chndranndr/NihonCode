@@ -14,7 +14,7 @@ import { useLevel } from "../../components/level";
 import { achievements, coverageEstimate } from "../../domain/achievements";
 import {
   activityRows,
-  masteryByItem,
+  masteryByItems,
   sessionSummary,
   type SessionSummary,
 } from "../../storage/progressRepo";
@@ -84,11 +84,11 @@ export function ProgressPage() {
     if (!pools) return;
     let cancelled = false;
     void (async () => {
-      const next: KanjiCell[] = [];
-      for (const item of pools.kanji) {
-        const m = await masteryByItem(item.id);
-        next.push({ item, attempts: m.attempts, accuracy: m.accuracy, lastSeen: m.lastSeen });
-      }
+      const mastery = await masteryByItems(pools.kanji.map((item) => item.id));
+      const next: KanjiCell[] = pools.kanji.map((item) => {
+        const m = mastery.get(item.id)!;
+        return { item, attempts: m.attempts, accuracy: m.accuracy, lastSeen: m.lastSeen };
+      });
       if (!cancelled) setCells(next);
     })();
     return () => {
@@ -246,7 +246,9 @@ export function ProgressPage() {
                 <p className="sample-note">Your next review builds on what you already know.</p>
               </>
             ) : (
-              <p className="micro-label">LOADING…</p>
+              <p className="micro-label" role="status">
+                LOADING…
+              </p>
             )}
           </Panel>
 
@@ -272,7 +274,7 @@ export function ProgressPage() {
         <Panel
           title={`KANJI · ${level.toUpperCase()}`}
           actions={
-            <div className="limit-row" role="radiogroup" aria-label="level filter">
+            <div className="limit-row" role="group" aria-label="level filter">
               {LEVELS.map((l) => {
                 const enabled = ENABLED_LEVELS.includes(l);
                 return (
@@ -339,7 +341,8 @@ export function ProgressPage() {
                 <p>{selected.item.meaning}</p>
                 <p className="micro-label">
                   ATTEMPTS {selected.attempts} · ACCURACY {Math.round(selected.accuracy * 100)}% ·
-                  LAST {selected.lastSeen ? new Date(selected.lastSeen).toLocaleDateString() : "—"}{" "}
+                  LAST{" "}
+                  {selected.lastSeen ? new Date(selected.lastSeen).toLocaleDateString() : "Not yet"}{" "}
                   · STATUS {masteryState(selected).toUpperCase()}
                 </p>
                 {practiceCounts && (

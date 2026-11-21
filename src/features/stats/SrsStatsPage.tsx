@@ -30,14 +30,26 @@ export function SrsStatsPage() {
   }, [pools]);
 
   if (!pools || !stats) {
-    return <p className="micro-label">LOADING…</p>;
+    return (
+      <div className="route-state" role="status">
+        <p>Loading SRS statistics…</p>
+      </div>
+    );
   }
 
   const masteryPct = stats.total === 0 ? 0 : Math.round((stats.learned / stats.total) * 100);
 
   return (
     <div className="progress-page" data-testid="srs-stats">
-      <h2 className="micro-label">SRS STATISTICS · {level.toUpperCase()}</h2>
+      <div className="page-head">
+        <div>
+          <p className="label">キタ / {level.toUpperCase()} REVIEW</p>
+          <h1>SRS statistics.</h1>
+          <p className="description">
+            Scheduler counts for the active level, not an exam-readiness estimate.
+          </p>
+        </div>
+      </div>
       <div className="telemetry">
         <Panel title="AT A GLANCE">
           <p className="micro-label" data-testid="stat-streak">

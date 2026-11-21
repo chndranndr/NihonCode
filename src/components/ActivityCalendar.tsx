@@ -7,16 +7,17 @@
  * category breakdown. Future days are unavailable, never recorded.
  */
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ACTIVITY_CATEGORIES,
   buildCalendarGrid,
   categoryTotals,
   countsByDay,
   dayBin,
+  parseDayKey,
   type ActivityRow,
 } from "../domain/activity";
-import type { DayKey } from "../domain/progress";
+import { dayKey, type DayKey } from "../domain/progress";
 
 const CATEGORY_LABELS: Record<(typeof ACTIVITY_CATEGORIES)[number], string> = {
   drill: "Drills",
@@ -24,6 +25,14 @@ const CATEGORY_LABELS: Record<(typeof ACTIVITY_CATEGORIES)[number], string> = {
   grammar: "Grammar",
   jlpt: "JLPT",
 };
+
+interface CalendarSelection {
+  day: DayKey | null;
+  startKey: DayKey;
+  endKey: DayKey;
+  todayKey: DayKey;
+  error: string | null;
+}
 
 export function ActivityCalendar({
   rows,
@@ -41,8 +50,41 @@ export function ActivityCalendar({
   const grid = buildCalendarGrid(startKey, endKey);
   const byDay = countsByDay(rows.filter((r) => r.date >= startKey && r.date <= endKey));
   const totals = categoryTotals(byDay.values());
-  const [selected, setSelected] = useState<DayKey | null>(null);
+  const [selection, setSelection] = useState<CalendarSelection | null>(null);
+  const dateMax = endKey < todayKey ? endKey : todayKey;
+  const dateDisabled = dateMax < startKey;
+  const currentSelection =
+    selection?.startKey === startKey &&
+    selection.endKey === endKey &&
+    selection.todayKey === todayKey
+      ? selection
+      : null;
+  const selected = currentSelection?.day ?? null;
+  const selectionError = currentSelection?.error ?? null;
   const layoutRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // When the grid is wider than its box (annual view on a phone), open on the
+  // week that holds today instead of January. Horizontal only: never moves
+  // the page, and re-runs only when the shown range changes.
+  useEffect(() => {
+    const scroller = scrollRef.current;
+    if (!scroller || scroller.scrollWidth <= scroller.clientWidth) return;
+    const anchor =
+      todayKey >= startKey && todayKey <= endKey
+        ? scroller.querySelector<HTMLElement>(`[data-day="${todayKey}"]`)
+        : null;
+    if (!anchor) return;
+    const offset =
+      anchor.getBoundingClientRect().left -
+      scroller.getBoundingClientRect().left +
+      scroller.scrollLeft;
+    scroller.scrollLeft = Math.max(0, offset - scroller.clientWidth / 2 + anchor.offsetWidth / 2);
+  }, [startKey, endKey, todayKey]);
+
+  function updateSelection(day: DayKey | null, error: string | null = null): void {
+    setSelection({ day, startKey, endKey, todayKey, error });
+  }
 
   function move(current: DayKey, delta: number): void {
     const order: DayKey[] = [];
@@ -81,7 +123,12 @@ export function ActivityCalendar({
         <strong>{totals.total} sessions</strong>
         <span>{compact ? "Last 13 weeks" : startKey.slice(0, 4)} · all levels</span>
       </div>
-      <div className="heat-scroll" role="group" aria-label="Study activity calendar">
+      <div
+        className="heat-scroll"
+        ref={scrollRef}
+        role="group"
+        aria-label="Study activity calendar"
+      >
         <div
           className="heat-layout"
           ref={(el) => {
@@ -119,7 +166,7 @@ export function ActivityCalendar({
                   aria-pressed={selected === key}
                   tabIndex={key === focusKey ? 0 : -1}
                   disabled={future}
-                  onClick={() => setSelected(key)}
+                  onClick={() => updateSelection(key)}
                   onKeyDown={(e) => {
                     const delta =
                       e.key === "ArrowUp"
@@ -152,16 +199,50 @@ export function ActivityCalendar({
         </span>
       </div>
       <p className="day-detail" role="status">
-        {selected
-          ? `${selected} · ${selectedTotal} sessions${
-              selectedCounts
-                ? ` — ${ACTIVITY_CATEGORIES.map(
-                    (c) => `${CATEGORY_LABELS[c]}: ${selectedCounts[c]}`,
-                  ).join(" · ")}`
-                : " — No study recorded."
-            }`
-          : "Select a day to see its activity."}
+        {selectionError ??
+          (selected
+            ? `${selected} · ${selectedTotal} sessions${
+                selectedCounts
+                  ? `: ${ACTIVITY_CATEGORIES.map(
+                      (c) => `${CATEGORY_LABELS[c]}: ${selectedCounts[c]}`,
+                    ).join(" · ")}`
+                  : ": No study recorded."
+              }`
+            : "Select a day to see its activity.")}
       </p>
+      <div className="activity-date-picker">
+        <label htmlFor="activity-date">Select a date</label>
+        <input
+          id="activity-date"
+          data-testid="activity-date-picker"
+          type="date"
+          min={startKey}
+          max={dateMax}
+          disabled={dateDisabled}
+          value={selected ?? ""}
+          onChange={(event) => {
+            const value = event.currentTarget.value;
+            if (!value) {
+              if (event.currentTarget.validity.badInput) {
+                updateSelection(selected, "Choose a valid date in the displayed range.");
+              } else {
+                updateSelection(null);
+              }
+              return;
+            }
+            if (
+              !/^\d{4}-\d{2}-\d{2}$/.test(value) ||
+              dayKey(parseDayKey(value)) !== value ||
+              value < startKey ||
+              value > dateMax
+            ) {
+              updateSelection(selected, "Choose a valid date in the displayed range.");
+              return;
+            }
+            updateSelection(value);
+          }}
+        />
+      </div>
     </div>
   );
 }

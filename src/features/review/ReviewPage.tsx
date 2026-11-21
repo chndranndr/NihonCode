@@ -151,7 +151,9 @@ export function ReviewPage() {
           )}
         </>
       ) : (
-        <p className="micro-label">LOADING…</p>
+        <p className="micro-label" role="status">
+          LOADING…
+        </p>
       )}
     </div>
   );

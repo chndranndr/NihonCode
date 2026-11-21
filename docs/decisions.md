@@ -374,6 +374,14 @@ Three sub-decisions were made in the same change:
 
 **Binds.** src/storage/db.ts (v6), src/storage/progressRepo.ts, src/storage/backup.ts (schema 2), src/domain/activity.ts, src/components/ActivityCalendar.tsx, src/components/ActivityQuadrant.tsx, e2e/a11y.spec.ts (ICB + calendar-keyboard guardrails). Evidence: docs/quality.md "Redesign integration", `.evidence/after/`.
 
+## 2026-10-28 — Dashboard reads and interface accessibility
+
+**Decision.** Dashboard queue and statistics share one SRS-card snapshot, and kanji mastery loads in one batch. Results are scoped to the current level and new-card cap; pending/error states do not display stale or zeroed totals. Home previews at most 80 kanji while totals cover the full pool. Mobile activity inspection uses a bounded native date input; section shortcuts require exact Alt+1–4; pressed-button controls use group semantics; document titles follow route families. The light-theme orange accent is `#8e4600` to meet WCAG AA for active and hover text.
+
+**Why.** Avoid duplicate reads and unbounded Home rendering while keeping slow or failed reads honest. Preserve native mobile date selection, accurate keyboard expectations, and contrast across every selectable accent/theme.
+
+**Binds.** `src/storage/srsRepo.ts`, `src/storage/progressRepo.ts`, dashboard/progress consumers, `src/app/AppShell.tsx`, `src/app/app.css`, the accessibility E2E and storage/component tests, and `docs/quality.md`.
+
 ## Prior (owner-authored, recorded elsewhere)
 
 - Storage: Dexie/IndexedDB for SRS + localStorage for settings (DEVELOPMENT_PROMPT.md section 2; resolves the PRODUCT.md open item; PRODUCT.md/PRD wording update is owner-authored and due with the storage commit).

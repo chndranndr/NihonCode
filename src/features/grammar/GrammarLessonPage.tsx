@@ -114,14 +114,16 @@ export function GrammarLessonPage() {
           </div>
 
           <h2 id="examples">See it in a sentence</h2>
-          {active.examples.map((e) => (
+          {active.examples.map((e, i) => (
             <div className="example" key={e.jp}>
-              <p className="jp" lang="ja">
-                {e.jp}
-              </p>
-              <p className="roman">{e.romaji}</p>
-              <p>{e.en}</p>
-              <SpeakerButton text={e.jp} label="example" />
+              <div className="example-copy">
+                <p className="jp" lang="ja">
+                  {e.jp}
+                </p>
+                <p className="roman">{e.romaji}</p>
+                <p>{e.en}</p>
+              </div>
+              <SpeakerButton text={e.jp} label={`example ${i + 1}`} />
             </div>
           ))}
 
