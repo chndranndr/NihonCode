@@ -183,13 +183,15 @@ Panels may use a 4px radius and controls a 3px radius. The production taste guar
 
 ### Buttons and fields
 
-Use native controls with panel-filled surfaces, hairline borders, and at least 44px targets. Focal primary actions and answer fields use 48px heights where appropriate. Primary actions use accent fill and explicit on-accent text. Secondary actions use surface and border contrast. Inputs have persistent visible labels.
+Use native controls with panel-filled surfaces, hairline borders, and at least 44px targets, including standalone text links and back links. Focal primary actions and answer fields use 48px heights where appropriate. Primary actions use accent fill and explicit on-accent text. Secondary actions use surface and border contrast. Inputs have persistent visible labels.
 
 Focus uses a visible 2px accent outline with 4px offset. Hover, active, focus, and disabled states differ through border, text, shape, or opacity in addition to color. Enabled controls show `cursor: pointer`; disabled controls show `cursor: not-allowed` and explain genuinely unavailable actions. Dead controls are removed.
 
 ### Navigation and panels
 
-Use the labeled Home/Progress/Learn/Config rail with an accent left-edge selection marker; mobile uses four equal bottom slots with a top-edge marker. Selection never relies on color alone. Panels use varied layouts, whitespace, and small corner details where appropriate, not identical card shells everywhere.
+Use the labeled Home/Progress/Learn/Config rail with an accent left-edge selection marker; mobile uses four equal bottom slots with a top-edge marker. Selection never relies on color alone. The top bar carries the active study level (JLPT N5) and the local-data note; it never repeats the page name, which the rail and heading already give.
+
+Page headings stand alone: no eyebrow label sits above an `h1`. A fact that belongs with the heading, such as a grammar category or a JLPT set number, sits beneath it as a dim mono meta line (`.page-meta`). An e2e test fails on a label directly above a page heading. Panels use varied layouts, whitespace, and small corner details where appropriate, not identical card shells everywhere.
 
 ### Pronunciation and listening
 
@@ -199,7 +201,7 @@ The control remains at least 44px in both dimensions, keyboard operable, and rea
 
 ### Contribution calendar
 
-Home shows 91 days; Progress shows a selected calendar year. Seven Sunday–Saturday rows, week columns, month labels, and Less–More legend. Expose exact date/count by hover/focus and selectable category detail. One roving tab stop, arrow navigation, contained mobile scrolling, future-day unavailable state, and honest zero state. Activity green is independent of user accent.
+Home shows 91 days; Progress shows a selected calendar year. Seven Sunday–Saturday rows, week columns, month labels, and Less–More legend. Expose exact date/count by hover/focus and selectable category detail. One roving tab stop, arrow navigation, contained mobile scrolling, future-day unavailable state, and honest zero state. On coarse pointers each day keeps its small visual square but sits on a 24px pitch with an invisible 24px hit area; a calendar wider than its box opens scrolled to the current week. Activity green is independent of user accent.
 
 ### Activity quadrant
 
@@ -207,11 +209,15 @@ Fixed 0–100% axes: Drills left, SRS Review top, JLPT right, Grammar bottom. Th
 
 ### Pool matrix
 
-Kana character/romaji; kanji onyomi/kunyomi/meaning; vocabulary word reading/meaning; generated number/date items or honestly labeled bounded examples; conjugation base/form examples. Keep controls, count, and eligible session pool consistent. Paginate or contain long lists without clipping Japanese text.
+Setup leads with its options, question count, and START, then the pool, so the start action is in the first viewport. Kana character/romaji; kanji onyomi/kunyomi/meaning (a katakana segment, spaces allowed, is on'yomi); vocabulary word reading/meaning; generated number/date items or honestly labeled bounded examples; conjugation base/form examples. Keep controls, count, and eligible session pool consistent. Paginate or contain long lists without clipping Japanese text.
 
 ### Practice, results, and JLPT
 
 One question and answer action, explicit grading feedback, next-step control, and actual session summary. The answer region remains stable through input, feedback, grading, and next-item transitions. Typed drills and JLPT radio options share visual feedback, not a forced single input type. Completion uses real score, count, XP, and answer review without confetti or invented praise.
+
+The answer label names what to type in exactly the script the grader accepts ("reading in kana or romaji"), linked as the field description; format-heavy answers show an example placeholder. Feedback recolors the reveal panel's own hairline green or red, never a side stripe, and a miss echoes what was typed. The summary puts its actions directly under the score: with misses, RETRY MISSES leads; stats include XP earned; the review table lists misses first with a text verdict. A score takes the accent only at 60% or above; below that it stays plain ink.
+
+Sessions are keyboard-complete. JLPT options answer to A–D and 1–4 (no modifiers, so Alt+1–4 navigation is untouched); after an answer, focus moves to NEXT so it scrolls into view and Enter advances, and each new question focuses its prompt. Drills and JLPT sets show a visible EXIT SESSION; Escape toggles the leave confirm, which focuses its keep-practising action.
 
 JLPT adds real level/category/set selection and per-set state. Reading and Listening reserve media space and retain owner gates. Mockup repeated questions and reset-on-reload behavior never become production logic.
 
@@ -226,12 +232,13 @@ Grammar combines a comfortable long-form reading measure, readable examples, exp
 - **Error:** Preserve navigation and explain the failure in the relevant content region. Retry appears only when connected to real recovery behavior.
 - **Disabled:** Keep the label and reason legible. Optional audio failure never blocks text study.
 - **Populated:** Use actual local state and validated content, with stable namespaced IDs and existing progress references.
+- **Announcements:** Achievement toasts sit bottom-right, clear of page heads and result stats, and above the bottom navigation on phones.
 
 ## Accessibility and motion
 
 Preserve landmarks, one logical `h1` per view, hierarchical headings, page titles, language metadata, and zoom support. Preserve logical Tab and Shift+Tab order, Enter and Space activation, Escape for dialogs, and Alt+1 through Alt+4 navigation. Images retain appropriate alt text and form fields retain visible labels.
 
-Verify 320px, 390px, 768px, intermediate, and wide desktop layouts without overflow, clipping, collision, or inaccessible navigation. Status, correctness, selection, and progress never rely on color alone. Remove nonessential transitions under `prefers-reduced-motion: reduce`. Any essential ongoing motion requires a pause mechanism.
+Verify 320px, 390px, 768px, intermediate, and wide desktop layouts without overflow, clipping, collision, or inaccessible navigation. Status, correctness, selection, and progress never rely on color alone. Remove nonessential transitions under `prefers-reduced-motion: reduce`. The stored theme and accent apply before first paint (inline bootstrap in `index.html`), and control color transitions are held while the theme or accent repaints, so neither flashes nor lags. Any essential ongoing motion requires a pause mechanism.
 
 ## Do's and Don'ts
 

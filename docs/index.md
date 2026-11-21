@@ -1,8 +1,8 @@
 # Documentation Index
 
-## Approved redesign handoff — 2026-09-22
+## Visual system
 
-Start with [UI_IMPLEMENTATION_PROMPT.md](../UI_IMPLEMENTATION_PROMPT.md). Visual authority is the [HTML mockup](../mockups/index.html), tokens are in [DESIGN.md](../DESIGN.md), engineering rules in [design-system.md](design-system.md), and surface mappings in [.impeccable/README.md](../.impeccable/README.md). These describe the approved target; production integration is pending. Old screenshots and the original dashboard image are historical.
+Start with [DESIGN.md](../DESIGN.md): the approved Quiet Instrument system, shipped in production (verified 2026-11-20) and updated with the 2026-11-21 audit fixes. Engineering rules are in [design-system.md](design-system.md). The [HTML mockup](../mockups/index.html), [UI_IMPLEMENTATION_PROMPT.md](../UI_IMPLEMENTATION_PROMPT.md), and [.impeccable/README.md](../.impeccable/README.md) are historical composition references from the 2026-09-22 handoff. Old screenshots and the original dashboard image are historical.
 
 Knowledge base for NihonCode (キタ). Owner-authored binding specs live at the repository root; this directory holds agent-facing engineering knowledge that tracks current state.
 

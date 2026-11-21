@@ -10,7 +10,7 @@ Phase 1 shipped (tasks 1–9 plus the closeout extension). `src/` contains the f
 
 ```
 src/
-  app/           routing, layout, nav rail + bottom command bar
+  app/           routing, layout, nav rail (bottom bar on phones), global stylesheet app.css
   features/      drills/ grammar/ review/ progress/ settings/ jlpt/ about/
   domain/        grading, scheduling (FSRS), XP/streak rules — pure, no React
   content/       schemas, validation gate, normalizers, loaders → typed models

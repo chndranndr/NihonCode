@@ -1,7 +1,7 @@
 // Taste invariants for src/ (DEVELOPMENT_PROMPT.md section 4, binding design contract).
 //
 // Mechanical rules:
-//   1. no-inline-style: no JSX style={{...}} — theming via CSS variables/Modules.
+//   1. no-inline-style: no JSX style={{...}} — theming via CSS variables in app.css.
 //   2. no-hardcoded-color: no literal colors in CSS outside :root declarations.
 //   3. no-glass: no backdrop-filter.
 //   4. no-rounded-shells: border-radius > 4px in any unit (px direct, rem/em
@@ -108,7 +108,7 @@ for (const file of files) {
 
     if (!isComment && /\.tsx?$/.test(r) && /style=\{\{/.test(text)) {
       violations.push(
-        `${r}:${lineNo} [no-inline-style] JSX inline style object; use a CSS Module class`,
+        `${r}:${lineNo} [no-inline-style] JSX inline style object; use a class in src/app/app.css`,
       );
     }
 

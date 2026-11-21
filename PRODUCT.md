@@ -1,6 +1,6 @@
 # Product
 
-> Current-state clarification (2026-09-22): Phase 1–3 have shipped on `data/clean/`; the dirty-pool/MVP sequencing and pre-code inventory below are historical planning evidence, not current availability constraints. Consult AGENTS.md and docs/quality.md for shipped capabilities and remaining owner gates. The approved nine-view HTML redesign is documented in DESIGN.md and .impeccable/README.md; production redesign integration is pending. Do not restore retired datasets or lock supported levels/conjugation based on the historical paragraphs.
+> Current-state clarification (2026-09-22): Phase 1–3 have shipped on `data/clean/`; the dirty-pool/MVP sequencing and pre-code inventory below are historical planning evidence, not current availability constraints. Consult AGENTS.md and docs/quality.md for shipped capabilities and remaining owner gates. The approved Quiet Instrument redesign is documented in DESIGN.md and shipped in production (verified 2026-11-20); the 2026-11-21 audit and critique fixes are recorded in docs/quality.md. Do not restore retired datasets or lock supported levels/conjugation based on the historical paragraphs.
 
 <!-- impeccable:product-schema 1 -->
 
@@ -10,7 +10,7 @@ web
 
 ## Stack
 
-React 19 + TypeScript (strict), Vite, React Router, CSS Modules + CSS variables for theming, `ts-fsrs` for scheduling, Vitest for domain-rule tests, Playwright for key browser flows. Delivered as a static web build (PRD.md section 8, implementation_plan.md). Persistence (settled, DEVELOPMENT_PROMPT.md section 2): IndexedDB via Dexie for SRS cards, review logs, and drill attempts; `localStorage` for theme, accent, level, settings, and compact progress state; all stores schema-versioned with additive, idempotent migrations (PRD.md section 12 updated to match).
+React 19 + TypeScript (strict), Vite, React Router, one global stylesheet (`src/app/app.css`) with CSS custom-property tokens for theming, `ts-fsrs` for scheduling, Vitest for domain-rule tests, Playwright for key browser flows. Delivered as a static web build (PRD.md section 8, implementation_plan.md). Persistence (settled, DEVELOPMENT_PROMPT.md section 2): IndexedDB via Dexie for SRS cards, review logs, and drill attempts; `localStorage` for theme, accent, level, settings, and compact progress state; all stores schema-versioned with additive, idempotent migrations (PRD.md section 12 updated to match).
 
 ## Users
 
@@ -35,7 +35,7 @@ Local-first, zero-setup Japanese practice: no account, no installation, no API k
 - Sessions are short and repeatable; drills support immediate retry with reshuffled items.
 - Keyboard-driven on desktop: typed answers in romaji or kana, Enter to submit.
 - Audio: pronunciation via Web Speech API (browser TTS) with Japanese voice detection; JLPT listening uses bundled MP3s. Audio complements text; study never requires it.
-- Bottom command bar navigation: HOME / PROGRESS / LEARN / CONFIG. Browser back returns to the previous view.
+- Navigation: a labeled HOME / PROGRESS / LEARN / CONFIG rail on desktop that becomes a bottom bar below 768px, with Alt+1–4 shortcuts. Browser back returns to the previous view.
 - Persistence is per-browser and per-origin. Clearing browser data erases progress; there is no cloud backup.
 
 ## Capabilities and Constraints
@@ -46,7 +46,7 @@ In scope (PRD.md sections 9–10):
 - Built-in grammar library with lessons and quizzes (N5–N1).
 - JLPT practice: five categories, numbered local exercise sets, bundled listening audio, per-set progress.
 - SRS: FSRS scheduling, due-before-new ordering, configurable daily new-card cap, optional learning-step skip. Access is open at every level; no prerequisite gating.
-- Progress: XP, level (quadratic curve to 50), streak, study contribution calendar, four-axis activity mix, JLPT mastery, achievements, kanji mastery map. The calendar and activity mix are an owner-requested extension (2026-09-22), currently demonstrated in the HTML mockup; production integration is pending. Activity mix measures participation, not proficiency (PRD §10.13).
+- Progress: XP, level (quadratic curve to 50), streak, study contribution calendar, four-axis activity mix, JLPT mastery, achievements, kanji mastery map. The calendar and activity mix are an owner-requested extension (2026-09-22), shipped in production. Activity mix measures participation, not proficiency (PRD §10.13).
 - Settings: SRS preferences, light/dark theme, accent color.
 - About page with accurate local-first and persistence-limitation copy.
 
@@ -59,9 +59,9 @@ Excluded (binding non-goals, PRD.md section 3):
 - No speech recording or pronunciation scoring.
 - No cloud sync, accounts, or server-backed profiles.
 
-Hard data constraint: the bundled datasets exist but are not yet grade-ready. 7,293 of 7,938 vocabulary entries hold Japanese text in the `romaji` field; N4–N1 kanji answers contain dictionary markers; JLPT sets contain truncated prompts, null keys, remote image dependencies, and unverified audio-to-question mapping. All content passes a validation gate before grading; flagged items stay out of graded pools (PRD.md section 18, implementation_plan.md Phase 2). The MVP ships on the verified-clean slice only: kana, kanji N5, the 643 N5 vocab entries with genuine Latin romaji (641 graded; 2 pack alternative readings and await a variants list), grammar N5 (marked reviewed), and algorithmic Numbers/Dates drills.
+Historical data constraint (pre-Phase 2, superseded by `data/clean/`): the bundled datasets were not yet grade-ready. 7,293 of 7,938 vocabulary entries hold Japanese text in the `romaji` field; N4–N1 kanji answers contain dictionary markers; JLPT sets contain truncated prompts, null keys, remote image dependencies, and unverified audio-to-question mapping. All content passes a validation gate before grading; flagged items stay out of graded pools (PRD.md section 18, implementation_plan.md Phase 2). The MVP ships on the verified-clean slice only: kana, kanji N5, the 643 N5 vocab entries with genuine Latin romaji (641 graded; 2 pack alternative readings and await a variants list), grammar N5 (marked reviewed), and algorithmic Numbers/Dates drills.
 
-Sequencing constraint: build order is MVP → data remediation → polish. Features depending on dirty data (JLPT practice, conjugation, N4–N1 content) are deferred by design, not by oversight.
+Historical sequencing constraint (complete): build order was MVP → data remediation → polish. Features depending on dirty data (JLPT practice, conjugation, N4–N1 content) are deferred by design, not by oversight.
 
 ## Brand Commitments
 
@@ -76,9 +76,9 @@ Sequencing constraint: build order is MVP → data remediation → polish. Featu
 - implementation_plan.md — three-phase build plan with per-phase definitions of done.
 - data/generated/ — kana, kanji, vocabulary, grammar (N5–N1), practice_core.json reverse index; audited (43 JSON files parsed).
 - data/jlpt/ — 688 exercise sets, 5,339 question records, 184 local MP3s; audited with defects catalogued.
-- Per-file source metadata: amgidex grammar lists, Tatoeba (CC BY 2.0 FR) example sentences, japanesetest4you exercises/audio. Consolidated attribution and redistribution clearance are pending (implementation_plan.md Phase 2.7).
+- Per-file source metadata: amgidex grammar lists, Tatoeba (CC BY 2.0 FR) example sentences, japanesetest4you exercises/audio. Consolidated attribution and the owner's redistribution confirmations live in docs/attribution.md; commercial redistribution of amgidex content still needs author permission.
 
-Absences future work must not fabricate: no app code exists yet; no screenshots, testimonials, users, or usage metrics exist; no logo or brand assets beyond the name; no consolidated license document.
+Absences future work must not fabricate: no screenshots, testimonials, users, or usage metrics exist; no logo or brand assets beyond the name; no consolidated license document.
 
 ## Product Principles
 
