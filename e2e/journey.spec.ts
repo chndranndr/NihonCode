@@ -453,27 +453,24 @@ test("drill exit is visible and Esc toggles the confirm", async ({ page }) => {
   await expect(page.getByRole("alertdialog")).toBeVisible();
 });
 
-test("JLPT answers by keyboard and keeps NEXT in reach", async ({ page }) => {
+test("JLPT set answers by keyboard", async ({ page }) => {
   await page.goto("/learn/jlpt/grammar/1");
-  const options = page.locator(".option");
-  await expect(options.nth(1)).toBeVisible();
+  const blocks = page.getByTestId("jlpt-question");
+  await expect(blocks.first()).toBeVisible();
+  await blocks.nth(0).getByRole("radio").first().focus();
   await page.keyboard.press("b");
-  await expect(options.nth(1)).toHaveAttribute("aria-pressed", "true");
-  await expect(page.getByTestId("reveal")).toBeVisible();
-  // Question 1 of this set carries an explanation; NEXT stays reachable.
-  await expect(page.getByTestId("explanation")).toBeVisible();
-  const next = page.getByRole("button", { name: "NEXT", exact: true });
-  await expect(next).toBeFocused();
-  await expect(next).toBeInViewport();
-  await page.keyboard.press("Enter");
-  await expect(page.locator(".session-rail")).toContainText("2/");
+  await expect(blocks.nth(0).getByRole("radio").nth(1)).toBeChecked();
+  await page.keyboard.press("Tab");
+  await expect(blocks.nth(1).getByRole("radio").first()).toBeFocused();
   await page.keyboard.press("3");
-  await expect(options.nth(2)).toHaveAttribute("aria-pressed", "true");
+  await expect(blocks.nth(1).getByRole("radio").nth(2)).toBeChecked();
+  await expect(page.getByTestId("answered-count")).toHaveText("2/10 answered");
 });
 
 test("JLPT Esc toggles the leave confirm", async ({ page }) => {
   await page.goto("/learn/jlpt/grammar/1");
   await expect(page.locator(".option").first()).toBeVisible();
+  await page.getByTestId("jlpt-question").first().getByRole("radio").first().focus();
   await page.keyboard.press("Escape");
   const dialog = page.getByRole("alertdialog", { name: "leave session" });
   await expect(dialog).toBeVisible();
@@ -701,7 +698,7 @@ const JLPT_N5_VOCAB = validateJlpt(
 test("JLPT sentences stay readable without shrinking single-kanji prompts", async ({ page }) => {
   await page.goto("/learn/jlpt/grammar");
   await page.getByTestId("set-link").first().click();
-  const prompt = page.locator('.prompt-plate p[lang="ja"]');
+  const prompt = page.locator('.prompt-plate p[lang="ja"]').first();
   await expect(prompt).toContainText("まいにちしんぶん");
   const typography = await prompt.evaluate((el) => {
     const style = getComputedStyle(el);
@@ -710,7 +707,7 @@ test("JLPT sentences stay readable without shrinking single-kanji prompts", asyn
   expect(typography.size).toBeGreaterThanOrEqual(20);
   expect(typography.size).toBeLessThanOrEqual(36);
   expect(typography.leading / typography.size).toBeGreaterThanOrEqual(1.6);
-  await expect(page.locator(".option").last()).toBeInViewport();
+  await expect(page.locator(".option").first()).toBeInViewport();
 
   await page.goto("/learn/review");
   await page.getByRole("button", { name: "START REVIEW" }).click();
@@ -727,7 +724,7 @@ test("JLPT sentences reflow at 320px with enlarged text and remain answerable", 
   await page.setViewportSize({ width: 320, height: 900 });
   await page.goto("/learn/jlpt/grammar");
   await page.getByTestId("set-link").first().click();
-  const prompt = page.locator('.prompt-plate p[lang="ja"]');
+  const prompt = page.locator('.prompt-plate p[lang="ja"]').first();
   await expect(prompt).toContainText("まいにちしんぶん");
   const initialSize = await prompt.evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
   await page.evaluate(() => {
@@ -744,7 +741,8 @@ test("JLPT sentences reflow at 320px with enlarged text and remain answerable", 
   expect(enlarged.scrollWidth).toBeLessThanOrEqual(enlarged.width);
   expect(enlarged.documentWidth).toBeLessThanOrEqual(enlarged.viewport);
   await page.locator(".option").nth(1).click();
-  await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
+  await expect(page.getByTestId("jlpt-question").first().getByRole("radio").nth(1)).toBeChecked();
+  await expect(page.getByTestId("answered-count")).toHaveText(/^1\/\d+ answered$/);
 });
 
 test("JLPT practice grades a keyed set and persists per-set progress", async ({ page }) => {
@@ -770,13 +768,17 @@ test("JLPT practice grades a keyed set and persists per-set progress", async ({ 
   await expect(page.getByTestId("session")).toBeVisible();
 
   const set = JLPT_N5_VOCAB[0];
-  for (const q of set.questions) {
-    await expect(page.locator(".jlpt-question")).toContainText(q.prompt);
-    await page.locator(".option").nth(q.answerIndex).click();
-    await expect(page.locator(".reveal-verdict")).toHaveText("CORRECT");
-    await page.getByRole("button", { name: /NEXT|FINISH/ }).click();
+  const blocks = page.getByTestId("jlpt-question");
+  await expect(blocks).toHaveCount(set.questions.length);
+  for (const [i, q] of set.questions.entries()) {
+    await expect(blocks.nth(i).locator(".jlpt-question")).toContainText(q.prompt);
+    await blocks.nth(i).locator(".option").nth(q.answerIndex).click();
   }
-  // setFinished renders only after the committed progress write, so this
+  await expect(page.getByTestId("answered-count")).toHaveText(
+    `${set.questions.length}/${set.questions.length} answered`,
+  );
+  await page.getByRole("button", { name: "CHECK ANSWERS" }).click();
+  // The summary renders only after the committed progress write, so this
   // assertion is also the persistence gate before the reload-style goto.
   await expect(page.getByTestId("summary-score")).toHaveText("100%");
 
@@ -795,10 +797,12 @@ test("JLPT practice grades a keyed set and persists per-set progress", async ({ 
 });
 
 // The 10 sets whose source-URL count differs from their question count ship
-// set-level audio only (no per-question span evidence). The audio element is
-// keyed "set-audio" for those, so advancing must NOT remount it and restart
-// playback (data-recon 2026-09-23).
-test("fallback listening audio survives question advance without remount", async ({ page }) => {
+// set-level audio only (no per-question span evidence). Whole-set mode renders
+// that one audio element once above the questions; answering must not remount
+// it and restart playback (data-recon 2026-09-23).
+test("fallback listening audio renders once and survives answering without remount", async ({
+  page,
+}) => {
   await page.goto("/");
   await expect(page.getByTestId("dashboard")).toBeVisible();
   await page.getByRole("button", { name: "N2" }).click();
@@ -808,6 +812,7 @@ test("fallback listening audio survives question advance without remount", async
   await expect(page.getByTestId("jlpt-sets")).toBeVisible();
   await page.getByTestId("set-link").filter({ hasText: "Exercise 11" }).click();
   await expect(page.getByTestId("session")).toBeVisible();
+  await expect(page.getByTestId("jlpt-audio")).toHaveCount(1);
 
   await page.evaluate(() => {
     const el = document.querySelector('[data-testid="jlpt-audio"]') as HTMLElement & {
@@ -815,10 +820,10 @@ test("fallback listening audio survives question advance without remount", async
     };
     if (el) el.__probe = 1;
   });
-  await page.locator(".option").first().click();
-  await expect(page.getByTestId("reveal")).toBeVisible();
-  await page.getByRole("button", { name: /NEXT/ }).click();
-  await expect(page.locator(".option").first()).toBeVisible();
+  const blocks = page.getByTestId("jlpt-question");
+  await blocks.nth(0).locator(".option").first().click();
+  await blocks.nth(1).locator(".option").first().click();
+  await expect(page.getByTestId("answered-count")).toContainText("2/");
 
   const sameElement = await page.evaluate(() => {
     const el = document.querySelector('[data-testid="jlpt-audio"]') as
@@ -848,9 +853,62 @@ test("quiet instrument JLPT reserves media and distinguishes missing sets", asyn
   await expect(page.getByRole("button", { name: "ALL SETS" })).toBeVisible();
 
   await page.goto("/learn/jlpt/listening/1");
-  const audio = page.getByTestId("jlpt-audio");
+  const audio = page.getByTestId("jlpt-audio").first();
   await expect(audio).toBeVisible();
   expect((await audio.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+});
+
+test("JLPT unanswered check confirms and can jump back", async ({ page }) => {
+  await page.goto("/learn/jlpt/vocabulary/1");
+  const blocks = page.getByTestId("jlpt-question");
+  await expect(blocks.first()).toBeVisible();
+  const questions = JLPT_N5_VOCAB[0].questions;
+  await blocks.nth(0).locator(".option").nth(questions[0].answerIndex).click();
+  await page.getByRole("button", { name: "CHECK ANSWERS" }).click();
+  const dialog = page.getByRole("alertdialog", { name: "unanswered questions" });
+  await expect(dialog).toContainText(`${questions.length - 1} questions not answered`);
+  await expect(page.getByRole("button", { name: "GO TO FIRST UNANSWERED" })).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(dialog).toBeHidden();
+  await expect(blocks.nth(1).getByRole("radio").first()).toBeFocused();
+  await page.getByRole("button", { name: "CHECK ANSWERS" }).click();
+  await page.getByRole("button", { name: "CHECK ANYWAY" }).click();
+  await expect(page.getByTestId("summary-score")).toHaveText("10%");
+  await expect(blocks.nth(1).locator(".reveal-verdict")).toContainText("NOT ANSWERED");
+});
+
+test("JLPT results show every question with its verdict and explanation", async ({ page }) => {
+  await page.goto("/learn/jlpt/grammar/1");
+  const blocks = page.getByTestId("jlpt-question");
+  await expect(blocks.first()).toBeVisible();
+  const n = await blocks.count();
+  for (let i = 0; i < n; i++) await blocks.nth(i).locator(".option").first().click();
+  await page.getByRole("button", { name: "CHECK ANSWERS" }).click();
+  await expect(page.getByTestId("summary")).toBeVisible();
+  await expect(page.getByTestId("summary-xp")).toBeVisible();
+  await expect(blocks).toHaveCount(n);
+  for (let i = 0; i < n; i++) {
+    await expect(blocks.nth(i).locator(".reveal-verdict")).toHaveCount(1);
+  }
+  await expect(blocks.nth(0).getByTestId("explanation")).toBeVisible();
+  await expect(blocks.nth(0).getByRole("radio").first()).toBeDisabled();
+});
+
+test("JLPT answer bar stays clear of the bottom nav and the last question", async ({
+  page,
+}, testInfo) => {
+  test.skip(testInfo.project.name !== "mobile", "mobile layout only");
+  await page.goto("/learn/jlpt/grammar/1");
+  const bar = page.locator(".answer-bar");
+  await expect(bar).toBeVisible();
+  const barBox = (await bar.boundingBox())!;
+  const navBox = (await page.locator(".rail").boundingBox())!;
+  expect(barBox.y + barBox.height).toBeLessThanOrEqual(navBox.y + 1);
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  const lastOption = page.getByTestId("jlpt-question").last().locator(".option").last();
+  const optBox = (await lastOption.boundingBox())!;
+  const barEnd = (await bar.boundingBox())!;
+  expect(optBox.y + optBox.height).toBeLessThanOrEqual(barEnd.y + 1);
 });
 
 test("SRS statistics page shows level-scoped stats and links practice_core", async ({ page }) => {

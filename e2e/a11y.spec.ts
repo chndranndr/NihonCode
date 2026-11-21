@@ -60,13 +60,13 @@ test("main routes expose landmarks and labeled controls", async ({ page }) => {
   await grammarCategory.click();
   await expect(page).toHaveURL(/\/learn\/jlpt\/grammar$/);
 
-  // JLPT run: choice buttons are labeled choices in a group.
+  // JLPT run: each question is a labeled radio group (fieldset + legend).
   await page.goto("/learn/jlpt/vocabulary/1");
-  const choices = page.getByRole("group", { name: "choices" });
-  await expect(choices).toBeVisible();
-  const choice = choices.getByRole("button").first();
-  await choice.click();
-  await expect(choice).toHaveAttribute("aria-pressed", "true");
+  const question = page.getByRole("group", { name: "QUESTION 1", exact: true });
+  await expect(question).toBeVisible();
+  const choice = question.getByRole("radio").first();
+  await question.locator(".option").first().click();
+  await expect(choice).toBeChecked();
 
   // Progress: the kanji map is a navigable grid with a labeled legend.
   await page.goto("/progress");
@@ -247,11 +247,13 @@ test("keyboard focus receives a visible focus outline", async ({ page }) => {
 });
 
 test("indicators pair text with every status color", async ({ page }) => {
-  // The reveal verdict pairs CORRECT/WRONG text with color; option states
-  // pair the same text. Check the text is present, not color alone.
+  // The per-question verdict pairs CORRECT/WRONG/NOT ANSWERED text with
+  // color. Check the text is present, not color alone.
   await page.goto("/learn/jlpt/vocabulary/1");
   await page.locator(".option").first().click();
-  await expect(page.locator(".reveal-verdict")).toHaveText(/CORRECT|WRONG/);
+  await page.getByRole("button", { name: "CHECK ANSWERS" }).click();
+  await page.getByRole("button", { name: "CHECK ANYWAY" }).click();
+  await expect(page.locator(".reveal-verdict").first()).toHaveText(/CORRECT|WRONG|NOT ANSWERED/);
 });
 
 test("document title follows each route on direct load and client navigation", async ({ page }) => {

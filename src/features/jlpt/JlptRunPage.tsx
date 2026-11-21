@@ -1,18 +1,26 @@
 /**
- * One JLPT set run (PRD 10.17, redesign 2026-09-22, data-recon 2026-09-23):
- * multiple-choice grading over keyed questions only, per-set progress
- * persisted on completion, XP follows the drill rules. Reading renders the
- * linked passage; listening plays the bound audio slice (set track when the
- * per-question binding lacks evidence); explanations surface after answering.
+ * One JLPT set run (PRD 10.17, whole-set mode 2026-11-21): every question of
+ * the set on one page, answers changeable until the learner checks, then the
+ * whole set is scored together. Per-set progress persists on check, XP follows
+ * the drill rules. Reading renders each linked passage once per group;
+ * listening plays the bound audio slice (set track when the per-question
+ * binding lacks evidence); explanations surface after checking.
  */
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useLevel } from "../../components/level";
 import { assetUrl } from "../../content/assets";
 import type { JlptLevel } from "../../content/ids";
 import { loadJlptLevel, type JlptPool } from "../../content/loaders";
 import type { JlptCategory, JlptSet } from "../../content/models";
+import { countOf } from "../../domain/format";
 import { isStrongScore, perfectDrillBonus, XP } from "../../domain/progress";
 import { awardXp, newSessionId, recordSession } from "../../storage/progressRepo";
 import { recordJlptResult } from "../../storage/jlptRepo";
@@ -28,12 +36,11 @@ export function JlptRunPage() {
     pool: JlptPool | null;
     error: boolean;
   } | null>(null);
-  const [index, setIndex] = useState(0);
-  const [chosen, setChosen] = useState<number | null>(null);
-  const [correctCount, setCorrectCount] = useState(0);
-  const [finished, setFinished] = useState(false);
+  const [answers, setAnswers] = useState<(number | null)[]>([]);
+  const [checked, setChecked] = useState(false);
   const [confirmExit, setConfirmExit] = useState(false);
-  // Stable per run: retries take a fresh id; duplicate FINISH is a no-op.
+  const [confirmUnanswered, setConfirmUnanswered] = useState(false);
+  // Stable per run: retries take a fresh id; duplicate CHECK is a no-op.
   const sessionIdRef = useRef(newSessionId("jlpt"));
 
   useEffect(() => {
@@ -61,59 +68,48 @@ export function JlptRunPage() {
     return cat.items.find((s) => String(s.setNumber) === setNumber) ?? null;
   }, [pool, category, setNumber]);
 
-  const sessionShown = set !== null && !finished;
-  const optionCount = set?.questions[index]?.options.length ?? 0;
-  const answerIndex = set?.questions[index]?.answerIndex ?? -1;
-  const nextRef = useRef<HTMLButtonElement>(null);
-  const promptRef = useRef<HTMLDivElement>(null);
+  const sessionShown = set !== null && !checked;
+  const headingRef = useRef<HTMLHeadingElement>(null);
   const keepRef = useRef<HTMLButtonElement>(null);
-  const lastIndexRef = useRef(index);
+  const goFirstRef = useRef<HTMLButtonElement>(null);
+  const firstRender = useRef(true);
 
-  // Keyboard operation: A-H / 1-8 answer, Esc toggles the leave confirm.
-  // Alt/Ctrl/Meta combos are left alone (global Alt+1-4 navigation).
+  // Escape toggles the leave confirm (before checking) and closes the
+  // unanswered confirm first when it is open. Alt/Ctrl/Meta are left alone
+  // (global Alt+1-4 navigation).
   useEffect(() => {
     if (!sessionShown) return;
     function onKey(event: KeyboardEvent): void {
       if (event.altKey || event.ctrlKey || event.metaKey) return;
-      const target = event.target;
-      if (
-        target instanceof HTMLElement &&
-        (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
-      ) {
-        return;
-      }
-      if (event.key === "Escape") {
-        event.preventDefault();
-        setConfirmExit(!confirmExit);
-        return;
-      }
-      if (chosen !== null || confirmExit) return;
-      const k = event.key.toLowerCase();
-      const i = /^[1-8]$/.test(k) ? Number(k) - 1 : "abcdefgh".indexOf(k);
-      if (k.length !== 1 || i < 0 || i >= optionCount) return;
+      if (event.key !== "Escape") return;
       event.preventDefault();
-      setChosen(i);
-      if (i === answerIndex) setCorrectCount((c) => c + 1);
+      if (confirmUnanswered) {
+        setConfirmUnanswered(false);
+        return;
+      }
+      setConfirmExit((open) => !open);
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [sessionShown, chosen, confirmExit, optionCount, answerIndex]);
-
-  // After answering, NEXT takes focus (scrolls into view; Enter advances).
-  useEffect(() => {
-    if (chosen !== null) nextRef.current?.focus();
-  }, [chosen]);
-
-  // Each new question: focus the prompt, away from the option list.
-  useEffect(() => {
-    if (lastIndexRef.current === index) return;
-    lastIndexRef.current = index;
-    promptRef.current?.focus();
-  }, [index]);
+  }, [sessionShown, confirmUnanswered]);
 
   useEffect(() => {
     if (confirmExit) keepRef.current?.focus();
   }, [confirmExit]);
+
+  useEffect(() => {
+    if (confirmUnanswered) goFirstRef.current?.focus();
+  }, [confirmUnanswered]);
+
+  // Check / retry: back to the top with the heading focused.
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    headingRef.current?.scrollIntoView({ block: "start" });
+    headingRef.current?.focus();
+  }, [checked]);
 
   if (error) {
     return (
@@ -146,239 +142,300 @@ export function JlptRunPage() {
     );
   }
 
-  const question = set.questions[index];
   const active = set;
-  const passage = question.passageId
-    ? (set.passages.find((p) => p.id === question.passageId) ?? null)
-    : null;
-  const questionAudioSrc = question.audio ? assetUrl(question.audio.localPath) : null;
-  const setAudioSrc =
-    !questionAudioSrc && set.audio.length > 0 ? assetUrl(set.audio[0].localPath) : null;
+  const total = set.questions.length;
+  const answerAt = (i: number): number | null => answers[i] ?? null;
+  const answered = set.questions.filter((_, i) => answerAt(i) !== null).length;
+  const correctCount = set.questions.filter((q, i) => answerAt(i) === q.answerIndex).length;
+  const metaLine = `${category.toUpperCase()} · SET ${set.setNumber} · ${countOf(total, "QUESTION")}`;
+  const needsSetAudio = set.audio.length > 0 && set.questions.some((q) => !q.audio);
+  const setAudioSrc = needsSetAudio ? assetUrl(set.audio[0].localPath) : null;
+  const pct = total === 0 ? 0 : Math.round((correctCount / total) * 100);
+  const xp = correctCount * XP.drillCorrect + perfectDrillBonus(correctCount, total);
 
-  function choose(i: number): void {
-    if (chosen !== null) return;
-    setChosen(i);
-    if (i === question.answerIndex) setCorrectCount((c) => c + 1);
+  function choose(i: number, option: number): void {
+    setAnswers((prev) => {
+      const next = active.questions.map((_, k) => prev[k] ?? null);
+      next[i] = option;
+      return next;
+    });
   }
 
-  async function advance(): Promise<void> {
-    if (index + 1 >= active.questions.length) {
-      const correct = correctCount;
-      const inserted = await recordSession(
-        sessionIdRef.current,
-        "jlpt",
-        correct,
-        active.questions.length,
-      );
-      if (!inserted) return;
-      awardXp(correct * XP.drillCorrect + perfectDrillBonus(correct, active.questions.length));
-      await recordJlptResult(level, category, active.setNumber, correct, active.questions.length);
-      setFinished(true);
-      return;
-    }
-    setIndex(index + 1);
-    setChosen(null);
+  async function check(): Promise<void> {
+    const inserted = await recordSession(sessionIdRef.current, "jlpt", correctCount, total);
+    if (!inserted) return;
+    awardXp(xp);
+    await recordJlptResult(level, category, active.setNumber, correctCount, total);
+    setConfirmUnanswered(false);
+    setConfirmExit(false);
+    setChecked(true);
   }
 
-  if (finished) {
-    const pct =
-      set.questions.length === 0 ? 0 : Math.round((correctCount / set.questions.length) * 100);
-    return (
-      <div className="results" data-testid="summary">
-        <div className="page-head">
-          <div>
-            <h1>Set complete.</h1>
-            <p className="micro-label page-meta">
-              {category.toUpperCase()} · SET {set.setNumber}
-            </p>
-          </div>
-        </div>
-        <div className="result-head">
-          <div className={`result-score${isStrongScore(pct) ? " strong" : ""}`}>
-            <span data-testid="summary-score">{pct}%</span>
-            <small>accuracy</small>
-          </div>
-          <div className="result-metrics">
-            <div>
-              <strong>
-                {correctCount} / {set.questions.length}
-              </strong>
-              <span>correct answers</span>
-            </div>
-            <div>
-              <strong>{set.questions.length - correctCount}</strong>
-              <span>to revisit</span>
-            </div>
-          </div>
-        </div>
-        <div className="summary-actions">
-          <button
-            type="button"
-            className="primary"
-            onClick={() => {
-              setIndex(0);
-              setChosen(null);
-              setCorrectCount(0);
-              setFinished(false);
-              sessionIdRef.current = newSessionId("jlpt");
-            }}
-          >
-            RETRY
-          </button>
-          <button type="button" onClick={() => navigate(`/learn/jlpt/${category}`)}>
-            ALL SETS
-          </button>
-        </div>
-      </div>
-    );
+  function requestCheck(): void {
+    if (answered < total) setConfirmUnanswered(true);
+    else void check();
+  }
+
+  function goToFirstUnanswered(): void {
+    setConfirmUnanswered(false);
+    const i = active.questions.findIndex((_, k) => answerAt(k) === null);
+    if (i < 0) return;
+    const block = document.getElementById(`q-${i + 1}`);
+    block?.scrollIntoView({ block: "center" });
+    block?.querySelector<HTMLInputElement>('input[type="radio"]')?.focus();
+  }
+
+  // Focus inside a question: a-h / 1-8 select that question's option.
+  function onBlockKey(event: ReactKeyboardEvent<HTMLFieldSetElement>, i: number): void {
+    if (checked || event.altKey || event.ctrlKey || event.metaKey) return;
+    const k = event.key.toLowerCase();
+    if (k.length !== 1) return;
+    const o = /^[1-8]$/.test(k) ? Number(k) - 1 : "abcdefgh".indexOf(k);
+    if (o < 0 || o >= active.questions[i].options.length) return;
+    event.preventDefault();
+    choose(i, o);
+    event.currentTarget.querySelectorAll<HTMLInputElement>('input[type="radio"]')[o]?.focus();
   }
 
   return (
-    <div className="session" data-testid="session">
-      <div className="session-top">
-        <div>
-          <h1>Choose the best answer.</h1>
-          <p className="micro-label page-meta">
-            {category.toUpperCase()} · SET {set.setNumber}
-          </p>
-        </div>
-        <button type="button" onClick={() => setConfirmExit(true)}>
-          EXIT SESSION
-        </button>
-      </div>
-
-      <div className="session-rail" role="status">
-        <span className="micro-label">
-          {index + 1}/{set.questions.length}
-        </span>
-        <div
-          className="progress-track"
-          role="progressbar"
-          aria-valuemin={0}
-          aria-valuemax={set.questions.length}
-          aria-valuenow={index + 1}
-          aria-label={`question ${index + 1} of ${set.questions.length}`}
-        >
-          <div
-            className="progress-fill"
-            ref={(el) => {
-              el?.style.setProperty("--fill", `${((index + 1) / set.questions.length) * 100}%`);
-            }}
-          />
-        </div>
-      </div>
-
-      {passage && (
-        <section className="jlpt-passage panel" data-testid="passage" aria-label="reading passage">
-          <p className="micro-label">{passage.title}</p>
-          <p className="jlpt-passage-text" lang="ja">
-            {passage.text}
-          </p>
-          {passage.images.map((im, i) => {
-            const src = assetUrl(im.localPath);
-            return src ? (
-              <img
-                key={im.localPath}
-                src={src}
-                alt={`Passage illustration ${passage.images.length > 1 ? i + 1 : ""}`.trim()}
-                className="jlpt-media"
-              />
-            ) : null;
-          })}
-        </section>
-      )}
-
-      {question.images.length > 0 && (
-        <div className="jlpt-question-media" data-testid="question-images">
-          {question.images.map((im, i) => {
-            const src = assetUrl(im.localPath);
-            return src ? (
-              <img
-                key={im.localPath}
-                src={src}
-                alt={`Question ${index + 1} illustration ${question.images.length > 1 ? i + 1 : ""}`.trim()}
-                className="jlpt-media"
-              />
-            ) : null;
-          })}
+    <div
+      className={`${checked ? "results" : "session"} jlpt-whole`}
+      data-testid={checked ? "summary" : "session"}
+    >
+      {checked ? (
+        <>
+          <div className="page-head">
+            <div>
+              <h1 ref={headingRef} tabIndex={-1}>
+                Set complete.
+              </h1>
+              <p className="micro-label page-meta">{metaLine}</p>
+            </div>
+          </div>
+          <div className="result-head">
+            <div className={`result-score${isStrongScore(pct) ? " strong" : ""}`}>
+              <span data-testid="summary-score">{pct}%</span>
+              <small>accuracy</small>
+            </div>
+            <div className="result-metrics">
+              <div>
+                <strong>
+                  {correctCount} / {total}
+                </strong>
+                <span>correct answers</span>
+              </div>
+              <div>
+                <strong>{total - correctCount}</strong>
+                <span>to revisit</span>
+              </div>
+              <div>
+                <strong data-testid="summary-xp">+{xp}</strong>
+                <span>XP earned</span>
+              </div>
+            </div>
+          </div>
+          <div className="summary-actions">
+            <button
+              type="button"
+              className="primary"
+              onClick={() => {
+                sessionIdRef.current = newSessionId("jlpt");
+                setAnswers([]);
+                setChecked(false);
+              }}
+            >
+              RETRY SET
+            </button>
+            <button type="button" onClick={() => navigate(`/learn/jlpt/${category}`)}>
+              BACK TO SETS
+            </button>
+          </div>
+        </>
+      ) : (
+        <div className="session-top">
+          <div>
+            <h1 ref={headingRef} tabIndex={-1}>
+              Answer every question.
+            </h1>
+            <p className="micro-label page-meta">{metaLine}</p>
+          </div>
+          <button type="button" onClick={() => setConfirmExit(true)}>
+            EXIT SESSION
+          </button>
         </div>
       )}
 
-      {(questionAudioSrc || setAudioSrc) && (
+      {!checked && setAudioSrc && (
         <audio
-          key={question.audio ? question.id : "set-audio"}
           className="jlpt-audio"
           controls
           preload="auto"
           data-testid="jlpt-audio"
-          src={questionAudioSrc ?? setAudioSrc ?? undefined}
-          onLoadedMetadata={(e) => {
-            const span = question.audio?.span;
-            if (span) e.currentTarget.currentTime = span.start;
-          }}
-          onTimeUpdate={(e) => {
-            const span = question.audio?.span;
-            if (span && e.currentTarget.currentTime >= span.end) e.currentTarget.pause();
-          }}
+          src={setAudioSrc}
         />
       )}
 
-      <div className="prompt-plate panel jlpt-prompt" ref={promptRef} tabIndex={-1}>
-        <p className="jlpt-question" lang="ja">
-          {question.prompt}
-        </p>
-      </div>
-
-      <div className="option-list" role="group" aria-label="choices">
-        {question.options.map((opt, i) => {
-          const isCorrect = chosen !== null && i === question.answerIndex;
-          const isWrongPick = chosen === i && i !== question.answerIndex;
-          return (
-            <button
-              key={i}
-              type="button"
-              className={`option ${isCorrect ? "ok" : ""} ${isWrongPick ? "miss" : ""}`}
-              aria-pressed={chosen === i}
-              aria-keyshortcuts={`${LABEL[i]} ${i + 1}`}
-              disabled={chosen !== null}
-              onClick={() => choose(i)}
+      {set.questions.map((question, i) => {
+        const passage =
+          question.passageId && question.passageId !== set.questions[i - 1]?.passageId
+            ? (set.passages.find((p) => p.id === question.passageId) ?? null)
+            : null;
+        const questionAudioSrc = question.audio ? assetUrl(question.audio.localPath) : null;
+        const picked = answerAt(i);
+        const right = picked === question.answerIndex;
+        const answerLine = `answer ${LABEL[question.answerIndex]}. ${question.options[question.answerIndex]}`;
+        return (
+          <div key={question.id} className="jlpt-question-group">
+            {passage && (
+              <section
+                className="jlpt-passage panel"
+                data-testid="passage"
+                aria-label="reading passage"
+              >
+                <p className="micro-label">{passage.title}</p>
+                <p className="jlpt-passage-text" lang="ja">
+                  {passage.text}
+                </p>
+                {passage.images.map((im, k) => {
+                  const src = assetUrl(im.localPath);
+                  return src ? (
+                    <img
+                      key={im.localPath}
+                      src={src}
+                      alt={`Passage illustration ${passage.images.length > 1 ? k + 1 : ""}`.trim()}
+                      className="jlpt-media"
+                    />
+                  ) : null;
+                })}
+              </section>
+            )}
+            <fieldset
+              className={`jlpt-question-block panel${checked ? (right ? " ok" : " miss") : ""}`}
+              data-testid="jlpt-question"
+              id={`q-${i + 1}`}
+              aria-describedby={`q-${i + 1}-prompt`}
+              onKeyDown={(e) => onBlockKey(e, i)}
             >
-              <span aria-hidden="true">{LABEL[i]}.</span> <span lang="ja">{opt}</span>
-            </button>
-          );
-        })}
-      </div>
+              <legend>
+                <span className="micro-label">QUESTION {i + 1}</span>
+              </legend>
+              <div className="prompt-plate panel jlpt-prompt">
+                <p className="jlpt-question" lang="ja" id={`q-${i + 1}-prompt`}>
+                  {question.prompt}
+                </p>
+              </div>
 
-      {chosen !== null && (
-        <div
-          className={`reveal panel ${chosen === question.answerIndex ? "ok" : "miss"}`}
-          data-testid="reveal"
-        >
-          <p className={`reveal-verdict ${chosen === question.answerIndex ? "ok" : "miss"}`}>
-            {chosen === question.answerIndex ? "CORRECT" : "WRONG"}
-          </p>
-          {chosen !== question.answerIndex && (
-            <p className="reveal-accepted" lang="ja">
-              answer: {question.answerText}
-            </p>
-          )}
-          {question.answeredSentence && (
-            <p className="reveal-sentence" lang="ja">
-              {question.answeredSentence}
-            </p>
-          )}
-          {question.explanation && (
-            <p className="reveal-explanation" data-testid="explanation">
-              {question.explanation}
-            </p>
-          )}
-          <button ref={nextRef} type="button" className="primary" onClick={() => void advance()}>
-            {index + 1 >= set.questions.length ? "FINISH" : "NEXT"}
+              {question.images.length > 0 && (
+                <div className="jlpt-question-media" data-testid="question-images">
+                  {question.images.map((im, k) => {
+                    const src = assetUrl(im.localPath);
+                    return src ? (
+                      <img
+                        key={im.localPath}
+                        src={src}
+                        alt={`Question ${i + 1} illustration ${question.images.length > 1 ? k + 1 : ""}`.trim()}
+                        className="jlpt-media"
+                      />
+                    ) : null;
+                  })}
+                </div>
+              )}
+
+              {questionAudioSrc && (
+                <audio
+                  className="jlpt-audio"
+                  controls
+                  preload="metadata"
+                  data-testid="jlpt-audio"
+                  src={questionAudioSrc}
+                  onLoadedMetadata={(e) => {
+                    const span = question.audio?.span;
+                    if (span) e.currentTarget.currentTime = span.start;
+                  }}
+                  onTimeUpdate={(e) => {
+                    const span = question.audio?.span;
+                    if (span && e.currentTarget.currentTime >= span.end) e.currentTarget.pause();
+                  }}
+                />
+              )}
+
+              <div className="option-list">
+                {question.options.map((opt, o) => {
+                  const isCorrect = checked && o === question.answerIndex;
+                  const isWrongPick = checked && picked === o && o !== question.answerIndex;
+                  return (
+                    <label
+                      key={o}
+                      className={`option${isCorrect ? " ok" : ""}${isWrongPick ? " miss" : ""}`}
+                    >
+                      <input
+                        type="radio"
+                        className="sr-only"
+                        name={`q-${question.id}`}
+                        checked={picked === o}
+                        disabled={checked}
+                        aria-keyshortcuts={`${LABEL[o]} ${o + 1}`}
+                        onChange={() => choose(i, o)}
+                      />
+                      <span aria-hidden="true">{LABEL[o]}</span> <span lang="ja">{opt}</span>
+                    </label>
+                  );
+                })}
+              </div>
+
+              {checked && (
+                <div className="jlpt-verdict">
+                  <p className={`reveal-verdict ${right ? "ok" : "miss"}`}>
+                    {right
+                      ? "CORRECT"
+                      : picked === null
+                        ? `NOT ANSWERED · ${answerLine}`
+                        : `WRONG · your answer ${LABEL[picked]}. ${question.options[picked]} · ${answerLine}`}
+                  </p>
+                  {question.answeredSentence && (
+                    <p className="reveal-sentence" lang="ja">
+                      {question.answeredSentence}
+                    </p>
+                  )}
+                  {question.explanation && (
+                    <p className="reveal-explanation" data-testid="explanation">
+                      {question.explanation}
+                    </p>
+                  )}
+                </div>
+              )}
+            </fieldset>
+          </div>
+        );
+      })}
+
+      {!checked && (
+        <div className="answer-bar">
+          <span role="status" data-testid="answered-count">
+            {answered}/{total} answered
+          </span>
+          <button type="button" className="primary" onClick={requestCheck}>
+            CHECK ANSWERS
           </button>
         </div>
       )}
 
-      {confirmExit && (
+      {!checked && confirmUnanswered && (
+        <div className="abort-confirm panel" role="alertdialog" aria-label="unanswered questions">
+          <p>
+            {countOf(total - answered, "question")} not answered. Unanswered questions count as
+            wrong.
+          </p>
+          <button ref={goFirstRef} type="button" onClick={goToFirstUnanswered}>
+            GO TO FIRST UNANSWERED
+          </button>
+          <button type="button" onClick={() => void check()}>
+            CHECK ANYWAY
+          </button>
+        </div>
+      )}
+
+      {!checked && confirmExit && (
         <div className="abort-confirm panel" role="alertdialog" aria-label="leave session">
           <p>Leave this set? Your answers will be discarded and no activity is recorded.</p>
           <button type="button" onClick={() => navigate(`/learn/jlpt/${category}`)}>

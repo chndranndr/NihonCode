@@ -1957,10 +1957,74 @@ tbody tr:hover {
   align-items: center;
   gap: 18px;
   font-size: 20px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 3px;
 }
 
-.option:hover:not(:disabled) {
+.option:hover:has(input:not(:disabled)) {
   border-color: var(--accent);
+}
+
+.option:has(input:checked) {
+  border-color: var(--accent);
+}
+
+/* The letter box carries selection by shape (outline -> filled), so a chosen
+   answer differs from a hovered one and never relies on colour alone. */
+.option > span[aria-hidden="true"] {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  min-width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  border: 1px solid var(--control-edge);
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.option:has(input:checked) > span[aria-hidden="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* After checking, the verdict outranks the selection accent: the chosen
+   answer keeps its filled box, in the verdict colour. */
+.option.ok,
+.option.ok:has(input:checked) {
+  border-color: var(--green);
+}
+
+.option.miss,
+.option.miss:has(input:checked) {
+  border-color: var(--red);
+}
+
+.option.ok:has(input:checked) > span[aria-hidden="true"] {
+  border-color: var(--green);
+  background: var(--green);
+}
+
+.option.miss:has(input:checked) > span[aria-hidden="true"] {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.option:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.option input:focus-visible {
+  outline: none;
+}
+
+.option:has(input:disabled) {
+  cursor: default;
 }
 
 .option.ok {
@@ -1973,12 +2037,59 @@ tbody tr:hover {
   color: var(--red);
 }
 
-.option:disabled {
-  cursor: default;
+/* whole-set JLPT mode (2026-11-21): one page per set */
+
+.jlpt-whole {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 24px;
 }
 
-.option[aria-pressed="true"] {
+.jlpt-question-block {
+  min-width: 0;
+  margin: 0;
+}
+
+.jlpt-question-block legend {
+  padding: 0 8px;
+}
+
+.jlpt-question-block .prompt-plate {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.jlpt-question-block .prompt-plate:before {
+  display: none;
+}
+
+.jlpt-question-block.ok {
+  border-color: var(--green);
+}
+
+.jlpt-question-block.miss {
+  border-color: var(--red);
+}
+
+.jlpt-verdict {
+  margin-top: 16px;
+}
+
+.answer-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
   background: var(--panel);
+  border-top: 1px solid var(--line);
 }
 
 /* about */
@@ -2195,6 +2306,10 @@ input {
     margin: 0;
     padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px));
     scroll-padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .answer-bar {
+    bottom: calc(66px + env(safe-area-inset-bottom, 0px));
   }
 
   .input-dock,

@@ -382,6 +382,14 @@ Three sub-decisions were made in the same change:
 
 **Binds.** `src/storage/srsRepo.ts`, `src/storage/progressRepo.ts`, dashboard/progress consumers, `src/app/AppShell.tsx`, `src/app/app.css`, the accessibility E2E and storage/component tests, and `docs/quality.md`.
 
+## 2026-11-21 — JLPT practice runs as a whole set (owner directive)
+
+**Context.** PRD §10 calls for exam-style practice sets; the one-question-at-a-time flow with immediate feedback taught per-item recall but did not feel like an exam.
+
+**Decision.** The per-question flow is replaced entirely. A set renders all its questions on one page; answers are changeable until the learner presses CHECK ANSWERS. Unanswered questions count as wrong after a confirm. Results show every question in place with a text verdict and its explanation.
+
+**Consequences.** Activity and XP are still recorded once per completed set (same formula, same `recordSession` idempotency); RETRY SET takes a new session id. Exit before checking records nothing. The old per-question reveal, NEXT/FINISH controls, and progress rail are gone from JLPT; drills are unchanged. Binds `src/features/jlpt/JlptRunPage.tsx`, `src/app/app.css`, `e2e/journey.spec.ts`, `e2e/a11y.spec.ts`, DESIGN.md.
+
 ## Prior (owner-authored, recorded elsewhere)
 
 - Storage: Dexie/IndexedDB for SRS + localStorage for settings (DEVELOPMENT_PROMPT.md section 2; resolves the PRODUCT.md open item; PRODUCT.md/PRD wording update is owner-authored and due with the storage commit).
