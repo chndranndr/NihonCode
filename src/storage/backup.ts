@@ -26,7 +26,7 @@ const srsCardRowSchema = z.object({
 const reviewLogRowSchema = z.object({
   id: z.number().optional(),
   cardId: z.string(),
-  rating: z.enum(["again", "good"]),
+  rating: z.enum(["again", "hard", "good", "easy"]),
   ts: z.number(),
   elapsedDays: z.number(),
 });

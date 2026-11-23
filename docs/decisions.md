@@ -398,6 +398,19 @@ Three sub-decisions were made in the same change:
 
 **Consequences.** docs/attribution.md and `src/content/sources.ts` state the public, non-commercial scope instead of "public redistribution still needs permission". The JLPT assets stay covered by the owner's 2026-09-23 confirmation. Hosting is a static build (`npm run build`, `dist/`); no server, accounts, or analytics are added.
 
+## 2026-11-23 — Honest progress labels, learner-chosen SRS rating, local kanji-map filter and order (owner directive)
+
+**Context.** Tester feedback: a 9/10 drill plus a grammar lesson left Progress at "0 cards learned, 0% N5 covered", which read as broken; SRS rating was forced to Good on any correct answer; the kanji-map level buttons flipped the whole app level; map order (data groups, gojūon on'yomi) looked random.
+
+**Decision.**
+
+1. Drills stay separate from SRS (only the Review page creates cards). Progress labels the figures honestly: "SRS cards learned", a separate "Kanji + vocab practiced" (items with at least one non-SRS drill attempt, active level), and coverage reads "(SRS + LESSONS)".
+2. A wrong answer is Again automatically. After a correct answer the learner picks HARD / GOOD / EASY (GOOD is primary and focused, so Enter = Good; keys 1/2/3 also work) and only then is the card rescheduled. `AppRating` gains `hard`/`easy` (ts-fsrs `Rating.Hard/Easy`); review-log and backup schemas accept them. `skipLearningSteps` disables ts-fsrs short-term steps for every rating, so Easy and Hard on a new card go straight to review state just as Good does.
+3. The kanji-map level buttons set local state (initialised from the app level) and only filter the map, loading that level through `loadLevelData`; the app level changes only via the dashboard selector. This supersedes the "progress-page kanji-map buttons switch the app level" part of 2026-09-21 (N4 enablement + level selector).
+4. Map order: numerals by value (一…万, then 円), then remaining kanji by Unicode codepoint (CJK radical/stroke order), via `orderKanjiForMap` in `src/domain/kanjiOrder.ts`. Display-only; drills and data are unchanged.
+
+**Binds.** `src/domain/scheduling.ts`, `src/domain/kanjiOrder.ts`, `src/components/DrillSession.tsx` (opt-in `rateCorrect`), `src/features/review/ReviewPage.tsx`, `src/features/progress/ProgressPage.tsx`, `src/storage/{db,backup,progressRepo}.ts`, PRD §10.11.
+
 ## Prior (owner-authored, recorded elsewhere)
 
 - Storage: Dexie/IndexedDB for SRS + localStorage for settings (DEVELOPMENT_PROMPT.md section 2; resolves the PRODUCT.md open item; PRODUCT.md/PRD wording update is owner-authored and due with the storage commit).

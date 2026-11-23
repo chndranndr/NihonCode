@@ -1,19 +1,25 @@
 /**
  * FSRS scheduling wrapper (pure domain over ts-fsrs). Maps app ratings to
- * FSRS grades: incorrect -> Again, correct -> Good (MVP contract per
- * implementation_plan.md Phase 1). due-before-new ordering lives in the
+ * FSRS grades. A wrong answer is Again automatically; after a correct answer
+ * the learner picks Hard / Good / Easy (owner decision 2026-11-23,
+ * docs/decisions.md). due-before-new ordering lives in the
  * review feature; this module owns card state transitions only.
  */
 
 import { createEmptyCard, FSRS, Rating, type Card, type RecordLogItem } from "ts-fsrs";
-export type AppRating = "again" | "good";
+export type AppRating = "again" | "hard" | "good" | "easy";
+
+/** Ratings a learner may choose after a correct answer, in display order. */
+export const CORRECT_RATINGS = ["hard", "good", "easy"] as const satisfies readonly AppRating[];
 
 const RATING_MAP = {
   again: Rating.Again,
+  hard: Rating.Hard,
   good: Rating.Good,
+  easy: Rating.Easy,
 } as const;
 
-/** MVP rating map: incorrect -> Again, correct -> Good. */
+/** Default rating when the learner has not chosen: incorrect -> Again, correct -> Good. */
 export function ratingFromCorrect(correct: boolean): AppRating {
   return correct ? "good" : "again";
 }

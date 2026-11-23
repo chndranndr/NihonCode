@@ -24,7 +24,7 @@ export interface SrsCardRow {
 export interface ReviewLogRow {
   id?: number;
   cardId: string;
-  rating: "again" | "good";
+  rating: "again" | "hard" | "good" | "easy";
   ts: number;
   elapsedDays: number;
 }

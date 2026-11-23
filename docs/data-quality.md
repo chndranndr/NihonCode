@@ -131,6 +131,14 @@ Explanation language convention (settled 2026-09-24): the reading pools carry Ja
 
 Progress rows when a set's question count changes: stored jlptProgress rows are kept as-is. The stored total is historical (best score over the set as attempted), never silently rewritten or deleted when a set gains or loses questions.
 
+## Tester-reported content fixes (2026-11-23)
+
+Three curated edits in `data/clean/` from tester reports; no answers, choices, or IDs changed (grading and progress unaffected).
+
+- `kanji:n5:白`: reading `しろ しろい / ハク` -> `しろ / ハク` (しろい is the adjective 白い, not a kun'yomi). `しろい` stays in `answers`. The same okurigana-merged pattern remains on 高 たかい, 小 ちいさい, 大 おおきい, 長 ながい (and verb kanji such as 見 みる, 食 たべる), consistent with the N5 `reading_policy` of common beginner forms; left as is pending an owner decision.
+- `kanji:n4:員`: meaning `Employee; Member; Number; The One In Charge` -> `Member; Employee` (KANJIDIC long-tail glosses removed).
+- Ambiguous `question_en` on the 12 graded `mc_conjugation_time` quiz items in `grammar_n5.json` (lessons 1-4, 24, 36, 37, 38, 41, 44, 45, 58) rewritten to name the target meaning in plain English, e.g. lesson 2: "Choose the polite sentence meaning “It isn't interesting today.” (今日)". Lessons 1-4 and 41 previously did not say affirmative vs negative.
+
 ## N3–N1 curation pass (executed 2026-09-21)
 
 The frozen worklist `curation/queue-n3-n1.json` (560 items) is fully adjudicated — 0 open; verdicts recorded per id in `curation/adjudications.json`. Dispositions:

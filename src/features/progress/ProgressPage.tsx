@@ -14,6 +14,7 @@ import { useLevel } from "../../components/level";
 import { achievements, coverageEstimate } from "../../domain/achievements";
 import {
   activityRows,
+  drillPracticedCount,
   masteryByItems,
   sessionSummary,
   type SessionSummary,
@@ -22,11 +23,12 @@ import { dayKey, xpProgress } from "../../domain/progress";
 import { srsPoolIds } from "../../components/pools";
 import { srsStats, type SrsStats } from "../../storage/srsRepo";
 import { loadPrefs } from "../../storage/prefs";
-import { ENABLED_LEVELS, loadPracticeCore } from "../../content/loaders";
+import { ENABLED_LEVELS, loadLevelData, loadPracticeCore } from "../../content/loaders";
 import type { JlptLevel } from "../../content/ids";
 import type { KanjiItem } from "../../content/models";
 import { countsByDay, type ActivityRow } from "../../domain/activity";
 import { countOf } from "../../domain/format";
+import { orderKanjiForMap } from "../../domain/kanjiOrder";
 
 interface KanjiCell {
   item: KanjiItem;
@@ -50,11 +52,14 @@ const LEVELS: JlptLevel[] = ["n5", "n4", "n3", "n2", "n1"];
 
 export function ProgressPage() {
   const prefs = loadPrefs();
-  const { pools, level, setLevel } = useLevel();
+  const { pools, level } = useLevel();
+  // The map filters locally; only the dashboard selector changes the app level.
+  const [mapLevel, setMapLevel] = useState<JlptLevel>(level);
+  const [mapData, setMapData] = useState<{ level: JlptLevel; cells: KanjiCell[] } | null>(null);
+  const [drillPracticed, setDrillPracticed] = useState<number | null>(null);
   const [stats, setStats] = useState<SrsStats | null>(null);
   const [sessions, setSessions] = useState<SessionSummary | null>(null);
-  const [cells, setCells] = useState<KanjiCell[]>([]);
-  const [selected, setSelected] = useState<KanjiCell | null>(null);
+  const [picked, setSelected] = useState<KanjiCell | null>(null);
   const [practiceCounts, setPracticeCounts] = useState<Map<string, number> | null>(null);
   const [activity, setActivity] = useState<ActivityRow[]>([]);
 
@@ -66,6 +71,16 @@ export function ProgressPage() {
     if (!pools) return;
     void srsStats(srsPoolIds(pools)).then(setStats);
     void sessionSummary().then(setSessions);
+    let cancelled = false;
+    void drillPracticedCount([
+      ...pools.kanji.map((k) => k.id),
+      ...pools.vocab.map((v) => v.id),
+    ]).then((n) => {
+      if (!cancelled) setDrillPracticed(n);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [pools]);
 
   useEffect(() => {
@@ -73,29 +88,34 @@ export function ProgressPage() {
     void loadPracticeCore().then((core) => {
       if (cancelled) return;
       const counts = new Map<string, number>();
-      for (const rec of core[level].kanji) counts.set(rec.kanji, rec.questionCount);
+      for (const rec of core[mapLevel].kanji) counts.set(rec.kanji, rec.questionCount);
       setPracticeCounts(counts);
     });
     return () => {
       cancelled = true;
     };
-  }, [level]);
+  }, [mapLevel]);
 
   useEffect(() => {
-    if (!pools) return;
     let cancelled = false;
     void (async () => {
-      const mastery = await masteryByItems(pools.kanji.map((item) => item.id));
-      const next: KanjiCell[] = pools.kanji.map((item) => {
+      let items: KanjiItem[] = [];
+      try {
+        items = orderKanjiForMap((await loadLevelData(mapLevel)).kanji.items);
+      } catch {
+        items = [];
+      }
+      const mastery = await masteryByItems(items.map((item) => item.id));
+      const next: KanjiCell[] = items.map((item) => {
         const m = mastery.get(item.id)!;
         return { item, attempts: m.attempts, accuracy: m.accuracy, lastSeen: m.lastSeen };
       });
-      if (!cancelled) setCells(next);
+      if (!cancelled) setMapData({ level: mapLevel, cells: next });
     })();
     return () => {
       cancelled = true;
     };
-  }, [pools]);
+  }, [mapLevel]);
 
   const today = dayKey(new Date());
   const currentYear = Number(today.slice(0, 4));
@@ -143,7 +163,13 @@ export function ProgressPage() {
     weeklyXp: prefs.progress.weeklyXp,
   });
 
-  const visibleCells = useMemo(() => cells.filter((c) => c.item.level === level), [cells, level]);
+  const mapLoading = !mapData || mapData.level !== mapLevel;
+  const visibleCells = useMemo(
+    () => (mapData && mapData.level === mapLevel ? mapData.cells : []),
+    [mapData, mapLevel],
+  );
+  // The inspector must not outlive the level it was selected in.
+  const selected = picked && visibleCells.some((c) => c.item.id === picked.item.id) ? picked : null;
 
   return (
     <div className="progress-page" data-testid="progress">
@@ -198,8 +224,17 @@ export function ProgressPage() {
       </section>
 
       <div className="telemetry">
+        <Panel title={`DRILL PRACTICE · ${level.toUpperCase()}`}>
+          <div className="srs-row" data-testid="drill-practiced">
+            <span>Kanji + vocab practiced</span>
+            <strong>
+              {drillPracticed ?? "…"} / {pools ? pools.kanji.length + pools.vocab.length : "…"}
+            </strong>
+          </div>
+        </Panel>
+
         <div className="progress-layout">
-          <Panel title="SPACED REPETITION">
+          <Panel title="SPACED REPETITION (SRS)">
             {stats ? (
               <>
                 <div className="srs-row">
@@ -207,7 +242,7 @@ export function ProgressPage() {
                   <strong className="blue">{countOf(stats.due, "card")}</strong>
                 </div>
                 <div className="srs-row">
-                  <span>Learned</span>
+                  <span>SRS cards learned</span>
                   <strong>
                     {stats.learned} / {stats.total}
                   </strong>
@@ -263,17 +298,14 @@ export function ProgressPage() {
               ))}
             </ul>
             <p className="micro-label" data-testid="coverage">
-              {Math.round(coverage * 100)}% OF {level.toUpperCase()} COVERED
-            </p>
-            <p className="empty-teach">
-              Coverage counts learned SRS cards and completed lessons against everything available
-              at this level. It is not an exam-competence estimate.
+              {coverage > 0 && coverage < 0.01 ? "<1" : Math.round(coverage * 100)}% OF{" "}
+              {level.toUpperCase()} COVERED (SRS + LESSONS)
             </p>
           </Panel>
         </div>
 
         <Panel
-          title={`KANJI · ${level.toUpperCase()}`}
+          title={`KANJI · ${mapLevel.toUpperCase()}`}
           actions={
             <div className="limit-row" role="group" aria-label="level filter">
               {LEVELS.map((l) => {
@@ -282,10 +314,9 @@ export function ProgressPage() {
                   <button
                     key={l}
                     type="button"
-                    aria-pressed={level === l}
+                    aria-pressed={mapLevel === l}
                     disabled={!enabled}
-                    title={enabled ? undefined : "map shows the active level's kanji"}
-                    onClick={() => setLevel(l)}
+                    onClick={() => setMapLevel(l)}
                   >
                     {l.toUpperCase()}
                   </button>
@@ -322,7 +353,12 @@ export function ProgressPage() {
                 {cell.item.char}
               </button>
             ))}
-            {visibleCells.length === 0 && (
+            {mapLoading && (
+              <p className="micro-label" role="status">
+                LOADING…
+              </p>
+            )}
+            {!mapLoading && visibleCells.length === 0 && (
               <p className="empty-teach">No studied material at this level yet.</p>
             )}
           </div>

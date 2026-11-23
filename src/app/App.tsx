@@ -5,37 +5,50 @@
  * never blocked. Dataset content is lazy separately (src/content/loaders).
  */
 
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AppShell } from "./AppShell";
 import { RouteErrorBoundary } from "./RouteErrorBoundary";
 import { DashboardPage } from "../features/dashboard/DashboardPage";
 import { LearnPage } from "../features/learn/LearnPage";
 
-const ProgressPage = lazy(() =>
-  import("../features/progress/ProgressPage").then((m) => ({ default: m.ProgressPage })),
-);
-const DrillPage = lazy(() =>
-  import("../features/drills/DrillPage").then((m) => ({ default: m.DrillPage })),
-);
+// One importer per secondary route: lazy() uses it, and warmRoutes() calls
+// it once the browser is idle. React Router v7 runs navigations in a
+// transition, so a cold chunk keeps the old view on screen (URL already
+// changed) until the download lands; warming removes that gap.
+const routeImports = {
+  progress: () => import("../features/progress/ProgressPage"),
+  drill: () => import("../features/drills/DrillPage"),
+  grammar: () => import("../features/grammar/GrammarLessonPage"),
+  review: () => import("../features/review/ReviewPage"),
+  jlpt: () => import("../features/jlpt/JlptPage"),
+  jlptRun: () => import("../features/jlpt/JlptRunPage"),
+  config: () => import("../features/settings/ConfigPage"),
+  stats: () => import("../features/stats/SrsStatsPage"),
+};
+
+const ProgressPage = lazy(() => routeImports.progress().then((m) => ({ default: m.ProgressPage })));
+const DrillPage = lazy(() => routeImports.drill().then((m) => ({ default: m.DrillPage })));
 const GrammarLessonPage = lazy(() =>
-  import("../features/grammar/GrammarLessonPage").then((m) => ({ default: m.GrammarLessonPage })),
+  routeImports.grammar().then((m) => ({ default: m.GrammarLessonPage })),
 );
-const ReviewPage = lazy(() =>
-  import("../features/review/ReviewPage").then((m) => ({ default: m.ReviewPage })),
-);
-const JlptPage = lazy(() =>
-  import("../features/jlpt/JlptPage").then((m) => ({ default: m.JlptPage })),
-);
-const JlptRunPage = lazy(() =>
-  import("../features/jlpt/JlptRunPage").then((m) => ({ default: m.JlptRunPage })),
-);
-const ConfigPage = lazy(() =>
-  import("../features/settings/ConfigPage").then((m) => ({ default: m.ConfigPage })),
-);
-const SrsStatsPage = lazy(() =>
-  import("../features/stats/SrsStatsPage").then((m) => ({ default: m.SrsStatsPage })),
-);
+const ReviewPage = lazy(() => routeImports.review().then((m) => ({ default: m.ReviewPage })));
+const JlptPage = lazy(() => routeImports.jlpt().then((m) => ({ default: m.JlptPage })));
+const JlptRunPage = lazy(() => routeImports.jlptRun().then((m) => ({ default: m.JlptRunPage })));
+const ConfigPage = lazy(() => routeImports.config().then((m) => ({ default: m.ConfigPage })));
+const SrsStatsPage = lazy(() => routeImports.stats().then((m) => ({ default: m.SrsStatsPage })));
+
+let warmed = false;
+/** Prefetch every secondary route chunk once, after first paint, when idle. */
+function warmRoutes(): void {
+  if (warmed || typeof window === "undefined") return;
+  warmed = true;
+  const run = () => {
+    for (const load of Object.values(routeImports)) void load().catch(() => {});
+  };
+  if ("requestIdleCallback" in window) window.requestIdleCallback(run, { timeout: 3000 });
+  else setTimeout(run, 1500);
+}
 
 function RoutedContent() {
   const { pathname } = useLocation();
@@ -68,6 +81,7 @@ function RoutedContent() {
 }
 
 export function App() {
+  useEffect(warmRoutes, []);
   return (
     <BrowserRouter>
       <AppShell>

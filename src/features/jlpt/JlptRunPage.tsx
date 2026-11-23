@@ -24,6 +24,7 @@ import { countOf } from "../../domain/format";
 import { isStrongScore, perfectDrillBonus, XP } from "../../domain/progress";
 import { awardXp, newSessionId, recordSession } from "../../storage/progressRepo";
 import { recordJlptResult } from "../../storage/jlptRepo";
+import { Furigana } from "../../components/Furigana";
 
 const LABEL = "ABCDEFGH";
 
@@ -294,7 +295,7 @@ export function JlptRunPage() {
               >
                 <p className="micro-label">{passage.title}</p>
                 <p className="jlpt-passage-text" lang="ja">
-                  {passage.text}
+                  <Furigana text={passage.text} />
                 </p>
                 {passage.images.map((im, k) => {
                   const src = assetUrl(im.localPath);
@@ -321,7 +322,7 @@ export function JlptRunPage() {
               </legend>
               <div className="prompt-plate panel jlpt-prompt">
                 <p className="jlpt-question" lang="ja" id={`q-${i + 1}-prompt`}>
-                  {question.prompt}
+                  <Furigana text={question.prompt} />
                 </p>
               </div>
 
@@ -377,7 +378,10 @@ export function JlptRunPage() {
                         aria-keyshortcuts={`${LABEL[o]} ${o + 1}`}
                         onChange={() => choose(i, o)}
                       />
-                      <span aria-hidden="true">{LABEL[o]}</span> <span lang="ja">{opt}</span>
+                      <span aria-hidden="true">{LABEL[o]}</span>{" "}
+                      <span lang="ja">
+                        <Furigana text={opt} />
+                      </span>
                     </label>
                   );
                 })}
@@ -394,12 +398,12 @@ export function JlptRunPage() {
                   </p>
                   {question.answeredSentence && (
                     <p className="reveal-sentence" lang="ja">
-                      {question.answeredSentence}
+                      <Furigana text={question.answeredSentence} />
                     </p>
                   )}
                   {question.explanation && (
                     <p className="reveal-explanation" data-testid="explanation">
-                      {question.explanation}
+                      <Furigana text={question.explanation} />
                     </p>
                   )}
                 </div>

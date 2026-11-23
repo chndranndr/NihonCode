@@ -348,7 +348,7 @@ Requirements:
 - Due review cards are shown before new cards.
 - The daily cap for new cards is user-configurable (default 20).
 - An optional setting lets correct new cards skip learning steps and graduate directly to FSRS review.
-- Review outcomes map to FSRS ratings (correct -> Good, incorrect/timeout -> Again).
+- Review outcomes map to FSRS ratings: a wrong answer or timeout is Again automatically; after a correct answer the learner picks Hard, Good (default, Enter), or Easy (owner decision 2026-11-23). Drills never feed the SRS; only the Review page does.
 - Review logs are stored for future tuning/analytics; default FSRS parameters are used.
 - SRS access is open at every level; the app recommends a level from progress but does not lock higher-level review behind prerequisite mastery. (The prior mastery-gate design is dropped: with no placement flow, gating blocks returning learners from content they already know.)
 - Review session completion updates streak and awards XP.

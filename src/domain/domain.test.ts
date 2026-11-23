@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { Rating } from "ts-fsrs";
 import { grade, normalizeAnswer } from "./grading";
 import {
   applyStudyDay,
@@ -13,6 +14,7 @@ import {
   deserializeCard,
   isDue,
   newCard,
+  CORRECT_RATINGS,
   ratingFromCorrect,
   reviewCard,
   serializeCard,
@@ -87,6 +89,24 @@ describe("scheduling", () => {
   it("maps correctness to Again/Good", () => {
     expect(ratingFromCorrect(true)).toBe("good");
     expect(ratingFromCorrect(false)).toBe("again");
+  });
+
+  it("maps every app rating to its FSRS grade", () => {
+    const now = new Date("2026-09-19T12:00:00Z");
+    const grades = (["again", "hard", "good", "easy"] as const).map(
+      (r) => reviewCard(newCard(now), r, now).log.rating,
+    );
+    expect(grades).toEqual([Rating.Again, Rating.Hard, Rating.Good, Rating.Easy]);
+    expect(CORRECT_RATINGS).toEqual(["hard", "good", "easy"]);
+  });
+
+  it("easy schedules a new card no sooner than good, with or without learning steps", () => {
+    const now = new Date("2026-09-19T12:00:00Z");
+    for (const skip of [false, true]) {
+      const good = reviewCard(newCard(now), "good", now, { skipLearningSteps: skip });
+      const easy = reviewCard(newCard(now), "easy", now, { skipLearningSteps: skip });
+      expect(easy.card.due.getTime()).toBeGreaterThanOrEqual(good.card.due.getTime());
+    }
   });
 
   it("a reviewed card moves its due date and survives serialization", () => {

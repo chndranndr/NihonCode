@@ -94,7 +94,7 @@ export function ReviewPage() {
     const inserted = await recordSession(sessionIdRef.current, "srs", result.correct, result.total);
     if (!inserted) return;
     for (const record of result.records) {
-      const rating = ratingFromCorrect(record.correct);
+      const rating = record.correct ? (record.rating ?? ratingFromCorrect(true)) : "again";
       await reviewItem(record.id, rating);
       await recordAttempt(record.id, "srs", record.correct);
     }
@@ -125,6 +125,7 @@ export function ReviewPage() {
       <DrillSession
         title="SRS REVIEW"
         items={session}
+        rateCorrect
         onFinish={(r) => void finish(r)}
         onAbort={() => {
           setSession(null);

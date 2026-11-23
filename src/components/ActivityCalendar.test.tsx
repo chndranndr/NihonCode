@@ -108,4 +108,16 @@ describe("ActivityCalendar horizontal scroll", () => {
       proto.getBoundingClientRect = rect;
     }
   });
+
+  it("pluralises the active-day count", () => {
+    render(
+      <ActivityCalendar
+        rows={[{ id: "a", category: "drill", date: "2026-10-01", ts: 0 }]}
+        startKey="2026-01-01"
+        endKey="2026-12-31"
+        todayKey="2026-10-28"
+      />,
+    );
+    expect(screen.getByText("1 active day")).toBeTruthy();
+  });
 });

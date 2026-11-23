@@ -52,6 +52,13 @@ export async function masteryByItems(itemIds: string[]): Promise<Map<string, Ite
   return result;
 }
 
+/** Distinct items with at least one drill attempt (SRS reviews excluded). */
+export async function drillPracticedCount(itemIds: string[]): Promise<number> {
+  if (itemIds.length === 0) return 0;
+  const rows = await db().drillAttempts.where("itemId").anyOf(itemIds).toArray();
+  return new Set(rows.filter((r) => r.kind !== "srs").map((r) => r.itemId)).size;
+}
+
 /**
  * One completed drill/review/lesson/set run (PRD §10.13). The caller owns a
  * stable session id created when the run starts; repeating the same id is a

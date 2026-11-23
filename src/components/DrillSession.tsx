@@ -15,6 +15,7 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
 import { grade } from "../domain/grading";
+import { CORRECT_RATINGS, type AppRating } from "../domain/scheduling";
 import { SpeakerButton } from "./SpeakerButton";
 
 export interface SessionItem {
@@ -50,7 +51,8 @@ export interface SessionResult {
   total: number;
   correct: number;
   misses: SessionItem[];
-  records: Array<{ id: string; correct: boolean }>;
+  /** rating is set only when the session asks the learner to rate correct answers. */
+  records: Array<{ id: string; correct: boolean; rating?: AppRating }>;
   /** Per-item outcomes in question order, for the results review table. */
   answers: Array<{
     id: string;
@@ -66,15 +68,20 @@ interface Props {
   items: SessionItem[];
   onFinish(result: SessionResult): void;
   onAbort(): void;
+  /** SRS review: a correct answer is followed by a Hard / Good / Easy choice. */
+  rateCorrect?: boolean;
 }
 
 interface Answered {
   item: SessionItem;
   submitted: string;
   correct: boolean;
+  rating?: AppRating;
 }
 
-export function DrillSession({ title, items, onFinish, onAbort }: Props) {
+const RATING_KEYS: Record<string, AppRating> = { "1": "hard", "2": "good", "3": "easy" };
+
+export function DrillSession({ title, items, onFinish, onAbort, rateCorrect = false }: Props) {
   const [index, setIndex] = useState(0);
   const [input, setInput] = useState("");
   const [answered, setAnswered] = useState<Answered | null>(null);
@@ -121,19 +128,19 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
     setResults((prev) => [...prev, record]);
   }
 
-  function advance() {
+  function advance(final: Answered[] = results) {
     if (index + 1 >= items.length) {
-      const misses = results.filter((r) => !r.correct).map((r) => r.item);
-      const correct = results.filter((r) => r.correct).length;
-      const records = results.map((r) => ({ id: r.item.id, correct: r.correct }));
-      const answers = results.map((r) => ({
+      const misses = final.filter((r) => !r.correct).map((r) => r.item);
+      const correct = final.filter((r) => r.correct).length;
+      const records = final.map((r) => ({ id: r.item.id, correct: r.correct, rating: r.rating }));
+      const answers = final.map((r) => ({
         id: r.item.id,
         prompt: r.item.prompt,
         submitted: r.submitted,
         correct: r.correct,
         accepted: r.item.accepted,
       }));
-      onFinish({ total: results.length, correct, misses, records, answers });
+      onFinish({ total: final.length, correct, misses, records, answers });
       return;
     }
     setIndex(index + 1);
@@ -142,7 +149,20 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
     setHintShown(false);
   }
 
+  const needsRating = rateCorrect && answered?.correct === true;
+
+  function rate(rating: AppRating) {
+    const updated = results.map((r, i) => (i === results.length - 1 ? { ...r, rating } : r));
+    setResults(updated);
+    advance(updated);
+  }
+
   function onKey(event: ReactKeyboardEvent) {
+    if (needsRating && RATING_KEYS[event.key]) {
+      event.preventDefault();
+      rate(RATING_KEYS[event.key]);
+      return;
+    }
     if (event.key === "Enter") {
       if (event.target instanceof Element && event.target.closest("button")) return;
       event.preventDefault();
@@ -226,9 +246,26 @@ export function DrillSession({ title, items, onFinish, onAbort }: Props) {
               <p className="reveal-accepted">accepted: {item.accepted.join(" / ")}</p>
             </>
           )}
-          <button ref={advanceRef} type="button" className="primary" onClick={advance}>
-            {index + 1 >= items.length ? "FINISH" : "NEXT"}
-          </button>
+          {needsRating ? (
+            <div className="rating-row" role="group" aria-label="rate recall">
+              {CORRECT_RATINGS.map((r, i) => (
+                <button
+                  key={r}
+                  ref={r === "good" ? advanceRef : undefined}
+                  type="button"
+                  className={r === "good" ? "primary" : undefined}
+                  aria-keyshortcuts={String(i + 1)}
+                  onClick={() => rate(r)}
+                >
+                  {r.toUpperCase()}
+                </button>
+              ))}
+            </div>
+          ) : (
+            <button ref={advanceRef} type="button" className="primary" onClick={() => advance()}>
+              {index + 1 >= items.length ? "FINISH" : "NEXT"}
+            </button>
+          )}
         </div>
       ) : (
         <div className="input-dock">

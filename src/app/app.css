@@ -1209,6 +1209,12 @@ tbody tr:hover {
   min-width: 220px;
 }
 
+.rating-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .limit-row {
   display: flex;
   gap: 0.5rem;
@@ -2673,4 +2679,9 @@ select {
 .review-counts {
   margin: 8px 0 20px;
   color: var(--dim);
+}
+
+ruby rt {
+  font-size: 12px;
+  line-height: 1;
 }

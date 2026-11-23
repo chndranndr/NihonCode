@@ -190,7 +190,7 @@ export function ActivityCalendar({
         </div>
       </div>
       <div className="heat-footer">
-        <span>{activeDays} active days</span>
+        <span>{countOf(activeDays, "active day")}</span>
         <span className="heat-legend">
           Less{" "}
           {[0, 1, 2, 3, 4].map((n) => (

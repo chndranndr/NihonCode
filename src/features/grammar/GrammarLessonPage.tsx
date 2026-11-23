@@ -9,11 +9,13 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { SpeakerButton } from "../../components/SpeakerButton";
 import { useLevel } from "../../components/level";
-import { XP } from "../../domain/progress";
+import { XP, isStrongScore } from "../../domain/progress";
 import { awardXp, newSessionId, recordSession } from "../../storage/progressRepo";
 import { db } from "../../storage/db";
 import { grammarLessonId } from "../../content/ids";
 import { countOf } from "../../domain/format";
+import { stripFurigana } from "../../domain/furigana";
+import { Furigana } from "../../components/Furigana";
 
 export function GrammarLessonPage() {
   const { lessonId = "" } = useParams();
@@ -23,6 +25,9 @@ export function GrammarLessonPage() {
   const [answers, setAnswers] = useState<boolean[]>([]);
   const [revealed, setRevealed] = useState<string | null>(null);
   const [resumed, setResumed] = useState(false);
+  const [summary, setSummary] = useState<{ correct: number; total: number; xp: number } | null>(
+    null,
+  );
   // Stable per lesson mount: a re-render or double FINISH re-saving the same
   // completion is a no-op (PRD §10.13); a fresh visit retries from scratch.
   const sessionIdRef = useRef("");
@@ -61,6 +66,60 @@ export function GrammarLessonPage() {
 
   const question = active.quiz[quizIndex];
   const firstExample = active.examples[0];
+  const lessons = pools?.grammar ?? [];
+  const nextLesson = lessons[lessons.findIndex((l) => l.lessonId === lessonId) + 1] ?? null;
+
+  if (summary) {
+    const pct = summary.total === 0 ? 0 : Math.round((summary.correct / summary.total) * 100);
+    return (
+      <div className="results" data-testid="summary">
+        <div className="page-head">
+          <div>
+            <h1>Lesson complete.</h1>
+            <p className="description" lang="ja">
+              {active.title}
+            </p>
+          </div>
+        </div>
+        <div className="result-head">
+          <div className={`result-score${isStrongScore(pct) ? " strong" : ""}`}>
+            <span data-testid="summary-score">{pct}%</span>
+            <small>accuracy</small>
+          </div>
+          <div className="result-metrics">
+            <div>
+              <strong>
+                {summary.correct} / {summary.total}
+              </strong>
+              <span>correct answers</span>
+            </div>
+            <div>
+              <strong data-testid="summary-xp">+{summary.xp}</strong>
+              <span>XP earned</span>
+            </div>
+          </div>
+        </div>
+        <div className="summary-actions">
+          {nextLesson && (
+            <button
+              type="button"
+              className="primary"
+              onClick={() => navigate(`/learn/grammar/${nextLesson.lessonId}`)}
+            >
+              NEXT LESSON
+            </button>
+          )}
+          <button
+            type="button"
+            className={nextLesson ? "" : "primary"}
+            onClick={() => navigate("/learn")}
+          >
+            BACK TO LIBRARY
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   function choose(choice: string): void {
     if (revealed !== null) return;
@@ -79,15 +138,18 @@ export function GrammarLessonPage() {
         correctCount,
         active.quiz.length,
       );
-      if (!inserted) return;
-      awardXp(XP.grammarQuiz);
+      if (inserted) awardXp(XP.grammarQuiz);
       void db().grammarState.put({
         id: active.id,
         status: "completed",
         resumeQuizIndex: 0,
         completedAt: Date.now(),
       });
-      navigate("/learn");
+      setSummary({
+        correct: correctCount,
+        total: active.quiz.length,
+        xp: inserted ? XP.grammarQuiz : 0,
+      });
       return;
     }
     setQuizIndex(quizIndex + 1);
@@ -117,12 +179,12 @@ export function GrammarLessonPage() {
             <div className="example" key={e.jp}>
               <div className="example-copy">
                 <p className="jp" lang="ja">
-                  {e.jp}
+                  <Furigana text={e.jp} />
                 </p>
                 <p className="roman">{e.romaji}</p>
                 <p>{e.en}</p>
               </div>
-              <SpeakerButton text={e.jp} label={`example ${i + 1}`} />
+              <SpeakerButton text={stripFurigana(e.jp)} label={`example ${i + 1}`} />
             </div>
           ))}
 
@@ -132,7 +194,7 @@ export function GrammarLessonPage() {
                 QUIZ {quizIndex + 1}/{active.quiz.length}
               </p>
               <p className="quiz-prompt" lang="ja">
-                {question.prompt}
+                <Furigana text={question.prompt} />
               </p>
               <div className="quiz-choices" role="group" aria-label="answer choices">
                 {question.choices.map((c) => (
@@ -143,7 +205,7 @@ export function GrammarLessonPage() {
                     onClick={() => choose(c)}
                     lang="ja"
                   >
-                    {c}
+                    <Furigana text={c} />
                   </button>
                 ))}
               </div>
@@ -159,7 +221,9 @@ export function GrammarLessonPage() {
         <aside className="grammar-aside">
           <div>
             <p className="label">In this lesson</p>
-            <p className="muted">{firstExample ? firstExample.jp : active.pattern}</p>
+            <p className="muted">
+              {firstExample ? <Furigana text={firstExample.jp} /> : active.pattern}
+            </p>
           </div>
           <div>
             <p className="label">Pattern</p>
