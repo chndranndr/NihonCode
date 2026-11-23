@@ -1,5 +1,5 @@
 /**
- * Shared drill session engine (DEVELOPMENT_PROMPT.md task 4): one item at a
+ * Shared drill session engine (docs/decisions.md): one item at a
  * time, typed input, Enter submits, Enter advances, Esc aborts with confirm,
  * reveal flip teaches every script/meaning/speaker and, on a miss, every
  * accepted reading plus group/category. Consumed by features/drills and

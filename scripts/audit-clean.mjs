@@ -123,7 +123,7 @@ export function auditClean(root) {
         if (e.id !== `vocab:${lvl}:${e.kanji}|${e.kana}`)
           fail(`vocab ${lvl} ${e.id}: id does not match its kanji|kana`);
         if ((c.id === "verbs" || c.id === "adjectives") && lvl === "n5") {
-          // Curated per entry (DEVELOPMENT_PROMPT task 1); N4-N1 get theirs
+          // Curated per entry (docs/decisions.md 2026-09-21); N4-N1 get theirs
           // with their curation pass, then this guard extends level by level.
           const pos = c.id === "verbs" ? "verb" : "adjective";
           const classes = c.id === "verbs" ? VERB_CLASSES : ADJ_CLASSES;

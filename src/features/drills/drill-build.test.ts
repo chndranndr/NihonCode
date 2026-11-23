@@ -44,7 +44,7 @@ describe("drill pool builders (PRD 10.7 / 10.8)", () => {
   });
 });
 
-describe("kana, kanji, vocab builders grade real content (DEVELOPMENT_PROMPT task 11)", () => {
+describe("kana, kanji, vocab builders grade real content (real clean-pool data)", () => {
   it("every graded builder emits items with non-empty accepted answers", () => {
     for (const mode of ["kana", "kanji", "vocab"] as const) {
       const items = buildItems(mode, pools, DEFAULT_OPTIONS);

@@ -4,7 +4,7 @@ import { kanjiId, vocabId, type JlptLevel } from "./ids";
 import { ENABLED_LEVELS, LevelUnavailableError, loadLevelData, type LevelData } from "./loaders";
 
 /**
- * DEVELOPMENT_PROMPT.md task 1 acceptance: the gate excludes and flags
+ * Gate acceptance (docs/architecture.md): the gate excludes and flags
  * known-bad samples (vocab with Japanese romaji, kanji answer with dictionary
  * markers) by excluding and flagging them, not throwing. Samples are
  * clean-pool shaped (stamped ids), matching data/clean.

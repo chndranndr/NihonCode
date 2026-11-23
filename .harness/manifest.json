@@ -119,12 +119,12 @@
     },
     "execution_planning": {
       "status": "implemented",
-      "artifacts": ["DEVELOPMENT_PROMPT.md", "docs/decisions.md", "implementation_plan.md"],
+      "artifacts": ["AGENTS.md", "docs/architecture.md", "docs/decisions.md"],
       "verify": ["npm run check"]
     },
     "review_loop": {
       "status": "implemented",
-      "artifacts": ["DEVELOPMENT_PROMPT.md", "docs/quality.md"],
+      "artifacts": ["docs/development.md", "docs/quality.md"],
       "verify": ["npm run doctor", "inspect: findings have evidence and remediation"]
     },
     "workspace_cleanup": {
@@ -145,7 +145,6 @@
     ".prettierignore",
     ".prettierrc.json",
     "AGENTS.md",
-    "curation/adjudications.json",
     "docs/architecture.md",
     "docs/attribution.md",
     "docs/data-quality.md",

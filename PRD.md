@@ -6,7 +6,7 @@
 - Document type: Target requirements for the simplified web release, not a report of completed implementation changes
 - Platform scope: Responsive web app for desktop and mobile browsers
 - Core scope: Drills, built-in grammar, SRS, JLPT practice, and progress tracking
-- Data status: N5–N1 datasets exist under `data/` and were structurally audited (all 43 JSON files parsed, referenced audio checked on disk). They are not yet clean enough to grade directly. See section 18 for measured defects and the gating rule. Build sequencing lives in `implementation_plan.md`.
+- Data status: N5–N1 datasets exist under `data/` and were structurally audited (all 43 JSON files parsed, referenced audio checked on disk). They are not yet clean enough to grade directly. See section 18 for measured defects and the gating rule. Build sequencing is recorded in `docs/decisions.md`.
 
 ## 1. Product Overview
 
@@ -406,7 +406,7 @@ Requirements:
 - Pair the polygon with exact category counts and percentage text. No sessions means four zero counts, 0% labels, and an empty-state message; never divide by zero or invent a balanced polygon. This is participation distribution, not mastery, proficiency, an exam prediction, or a target learners must balance.
 - Retain historical daily activity beyond weekly XP buckets using stable session IDs, completion timestamps, a captured local date, and one mutually exclusive activity category. Reuse existing records where sufficient; any required storage extension must preserve existing progress. Do not fabricate historical category counts from XP alone; mark unavailable legacy history explicitly.
 - Accessibility: each day exposes its date/count without color alone; arrow keys navigate days with one calendar tab stop; year selection and day details work with keyboard and touch. Small screens scroll the annual calendar within its panel, and stack the overview text and chart without page overflow. Support dark/light themes; activity green stays semantic when the primary accent changes.
-- Delivery status: designed and demonstrated with explicitly labeled sample data in `mockups/`; production aggregation, storage coverage, and `src/` UI integration are follow-up implementation work. This addition supersedes the original weekly-bars-only launch constraint, not the completed MVP record.
+- Delivery status: designed and demonstrated with explicitly labeled sample data in the retired HTML mockups; production aggregation, storage coverage, and `src/` UI integration are follow-up implementation work. This addition supersedes the original weekly-bars-only launch constraint, not the completed MVP record.
 
 Current progress logic:
 
@@ -492,12 +492,12 @@ Listening audio files are present under `data/jlpt/audio` (184 MP3s, all non-emp
 - Kanji items should include onyomi and kunyomi.
 - Vocabulary entries used for conjugation must be tagged with category and verb/adjective type.
 - Grammar lessons must include explanation, examples, and quiz questions.
-- Source content lives in `data/generated` and `data/jlpt` and is untrusted input. A content pipeline normalizes and validates it into typed, ID-stamped app datasets; hand-editing pipeline output is prohibited. No pipeline exists in the repo yet (see `implementation_plan.md` Phase 2).
+- Source content lives in `data/generated` and `data/jlpt` and is untrusted input. A content pipeline normalizes and validates it into typed, ID-stamped app datasets; hand-editing pipeline output is prohibited. The pipeline ran in Phase 2 and was retired; its tracked output is `data/clean/` (docs/decisions.md 2026-09-21).
 - Lessons and exercises ship as static content. Learners do not generate content or configure external providers.
 
 ### Data Readiness Gate
 
-Content counts in this document describe what is present in `data/`, not what is safe to grade. The full measured defect inventory, the normalization and curation pipeline, and the human-review queue are specified in section 18 and sequenced in `implementation_plan.md`. The app loads raw `data/` only through a validation gate that emits typed, ID-stamped models and excludes flagged items from graded pools. No feature ships over content that has not cleared that gate.
+Content counts in this document describe what is present in `data/`, not what is safe to grade. The full measured defect inventory, the normalization and curation pipeline, and the human-review queue are specified in section 18 and recorded in `docs/decisions.md`. The app loads raw `data/` only through a validation gate that emits typed, ID-stamped models and excludes flagged items from graded pools. No feature ships over content that has not cleared that gate.
 
 ## 12. Data and Persistence Requirements
 
@@ -617,7 +617,7 @@ Features in the simplified web scope:
 
 ## 18. Data readiness and known defects
 
-Measured by parsing all 43 JSON files under `data/` and checking every referenced audio file on disk. These are structural counts, not a certification that each Japanese reading or answer key is pedagogically correct. Remediation is sequenced in `implementation_plan.md` Phase 2.
+Measured by parsing all 43 JSON files under `data/` and checking every referenced audio file on disk. These are structural counts, not a certification that each Japanese reading or answer key is pedagogically correct. Remediation is recorded in `docs/decisions.md`.
 
 ### Verified inventory
 
@@ -626,7 +626,7 @@ Measured by parsing all 43 JSON files under `data/` and checking every reference
 | Kana | 46 hiragana + 46 katakana | Basic gojuon only |
 | Kanji entries | 2,212 | N5: 80, N4: 166, N3: 367, N2: 367, N1: 1,232 |
 | Vocabulary entries | 7,938 | N5: 744, N4: 666, N3: 2,102, N2: 1,741, N1: 2,685 |
-| Grammar lessons | 832 | 2,496 quiz questions total |
+| Grammar lessons | 832 raw; graded N5–N1 72/130/67/71/45 | Raw quiz total 2,496; graded pool per docs/data-quality.md |
 | JLPT exercise sets | 688 | 5,339 question records; `answer_index` is 1-based |
 | Local listening MP3s | 184 | All exist, non-empty, valid MP3 header |
 | practice_core.json | 775 records | Clean reverse index; all question IDs resolve to JLPT questions |

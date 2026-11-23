@@ -125,7 +125,7 @@ components:
 
 Kita is a calm Japanese study workspace: warm tonal surfaces, humanist reading typography, monospace readouts, hairline edges, and a clear next action. Quiet Instrument evolves the existing instrument-panel identity rather than replacing it with a generic application template.
 
-This document records the owner-approved direction in the [Quiet Instrument design specification](docs/superpowers/specs/2026-11-20-quiet-instrument-ui-revamp-design.md). Production integration was implemented and verified on 2026-11-20. The nine HTML mockups remain historical structural references where their layouts and behavior are retained, but this document supersedes their earlier palette, typography, shape, and motion tokens. Preview data is illustrative; production uses real local state or honest empty states. The old `mockup.png` and `.impeccable/review/*.png` are historical, not the current visual authority.
+This document records the owner-approved Quiet Instrument direction. Production integration was implemented and verified on 2026-11-20. The nine HTML mockups are retired (docs/decisions.md 2026-11-23); this document supersedes their earlier palette, typography, shape, and motion tokens. Preview data is illustrative; production uses real local state or honest empty states. The old `mockup.png` and earlier review screenshots are historical, not the current visual authority.
 
 **Design Read:** A desktop-first Japanese study workspace for self-directed learners, using a warm instrument-panel language with ENERGY 2, RHYTHM 2, and MOTION 1.
 

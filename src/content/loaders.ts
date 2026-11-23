@@ -1,8 +1,8 @@
 /**
  * Bundler-side loaders for the clean pool (Phase 3 loader swap + per-level
  * lazy loading). Each level's datasets load through dynamic imports, so the
- * initial bundle carries no inactive-level chunks (implementation_plan Phase
- * 3 DoD); the active level is fetched once and cached. data/clean/ is the
+ * initial bundle carries no inactive-level chunks (docs/architecture.md
+ * "Lazy loading"); the active level is fetched once and cached. data/clean/ is the
  * app's single source of truth; scripts/audit-clean.mjs proves it
  * defect-free. The e2e journey runs gate.ts's validators over fs-read clean
  * files instead, because bundler imports do not load under bare Node.

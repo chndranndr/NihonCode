@@ -411,8 +411,28 @@ Three sub-decisions were made in the same change:
 
 **Binds.** `src/domain/scheduling.ts`, `src/domain/kanjiOrder.ts`, `src/components/DrillSession.tsx` (opt-in `rateCorrect`), `src/features/review/ReviewPage.tsx`, `src/features/progress/ProgressPage.tsx`, `src/storage/{db,backup,progressRepo}.ts`, PRD §10.11.
 
+## 2026-11-23 — Retire stale planning/prompt docs
+
+**Context.** The owner approved a docs cleanup. DEVELOPMENT_PROMPT.md, UI_IMPLEMENTATION_PROMPT.md, data-recon.md, implementation_plan.md, mockups/ (README, HTML, JS, CSS, check.mjs), and .impeccable/ (README, surface briefs, audit, review screenshots, design.json) were completed one-shot prompts and plans. They described phases and task orders that contradicted the current code and polluted agent context.
+
+**Decision.** Delete them. The mockups are superseded by the production app and DESIGN.md. The rules that were still binding moved: re-key rule, pool-floor growth, per-entry conjugation class, flagged content out of graded pools, no new runtime dependencies, session state versus persisted state, and domain-only grading/scheduling now live in AGENTS.md "Hard rules" and docs/architecture.md; the verification protocol lives in docs/development.md. The owner-authored PRD.md, PRODUCT.md, and DESIGN.md had their links to the deleted files removed. Older entries in this log keep their text; names of deleted files in them are history, not pointers.
+
+**History.** Last version of every deleted file is at commit 5ae5cfd (`git show 5ae5cfd:<path>`).
+
+**Binds.** AGENTS.md, docs/architecture.md, docs/development.md, docs/index.md, .harness/manifest.json.
+
 ## Prior (owner-authored, recorded elsewhere)
 
 - Storage: Dexie/IndexedDB for SRS + localStorage for settings (DEVELOPMENT_PROMPT.md section 2; resolves the PRODUCT.md open item; PRODUCT.md/PRD wording update is owner-authored and due with the storage commit).
 - Dark-first binding; accent user-selectable (PRODUCT.md brand commitments).
 - Phase gates: MVP → data remediation → polish, strictly ordered (implementation_plan.md).
+
+## 2026-11-23 — Retire the curation/ folder
+
+**Context.** `curation/` held the Phase 2/3 curation record (`adjudications.json`, 2,298 N5/N4 verdicts plus 560 N3–N1), the frozen N3–N1 worklist (`queue-n3-n1.json`), and gitignored per-slice agent findings. The build pipeline that read them was retired on 2026-09-21, and nothing in src/, scripts/, or tests reads them. The verdicts are already applied into `data/clean/`.
+
+**Decision.** Delete the folder at the owner's request. Content changes are recorded from now on as tracked edits to `data/clean/` plus a docs/data-quality.md ledger entry, which is already the hard rule. Historical ledger text in docs/data-quality.md and earlier ADRs still names the old paths as provenance.
+
+**History.** `git show 5ae5cfd:curation/adjudications.json` and `git show 5ae5cfd:curation/queue-n3-n1.json`. The untracked `curation/findings/` is gone.
+
+**Binds.** AGENTS.md, README.md, docs/index.md, docs/quality.md, docs/data-quality.md, src/content/gate.ts (comment), .gitignore, .harness/manifest.json.

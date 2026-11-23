@@ -4,7 +4,7 @@
 
 Quiet Instrument is implemented across the production application shell and study, progress, configuration, and informational views, and verified through static checks, unit and browser suites, and an element-by-element production click-through.
 
-Use this authority order: [PRD.md](../PRD.md) for behavior and non-goals; [PRODUCT.md](../PRODUCT.md) for product and brand commitments; [DESIGN.md](../DESIGN.md) for the approved visual direction, exact tokens, and interaction and state rules. The earlier HTML mockups and `.impeccable` surface briefs are historical composition references. They do not override the approved revamp.
+Use this authority order: [PRD.md](../PRD.md) for behavior and non-goals; [PRODUCT.md](../PRODUCT.md) for product and brand commitments; [DESIGN.md](../DESIGN.md) for the approved visual direction, exact tokens, and interaction and state rules. The earlier HTML mockups and surface briefs are retired (docs/decisions.md 2026-11-23); they do not override the approved revamp.
 
 ## Design Read and dials
 

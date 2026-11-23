@@ -1,4 +1,4 @@
-// Taste invariants for src/ (DEVELOPMENT_PROMPT.md section 4, binding design contract).
+// Taste invariants for src/ (docs/design-system.md, binding design contract).
 //
 // Mechanical rules:
 //   1. no-inline-style: no JSX style={{...}} — theming via CSS variables in app.css.
@@ -10,8 +10,8 @@
 //      selector (selector-aware, tracked across brace depth).
 //   6. contract-leak: direction-contract markers (THESIS:/OWN-WORLD:/STORY:/
 //      FIRST VIEWPORT:/FORM:) must never appear in shipped source — scanned on
-//      the RAW file text, including comments, because DEVELOPMENT_PROMPT.md
-//      section 2 bans them in "no code comments" too.
+//      the RAW file text, including comments, because AGENTS.md (direction-contract
+//      rule) bans them in "no code comments" too.
 //   7. type-ramp: every CSS font-size is a step from DESIGN.md frontmatter
 //      typography (fontSize values, read at check time), so the ramp cannot
 //      drift and utility text cannot drop below the 12px floor.
@@ -89,7 +89,7 @@ for (const file of files) {
   const r = rel(file);
   const source = readFileSync(file, "utf8");
 
-  // Rule 6 on raw text: comments included, per DEVELOPMENT_PROMPT.md section 2.
+  // Rule 6 on raw text: comments included, per AGENTS.md (direction-contract rule).
   source.split("\n").forEach((text, i) => {
     for (const marker of contractMarkers) {
       if (text.includes(marker)) {

@@ -10,7 +10,7 @@ web
 
 ## Stack
 
-React 19 + TypeScript (strict), Vite, React Router, one global stylesheet (`src/app/app.css`) with CSS custom-property tokens for theming, `ts-fsrs` for scheduling, Vitest for domain-rule tests, Playwright for key browser flows. Delivered as a static web build (PRD.md section 8, implementation_plan.md). Persistence (settled, DEVELOPMENT_PROMPT.md section 2): IndexedDB via Dexie for SRS cards, review logs, and drill attempts; `localStorage` for theme, accent, level, settings, and compact progress state; all stores schema-versioned with additive, idempotent migrations (PRD.md section 12 updated to match).
+React 19 + TypeScript (strict), Vite, React Router, one global stylesheet (`src/app/app.css`) with CSS custom-property tokens for theming, `ts-fsrs` for scheduling, Vitest for domain-rule tests, Playwright for key browser flows. Delivered as a static web build (PRD.md section 8). Persistence (settled, docs/architecture.md): IndexedDB via Dexie for SRS cards, review logs, and drill attempts; `localStorage` for theme, accent, level, settings, and compact progress state; all stores schema-versioned with additive, idempotent migrations (PRD.md section 12 updated to match).
 
 ## Users
 
@@ -59,7 +59,7 @@ Excluded (binding non-goals, PRD.md section 3):
 - No speech recording or pronunciation scoring.
 - No cloud sync, accounts, or server-backed profiles.
 
-Historical data constraint (pre-Phase 2, superseded by `data/clean/`): the bundled datasets were not yet grade-ready. 7,293 of 7,938 vocabulary entries hold Japanese text in the `romaji` field; N4–N1 kanji answers contain dictionary markers; JLPT sets contain truncated prompts, null keys, remote image dependencies, and unverified audio-to-question mapping. All content passes a validation gate before grading; flagged items stay out of graded pools (PRD.md section 18, implementation_plan.md Phase 2). The MVP ships on the verified-clean slice only: kana, kanji N5, the 643 N5 vocab entries with genuine Latin romaji (641 graded; 2 pack alternative readings and await a variants list), grammar N5 (marked reviewed), and algorithmic Numbers/Dates drills.
+Historical data constraint (pre-Phase 2, superseded by `data/clean/`): the bundled datasets were not yet grade-ready. 7,293 of 7,938 vocabulary entries hold Japanese text in the `romaji` field; N4–N1 kanji answers contain dictionary markers; JLPT sets contain truncated prompts, null keys, remote image dependencies, and unverified audio-to-question mapping. All content passes a validation gate before grading; flagged items stay out of graded pools (PRD.md section 18). The MVP ships on the verified-clean slice only: kana, kanji N5, the 643 N5 vocab entries with genuine Latin romaji (641 graded; 2 pack alternative readings and await a variants list), grammar N5 (marked reviewed), and algorithmic Numbers/Dates drills.
 
 Historical sequencing constraint (complete): build order was MVP → data remediation → polish. Features depending on dirty data (JLPT practice, conjugation, N4–N1 content) are deferred by design, not by oversight.
 
@@ -73,7 +73,7 @@ Historical sequencing constraint (complete): build order was MVP → data remedi
 ## Evidence on Hand
 
 - PRD.md — full target requirements, non-goals, release criteria, measured data defects (section 18).
-- implementation_plan.md — three-phase build plan with per-phase definitions of done.
+- docs/decisions.md — decision log, including the retired phase plans.
 - data/generated/ — kana, kanji, vocabulary, grammar (N5–N1), practice_core.json reverse index; audited (43 JSON files parsed).
 - data/jlpt/ — 688 exercise sets, 5,339 question records, 184 local MP3s; audited with defects catalogued.
 - Per-file source metadata: amgidex grammar lists, Tatoeba (CC BY 2.0 FR) example sentences, japanesetest4you exercises/audio. Consolidated attribution and the owner's redistribution confirmations live in docs/attribution.md; commercial redistribution of amgidex content still needs author permission.

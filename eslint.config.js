@@ -15,7 +15,6 @@ export default tseslint.config(
       "playwright-report",
       ".pi",
       ".omp",
-      ".impeccable",
       ".pstack",
     ],
   },

@@ -1,5 +1,5 @@
 /**
- * Route tree. Secondary routes load lazily (implementation_plan Phase 3 DoD:
+ * Route tree. Secondary routes load lazily (docs/architecture.md "Lazy loading":
  * route/dataset lazy-loading) behind a shared Suspense fallback; the
  * dashboard and learn hub stay eager so first paint and the study entry are
  * never blocked. Dataset content is lazy separately (src/content/loaders).

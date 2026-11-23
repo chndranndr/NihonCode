@@ -32,7 +32,7 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } },
     },
     {
-      // 390px is the mandated mobile width (DEVELOPMENT_PROMPT.md section 8);
+      // 390px is the mandated mobile width (docs/development.md);
       // Pixel 7's UA/touch profile with the contract's breakpoint width.
       name: "mobile",
       use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } },

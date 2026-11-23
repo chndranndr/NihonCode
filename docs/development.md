@@ -22,15 +22,15 @@ One task runner: npm scripts. Everything agents need is discoverable from `packa
 | `npm run gc -- --dry-run` | Cleanup candidates + entropy findings, read-only                                                                                                                                                                                                                                               |
 | `npm run gc`              | Delete known generated artifacts (`dist/`, `test-results/`, `playwright-report/`, `coverage/`, vite cache); entropy findings remain report-only                                                                                                                                                |
 | `npm run audit:clean`     | Tracked-pool validator over `data/clean/`: zero defect classes, graded-pool floors, unique IDs, practice_core referential integrity, referenced MP3s present; `--self-test` proves five failure paths (duplicate ID, passage-title artifact, pool floor, missing audio, id/content derivation) |
-| `npm run format`          | Prettier over owned files only (never over `data/` or owner root docs)                                                                                                                                                                                                                         |
+| `npm run format`          | Prettier over `src`, `scripts`, `e2e`, `docs`, `AGENTS.md`, config files, and `.github` only (never `data/`, PRD.md, PRODUCT.md, DESIGN.md, or README.md)                                                                                                                                      |
 
 ## Verification protocol
 
-Per DEVELOPMENT_PROMPT.md section 8, at the integrated head (not per-agent mid-flight):
+At the integrated head (not per-agent mid-flight):
 
 1. `npm run check`
 2. `npm test`
-3. `npm run eval` (Playwright: the drill → grade → persist → reload → review loop once Phase 1 task 6 lands)
+3. `npm run eval` (Playwright: the drill → grade → persist → reload → review loop and the other journeys)
 4. `npm run build`, then smoke-test the served bundle
 5. Screenshots at 1440 and 390 widths; `impeccable detect --json` once over changed UI targets; finish reviewer; documenter (inspection rounds capped at two)
 
@@ -46,7 +46,7 @@ Concurrent agents or working copies must not share ports or learner state:
 
 ## CI
 
-`.github/workflows/ci.yml`: on push/PR — install, `npm run check`, `npm test`, `npm run build`. The browser eval runs via `workflow_dispatch` (manual) because it needs a Chromium download; run it locally before merging UI work. The repo has no git remote yet; CI activates when the repository is pushed to GitHub.
+`.github/workflows/ci.yml`: on push/PR — install, `npm run check`, `npm test`, `npm run build`. The browser eval runs via `workflow_dispatch` (manual) because it needs a Chromium download; run it locally before merging UI work. The repository is pushed to `origin` (github.com/chndranndr/NihonCode), branch `main`; CI runs on every push and pull request.
 
 ## Guardrail scripts
 
@@ -59,10 +59,10 @@ All under `scripts/`, all dependency-light (Node stdlib only):
 | `check-bundle.mjs`   | Entry chunk gzip budget after `vite build` (chained into `npm run build`); `_headers` immutable `/assets` rule present and every asset hashed |
 | `check-docs.mjs`     | Relative links + anchors in AGENTS.md, README.md, and docs/                                                                                   |
 | `audit-clean.mjs`    | Tracked pool: defect zeros, floors, unique IDs, practice_core integrity, MP3 presence (self-test proves five failure paths)                   |
-| `check-rekeys.mjs`   | VOCAB_N5_REKEYS map vs the tracked pool (24 pairs, non-vacuous)                                                                               |
+| `check-rekeys.mjs`   | VOCAB_N5_REKEYS map vs the tracked pool (24 pairs, non-vacuous); standalone (`npm run check:rekeys`), not part of `npm run check`             |
 | `doctor.mjs`         | Manifest validity + orchestrated health report                                                                                                |
 | `gc.mjs`             | Generated-artifact cleanup + entropy scan                                                                                                     |
 | `serve-isolated.mjs` | Collision-free dev/preview server                                                                                                             |
 | `run-e2e.mjs`        | Eval wrapper with browser-install remediation                                                                                                 |
 
-Adding a guardrail: write the smallest executable check, wire it into `npm run check` (or `doctor`), prove it fails on the original failure class, then update `.harness/manifest.json` capabilities.
+Adding a guardrail: write the smallest executable check, wire it into `npm run check` (or `doctor`, or leave it a standalone command like `check:rekeys` and say so here), prove it fails on the original failure class, then update `.harness/manifest.json` capabilities.

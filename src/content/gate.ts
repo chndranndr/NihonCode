@@ -1,8 +1,7 @@
 /**
- * The untrusted->typed boundary (implementation_plan.md "Validate at the
+ * The untrusted->typed boundary (docs/architecture.md "The validation
  * gate"). The app's only data source is data/clean/ — the committed, curated
- * single source of truth (owner adjudications in curation/adjudications.json;
- * guarded by scripts/audit-clean.mjs). These validators are the last line of
+ * single source of truth (guarded by scripts/audit-clean.mjs). These validators are the last line of
  * defense between that pool and the typed domain models: anything malformed
  * is flagged and excluded from the graded pool, never thrown on.
  *

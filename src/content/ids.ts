@@ -1,5 +1,5 @@
 /**
- * Stable namespaced content IDs (DEVELOPMENT_PROMPT.md section 2).
+ * Stable namespaced content IDs (docs/architecture.md "Stable IDs").
  * Content-order-independent: progress rows reference these, never positions.
  * Note: the legacy practice_core.json index uses its own positional scheme and
  * is NOT consumed through these builders (docs/data-quality.md).

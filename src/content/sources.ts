@@ -1,7 +1,7 @@
 /**
  * Content sources ledger (about brief): license and clearance status per
  * dataset origin. Statuses are data, not prose — Phase 2.7 clearance updates
- * flip these rows without a redesign (DEVELOPMENT_PROMPT task 8 acceptance).
+ * flip these rows without a redesign (docs/attribution.md).
  */
 
 export type ClearanceStatus = "licensed" | "pending" | "blocked";

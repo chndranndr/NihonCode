@@ -1,6 +1,6 @@
 /**
  * IndexedDB via Dexie: SRS cards, review logs, drill attempts, grammar state.
- * The volume case per DEVELOPMENT_PROMPT.md section 2. Schema-versioned;
+ * The volume case (docs/architecture.md "Persistence"). Schema-versioned;
  * migrations are additive and idempotent (version 1 is the baseline; later
  * versions add stores or drop unused indexes, never rewrite existing rows).
  */

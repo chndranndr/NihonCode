@@ -1,5 +1,5 @@
-// Architecture boundary check for src/ (implementation_plan.md "Boundaries",
-// DEVELOPMENT_PROMPT.md section 3).
+// Architecture boundary check for src/ (docs/architecture.md "Enforced
+// boundaries").
 //
 // Layer matrix (binding): app, features, domain, content, storage, components,
 // observability. Any other top-level directory under src/ is a violation

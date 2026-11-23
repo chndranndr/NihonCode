@@ -144,7 +144,7 @@ test("Japanese speech playback errors are visible without blocking review", asyn
 });
 
 /**
- * Phase 1 acceptance journey (DEVELOPMENT_PROMPT.md section 6): drill -> grade
+ * Acceptance journey: drill -> grade
  * -> persist -> reload -> review, in one flow over the production bundle.
  * The kana answers come from the fixed basic gojuon table (stable content),
  * so the drill leg grades 100% deterministically; the review leg intentionally
@@ -1076,7 +1076,7 @@ test("rapid drill submission causes no layout shift", async ({ page }) => {
   await page.getByRole("button", { name: "START" }).click();
   await expect(page.getByTestId("session")).toBeVisible();
 
-  // The acceptance line (DEVELOPMENT_PROMPT task 8) made measurable: the
+  // The layout-stability acceptance line made measurable: the
   // input-dock <-> reveal swap on rapid submits must not shift the layout.
   await page.evaluate(() => {
     document.documentElement.dataset.cls = "0";

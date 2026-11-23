@@ -1,6 +1,6 @@
 /**
- * Conjugator correctness across every class and form (DEVELOPMENT_PROMPT task
- * 2: "sampled godan/ichidan/irregular and i-/na-adjective grading correct").
+ * Conjugator correctness across every class and form ("sampled godan/ichidan/irregular and
+ * i-/na-adjective grading correct").
  * The い-stem いい is asserted from the よ stem on purpose — it is the
  * single highest-stakes case (the drill would otherwise teach いくない).
  */

@@ -4,7 +4,7 @@
  * JLPT progress) plus the localStorage prefs — as one JSON document with a
  * schema version. Import validates with Zod (untrusted external input)
  * before writing anything, and replaces state wholesale: round-trip without
- * loss is the acceptance line (DEVELOPMENT_PROMPT task 7).
+ * loss is the acceptance line.
  */
 
 import { z } from "zod";

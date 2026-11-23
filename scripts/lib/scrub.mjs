@@ -1,4 +1,4 @@
-// Scraper-artifact detection/cleanup (DEVELOPMENT_PROMPT task 2 precedent).
+// Scraper-artifact detection/cleanup (docs/decisions.md precedent: deterministic character errors are fixed, not adjudicated).
 // Strips stray C1/other control bytes and maps the fullwidth HYPHEN-MINUS
 // U+FF0D to the katakana prolonged sound mark (U+30FC). data/clean/ is the
 // tracked dataset: these artifacts were corrected once during curation, and
