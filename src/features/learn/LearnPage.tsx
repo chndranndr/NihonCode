@@ -74,30 +74,57 @@ export function LearnPage() {
       </div>
 
       <div className="learn-layout">
-        <Panel title="PRACTICE">
-          <div className="practice-list">
-            {PRACTICE.map(([mode, glyph, name, desc]) => (
-              <Link key={mode} className="practice-link" to={`/learn/drill/${mode}`}>
-                <span lang={mode === "numbers" ? undefined : "ja"}>{glyph}</span>
-                <span>
-                  <b>
-                    {name === "KANA" ||
-                    name === "NUMBERS" ||
-                    name === "DATES" ||
-                    name === "CONJUGATION"
-                      ? name
-                      : `${name} ${level.toUpperCase()}`}
-                  </b>
-                  <small>{desc}</small>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </Panel>
+        <div className="learn-side">
+          <Panel title="PRACTICE">
+            <div className="practice-list">
+              {PRACTICE.map(([mode, glyph, name, desc]) => (
+                <Link key={mode} className="practice-link" to={`/learn/drill/${mode}`}>
+                  <span lang={mode === "numbers" ? undefined : "ja"}>{glyph}</span>
+                  <span>
+                    <b>
+                      {name === "KANA" ||
+                      name === "NUMBERS" ||
+                      name === "DATES" ||
+                      name === "CONJUGATION"
+                        ? name
+                        : `${name} ${level.toUpperCase()}`}
+                    </b>
+                    <small>{desc}</small>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </Panel>
+
+          <Panel title="SRS REVIEW">
+            <p className="muted">
+              {due === null
+                ? "Counting due cards…"
+                : due > 0
+                  ? `${countOf(due, "card")} ${due === 1 ? "is" : "are"} ready for review.`
+                  : "Nothing is due right now. Cards come back as they fall due."}
+            </p>
+            <Link
+              className={due !== null && due > 0 ? "primary inline-cta" : "button inline-cta"}
+              to="/learn/review"
+            >
+              OPEN REVIEW QUEUE
+            </Link>
+          </Panel>
+
+          <Panel title="JLPT PRACTICE">
+            <p className="muted">
+              Grammar, kanji, vocabulary, reading and listening exercise sets by level.
+            </p>
+            <Link className="button inline-cta" to="/learn/jlpt">
+              BROWSE JLPT SETS
+            </Link>
+          </Panel>
+        </div>
 
         <Panel title={`GRAMMAR ${level.toUpperCase()}`}>
           <ul className="lesson-list">
-            {pools.grammar.slice(0, 12).map((l, i) => (
+            {pools.grammar.map((l, i) => (
               <li key={l.id}>
                 <Link to={`/learn/grammar/${l.lessonId}`}>
                   <span className="num">{String(i + 1).padStart(2, "0")}</span>
@@ -109,31 +136,6 @@ export function LearnPage() {
               </li>
             ))}
           </ul>
-        </Panel>
-
-        <Panel title="SRS REVIEW">
-          <p className="muted">
-            {due === null
-              ? "Counting due cards…"
-              : due > 0
-                ? `${countOf(due, "card")} ${due === 1 ? "is" : "are"} ready for review.`
-                : "Nothing is due right now. Cards come back as they fall due."}
-          </p>
-          <Link
-            className={due !== null && due > 0 ? "primary inline-cta" : "button inline-cta"}
-            to="/learn/review"
-          >
-            OPEN REVIEW QUEUE
-          </Link>
-        </Panel>
-
-        <Panel title="JLPT PRACTICE">
-          <p className="muted">
-            Grammar, kanji, vocabulary, reading and listening exercise sets by level.
-          </p>
-          <Link className="button inline-cta" to="/learn/jlpt">
-            BROWSE JLPT SETS
-          </Link>
         </Panel>
       </div>
     </div>

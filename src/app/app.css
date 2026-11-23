@@ -987,6 +987,16 @@ p + p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  align-items: start;
+}
+
+/* Practice, review and JLPT stay in view beside the full grammar list. */
+.learn-side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 24px;
 }
 
 .lesson-row {
@@ -1766,8 +1776,8 @@ tbody tr:hover {
 
 .progress-layout {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
   gap: 24px;
 }
 
@@ -1776,6 +1786,11 @@ tbody tr:hover {
   justify-content: space-between;
   padding: 15px 0;
   border-bottom: 1px solid var(--line);
+}
+
+.srs-row-split {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
 }
 
 .srs-row strong {
@@ -1795,7 +1810,17 @@ tbody tr:hover {
 }
 
 .achievement-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
   font-size: 12px;
+}
+
+.achievement-list b {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .achievement-req {
@@ -1808,11 +1833,23 @@ tbody tr:hover {
   letter-spacing: 0;
 }
 
-.achievement-list b {
-  display: block;
+.achievement-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  color: var(--dim);
+}
+
+.achievement-list .unlocked .achievement-icon {
+  border-color: var(--accent);
   color: var(--accent);
-  font-size: 20px;
-  margin-bottom: 5px;
+}
+
+.achievement-list .locked b {
+  color: var(--dim);
 }
 
 .telemetry {
@@ -2232,7 +2269,7 @@ input {
 
   .grid-home,
   .progress-layout {
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .grammar-layout {
@@ -2359,6 +2396,10 @@ input {
   .learn-layout,
   .progress-layout {
     grid-template-columns: 1fr;
+  }
+
+  .learn-side {
+    position: static;
   }
 
   .routine {

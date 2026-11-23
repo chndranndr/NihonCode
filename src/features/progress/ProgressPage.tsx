@@ -12,6 +12,7 @@ import { ActivityCalendar } from "../../components/ActivityCalendar";
 import { ActivityQuadrant } from "../../components/ActivityQuadrant";
 import { useLevel } from "../../components/level";
 import { achievements, coverageEstimate } from "../../domain/achievements";
+import { MilestoneIcon } from "./MilestoneIcon";
 import {
   activityRows,
   drillPracticedCount,
@@ -224,17 +225,8 @@ export function ProgressPage() {
       </section>
 
       <div className="telemetry">
-        <Panel title={`DRILL PRACTICE · ${level.toUpperCase()}`}>
-          <div className="srs-row" data-testid="drill-practiced">
-            <span>Kanji + vocab practiced</span>
-            <strong>
-              {drillPracticed ?? "…"} / {pools ? pools.kanji.length + pools.vocab.length : "…"}
-            </strong>
-          </div>
-        </Panel>
-
         <div className="progress-layout">
-          <Panel title="SPACED REPETITION (SRS)">
+          <Panel title={`STUDY · ${level.toUpperCase()}`}>
             {stats ? (
               <>
                 <div className="srs-row">
@@ -278,7 +270,19 @@ export function ProgressPage() {
                 <p className="micro-label" data-testid="srs-gauge">
                   MASTERED {stats.mastered} · LEARNING {stats.learning} · NEW {stats.fresh}
                 </p>
-                <p className="sample-note">Your next review builds on what you already know.</p>
+                <div className="srs-row srs-row-split" data-testid="drill-practiced">
+                  <span>Practiced in drills</span>
+                  <strong>
+                    {drillPracticed ?? "…"} /{" "}
+                    {pools ? pools.kanji.length + pools.vocab.length : "…"}
+                  </strong>
+                </div>
+                <div className="srs-row" data-testid="coverage">
+                  <span>Covered (SRS + lessons)</span>
+                  <strong>
+                    {coverage > 0 && coverage < 0.01 ? "<1" : Math.round(coverage * 100)}%
+                  </strong>
+                </div>
               </>
             ) : (
               <p className="micro-label" role="status">
@@ -290,17 +294,18 @@ export function ProgressPage() {
           <Panel title="MILESTONES">
             <ul className="achievement-list" data-testid="achievements">
               {achievementList.map((a) => (
-                <li key={a.id} className={a.unlocked ? "" : "muted"}>
-                  <b>{a.unlocked ? "✓" : "□"}</b>
-                  {a.label}
-                  <span className="achievement-req">{a.requirement}</span>
+                <li key={a.id} className={a.unlocked ? "unlocked" : "locked"}>
+                  <span className="achievement-icon">
+                    <MilestoneIcon id={a.id} />
+                  </span>
+                  <span>
+                    <b>{a.label}</b>
+                    <span className="sr-only">{a.unlocked ? " (unlocked)" : " (locked)"}</span>
+                    <span className="achievement-req">{a.requirement}</span>
+                  </span>
                 </li>
               ))}
             </ul>
-            <p className="micro-label" data-testid="coverage">
-              {coverage > 0 && coverage < 0.01 ? "<1" : Math.round(coverage * 100)}% OF{" "}
-              {level.toUpperCase()} COVERED (SRS + LESSONS)
-            </p>
           </Panel>
         </div>
 

@@ -65,8 +65,8 @@ test("app boots, renders the shell, and emits the startup signal", async ({ page
 test("progress surface reads honest zeros in a fresh context", async ({ page }) => {
   await page.goto("/progress");
   await expect(page.getByTestId("progress")).toBeVisible();
-  await expect(page.getByTestId("coverage")).toHaveText("0% OF N5 COVERED (SRS + LESSONS)");
-  await expect(page.getByTestId("achievements")).toContainText("□");
+  await expect(page.getByTestId("coverage")).toHaveText("Covered (SRS + lessons)0%");
+  await expect(page.getByTestId("achievements")).toContainText("(locked)");
   await expect(page.getByTestId("map-legend")).toBeVisible();
-  await expect(page.getByTestId("achievements")).not.toContainText("■");
+  await expect(page.getByTestId("achievements")).not.toContainText("(unlocked)");
 });
