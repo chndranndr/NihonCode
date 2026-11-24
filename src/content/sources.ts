@@ -38,5 +38,5 @@ export const CONTENT_SOURCES: readonly ContentSource[] = [
   },
 ] as const;
 
-export const CONTACT_PLACEHOLDER = "hello@NihonCode.app";
+export const CONTACT_PLACEHOLDER = "chandraaji93@gmail.com";
 export const APP_VERSION = "0.1.0";

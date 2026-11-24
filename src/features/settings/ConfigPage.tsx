@@ -249,10 +249,7 @@ export function ConfigPage() {
                 <li key={s.name}>
                   <span>{s.name}</span>
                   <span className="micro-label">{s.origin}</span>
-                  <span className="micro-label">{s.license}</span>
-                  <span className={`micro-label ${s.clearance === "licensed" ? "ok" : "pending"}`}>
-                    {s.clearance.toUpperCase()}
-                  </span>
+
                 </li>
               ))}
             </ul>
@@ -261,7 +258,7 @@ export function ConfigPage() {
             <div className="panel-head">
               <h2>CONTACT</h2>
             </div>
-            <p className="micro-label">{CONTACT_PLACEHOLDER} (PLACEHOLDER, NOT A REAL INBOX)</p>
+            <p className="micro-label">{CONTACT_PLACEHOLDER}</p>
           </section>
           <section className="about-section">
             <div className="panel-head">
